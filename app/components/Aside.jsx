@@ -9,7 +9,7 @@
  * ```
  */
 export function Aside({children, heading, id = 'aside'}) {
-  //console.log(heading)
+  console.log(heading)
   return (
     <div aria-modal className="overlay" id={id} role="dialog">
       <button
