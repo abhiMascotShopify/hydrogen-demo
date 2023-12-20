@@ -47,6 +47,7 @@ export default {
         storefrontHeaders: getStorefrontHeaders(request),
       });
 
+      console.log("storefront ::",JSON.stringify(storefront)) 
       /*
        * Create a cart handler that will be used to
        * create and update the cart in the session.
@@ -69,7 +70,7 @@ export default {
       });
 
       const response = await handleRequest(request);
-      console.log("Server ::",response)
+      console.log("Server ::",JSON.stringify(response))
       if (response.status === 404) {
         /**
          * Check for redirects only when there's a 404 from the app.
