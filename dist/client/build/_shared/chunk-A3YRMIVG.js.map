@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../node_modules/@heroicons/react/24/outline/esm/XMarkIcon.js"],
+  "sourcesContent": ["import * as React from \"react\";\nfunction XMarkIcon({\n  title,\n  titleId,\n  ...props\n}, svgRef) {\n  return /*#__PURE__*/React.createElement(\"svg\", Object.assign({\n    xmlns: \"http://www.w3.org/2000/svg\",\n    fill: \"none\",\n    viewBox: \"0 0 24 24\",\n    strokeWidth: 1.5,\n    stroke: \"currentColor\",\n    \"aria-hidden\": \"true\",\n    \"data-slot\": \"icon\",\n    ref: svgRef,\n    \"aria-labelledby\": titleId\n  }, props), title ? /*#__PURE__*/React.createElement(\"title\", {\n    id: titleId\n  }, title) : null, /*#__PURE__*/React.createElement(\"path\", {\n    strokeLinecap: \"round\",\n    strokeLinejoin: \"round\",\n    d: \"M6 18 18 6M6 6l12 12\"\n  }));\n}\nconst ForwardRef = React.forwardRef(XMarkIcon);\nexport default ForwardRef;"],
+  "mappings": "0GAAA,IAAAA,EAAuB,SACvB,SAASC,EAAU,CACjB,MAAAC,EACA,QAAAC,EACA,GAAGC,CACL,EAAGC,EAAQ,CACT,OAA0B,gBAAc,MAAO,OAAO,OAAO,CAC3D,MAAO,6BACP,KAAM,OACN,QAAS,YACT,YAAa,IACb,OAAQ,eACR,cAAe,OACf,YAAa,OACb,IAAKA,EACL,kBAAmBF,CACrB,EAAGC,CAAK,EAAGF,EAA2B,gBAAc,QAAS,CAC3D,GAAIC,CACN,EAAGD,CAAK,EAAI,KAAyB,gBAAc,OAAQ,CACzD,cAAe,QACf,eAAgB,QAChB,EAAG,sBACL,CAAC,CAAC,CACJ,CACA,IAAMI,EAAmB,aAAWL,CAAS,EACtCM,EAAQD",
+  "names": ["React", "XMarkIcon", "title", "titleId", "props", "svgRef", "ForwardRef", "XMarkIcon_default"]
+}
