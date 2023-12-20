@@ -24,6 +24,7 @@ export const meta = () => {
 };
 
 export async function loader({context}) {
+  console.log("context:",context)
   const {storefront} = context;
   const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
   //console.log(collections.nodes[0].products);
@@ -33,7 +34,7 @@ export async function loader({context}) {
   const {products} = await storefront.query(RECOMMENDED_PRODUCTS_QUERY);
   const {blogs} = await storefront.query(BLOGS_QUERY);
 
-  console.log("products:",products)
+ 
   //console.log(products.nodes[0].variants.edges[0].node.metafields);
   //console.log(products.nodes[0].variants.edges[0].node.metafields);
   const collection = collections;
