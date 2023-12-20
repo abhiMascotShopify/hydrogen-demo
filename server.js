@@ -69,7 +69,7 @@ export default {
       });
 
       const response = await handleRequest(request);
-
+      console.log("Server ::",response)
       if (response.status === 404) {
         /**
          * Check for redirects only when there's a 404 from the app.
