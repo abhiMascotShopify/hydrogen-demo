@@ -22,7 +22,7 @@ export default {
       /**
        * Open a cache instance in the worker and a custom session instance.
        */
-      console.log(env)
+
       if (!env?.SESSION_SECRET) {
         throw new Error('SESSION_SECRET environment variable is not set',env);
       }
@@ -37,7 +37,6 @@ export default {
        * Create Hydrogen's Storefront client.
        */
 
-
       console.log("ENV VARS ::",env) 
 
       const {storefront} = createStorefrontClient({
@@ -51,7 +50,7 @@ export default {
         storefrontHeaders: getStorefrontHeaders(request),
       });
 
-      console.log("storefront ::",env.PUBLIC_STOREFRONT_API_TOKEN) 
+      console.log("storefront ::",JSON.stringify(storefront)) 
       /*
        * Create a cart handler that will be used to
        * create and update the cart in the session.
