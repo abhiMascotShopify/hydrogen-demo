@@ -71119,7 +71119,7 @@ var server_default = {
         caches.open("hydrogen"),
         HydrogenSession.init(request, [env.SESSION_SECRET])
       ]);
-      console.log("ENV VARS ::", process.env);
+      console.log("ENV VARS ::", env);
       let { storefront } = createStorefrontClient2({
         cache,
         waitUntil,
