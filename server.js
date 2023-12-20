@@ -37,8 +37,6 @@ export default {
        * Create Hydrogen's Storefront client.
        */
 
-      console.log("ENV VARS ::",env) 
-
       const {storefront} = createStorefrontClient({
         cache,
         waitUntil,
@@ -50,7 +48,7 @@ export default {
         storefrontHeaders: getStorefrontHeaders(request),
       });
 
-      console.log("storefront ::",JSON.stringify(storefront)) 
+      
       /*
        * Create a cart handler that will be used to
        * create and update the cart in the session.
@@ -71,6 +69,8 @@ export default {
         mode: process.env.NODE_ENV,
         getLoadContext: () => ({session, storefront, env, cart}),
       });
+
+      console.log("handleRequest ::",JSON.stringify(handleRequest)) 
 
       const response = await handleRequest(request);
       if (response.status === 404) {

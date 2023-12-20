@@ -70752,9 +70752,7 @@ var server_default = {
       let waitUntil = (p6) => executionContext.waitUntil(p6), [cache, session] = await Promise.all([
         caches.open("hydrogen"),
         HydrogenSession.init(request, [env.SESSION_SECRET])
-      ]);
-      console.log("ENV VARS ::", env);
-      let { storefront } = createStorefrontClient2({
+      ]), { storefront } = createStorefrontClient2({
         cache,
         waitUntil,
         i18n: getLocaleFromRequest(request),
@@ -70763,18 +70761,18 @@ var server_default = {
         storeDomain: env.PUBLIC_STORE_DOMAIN,
         storefrontId: env.PUBLIC_STOREFRONT_ID,
         storefrontHeaders: getStorefrontHeaders(request)
-      });
-      console.log("storefront ::", JSON.stringify(storefront));
-      let cart = createCartHandler({
+      }), cart = createCartHandler({
         storefront,
         getCartId: cartGetIdDefault(request.headers),
         setCartId: cartSetIdDefault(),
         cartQueryFragment: CART_QUERY_FRAGMENT
-      }), response = await createRequestHandler2({
+      }), handleRequest2 = createRequestHandler2({
         build: server_build_exports,
         mode: "development",
         getLoadContext: () => ({ session, storefront, env, cart })
-      })(request);
+      });
+      console.log("handleRequest ::", JSON.stringify(handleRequest2));
+      let response = await handleRequest2(request);
       return response.status === 404 ? storefrontRedirect({ request, response, storefront }) : response;
     } catch (error) {
       return console.error(error), new Response("An unexpected error occurred", { status: 500 });
