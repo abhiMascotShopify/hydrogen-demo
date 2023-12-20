@@ -121,13 +121,13 @@ export default function Homepage() {
       }*/}
       {/* -- Section 2 -- */}
       <RecommendedProducts
-        key={data.collectionProducts.nodes[0].id}
-        products={data.collectionProducts.nodes[0].products}
-        title={data.collectionProducts.nodes[0].title}
+        key={data.collectionProducts.nodes[0]?.id}
+        products={data.collectionProducts.nodes[0]?.products}
+        title={data.collectionProducts.nodes[0]?.title}
       />
       {/* -- Section 3 -- */}
       <CustomizedProducts
-        key={data.products.nodes[0].id}
+        key={data.products.nodes[0]?.id}
         products={data.products.nodes}
       ></CustomizedProducts>
 
