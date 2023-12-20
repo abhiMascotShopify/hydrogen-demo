@@ -22,8 +22,9 @@ export default {
       /**
        * Open a cache instance in the worker and a custom session instance.
        */
+
       if (!env?.SESSION_SECRET) {
-        throw new Error('SESSION_SECRET environment variable is not set');
+        throw new Error('SESSION_SECRET environment variable is not set',env);
       }
 
       const waitUntil = (p) => executionContext.waitUntil(p);
@@ -36,26 +37,20 @@ export default {
        * Create Hydrogen's Storefront client.
        */
 
-      let custEnv= {
-        PUBLIC_STOREFRONT_ID: '1000010454',
-        PUBLIC_STOREFRONT_API_TOKEN: '785fa7133fb078800d0cb2966d616f72',
-        PUBLIC_STORE_DOMAIN: 'bhuvaneshwari-arts.myshopify.com',
-        PRIVATE_STOREFRONT_API_TOKEN: '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',
-        PUBLIC_CUSTOMER_ACCOUNT_API_CLIENT_ID: 'shp_23bb20ef-3094-4a3e-89bf-47c97410c597',
-        PUBLIC_CUSTOMER_ACCOUNT_API_URL: 'https://shopify.com/80942530882',
-        SESSION_SECRET: 'foobar',
-      }
+      console.log("ENV VARS ::",env) 
+
       const {storefront} = createStorefrontClient({
         cache,
         waitUntil,
         i18n: getLocaleFromRequest(request),
-        publicStorefrontToken: custEnv.PUBLIC_STOREFRONT_API_TOKEN,
-        privateStorefrontToken: custEnv.PRIVATE_STOREFRONT_API_TOKEN,
-        storeDomain: custEnv.PUBLIC_STORE_DOMAIN,
-        storefrontId: custEnv.PUBLIC_STOREFRONT_ID,
+        publicStorefrontToken: env.PUBLIC_STOREFRONT_API_TOKEN,
+        privateStorefrontToken: env.PRIVATE_STOREFRONT_API_TOKEN,
+        storeDomain: env.PUBLIC_STORE_DOMAIN,
+        storefrontId: env.PUBLIC_STOREFRONT_ID,
         storefrontHeaders: getStorefrontHeaders(request),
       });
 
+      console.log("storefront ::",JSON.stringify(storefront)) 
       /*
        * Create a cart handler that will be used to
        * create and update the cart in the session.
@@ -74,11 +69,10 @@ export default {
       const handleRequest = createRequestHandler({
         build: remixBuild,
         mode: process.env.NODE_ENV,
-        getLoadContext: () => ({session, storefront, custEnv, cart}),
+        getLoadContext: () => ({session, storefront, env, cart}),
       });
 
       const response = await handleRequest(request);
-
       if (response.status === 404) {
         /**
          * Check for redirects only when there's a 404 from the app.

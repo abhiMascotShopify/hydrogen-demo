@@ -70748,28 +70748,24 @@ var server_default = {
   async fetch(request, env, executionContext) {
     try {
       if (!(env != null && env.SESSION_SECRET))
-        throw new Error("SESSION_SECRET environment variable is not set");
+        throw new Error("SESSION_SECRET environment variable is not set", env);
       let waitUntil = (p6) => executionContext.waitUntil(p6), [cache, session] = await Promise.all([
         caches.open("hydrogen"),
         HydrogenSession.init(request, [env.SESSION_SECRET])
-      ]), custEnv = {
-        PUBLIC_STOREFRONT_ID: "1000010454",
-        PUBLIC_STOREFRONT_API_TOKEN: "785fa7133fb078800d0cb2966d616f72",
-        PUBLIC_STORE_DOMAIN: "bhuvaneshwari-arts.myshopify.com",
-        PRIVATE_STOREFRONT_API_TOKEN: "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",
-        PUBLIC_CUSTOMER_ACCOUNT_API_CLIENT_ID: "shp_23bb20ef-3094-4a3e-89bf-47c97410c597",
-        PUBLIC_CUSTOMER_ACCOUNT_API_URL: "https://shopify.com/80942530882",
-        SESSION_SECRET: "foobar"
-      }, { storefront } = createStorefrontClient2({
+      ]);
+      console.log("ENV VARS ::", env);
+      let { storefront } = createStorefrontClient2({
         cache,
         waitUntil,
         i18n: getLocaleFromRequest(request),
-        publicStorefrontToken: custEnv.PUBLIC_STOREFRONT_API_TOKEN,
-        privateStorefrontToken: custEnv.PRIVATE_STOREFRONT_API_TOKEN,
-        storeDomain: custEnv.PUBLIC_STORE_DOMAIN,
-        storefrontId: custEnv.PUBLIC_STOREFRONT_ID,
+        publicStorefrontToken: env.PUBLIC_STOREFRONT_API_TOKEN,
+        privateStorefrontToken: env.PRIVATE_STOREFRONT_API_TOKEN,
+        storeDomain: env.PUBLIC_STORE_DOMAIN,
+        storefrontId: env.PUBLIC_STOREFRONT_ID,
         storefrontHeaders: getStorefrontHeaders(request)
-      }), cart = createCartHandler({
+      });
+      console.log("storefront ::", JSON.stringify(storefront));
+      let cart = createCartHandler({
         storefront,
         getCartId: cartGetIdDefault(request.headers),
         setCartId: cartSetIdDefault(),
@@ -70777,7 +70773,7 @@ var server_default = {
       }), response = await createRequestHandler2({
         build: server_build_exports,
         mode: "development",
-        getLoadContext: () => ({ session, storefront, custEnv, cart })
+        getLoadContext: () => ({ session, storefront, env, cart })
       })(request);
       return response.status === 404 ? storefrontRedirect({ request, response, storefront }) : response;
     } catch (error) {
