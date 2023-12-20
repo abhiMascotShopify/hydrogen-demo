@@ -44,7 +44,7 @@ export default {
         publicStorefrontToken: "785fa7133fb078800d0cb2966d616f72",//env.PUBLIC_STOREFRONT_API_TOKEN,
         privateStorefrontToken: "",//env.PRIVATE_STOREFRONT_API_TOKEN,
         storeDomain: "bhuvaneshwari-arts.myshopify.com",//env.PUBLIC_STORE_DOMAIN,
-        storefrontId: //env.PUBLIC_STOREFRONT_ID,
+        storefrontId: "",//env.PUBLIC_STOREFRONT_ID,
         storefrontHeaders: getStorefrontHeaders(request),
       });
 
