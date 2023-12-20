@@ -37,7 +37,7 @@ export default {
        * Create Hydrogen's Storefront client.
        */
 
-      console.log("ENV VARS ::",env) 
+      console.log("ENV VARS ::",process.env) 
 
       const {storefront} = createStorefrontClient({
         cache,
