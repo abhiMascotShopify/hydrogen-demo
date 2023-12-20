@@ -32,8 +32,6 @@ export async function loader({context}) {
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
   const {products} = await storefront.query(RECOMMENDED_PRODUCTS_QUERY);
   const {blogs} = await storefront.query(BLOGS_QUERY);
-
- 
   //console.log(products.nodes[0].variants.edges[0].node.metafields);
   //console.log(products.nodes[0].variants.edges[0].node.metafields);
   const collection = collections;
@@ -121,13 +119,13 @@ export default function Homepage() {
       }*/}
       {/* -- Section 2 -- */}
       <RecommendedProducts
-        key={data.collectionProducts.nodes[0]?.id}
-        products={data.collectionProducts.nodes[0]?.products}
-        title={data.collectionProducts.nodes[0]?.title}
+        key={data.collectionProducts.nodes[0].id}
+        products={data.collectionProducts.nodes[0].products}
+        title={data.collectionProducts.nodes[0].title}
       />
       {/* -- Section 3 -- */}
       <CustomizedProducts
-        key={data.products.nodes[0]?.id}
+        key={data.products.nodes[0].id}
         products={data.products.nodes}
       ></CustomizedProducts>
 

@@ -1,2 +1,0 @@
-import{a as n}from"/build/_shared/chunk-UAZF22TS.js";import{d as f}from"/build/_shared/chunk-2LOM2E4Y.js";var o=f(n(),1);function l({title:r,titleId:e,...a},t){return o.createElement("svg",Object.assign({xmlns:"http://www.w3.org/2000/svg",fill:"none",viewBox:"0 0 24 24",strokeWidth:1.5,stroke:"currentColor","aria-hidden":"true","data-slot":"icon",ref:t,"aria-labelledby":e},a),r?o.createElement("title",{id:e},r):null,o.createElement("path",{strokeLinecap:"round",strokeLinejoin:"round",d:"M6 18 18 6M6 6l12 12"}))}var c=o.forwardRef(l),u=c;export{u as a};
-
