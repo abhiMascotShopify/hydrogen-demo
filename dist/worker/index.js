@@ -533,7 +533,7 @@ var require_react_development = __commonJS({
           throw new Error("React.Children.only expected to receive a single React element child.");
         return children;
       }
-      function createContext4(defaultValue) {
+      function createContext5(defaultValue) {
         var context = {
           $$typeof: REACT_CONTEXT_TYPE,
           // As a workaround to support multiple concurrent renderers, we categorize
@@ -685,7 +685,7 @@ Your code should look like:
         }
         return lazyType;
       }
-      function forwardRef13(render) {
+      function forwardRef14(render) {
         render != null && render.$$typeof === REACT_MEMO_TYPE ? error("forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).") : typeof render != "function" ? error("forwardRef requires a render function but was given %s.", render === null ? "null" : typeof render) : render.length !== 0 && render.length !== 2 && error("forwardRef render functions accept exactly two parameters: props and ref. %s", render.length === 1 ? "Did you forget to use the ref parameter?" : "Any additional parameter will be undefined."), render != null && (render.defaultProps != null || render.propTypes != null) && error("forwardRef render functions do not support propTypes or defaultProps. Did you accidentally pass a React component?");
         var elementType = {
           $$typeof: REACT_FORWARD_REF_TYPE,
@@ -745,7 +745,7 @@ Your code should look like:
 3. You might have more than one copy of React in the same app
 See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.`), dispatcher;
       }
-      function useContext6(Context) {
+      function useContext7(Context) {
         var dispatcher = resolveDispatcher();
         if (Context._context !== void 0) {
           var realContext = Context._context;
@@ -753,7 +753,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         }
         return dispatcher.useContext(Context);
       }
-      function useState16(initialState) {
+      function useState18(initialState) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useState(initialState);
       }
@@ -761,11 +761,11 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         var dispatcher = resolveDispatcher();
         return dispatcher.useReducer(reducer, initialArg, init);
       }
-      function useRef6(initialValue) {
+      function useRef10(initialValue) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useRef(initialValue);
       }
-      function useEffect6(create, deps) {
+      function useEffect10(create, deps) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useEffect(create, deps);
       }
@@ -777,11 +777,11 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         var dispatcher = resolveDispatcher();
         return dispatcher.useLayoutEffect(create, deps);
       }
-      function useCallback3(callback, deps) {
+      function useCallback5(callback, deps) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useCallback(callback, deps);
       }
-      function useMemo10(create, deps) {
+      function useMemo11(create, deps) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useMemo(create, deps);
       }
@@ -1007,7 +1007,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         } else
           ReactDebugCurrentFrame$1.setExtraStackFrame(null);
       }
-      function checkPropTypes(typeSpecs, values, location, componentName, element) {
+      function checkPropTypes(typeSpecs, values, location2, componentName, element) {
         {
           var has = Function.call.bind(hasOwnProperty);
           for (var typeSpecName in typeSpecs)
@@ -1015,14 +1015,14 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
               var error$1 = void 0;
               try {
                 if (typeof typeSpecs[typeSpecName] != "function") {
-                  var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                  var err = Error((componentName || "React class") + ": " + location2 + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
                   throw err.name = "Invariant Violation", err;
                 }
-                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
+                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location2, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
               } catch (ex) {
                 error$1 = ex;
               }
-              error$1 && !(error$1 instanceof Error) && (setCurrentlyValidatingElement(element), error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location, typeSpecName, typeof error$1), setCurrentlyValidatingElement(null)), error$1 instanceof Error && !(error$1.message in loggedTypeFailures) && (loggedTypeFailures[error$1.message] = !0, setCurrentlyValidatingElement(element), error("Failed %s type: %s", location, error$1.message), setCurrentlyValidatingElement(null));
+              error$1 && !(error$1 instanceof Error) && (setCurrentlyValidatingElement(element), error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location2, typeSpecName, typeof error$1), setCurrentlyValidatingElement(null)), error$1 instanceof Error && !(error$1.message in loggedTypeFailures) && (loggedTypeFailures[error$1.message] = !0, setCurrentlyValidatingElement(element), error("Failed %s type: %s", location2, error$1.message), setCurrentlyValidatingElement(null));
             }
         }
       }
@@ -1294,7 +1294,7 @@ Check the top-level render call using <` + parentName + ">.");
         toArray,
         only: onlyChild
       };
-      exports.Children = Children2, exports.Component = Component2, exports.Fragment = REACT_FRAGMENT_TYPE, exports.Profiler = REACT_PROFILER_TYPE, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE, exports.Suspense = REACT_SUSPENSE_TYPE, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext4, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef13, exports.isValidElement = isValidElement2, exports.lazy = lazy2, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback3, exports.useContext = useContext6, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect6, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo10, exports.useReducer = useReducer, exports.useRef = useRef6, exports.useState = useState16, exports.useSyncExternalStore = useSyncExternalStore, exports.useTransition = useTransition2, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+      exports.Children = Children2, exports.Component = Component2, exports.Fragment = REACT_FRAGMENT_TYPE, exports.Profiler = REACT_PROFILER_TYPE, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE, exports.Suspense = REACT_SUSPENSE_TYPE, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext5, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef14, exports.isValidElement = isValidElement2, exports.lazy = lazy2, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback5, exports.useContext = useContext7, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect10, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo11, exports.useReducer = useReducer, exports.useRef = useRef10, exports.useState = useState18, exports.useSyncExternalStore = useSyncExternalStore, exports.useTransition = useTransition2, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
     })();
   }
 });
@@ -1372,8 +1372,8 @@ function createMemoryHistory(options) {
   }
   function createMemoryLocation(to, state, key) {
     state === void 0 && (state = null);
-    let location = createLocation(entries ? getCurrentLocation().pathname : "/", to, state, key);
-    return warning(location.pathname.charAt(0) === "/", "relative pathnames are not supported in memory history: " + JSON.stringify(to)), location;
+    let location2 = createLocation(entries ? getCurrentLocation().pathname : "/", to, state, key);
+    return warning(location2.pathname.charAt(0) === "/", "relative pathnames are not supported in memory history: " + JSON.stringify(to)), location2;
   }
   function createHref(to) {
     return typeof to == "string" ? to : createPath(to);
@@ -1487,8 +1487,8 @@ function createHashHistory(options) {
     }
     return href + "#" + (typeof to == "string" ? to : createPath(to));
   }
-  function validateHashLocation(location, to) {
-    warning(location.pathname.charAt(0) === "/", "relative pathnames are not supported in hash history.push(" + JSON.stringify(to) + ")");
+  function validateHashLocation(location2, to) {
+    warning(location2.pathname.charAt(0) === "/", "relative pathnames are not supported in hash history.push(" + JSON.stringify(to) + ")");
   }
   return getUrlBasedHistory(createHashLocation, createHashHref, validateHashLocation, options);
 }
@@ -1508,10 +1508,10 @@ function warning(cond, message) {
 function createKey() {
   return Math.random().toString(36).substr(2, 8);
 }
-function getHistoryState(location, index2) {
+function getHistoryState(location2, index2) {
   return {
-    usr: location.state,
-    key: location.key,
+    usr: location2.state,
+    key: location2.key,
     idx: index2
   };
 }
@@ -1572,9 +1572,9 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
   }
   function push(to, state) {
     action11 = Action.Push;
-    let location = createLocation(history2.location, to, state);
-    validateLocation && validateLocation(location, to), index2 = getIndex() + 1;
-    let historyState = getHistoryState(location, index2), url = history2.createHref(location);
+    let location2 = createLocation(history2.location, to, state);
+    validateLocation && validateLocation(location2, to), index2 = getIndex() + 1;
+    let historyState = getHistoryState(location2, index2), url = history2.createHref(location2);
     try {
       globalHistory.pushState(historyState, "", url);
     } catch (error) {
@@ -1590,9 +1590,9 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
   }
   function replace(to, state) {
     action11 = Action.Replace;
-    let location = createLocation(history2.location, to, state);
-    validateLocation && validateLocation(location, to), index2 = getIndex();
-    let historyState = getHistoryState(location, index2), url = history2.createHref(location);
+    let location2 = createLocation(history2.location, to, state);
+    validateLocation && validateLocation(location2, to), index2 = getIndex();
+    let historyState = getHistoryState(location2, index2), url = history2.createHref(location2);
     globalHistory.replaceState(historyState, "", url), v5Compat && listener && listener({
       action: action11,
       location: history2.location,
@@ -1659,7 +1659,7 @@ function convertRoutesToDataRoutes(routes2, mapRouteProperties2, parentPath, man
 }
 function matchRoutes(routes2, locationArg, basename) {
   basename === void 0 && (basename = "/");
-  let location = typeof locationArg == "string" ? parsePath(locationArg) : locationArg, pathname = stripBasename(location.pathname || "/", basename);
+  let location2 = typeof locationArg == "string" ? parsePath(locationArg) : locationArg, pathname = stripBasename(location2.pathname || "/", basename);
   if (pathname == null)
     return null;
   let branches = flattenRoutes(routes2);
@@ -1943,7 +1943,7 @@ function createRouter(init) {
     return unlistenHistory = init.history.listen((_ref) => {
       let {
         action: historyAction,
-        location,
+        location: location2,
         delta
       } = _ref;
       if (ignoreNextHistoryUpdate) {
@@ -1953,19 +1953,19 @@ function createRouter(init) {
       warning(blockerFunctions.size === 0 || delta != null, "You are trying to use a blocker on a POP navigation to a location that was not created by @remix-run/router. This will fail silently in production. This can happen if you are navigating outside the router via `window.history.pushState`/`window.location.hash` instead of using router navigation APIs.  This can also happen if you are using createHashRouter and the user manually changes the URL.");
       let blockerKey = shouldBlockNavigation({
         currentLocation: state.location,
-        nextLocation: location,
+        nextLocation: location2,
         historyAction
       });
       if (blockerKey && delta != null) {
         ignoreNextHistoryUpdate = !0, init.history.go(delta * -1), updateBlocker(blockerKey, {
           state: "blocked",
-          location,
+          location: location2,
           proceed() {
             updateBlocker(blockerKey, {
               state: "proceeding",
               proceed: void 0,
               reset: void 0,
-              location
+              location: location2
             }), init.history.go(delta);
           },
           reset() {
@@ -1977,7 +1977,7 @@ function createRouter(init) {
         });
         return;
       }
-      return startNavigation(historyAction, location);
+      return startNavigation(historyAction, location2);
     }), state.initialized || startNavigation(Action.Pop, state.location), router;
   }
   function dispose() {
@@ -1989,22 +1989,22 @@ function createRouter(init) {
   function updateState(newState) {
     state = _extends({}, state, newState), subscribers.forEach((subscriber) => subscriber(state));
   }
-  function completeNavigation(location, newState) {
+  function completeNavigation(location2, newState) {
     var _location$state, _location$state2;
-    let isActionReload = state.actionData != null && state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && state.navigation.state === "loading" && ((_location$state = location.state) == null ? void 0 : _location$state._isRedirect) !== !0, actionData;
+    let isActionReload = state.actionData != null && state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && state.navigation.state === "loading" && ((_location$state = location2.state) == null ? void 0 : _location$state._isRedirect) !== !0, actionData;
     newState.actionData ? Object.keys(newState.actionData).length > 0 ? actionData = newState.actionData : actionData = null : isActionReload ? actionData = state.actionData : actionData = null;
     let loaderData = newState.loaderData ? mergeLoaderData(state.loaderData, newState.loaderData, newState.matches || [], newState.errors) : state.loaderData, blockers = state.blockers;
     blockers.size > 0 && (blockers = new Map(blockers), blockers.forEach((_3, k2) => blockers.set(k2, IDLE_BLOCKER)));
-    let preventScrollReset = pendingPreventScrollReset === !0 || state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && ((_location$state2 = location.state) == null ? void 0 : _location$state2._isRedirect) !== !0;
-    inFlightDataRoutes && (dataRoutes = inFlightDataRoutes, inFlightDataRoutes = void 0), isUninterruptedRevalidation || pendingAction === Action.Pop || (pendingAction === Action.Push ? init.history.push(location, location.state) : pendingAction === Action.Replace && init.history.replace(location, location.state)), updateState(_extends({}, newState, {
+    let preventScrollReset = pendingPreventScrollReset === !0 || state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && ((_location$state2 = location2.state) == null ? void 0 : _location$state2._isRedirect) !== !0;
+    inFlightDataRoutes && (dataRoutes = inFlightDataRoutes, inFlightDataRoutes = void 0), isUninterruptedRevalidation || pendingAction === Action.Pop || (pendingAction === Action.Push ? init.history.push(location2, location2.state) : pendingAction === Action.Replace && init.history.replace(location2, location2.state)), updateState(_extends({}, newState, {
       actionData,
       loaderData,
       historyAction: pendingAction,
-      location,
+      location: location2,
       initialized: !0,
       navigation: IDLE_NAVIGATION,
       revalidation: "idle",
-      restoreScrollPosition: getSavedScrollPosition(location, newState.matches || state.matches),
+      restoreScrollPosition: getSavedScrollPosition(location2, newState.matches || state.matches),
       preventScrollReset,
       blockers
     })), pendingAction = Action.Pop, pendingPreventScrollReset = !1, isUninterruptedRevalidation = !1, isRevalidationRequired = !1, cancelledDeferredRoutes = [], cancelledFetcherLoads = [];
@@ -2072,17 +2072,17 @@ function createRouter(init) {
       });
     }
   }
-  async function startNavigation(historyAction, location, opts) {
+  async function startNavigation(historyAction, location2, opts) {
     pendingNavigationController && pendingNavigationController.abort(), pendingNavigationController = null, pendingAction = historyAction, isUninterruptedRevalidation = (opts && opts.startUninterruptedRevalidation) === !0, saveScrollPosition(state.location, state.matches), pendingPreventScrollReset = (opts && opts.preventScrollReset) === !0;
-    let routesToUse = inFlightDataRoutes || dataRoutes, loadingNavigation = opts && opts.overrideNavigation, matches = matchRoutes(routesToUse, location, basename);
+    let routesToUse = inFlightDataRoutes || dataRoutes, loadingNavigation = opts && opts.overrideNavigation, matches = matchRoutes(routesToUse, location2, basename);
     if (!matches) {
       let error = getInternalRouterError(404, {
-        pathname: location.pathname
+        pathname: location2.pathname
       }), {
         matches: notFoundMatches,
         route
       } = getShortCircuitMatches(routesToUse);
-      cancelActiveDeferreds(), completeNavigation(location, {
+      cancelActiveDeferreds(), completeNavigation(location2, {
         matches: notFoundMatches,
         loaderData: {},
         errors: {
@@ -2091,25 +2091,25 @@ function createRouter(init) {
       });
       return;
     }
-    if (state.initialized && !isRevalidationRequired && isHashChangeOnly(state.location, location) && !(opts && opts.submission && isMutationMethod(opts.submission.formMethod))) {
-      completeNavigation(location, {
+    if (state.initialized && !isRevalidationRequired && isHashChangeOnly(state.location, location2) && !(opts && opts.submission && isMutationMethod(opts.submission.formMethod))) {
+      completeNavigation(location2, {
         matches
       });
       return;
     }
     pendingNavigationController = new AbortController();
-    let request = createClientSideRequest(init.history, location, pendingNavigationController.signal, opts && opts.submission), pendingActionData, pendingError;
+    let request = createClientSideRequest(init.history, location2, pendingNavigationController.signal, opts && opts.submission), pendingActionData, pendingError;
     if (opts && opts.pendingError)
       pendingError = {
         [findNearestBoundary(matches).route.id]: opts.pendingError
       };
     else if (opts && opts.submission && isMutationMethod(opts.submission.formMethod)) {
-      let actionOutput = await handleAction(request, location, opts.submission, matches, {
+      let actionOutput = await handleAction(request, location2, opts.submission, matches, {
         replace: opts.replace
       });
       if (actionOutput.shortCircuited)
         return;
-      pendingActionData = actionOutput.pendingActionData, pendingError = actionOutput.pendingActionError, loadingNavigation = getLoadingNavigation(location, opts.submission), request = new Request(request.url, {
+      pendingActionData = actionOutput.pendingActionData, pendingError = actionOutput.pendingActionError, loadingNavigation = getLoadingNavigation(location2, opts.submission), request = new Request(request.url, {
         signal: request.signal
       });
     }
@@ -2117,8 +2117,8 @@ function createRouter(init) {
       shortCircuited,
       loaderData,
       errors
-    } = await handleLoaders(request, location, matches, loadingNavigation, opts && opts.submission, opts && opts.fetcherSubmission, opts && opts.replace, pendingActionData, pendingError);
-    shortCircuited || (pendingNavigationController = null, completeNavigation(location, _extends({
+    } = await handleLoaders(request, location2, matches, loadingNavigation, opts && opts.submission, opts && opts.fetcherSubmission, opts && opts.replace, pendingActionData, pendingError);
+    shortCircuited || (pendingNavigationController = null, completeNavigation(location2, _extends({
       matches
     }, pendingActionData ? {
       actionData: pendingActionData
@@ -2127,19 +2127,19 @@ function createRouter(init) {
       errors
     })));
   }
-  async function handleAction(request, location, submission, matches, opts) {
+  async function handleAction(request, location2, submission, matches, opts) {
     opts === void 0 && (opts = {}), interruptActiveLoads();
-    let navigation = getSubmittingNavigation(location, submission);
+    let navigation = getSubmittingNavigation(location2, submission);
     updateState({
       navigation
     });
-    let result, actionMatch = getTargetMatch(matches, location);
+    let result, actionMatch = getTargetMatch(matches, location2);
     if (!actionMatch.route.action && !actionMatch.route.lazy)
       result = {
         type: ResultType.error,
         error: getInternalRouterError(405, {
           method: request.method,
-          pathname: location.pathname,
+          pathname: location2.pathname,
           routeId: actionMatch.route.id
         })
       };
@@ -2176,11 +2176,11 @@ function createRouter(init) {
       }
     };
   }
-  async function handleLoaders(request, location, matches, overrideNavigation, submission, fetcherSubmission, replace, pendingActionData, pendingError) {
-    let loadingNavigation = overrideNavigation || getLoadingNavigation(location, submission), activeSubmission = submission || fetcherSubmission || getSubmissionFromNavigation(loadingNavigation), routesToUse = inFlightDataRoutes || dataRoutes, [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(init.history, state, matches, activeSubmission, location, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, pendingActionData, pendingError);
+  async function handleLoaders(request, location2, matches, overrideNavigation, submission, fetcherSubmission, replace, pendingActionData, pendingError) {
+    let loadingNavigation = overrideNavigation || getLoadingNavigation(location2, submission), activeSubmission = submission || fetcherSubmission || getSubmissionFromNavigation(loadingNavigation), routesToUse = inFlightDataRoutes || dataRoutes, [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(init.history, state, matches, activeSubmission, location2, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, pendingActionData, pendingError);
     if (cancelActiveDeferreds((routeId) => !(matches && matches.some((m10) => m10.route.id === routeId)) || matchesToLoad && matchesToLoad.some((m10) => m10.route.id === routeId)), pendingNavigationLoadId = ++incrementingLoadId, matchesToLoad.length === 0 && revalidatingFetchers.length === 0) {
       let updatedFetchers2 = markFetchRedirectsDone();
-      return completeNavigation(location, _extends({
+      return completeNavigation(location2, _extends({
         matches,
         loaderData: {},
         // Commit pending error if we're short circuiting
@@ -2597,18 +2597,18 @@ function createRouter(init) {
       savedScrollPositions2 = null, getScrollPosition = null, getScrollRestorationKey = null;
     };
   }
-  function getScrollKey(location, matches) {
-    return getScrollRestorationKey && getScrollRestorationKey(location, matches.map((m10) => createUseMatchesMatch(m10, state.loaderData))) || location.key;
+  function getScrollKey(location2, matches) {
+    return getScrollRestorationKey && getScrollRestorationKey(location2, matches.map((m10) => createUseMatchesMatch(m10, state.loaderData))) || location2.key;
   }
-  function saveScrollPosition(location, matches) {
+  function saveScrollPosition(location2, matches) {
     if (savedScrollPositions2 && getScrollPosition) {
-      let key = getScrollKey(location, matches);
+      let key = getScrollKey(location2, matches);
       savedScrollPositions2[key] = getScrollPosition();
     }
   }
-  function getSavedScrollPosition(location, matches) {
+  function getSavedScrollPosition(location2, matches) {
     if (savedScrollPositions2) {
-      let key = getScrollKey(location, matches), y6 = savedScrollPositions2[key];
+      let key = getScrollKey(location2, matches), y6 = savedScrollPositions2[key];
       if (typeof y6 == "number")
         return y6;
     }
@@ -2665,7 +2665,7 @@ function createStaticHandler(routes2, opts) {
   async function query(request, _temp2) {
     let {
       requestContext
-    } = _temp2 === void 0 ? {} : _temp2, url = new URL(request.url), method = request.method, location = createLocation("", createPath(url), null, "default"), matches = matchRoutes(dataRoutes, location, basename);
+    } = _temp2 === void 0 ? {} : _temp2, url = new URL(request.url), method = request.method, location2 = createLocation("", createPath(url), null, "default"), matches = matchRoutes(dataRoutes, location2, basename);
     if (!isValidMethod(method) && method !== "HEAD") {
       let error = getInternalRouterError(405, {
         method
@@ -2675,7 +2675,7 @@ function createStaticHandler(routes2, opts) {
       } = getShortCircuitMatches(dataRoutes);
       return {
         basename,
-        location,
+        location: location2,
         matches: methodNotAllowedMatches,
         loaderData: {},
         actionData: null,
@@ -2689,14 +2689,14 @@ function createStaticHandler(routes2, opts) {
       };
     } else if (!matches) {
       let error = getInternalRouterError(404, {
-        pathname: location.pathname
+        pathname: location2.pathname
       }), {
         matches: notFoundMatches,
         route
       } = getShortCircuitMatches(dataRoutes);
       return {
         basename,
-        location,
+        location: location2,
         matches: notFoundMatches,
         loaderData: {},
         actionData: null,
@@ -2709,9 +2709,9 @@ function createStaticHandler(routes2, opts) {
         activeDeferreds: null
       };
     }
-    let result = await queryImpl(request, location, matches, requestContext);
+    let result = await queryImpl(request, location2, matches, requestContext);
     return isResponse(result) ? result : _extends({
-      location,
+      location: location2,
       basename
     }, result);
   }
@@ -2719,26 +2719,26 @@ function createStaticHandler(routes2, opts) {
     let {
       routeId,
       requestContext
-    } = _temp3 === void 0 ? {} : _temp3, url = new URL(request.url), method = request.method, location = createLocation("", createPath(url), null, "default"), matches = matchRoutes(dataRoutes, location, basename);
+    } = _temp3 === void 0 ? {} : _temp3, url = new URL(request.url), method = request.method, location2 = createLocation("", createPath(url), null, "default"), matches = matchRoutes(dataRoutes, location2, basename);
     if (!isValidMethod(method) && method !== "HEAD" && method !== "OPTIONS")
       throw getInternalRouterError(405, {
         method
       });
     if (!matches)
       throw getInternalRouterError(404, {
-        pathname: location.pathname
+        pathname: location2.pathname
       });
-    let match = routeId ? matches.find((m10) => m10.route.id === routeId) : getTargetMatch(matches, location);
+    let match = routeId ? matches.find((m10) => m10.route.id === routeId) : getTargetMatch(matches, location2);
     if (routeId && !match)
       throw getInternalRouterError(403, {
-        pathname: location.pathname,
+        pathname: location2.pathname,
         routeId
       });
     if (!match)
       throw getInternalRouterError(404, {
-        pathname: location.pathname
+        pathname: location2.pathname
       });
-    let result = await queryImpl(request, location, matches, requestContext, match);
+    let result = await queryImpl(request, location2, matches, requestContext, match);
     if (isResponse(result))
       return result;
     let error = result.errors ? Object.values(result.errors)[0] : void 0;
@@ -2752,11 +2752,11 @@ function createStaticHandler(routes2, opts) {
       return (_result$activeDeferre = result.activeDeferreds) != null && _result$activeDeferre[match.route.id] && (data2[UNSAFE_DEFERRED_SYMBOL] = result.activeDeferreds[match.route.id]), data2;
     }
   }
-  async function queryImpl(request, location, matches, requestContext, routeMatch) {
+  async function queryImpl(request, location2, matches, requestContext, routeMatch) {
     invariant(request.signal, "query()/queryRoute() requests must contain an AbortController signal");
     try {
       if (isMutationMethod(request.method.toLowerCase()))
-        return await submit(request, matches, routeMatch || getTargetMatch(matches, location), requestContext, routeMatch != null);
+        return await submit(request, matches, routeMatch || getTargetMatch(matches, location2), requestContext, routeMatch != null);
       let result = await loadRouteData(request, matches, requestContext, routeMatch);
       return isResponse(result) ? result : _extends({}, result, {
         actionData: null,
@@ -2914,7 +2914,7 @@ function getStaticContextFromError(routes2, context, error) {
 function isSubmissionNavigation(opts) {
   return opts != null && ("formData" in opts && opts.formData != null || "body" in opts && opts.body !== void 0);
 }
-function normalizeTo(location, matches, basename, prependBasename, to, fromRouteId, relative) {
+function normalizeTo(location2, matches, basename, prependBasename, to, fromRouteId, relative) {
   let contextualMatches, activeRouteMatch;
   if (fromRouteId != null && relative !== "path") {
     contextualMatches = [];
@@ -2925,8 +2925,8 @@ function normalizeTo(location, matches, basename, prependBasename, to, fromRoute
       }
   } else
     contextualMatches = matches, activeRouteMatch = matches[matches.length - 1];
-  let path = resolveTo(to || ".", getPathContributingMatches(contextualMatches).map((m10) => m10.pathnameBase), stripBasename(location.pathname, basename) || location.pathname, relative === "path");
-  return to == null && (path.search = location.search, path.hash = location.hash), (to == null || to === "" || to === ".") && activeRouteMatch && activeRouteMatch.route.index && !hasNakedIndexQuery(path.search) && (path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index"), prependBasename && basename !== "/" && (path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname])), createPath(path);
+  let path = resolveTo(to || ".", getPathContributingMatches(contextualMatches).map((m10) => m10.pathnameBase), stripBasename(location2.pathname, basename) || location2.pathname, relative === "path");
+  return to == null && (path.search = location2.search, path.hash = location2.hash), (to == null || to === "" || to === ".") && activeRouteMatch && activeRouteMatch.route.index && !hasNakedIndexQuery(path.search) && (path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index"), prependBasename && basename !== "/" && (path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname])), createPath(path);
 }
 function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
   if (!opts || !isSubmissionNavigation(opts))
@@ -3033,8 +3033,8 @@ function getLoaderMatchesUntilBoundary(matches, boundaryId) {
   }
   return boundaryMatches;
 }
-function getMatchesToLoad(history2, state, matches, submission, location, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, pendingActionData, pendingError) {
-  let actionResult = pendingError ? Object.values(pendingError)[0] : pendingActionData ? Object.values(pendingActionData)[0] : void 0, currentUrl = history2.createURL(state.location), nextUrl = history2.createURL(location), boundaryId = pendingError ? Object.keys(pendingError)[0] : void 0, navigationMatches = getLoaderMatchesUntilBoundary(matches, boundaryId).filter((match, index2) => {
+function getMatchesToLoad(history2, state, matches, submission, location2, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, pendingActionData, pendingError) {
+  let actionResult = pendingError ? Object.values(pendingError)[0] : pendingActionData ? Object.values(pendingActionData)[0] : void 0, currentUrl = history2.createURL(state.location), nextUrl = history2.createURL(location2), boundaryId = pendingError ? Object.keys(pendingError)[0] : void 0, navigationMatches = getLoaderMatchesUntilBoundary(matches, boundaryId).filter((match, index2) => {
     if (match.route.lazy)
       return !0;
     if (match.route.loader == null)
@@ -3181,19 +3181,19 @@ async function callLoaderOrAction(type, request, match, matches, manifest, mapRo
   if (isResponse(result)) {
     let status = result.status;
     if (redirectStatusCodes.has(status)) {
-      let location = result.headers.get("Location");
-      if (invariant(location, "Redirects returned/thrown from loaders/actions must have a Location header"), !ABSOLUTE_URL_REGEX.test(location))
-        location = normalizeTo(new URL(request.url), matches.slice(0, matches.indexOf(match) + 1), basename, !0, location);
+      let location2 = result.headers.get("Location");
+      if (invariant(location2, "Redirects returned/thrown from loaders/actions must have a Location header"), !ABSOLUTE_URL_REGEX.test(location2))
+        location2 = normalizeTo(new URL(request.url), matches.slice(0, matches.indexOf(match) + 1), basename, !0, location2);
       else if (!opts.isStaticRequest) {
-        let currentUrl = new URL(request.url), url = location.startsWith("//") ? new URL(currentUrl.protocol + location) : new URL(location), isSameBasename = stripBasename(url.pathname, basename) != null;
-        url.origin === currentUrl.origin && isSameBasename && (location = url.pathname + url.search + url.hash);
+        let currentUrl = new URL(request.url), url = location2.startsWith("//") ? new URL(currentUrl.protocol + location2) : new URL(location2), isSameBasename = stripBasename(url.pathname, basename) != null;
+        url.origin === currentUrl.origin && isSameBasename && (location2 = url.pathname + url.search + url.hash);
       }
       if (opts.isStaticRequest)
-        throw result.headers.set("Location", location), result;
+        throw result.headers.set("Location", location2), result;
       return {
         type: ResultType.redirect,
         status,
-        location,
+        location: location2,
         revalidate: result.headers.get("X-Remix-Revalidate") !== null
       };
     }
@@ -3233,8 +3233,8 @@ async function callLoaderOrAction(type, request, match, matches, manifest, mapRo
     data: result
   };
 }
-function createClientSideRequest(history2, location, signal, submission) {
-  let url = history2.createURL(stripHashFromPath(location)).toString(), init = {
+function createClientSideRequest(history2, location2, signal, submission) {
+  let url = history2.createURL(stripHashFromPath(location2)).toString(), init = {
     signal
   };
   if (submission && isMutationMethod(submission.formMethod)) {
@@ -3382,8 +3382,8 @@ function isResponse(value) {
 function isRedirectResponse(result) {
   if (!isResponse(result))
     return !1;
-  let status = result.status, location = result.headers.get("Location");
-  return status >= 300 && status <= 399 && location != null;
+  let status = result.status, location2 = result.headers.get("Location");
+  return status >= 300 && status <= 399 && location2 != null;
 }
 function isQueryRouteResponse(obj) {
   return obj && isResponse(obj.response) && (obj.type === ResultType.data || ResultType.error);
@@ -3429,7 +3429,7 @@ async function resolveDeferredData(result, signal, unwrap) {
   }
 }
 function hasNakedIndexQuery(search) {
-  return new URLSearchParams(search).getAll("index").some((v4) => v4 === "");
+  return new URLSearchParams(search).getAll("index").some((v5) => v5 === "");
 }
 function createUseMatchesMatch(match, loaderData) {
   let {
@@ -3445,8 +3445,8 @@ function createUseMatchesMatch(match, loaderData) {
     handle: route.handle
   };
 }
-function getTargetMatch(matches, location) {
-  let search = typeof location == "string" ? parsePath(location).search : location.search;
+function getTargetMatch(matches, location2) {
+  let search = typeof location2 == "string" ? parsePath(location2).search : location2.search;
   if (matches[matches.length - 1].route.index && hasNakedIndexQuery(search || ""))
     return matches[matches.length - 1];
   let pathMatches = getPathContributingMatches(matches);
@@ -3491,10 +3491,10 @@ function getSubmissionFromNavigation(navigation) {
       };
   }
 }
-function getLoadingNavigation(location, submission) {
+function getLoadingNavigation(location2, submission) {
   return submission ? {
     state: "loading",
-    location,
+    location: location2,
     formMethod: submission.formMethod,
     formAction: submission.formAction,
     formEncType: submission.formEncType,
@@ -3503,7 +3503,7 @@ function getLoadingNavigation(location, submission) {
     text: submission.text
   } : {
     state: "loading",
-    location,
+    location: location2,
     formMethod: void 0,
     formAction: void 0,
     formEncType: void 0,
@@ -3512,10 +3512,10 @@ function getLoadingNavigation(location, submission) {
     text: void 0
   };
 }
-function getSubmittingNavigation(location, submission) {
+function getSubmittingNavigation(location2, submission) {
   return {
     state: "submitting",
-    location,
+    location: location2,
     formMethod: submission.formMethod,
     formAction: submission.formAction,
     formEncType: submission.formEncType,
@@ -3640,7 +3640,7 @@ var Action, PopStateEventType, ResultType, immutableRouteKeys, paramRe, dynamicS
         return this.subscribers.add(fn), () => this.subscribers.delete(fn);
       }
       cancel() {
-        this.controller.abort(), this.pendingKeysSet.forEach((v4, k2) => this.pendingKeysSet.delete(k2)), this.emit(!0);
+        this.controller.abort(), this.pendingKeysSet.forEach((v5, k2) => this.pendingKeysSet.delete(k2)), this.emit(!0);
       }
       async resolveData(signal) {
         let aborted = !1;
@@ -3922,17 +3922,17 @@ function useRoutesImpl(routes2, locationArg, dataRouterState) {
 
 ` + ('Please change the parent <Route path="' + parentPath + '"> to <Route ') + ('path="' + (parentPath === "/" ? "*" : parentPath + "/*") + '">.'));
   }
-  let locationFromContext = useLocation(), location;
+  let locationFromContext = useLocation(), location2;
   if (locationArg) {
     var _parsedLocationArg$pa;
     let parsedLocationArg = typeof locationArg == "string" ? parsePath(locationArg) : locationArg;
-    parentPathnameBase === "/" || (_parsedLocationArg$pa = parsedLocationArg.pathname) != null && _parsedLocationArg$pa.startsWith(parentPathnameBase) || invariant(!1, "When overriding the location using `<Routes location>` or `useRoutes(routes, location)`, the location pathname must begin with the portion of the URL pathname that was " + ('matched by all parent routes. The current pathname base is "' + parentPathnameBase + '" ') + ('but pathname "' + parsedLocationArg.pathname + '" was given in the `location` prop.')), location = parsedLocationArg;
+    parentPathnameBase === "/" || (_parsedLocationArg$pa = parsedLocationArg.pathname) != null && _parsedLocationArg$pa.startsWith(parentPathnameBase) || invariant(!1, "When overriding the location using `<Routes location>` or `useRoutes(routes, location)`, the location pathname must begin with the portion of the URL pathname that was " + ('matched by all parent routes. The current pathname base is "' + parentPathnameBase + '" ') + ('but pathname "' + parsedLocationArg.pathname + '" was given in the `location` prop.')), location2 = parsedLocationArg;
   } else
-    location = locationFromContext;
-  let pathname = location.pathname || "/", remainingPathname = parentPathnameBase === "/" ? pathname : pathname.slice(parentPathnameBase.length) || "/", matches = matchRoutes(routes2, {
+    location2 = locationFromContext;
+  let pathname = location2.pathname || "/", remainingPathname = parentPathnameBase === "/" ? pathname : pathname.slice(parentPathnameBase.length) || "/", matches = matchRoutes(routes2, {
     pathname: remainingPathname
   });
-  warning(parentRoute || matches != null, 'No routes matched location "' + location.pathname + location.search + location.hash + '" '), warning(matches == null || matches[matches.length - 1].route.element !== void 0 || matches[matches.length - 1].route.Component !== void 0, 'Matched leaf route at location "' + location.pathname + location.search + location.hash + '" does not have an element or Component. This means it will render an <Outlet /> with a null value by default resulting in an "empty" page.');
+  warning(parentRoute || matches != null, 'No routes matched location "' + location2.pathname + location2.search + location2.hash + '" '), warning(matches == null || matches[matches.length - 1].route.element !== void 0 || matches[matches.length - 1].route.Component !== void 0, 'Matched leaf route at location "' + location2.pathname + location2.search + location2.hash + '" does not have an element or Component. This means it will render an <Outlet /> with a null value by default resulting in an "empty" page.');
   let renderedMatches = _renderMatches(matches && matches.map((match) => Object.assign({}, match, {
     params: Object.assign({}, parentParams, match.params),
     pathname: joinPaths([
@@ -3954,7 +3954,7 @@ function useRoutesImpl(routes2, locationArg, dataRouterState) {
         hash: "",
         state: null,
         key: "default"
-      }, location),
+      }, location2),
       navigationType: Action.Pop
     }
   }, renderedMatches) : renderedMatches;
@@ -4312,9 +4312,9 @@ function Router(_ref5) {
 function Routes(_ref6) {
   let {
     children,
-    location
+    location: location2
   } = _ref6;
-  return useRoutes(createRoutesFromChildren(children), location);
+  return useRoutes(createRoutesFromChildren(children), location2);
 }
 function Await(_ref7) {
   let {
@@ -4648,7 +4648,7 @@ function shouldProcessLinkClick(event, target) {
 function createSearchParams(init) {
   return init === void 0 && (init = ""), new URLSearchParams(typeof init == "string" || Array.isArray(init) || init instanceof URLSearchParams ? init : Object.keys(init).reduce((memo, key) => {
     let value = init[key];
-    return memo.concat(Array.isArray(value) ? value.map((v4) => [key, v4]) : [[key, value]]);
+    return memo.concat(Array.isArray(value) ? value.map((v5) => [key, v5]) : [[key, value]]);
   }, []));
 }
 function getSearchParamsForLocation(locationSearch, defaultSearchParams) {
@@ -4875,13 +4875,13 @@ function useLinkClickHandler(to, _temp) {
     state,
     preventScrollReset,
     relative
-  } = _temp === void 0 ? {} : _temp, navigate = useNavigate(), location = useLocation(), path = useResolvedPath(to, {
+  } = _temp === void 0 ? {} : _temp, navigate = useNavigate(), location2 = useLocation(), path = useResolvedPath(to, {
     relative
   });
   return React2.useCallback((event) => {
     if (shouldProcessLinkClick(event, target)) {
       event.preventDefault();
-      let replace = replaceProp !== void 0 ? replaceProp : createPath(location) === createPath(path);
+      let replace = replaceProp !== void 0 ? replaceProp : createPath(location2) === createPath(path);
       navigate(to, {
         replace,
         state,
@@ -4889,16 +4889,16 @@ function useLinkClickHandler(to, _temp) {
         relative
       });
     }
-  }, [location, navigate, path, replaceProp, state, target, to, preventScrollReset, relative]);
+  }, [location2, navigate, path, replaceProp, state, target, to, preventScrollReset, relative]);
 }
 function useSearchParams(defaultInit) {
   warning(typeof URLSearchParams < "u", "You cannot use the `useSearchParams` hook in a browser that does not support the URLSearchParams API. If you need to support Internet Explorer 11, we recommend you load a polyfill such as https://github.com/ungap/url-search-params\n\nIf you're unsure how to load polyfills, we recommend you check out https://polyfill.io/v3/ which provides some recommendations about how to load polyfills only for users that need them, instead of for every user.");
-  let defaultSearchParamsRef = React2.useRef(createSearchParams(defaultInit)), hasSetSearchParamsRef = React2.useRef(!1), location = useLocation(), searchParams = React2.useMemo(() => (
+  let defaultSearchParamsRef = React2.useRef(createSearchParams(defaultInit)), hasSetSearchParamsRef = React2.useRef(!1), location2 = useLocation(), searchParams = React2.useMemo(() => (
     // Only merge in the defaults if we haven't yet called setSearchParams.
     // Once we call that we want those to take precedence, otherwise you can't
     // remove a param with setSearchParams({}) if it has an initial value
-    getSearchParamsForLocation(location.search, hasSetSearchParamsRef.current ? null : defaultSearchParamsRef.current)
-  ), [location.search]), navigate = useNavigate(), setSearchParams = React2.useCallback((nextInit, navigateOptions) => {
+    getSearchParamsForLocation(location2.search, hasSetSearchParamsRef.current ? null : defaultSearchParamsRef.current)
+  ), [location2.search]), navigate = useNavigate(), setSearchParams = React2.useCallback((nextInit, navigateOptions) => {
     let newSearchParams = createSearchParams(typeof nextInit == "function" ? nextInit(searchParams) : nextInit);
     hasSetSearchParamsRef.current = !0, navigate("?" + newSearchParams, navigateOptions);
   }, [navigate, searchParams]);
@@ -4968,8 +4968,8 @@ function useFormAction(action11, _temp2) {
   routeContext || invariant(!1, "useFormAction must be used inside a RouteContext");
   let [match] = routeContext.matches.slice(-1), path = _extends3({}, useResolvedPath(action11 || ".", {
     relative
-  })), location = useLocation();
-  if (action11 == null && (path.search = location.search, path.hash = location.hash, match.route.index)) {
+  })), location2 = useLocation();
+  if (action11 == null && (path.search = location2.search, path.hash = location2.hash, match.route.index)) {
     let params = new URLSearchParams(path.search);
     params.delete("index"), path.search = params.toString() ? "?" + params.toString() : "";
   }
@@ -5022,26 +5022,26 @@ function useScrollRestoration(_temp3) {
     preventScrollReset
   } = useDataRouterState2(DataRouterStateHook2.UseScrollRestoration), {
     basename
-  } = React2.useContext(NavigationContext), location = useLocation(), matches = useMatches(), navigation = useNavigation();
+  } = React2.useContext(NavigationContext), location2 = useLocation(), matches = useMatches(), navigation = useNavigation();
   React2.useEffect(() => (window.history.scrollRestoration = "manual", () => {
     window.history.scrollRestoration = "auto";
   }), []), usePageHide(React2.useCallback(() => {
     if (navigation.state === "idle") {
-      let key = (getKey ? getKey(location, matches) : null) || location.key;
+      let key = (getKey ? getKey(location2, matches) : null) || location2.key;
       savedScrollPositions[key] = window.scrollY;
     }
     sessionStorage.setItem(storageKey || SCROLL_RESTORATION_STORAGE_KEY, JSON.stringify(savedScrollPositions)), window.history.scrollRestoration = "auto";
-  }, [storageKey, getKey, navigation.state, location, matches])), typeof document < "u" && (React2.useLayoutEffect(() => {
+  }, [storageKey, getKey, navigation.state, location2, matches])), typeof document < "u" && (React2.useLayoutEffect(() => {
     try {
       let sessionPositions = sessionStorage.getItem(storageKey || SCROLL_RESTORATION_STORAGE_KEY);
       sessionPositions && (savedScrollPositions = JSON.parse(sessionPositions));
     } catch {
     }
   }, [storageKey]), React2.useLayoutEffect(() => {
-    let getKeyWithoutBasename = getKey && basename !== "/" ? (location2, matches2) => getKey(
+    let getKeyWithoutBasename = getKey && basename !== "/" ? (location3, matches2) => getKey(
       // Strip the basename to match useLocation()
-      _extends3({}, location2, {
-        pathname: stripBasename(location2.pathname, basename) || location2.pathname
+      _extends3({}, location3, {
+        pathname: stripBasename(location3.pathname, basename) || location3.pathname
       }),
       matches2
     ) : getKey, disableScrollRestoration = router == null ? void 0 : router.enableScrollRestoration(savedScrollPositions, () => window.scrollY, getKeyWithoutBasename);
@@ -5052,8 +5052,8 @@ function useScrollRestoration(_temp3) {
         window.scrollTo(0, restoreScrollPosition);
         return;
       }
-      if (location.hash) {
-        let el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (location2.hash) {
+        let el = document.getElementById(decodeURIComponent(location2.hash.slice(1)));
         if (el) {
           el.scrollIntoView();
           return;
@@ -5061,7 +5061,7 @@ function useScrollRestoration(_temp3) {
       }
       preventScrollReset !== !0 && window.scrollTo(0, 0);
     }
-  }, [location, restoreScrollPosition, preventScrollReset]));
+  }, [location2, restoreScrollPosition, preventScrollReset]));
 }
 function useBeforeUnload(callback, options) {
   let {
@@ -5166,9 +5166,9 @@ var React2, defaultMethod, defaultEncType, _formDataSupportsSubmitter, supported
         children
       } = _ref5, rest = _objectWithoutPropertiesLoose(_ref5, _excluded2), path = useResolvedPath(to, {
         relative: rest.relative
-      }), location = useLocation(), routerState = React2.useContext(DataRouterStateContext), {
+      }), location2 = useLocation(), routerState = React2.useContext(DataRouterStateContext), {
         navigator: navigator2
-      } = React2.useContext(NavigationContext), toPathname = navigator2.encodeLocation ? navigator2.encodeLocation(path).pathname : path.pathname, locationPathname = location.pathname, nextLocationPathname = routerState && routerState.navigation && routerState.navigation.location ? routerState.navigation.location.pathname : null;
+      } = React2.useContext(NavigationContext), toPathname = navigator2.encodeLocation ? navigator2.encodeLocation(path).pathname : path.pathname, locationPathname = location2.pathname, nextLocationPathname = routerState && routerState.navigation && routerState.navigation.location ? routerState.navigation.location.pathname : null;
       caseSensitive || (locationPathname = locationPathname.toLowerCase(), nextLocationPathname = nextLocationPathname ? nextLocationPathname.toLowerCase() : null, toPathname = toPathname.toLowerCase());
       let isActive = locationPathname === toPathname || !end && locationPathname.startsWith(toPathname) && locationPathname.charAt(toPathname.length) === "/", isPending = nextLocationPathname != null && (nextLocationPathname === toPathname || !end && nextLocationPathname.startsWith(toPathname) && nextLocationPathname.charAt(toPathname.length) === "/"), ariaCurrent = isActive ? ariaCurrentProp : void 0, className;
       typeof classNameProp == "function" ? className = classNameProp({
@@ -5274,7 +5274,7 @@ var require_server = __commonJS({
       location: locationProp = "/"
     }) {
       typeof locationProp == "string" && (locationProp = reactRouterDom.parsePath(locationProp));
-      let action11 = router.Action.Pop, location = {
+      let action11 = router.Action.Pop, location2 = {
         pathname: locationProp.pathname || "/",
         search: locationProp.search || "",
         hash: locationProp.hash || "",
@@ -5284,7 +5284,7 @@ var require_server = __commonJS({
       return /* @__PURE__ */ React__namespace.createElement(reactRouterDom.Router, {
         basename,
         children,
-        location,
+        location: location2,
         navigationType: action11,
         navigator: staticNavigator,
         static: !0
@@ -7026,8 +7026,8 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
           if (value !== null ? (checkAttributeStringCoercion(value, "value"), stringValue = "" + value) : (innerHTML !== null && (didWarnInvalidOptionInnerHTML || (didWarnInvalidOptionInnerHTML = !0, error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected."))), stringValue = flattenOptionChildren(children)), isArray(selectedValue))
             for (var i6 = 0; i6 < selectedValue.length; i6++) {
               checkAttributeStringCoercion(selectedValue[i6], "value");
-              var v4 = "" + selectedValue[i6];
-              if (v4 === stringValue) {
+              var v5 = "" + selectedValue[i6];
+              if (v5 === stringValue) {
                 target.push(selectedMarkerAttribute);
                 break;
               }
@@ -7750,7 +7750,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
         } else
           ReactDebugCurrentFrame.setExtraStackFrame(null);
       }
-      function checkPropTypes(typeSpecs, values, location, componentName, element) {
+      function checkPropTypes(typeSpecs, values, location2, componentName, element) {
         {
           var has = Function.call.bind(hasOwnProperty);
           for (var typeSpecName in typeSpecs)
@@ -7758,14 +7758,14 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
               var error$1 = void 0;
               try {
                 if (typeof typeSpecs[typeSpecName] != "function") {
-                  var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                  var err = Error((componentName || "React class") + ": " + location2 + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
                   throw err.name = "Invariant Violation", err;
                 }
-                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
+                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location2, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
               } catch (ex) {
                 error$1 = ex;
               }
-              error$1 && !(error$1 instanceof Error) && (setCurrentlyValidatingElement(element), error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location, typeSpecName, typeof error$1), setCurrentlyValidatingElement(null)), error$1 instanceof Error && !(error$1.message in loggedTypeFailures) && (loggedTypeFailures[error$1.message] = !0, setCurrentlyValidatingElement(element), error("Failed %s type: %s", location, error$1.message), setCurrentlyValidatingElement(null));
+              error$1 && !(error$1 instanceof Error) && (setCurrentlyValidatingElement(element), error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location2, typeSpecName, typeof error$1), setCurrentlyValidatingElement(null)), error$1 instanceof Error && !(error$1.message in loggedTypeFailures) && (loggedTypeFailures[error$1.message] = !0, setCurrentlyValidatingElement(element), error("Failed %s type: %s", location2, error$1.message), setCurrentlyValidatingElement(null));
             }
         }
       }
@@ -8132,13 +8132,13 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function readContext$1(context) {
         return isInHookUserCodeInDev && error("Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo()."), readContext(context);
       }
-      function useContext6(context) {
+      function useContext7(context) {
         return currentHookNameInDev = "useContext", resolveCurrentlyRenderingComponent(), readContext(context);
       }
       function basicStateReducer(state, action11) {
         return typeof action11 == "function" ? action11(state) : action11;
       }
-      function useState16(initialState) {
+      function useState18(initialState) {
         return currentHookNameInDev = "useState", useReducer(
           basicStateReducer,
           // useReducer has a special case to support lazy useState initializers
@@ -8172,7 +8172,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
           return [workInProgressHook.memoizedState, _dispatch];
         }
       }
-      function useMemo10(nextCreate, deps) {
+      function useMemo11(nextCreate, deps) {
         currentlyRenderingComponent = resolveCurrentlyRenderingComponent(), workInProgressHook = createWorkInProgressHook();
         var nextDeps = deps === void 0 ? null : deps;
         if (workInProgressHook !== null) {
@@ -8187,7 +8187,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         var nextValue = nextCreate();
         return isInHookUserCodeInDev = !1, workInProgressHook.memoizedState = [nextValue, nextDeps], nextValue;
       }
-      function useRef6(initialValue) {
+      function useRef10(initialValue) {
         currentlyRenderingComponent = resolveCurrentlyRenderingComponent(), workInProgressHook = createWorkInProgressHook();
         var previousRef = workInProgressHook.memoizedState;
         if (previousRef === null) {
@@ -8221,8 +8221,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
           }
         }
       }
-      function useCallback3(callback, deps) {
-        return useMemo10(function() {
+      function useCallback5(callback, deps) {
+        return useMemo11(function() {
           return callback;
         }, deps);
       }
@@ -8254,14 +8254,14 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       }
       var Dispatcher = {
         readContext: readContext$1,
-        useContext: useContext6,
-        useMemo: useMemo10,
+        useContext: useContext7,
+        useMemo: useMemo11,
         useReducer,
-        useRef: useRef6,
-        useState: useState16,
+        useRef: useRef10,
+        useState: useState18,
         useInsertionEffect: noop2,
         useLayoutEffect: useLayoutEffect3,
-        useCallback: useCallback3,
+        useCallback: useCallback5,
         // useImperativeHandle is not run in the server environment
         useImperativeHandle: noop2,
         // Effects are not run in the server environment.
@@ -10622,8 +10622,8 @@ var require_react_dom_server_browser_development = __commonJS({
           if (value !== null ? (checkAttributeStringCoercion(value, "value"), stringValue = "" + value) : (innerHTML !== null && (didWarnInvalidOptionInnerHTML || (didWarnInvalidOptionInnerHTML = !0, error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected."))), stringValue = flattenOptionChildren(children)), isArray(selectedValue))
             for (var i6 = 0; i6 < selectedValue.length; i6++) {
               checkAttributeStringCoercion(selectedValue[i6], "value");
-              var v4 = "" + selectedValue[i6];
-              if (v4 === stringValue) {
+              var v5 = "" + selectedValue[i6];
+              if (v5 === stringValue) {
                 target.push(selectedMarkerAttribute);
                 break;
               }
@@ -11302,7 +11302,7 @@ var require_react_dom_server_browser_development = __commonJS({
         } else
           ReactDebugCurrentFrame.setExtraStackFrame(null);
       }
-      function checkPropTypes(typeSpecs, values, location, componentName, element) {
+      function checkPropTypes(typeSpecs, values, location2, componentName, element) {
         {
           var has = Function.call.bind(hasOwnProperty);
           for (var typeSpecName in typeSpecs)
@@ -11310,14 +11310,14 @@ var require_react_dom_server_browser_development = __commonJS({
               var error$1 = void 0;
               try {
                 if (typeof typeSpecs[typeSpecName] != "function") {
-                  var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                  var err = Error((componentName || "React class") + ": " + location2 + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
                   throw err.name = "Invariant Violation", err;
                 }
-                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
+                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location2, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
               } catch (ex) {
                 error$1 = ex;
               }
-              error$1 && !(error$1 instanceof Error) && (setCurrentlyValidatingElement(element), error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location, typeSpecName, typeof error$1), setCurrentlyValidatingElement(null)), error$1 instanceof Error && !(error$1.message in loggedTypeFailures) && (loggedTypeFailures[error$1.message] = !0, setCurrentlyValidatingElement(element), error("Failed %s type: %s", location, error$1.message), setCurrentlyValidatingElement(null));
+              error$1 && !(error$1 instanceof Error) && (setCurrentlyValidatingElement(element), error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location2, typeSpecName, typeof error$1), setCurrentlyValidatingElement(null)), error$1 instanceof Error && !(error$1.message in loggedTypeFailures) && (loggedTypeFailures[error$1.message] = !0, setCurrentlyValidatingElement(element), error("Failed %s type: %s", location2, error$1.message), setCurrentlyValidatingElement(null));
             }
         }
       }
@@ -11684,13 +11684,13 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function readContext$1(context) {
         return isInHookUserCodeInDev && error("Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo()."), readContext(context);
       }
-      function useContext6(context) {
+      function useContext7(context) {
         return currentHookNameInDev = "useContext", resolveCurrentlyRenderingComponent(), readContext(context);
       }
       function basicStateReducer(state, action11) {
         return typeof action11 == "function" ? action11(state) : action11;
       }
-      function useState16(initialState) {
+      function useState18(initialState) {
         return currentHookNameInDev = "useState", useReducer(
           basicStateReducer,
           // useReducer has a special case to support lazy useState initializers
@@ -11724,7 +11724,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
           return [workInProgressHook.memoizedState, _dispatch];
         }
       }
-      function useMemo10(nextCreate, deps) {
+      function useMemo11(nextCreate, deps) {
         currentlyRenderingComponent = resolveCurrentlyRenderingComponent(), workInProgressHook = createWorkInProgressHook();
         var nextDeps = deps === void 0 ? null : deps;
         if (workInProgressHook !== null) {
@@ -11739,7 +11739,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         var nextValue = nextCreate();
         return isInHookUserCodeInDev = !1, workInProgressHook.memoizedState = [nextValue, nextDeps], nextValue;
       }
-      function useRef6(initialValue) {
+      function useRef10(initialValue) {
         currentlyRenderingComponent = resolveCurrentlyRenderingComponent(), workInProgressHook = createWorkInProgressHook();
         var previousRef = workInProgressHook.memoizedState;
         if (previousRef === null) {
@@ -11773,8 +11773,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
           }
         }
       }
-      function useCallback3(callback, deps) {
-        return useMemo10(function() {
+      function useCallback5(callback, deps) {
+        return useMemo11(function() {
           return callback;
         }, deps);
       }
@@ -11806,14 +11806,14 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       }
       var Dispatcher = {
         readContext: readContext$1,
-        useContext: useContext6,
-        useMemo: useMemo10,
+        useContext: useContext7,
+        useMemo: useMemo11,
         useReducer,
-        useRef: useRef6,
-        useState: useState16,
+        useRef: useRef10,
+        useState: useState18,
         useInsertionEffect: noop2,
         useLayoutEffect: useLayoutEffect3,
-        useCallback: useCallback3,
+        useCallback: useCallback5,
         // useImperativeHandle is not run in the server environment
         useImperativeHandle: noop2,
         // Effects are not run in the server environment.
@@ -12934,7 +12934,7 @@ var require_react_jsx_dev_runtime_development = __commonJS({
         } else
           ReactDebugCurrentFrame.setExtraStackFrame(null);
       }
-      function checkPropTypes(typeSpecs, values, location, componentName, element) {
+      function checkPropTypes(typeSpecs, values, location2, componentName, element) {
         {
           var has = Function.call.bind(hasOwnProperty);
           for (var typeSpecName in typeSpecs)
@@ -12942,14 +12942,14 @@ var require_react_jsx_dev_runtime_development = __commonJS({
               var error$1 = void 0;
               try {
                 if (typeof typeSpecs[typeSpecName] != "function") {
-                  var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                  var err = Error((componentName || "React class") + ": " + location2 + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
                   throw err.name = "Invariant Violation", err;
                 }
-                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
+                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location2, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
               } catch (ex) {
                 error$1 = ex;
               }
-              error$1 && !(error$1 instanceof Error) && (setCurrentlyValidatingElement(element), error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location, typeSpecName, typeof error$1), setCurrentlyValidatingElement(null)), error$1 instanceof Error && !(error$1.message in loggedTypeFailures) && (loggedTypeFailures[error$1.message] = !0, setCurrentlyValidatingElement(element), error("Failed %s type: %s", location, error$1.message), setCurrentlyValidatingElement(null));
+              error$1 && !(error$1 instanceof Error) && (setCurrentlyValidatingElement(element), error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location2, typeSpecName, typeof error$1), setCurrentlyValidatingElement(null)), error$1 instanceof Error && !(error$1.message in loggedTypeFailures) && (loggedTypeFailures[error$1.message] = !0, setCurrentlyValidatingElement(element), error("Failed %s type: %s", location2, error$1.message), setCurrentlyValidatingElement(null));
             }
         }
       }
@@ -13057,7 +13057,7 @@ var require_react_jsx_dev_runtime_development = __commonJS({
           value: source
         }), Object.freeze && (Object.freeze(element.props), Object.freeze(element)), element;
       };
-      function jsxDEV51(type, config, maybeKey, source, self2) {
+      function jsxDEV41(type, config, maybeKey, source, self2) {
         {
           var propName, props = {}, key = null, ref = null;
           maybeKey !== void 0 && (checkKeyStringCoercion(maybeKey), key = "" + maybeKey), hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key), hasValidRef(config) && (ref = config.ref, warnIfStringRefCannotBeAutoConverted(config, self2));
@@ -13204,7 +13204,7 @@ Check the top-level render call using <` + parentName + ">.");
             var typeString;
             type === null ? typeString = "null" : isArray(type) ? typeString = "array" : type !== void 0 && type.$$typeof === REACT_ELEMENT_TYPE ? (typeString = "<" + (getComponentNameFromType(type.type) || "Unknown") + " />", info = " Did you accidentally export a JSX literal instead of a component?") : typeString = typeof type, error("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
           }
-          var element = jsxDEV51(type, props, key, source, self2);
+          var element = jsxDEV41(type, props, key, source, self2);
           if (element == null)
             return element;
           if (validType) {
@@ -15716,7 +15716,7 @@ var require_react_is_development = __commonJS({
           }
         }
       }
-      var AsyncMode = REACT_ASYNC_MODE_TYPE, ConcurrentMode = REACT_CONCURRENT_MODE_TYPE, ContextConsumer = REACT_CONTEXT_TYPE, ContextProvider = REACT_PROVIDER_TYPE, Element2 = REACT_ELEMENT_TYPE, ForwardRef10 = REACT_FORWARD_REF_TYPE, Fragment22 = REACT_FRAGMENT_TYPE, Lazy = REACT_LAZY_TYPE, Memo = REACT_MEMO_TYPE, Portal = REACT_PORTAL_TYPE, Profiler = REACT_PROFILER_TYPE, StrictMode = REACT_STRICT_MODE_TYPE, Suspense8 = REACT_SUSPENSE_TYPE, hasWarnedAboutDeprecatedIsAsyncMode = !1;
+      var AsyncMode = REACT_ASYNC_MODE_TYPE, ConcurrentMode = REACT_CONCURRENT_MODE_TYPE, ContextConsumer = REACT_CONTEXT_TYPE, ContextProvider = REACT_PROVIDER_TYPE, Element2 = REACT_ELEMENT_TYPE, ForwardRef10 = REACT_FORWARD_REF_TYPE, Fragment23 = REACT_FRAGMENT_TYPE, Lazy = REACT_LAZY_TYPE, Memo = REACT_MEMO_TYPE, Portal = REACT_PORTAL_TYPE, Profiler = REACT_PROFILER_TYPE, StrictMode = REACT_STRICT_MODE_TYPE, Suspense8 = REACT_SUSPENSE_TYPE, hasWarnedAboutDeprecatedIsAsyncMode = !1;
       function isAsyncMode(object) {
         return hasWarnedAboutDeprecatedIsAsyncMode || (hasWarnedAboutDeprecatedIsAsyncMode = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
       }
@@ -15756,7 +15756,7 @@ var require_react_is_development = __commonJS({
       function isSuspense(object) {
         return typeOf(object) === REACT_SUSPENSE_TYPE;
       }
-      exports.AsyncMode = AsyncMode, exports.ConcurrentMode = ConcurrentMode, exports.ContextConsumer = ContextConsumer, exports.ContextProvider = ContextProvider, exports.Element = Element2, exports.ForwardRef = ForwardRef10, exports.Fragment = Fragment22, exports.Lazy = Lazy, exports.Memo = Memo, exports.Portal = Portal, exports.Profiler = Profiler, exports.StrictMode = StrictMode, exports.Suspense = Suspense8, exports.isAsyncMode = isAsyncMode, exports.isConcurrentMode = isConcurrentMode, exports.isContextConsumer = isContextConsumer, exports.isContextProvider = isContextProvider, exports.isElement = isElement, exports.isForwardRef = isForwardRef, exports.isFragment = isFragment, exports.isLazy = isLazy, exports.isMemo = isMemo, exports.isPortal = isPortal, exports.isProfiler = isProfiler, exports.isStrictMode = isStrictMode, exports.isSuspense = isSuspense, exports.isValidElementType = isValidElementType, exports.typeOf = typeOf;
+      exports.AsyncMode = AsyncMode, exports.ConcurrentMode = ConcurrentMode, exports.ContextConsumer = ContextConsumer, exports.ContextProvider = ContextProvider, exports.Element = Element2, exports.ForwardRef = ForwardRef10, exports.Fragment = Fragment23, exports.Lazy = Lazy, exports.Memo = Memo, exports.Portal = Portal, exports.Profiler = Profiler, exports.StrictMode = StrictMode, exports.Suspense = Suspense8, exports.isAsyncMode = isAsyncMode, exports.isConcurrentMode = isConcurrentMode, exports.isContextConsumer = isContextConsumer, exports.isContextProvider = isContextProvider, exports.isElement = isElement, exports.isForwardRef = isForwardRef, exports.isFragment = isFragment, exports.isLazy = isLazy, exports.isMemo = isMemo, exports.isPortal = isPortal, exports.isProfiler = isProfiler, exports.isStrictMode = isStrictMode, exports.isSuspense = isSuspense, exports.isValidElementType = isValidElementType, exports.typeOf = typeOf;
     })();
   }
 });
@@ -15848,28 +15848,28 @@ var require_checkPropTypes = __commonJS({
       }
     };
     var ReactPropTypesSecret, loggedTypeFailures, has;
-    function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+    function checkPropTypes(typeSpecs, values, location2, componentName, getStack) {
       for (var typeSpecName in typeSpecs)
         if (has(typeSpecs, typeSpecName)) {
           var error;
           try {
             if (typeof typeSpecs[typeSpecName] != "function") {
               var err = Error(
-                (componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`."
+                (componentName || "React class") + ": " + location2 + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`."
               );
               throw err.name = "Invariant Violation", err;
             }
-            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location2, null, ReactPropTypesSecret);
           } catch (ex) {
             error = ex;
           }
           if (error && !(error instanceof Error) && printWarning(
-            (componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker function must return `null` or an `Error` but returned a " + typeof error + ". You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument)."
+            (componentName || "React class") + ": type specification of " + location2 + " `" + typeSpecName + "` is invalid; the type checker function must return `null` or an `Error` but returned a " + typeof error + ". You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument)."
           ), error instanceof Error && !(error.message in loggedTypeFailures)) {
             loggedTypeFailures[error.message] = !0;
             var stack = getStack ? getStack() : "";
             printWarning(
-              "Failed " + location + " type: " + error.message + (stack ?? "")
+              "Failed " + location2 + " type: " + error.message + (stack ?? "")
             );
           }
         }
@@ -15935,7 +15935,7 @@ var require_factoryWithTypeCheckers = __commonJS({
       PropTypeError.prototype = Error.prototype;
       function createChainableTypeChecker(validate) {
         var manualPropTypeCallCache = {}, manualPropTypeWarningCount = 0;
-        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+        function checkType(isRequired, props, propName, componentName, location2, propFullName, secret) {
           if (componentName = componentName || ANONYMOUS, propFullName = propFullName || propName, secret !== ReactPropTypesSecret) {
             if (throwOnDirectAccess) {
               var err = new Error(
@@ -15950,18 +15950,18 @@ var require_factoryWithTypeCheckers = __commonJS({
               ), manualPropTypeCallCache[cacheKey] = !0, manualPropTypeWarningCount++);
             }
           }
-          return props[propName] == null ? isRequired ? props[propName] === null ? new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`.")) : new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`.")) : null : validate(props, propName, componentName, location, propFullName);
+          return props[propName] == null ? isRequired ? props[propName] === null ? new PropTypeError("The " + location2 + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`.")) : new PropTypeError("The " + location2 + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`.")) : null : validate(props, propName, componentName, location2, propFullName);
         }
         var chainedCheckType = checkType.bind(null, !1);
         return chainedCheckType.isRequired = checkType.bind(null, !0), chainedCheckType;
       }
       function createPrimitiveTypeChecker(expectedType) {
-        function validate(props, propName, componentName, location, propFullName, secret) {
+        function validate(props, propName, componentName, location2, propFullName, secret) {
           var propValue = props[propName], propType = getPropType(propValue);
           if (propType !== expectedType) {
             var preciseType = getPreciseType(propValue);
             return new PropTypeError(
-              "Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."),
+              "Invalid " + location2 + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."),
               { expectedType }
             );
           }
@@ -15973,16 +15973,16 @@ var require_factoryWithTypeCheckers = __commonJS({
         return createChainableTypeChecker(emptyFunctionThatReturnsNull);
       }
       function createArrayOfTypeChecker(typeChecker) {
-        function validate(props, propName, componentName, location, propFullName) {
+        function validate(props, propName, componentName, location2, propFullName) {
           if (typeof typeChecker != "function")
             return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
           var propValue = props[propName];
           if (!Array.isArray(propValue)) {
             var propType = getPropType(propValue);
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
+            return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
           }
           for (var i6 = 0; i6 < propValue.length; i6++) {
-            var error = typeChecker(propValue, i6, componentName, location, propFullName + "[" + i6 + "]", ReactPropTypesSecret);
+            var error = typeChecker(propValue, i6, componentName, location2, propFullName + "[" + i6 + "]", ReactPropTypesSecret);
             if (error instanceof Error)
               return error;
           }
@@ -15991,32 +15991,32 @@ var require_factoryWithTypeCheckers = __commonJS({
         return createChainableTypeChecker(validate);
       }
       function createElementTypeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
+        function validate(props, propName, componentName, location2, propFullName) {
           var propValue = props[propName];
           if (!isValidElement2(propValue)) {
             var propType = getPropType(propValue);
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
+            return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
           }
           return null;
         }
         return createChainableTypeChecker(validate);
       }
       function createElementTypeTypeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
+        function validate(props, propName, componentName, location2, propFullName) {
           var propValue = props[propName];
           if (!ReactIs.isValidElementType(propValue)) {
             var propType = getPropType(propValue);
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
+            return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
           }
           return null;
         }
         return createChainableTypeChecker(validate);
       }
       function createInstanceTypeChecker(expectedClass) {
-        function validate(props, propName, componentName, location, propFullName) {
+        function validate(props, propName, componentName, location2, propFullName) {
           if (!(props[propName] instanceof expectedClass)) {
             var expectedClassName = expectedClass.name || ANONYMOUS, actualClassName = getClassName(props[propName]);
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
+            return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
           }
           return null;
         }
@@ -16027,7 +16027,7 @@ var require_factoryWithTypeCheckers = __commonJS({
           return arguments.length > 1 ? printWarning(
             "Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z])."
           ) : printWarning("Invalid argument supplied to oneOf, expected an array."), emptyFunctionThatReturnsNull;
-        function validate(props, propName, componentName, location, propFullName) {
+        function validate(props, propName, componentName, location2, propFullName) {
           for (var propValue = props[propName], i6 = 0; i6 < expectedValues.length; i6++)
             if (is(propValue, expectedValues[i6]))
               return null;
@@ -16035,20 +16035,20 @@ var require_factoryWithTypeCheckers = __commonJS({
             var type = getPreciseType(value);
             return type === "symbol" ? String(value) : value;
           });
-          return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
+          return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
         }
         return createChainableTypeChecker(validate);
       }
       function createObjectOfTypeChecker(typeChecker) {
-        function validate(props, propName, componentName, location, propFullName) {
+        function validate(props, propName, componentName, location2, propFullName) {
           if (typeof typeChecker != "function")
             return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
           var propValue = props[propName], propType = getPropType(propValue);
           if (propType !== "object")
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
+            return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
           for (var key in propValue)
             if (has(propValue, key)) {
-              var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+              var error = typeChecker(propValue, key, componentName, location2, propFullName + "." + key, ReactPropTypesSecret);
               if (error instanceof Error)
                 return error;
             }
@@ -16066,39 +16066,39 @@ var require_factoryWithTypeCheckers = __commonJS({
               "Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i6 + "."
             ), emptyFunctionThatReturnsNull;
         }
-        function validate(props, propName, componentName, location, propFullName) {
+        function validate(props, propName, componentName, location2, propFullName) {
           for (var expectedTypes = [], i7 = 0; i7 < arrayOfTypeCheckers.length; i7++) {
-            var checker2 = arrayOfTypeCheckers[i7], checkerResult = checker2(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+            var checker2 = arrayOfTypeCheckers[i7], checkerResult = checker2(props, propName, componentName, location2, propFullName, ReactPropTypesSecret);
             if (checkerResult == null)
               return null;
             checkerResult.data && has(checkerResult.data, "expectedType") && expectedTypes.push(checkerResult.data.expectedType);
           }
           var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
-          return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
+          return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
         }
         return createChainableTypeChecker(validate);
       }
       function createNodeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-          return isNode(props[propName]) ? null : new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
+        function validate(props, propName, componentName, location2, propFullName) {
+          return isNode(props[propName]) ? null : new PropTypeError("Invalid " + location2 + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
         }
         return createChainableTypeChecker(validate);
       }
-      function invalidValidatorError(componentName, location, propFullName, key, type) {
+      function invalidValidatorError(componentName, location2, propFullName, key, type) {
         return new PropTypeError(
-          (componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + type + "`."
+          (componentName || "React class") + ": " + location2 + " type `" + propFullName + "." + key + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + type + "`."
         );
       }
       function createShapeTypeChecker(shapeTypes) {
-        function validate(props, propName, componentName, location, propFullName) {
+        function validate(props, propName, componentName, location2, propFullName) {
           var propValue = props[propName], propType = getPropType(propValue);
           if (propType !== "object")
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
           for (var key in shapeTypes) {
             var checker = shapeTypes[key];
             if (typeof checker != "function")
-              return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-            var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+              return invalidValidatorError(componentName, location2, propFullName, key, getPreciseType(checker));
+            var error = checker(propValue, key, componentName, location2, propFullName + "." + key, ReactPropTypesSecret);
             if (error)
               return error;
           }
@@ -16107,21 +16107,21 @@ var require_factoryWithTypeCheckers = __commonJS({
         return createChainableTypeChecker(validate);
       }
       function createStrictShapeTypeChecker(shapeTypes) {
-        function validate(props, propName, componentName, location, propFullName) {
+        function validate(props, propName, componentName, location2, propFullName) {
           var propValue = props[propName], propType = getPropType(propValue);
           if (propType !== "object")
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
           var allKeys = assign({}, props[propName], shapeTypes);
           for (var key in allKeys) {
             var checker = shapeTypes[key];
             if (has(shapeTypes, key) && typeof checker != "function")
-              return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+              return invalidValidatorError(componentName, location2, propFullName, key, getPreciseType(checker));
             if (!checker)
               return new PropTypeError(
-                "Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`.\nBad object: " + JSON.stringify(props[propName], null, "  ") + `
+                "Invalid " + location2 + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`.\nBad object: " + JSON.stringify(props[propName], null, "  ") + `
 Valid keys: ` + JSON.stringify(Object.keys(shapeTypes), null, "  ")
               );
-            var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+            var error = checker(propValue, key, componentName, location2, propFullName + "." + key, ReactPropTypesSecret);
             if (error)
               return error;
           }
@@ -16211,9 +16211,9 @@ var require_prop_types = __commonJS({
   }
 });
 
-// node_modules/@material-tailwind/react/node_modules/deepmerge/dist/cjs.js
+// node_modules/deepmerge/dist/cjs.js
 var require_cjs = __commonJS({
-  "node_modules/@material-tailwind/react/node_modules/deepmerge/dist/cjs.js"(exports, module) {
+  "node_modules/deepmerge/dist/cjs.js"(exports, module) {
     "use strict";
     var isMergeableObject = function(value) {
       return isNonNullObject(value) && !isSpecial(value);
@@ -16560,7 +16560,7 @@ var require_buttonFilled = __commonJS({
     Object.defineProperty(exports, "default", { enumerable: !0, get: function() {
       return _default;
     } });
-    var buttonFilled = { white: { backgroud: "bg-white", color: "text-blue-gray-900", shadow: "shadow-md shadow-blue-gray-500/10", hover: "hover:shadow-lg hover:shadow-blue-gray-500/20", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, "blue-gray": { backgroud: "bg-blue-gray-500", color: "text-white", shadow: "shadow-md shadow-blue-gray-500/20", hover: "hover:shadow-lg hover:shadow-blue-gray-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, gray: { backgroud: "bg-gray-900", color: "text-white", shadow: "shadow-md shadow-gray-900/10", hover: "hover:shadow-lg hover:shadow-gray-900/20", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, brown: { backgroud: "bg-brown-500", color: "text-white", shadow: "shadow-md shadow-brown-500/20", hover: "hover:shadow-lg hover:shadow-brown-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, "deep-orange": { backgroud: "bg-deep-orange-500", color: "text-white", shadow: "shadow-md shadow-deep-orange-500/20", hover: "hover:shadow-lg hover:shadow-deep-orange-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, orange: { backgroud: "bg-orange-500", color: "text-white", shadow: "shadow-md shadow-orange-500/20", hover: "hover:shadow-lg hover:shadow-orange-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, amber: { backgroud: "bg-amber-500", color: "text-black", shadow: "shadow-md shadow-amber-500/20", hover: "hover:shadow-lg hover:shadow-amber-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, yellow: { backgroud: "bg-yellow-500", color: "text-black", shadow: "shadow-md shadow-yellow-500/20", hover: "hover:shadow-lg hover:shadow-yellow-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, lime: { backgroud: "bg-lime-500", color: "text-black", shadow: "shadow-md shadow-lime-500/20", hover: "hover:shadow-lg hover:shadow-lime-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, "light-green": { backgroud: "bg-light-green-500", color: "text-white", shadow: "shadow-md shadow-light-green-500/20", hover: "hover:shadow-lg hover:shadow-light-green-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, green: { backgroud: "bg-green-500", color: "text-white", shadow: "shadow-md shadow-green-500/20", hover: "hover:shadow-lg hover:shadow-green-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, teal: { backgroud: "bg-teal-500", color: "text-white", shadow: "shadow-md shadow-teal-500/20", hover: "hover:shadow-lg hover:shadow-teal-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, cyan: { backgroud: "bg-cyan-500", color: "text-white", shadow: "shadow-md shadow-cyan-500/20", hover: "hover:shadow-lg hover:shadow-cyan-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, "light-blue": { backgroud: "bg-light-blue-500", color: "text-white", shadow: "shadow-md shadow-light-blue-500/20", hover: "hover:shadow-lg hover:shadow-light-blue-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, blue: { backgroud: "bg-blue-500", color: "text-white", shadow: "shadow-md shadow-blue-500/20", hover: "hover:shadow-lg hover:shadow-blue-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, indigo: { backgroud: "bg-indigo-500", color: "text-white", shadow: "shadow-md shadow-indigo-500/20", hover: "hover:shadow-lg hover:shadow-indigo-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, "deep-purple": { backgroud: "bg-deep-purple-500", color: "text-white", shadow: "shadow-md shadow-deep-purple-500/20", hover: "hover:shadow-lg hover:shadow-deep-purple-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, purple: { backgroud: "bg-purple-500", color: "text-white", shadow: "shadow-md shadow-purple-500/20", hover: "hover:shadow-lg hover:shadow-purple-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, pink: { backgroud: "bg-pink-500", color: "text-white", shadow: "shadow-md shadow-pink-500/20", hover: "hover:shadow-lg hover:shadow-pink-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, red: { backgroud: "bg-red-500", color: "text-white", shadow: "shadow-md shadow-red-500/20", hover: "hover:shadow-lg hover:shadow-red-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" } }, _default = buttonFilled;
+    var buttonFilled = { white: { background: "bg-white", color: "text-blue-gray-900", shadow: "shadow-md shadow-blue-gray-500/10", hover: "hover:shadow-lg hover:shadow-blue-gray-500/20", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, black: { background: "bg-gray-900", color: "text-white", shadow: "shadow-md shadow-gray-900/10", hover: "hover:shadow-lg hover:shadow-gray-900/20", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, "blue-gray": { background: "bg-blue-gray-500", color: "text-white", shadow: "shadow-md shadow-blue-gray-500/20", hover: "hover:shadow-lg hover:shadow-blue-gray-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, gray: { background: "bg-gray-900", color: "text-white", shadow: "shadow-md shadow-gray-900/10", hover: "hover:shadow-lg hover:shadow-gray-900/20", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, brown: { background: "bg-brown-500", color: "text-white", shadow: "shadow-md shadow-brown-500/20", hover: "hover:shadow-lg hover:shadow-brown-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, "deep-orange": { background: "bg-deep-orange-500", color: "text-white", shadow: "shadow-md shadow-deep-orange-500/20", hover: "hover:shadow-lg hover:shadow-deep-orange-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, orange: { background: "bg-orange-500", color: "text-white", shadow: "shadow-md shadow-orange-500/20", hover: "hover:shadow-lg hover:shadow-orange-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, amber: { background: "bg-amber-500", color: "text-black", shadow: "shadow-md shadow-amber-500/20", hover: "hover:shadow-lg hover:shadow-amber-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, yellow: { background: "bg-yellow-500", color: "text-black", shadow: "shadow-md shadow-yellow-500/20", hover: "hover:shadow-lg hover:shadow-yellow-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, lime: { background: "bg-lime-500", color: "text-black", shadow: "shadow-md shadow-lime-500/20", hover: "hover:shadow-lg hover:shadow-lime-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, "light-green": { background: "bg-light-green-500", color: "text-white", shadow: "shadow-md shadow-light-green-500/20", hover: "hover:shadow-lg hover:shadow-light-green-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, green: { background: "bg-green-500", color: "text-white", shadow: "shadow-md shadow-green-500/20", hover: "hover:shadow-lg hover:shadow-green-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, teal: { background: "bg-teal-500", color: "text-white", shadow: "shadow-md shadow-teal-500/20", hover: "hover:shadow-lg hover:shadow-teal-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, cyan: { background: "bg-cyan-500", color: "text-white", shadow: "shadow-md shadow-cyan-500/20", hover: "hover:shadow-lg hover:shadow-cyan-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, "light-blue": { background: "bg-light-blue-500", color: "text-white", shadow: "shadow-md shadow-light-blue-500/20", hover: "hover:shadow-lg hover:shadow-light-blue-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, blue: { background: "bg-blue-500", color: "text-white", shadow: "shadow-md shadow-blue-500/20", hover: "hover:shadow-lg hover:shadow-blue-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, indigo: { background: "bg-indigo-500", color: "text-white", shadow: "shadow-md shadow-indigo-500/20", hover: "hover:shadow-lg hover:shadow-indigo-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, "deep-purple": { background: "bg-deep-purple-500", color: "text-white", shadow: "shadow-md shadow-deep-purple-500/20", hover: "hover:shadow-lg hover:shadow-deep-purple-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, purple: { background: "bg-purple-500", color: "text-white", shadow: "shadow-md shadow-purple-500/20", hover: "hover:shadow-lg hover:shadow-purple-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, pink: { background: "bg-pink-500", color: "text-white", shadow: "shadow-md shadow-pink-500/20", hover: "hover:shadow-lg hover:shadow-pink-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, red: { background: "bg-red-500", color: "text-white", shadow: "shadow-md shadow-red-500/20", hover: "hover:shadow-lg hover:shadow-red-500/40", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" } }, _default = buttonFilled;
   }
 });
 
@@ -16572,7 +16572,7 @@ var require_buttonGradient = __commonJS({
     Object.defineProperty(exports, "default", { enumerable: !0, get: function() {
       return _default;
     } });
-    var buttonGradient = { white: { backgroud: "bg-white", color: "text-blue-gray-900", shadow: "shadow-md shadow-blue-gray-500/10", hover: "hover:shadow-lg hover:shadow-blue-gray-500/20", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, "blue-gray": { backgroud: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400", color: "text-white", shadow: "shadow-md shadow-blue-gray-500/20", hover: "hover:shadow-lg hover:shadow-blue-gray-500/40", active: "active:opacity-[0.85]" }, gray: { backgroud: "bg-gradient-to-tr from-gray-900 to-gray-800", color: "text-white", shadow: "shadow-md shadow-gray-900/10", hover: "hover:shadow-lg hover:shadow-gray-900/20", active: "active:opacity-[0.85]" }, brown: { backgroud: "bg-gradient-to-tr from-brown-600 to-brown-400", color: "text-white", shadow: "shadow-md shadow-brown-500/20", hover: "hover:shadow-lg hover:shadow-brown-500/40", active: "active:opacity-[0.85]" }, "deep-orange": { backgroud: "bg-gradient-to-tr from-deep-orange-600 to-deep-orange-400", color: "text-white", shadow: "shadow-md shadow-deep-orange-500/20", hover: "hover:shadow-lg hover:shadow-deep-orange-500/40", active: "active:opacity-[0.85]" }, orange: { backgroud: "bg-gradient-to-tr from-orange-600 to-orange-400", color: "text-white", shadow: "shadow-md shadow-orange-500/20", hover: "hover:shadow-lg hover:shadow-orange-500/40", active: "active:opacity-[0.85]" }, amber: { backgroud: "bg-gradient-to-tr from-amber-600 to-amber-400", color: "text-black", shadow: "shadow-md shadow-amber-500/20", hover: "hover:shadow-lg hover:shadow-amber-500/40", active: "active:opacity-[0.85]" }, yellow: { backgroud: "bg-gradient-to-tr from-yellow-600 to-yellow-400", color: "text-black", shadow: "shadow-md shadow-yellow-500/20", hover: "hover:shadow-lg hover:shadow-yellow-500/40", active: "active:opacity-[0.85]" }, lime: { backgroud: "bg-gradient-to-tr from-lime-600 to-lime-400", color: "text-black", shadow: "shadow-md shadow-lime-500/20", hover: "hover:shadow-lg hover:shadow-lime-500/40", active: "active:opacity-[0.85]" }, "light-green": { backgroud: "bg-gradient-to-tr from-light-green-600 to-light-green-400", color: "text-white", shadow: "shadow-md shadow-light-green-500/20", hover: "hover:shadow-lg hover:shadow-light-green-500/40", active: "active:opacity-[0.85]" }, green: { backgroud: "bg-gradient-to-tr from-green-600 to-green-400", color: "text-white", shadow: "shadow-md shadow-green-500/20", hover: "hover:shadow-lg hover:shadow-green-500/40", active: "active:opacity-[0.85]" }, teal: { backgroud: "bg-gradient-to-tr from-teal-600 to-teal-400", color: "text-white", shadow: "shadow-md shadow-teal-500/20", hover: "hover:shadow-lg hover:shadow-teal-500/40", active: "active:opacity-[0.85]" }, cyan: { backgroud: "bg-gradient-to-tr from-cyan-600 to-cyan-400", color: "text-white", shadow: "shadow-md shadow-cyan-500/20", hover: "hover:shadow-lg hover:shadow-cyan-500/40", active: "active:opacity-[0.85]" }, "light-blue": { backgroud: "bg-gradient-to-tr from-light-blue-600 to-light-blue-400", color: "text-white", shadow: "shadow-md shadow-light-blue-500/20", hover: "hover:shadow-lg hover:shadow-light-blue-500/40", active: "active:opacity-[0.85]" }, blue: { backgroud: "bg-gradient-to-tr from-blue-600 to-blue-400", color: "text-white", shadow: "shadow-md shadow-blue-500/20", hover: "hover:shadow-lg hover:shadow-blue-500/40", active: "active:opacity-[0.85]" }, indigo: { backgroud: "bg-gradient-to-tr from-indigo-600 to-indigo-400", color: "text-white", shadow: "shadow-md shadow-indigo-500/20", hover: "hover:shadow-lg hover:shadow-indigo-500/40", active: "active:opacity-[0.85]" }, "deep-purple": { backgroud: "bg-gradient-to-tr from-deep-purple-600 to-deep-purple-400", color: "text-white", shadow: "shadow-md shadow-deep-purple-500/20", hover: "hover:shadow-lg hover:shadow-deep-purple-500/40", active: "active:opacity-[0.85]" }, purple: { backgroud: "bg-gradient-to-tr from-purple-600 to-purple-400", color: "text-white", shadow: "shadow-md shadow-purple-500/20", hover: "hover:shadow-lg hover:shadow-purple-500/40", active: "active:opacity-[0.85]" }, pink: { backgroud: "bg-gradient-to-tr from-pink-600 to-pink-400", color: "text-white", shadow: "shadow-md shadow-pink-500/20", hover: "hover:shadow-lg hover:shadow-pink-500/40", active: "active:opacity-[0.85]" }, red: { backgroud: "bg-gradient-to-tr from-red-600 to-red-400", color: "text-white", shadow: "shadow-md shadow-red-500/20", hover: "hover:shadow-lg hover:shadow-red-500/40", active: "active:opacity-[0.85]" } }, _default = buttonGradient;
+    var buttonGradient = { white: { background: "bg-white", color: "text-blue-gray-900", shadow: "shadow-md shadow-blue-gray-500/10", hover: "hover:shadow-lg hover:shadow-blue-gray-500/20", focus: "focus:opacity-[0.85] focus:shadow-none", active: "active:opacity-[0.85] active:shadow-none" }, black: { background: "bg-gradient-to-tr from-gray-900 to-gray-800", color: "text-white", shadow: "shadow-md shadow-gray-900/10", hover: "hover:shadow-lg hover:shadow-gray-900/20", active: "active:opacity-[0.85]" }, "blue-gray": { background: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400", color: "text-white", shadow: "shadow-md shadow-blue-gray-500/20", hover: "hover:shadow-lg hover:shadow-blue-gray-500/40", active: "active:opacity-[0.85]" }, gray: { background: "bg-gradient-to-tr from-gray-900 to-gray-800", color: "text-white", shadow: "shadow-md shadow-gray-900/10", hover: "hover:shadow-lg hover:shadow-gray-900/20", active: "active:opacity-[0.85]" }, brown: { background: "bg-gradient-to-tr from-brown-600 to-brown-400", color: "text-white", shadow: "shadow-md shadow-brown-500/20", hover: "hover:shadow-lg hover:shadow-brown-500/40", active: "active:opacity-[0.85]" }, "deep-orange": { background: "bg-gradient-to-tr from-deep-orange-600 to-deep-orange-400", color: "text-white", shadow: "shadow-md shadow-deep-orange-500/20", hover: "hover:shadow-lg hover:shadow-deep-orange-500/40", active: "active:opacity-[0.85]" }, orange: { background: "bg-gradient-to-tr from-orange-600 to-orange-400", color: "text-white", shadow: "shadow-md shadow-orange-500/20", hover: "hover:shadow-lg hover:shadow-orange-500/40", active: "active:opacity-[0.85]" }, amber: { background: "bg-gradient-to-tr from-amber-600 to-amber-400", color: "text-black", shadow: "shadow-md shadow-amber-500/20", hover: "hover:shadow-lg hover:shadow-amber-500/40", active: "active:opacity-[0.85]" }, yellow: { background: "bg-gradient-to-tr from-yellow-600 to-yellow-400", color: "text-black", shadow: "shadow-md shadow-yellow-500/20", hover: "hover:shadow-lg hover:shadow-yellow-500/40", active: "active:opacity-[0.85]" }, lime: { background: "bg-gradient-to-tr from-lime-600 to-lime-400", color: "text-black", shadow: "shadow-md shadow-lime-500/20", hover: "hover:shadow-lg hover:shadow-lime-500/40", active: "active:opacity-[0.85]" }, "light-green": { background: "bg-gradient-to-tr from-light-green-600 to-light-green-400", color: "text-white", shadow: "shadow-md shadow-light-green-500/20", hover: "hover:shadow-lg hover:shadow-light-green-500/40", active: "active:opacity-[0.85]" }, green: { background: "bg-gradient-to-tr from-green-600 to-green-400", color: "text-white", shadow: "shadow-md shadow-green-500/20", hover: "hover:shadow-lg hover:shadow-green-500/40", active: "active:opacity-[0.85]" }, teal: { background: "bg-gradient-to-tr from-teal-600 to-teal-400", color: "text-white", shadow: "shadow-md shadow-teal-500/20", hover: "hover:shadow-lg hover:shadow-teal-500/40", active: "active:opacity-[0.85]" }, cyan: { background: "bg-gradient-to-tr from-cyan-600 to-cyan-400", color: "text-white", shadow: "shadow-md shadow-cyan-500/20", hover: "hover:shadow-lg hover:shadow-cyan-500/40", active: "active:opacity-[0.85]" }, "light-blue": { background: "bg-gradient-to-tr from-light-blue-600 to-light-blue-400", color: "text-white", shadow: "shadow-md shadow-light-blue-500/20", hover: "hover:shadow-lg hover:shadow-light-blue-500/40", active: "active:opacity-[0.85]" }, blue: { background: "bg-gradient-to-tr from-blue-600 to-blue-400", color: "text-white", shadow: "shadow-md shadow-blue-500/20", hover: "hover:shadow-lg hover:shadow-blue-500/40", active: "active:opacity-[0.85]" }, indigo: { background: "bg-gradient-to-tr from-indigo-600 to-indigo-400", color: "text-white", shadow: "shadow-md shadow-indigo-500/20", hover: "hover:shadow-lg hover:shadow-indigo-500/40", active: "active:opacity-[0.85]" }, "deep-purple": { background: "bg-gradient-to-tr from-deep-purple-600 to-deep-purple-400", color: "text-white", shadow: "shadow-md shadow-deep-purple-500/20", hover: "hover:shadow-lg hover:shadow-deep-purple-500/40", active: "active:opacity-[0.85]" }, purple: { background: "bg-gradient-to-tr from-purple-600 to-purple-400", color: "text-white", shadow: "shadow-md shadow-purple-500/20", hover: "hover:shadow-lg hover:shadow-purple-500/40", active: "active:opacity-[0.85]" }, pink: { background: "bg-gradient-to-tr from-pink-600 to-pink-400", color: "text-white", shadow: "shadow-md shadow-pink-500/20", hover: "hover:shadow-lg hover:shadow-pink-500/40", active: "active:opacity-[0.85]" }, red: { background: "bg-gradient-to-tr from-red-600 to-red-400", color: "text-white", shadow: "shadow-md shadow-red-500/20", hover: "hover:shadow-lg hover:shadow-red-500/40", active: "active:opacity-[0.85]" } }, _default = buttonGradient;
   }
 });
 
@@ -16584,7 +16584,7 @@ var require_buttonOutlined = __commonJS({
     Object.defineProperty(exports, "default", { enumerable: !0, get: function() {
       return _default;
     } });
-    var buttonOutlined = { white: { border: "border border-white", color: "text-white", hover: "hover:opacity-75", focus: "focus:ring focus:ring-white/50", active: "active:opacity-[0.85]" }, "blue-gray": { border: "border border-blue-gray-500", color: "text-blue-gray-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-blue-gray-200", active: "active:opacity-[0.85]" }, gray: { border: "border border-gray-900", color: "text-gray-900", hover: "hover:opacity-75", focus: "focus:ring focus:ring-gray-300", active: "active:opacity-[0.85]" }, brown: { border: "border border-brown-500", color: "text-brown-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-brown-200", active: "active:opacity-[0.85]" }, "deep-orange": { border: "border border-deep-orange-500", color: "text-deep-orange-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-deep-orange-200", active: "active:opacity-[0.85]" }, orange: { border: "border border-orange-500", color: "text-orange-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-orange-200", active: "active:opacity-[0.85]" }, amber: { border: "border border-amber-500", color: "text-amber-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-amber-200", active: "active:opacity-[0.85]" }, yellow: { border: "border border-yellow-500", color: "text-yellow-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-yellow-200", active: "active:opacity-[0.85]" }, lime: { border: "border border-lime-500", color: "text-lime-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-lime-200", active: "active:opacity-[0.85]" }, "light-green": { border: "border border-light-green-500", color: "text-light-green-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-light-green-200", active: "active:opacity-[0.85]" }, green: { border: "border border-green-500", color: "text-green-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-green-200", active: "active:opacity-[0.85]" }, teal: { border: "border border-teal-500", color: "text-teal-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-teal-200", active: "active:opacity-[0.85]" }, cyan: { border: "border border-cyan-500", color: "text-cyan-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-cyan-200", active: "active:opacity-[0.85]" }, "light-blue": { border: "border border-light-blue-500", color: "text-light-blue-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-light-blue-200", active: "active:opacity-[0.85]" }, blue: { border: "border border-blue-500", color: "text-blue-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-blue-200", active: "active:opacity-[0.85]" }, indigo: { border: "border border-indigo-500", color: "text-indigo-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-indigo-200", active: "active:opacity-[0.85]" }, "deep-purple": { border: "border border-deep-purple-500", color: "text-deep-purple-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-deep-purple-200", active: "active:opacity-[0.85]" }, purple: { border: "border border-purple-500", color: "text-purple-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-purple-200", active: "active:opacity-[0.85]" }, pink: { border: "border border-pink-500", color: "text-pink-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-pink-200", active: "active:opacity-[0.85]" }, red: { border: "border border-red-500", color: "text-red-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-red-200", active: "active:opacity-[0.85]" } }, _default = buttonOutlined;
+    var buttonOutlined = { white: { border: "border border-white", color: "text-white", hover: "hover:opacity-75", focus: "focus:ring focus:ring-white/50", active: "active:opacity-[0.85]" }, black: { border: "border border-gray-900", color: "text-gray-900", hover: "hover:opacity-75", focus: "focus:ring focus:ring-gray-300", active: "active:opacity-[0.85]" }, "blue-gray": { border: "border border-blue-gray-500", color: "text-blue-gray-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-blue-gray-200", active: "active:opacity-[0.85]" }, gray: { border: "border border-gray-900", color: "text-gray-900", hover: "hover:opacity-75", focus: "focus:ring focus:ring-gray-300", active: "active:opacity-[0.85]" }, brown: { border: "border border-brown-500", color: "text-brown-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-brown-200", active: "active:opacity-[0.85]" }, "deep-orange": { border: "border border-deep-orange-500", color: "text-deep-orange-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-deep-orange-200", active: "active:opacity-[0.85]" }, orange: { border: "border border-orange-500", color: "text-orange-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-orange-200", active: "active:opacity-[0.85]" }, amber: { border: "border border-amber-500", color: "text-amber-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-amber-200", active: "active:opacity-[0.85]" }, yellow: { border: "border border-yellow-500", color: "text-yellow-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-yellow-200", active: "active:opacity-[0.85]" }, lime: { border: "border border-lime-500", color: "text-lime-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-lime-200", active: "active:opacity-[0.85]" }, "light-green": { border: "border border-light-green-500", color: "text-light-green-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-light-green-200", active: "active:opacity-[0.85]" }, green: { border: "border border-green-500", color: "text-green-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-green-200", active: "active:opacity-[0.85]" }, teal: { border: "border border-teal-500", color: "text-teal-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-teal-200", active: "active:opacity-[0.85]" }, cyan: { border: "border border-cyan-500", color: "text-cyan-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-cyan-200", active: "active:opacity-[0.85]" }, "light-blue": { border: "border border-light-blue-500", color: "text-light-blue-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-light-blue-200", active: "active:opacity-[0.85]" }, blue: { border: "border border-blue-500", color: "text-blue-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-blue-200", active: "active:opacity-[0.85]" }, indigo: { border: "border border-indigo-500", color: "text-indigo-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-indigo-200", active: "active:opacity-[0.85]" }, "deep-purple": { border: "border border-deep-purple-500", color: "text-deep-purple-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-deep-purple-200", active: "active:opacity-[0.85]" }, purple: { border: "border border-purple-500", color: "text-purple-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-purple-200", active: "active:opacity-[0.85]" }, pink: { border: "border border-pink-500", color: "text-pink-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-pink-200", active: "active:opacity-[0.85]" }, red: { border: "border border-red-500", color: "text-red-500", hover: "hover:opacity-75", focus: "focus:ring focus:ring-red-200", active: "active:opacity-[0.85]" } }, _default = buttonOutlined;
   }
 });
 
@@ -16596,7 +16596,7 @@ var require_buttonText = __commonJS({
     Object.defineProperty(exports, "default", { enumerable: !0, get: function() {
       return _default;
     } });
-    var buttonText = { white: { color: "text-white", hover: "hover:bg-white/10", active: "active:bg-white/30" }, "blue-gray": { color: "text-blue-gray-500", hover: "hover:bg-blue-gray-500/10", active: "active:bg-blue-gray-500/30" }, gray: { color: "text-gray-900", hover: "hover:bg-gray-900/10", active: "active:bg-gray-900/20" }, brown: { color: "text-brown-500", hover: "hover:bg-brown-500/10", active: "active:bg-brown-500/30" }, "deep-orange": { color: "text-deep-orange-500", hover: "hover:bg-deep-orange-500/10", active: "active:bg-deep-orange-500/30" }, orange: { color: "text-orange-500", hover: "hover:bg-orange-500/10", active: "active:bg-orange-500/30" }, amber: { color: "text-amber-500", hover: "hover:bg-amber-500/10", active: "active:bg-amber-500/30" }, yellow: { color: "text-yellow-500", hover: "hover:bg-yellow-500/10", active: "active:bg-yellow-500/30" }, lime: { color: "text-lime-500", hover: "hover:bg-lime-500/10", active: "active:bg-lime-500/30" }, "light-green": { color: "text-light-green-500", hover: "hover:bg-light-green-500/10", active: "active:bg-light-green-500/30" }, green: { color: "text-green-500", hover: "hover:bg-green-500/10", active: "active:bg-green-500/30" }, teal: { color: "text-teal-500", hover: "hover:bg-teal-500/10", active: "active:bg-teal-500/30" }, cyan: { color: "text-cyan-500", hover: "hover:bg-cyan-500/10", active: "active:bg-cyan-500/30" }, "light-blue": { color: "text-light-blue-500", hover: "hover:bg-light-blue-500/10", active: "active:bg-light-blue-500/30" }, blue: { color: "text-blue-500", hover: "hover:bg-blue-500/10", active: "active:bg-blue-500/30" }, indigo: { color: "text-indigo-500", hover: "hover:bg-indigo-500/10", active: "active:bg-indigo-500/30" }, "deep-purple": { color: "text-deep-purple-500", hover: "hover:bg-deep-purple-500/10", active: "active:bg-deep-purple-500/30" }, purple: { color: "text-purple-500", hover: "hover:bg-purple-500/10", active: "active:bg-purple-500/30" }, pink: { color: "text-pink-500", hover: "hover:bg-pink-500/10", active: "active:bg-pink-500/30" }, red: { color: "text-red-500", hover: "hover:bg-red-500/10", active: "active:bg-red-500/30" } }, _default = buttonText;
+    var buttonText = { white: { color: "text-white", hover: "hover:bg-white/10", active: "active:bg-white/30" }, black: { color: "text-gray-900", hover: "hover:bg-gray-900/10", active: "active:bg-gray-900/20" }, "blue-gray": { color: "text-blue-gray-500", hover: "hover:bg-blue-gray-500/10", active: "active:bg-blue-gray-500/30" }, gray: { color: "text-gray-900", hover: "hover:bg-gray-900/10", active: "active:bg-gray-900/20" }, brown: { color: "text-brown-500", hover: "hover:bg-brown-500/10", active: "active:bg-brown-500/30" }, "deep-orange": { color: "text-deep-orange-500", hover: "hover:bg-deep-orange-500/10", active: "active:bg-deep-orange-500/30" }, orange: { color: "text-orange-500", hover: "hover:bg-orange-500/10", active: "active:bg-orange-500/30" }, amber: { color: "text-amber-500", hover: "hover:bg-amber-500/10", active: "active:bg-amber-500/30" }, yellow: { color: "text-yellow-500", hover: "hover:bg-yellow-500/10", active: "active:bg-yellow-500/30" }, lime: { color: "text-lime-500", hover: "hover:bg-lime-500/10", active: "active:bg-lime-500/30" }, "light-green": { color: "text-light-green-500", hover: "hover:bg-light-green-500/10", active: "active:bg-light-green-500/30" }, green: { color: "text-green-500", hover: "hover:bg-green-500/10", active: "active:bg-green-500/30" }, teal: { color: "text-teal-500", hover: "hover:bg-teal-500/10", active: "active:bg-teal-500/30" }, cyan: { color: "text-cyan-500", hover: "hover:bg-cyan-500/10", active: "active:bg-cyan-500/30" }, "light-blue": { color: "text-light-blue-500", hover: "hover:bg-light-blue-500/10", active: "active:bg-light-blue-500/30" }, blue: { color: "text-blue-500", hover: "hover:bg-blue-500/10", active: "active:bg-blue-500/30" }, indigo: { color: "text-indigo-500", hover: "hover:bg-indigo-500/10", active: "active:bg-indigo-500/30" }, "deep-purple": { color: "text-deep-purple-500", hover: "hover:bg-deep-purple-500/10", active: "active:bg-deep-purple-500/30" }, purple: { color: "text-purple-500", hover: "hover:bg-purple-500/10", active: "active:bg-purple-500/30" }, pink: { color: "text-pink-500", hover: "hover:bg-pink-500/10", active: "active:bg-pink-500/30" }, red: { color: "text-red-500", hover: "hover:bg-red-500/10", active: "active:bg-red-500/30" } }, _default = buttonText;
   }
 });
 
@@ -16623,6 +16623,8 @@ var require_button = __commonJS({
       return propTypesClassName;
     }, propTypesChildren: function() {
       return propTypesChildren;
+    }, propTypesLoading: function() {
+      return propTypesLoading;
     } });
     var _propTypes = _interopRequireDefault(require_prop_types()), _generic = require_generic();
     function _arrayLikeToArray2(arr, len) {
@@ -16659,7 +16661,7 @@ var require_button = __commonJS({
           return _arrayLikeToArray2(o10, minLen);
       }
     }
-    var propTypesVariant = ["filled", "outlined", "gradient", "text"], propTypesSize = ["sm", "md", "lg"], propTypesColor = ["white"].concat(_toConsumableArray(_generic.propTypesColors)), propTypesFullWidth = _propTypes.default.bool, propTypesRipple = _propTypes.default.bool, propTypesClassName = _propTypes.default.string, propTypesChildren = _propTypes.default.node.isRequired;
+    var propTypesVariant = ["filled", "outlined", "gradient", "text"], propTypesSize = ["sm", "md", "lg"], propTypesColor = ["white", "black"].concat(_toConsumableArray(_generic.propTypesColors)), propTypesFullWidth = _propTypes.default.bool, propTypesRipple = _propTypes.default.bool, propTypesClassName = _propTypes.default.string, propTypesChildren = _propTypes.default.node.isRequired, propTypesLoading = _propTypes.default.bool;
   }
 });
 
@@ -17190,7 +17192,7 @@ var require_inputOutlined = __commonJS({
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { default: obj };
     }
-    var inputOutlined = { base: { input: { borderWidth: "placeholder-shown:border", borderColor: "placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200", floated: { borderWidth: "border focus:border-2", borderColor: "border-t-transparent focus:border-t-transparent" } }, inputWithIcon: { pr: "!pr-9" }, icon: { top: "top-2/4", right: "right-3", transform: "-translate-y-2/4" }, label: _inputOutlinedLabel.default }, sizes: { md: { container: { height: "h-10" }, input: { fontSize: "text-sm", px: "px-3", py: "py-2.5", borderRadius: "rounded-[7px]" }, label: { lineHeight: "peer-placeholder-shown:leading-[3.75]" }, icon: { width: "w-5", height: "h-5" } }, lg: { container: { height: "h-11" }, input: { fontSize: "text-sm", px: "px-3", py: "py-3", borderRadius: "rounded-md" }, label: { lineHeight: "peer-placeholder-shown:leading-[4.1]" }, icon: { width: "w-6", height: "h-6" } } }, colors: { input: _inputOutlinedColors.default, label: _inputOutlinedLabelColors.default }, error: { input: { borderColor: "border-red-500 placeholder-shown:border-t-red-500 placeholder-shown:border-red-500", borderColorFocused: "focus:border-red-500" }, label: { color: "text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500", before: "before:border-red-500 peer-focus:before:border-red-500", after: "after:border-red-500 peer-focus:after:border-red-500" } }, success: { input: { borderColor: "border-green-500 placeholder-shown:border-t-green-500 placeholder-shown:border-green-500", borderColorFocused: "focus:border-green-500" }, label: { color: "text-green-500 peer-focus:text-green-500 peer-placeholder-shown:text-green-500", before: "before:border-green-500 peer-focus:before:border-green-500", after: "after:border-green-500 peer-focus:after:border-green-500" } }, shrink: { input: { borderTop: "!border-t-transparent" }, label: { fontSize: "!text-[11px]", lineHeight: "!leading-tight", borderColor: "before:!border-blue-gray-200 after:!border-blue-gray-200" } } }, _default = inputOutlined;
+    var inputOutlined = { base: { input: { borderWidth: "placeholder-shown:border", borderColor: "placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200", floated: { borderWidth: "border focus:border-2", borderColor: "border-t-transparent focus:border-t-transparent" }, placeholder: "placeholder:opacity-0 focus:placeholder:opacity-100" }, inputWithIcon: { pr: "!pr-9" }, icon: { top: "top-2/4", right: "right-3", transform: "-translate-y-2/4" }, label: _inputOutlinedLabel.default }, sizes: { md: { container: { height: "h-10" }, input: { fontSize: "text-sm", px: "px-3", py: "py-2.5", borderRadius: "rounded-[7px]" }, label: { lineHeight: "peer-placeholder-shown:leading-[3.75]" }, icon: { width: "w-5", height: "h-5" } }, lg: { container: { height: "h-11" }, input: { fontSize: "text-sm", px: "px-3", py: "py-3", borderRadius: "rounded-md" }, label: { lineHeight: "peer-placeholder-shown:leading-[4.1]" }, icon: { width: "w-6", height: "h-6" } } }, colors: { input: _inputOutlinedColors.default, label: _inputOutlinedLabelColors.default }, error: { input: { borderColor: "border-red-500 placeholder-shown:border-t-red-500 placeholder-shown:border-red-500", borderColorFocused: "focus:border-red-500" }, label: { color: "text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500", before: "before:border-red-500 peer-focus:before:border-red-500", after: "after:border-red-500 peer-focus:after:border-red-500" } }, success: { input: { borderColor: "border-green-500 placeholder-shown:border-t-green-500 placeholder-shown:border-green-500", borderColorFocused: "focus:border-green-500" }, label: { color: "text-green-500 peer-focus:text-green-500 peer-placeholder-shown:text-green-500", before: "before:border-green-500 peer-focus:before:border-green-500", after: "after:border-green-500 peer-focus:after:border-green-500" } }, shrink: { input: { borderTop: "!border-t-transparent" }, label: { fontSize: "!text-[11px]", lineHeight: "!leading-tight", borderColor: "before:!border-blue-gray-200 after:!border-blue-gray-200" } } }, _default = inputOutlined;
   }
 });
 
@@ -17242,7 +17244,7 @@ var require_inputStandard = __commonJS({
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { default: obj };
     }
-    var inputStandard = { base: { input: { borderWidth: "border-b", borderColor: "placeholder-shown:border-blue-gray-200" }, inputWithIcon: { pr: "!pr-7" }, icon: { top: "top-2/4", right: "right-0", transform: "-translate-y-1/4" }, label: _inputStandardLabel.default }, sizes: { md: { container: { height: "h-11" }, input: { fontSize: "text-sm", pt: "pt-4", pb: "pb-1.5" }, label: { lineHeight: "peer-placeholder-shown:leading-[4.25]" }, icon: { width: "w-5", height: "h-5" } }, lg: { container: { height: "h-12" }, input: { fontSize: "text-sm", px: "px-px", pt: "pt-5", pb: "pb-2" }, label: { lineHeight: "peer-placeholder-shown:leading-[4.875]" }, icon: { width: "w-6", height: "h-6" } } }, colors: { input: _inputStandardColors.default, label: _inputStandardLabelColors.default }, error: { input: { borderColor: "border-red-500 placeholder-shown:border-red-500", borderColorFocused: "focus:border-red-500" }, label: { color: "text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500", after: "after:border-red-500 peer-focus:after:border-red-500" } }, success: { input: { borderColor: "border-green-500 placeholder-shown:border-green-500", borderColorFocused: "focus:border-green-500" }, label: { color: "text-green-500 peer-focus:text-green-500 peer-placeholder-shown:text-green-500", after: "after:border-green-500 peer-focus:after:border-green-500" } }, shrink: { input: {}, label: { fontSize: "!text-[11px]", lineHeight: "!leading-tight" } } }, _default = inputStandard;
+    var inputStandard = { base: { input: { borderWidth: "border-b", borderColor: "placeholder-shown:border-blue-gray-200", placeholder: "placeholder:opacity-0 focus:placeholder:opacity-100" }, inputWithIcon: { pr: "!pr-7" }, icon: { top: "top-2/4", right: "right-0", transform: "-translate-y-1/4" }, label: _inputStandardLabel.default }, sizes: { md: { container: { height: "h-11" }, input: { fontSize: "text-sm", pt: "pt-4", pb: "pb-1.5" }, label: { lineHeight: "peer-placeholder-shown:leading-[4.25]" }, icon: { width: "w-5", height: "h-5" } }, lg: { container: { height: "h-12" }, input: { fontSize: "text-sm", px: "px-px", pt: "pt-5", pb: "pb-2" }, label: { lineHeight: "peer-placeholder-shown:leading-[4.875]" }, icon: { width: "w-6", height: "h-6" } } }, colors: { input: _inputStandardColors.default, label: _inputStandardLabelColors.default }, error: { input: { borderColor: "border-red-500 placeholder-shown:border-red-500", borderColorFocused: "focus:border-red-500" }, label: { color: "text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500", after: "after:border-red-500 peer-focus:after:border-red-500" } }, success: { input: { borderColor: "border-green-500 placeholder-shown:border-green-500", borderColorFocused: "focus:border-green-500" }, label: { color: "text-green-500 peer-focus:text-green-500 peer-placeholder-shown:text-green-500", after: "after:border-green-500 peer-focus:after:border-green-500" } }, shrink: { input: {}, label: { fontSize: "!text-[11px]", lineHeight: "!leading-tight" } } }, _default = inputStandard;
   }
 });
 
@@ -17389,7 +17391,7 @@ var require_input2 = __commonJS({
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { default: obj };
     }
-    var input = { defaultProps: { variant: "outlined", size: "md", color: "gray", label: "", error: !1, success: !1, icon: void 0, labelProps: void 0, containerProps: void 0, shrink: !1, className: "" }, valid: { variants: _input.propTypesVariant, sizes: _input.propTypesSize, colors: _input.propTypesColor }, styles: { base: { container: { position: "relative", width: "w-full", minWidth: "min-w-[200px]" }, input: { peer: "peer", width: "w-full", height: "h-full", bg: "bg-transparent", color: "text-blue-gray-700", fontFamily: "font-sans", fontWeight: "font-normal", outline: "outline outline-0 focus:outline-0", disabled: "disabled:bg-blue-gray-50 disabled:border-0", transition: "transition-all" }, label: { display: "flex", width: "w-full", height: "h-full", userSelect: "select-none", pointerEvents: "pointer-events-none", position: "absolute", left: "left-0", fontWeight: "font-normal", overflow: "!overflow-visible", textOverflow: "truncate", color: "peer-placeholder-shown:text-blue-gray-500", lineHeight: "leading-tight peer-focus:leading-tight", disabled: "peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500", transition: "transition-all" }, icon: { display: "grid", placeItems: "place-items-center", position: "absolute", color: "text-blue-gray-500" }, asterisk: { display: "inline-block", color: "text-red-500", ml: "ml-0.5" } }, variants: { outlined: _inputOutlined.default, standard: _inputStandard.default, static: _inputStatic.default } } }, _default = input;
+    var input = { defaultProps: { variant: "outlined", size: "md", color: "gray", label: "", error: !1, success: !1, icon: void 0, labelProps: void 0, containerProps: void 0, shrink: !1, className: "" }, valid: { variants: _input.propTypesVariant, sizes: _input.propTypesSize, colors: _input.propTypesColor }, styles: { base: { container: { position: "relative", width: "w-full", minWidth: "min-w-[200px]" }, input: { peer: "peer", width: "w-full", height: "h-full", bg: "bg-transparent", color: "text-blue-gray-700", fontFamily: "font-sans", fontWeight: "font-normal", outline: "outline outline-0 focus:outline-0", disabled: "disabled:bg-blue-gray-50 disabled:border-0 disabled:cursor-not-allowed", transition: "transition-all" }, label: { display: "flex", width: "w-full", height: "h-full", userSelect: "select-none", pointerEvents: "pointer-events-none", position: "absolute", left: "left-0", fontWeight: "font-normal", overflow: "!overflow-visible", textOverflow: "truncate", color: "peer-placeholder-shown:text-blue-gray-500", lineHeight: "leading-tight peer-focus:leading-tight", disabled: "peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500", transition: "transition-all" }, icon: { display: "grid", placeItems: "place-items-center", position: "absolute", color: "text-blue-gray-500" }, asterisk: { display: "inline-block", color: "text-red-500", ml: "ml-0.5" } }, variants: { outlined: _inputOutlined.default, standard: _inputStandard.default, static: _inputStatic.default } } }, _default = input;
   }
 });
 
@@ -17419,7 +17421,7 @@ var require_navbarFilled = __commonJS({
     Object.defineProperty(exports, "default", { enumerable: !0, get: function() {
       return _default;
     } });
-    var navbarFilled = { transparent: { backgroud: "bg-transparent", color: "text-white", boxShadow: "shadow-none" }, white: { backgroud: "bg-white", color: "text-white" }, "blue-gray": { backgroud: "bg-blue-gray-500", color: "text-white" }, gray: { backgroud: "bg-gray-500", color: "text-white" }, brown: { backgroud: "bg-brown-500", color: "text-white" }, "deep-orange": { backgroud: "bg-deep-orange-500", color: "text-white" }, orange: { backgroud: "bg-orange-500", color: "text-white" }, amber: { backgroud: "bg-amber-500", color: "text-black" }, yellow: { backgroud: "bg-yellow-500", color: "text-black" }, lime: { backgroud: "bg-lime-500", color: "text-black" }, "light-green": { backgroud: "bg-light-green-500", color: "text-white" }, green: { backgroud: "bg-green-500", color: "text-white" }, teal: { backgroud: "bg-teal-500", color: "text-white" }, cyan: { backgroud: "bg-cyan-500", color: "text-white" }, "light-blue": { backgroud: "bg-light-blue-500", color: "text-white" }, blue: { backgroud: "bg-blue-500", color: "text-white" }, indigo: { backgroud: "bg-indigo-500", color: "text-white" }, "deep-purple": { backgroud: "bg-deep-purple-500", color: "text-white" }, purple: { backgroud: "bg-purple-500", color: "text-white" }, pink: { backgroud: "bg-pink-500", color: "text-white" }, red: { backgroud: "bg-red-500", color: "text-white" } }, _default = navbarFilled;
+    var navbarFilled = { transparent: { background: "bg-transparent", color: "text-white", boxShadow: "shadow-none" }, white: { background: "bg-white", color: "text-white" }, "blue-gray": { background: "bg-blue-gray-500", color: "text-white" }, gray: { background: "bg-gray-500", color: "text-white" }, brown: { background: "bg-brown-500", color: "text-white" }, "deep-orange": { background: "bg-deep-orange-500", color: "text-white" }, orange: { background: "bg-orange-500", color: "text-white" }, amber: { background: "bg-amber-500", color: "text-black" }, yellow: { background: "bg-yellow-500", color: "text-black" }, lime: { background: "bg-lime-500", color: "text-black" }, "light-green": { background: "bg-light-green-500", color: "text-white" }, green: { background: "bg-green-500", color: "text-white" }, teal: { background: "bg-teal-500", color: "text-white" }, cyan: { background: "bg-cyan-500", color: "text-white" }, "light-blue": { background: "bg-light-blue-500", color: "text-white" }, blue: { background: "bg-blue-500", color: "text-white" }, indigo: { background: "bg-indigo-500", color: "text-white" }, "deep-purple": { background: "bg-deep-purple-500", color: "text-white" }, purple: { background: "bg-purple-500", color: "text-white" }, pink: { background: "bg-pink-500", color: "text-white" }, red: { background: "bg-red-500", color: "text-white" } }, _default = navbarFilled;
   }
 });
 
@@ -17431,7 +17433,7 @@ var require_navbarGradient = __commonJS({
     Object.defineProperty(exports, "default", { enumerable: !0, get: function() {
       return _default;
     } });
-    var navbarGradient = { transparent: { backgroud: "bg-transparent", color: "text-blue-gray-900", boxShadow: "shadow-none" }, white: { backgroud: "bg-white", color: "text-blue-gray-900" }, "blue-gray": { backgroud: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400", color: "text-white" }, gray: { backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400", color: "text-white" }, brown: { backgroud: "bg-gradient-to-tr from-brown-600 to-brown-400", color: "text-white" }, "deep-orange": { backgroud: "bg-gradient-to-tr from-deep-orange-600 to-deep-orange-400", color: "text-white" }, orange: { backgroud: "bg-gradient-to-tr from-orange-600 to-orange-400", color: "text-white" }, amber: { backgroud: "bg-gradient-to-tr from-amber-600 to-amber-400", color: "text-black" }, yellow: { backgroud: "bg-gradient-to-tr from-yellow-600 to-yellow-400", color: "text-black" }, lime: { backgroud: "bg-gradient-to-tr from-lime-600 to-lime-400", color: "text-black" }, "light-green": { backgroud: "bg-gradient-to-tr from-light-green-600 to-light-green-400", color: "text-white" }, green: { backgroud: "bg-gradient-to-tr from-green-600 to-green-400", color: "text-white" }, teal: { backgroud: "bg-gradient-to-tr from-teal-600 to-teal-400", color: "text-white" }, cyan: { backgroud: "bg-gradient-to-tr from-cyan-600 to-cyan-400", color: "text-white" }, "light-blue": { backgroud: "bg-gradient-to-tr from-light-blue-600 to-light-blue-400", color: "text-white" }, blue: { backgroud: "bg-gradient-to-tr from-blue-600 to-blue-400", color: "text-white" }, indigo: { backgroud: "bg-gradient-to-tr from-indigo-600 to-indigo-400", color: "text-white" }, "deep-purple": { backgroud: "bg-gradient-to-tr from-deep-purple-600 to-deep-purple-400", color: "text-white" }, purple: { backgroud: "bg-gradient-to-tr from-purple-600 to-purple-400", color: "text-white" }, pink: { backgroud: "bg-gradient-to-tr from-pink-600 to-pink-400", color: "text-white" }, red: { backgroud: "bg-gradient-to-tr from-red-600 to-red-400", color: "text-white" } }, _default = navbarGradient;
+    var navbarGradient = { transparent: { background: "bg-transparent", color: "text-blue-gray-900", boxShadow: "shadow-none" }, white: { background: "bg-white", color: "text-blue-gray-900" }, "blue-gray": { background: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400", color: "text-white" }, gray: { background: "bg-gradient-to-tr from-gray-600 to-gray-400", color: "text-white" }, brown: { background: "bg-gradient-to-tr from-brown-600 to-brown-400", color: "text-white" }, "deep-orange": { background: "bg-gradient-to-tr from-deep-orange-600 to-deep-orange-400", color: "text-white" }, orange: { background: "bg-gradient-to-tr from-orange-600 to-orange-400", color: "text-white" }, amber: { background: "bg-gradient-to-tr from-amber-600 to-amber-400", color: "text-black" }, yellow: { background: "bg-gradient-to-tr from-yellow-600 to-yellow-400", color: "text-black" }, lime: { background: "bg-gradient-to-tr from-lime-600 to-lime-400", color: "text-black" }, "light-green": { background: "bg-gradient-to-tr from-light-green-600 to-light-green-400", color: "text-white" }, green: { background: "bg-gradient-to-tr from-green-600 to-green-400", color: "text-white" }, teal: { background: "bg-gradient-to-tr from-teal-600 to-teal-400", color: "text-white" }, cyan: { background: "bg-gradient-to-tr from-cyan-600 to-cyan-400", color: "text-white" }, "light-blue": { background: "bg-gradient-to-tr from-light-blue-600 to-light-blue-400", color: "text-white" }, blue: { background: "bg-gradient-to-tr from-blue-600 to-blue-400", color: "text-white" }, indigo: { background: "bg-gradient-to-tr from-indigo-600 to-indigo-400", color: "text-white" }, "deep-purple": { background: "bg-gradient-to-tr from-deep-purple-600 to-deep-purple-400", color: "text-white" }, purple: { background: "bg-gradient-to-tr from-purple-600 to-purple-400", color: "text-white" }, pink: { background: "bg-gradient-to-tr from-pink-600 to-pink-400", color: "text-white" }, red: { background: "bg-gradient-to-tr from-red-600 to-red-400", color: "text-white" } }, _default = navbarGradient;
   }
 });
 
@@ -17894,7 +17896,7 @@ var require_select2 = __commonJS({
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { default: obj };
     }
-    var select = { defaultProps: { variant: "outlined", color: "gray", size: "md", label: "", error: !1, success: !1, arrow: void 0, value: void 0, onChange: void 0, selected: void 0, offset: 5, dismiss: {}, animate: { unmount: {}, mount: {} }, autoHeight: !1, lockScroll: !1, labelProps: {}, menuProps: {}, className: "", disabled: !1, containerProps: void 0 }, valid: { variants: _select.propTypesVariant, sizes: _select.propTypesSize, colors: _select.propTypesColor }, styles: { base: { container: { position: "relative", width: "w-full", minWidth: "min-w-[200px]" }, select: { peer: "peer", width: "w-full", height: "h-full", bg: "bg-transparent", color: "text-blue-gray-700", fontFamily: "font-sans", fontWeight: "font-normal", textAlign: "text-left", outline: "outline outline-0 focus:outline-0", disabled: "disabled:bg-blue-gray-50 disabled:border-0", transition: "transition-all" }, arrow: { initial: { display: "grid", placeItems: "place-items-center", position: "absolute", top: "top-2/4", right: "right-2", pt: "pt-px", width: "w-5", height: "h-5", color: "text-blue-gray-400", transform: "rotate-0 -translate-y-2/4", transition: "transition-all" }, active: { transform: "rotate-180", mt: "mt-px" } }, label: { display: "flex", width: "w-full", height: "h-full", userSelect: "select-none", pointerEvents: "pointer-events-none", position: "absolute", left: "left-0", fontWeight: "font-normal", transition: "transition-all" }, menu: { width: "w-full", maxHeight: "max-h-96", bg: "bg-white", p: "p-3", border: "border border-blue-gray-50", borderRadius: "rounded-md", boxShadow: "shadow-lg shadow-blue-gray-500/10", fontFamily: "font-sans", fontSize: "text-sm", fontWeight: "font-normal", color: "text-blue-gray-500", overflow: "overflow-auto", outline: "focus:outline-none" }, option: { initial: { pt: "pt-[9px]", pb: "pb-2", px: "px-3", borderRadius: "rounded-md", lightHeight: "leading-tight", cursor: "cursor-pointer", userSelect: "select-none", background: "hover:bg-blue-gray-50 focus:bg-blue-gray-50", opacity: "hover:bg-opacity-80 focus:bg-opacity-80", color: "hover:text-blue-gray-900 focus:text-blue-gray-900", outline: "outline outline-0", transition: "transition-all" }, active: { bg: "bg-blue-gray-50 bg-opacity-80", color: "text-blue-gray-900" }, disabled: { opacity: "opacity-50", cursor: "cursor-not-allowed", userSelect: "select-none", pointerEvents: "pointer-events-none" } } }, variants: { outlined: _selectOutlined.default, standard: _selectStandard.default, static: _selectStatic.default } } }, _default = select;
+    var select = { defaultProps: { variant: "outlined", color: "gray", size: "md", label: "", error: !1, success: !1, arrow: void 0, value: void 0, onChange: void 0, selected: void 0, offset: 5, dismiss: {}, animate: { unmount: {}, mount: {} }, autoHeight: !1, lockScroll: !1, labelProps: {}, menuProps: {}, className: "", disabled: !1, containerProps: void 0 }, valid: { variants: _select.propTypesVariant, sizes: _select.propTypesSize, colors: _select.propTypesColor }, styles: { base: { container: { position: "relative", width: "w-full", minWidth: "min-w-[200px]" }, select: { peer: "peer", width: "w-full", height: "h-full", bg: "bg-transparent", color: "text-blue-gray-700", fontFamily: "font-sans", fontWeight: "font-normal", textAlign: "text-left", outline: "outline outline-0 focus:outline-0", disabled: "disabled:bg-blue-gray-50 disabled:border-0 disabled:cursor-not-allowed", transition: "transition-all" }, arrow: { initial: { display: "grid", placeItems: "place-items-center", position: "absolute", top: "top-2/4", right: "right-2", pt: "pt-px", width: "w-5", height: "h-5", color: "text-blue-gray-400", transform: "rotate-0 -translate-y-2/4", transition: "transition-all" }, active: { transform: "rotate-180", mt: "mt-px" } }, label: { display: "flex", width: "w-full", height: "h-full", userSelect: "select-none", pointerEvents: "pointer-events-none", position: "absolute", left: "left-0", fontWeight: "font-normal", transition: "transition-all" }, menu: { width: "w-full", maxHeight: "max-h-96", bg: "bg-white", p: "p-3", border: "border border-blue-gray-50", borderRadius: "rounded-md", boxShadow: "shadow-lg shadow-blue-gray-500/10", fontFamily: "font-sans", fontSize: "text-sm", fontWeight: "font-normal", color: "text-blue-gray-500", overflow: "overflow-auto", outline: "focus:outline-none" }, option: { initial: { pt: "pt-[9px]", pb: "pb-2", px: "px-3", borderRadius: "rounded-md", lightHeight: "leading-tight", cursor: "cursor-pointer", userSelect: "select-none", background: "hover:bg-blue-gray-50 focus:bg-blue-gray-50", opacity: "hover:bg-opacity-80 focus:bg-opacity-80", color: "hover:text-blue-gray-900 focus:text-blue-gray-900", outline: "outline outline-0", transition: "transition-all" }, active: { bg: "bg-blue-gray-50 bg-opacity-80", color: "text-blue-gray-900" }, disabled: { opacity: "opacity-50", cursor: "cursor-not-allowed", userSelect: "select-none", pointerEvents: "pointer-events-none" } } }, variants: { outlined: _selectOutlined.default, standard: _selectStandard.default, static: _selectStatic.default } } }, _default = select;
   }
 });
 
@@ -18122,7 +18124,7 @@ var require_textareaStandard = __commonJS({
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { default: obj };
     }
-    var textareaStandard = { base: { textarea: { borderWidth: "border-b", borderColor: "placeholder-shown:border-blue-gray-200" }, label: _textareaStandardLabel.default }, sizes: { md: { container: { height: "h-11" }, textarea: { fontSize: "text-sm", pt: "pt-4", pb: "pb-1.5" }, label: { lineHeight: "peer-placeholder-shown:leading-[4.25]" } }, lg: { container: { height: "h-12" }, textarea: { fontSize: "text-sm", px: "px-px", pt: "pt-5", pb: "pb-2" }, label: { lineHeight: "peer-placeholder-shown:leading-[4.875]" } } }, colors: { textarea: _textareaStandardColors.default, label: _textareaStandardLabelColors.default }, error: { textarea: { borderColor: "border-red-500 placeholder-shown:border-red-500", borderColorFocused: "focus:border-red-500" }, label: { color: "text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500", after: "after:border-red-500 peer-focus:after:border-red-500" } }, success: { textarea: { borderColor: "border-green-500 placeholder-shown:border-green-500", borderColorFocused: "focus:border-green-500" }, label: { color: "text-green-500 peer-focus:text-green-500 peer-placeholder-shown:text-green-500", after: "after:border-green-500 peer-focus:after:border-green-500" } }, shrink: { textarea: {}, label: { fontSize: "!text-[11px]", lineHeight: "!leading-tight" } } }, _default = textareaStandard;
+    var textareaStandard = { base: { textarea: { borderWidth: "border-b", borderColor: "placeholder-shown:border-blue-gray-200" }, label: _textareaStandardLabel.default }, sizes: { md: { container: { height: "h-11" }, textarea: { fontSize: "text-sm", pt: "pt-4", pb: "pb-1.5", mt: "mt-1.5" }, label: { lineHeight: "peer-placeholder-shown:leading-[4.25]" } }, lg: { container: { height: "h-12" }, textarea: { fontSize: "text-sm", px: "px-px", pt: "pt-5", pb: "pb-2" }, label: { lineHeight: "peer-placeholder-shown:leading-[4.875]" } } }, colors: { textarea: _textareaStandardColors.default, label: _textareaStandardLabelColors.default }, error: { textarea: { borderColor: "border-red-500 placeholder-shown:border-red-500", borderColorFocused: "focus:border-red-500" }, label: { color: "text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500", after: "after:border-red-500 peer-focus:after:border-red-500" } }, success: { textarea: { borderColor: "border-green-500 placeholder-shown:border-green-500", borderColorFocused: "focus:border-green-500" }, label: { color: "text-green-500 peer-focus:text-green-500 peer-placeholder-shown:text-green-500", after: "after:border-green-500 peer-focus:after:border-green-500" } }, shrink: { textarea: {}, label: { fontSize: "!text-[11px]", lineHeight: "!leading-tight" } } }, _default = textareaStandard;
   }
 });
 
@@ -18174,7 +18176,7 @@ var require_textareaStatic = __commonJS({
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { default: obj };
     }
-    var textareaStatic = { base: { textarea: { borderWidth: "border-b", borderColor: "placeholder-shown:border-blue-gray-200" }, label: _textareaStaticLabel.default }, sizes: { md: { container: { height: "h-11" }, textarea: { fontSize: "text-sm", pt: "pt-4", pb: "pb-1.5" }, label: { lineHeight: "peer-placeholder-shown:leading-tight" } }, lg: { container: { height: "h-12" }, textarea: { fontSize: "text-sm", px: "px-px", pt: "pt-5", pb: "pb-2" }, label: { lineHeight: "peer-placeholder-shown:leading-tight" } } }, colors: { textarea: _textareaStaticColors.default, label: _textareaStaticLabelColors.default }, error: { textarea: { borderColor: "border-red-500 placeholder-shown:border-red-500", borderColorFocused: "focus:border-red-500" }, label: { color: "text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500", after: "after:border-red-500 peer-focus:after:border-red-500" } }, success: { textarea: { borderColor: "border-green-500 placeholder-shown:border-green-500", borderColorFocused: "focus:border-green-500" }, label: { color: "text-green-500 peer-focus:text-green-500 peer-placeholder-shown:text-green-500", after: "after:border-green-500 peer-focus:after:border-green-500" } }, shrink: { textarea: {}, label: {} } }, _default = textareaStatic;
+    var textareaStatic = { base: { textarea: { borderWidth: "border-b", borderColor: "placeholder-shown:border-blue-gray-200" }, label: _textareaStaticLabel.default }, sizes: { md: { container: { height: "h-11" }, textarea: { fontSize: "text-sm", pt: "pt-4", pb: "pb-1.5", mt: "mt-1.5" }, label: { lineHeight: "peer-placeholder-shown:leading-tight" } }, lg: { container: { height: "h-12" }, textarea: { fontSize: "text-sm", px: "px-px", pt: "pt-5", pb: "pb-2" }, label: { lineHeight: "peer-placeholder-shown:leading-tight" } } }, colors: { textarea: _textareaStaticColors.default, label: _textareaStaticLabelColors.default }, error: { textarea: { borderColor: "border-red-500 placeholder-shown:border-red-500", borderColorFocused: "focus:border-red-500" }, label: { color: "text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500", after: "after:border-red-500 peer-focus:after:border-red-500" } }, success: { textarea: { borderColor: "border-green-500 placeholder-shown:border-green-500", borderColorFocused: "focus:border-green-500" }, label: { color: "text-green-500 peer-focus:text-green-500 peer-placeholder-shown:text-green-500", after: "after:border-green-500 peer-focus:after:border-green-500" } }, shrink: { textarea: {}, label: {} } }, _default = textareaStatic;
   }
 });
 
@@ -18196,7 +18198,7 @@ var require_textarea = __commonJS({
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { default: obj };
     }
-    var textarea = { defaultProps: { variant: "outlined", size: "md", color: "gray", label: "", error: !1, success: !1, resize: !0, labelProps: void 0, containerProps: void 0, shrink: !1, className: "" }, valid: { variants: _input.propTypesVariant, sizes: _input.propTypesSize, colors: _input.propTypesColor }, styles: { base: { container: { position: "relative", width: "w-full", minWidth: "min-w-[200px]" }, textarea: { peer: "peer", width: "w-full", height: "h-full", minHeight: "min-h-[100px]", bg: "bg-transparent", color: "text-blue-gray-700", fontFamily: "font-sans", fontWeight: "font-normal", outline: "outline outline-0 focus:outline-0", resize: "resize-y", disabled: "disabled:bg-blue-gray-50 disabled:border-0 disabled:resize-none", transition: "transition-all" }, label: { display: "flex", width: "w-full", height: "h-full", userSelect: "select-none", pointerEvents: "pointer-events-none", position: "absolute", left: "left-0", fontWeight: "font-normal", color: "peer-placeholder-shown:text-blue-gray-500", lineHeight: "leading-tight peer-focus:leading-tight", disabled: "peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500", transition: "transition-all" } }, variants: { outlined: _textareaOutlined.default, standard: _textareaStandard.default, static: _textareaStatic.default } } }, _default = textarea;
+    var textarea = { defaultProps: { variant: "outlined", size: "md", color: "gray", label: "", error: !1, success: !1, resize: !0, labelProps: void 0, containerProps: void 0, shrink: !1, className: "" }, valid: { variants: _input.propTypesVariant, sizes: _input.propTypesSize, colors: _input.propTypesColor }, styles: { base: { container: { position: "relative", width: "w-full", minWidth: "min-w-[200px]" }, textarea: { peer: "peer", width: "w-full", height: "h-full", minHeight: "min-h-[100px]", bg: "bg-transparent", color: "text-blue-gray-700", fontFamily: "font-sans", fontWeight: "font-normal", outline: "outline outline-0 focus:outline-0", resize: "resize-y", disabled: "disabled:bg-blue-gray-50 disabled:border-0 disabled:resize-none disabled:cursor-not-allowed", transition: "transition-all" }, label: { display: "flex", width: "w-full", height: "h-full", userSelect: "select-none", pointerEvents: "pointer-events-none", position: "absolute", left: "left-0", fontWeight: "font-normal", color: "peer-placeholder-shown:text-blue-gray-500", lineHeight: "leading-tight peer-focus:leading-tight", disabled: "peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500", transition: "transition-all" } }, variants: { outlined: _textareaOutlined.default, standard: _textareaStandard.default, static: _textareaStatic.default } } }, _default = textarea;
   }
 });
 
@@ -18357,7 +18359,7 @@ var require_buttonGroupDividerColor = __commonJS({
     Object.defineProperty(exports, "default", { enumerable: !0, get: function() {
       return _default;
     } });
-    var buttonGroupDividerColor = { white: { divideColor: "divide-blue-gray-50" }, "blue-gray": { divideColor: "divide-blue-gray-600" }, gray: { divideColor: "divide-gray-800" }, brown: { divideColor: "divide-brown-600" }, "deep-orange": { divideColor: "divide-deep-orange-600" }, orange: { divideColor: "divide-orange-600" }, amber: { divideColor: "divide-amber-600" }, yellow: { divideColor: "divide-yellow-600" }, lime: { divideColor: "divide-lime-600" }, "light-green": { divideColor: "divide-light-green-600" }, green: { divideColor: "divide-green-600" }, teal: { divideColor: "divide-teal-600" }, cyan: { divideColor: "divide-cyan-600" }, "light-blue": { divideColor: "divide-light-blue-600" }, blue: { divideColor: "divide-blue-600" }, indigo: { divideColor: "divide-indigo-600" }, "deep-purple": { divideColor: "divide-deep-purple-600" }, purple: { divideColor: "divide-purple-600" }, pink: { divideColor: "divide-pink-600" }, red: { divideColor: "divide-red-600" } }, _default = buttonGroupDividerColor;
+    var buttonGroupDividerColor = { white: { divideColor: "divide-blue-gray-50" }, black: { divideColor: "divide-gray-800" }, "blue-gray": { divideColor: "divide-blue-gray-600" }, gray: { divideColor: "divide-gray-800" }, brown: { divideColor: "divide-brown-600" }, "deep-orange": { divideColor: "divide-deep-orange-600" }, orange: { divideColor: "divide-orange-600" }, amber: { divideColor: "divide-amber-600" }, yellow: { divideColor: "divide-yellow-600" }, lime: { divideColor: "divide-lime-600" }, "light-green": { divideColor: "divide-light-green-600" }, green: { divideColor: "divide-green-600" }, teal: { divideColor: "divide-teal-600" }, cyan: { divideColor: "divide-cyan-600" }, "light-blue": { divideColor: "divide-light-blue-600" }, blue: { divideColor: "divide-blue-600" }, indigo: { divideColor: "divide-indigo-600" }, "deep-purple": { divideColor: "divide-deep-purple-600" }, purple: { divideColor: "divide-purple-600" }, pink: { divideColor: "divide-pink-600" }, red: { divideColor: "divide-red-600" } }, _default = buttonGroupDividerColor;
   }
 });
 
@@ -19410,8 +19412,8 @@ var require_tslib = __commonJS({
         factory(createExporter(root, createExporter(exports2)));
       }) : typeof module == "object" && typeof module.exports == "object" ? factory(createExporter(root, createExporter(module.exports))) : factory(createExporter(root));
       function createExporter(exports2, previous) {
-        return exports2 !== root && (typeof Object.create == "function" ? Object.defineProperty(exports2, "__esModule", { value: !0 }) : exports2.__esModule = !0), function(id, v4) {
-          return exports2[id] = previous ? previous(id, v4) : v4;
+        return exports2 !== root && (typeof Object.create == "function" ? Object.defineProperty(exports2, "__esModule", { value: !0 }) : exports2.__esModule = !0), function(id, v5) {
+          return exports2[id] = previous ? previous(id, v5) : v5;
         };
       }
     })(function(exporter) {
@@ -19495,13 +19497,13 @@ var require_tslib = __commonJS({
       }, __metadata = function(metadataKey, metadataValue) {
         if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
           return Reflect.metadata(metadataKey, metadataValue);
-      }, __awaiter = function(thisArg, _arguments, P4, generator) {
+      }, __awaiter = function(thisArg, _arguments, P5, generator) {
         function adopt(value) {
-          return value instanceof P4 ? value : new P4(function(resolve) {
+          return value instanceof P5 ? value : new P5(function(resolve) {
             resolve(value);
           });
         }
-        return new (P4 || (P4 = Promise))(function(resolve, reject) {
+        return new (P5 || (P5 = Promise))(function(resolve, reject) {
           function fulfilled(value) {
             try {
               step(generator.next(value));
@@ -19531,8 +19533,8 @@ var require_tslib = __commonJS({
           return this;
         }), g8;
         function verb(n6) {
-          return function(v4) {
-            return step([n6, v4]);
+          return function(v5) {
+            return step([n6, v5]);
           };
         }
         function step(op) {
@@ -19642,8 +19644,8 @@ var require_tslib = __commonJS({
           for (var i6 = 0, l12 = from.length, ar; i6 < l12; i6++)
             (ar || !(i6 in from)) && (ar || (ar = Array.prototype.slice.call(from, 0, i6)), ar[i6] = from[i6]);
         return to.concat(ar || Array.prototype.slice.call(from));
-      }, __await = function(v4) {
-        return this instanceof __await ? (this.v = v4, this) : new __await(v4);
+      }, __await = function(v5) {
+        return this instanceof __await ? (this.v = v5, this) : new __await(v5);
       }, __asyncGenerator = function(thisArg, _arguments, generator) {
         if (!Symbol.asyncIterator)
           throw new TypeError("Symbol.asyncIterator is not defined.");
@@ -19652,15 +19654,15 @@ var require_tslib = __commonJS({
           return this;
         }, i6;
         function verb(n6) {
-          g8[n6] && (i6[n6] = function(v4) {
+          g8[n6] && (i6[n6] = function(v5) {
             return new Promise(function(a12, b6) {
-              q3.push([n6, v4, a12, b6]) > 1 || resume(n6, v4);
+              q3.push([n6, v5, a12, b6]) > 1 || resume(n6, v5);
             });
           });
         }
-        function resume(n6, v4) {
+        function resume(n6, v5) {
           try {
-            step(g8[n6](v4));
+            step(g8[n6](v5));
           } catch (e4) {
             settle(q3[0][3], e4);
           }
@@ -19674,8 +19676,8 @@ var require_tslib = __commonJS({
         function reject(value) {
           resume("throw", value);
         }
-        function settle(f10, v4) {
-          f10(v4), q3.shift(), q3.length && resume(q3[0][0], q3[0][1]);
+        function settle(f10, v5) {
+          f10(v5), q3.shift(), q3.length && resume(q3[0][0], q3[0][1]);
         }
       }, __asyncDelegator = function(o10) {
         var i6, p6;
@@ -19685,8 +19687,8 @@ var require_tslib = __commonJS({
           return this;
         }, i6;
         function verb(n6, f10) {
-          i6[n6] = o10[n6] ? function(v4) {
-            return (p6 = !p6) ? { value: __await(o10[n6](v4)), done: !1 } : f10 ? f10(v4) : v4;
+          i6[n6] = o10[n6] ? function(v5) {
+            return (p6 = !p6) ? { value: __await(o10[n6](v5)), done: !1 } : f10 ? f10(v5) : v5;
           } : f10;
         }
       }, __asyncValues = function(o10) {
@@ -19697,24 +19699,24 @@ var require_tslib = __commonJS({
           return this;
         }, i6);
         function verb(n6) {
-          i6[n6] = o10[n6] && function(v4) {
+          i6[n6] = o10[n6] && function(v5) {
             return new Promise(function(resolve, reject) {
-              v4 = o10[n6](v4), settle(resolve, reject, v4.done, v4.value);
+              v5 = o10[n6](v5), settle(resolve, reject, v5.done, v5.value);
             });
           };
         }
-        function settle(resolve, reject, d11, v4) {
-          Promise.resolve(v4).then(function(v5) {
-            resolve({ value: v5, done: d11 });
+        function settle(resolve, reject, d11, v5) {
+          Promise.resolve(v5).then(function(v6) {
+            resolve({ value: v6, done: d11 });
           }, reject);
         }
       }, __makeTemplateObject = function(cooked, raw) {
         return Object.defineProperty ? Object.defineProperty(cooked, "raw", { value: raw }) : cooked.raw = raw, cooked;
       };
-      var __setModuleDefault = Object.create ? function(o10, v4) {
-        Object.defineProperty(o10, "default", { enumerable: !0, value: v4 });
-      } : function(o10, v4) {
-        o10.default = v4;
+      var __setModuleDefault = Object.create ? function(o10, v5) {
+        Object.defineProperty(o10, "default", { enumerable: !0, value: v5 });
+      } : function(o10, v5) {
+        o10.default = v5;
       };
       __importStar = function(mod) {
         if (mod && mod.__esModule)
@@ -19821,22 +19823,22 @@ var require_valueTypes_cjs = __commonJS({
   "node_modules/style-value-types/dist/valueTypes.cjs.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: !0 });
-    var clamp2 = (min, max) => (v4) => Math.max(Math.min(v4, max), min), sanitize = (v4) => v4 % 1 ? Number(v4.toFixed(5)) : v4, floatRegex = /(-)?([\d]*\.?[\d])+/g, colorRegex = /(#[0-9a-f]{6}|#[0-9a-f]{3}|#(?:[0-9a-f]{2}){2,4}|(rgb|hsl)a?\((-?[\d\.]+%?[,\s]+){2,3}\s*\/*\s*[\d\.]+%?\))/gi, singleColorRegex = /^(#[0-9a-f]{3}|#(?:[0-9a-f]{2}){2,4}|(rgb|hsl)a?\((-?[\d\.]+%?[,\s]+){2,3}\s*\/*\s*[\d\.]+%?\))$/i;
-    function isString2(v4) {
-      return typeof v4 == "string";
+    var clamp2 = (min, max) => (v5) => Math.max(Math.min(v5, max), min), sanitize = (v5) => v5 % 1 ? Number(v5.toFixed(5)) : v5, floatRegex = /(-)?([\d]*\.?[\d])+/g, colorRegex = /(#[0-9a-f]{6}|#[0-9a-f]{3}|#(?:[0-9a-f]{2}){2,4}|(rgb|hsl)a?\((-?[\d\.]+%?[,\s]+){2,3}\s*\/*\s*[\d\.]+%?\))/gi, singleColorRegex = /^(#[0-9a-f]{3}|#(?:[0-9a-f]{2}){2,4}|(rgb|hsl)a?\((-?[\d\.]+%?[,\s]+){2,3}\s*\/*\s*[\d\.]+%?\))$/i;
+    function isString2(v5) {
+      return typeof v5 == "string";
     }
     var number = {
-      test: (v4) => typeof v4 == "number",
+      test: (v5) => typeof v5 == "number",
       parse: parseFloat,
-      transform: (v4) => v4
+      transform: (v5) => v5
     }, alpha = Object.assign(Object.assign({}, number), { transform: clamp2(0, 1) }), scale = Object.assign(Object.assign({}, number), { default: 1 }), createUnitType = (unit) => ({
-      test: (v4) => isString2(v4) && v4.endsWith(unit) && v4.split(" ").length === 1,
+      test: (v5) => isString2(v5) && v5.endsWith(unit) && v5.split(" ").length === 1,
       parse: parseFloat,
-      transform: (v4) => `${v4}${unit}`
-    }), degrees = createUnitType("deg"), percent = createUnitType("%"), px = createUnitType("px"), vh = createUnitType("vh"), vw = createUnitType("vw"), progressPercentage = Object.assign(Object.assign({}, percent), { parse: (v4) => percent.parse(v4) / 100, transform: (v4) => percent.transform(v4 * 100) }), isColorString = (type, testProp) => (v4) => Boolean(isString2(v4) && singleColorRegex.test(v4) && v4.startsWith(type) || testProp && Object.prototype.hasOwnProperty.call(v4, testProp)), splitColor = (aName, bName, cName) => (v4) => {
-      if (!isString2(v4))
-        return v4;
-      let [a12, b6, c12, alpha2] = v4.match(floatRegex);
+      transform: (v5) => `${v5}${unit}`
+    }), degrees = createUnitType("deg"), percent = createUnitType("%"), px = createUnitType("px"), vh = createUnitType("vh"), vw = createUnitType("vw"), progressPercentage = Object.assign(Object.assign({}, percent), { parse: (v5) => percent.parse(v5) / 100, transform: (v5) => percent.transform(v5 * 100) }), isColorString = (type, testProp) => (v5) => Boolean(isString2(v5) && singleColorRegex.test(v5) && v5.startsWith(type) || testProp && Object.prototype.hasOwnProperty.call(v5, testProp)), splitColor = (aName, bName, cName) => (v5) => {
+      if (!isString2(v5))
+        return v5;
+      let [a12, b6, c12, alpha2] = v5.match(floatRegex);
       return {
         [aName]: parseFloat(a12),
         [bName]: parseFloat(b6),
@@ -19847,14 +19849,14 @@ var require_valueTypes_cjs = __commonJS({
       test: isColorString("hsl", "hue"),
       parse: splitColor("hue", "saturation", "lightness"),
       transform: ({ hue, saturation, lightness, alpha: alpha$1 = 1 }) => "hsla(" + Math.round(hue) + ", " + percent.transform(sanitize(saturation)) + ", " + percent.transform(sanitize(lightness)) + ", " + sanitize(alpha.transform(alpha$1)) + ")"
-    }, clampRgbUnit = clamp2(0, 255), rgbUnit = Object.assign(Object.assign({}, number), { transform: (v4) => Math.round(clampRgbUnit(v4)) }), rgba = {
+    }, clampRgbUnit = clamp2(0, 255), rgbUnit = Object.assign(Object.assign({}, number), { transform: (v5) => Math.round(clampRgbUnit(v5)) }), rgba = {
       test: isColorString("rgb", "red"),
       parse: splitColor("red", "green", "blue"),
       transform: ({ red, green, blue, alpha: alpha$1 = 1 }) => "rgba(" + rgbUnit.transform(red) + ", " + rgbUnit.transform(green) + ", " + rgbUnit.transform(blue) + ", " + sanitize(alpha.transform(alpha$1)) + ")"
     };
-    function parseHex(v4) {
+    function parseHex(v5) {
       let r8 = "", g8 = "", b6 = "", a12 = "";
-      return v4.length > 5 ? (r8 = v4.substr(1, 2), g8 = v4.substr(3, 2), b6 = v4.substr(5, 2), a12 = v4.substr(7, 2)) : (r8 = v4.substr(1, 1), g8 = v4.substr(2, 1), b6 = v4.substr(3, 1), a12 = v4.substr(4, 1), r8 += r8, g8 += g8, b6 += b6, a12 += a12), {
+      return v5.length > 5 ? (r8 = v5.substr(1, 2), g8 = v5.substr(3, 2), b6 = v5.substr(5, 2), a12 = v5.substr(7, 2)) : (r8 = v5.substr(1, 1), g8 = v5.substr(2, 1), b6 = v5.substr(3, 1), a12 = v5.substr(4, 1), r8 += r8, g8 += g8, b6 += b6, a12 += a12), {
         red: parseInt(r8, 16),
         green: parseInt(g8, 16),
         blue: parseInt(b6, 16),
@@ -19866,52 +19868,52 @@ var require_valueTypes_cjs = __commonJS({
       parse: parseHex,
       transform: rgba.transform
     }, color = {
-      test: (v4) => rgba.test(v4) || hex2.test(v4) || hsla.test(v4),
-      parse: (v4) => rgba.test(v4) ? rgba.parse(v4) : hsla.test(v4) ? hsla.parse(v4) : hex2.parse(v4),
-      transform: (v4) => isString2(v4) ? v4 : v4.hasOwnProperty("red") ? rgba.transform(v4) : hsla.transform(v4)
+      test: (v5) => rgba.test(v5) || hex2.test(v5) || hsla.test(v5),
+      parse: (v5) => rgba.test(v5) ? rgba.parse(v5) : hsla.test(v5) ? hsla.parse(v5) : hex2.parse(v5),
+      transform: (v5) => isString2(v5) ? v5 : v5.hasOwnProperty("red") ? rgba.transform(v5) : hsla.transform(v5)
     }, colorToken = "${c}", numberToken = "${n}";
-    function test(v4) {
+    function test(v5) {
       var _a2, _b, _c, _d;
-      return isNaN(v4) && isString2(v4) && ((_b = (_a2 = v4.match(floatRegex)) === null || _a2 === void 0 ? void 0 : _a2.length) !== null && _b !== void 0 ? _b : 0) + ((_d = (_c = v4.match(colorRegex)) === null || _c === void 0 ? void 0 : _c.length) !== null && _d !== void 0 ? _d : 0) > 0;
+      return isNaN(v5) && isString2(v5) && ((_b = (_a2 = v5.match(floatRegex)) === null || _a2 === void 0 ? void 0 : _a2.length) !== null && _b !== void 0 ? _b : 0) + ((_d = (_c = v5.match(colorRegex)) === null || _c === void 0 ? void 0 : _c.length) !== null && _d !== void 0 ? _d : 0) > 0;
     }
-    function analyse(v4) {
-      typeof v4 == "number" && (v4 = `${v4}`);
-      let values = [], numColors = 0, colors = v4.match(colorRegex);
-      colors && (numColors = colors.length, v4 = v4.replace(colorRegex, colorToken), values.push(...colors.map(color.parse)));
-      let numbers = v4.match(floatRegex);
-      return numbers && (v4 = v4.replace(floatRegex, numberToken), values.push(...numbers.map(number.parse))), { values, numColors, tokenised: v4 };
+    function analyse(v5) {
+      typeof v5 == "number" && (v5 = `${v5}`);
+      let values = [], numColors = 0, colors = v5.match(colorRegex);
+      colors && (numColors = colors.length, v5 = v5.replace(colorRegex, colorToken), values.push(...colors.map(color.parse)));
+      let numbers = v5.match(floatRegex);
+      return numbers && (v5 = v5.replace(floatRegex, numberToken), values.push(...numbers.map(number.parse))), { values, numColors, tokenised: v5 };
     }
-    function parse2(v4) {
-      return analyse(v4).values;
+    function parse2(v5) {
+      return analyse(v5).values;
     }
-    function createTransformer(v4) {
-      let { values, numColors, tokenised } = analyse(v4), numValues = values.length;
-      return (v5) => {
+    function createTransformer(v5) {
+      let { values, numColors, tokenised } = analyse(v5), numValues = values.length;
+      return (v6) => {
         let output = tokenised;
         for (let i6 = 0; i6 < numValues; i6++)
-          output = output.replace(i6 < numColors ? colorToken : numberToken, i6 < numColors ? color.transform(v5[i6]) : sanitize(v5[i6]));
+          output = output.replace(i6 < numColors ? colorToken : numberToken, i6 < numColors ? color.transform(v6[i6]) : sanitize(v6[i6]));
         return output;
       };
     }
-    var convertNumbersToZero = (v4) => typeof v4 == "number" ? 0 : v4;
-    function getAnimatableNone(v4) {
-      let parsed = parse2(v4);
-      return createTransformer(v4)(parsed.map(convertNumbersToZero));
+    var convertNumbersToZero = (v5) => typeof v5 == "number" ? 0 : v5;
+    function getAnimatableNone(v5) {
+      let parsed = parse2(v5);
+      return createTransformer(v5)(parsed.map(convertNumbersToZero));
     }
     var complex = { test, parse: parse2, createTransformer, getAnimatableNone }, maxDefaults = /* @__PURE__ */ new Set(["brightness", "contrast", "saturate", "opacity"]);
-    function applyDefaultFilter(v4) {
-      let [name, value] = v4.slice(0, -1).split("(");
+    function applyDefaultFilter(v5) {
+      let [name, value] = v5.slice(0, -1).split("(");
       if (name === "drop-shadow")
-        return v4;
+        return v5;
       let [number2] = value.match(floatRegex) || [];
       if (!number2)
-        return v4;
+        return v5;
       let unit = value.replace(number2, ""), defaultValue = maxDefaults.has(name) ? 1 : 0;
       return number2 !== value && (defaultValue *= 100), name + "(" + defaultValue + unit + ")";
     }
-    var functionRegex = /([a-z-]*)\(.*?\)/g, filter = Object.assign(Object.assign({}, complex), { getAnimatableNone: (v4) => {
-      let functions = v4.match(functionRegex);
-      return functions ? functions.map(applyDefaultFilter).join(" ") : v4;
+    var functionRegex = /([a-z-]*)\(.*?\)/g, filter = Object.assign(Object.assign({}, complex), { getAnimatableNone: (v5) => {
+      let functions = v5.match(functionRegex);
+      return functions ? functions.map(applyDefaultFilter).join(" ") : v5;
     } });
     exports.alpha = alpha;
     exports.color = color;
@@ -19996,7 +19998,7 @@ var require_popmotion_cjs = __commonJS({
     function _interopDefaultLegacy(e4) {
       return e4 && typeof e4 == "object" && "default" in e4 ? e4 : { default: e4 };
     }
-    var sync__default = /* @__PURE__ */ _interopDefaultLegacy(sync), clamp2 = (min, max, v4) => Math.min(Math.max(v4, min), max), safeMin = 1e-3, minDuration = 0.01, maxDuration2 = 10, minDamping = 0.05, maxDamping = 1;
+    var sync__default = /* @__PURE__ */ _interopDefaultLegacy(sync), clamp2 = (min, max, v5) => Math.min(Math.max(v5, min), max), safeMin = 1e-3, minDuration = 0.01, maxDuration2 = 10, minDamping = 0.05, maxDamping = 1;
     function findSpring({ duration = 800, bounce = 0.25, velocity = 0, mass = 1 }) {
       let envelope, derivative;
       heyListen.warning(duration <= maxDuration2 * 1e3, "Spring duration must be 10 seconds or less");
@@ -20093,7 +20095,7 @@ var require_popmotion_cjs = __commonJS({
       };
     }
     spring3.needsInterpolation = (a13, b7) => typeof a13 == "string" || typeof b7 == "string";
-    var zero = (_t2) => 0, progress2 = (from, to, value) => {
+    var zero = (_t3) => 0, progress2 = (from, to, value) => {
       let toFromDifference = to - from;
       return toFromDifference === 0 ? 1 : (value - from) / toFromDifference;
     }, mix2 = (from, to, progress3) => -progress3 * from + progress3 * to + from;
@@ -20116,42 +20118,42 @@ var require_popmotion_cjs = __commonJS({
         alpha
       };
     }
-    var mixLinearColor = (from, to, v4) => {
+    var mixLinearColor = (from, to, v5) => {
       let fromExpo = from * from, toExpo = to * to;
-      return Math.sqrt(Math.max(0, v4 * (toExpo - fromExpo) + fromExpo));
-    }, colorTypes = [styleValueTypes.hex, styleValueTypes.rgba, styleValueTypes.hsla], getColorType = (v4) => colorTypes.find((type) => type.test(v4)), notAnimatable = (color) => `'${color}' is not an animatable color. Use the equivalent color code instead.`, mixColor = (from, to) => {
+      return Math.sqrt(Math.max(0, v5 * (toExpo - fromExpo) + fromExpo));
+    }, colorTypes = [styleValueTypes.hex, styleValueTypes.rgba, styleValueTypes.hsla], getColorType = (v5) => colorTypes.find((type) => type.test(v5)), notAnimatable = (color) => `'${color}' is not an animatable color. Use the equivalent color code instead.`, mixColor = (from, to) => {
       let fromColorType = getColorType(from), toColorType = getColorType(to);
       heyListen.invariant(!!fromColorType, notAnimatable(from)), heyListen.invariant(!!toColorType, notAnimatable(to));
       let fromColor = fromColorType.parse(from), toColor = toColorType.parse(to);
       fromColorType === styleValueTypes.hsla && (fromColor = hslaToRgba(fromColor), fromColorType = styleValueTypes.rgba), toColorType === styleValueTypes.hsla && (toColor = hslaToRgba(toColor), toColorType = styleValueTypes.rgba);
       let blended = Object.assign({}, fromColor);
-      return (v4) => {
+      return (v5) => {
         for (let key in blended)
-          key !== "alpha" && (blended[key] = mixLinearColor(fromColor[key], toColor[key], v4));
-        return blended.alpha = mix2(fromColor.alpha, toColor.alpha, v4), fromColorType.transform(blended);
+          key !== "alpha" && (blended[key] = mixLinearColor(fromColor[key], toColor[key], v5));
+        return blended.alpha = mix2(fromColor.alpha, toColor.alpha, v5), fromColorType.transform(blended);
       };
     }, zeroPoint = {
       x: 0,
       y: 0,
       z: 0
-    }, isNum = (v4) => typeof v4 == "number", combineFunctions = (a13, b7) => (v4) => b7(a13(v4)), pipe = (...transformers) => transformers.reduce(combineFunctions);
+    }, isNum = (v5) => typeof v5 == "number", combineFunctions = (a13, b7) => (v5) => b7(a13(v5)), pipe = (...transformers) => transformers.reduce(combineFunctions);
     function getMixer(origin, target) {
-      return isNum(origin) ? (v4) => mix2(origin, target, v4) : styleValueTypes.color.test(origin) ? mixColor(origin, target) : mixComplex(origin, target);
+      return isNum(origin) ? (v5) => mix2(origin, target, v5) : styleValueTypes.color.test(origin) ? mixColor(origin, target) : mixComplex(origin, target);
     }
     var mixArray = (from, to) => {
       let output = [...from], numValues = output.length, blendValue = from.map((fromThis, i6) => getMixer(fromThis, to[i6]));
-      return (v4) => {
+      return (v5) => {
         for (let i6 = 0; i6 < numValues; i6++)
-          output[i6] = blendValue[i6](v4);
+          output[i6] = blendValue[i6](v5);
         return output;
       };
     }, mixObject = (origin, target) => {
       let output = Object.assign(Object.assign({}, origin), target), blendValue = {};
       for (let key in output)
         origin[key] !== void 0 && target[key] !== void 0 && (blendValue[key] = getMixer(origin[key], target[key]));
-      return (v4) => {
+      return (v5) => {
         for (let key in blendValue)
-          output[key] = blendValue[key](v4);
+          output[key] = blendValue[key](v5);
         return output;
       };
     };
@@ -20165,14 +20167,14 @@ var require_popmotion_cjs = __commonJS({
       let template = styleValueTypes.complex.createTransformer(target), originStats = analyse(origin), targetStats = analyse(target);
       return originStats.numHSL === targetStats.numHSL && originStats.numRGB === targetStats.numRGB && originStats.numNumbers >= targetStats.numNumbers ? pipe(mixArray(originStats.parsed, targetStats.parsed), template) : (heyListen.warning(!0, `Complex values '${origin}' and '${target}' too different to mix. Ensure all colors are of the same type, and that each contains the same quantity of number and color values. Falling back to instant transition.`), (p6) => `${p6 > 0 ? target : origin}`);
     }, mixNumber = (from, to) => (p6) => mix2(from, to, p6);
-    function detectMixerFactory(v4) {
-      if (typeof v4 == "number")
+    function detectMixerFactory(v5) {
+      if (typeof v5 == "number")
         return mixNumber;
-      if (typeof v4 == "string")
-        return styleValueTypes.color.test(v4) ? mixColor : mixComplex;
-      if (Array.isArray(v4))
+      if (typeof v5 == "string")
+        return styleValueTypes.color.test(v5) ? mixColor : mixComplex;
+      if (Array.isArray(v5))
         return mixArray;
-      if (typeof v4 == "object")
+      if (typeof v5 == "object")
         return mixObject;
     }
     function createMixers(output, ease, customMixer) {
@@ -20188,19 +20190,19 @@ var require_popmotion_cjs = __commonJS({
       return mixers;
     }
     function fastInterpolate([from, to], [mixer]) {
-      return (v4) => mixer(progress2(from, to, v4));
+      return (v5) => mixer(progress2(from, to, v5));
     }
     function slowInterpolate(input, mixers) {
       let inputLength = input.length, lastInputIndex = inputLength - 1;
-      return (v4) => {
+      return (v5) => {
         let mixerIndex = 0, foundMixerIndex = !1;
-        if (v4 <= input[0] ? foundMixerIndex = !0 : v4 >= input[lastInputIndex] && (mixerIndex = lastInputIndex - 1, foundMixerIndex = !0), !foundMixerIndex) {
+        if (v5 <= input[0] ? foundMixerIndex = !0 : v5 >= input[lastInputIndex] && (mixerIndex = lastInputIndex - 1, foundMixerIndex = !0), !foundMixerIndex) {
           let i6 = 1;
-          for (; i6 < inputLength && !(input[i6] > v4 || i6 === lastInputIndex); i6++)
+          for (; i6 < inputLength && !(input[i6] > v5 || i6 === lastInputIndex); i6++)
             ;
           mixerIndex = i6 - 1;
         }
-        let progressInRange = progress2(input[mixerIndex], input[mixerIndex + 1], v4);
+        let progressInRange = progress2(input[mixerIndex], input[mixerIndex + 1], v5);
         return mixers[mixerIndex](progressInRange);
       };
     }
@@ -20208,7 +20210,7 @@ var require_popmotion_cjs = __commonJS({
       let inputLength = input.length;
       heyListen.invariant(inputLength === output.length, "Both input and output ranges must be the same length"), heyListen.invariant(!ease || !Array.isArray(ease) || ease.length === inputLength - 1, "Array of easing functions must be of length `input.length - 1`, as it applies to the transitions **between** the defined values."), input[0] > input[inputLength - 1] && (input = [].concat(input), output = [].concat(output), input.reverse(), output.reverse());
       let mixers = createMixers(output, ease, mixer), interpolator = inputLength === 2 ? fastInterpolate(input, mixers) : slowInterpolate(input, mixers);
-      return isClamp ? (v4) => interpolator(clamp2(input[0], input[inputLength - 1], v4)) : interpolator;
+      return isClamp ? (v5) => interpolator(clamp2(input[0], input[inputLength - 1], v5)) : interpolator;
     }
     var reverseEasing = (easing) => (p6) => 1 - easing(1 - p6), mirrorEasing = (easing) => (p6) => p6 <= 0.5 ? easing(2 * p6) / 2 : (2 - easing(2 * (1 - p6))) / 2, createExpoIn = (power) => (p6) => Math.pow(p6, power), createBackIn = (power) => (p6) => p6 * p6 * ((power + 1) * p6 - power), createAnticipate = (power) => {
       let backEasing = createBackIn(power);
@@ -20314,18 +20316,18 @@ var require_popmotion_cjs = __commonJS({
     }
     function inertia({ from = 0, velocity = 0, min, max, power = 0.8, timeConstant = 750, bounceStiffness = 500, bounceDamping = 10, restDelta = 1, modifyTarget, driver, onUpdate, onComplete, onStop }) {
       let currentAnimation;
-      function isOutOfBounds(v4) {
-        return min !== void 0 && v4 < min || max !== void 0 && v4 > max;
+      function isOutOfBounds(v5) {
+        return min !== void 0 && v5 < min || max !== void 0 && v5 > max;
       }
-      function boundaryNearest(v4) {
-        return min === void 0 ? max : max === void 0 || Math.abs(min - v4) < Math.abs(max - v4) ? min : max;
+      function boundaryNearest(v5) {
+        return min === void 0 ? max : max === void 0 || Math.abs(min - v5) < Math.abs(max - v5) ? min : max;
       }
       function startAnimation(options) {
         currentAnimation == null || currentAnimation.stop(), currentAnimation = animate2(Object.assign(Object.assign({}, options), {
           driver,
-          onUpdate: (v4) => {
+          onUpdate: (v5) => {
             var _a2;
-            onUpdate == null || onUpdate(v4), (_a2 = options.onUpdate) === null || _a2 === void 0 || _a2.call(options, v4);
+            onUpdate == null || onUpdate(v5), (_a2 = options.onUpdate) === null || _a2 === void 0 || _a2.call(options, v5);
           },
           onComplete,
           onStop
@@ -20339,8 +20341,8 @@ var require_popmotion_cjs = __commonJS({
       else {
         let target = power * velocity + from;
         typeof modifyTarget < "u" && (target = modifyTarget(target));
-        let boundary = boundaryNearest(target), heading = boundary === min ? -1 : 1, prev, current, checkBoundary = (v4) => {
-          prev = current, current = v4, velocity = velocityPerSecond2(v4 - prev, sync.getFrameData().delta), (heading === 1 && v4 > boundary || heading === -1 && v4 < boundary) && startSpring({ from: v4, to: boundary, velocity });
+        let boundary = boundaryNearest(target), heading = boundary === min ? -1 : 1, prev, current, checkBoundary = (v5) => {
+          prev = current, current = v5, velocity = velocityPerSecond2(v5 - prev, sync.getFrameData().delta), (heading === 1 && v5 > boundary || heading === -1 && v5 < boundary) && startSpring({ from: v5, to: boundary, velocity });
         };
         startAnimation({
           type: "decay",
@@ -20359,9 +20361,9 @@ var require_popmotion_cjs = __commonJS({
     }
     var radiansToDegrees = (radians) => radians * 180 / Math.PI, angle = (a13, b7 = zeroPoint) => radiansToDegrees(Math.atan2(b7.y - a13.y, b7.x - a13.x)), applyOffset = (from, to) => {
       let hasReceivedFrom = !0;
-      return to === void 0 && (to = from, hasReceivedFrom = !1), (v4) => hasReceivedFrom ? v4 - from + to : (from = v4, hasReceivedFrom = !0, to);
-    }, identity = (v4) => v4, createAttractor = (alterDisplacement = identity) => (constant, origin, v4) => {
-      let displacement = origin - v4, springModifiedDisplacement = -(0 - constant + 1) * (0 - alterDisplacement(Math.abs(displacement)));
+      return to === void 0 && (to = from, hasReceivedFrom = !1), (v5) => hasReceivedFrom ? v5 - from + to : (from = v5, hasReceivedFrom = !0, to);
+    }, identity = (v5) => v5, createAttractor = (alterDisplacement = identity) => (constant, origin, v5) => {
+      let displacement = origin - v5, springModifiedDisplacement = -(0 - constant + 1) * (0 - alterDisplacement(Math.abs(displacement)));
       return displacement <= 0 ? origin + springModifiedDisplacement : origin - springModifiedDisplacement;
     }, attract = createAttractor(), attractExpo = createAttractor(Math.sqrt), degreesToRadians = (degrees) => degrees * Math.PI / 180, isPoint = (point2) => point2.hasOwnProperty("x") && point2.hasOwnProperty("y"), isPoint3D = (point2) => isPoint(point2) && point2.hasOwnProperty("z"), distance1D = (a13, b7) => Math.abs(a13 - b7);
     function distance(a13, b7) {
@@ -20377,19 +20379,19 @@ var require_popmotion_cjs = __commonJS({
       y: distance2 * Math.sin(angle2) + origin.y
     }), toDecimal = (num, precision = 2) => (precision = Math.pow(10, precision), Math.round(num * precision) / precision), smoothFrame = (prevValue, nextValue, duration, smoothing = 0) => toDecimal(prevValue + duration * (nextValue - prevValue) / Math.max(smoothing, duration)), smooth = (strength = 50) => {
       let previousValue = 0, lastUpdated = 0;
-      return (v4) => {
-        let currentFramestamp = sync.getFrameData().timestamp, timeDelta = currentFramestamp !== lastUpdated ? currentFramestamp - lastUpdated : 0, newValue = timeDelta ? smoothFrame(previousValue, v4, timeDelta, strength) : previousValue;
+      return (v5) => {
+        let currentFramestamp = sync.getFrameData().timestamp, timeDelta = currentFramestamp !== lastUpdated ? currentFramestamp - lastUpdated : 0, newValue = timeDelta ? smoothFrame(previousValue, v5, timeDelta, strength) : previousValue;
         return lastUpdated = currentFramestamp, previousValue = newValue, newValue;
       };
     }, snap = (points) => {
       if (typeof points == "number")
-        return (v4) => Math.round(v4 / points) * points;
+        return (v5) => Math.round(v5 / points) * points;
       {
         let i6 = 0, numPoints = points.length;
-        return (v4) => {
-          let lastDistance = Math.abs(points[0] - v4);
+        return (v5) => {
+          let lastDistance = Math.abs(points[0] - v5);
           for (i6 = 1; i6 < numPoints; i6++) {
-            let point2 = points[i6], distance2 = Math.abs(point2 - v4);
+            let point2 = points[i6], distance2 = Math.abs(point2 - v5);
             if (distance2 === 0)
               return point2;
             if (distance2 > lastDistance)
@@ -20404,9 +20406,9 @@ var require_popmotion_cjs = __commonJS({
     function velocityPerFrame(xps, frameDuration) {
       return xps / (1e3 / frameDuration);
     }
-    var wrap2 = (min, max, v4) => {
+    var wrap2 = (min, max, v5) => {
       let rangeSize = max - min;
-      return ((v4 - min) % rangeSize + rangeSize) % rangeSize + min;
+      return ((v5 - min) % rangeSize + rangeSize) % rangeSize + min;
     }, a12 = (a1, a22) => 1 - 3 * a22 + 3 * a1, b6 = (a1, a22) => 3 * a22 - 6 * a1, c12 = (a1) => 3 * a1, calcBezier2 = (t17, a1, a22) => ((a12(a1, a22) * t17 + b6(a1, a22)) * t17 + c12(a1)) * t17, getSlope = (t17, a1, a22) => 3 * a12(a1, a22) * t17 * t17 + 2 * b6(a1, a22) * t17 + c12(a1), subdivisionPrecision2 = 1e-7, subdivisionMaxIterations2 = 10;
     function binarySubdivide2(aX, aA, aB, mX1, mX2) {
       let currentX, currentT, i6 = 0;
@@ -20557,7 +20559,7 @@ var init_array_es = __esm({
 // node_modules/@motionone/utils/dist/clamp.es.js
 var clamp, init_clamp_es = __esm({
   "node_modules/@motionone/utils/dist/clamp.es.js"() {
-    clamp = (min, max, v4) => Math.min(Math.max(v4, min), max);
+    clamp = (min, max, v5) => Math.min(Math.max(v5, min), max);
   }
 });
 
@@ -20592,9 +20594,9 @@ var isEasingList, init_is_easing_list_es = __esm({
 // node_modules/@motionone/utils/dist/wrap.es.js
 var wrap, init_wrap_es = __esm({
   "node_modules/@motionone/utils/dist/wrap.es.js"() {
-    wrap = (min, max, v4) => {
+    wrap = (min, max, v5) => {
       let rangeSize = max - min;
-      return ((v4 - min) % rangeSize + rangeSize) % rangeSize + min;
+      return ((v5 - min) % rangeSize + rangeSize) % rangeSize + min;
     };
   }
 });
@@ -20621,7 +20623,7 @@ var mix, init_mix_es = __esm({
 var noop, noopReturn, init_noop_es = __esm({
   "node_modules/@motionone/utils/dist/noop.es.js"() {
     noop = () => {
-    }, noopReturn = (v4) => v4;
+    }, noopReturn = (v5) => v5;
   }
 });
 
@@ -20756,12 +20758,12 @@ var axes, order, transformAlias, rotation, baseTransformProperties, transformDef
     }, rotation = {
       syntax: "<angle>",
       initialValue: "0deg",
-      toDefaultUnit: (v4) => v4 + "deg"
+      toDefaultUnit: (v5) => v5 + "deg"
     }, baseTransformProperties = {
       translate: {
         syntax: "<length-percentage>",
         initialValue: "0px",
-        toDefaultUnit: (v4) => v4 + "px"
+        toDefaultUnit: (v5) => v5 + "px"
       },
       rotate: rotation,
       scale: {
@@ -21494,7 +21496,7 @@ var glide, init_index_es8 = __esm({
         done: !1,
         current: from,
         target: from
-      }, isOutOfBounds = (v4) => min !== void 0 && v4 < min || max !== void 0 && v4 > max, nearestBoundary = (v4) => min === void 0 ? max : max === void 0 || Math.abs(min - v4) < Math.abs(max - v4) ? min : max, amplitude = power * velocity, ideal = from + amplitude, target = changeTarget === void 0 ? ideal : changeTarget(ideal);
+      }, isOutOfBounds = (v5) => min !== void 0 && v5 < min || max !== void 0 && v5 > max, nearestBoundary = (v5) => min === void 0 ? max : max === void 0 || Math.abs(min - v5) < Math.abs(max - v5) ? min : max, amplitude = power * velocity, ideal = from + amplitude, target = changeTarget === void 0 ? ideal : changeTarget(ideal);
       state.target = target, target !== ideal && (amplitude = target - from);
       let calcDelta = (t17) => -amplitude * Math.exp(-t17 / decay), calcLatest = (t17) => target + calcDelta(t17), applyFriction = (t17) => {
         let delta = calcDelta(t17), latest = calcLatest(t17);
@@ -22415,11 +22417,11 @@ var require_cjs2 = __commonJS({
         [visualElement2]
       );
     }
-    function isVariantLabels(v4) {
-      return Array.isArray(v4);
+    function isVariantLabels(v5) {
+      return Array.isArray(v5);
     }
-    function isVariantLabel(v4) {
-      return typeof v4 == "string" || isVariantLabels(v4);
+    function isVariantLabel(v5) {
+      return typeof v5 == "string" || isVariantLabels(v5);
     }
     function getCurrent(visualElement2) {
       var current = {};
@@ -22962,15 +22964,15 @@ var require_cjs2 = __commonJS({
         }
       return newValues;
     }
-    function isAnimationControls(v4) {
-      return typeof v4 == "object" && typeof v4.start == "function";
+    function isAnimationControls(v5) {
+      return typeof v5 == "object" && typeof v5.start == "function";
     }
-    var isKeyframesTarget = function(v4) {
-      return Array.isArray(v4);
-    }, isCustomValue = function(v4) {
-      return Boolean(v4 && typeof v4 == "object" && v4.mix && v4.toValue);
-    }, resolveFinalValueInKeyframes = function(v4) {
-      return isKeyframesTarget(v4) ? v4[v4.length - 1] || 0 : v4;
+    var isKeyframesTarget = function(v5) {
+      return Array.isArray(v5);
+    }, isCustomValue = function(v5) {
+      return Boolean(v5 && typeof v5 == "object" && v5.mix && v5.toValue);
+    }, resolveFinalValueInKeyframes = function(v5) {
+      return isKeyframesTarget(v5) ? v5[v5.length - 1] || 0 : v5;
     };
     function resolveMotionValue(value) {
       var unwrappedValue = isMotionValue(value) ? value.get() : value;
@@ -23461,13 +23463,13 @@ var require_cjs2 = __commonJS({
           to: target,
           velocity: value.getVelocity(),
           onComplete,
-          onUpdate: function(v4) {
-            return value.set(v4);
+          onUpdate: function(v5) {
+            return value.set(v5);
           }
         };
-        return valueTransition.type === "inertia" || valueTransition.type === "decay" ? popmotion.inertia(tslib.__assign(tslib.__assign({}, options), valueTransition)) : popmotion.animate(tslib.__assign(tslib.__assign({}, getPopmotionAnimationOptions(valueTransition, options, key)), { onUpdate: function(v4) {
+        return valueTransition.type === "inertia" || valueTransition.type === "decay" ? popmotion.inertia(tslib.__assign(tslib.__assign({}, options), valueTransition)) : popmotion.animate(tslib.__assign(tslib.__assign({}, getPopmotionAnimationOptions(valueTransition, options, key)), { onUpdate: function(v5) {
           var _a3;
-          options.onUpdate(v4), (_a3 = valueTransition.onUpdate) === null || _a3 === void 0 || _a3.call(valueTransition, v4);
+          options.onUpdate(v5), (_a3 = valueTransition.onUpdate) === null || _a3 === void 0 || _a3.call(valueTransition, v5);
         }, onComplete: function() {
           var _a3;
           options.onComplete(), (_a3 = valueTransition.onComplete) === null || _a3 === void 0 || _a3.call(valueTransition);
@@ -23499,10 +23501,10 @@ var require_cjs2 = __commonJS({
         };
       });
     }
-    var isNumericalString = function(v4) {
-      return /^\-?\d*\.?\d+$/.test(v4);
-    }, isZeroValueString = function(v4) {
-      return /^0[^.\s]+$/.test(v4);
+    var isNumericalString = function(v5) {
+      return /^\-?\d*\.?\d+$/.test(v5);
+    }, isZeroValueString = function(v5) {
+      return /^0[^.\s]+$/.test(v5);
     };
     function addUniqueItem2(arr, item) {
       arr.indexOf(item) === -1 && arr.push(item);
@@ -23553,8 +23555,8 @@ var require_cjs2 = __commonJS({
       function() {
         function MotionValue3(init) {
           var _this = this;
-          this.version = "6.5.1", this.timeDelta = 0, this.lastUpdated = 0, this.updateSubscribers = new SubscriptionManager(), this.velocityUpdateSubscribers = new SubscriptionManager(), this.renderSubscribers = new SubscriptionManager(), this.canTrackVelocity = !1, this.updateAndNotify = function(v4, render) {
-            render === void 0 && (render = !0), _this.prev = _this.current, _this.current = v4;
+          this.version = "6.5.1", this.timeDelta = 0, this.lastUpdated = 0, this.updateSubscribers = new SubscriptionManager(), this.velocityUpdateSubscribers = new SubscriptionManager(), this.renderSubscribers = new SubscriptionManager(), this.canTrackVelocity = !1, this.updateAndNotify = function(v5, render) {
+            render === void 0 && (render = !0), _this.prev = _this.current, _this.current = v5;
             var _a2 = sync.getFrameData(), delta = _a2.delta, timestamp = _a2.timestamp;
             _this.lastUpdated !== timestamp && (_this.timeDelta = delta, _this.lastUpdated = timestamp, sync__default.default.postRender(_this.scheduleVelocityCheck)), _this.prev !== _this.current && _this.updateSubscribers.notify(_this.current), _this.velocityUpdateSubscribers.getSize() && _this.velocityUpdateSubscribers.notify(_this.getVelocity()), render && _this.renderSubscribers.notify(_this.current);
           }, this.scheduleVelocityCheck = function() {
@@ -23572,8 +23574,8 @@ var require_cjs2 = __commonJS({
           return subscription(this.get()), this.renderSubscribers.add(subscription);
         }, MotionValue3.prototype.attach = function(passiveEffect) {
           this.passiveEffect = passiveEffect;
-        }, MotionValue3.prototype.set = function(v4, render) {
-          render === void 0 && (render = !0), !render || !this.passiveEffect ? this.updateAndNotify(v4, render) : this.passiveEffect(v4, this.updateAndNotify);
+        }, MotionValue3.prototype.set = function(v5, render) {
+          render === void 0 && (render = !0), !render || !this.passiveEffect ? this.updateAndNotify(v5, render) : this.passiveEffect(v5, this.updateAndNotify);
         }, MotionValue3.prototype.get = function() {
           return this.current;
         }, MotionValue3.prototype.getPrevious = function() {
@@ -23604,21 +23606,21 @@ var require_cjs2 = __commonJS({
     function motionValue(init) {
       return new MotionValue2(init);
     }
-    var testValueType = function(v4) {
+    var testValueType = function(v5) {
       return function(type) {
-        return type.test(v4);
+        return type.test(v5);
       };
     }, auto = {
-      test: function(v4) {
-        return v4 === "auto";
+      test: function(v5) {
+        return v5 === "auto";
       },
-      parse: function(v4) {
-        return v4;
+      parse: function(v5) {
+        return v5;
       }
-    }, dimensionValueTypes = [styleValueTypes.number, styleValueTypes.px, styleValueTypes.percent, styleValueTypes.degrees, styleValueTypes.vw, styleValueTypes.vh, auto], findDimensionValueType = function(v4) {
-      return dimensionValueTypes.find(testValueType(v4));
-    }, valueTypes = tslib.__spreadArray(tslib.__spreadArray([], tslib.__read(dimensionValueTypes), !1), [styleValueTypes.color, styleValueTypes.complex], !1), findValueType = function(v4) {
-      return valueTypes.find(testValueType(v4));
+    }, dimensionValueTypes = [styleValueTypes.number, styleValueTypes.px, styleValueTypes.percent, styleValueTypes.degrees, styleValueTypes.vw, styleValueTypes.vh, auto], findDimensionValueType = function(v5) {
+      return dimensionValueTypes.find(testValueType(v5));
+    }, valueTypes = tslib.__spreadArray(tslib.__spreadArray([], tslib.__read(dimensionValueTypes), !1), [styleValueTypes.color, styleValueTypes.complex], !1), findValueType = function(v5) {
+      return valueTypes.find(testValueType(v5));
     };
     function setMotionValue(visualElement2, key, value) {
       visualElement2.hasValue(key) ? visualElement2.getValue(key).set(value) : visualElement2.addValue(key, motionValue(value));
@@ -23712,7 +23714,7 @@ var require_cjs2 = __commonJS({
         return Promise.all([getAnimation2(), getChildAnimations(options.delay)]);
     }
     function animateTarget(visualElement2, definition, _a2) {
-      var _b, _c = _a2 === void 0 ? {} : _a2, _d = _c.delay, delay = _d === void 0 ? 0 : _d, transitionOverride = _c.transitionOverride, type = _c.type, _e3 = visualElement2.makeTargetAnimatable(definition), _f = _e3.transition, transition = _f === void 0 ? visualElement2.getDefaultTransition() : _f, transitionEnd = _e3.transitionEnd, target = tslib.__rest(_e3, ["transition", "transitionEnd"]);
+      var _b, _c = _a2 === void 0 ? {} : _a2, _d = _c.delay, delay = _d === void 0 ? 0 : _d, transitionOverride = _c.transitionOverride, type = _c.type, _e2 = visualElement2.makeTargetAnimatable(definition), _f = _e2.transition, transition = _f === void 0 ? visualElement2.getDefaultTransition() : _f, transitionEnd = _e2.transitionEnd, target = tslib.__rest(_e2, ["transition", "transitionEnd"]);
       transitionOverride && (transition = transitionOverride);
       var animations2 = [], animationTypeState = type && ((_b = visualElement2.animationState) === null || _b === void 0 ? void 0 : _b.getState()[type]);
       for (var key in target) {
@@ -24293,7 +24295,7 @@ var require_cjs2 = __commonJS({
             stopResizeListener(), stopPointerListener(), stopMeasureLayoutListener();
           };
         }, VisualElementDragControls2.prototype.getProps = function() {
-          var props = this.visualElement.getProps(), _a2 = props.drag, drag2 = _a2 === void 0 ? !1 : _a2, _b = props.dragDirectionLock, dragDirectionLock = _b === void 0 ? !1 : _b, _c = props.dragPropagation, dragPropagation = _c === void 0 ? !1 : _c, _d = props.dragConstraints, dragConstraints = _d === void 0 ? !1 : _d, _e3 = props.dragElastic, dragElastic = _e3 === void 0 ? defaultElastic : _e3, _f = props.dragMomentum, dragMomentum = _f === void 0 ? !0 : _f;
+          var props = this.visualElement.getProps(), _a2 = props.drag, drag2 = _a2 === void 0 ? !1 : _a2, _b = props.dragDirectionLock, dragDirectionLock = _b === void 0 ? !1 : _b, _c = props.dragPropagation, dragPropagation = _c === void 0 ? !1 : _c, _d = props.dragConstraints, dragConstraints = _d === void 0 ? !1 : _d, _e2 = props.dragElastic, dragElastic = _e2 === void 0 ? defaultElastic : _e2, _f = props.dragMomentum, dragMomentum = _f === void 0 ? !0 : _f;
           return tslib.__assign(tslib.__assign({}, props), { drag: drag2, dragDirectionLock, dragPropagation, dragConstraints, dragElastic, dragMomentum });
         }, VisualElementDragControls2;
       }()
@@ -24752,8 +24754,8 @@ var require_cjs2 = __commonJS({
       return Object.keys(target).some(isPositionalKey);
     }, setAndResetVelocity = function(value, to) {
       value.set(to, !1), value.set(to);
-    }, isNumOrPxType = function(v4) {
-      return v4 === styleValueTypes.number || v4 === styleValueTypes.px;
+    }, isNumOrPxType = function(v5) {
+      return v5 === styleValueTypes.number || v5 === styleValueTypes.px;
     }, BoundingBoxDimension;
     (function(BoundingBoxDimension2) {
       BoundingBoxDimension2.width = "width", BoundingBoxDimension2.height = "height", BoundingBoxDimension2.left = "left", BoundingBoxDimension2.right = "right", BoundingBoxDimension2.top = "top", BoundingBoxDimension2.bottom = "bottom";
@@ -25140,8 +25142,8 @@ var require_cjs2 = __commonJS({
           }
         }, NodeStack2.prototype.exitAnimationComplete = function() {
           this.members.forEach(function(node) {
-            var _a2, _b, _c, _d, _e3;
-            (_b = (_a2 = node.options).onExitComplete) === null || _b === void 0 || _b.call(_a2), (_e3 = (_c = node.resumingFrom) === null || _c === void 0 ? void 0 : (_d = _c.options).onExitComplete) === null || _e3 === void 0 || _e3.call(_d);
+            var _a2, _b, _c, _d, _e2;
+            (_b = (_a2 = node.options).onExitComplete) === null || _b === void 0 || _b.call(_a2), (_e2 = (_c = node.resumingFrom) === null || _c === void 0 ? void 0 : (_d = _c.options).onExitComplete) === null || _e2 === void 0 || _e2.call(_d);
           });
         }, NodeStack2.prototype.scheduleRender = function() {
           this.members.forEach(function(node) {
@@ -25219,7 +25221,7 @@ var require_cjs2 = __commonJS({
                 });
               }
               layoutId && this.root.registerSharedNode(layoutId, this), this.options.animate !== !1 && visualElement2 && (layoutId || layout) && this.addEventListener("didUpdate", function(_a4) {
-                var _b2, _c, _d, _e3, _f, delta = _a4.delta, hasLayoutChanged = _a4.hasLayoutChanged, hasRelativeTargetChanged = _a4.hasRelativeTargetChanged, newLayout = _a4.layout;
+                var _b2, _c, _d, _e2, _f, delta = _a4.delta, hasLayoutChanged = _a4.hasLayoutChanged, hasRelativeTargetChanged = _a4.hasRelativeTargetChanged, newLayout = _a4.layout;
                 if (_this.isTreeAnimationBlocked()) {
                   _this.target = void 0, _this.relativeTarget = void 0;
                   return;
@@ -25230,7 +25232,7 @@ var require_cjs2 = __commonJS({
                   var animationOptions = tslib.__assign(tslib.__assign({}, getValueTransition(layoutTransition, "layout")), { onPlay: onLayoutAnimationStart, onComplete: onLayoutAnimationComplete });
                   visualElement2.shouldReduceMotion && (animationOptions.delay = 0, animationOptions.type = !1), _this.startAnimation(animationOptions);
                 } else
-                  !hasLayoutChanged && _this.animationProgress === 0 && _this.finishAnimation(), _this.isLead() && ((_f = (_e3 = _this.options).onExitComplete) === null || _f === void 0 || _f.call(_e3));
+                  !hasLayoutChanged && _this.animationProgress === 0 && _this.finishAnimation(), _this.isLead() && ((_f = (_e2 = _this.options).onExitComplete) === null || _f === void 0 || _f.call(_e2));
                 _this.targetLayout = newLayout;
               });
             }
@@ -25465,7 +25467,7 @@ var require_cjs2 = __commonJS({
               }
             }
           }, ProjectionNode.prototype.getProjectionStyles = function(styleProp) {
-            var _a3, _b, _c, _d, _e3, _f;
+            var _a3, _b, _c, _d, _e2, _f;
             styleProp === void 0 && (styleProp = {});
             var styles = {};
             if (!this.instance || this.isSVG)
@@ -25485,7 +25487,7 @@ var require_cjs2 = __commonJS({
             var valuesToRender = lead.animationValues || lead.latestValues;
             this.applyTransformsToTarget(), styles.transform = buildProjectionTransform(this.projectionDeltaWithTransform, this.treeScale, valuesToRender), transformTemplate && (styles.transform = transformTemplate(valuesToRender, styles.transform));
             var _g = this.projectionDelta, x5 = _g.x, y6 = _g.y;
-            styles.transformOrigin = "".concat(x5.origin * 100, "% ").concat(y6.origin * 100, "% 0"), lead.animationValues ? styles.opacity = lead === this ? (_d = (_c = valuesToRender.opacity) !== null && _c !== void 0 ? _c : this.latestValues.opacity) !== null && _d !== void 0 ? _d : 1 : this.preserveOpacity ? this.latestValues.opacity : valuesToRender.opacityExit : styles.opacity = lead === this ? (_e3 = valuesToRender.opacity) !== null && _e3 !== void 0 ? _e3 : "" : (_f = valuesToRender.opacityExit) !== null && _f !== void 0 ? _f : 0;
+            styles.transformOrigin = "".concat(x5.origin * 100, "% ").concat(y6.origin * 100, "% 0"), lead.animationValues ? styles.opacity = lead === this ? (_d = (_c = valuesToRender.opacity) !== null && _c !== void 0 ? _c : this.latestValues.opacity) !== null && _d !== void 0 ? _d : 1 : this.preserveOpacity ? this.latestValues.opacity : valuesToRender.opacityExit : styles.opacity = lead === this ? (_e2 = valuesToRender.opacity) !== null && _e2 !== void 0 ? _e2 : "" : (_f = valuesToRender.opacityExit) !== null && _f !== void 0 ? _f : 0;
             for (var key in scaleCorrectors)
               if (valuesToRender[key] !== void 0) {
                 var _h = scaleCorrectors[key], correct = _h.correct, applyTo = _h.applyTo, corrected = correct(valuesToRender[key], lead);
@@ -25513,7 +25515,7 @@ var require_cjs2 = __commonJS({
     function notifyLayoutUpdate(node) {
       var _a2, _b, _c, _d, snapshot = (_b = (_a2 = node.resumeFrom) === null || _a2 === void 0 ? void 0 : _a2.snapshot) !== null && _b !== void 0 ? _b : node.snapshot;
       if (node.isLead() && node.layout && snapshot && node.hasListeners("didUpdate")) {
-        var _e3 = node.layout, layout_1 = _e3.actual, measuredLayout = _e3.measured;
+        var _e2 = node.layout, layout_1 = _e2.actual, measuredLayout = _e2.measured;
         node.options.animationType === "size" ? eachAxis(function(axis) {
           var axisSnapshot = snapshot.isShared ? snapshot.measured[axis] : snapshot.layout[axis], length2 = calcLength(axisSnapshot);
           axisSnapshot.min = layout_1[axis].min, axisSnapshot.max = axisSnapshot.min + length2;
@@ -25796,7 +25798,7 @@ var require_cjs2 = __commonJS({
     }, LayoutGroup = function(_a2) {
       var _b, _c, children = _a2.children, id2 = _a2.id, inheritId = _a2.inheritId, _d = _a2.inherit, inherit = _d === void 0 ? !0 : _d;
       inheritId !== void 0 && (inherit = inheritId);
-      var layoutGroupContext = React32.useContext(LayoutGroupContext), deprecatedLayoutGroupContext = React32.useContext(DeprecatedLayoutGroupContext), _e3 = tslib.__read(useForceUpdate(), 2), forceRender = _e3[0], key = _e3[1], context = React32.useRef(null), upstreamId = (_b = layoutGroupContext.id) !== null && _b !== void 0 ? _b : deprecatedLayoutGroupContext;
+      var layoutGroupContext = React32.useContext(LayoutGroupContext), deprecatedLayoutGroupContext = React32.useContext(DeprecatedLayoutGroupContext), _e2 = tslib.__read(useForceUpdate(), 2), forceRender = _e2[0], key = _e2[1], context = React32.useRef(null), upstreamId = (_b = layoutGroupContext.id) !== null && _b !== void 0 ? _b : deprecatedLayoutGroupContext;
       context.current === null && (shouldInheritId(inherit) && upstreamId && (id2 = id2 ? upstreamId + "-" + id2 : upstreamId), context.current = {
         id: id2,
         group: shouldInheritGroup(inherit) && (_c = layoutGroupContext == null ? void 0 : layoutGroupContext.group) !== null && _c !== void 0 ? _c : nodeGroup()
@@ -25902,10 +25904,10 @@ var require_cjs2 = __commonJS({
       }
       return value;
     }
-    var isCustomValueType = function(v4) {
-      return typeof v4 == "object" && v4.mix;
-    }, getMixer = function(v4) {
-      return isCustomValueType(v4) ? v4.mix : void 0;
+    var isCustomValueType = function(v5) {
+      return typeof v5 == "object" && v5.mix;
+    }, getMixer = function(v5) {
+      return isCustomValueType(v5) ? v5.mix : void 0;
     };
     function transform() {
       for (var args = [], _i = 0; _i < arguments.length; _i++)
@@ -26003,11 +26005,11 @@ var require_cjs2 = __commonJS({
       config === void 0 && (config = {});
       var isStatic = React32.useContext(MotionConfigContext).isStatic, activeSpringAnimation = React32.useRef(null), value = useMotionValue(isMotionValue(source) ? source.get() : source);
       return React32.useMemo(function() {
-        return value.attach(function(v4, set) {
-          return isStatic ? set(v4) : (activeSpringAnimation.current && activeSpringAnimation.current.stop(), activeSpringAnimation.current = popmotion.animate(tslib.__assign(tslib.__assign({ from: value.get(), to: v4, velocity: value.getVelocity() }, config), { onUpdate: set })), value.get());
+        return value.attach(function(v5, set) {
+          return isStatic ? set(v5) : (activeSpringAnimation.current && activeSpringAnimation.current.stop(), activeSpringAnimation.current = popmotion.animate(tslib.__assign(tslib.__assign({ from: value.get(), to: v5, velocity: value.getVelocity() }, config), { onUpdate: set })), value.get());
         });
-      }, [JSON.stringify(config)]), useOnChange(source, function(v4) {
-        return value.set(parseFloat(v4));
+      }, [JSON.stringify(config)]), useOnChange(source, function(v5) {
+        return value.set(parseFloat(v5));
       }), value;
     }
     function useVelocity(value) {
@@ -26226,8 +26228,8 @@ var require_cjs2 = __commonJS({
         return element.mount({}), element.unmount;
       }, [element]), React32.useEffect(function() {
         element.setProps({
-          onUpdate: function(v4) {
-            setAnimationState(tslib.__assign({}, v4));
+          onUpdate: function(v5) {
+            setAnimationState(tslib.__assign({}, v5));
           }
         });
       }, [setAnimationState, element]);
@@ -26240,10 +26242,10 @@ var require_cjs2 = __commonJS({
     }
     var maxScale = 1e5, invertScale = function(scale) {
       return scale > 1e-3 ? 1 / scale : maxScale;
-    }, hasWarned = !1;
+    }, hasWarned2 = !1;
     function useInvertedScale(scale) {
       var parentScaleX = useMotionValue(1), parentScaleY = useMotionValue(1), visualElement2 = useVisualElementContext();
-      heyListen.invariant(!!(scale || visualElement2), "If no scale values are provided, useInvertedScale must be used within a child of another motion component."), heyListen.warning(hasWarned, "useInvertedScale is deprecated and will be removed in 3.0. Use the layout prop instead."), hasWarned = !0, scale ? (parentScaleX = scale.scaleX || parentScaleX, parentScaleY = scale.scaleY || parentScaleY) : visualElement2 && (parentScaleX = visualElement2.getValue("scaleX", 1), parentScaleY = visualElement2.getValue("scaleY", 1));
+      heyListen.invariant(!!(scale || visualElement2), "If no scale values are provided, useInvertedScale must be used within a child of another motion component."), heyListen.warning(hasWarned2, "useInvertedScale is deprecated and will be removed in 3.0. Use the layout prop instead."), hasWarned2 = !0, scale ? (parentScaleX = scale.scaleX || parentScaleX, parentScaleY = scale.scaleY || parentScaleY) : visualElement2 && (parentScaleX = visualElement2.getValue("scaleX", 1), parentScaleY = visualElement2.getValue("scaleY", 1));
       var scaleX = useTransform(parentScaleX, invertScale), scaleY = useTransform(parentScaleY, invertScale);
       return { scaleX, scaleY };
     }
@@ -26819,6 +26821,91 @@ var require_Breadcrumbs = __commonJS({
   }
 });
 
+// node_modules/@material-tailwind/react/components/Spinner/index.js
+var require_Spinner = __commonJS({
+  "node_modules/@material-tailwind/react/components/Spinner/index.js"(exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: !0 });
+    function _export(target, all) {
+      for (var name in all)
+        Object.defineProperty(target, name, { enumerable: !0, get: all[name] });
+    }
+    _export(exports, { Spinner: function() {
+      return Spinner;
+    }, default: function() {
+      return _default;
+    } });
+    var _propTypes = _interopRequireDefault(require_prop_types()), _react = _interopRequireWildcard(require_react()), _classnames = _interopRequireDefault(require_classnames()), _tailwindMerge = require_dist(), _findMatch = _interopRequireDefault(require_findMatch()), _objectsToString = _interopRequireDefault(require_objectsToString()), _theme = require_theme2(), _spinner = require_spinner();
+    function _extends5() {
+      return _extends5 = Object.assign || function(target) {
+        for (var i6 = 1; i6 < arguments.length; i6++) {
+          var source = arguments[i6];
+          for (var key in source)
+            Object.prototype.hasOwnProperty.call(source, key) && (target[key] = source[key]);
+        }
+        return target;
+      }, _extends5.apply(this, arguments);
+    }
+    function _interopRequireDefault(obj) {
+      return obj && obj.__esModule ? obj : { default: obj };
+    }
+    function _getRequireWildcardCache(nodeInterop) {
+      if (typeof WeakMap != "function")
+        return null;
+      var cacheBabelInterop = /* @__PURE__ */ new WeakMap(), cacheNodeInterop = /* @__PURE__ */ new WeakMap();
+      return (_getRequireWildcardCache = function(nodeInterop2) {
+        return nodeInterop2 ? cacheNodeInterop : cacheBabelInterop;
+      })(nodeInterop);
+    }
+    function _interopRequireWildcard(obj, nodeInterop) {
+      if (!nodeInterop && obj && obj.__esModule)
+        return obj;
+      if (obj === null || typeof obj != "object" && typeof obj != "function")
+        return { default: obj };
+      var cache = _getRequireWildcardCache(nodeInterop);
+      if (cache && cache.has(obj))
+        return cache.get(obj);
+      var newObj = {}, hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+      for (var key in obj)
+        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+          var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+          desc && (desc.get || desc.set) ? Object.defineProperty(newObj, key, desc) : newObj[key] = obj[key];
+        }
+      return newObj.default = obj, cache && cache.set(obj, newObj), newObj;
+    }
+    function _objectWithoutProperties(source, excluded) {
+      if (source == null)
+        return {};
+      var target = _objectWithoutPropertiesLoose2(source, excluded), key, i6;
+      if (Object.getOwnPropertySymbols) {
+        var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+        for (i6 = 0; i6 < sourceSymbolKeys.length; i6++)
+          key = sourceSymbolKeys[i6], !(excluded.indexOf(key) >= 0) && Object.prototype.propertyIsEnumerable.call(source, key) && (target[key] = source[key]);
+      }
+      return target;
+    }
+    function _objectWithoutPropertiesLoose2(source, excluded) {
+      if (source == null)
+        return {};
+      var target = {}, sourceKeys = Object.keys(source), key, i6;
+      for (i6 = 0; i6 < sourceKeys.length; i6++)
+        key = sourceKeys[i6], !(excluded.indexOf(key) >= 0) && (target[key] = source[key]);
+      return target;
+    }
+    var Spinner = (0, _react.forwardRef)(function(_param, ref) {
+      var color = _param.color, className = _param.className, rest = _objectWithoutProperties(_param, ["color", "className"]), spinner = (0, _theme.useTheme)().spinner, defaultProps = spinner.defaultProps, valid = spinner.valid, _spinner_styles = spinner.styles, base = _spinner_styles.base, colors = _spinner_styles.colors;
+      color = color ?? defaultProps.color;
+      var _classnames1;
+      className = (_classnames1 = (0, _classnames.default)(defaultProps.className, className)) !== null && _classnames1 !== void 0 ? _classnames1 : defaultProps.className;
+      var spinnerColor = (0, _objectsToString.default)(colors[(0, _findMatch.default)(valid.colors, color, "gray")]), spinnerClasses = (0, _tailwindMerge.twMerge)((0, _classnames.default)((0, _objectsToString.default)(base)), className), _rest_width, _rest_height;
+      return _react.default.createElement("svg", _extends5({}, rest, { ref, className: spinnerClasses, viewBox: "0 0 64 64", fill: "none", xmlns: "http://www.w3.org/2000/svg", width: (_rest_width = rest == null ? void 0 : rest.width) !== null && _rest_width !== void 0 ? _rest_width : 24, height: (_rest_height = rest == null ? void 0 : rest.height) !== null && _rest_height !== void 0 ? _rest_height : 24 }), _react.default.createElement("path", { d: "M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z", stroke: "currentColor", strokeWidth: "5", strokeLinecap: "round", strokeLinejoin: "round" }), _react.default.createElement("path", { d: "M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.9965 60.9928 36.6232 59.5759 40.9762", stroke: "currentColor", strokeWidth: "5", strokeLinecap: "round", strokeLinejoin: "round", className: spinnerColor }));
+    });
+    Spinner.propTypes = { color: _propTypes.default.oneOf(_spinner.propTypesColor), className: _spinner.propTypesClassName };
+    Spinner.displayName = "MaterialTailwind.Spinner";
+    var _default = Spinner;
+  }
+});
+
 // node_modules/@material-tailwind/react/components/Button/index.js
 var require_Button = __commonJS({
   "node_modules/@material-tailwind/react/components/Button/index.js"(exports) {
@@ -26833,7 +26920,7 @@ var require_Button = __commonJS({
     }, default: function() {
       return _default;
     } });
-    var _react = _interopRequireDefault(require_react()), _propTypes = _interopRequireDefault(require_prop_types()), _materialRippleEffects = _interopRequireDefault(require_material_ripple_effects()), _classnames = _interopRequireDefault(require_classnames()), _tailwindMerge = require_dist(), _findMatch = _interopRequireDefault(require_findMatch()), _objectsToString = _interopRequireDefault(require_objectsToString()), _theme = require_theme2(), _button = require_button();
+    var _react = _interopRequireDefault(require_react()), _propTypes = _interopRequireDefault(require_prop_types()), _materialRippleEffects = _interopRequireDefault(require_material_ripple_effects()), _classnames = _interopRequireDefault(require_classnames()), _tailwindMerge = require_dist(), _findMatch = _interopRequireDefault(require_findMatch()), _objectsToString = _interopRequireDefault(require_objectsToString()), _theme = require_theme2(), _spinner = _interopRequireDefault(require_Spinner()), _button = require_button();
     function _defineProperty2(obj, key, value) {
       return key in obj ? Object.defineProperty(obj, key, { value, enumerable: !0, configurable: !0, writable: !0 }) : obj[key] = value, obj;
     }
@@ -26870,15 +26957,15 @@ var require_Button = __commonJS({
       return target;
     }
     var Button3 = _react.default.forwardRef(function(_param, ref) {
-      var variant = _param.variant, size = _param.size, color = _param.color, fullWidth = _param.fullWidth, ripple = _param.ripple, className = _param.className, children = _param.children, rest = _objectWithoutProperties(_param, ["variant", "size", "color", "fullWidth", "ripple", "className", "children"]), button = (0, _theme.useTheme)().button, valid = button.valid, defaultProps = button.defaultProps, styles = button.styles, base = styles.base, variants = styles.variants, sizes = styles.sizes;
+      var variant = _param.variant, size = _param.size, color = _param.color, fullWidth = _param.fullWidth, ripple = _param.ripple, className = _param.className, children = _param.children, loading = _param.loading, rest = _objectWithoutProperties(_param, ["variant", "size", "color", "fullWidth", "ripple", "className", "children", "loading"]), button = (0, _theme.useTheme)().button, valid = button.valid, defaultProps = button.defaultProps, styles = button.styles, base = styles.base, variants = styles.variants, sizes = styles.sizes;
       variant = variant ?? defaultProps.variant, size = size ?? defaultProps.size, color = color ?? defaultProps.color, fullWidth = fullWidth ?? defaultProps.fullWidth, ripple = ripple ?? defaultProps.ripple, className = className ?? defaultProps.className;
-      var rippleEffect = ripple !== void 0 && new _materialRippleEffects.default(), buttonBase = (0, _objectsToString.default)(base.initial), buttonVariant = (0, _objectsToString.default)(variants[(0, _findMatch.default)(valid.variants, variant, "filled")][(0, _findMatch.default)(valid.colors, color, "gray")]), buttonSize = (0, _objectsToString.default)(sizes[(0, _findMatch.default)(valid.sizes, size, "md")]), classes = (0, _tailwindMerge.twMerge)((0, _classnames.default)(buttonBase, buttonSize, buttonVariant, _defineProperty2({}, (0, _objectsToString.default)(base.fullWidth), fullWidth)), className);
-      return _react.default.createElement("button", _extends5({}, rest, { ref, className: classes, type: rest.type || "button", onMouseDown: function(e4) {
+      var rippleEffect = ripple !== void 0 && new _materialRippleEffects.default(), buttonBase = (0, _objectsToString.default)(base.initial), buttonVariant = (0, _objectsToString.default)(variants[(0, _findMatch.default)(valid.variants, variant, "filled")][(0, _findMatch.default)(valid.colors, color, "gray")]), buttonSize = (0, _objectsToString.default)(sizes[(0, _findMatch.default)(valid.sizes, size, "md")]), classes = (0, _tailwindMerge.twMerge)((0, _classnames.default)(buttonBase, buttonSize, buttonVariant, _defineProperty2({}, (0, _objectsToString.default)(base.fullWidth), fullWidth), { "flex items-center gap-2": loading, "gap-3": size === "lg" }), className), spinnerClass = (0, _tailwindMerge.twMerge)((0, _classnames.default)({ "w-4 h-4": !0, "w-5 h-5": size === "lg" })), _rest_disabled;
+      return _react.default.createElement("button", _extends5({}, rest, { disabled: (_rest_disabled = rest.disabled) !== null && _rest_disabled !== void 0 ? _rest_disabled : loading, ref, className: classes, type: rest.type || "button", onMouseDown: function(e4) {
         var onMouseDown = rest == null ? void 0 : rest.onMouseDown;
         return ripple && rippleEffect.create(e4, (variant === "filled" || variant === "gradient") && color !== "white" ? "light" : "dark"), typeof onMouseDown == "function" && onMouseDown(e4);
-      } }), children);
+      } }), loading && _react.default.createElement(_spinner.default, { className: spinnerClass }), children);
     });
-    Button3.propTypes = { variant: _propTypes.default.oneOf(_button.propTypesVariant), size: _propTypes.default.oneOf(_button.propTypesSize), color: _propTypes.default.oneOf(_button.propTypesColor), fullWidth: _button.propTypesFullWidth, ripple: _button.propTypesRipple, className: _button.propTypesClassName, children: _button.propTypesChildren };
+    Button3.propTypes = { variant: _propTypes.default.oneOf(_button.propTypesVariant), size: _propTypes.default.oneOf(_button.propTypesSize), color: _propTypes.default.oneOf(_button.propTypesColor), fullWidth: _button.propTypesFullWidth, ripple: _button.propTypesRipple, className: _button.propTypesClassName, children: _button.propTypesChildren, loading: _button.propTypesLoading };
     Button3.displayName = "MaterialTailwind.Button";
     var _default = Button3;
   }
@@ -27578,7 +27665,7 @@ var require_react_dom_development = __commonJS({
           argsWithFormat.unshift("Warning: " + format), Function.prototype.apply.call(console[level], console, argsWithFormat);
         }
       }
-      var FunctionComponent = 0, ClassComponent = 1, IndeterminateComponent = 2, HostRoot = 3, HostPortal = 4, HostComponent = 5, HostText = 6, Fragment22 = 7, Mode = 8, ContextConsumer = 9, ContextProvider = 10, ForwardRef10 = 11, Profiler = 12, SuspenseComponent = 13, MemoComponent = 14, SimpleMemoComponent = 15, LazyComponent = 16, IncompleteClassComponent = 17, DehydratedFragment = 18, SuspenseListComponent = 19, ScopeComponent = 21, OffscreenComponent = 22, LegacyHiddenComponent = 23, CacheComponent = 24, TracingMarkerComponent = 25, enableClientRenderFallbackOnTextMismatch = !0, enableNewReconciler = !1, enableLazyContextPropagation = !1, enableLegacyHidden = !1, enableSuspenseAvoidThisFallback = !1, disableCommentsAsDOMContainers = !0, enableCustomElementPropertySupport = !1, warnAboutStringRefs = !1, enableSchedulingProfiler = !0, enableProfilerTimer = !0, enableProfilerCommitHooks = !0, allNativeEvents = /* @__PURE__ */ new Set(), registrationNameDependencies = {}, possibleRegistrationNames = {};
+      var FunctionComponent = 0, ClassComponent = 1, IndeterminateComponent = 2, HostRoot = 3, HostPortal = 4, HostComponent = 5, HostText = 6, Fragment23 = 7, Mode = 8, ContextConsumer = 9, ContextProvider = 10, ForwardRef10 = 11, Profiler = 12, SuspenseComponent = 13, MemoComponent = 14, SimpleMemoComponent = 15, LazyComponent = 16, IncompleteClassComponent = 17, DehydratedFragment = 18, SuspenseListComponent = 19, ScopeComponent = 21, OffscreenComponent = 22, LegacyHiddenComponent = 23, CacheComponent = 24, TracingMarkerComponent = 25, enableClientRenderFallbackOnTextMismatch = !0, enableNewReconciler = !1, enableLazyContextPropagation = !1, enableLegacyHidden = !1, enableSuspenseAvoidThisFallback = !1, disableCommentsAsDOMContainers = !0, enableCustomElementPropertySupport = !1, warnAboutStringRefs = !1, enableSchedulingProfiler = !0, enableProfilerTimer = !0, enableProfilerCommitHooks = !0, allNativeEvents = /* @__PURE__ */ new Set(), registrationNameDependencies = {}, possibleRegistrationNames = {};
       function registerTwoPhaseEvent(registrationName, dependencies) {
         registerDirectEvent(registrationName, dependencies), registerDirectEvent(registrationName + "Capture", dependencies);
       }
@@ -28428,7 +28515,7 @@ Error generating stack: ` + x5.message + `
             return "DehydratedFragment";
           case ForwardRef10:
             return getWrappedName$1(type, type.render, "ForwardRef");
-          case Fragment22:
+          case Fragment23:
             return "Fragment";
           case HostComponent:
             return type;
@@ -33311,7 +33398,7 @@ Check the render method of \`` + ownerName + "`." : "";
         } else
           ReactDebugCurrentFrame$1.setExtraStackFrame(null);
       }
-      function checkPropTypes(typeSpecs, values, location, componentName, element) {
+      function checkPropTypes(typeSpecs, values, location2, componentName, element) {
         {
           var has2 = Function.call.bind(hasOwnProperty);
           for (var typeSpecName in typeSpecs)
@@ -33319,14 +33406,14 @@ Check the render method of \`` + ownerName + "`." : "";
               var error$1 = void 0;
               try {
                 if (typeof typeSpecs[typeSpecName] != "function") {
-                  var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                  var err = Error((componentName || "React class") + ": " + location2 + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
                   throw err.name = "Invariant Violation", err;
                 }
-                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
+                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location2, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
               } catch (ex) {
                 error$1 = ex;
               }
-              error$1 && !(error$1 instanceof Error) && (setCurrentlyValidatingElement(element), error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location, typeSpecName, typeof error$1), setCurrentlyValidatingElement(null)), error$1 instanceof Error && !(error$1.message in loggedTypeFailures) && (loggedTypeFailures[error$1.message] = !0, setCurrentlyValidatingElement(element), error("Failed %s type: %s", location, error$1.message), setCurrentlyValidatingElement(null));
+              error$1 && !(error$1 instanceof Error) && (setCurrentlyValidatingElement(element), error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location2, typeSpecName, typeof error$1), setCurrentlyValidatingElement(null)), error$1 instanceof Error && !(error$1.message in loggedTypeFailures) && (loggedTypeFailures[error$1.message] = !0, setCurrentlyValidatingElement(element), error("Failed %s type: %s", location2, error$1.message), setCurrentlyValidatingElement(null));
             }
         }
       }
@@ -34757,7 +34844,7 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`);
           }
         }
         function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-          if (current2 === null || current2.tag !== Fragment22) {
+          if (current2 === null || current2.tag !== Fragment23) {
             var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
             return created.return = returnFiber, created;
           } else {
@@ -34985,7 +35072,7 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`);
             if (child.key === key) {
               var elementType = element.type;
               if (elementType === REACT_FRAGMENT_TYPE) {
-                if (child.tag === Fragment22) {
+                if (child.tag === Fragment23) {
                   deleteRemainingChildren(returnFiber, child.sibling);
                   var existing = useFiber(child, element.props.children);
                   return existing.return = returnFiber, existing._debugSource = element._source, existing._debugOwner = element._owner, existing;
@@ -37575,7 +37662,7 @@ Check the render method of \`` + ownerName + "`.");
             var type = workInProgress2.type, _unresolvedProps2 = workInProgress2.pendingProps, _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
             return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
           }
-          case Fragment22:
+          case Fragment23:
             return updateFragment(current2, workInProgress2, renderLanes2);
           case Mode:
             return updateMode(current2, workInProgress2, renderLanes2);
@@ -37727,7 +37814,7 @@ Check the render method of \`` + ownerName + "`.");
           case SimpleMemoComponent:
           case FunctionComponent:
           case ForwardRef10:
-          case Fragment22:
+          case Fragment23:
           case Mode:
           case Profiler:
           case ContextConsumer:
@@ -40284,7 +40371,7 @@ Check the render method of \`` + ownerName + "`.");
         return fiber._debugSource = element._source, fiber._debugOwner = element._owner, fiber;
       }
       function createFiberFromFragment(elements, mode, lanes, key) {
-        var fiber = createFiber(Fragment22, elements, key, mode);
+        var fiber = createFiber(Fragment23, elements, key, mode);
         return fiber.lanes = lanes, fiber;
       }
       function createFiberFromProfiler(pendingProps, mode, lanes, key) {
@@ -41270,7 +41357,7 @@ var require_floating_ui_core_umd = __commonJS({
               let alignment2 = getAlignment(d11.placement);
               return [d11.placement, alignment2 && crossAxis ? (
                 // Check along the mainAxis and main crossAxis side.
-                d11.overflows.slice(0, 2).reduce((acc, v4) => acc + v4, 0)
+                d11.overflows.slice(0, 2).reduce((acc, v5) => acc + v5, 0)
               ) : (
                 // Check only the mainAxis.
                 d11.overflows[0]
@@ -41280,7 +41367,7 @@ var require_floating_ui_core_umd = __commonJS({
               // Aligned placements should not check their opposite crossAxis
               // side.
               getAlignment(d11[0]) ? 2 : 3
-            ).every((v4) => v4 <= 0))[0]) == null ? void 0 : _placementsThatFitOnE[0]) || placementsSortedByMostSpace[0][0];
+            ).every((v5) => v5 <= 0))[0]) == null ? void 0 : _placementsThatFitOnE[0]) || placementsSortedByMostSpace[0][0];
             return resetPlacement !== placement ? {
               data: {
                 index: currentIndex + 1,
@@ -41527,14 +41614,20 @@ var require_floating_ui_core_umd = __commonJS({
           name: "offset",
           options,
           async fn(state) {
+            var _middlewareData$offse, _middlewareData$arrow;
             let {
               x: x5,
-              y: y6
+              y: y6,
+              placement,
+              middlewareData
             } = state, diffCoords = await convertValueToCoords(state, options);
-            return {
+            return placement === ((_middlewareData$offse = middlewareData.offset) == null ? void 0 : _middlewareData$offse.placement) && (_middlewareData$arrow = middlewareData.arrow) != null && _middlewareData$arrow.alignmentOffset ? {} : {
               x: x5 + diffCoords.x,
               y: y6 + diffCoords.y,
-              data: diffCoords
+              data: {
+                ...diffCoords,
+                placement
+              }
             };
           }
         };
@@ -41686,9 +41779,9 @@ var require_floating_ui_dom_umd = __commonJS({
       typeof exports == "object" && typeof module < "u" ? factory(exports, require_floating_ui_core_umd()) : typeof define == "function" && define.amd ? define(["exports", "@floating-ui/core"], factory) : (global2 = typeof globalThis < "u" ? globalThis : global2 || self, factory(global2.FloatingUIDOM = {}, global2.FloatingUICore));
     })(exports, function(exports2, core) {
       "use strict";
-      let min = Math.min, max = Math.max, round = Math.round, floor = Math.floor, createCoords = (v4) => ({
-        x: v4,
-        y: v4
+      let min = Math.min, max = Math.max, round = Math.round, floor = Math.floor, createCoords = (v5) => ({
+        x: v5,
+        y: v5
       });
       function getNodeName(node) {
         return isNode(node) ? (node.nodeName || "").toLowerCase() : "#document";
@@ -43360,9 +43453,9 @@ var require_floating_ui_react_umd = __commonJS({
           }
         }, [floating, getTabbableContent, ignoreInitialFocus, refs]);
         let shouldRenderGuards = guards && (isInsidePortal || modal) && !isTypeableCombobox;
-        function renderDismissButton(location) {
+        function renderDismissButton(location2) {
           return visuallyHiddenDismiss && modal ? /* @__PURE__ */ React__namespace.createElement(VisuallyHiddenDismiss, {
-            ref: location === "start" ? startDismissButtonRef : endDismissButtonRef,
+            ref: location2 === "start" ? startDismissButtonRef : endDismissButtonRef,
             onClick: () => onOpenChange(!1)
           }, typeof visuallyHiddenDismiss == "string" ? visuallyHiddenDismiss : "Dismiss") : null;
         }
@@ -45052,18 +45145,18 @@ var require_MenuCore = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -45788,18 +45881,18 @@ var require_Popover = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -46143,18 +46236,18 @@ var require_Select = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -46433,18 +46526,18 @@ var require_TabsContext = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -46975,18 +47068,18 @@ var require_Tooltip = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -47686,18 +47779,18 @@ var require_Carousel = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -48014,18 +48107,18 @@ var require_Rating = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -48152,18 +48245,18 @@ var require_Slider = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -48231,91 +48324,6 @@ var require_Slider = __commonJS({
   }
 });
 
-// node_modules/@material-tailwind/react/components/Spinner/index.js
-var require_Spinner = __commonJS({
-  "node_modules/@material-tailwind/react/components/Spinner/index.js"(exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: !0 });
-    function _export(target, all) {
-      for (var name in all)
-        Object.defineProperty(target, name, { enumerable: !0, get: all[name] });
-    }
-    _export(exports, { Spinner: function() {
-      return Spinner;
-    }, default: function() {
-      return _default;
-    } });
-    var _propTypes = _interopRequireDefault(require_prop_types()), _react = _interopRequireWildcard(require_react()), _classnames = _interopRequireDefault(require_classnames()), _tailwindMerge = require_dist(), _findMatch = _interopRequireDefault(require_findMatch()), _objectsToString = _interopRequireDefault(require_objectsToString()), _theme = require_theme2(), _spinner = require_spinner();
-    function _extends5() {
-      return _extends5 = Object.assign || function(target) {
-        for (var i6 = 1; i6 < arguments.length; i6++) {
-          var source = arguments[i6];
-          for (var key in source)
-            Object.prototype.hasOwnProperty.call(source, key) && (target[key] = source[key]);
-        }
-        return target;
-      }, _extends5.apply(this, arguments);
-    }
-    function _interopRequireDefault(obj) {
-      return obj && obj.__esModule ? obj : { default: obj };
-    }
-    function _getRequireWildcardCache(nodeInterop) {
-      if (typeof WeakMap != "function")
-        return null;
-      var cacheBabelInterop = /* @__PURE__ */ new WeakMap(), cacheNodeInterop = /* @__PURE__ */ new WeakMap();
-      return (_getRequireWildcardCache = function(nodeInterop2) {
-        return nodeInterop2 ? cacheNodeInterop : cacheBabelInterop;
-      })(nodeInterop);
-    }
-    function _interopRequireWildcard(obj, nodeInterop) {
-      if (!nodeInterop && obj && obj.__esModule)
-        return obj;
-      if (obj === null || typeof obj != "object" && typeof obj != "function")
-        return { default: obj };
-      var cache = _getRequireWildcardCache(nodeInterop);
-      if (cache && cache.has(obj))
-        return cache.get(obj);
-      var newObj = {}, hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-      for (var key in obj)
-        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-          var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-          desc && (desc.get || desc.set) ? Object.defineProperty(newObj, key, desc) : newObj[key] = obj[key];
-        }
-      return newObj.default = obj, cache && cache.set(obj, newObj), newObj;
-    }
-    function _objectWithoutProperties(source, excluded) {
-      if (source == null)
-        return {};
-      var target = _objectWithoutPropertiesLoose2(source, excluded), key, i6;
-      if (Object.getOwnPropertySymbols) {
-        var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-        for (i6 = 0; i6 < sourceSymbolKeys.length; i6++)
-          key = sourceSymbolKeys[i6], !(excluded.indexOf(key) >= 0) && Object.prototype.propertyIsEnumerable.call(source, key) && (target[key] = source[key]);
-      }
-      return target;
-    }
-    function _objectWithoutPropertiesLoose2(source, excluded) {
-      if (source == null)
-        return {};
-      var target = {}, sourceKeys = Object.keys(source), key, i6;
-      for (i6 = 0; i6 < sourceKeys.length; i6++)
-        key = sourceKeys[i6], !(excluded.indexOf(key) >= 0) && (target[key] = source[key]);
-      return target;
-    }
-    var Spinner = (0, _react.forwardRef)(function(_param, ref) {
-      var color = _param.color, className = _param.className, rest = _objectWithoutProperties(_param, ["color", "className"]), spinner = (0, _theme.useTheme)().spinner, defaultProps = spinner.defaultProps, valid = spinner.valid, _spinner_styles = spinner.styles, base = _spinner_styles.base, colors = _spinner_styles.colors;
-      color = color ?? defaultProps.color;
-      var _classnames1;
-      className = (_classnames1 = (0, _classnames.default)(defaultProps.className, className)) !== null && _classnames1 !== void 0 ? _classnames1 : defaultProps.className;
-      var spinnerColor = (0, _objectsToString.default)(colors[(0, _findMatch.default)(valid.colors, color, "gray")]), spinnerClasses = (0, _tailwindMerge.twMerge)((0, _classnames.default)((0, _objectsToString.default)(base)), className), _rest_width, _rest_height;
-      return _react.default.createElement("svg", _extends5({}, rest, { ref, className: spinnerClasses, viewBox: "0 0 64 64", fill: "none", xmlns: "http://www.w3.org/2000/svg", width: (_rest_width = rest == null ? void 0 : rest.width) !== null && _rest_width !== void 0 ? _rest_width : 24, height: (_rest_height = rest == null ? void 0 : rest.height) !== null && _rest_height !== void 0 ? _rest_height : 24 }), _react.default.createElement("path", { d: "M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z", stroke: "currentColor", strokeWidth: "5", strokeLinecap: "round", strokeLinejoin: "round" }), _react.default.createElement("path", { d: "M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.9965 60.9928 36.6232 59.5759 40.9762", stroke: "currentColor", strokeWidth: "5", strokeLinecap: "round", strokeLinejoin: "round", className: spinnerColor }));
-    });
-    Spinner.propTypes = { color: _propTypes.default.oneOf(_spinner.propTypesColor), className: _spinner.propTypesClassName };
-    Spinner.displayName = "MaterialTailwind.Spinner";
-    var _default = Spinner;
-  }
-});
-
 // node_modules/@material-tailwind/react/components/Timeline/TimelineItem.js
 var require_TimelineItem = __commonJS({
   "node_modules/@material-tailwind/react/components/Timeline/TimelineItem.js"(exports) {
@@ -48359,18 +48367,18 @@ var require_TimelineItem = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -48473,18 +48481,18 @@ var require_TimelineIcon = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -48587,18 +48595,18 @@ var require_TimelineBody = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -48748,18 +48756,18 @@ var require_TimelineConnector = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -49009,18 +49017,18 @@ var require_Stepper = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -49380,18 +49388,18 @@ var require_SpeedDial = __commonJS({
     function _iterableToArrayLimit2(arr, i6) {
       var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
       if (_i != null) {
-        var _arr = [], _n = !0, _d = !1, _s, _e3;
+        var _arr = [], _n = !0, _d = !1, _s, _e2;
         try {
           for (_i = _i.call(arr); !(_n = (_s = _i.next()).done) && (_arr.push(_s.value), !(i6 && _arr.length === i6)); _n = !0)
             ;
         } catch (err) {
-          _d = !0, _e3 = err;
+          _d = !0, _e2 = err;
         } finally {
           try {
             !_n && _i.return != null && _i.return();
           } finally {
             if (_d)
-              throw _e3;
+              throw _e2;
           }
         }
         return _arr;
@@ -49777,7 +49785,7 @@ var require_react_jsx_runtime_development = __commonJS({
         } else
           ReactDebugCurrentFrame.setExtraStackFrame(null);
       }
-      function checkPropTypes(typeSpecs, values, location, componentName, element) {
+      function checkPropTypes(typeSpecs, values, location2, componentName, element) {
         {
           var has = Function.call.bind(hasOwnProperty);
           for (var typeSpecName in typeSpecs)
@@ -49785,14 +49793,14 @@ var require_react_jsx_runtime_development = __commonJS({
               var error$1 = void 0;
               try {
                 if (typeof typeSpecs[typeSpecName] != "function") {
-                  var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                  var err = Error((componentName || "React class") + ": " + location2 + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
                   throw err.name = "Invariant Violation", err;
                 }
-                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
+                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location2, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
               } catch (ex) {
                 error$1 = ex;
               }
-              error$1 && !(error$1 instanceof Error) && (setCurrentlyValidatingElement(element), error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location, typeSpecName, typeof error$1), setCurrentlyValidatingElement(null)), error$1 instanceof Error && !(error$1.message in loggedTypeFailures) && (loggedTypeFailures[error$1.message] = !0, setCurrentlyValidatingElement(element), error("Failed %s type: %s", location, error$1.message), setCurrentlyValidatingElement(null));
+              error$1 && !(error$1 instanceof Error) && (setCurrentlyValidatingElement(element), error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || "React class", location2, typeSpecName, typeof error$1), setCurrentlyValidatingElement(null)), error$1 instanceof Error && !(error$1.message in loggedTypeFailures) && (loggedTypeFailures[error$1.message] = !0, setCurrentlyValidatingElement(element), error("Failed %s type: %s", location2, error$1.message), setCurrentlyValidatingElement(null));
             }
         }
       }
@@ -49900,7 +49908,7 @@ var require_react_jsx_runtime_development = __commonJS({
           value: source
         }), Object.freeze && (Object.freeze(element.props), Object.freeze(element)), element;
       };
-      function jsxDEV51(type, config, maybeKey, source, self2) {
+      function jsxDEV41(type, config, maybeKey, source, self2) {
         {
           var propName, props = {}, key = null, ref = null;
           maybeKey !== void 0 && (checkKeyStringCoercion(maybeKey), key = "" + maybeKey), hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key), hasValidRef(config) && (ref = config.ref, warnIfStringRefCannotBeAutoConverted(config, self2));
@@ -50047,7 +50055,7 @@ Check the top-level render call using <` + parentName + ">.");
             var typeString;
             type === null ? typeString = "null" : isArray(type) ? typeString = "array" : type !== void 0 && type.$$typeof === REACT_ELEMENT_TYPE ? (typeString = "<" + (getComponentNameFromType(type.type) || "Unknown") + " />", info = " Did you accidentally export a JSX literal instead of a component?") : typeString = typeof type, error("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
           }
-          var element = jsxDEV51(type, props, key, source, self2);
+          var element = jsxDEV41(type, props, key, source, self2);
           if (element == null)
             return element;
           if (validType) {
@@ -50072,8 +50080,8 @@ Check the top-level render call using <` + parentName + ">.");
       function jsxWithValidationDynamic(type, props, key) {
         return jsxWithValidation(type, props, key, !1);
       }
-      var jsx4 = jsxWithValidationDynamic, jsxs3 = jsxWithValidationStatic;
-      exports.Fragment = REACT_FRAGMENT_TYPE, exports.jsx = jsx4, exports.jsxs = jsxs3;
+      var jsx16 = jsxWithValidationDynamic, jsxs10 = jsxWithValidationStatic;
+      exports.Fragment = REACT_FRAGMENT_TYPE, exports.jsx = jsx16, exports.jsxs = jsxs10;
     })();
   }
 });
@@ -50083,6 +50091,84 @@ var require_jsx_runtime = __commonJS({
   "node_modules/react/jsx-runtime.js"(exports, module) {
     "use strict";
     module.exports = require_react_jsx_runtime_development();
+  }
+});
+
+// node_modules/tw-elements-react/node_modules/deepmerge/dist/cjs.js
+var require_cjs3 = __commonJS({
+  "node_modules/tw-elements-react/node_modules/deepmerge/dist/cjs.js"(exports, module) {
+    "use strict";
+    var isMergeableObject = function(value) {
+      return isNonNullObject(value) && !isSpecial(value);
+    };
+    function isNonNullObject(value) {
+      return !!value && typeof value == "object";
+    }
+    function isSpecial(value) {
+      var stringValue = Object.prototype.toString.call(value);
+      return stringValue === "[object RegExp]" || stringValue === "[object Date]" || isReactElement(value);
+    }
+    var canUseSymbol = typeof Symbol == "function" && Symbol.for, REACT_ELEMENT_TYPE = canUseSymbol ? Symbol.for("react.element") : 60103;
+    function isReactElement(value) {
+      return value.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    function emptyTarget(val) {
+      return Array.isArray(val) ? [] : {};
+    }
+    function cloneUnlessOtherwiseSpecified(value, options) {
+      return options.clone !== !1 && options.isMergeableObject(value) ? deepmerge(emptyTarget(value), value, options) : value;
+    }
+    function defaultArrayMerge(target, source, options) {
+      return target.concat(source).map(function(element) {
+        return cloneUnlessOtherwiseSpecified(element, options);
+      });
+    }
+    function getMergeFunction(key, options) {
+      if (!options.customMerge)
+        return deepmerge;
+      var customMerge = options.customMerge(key);
+      return typeof customMerge == "function" ? customMerge : deepmerge;
+    }
+    function getEnumerableOwnPropertySymbols(target) {
+      return Object.getOwnPropertySymbols ? Object.getOwnPropertySymbols(target).filter(function(symbol) {
+        return Object.propertyIsEnumerable.call(target, symbol);
+      }) : [];
+    }
+    function getKeys(target) {
+      return Object.keys(target).concat(getEnumerableOwnPropertySymbols(target));
+    }
+    function propertyIsOnObject(object, property) {
+      try {
+        return property in object;
+      } catch {
+        return !1;
+      }
+    }
+    function propertyIsUnsafe(target, key) {
+      return propertyIsOnObject(target, key) && !(Object.hasOwnProperty.call(target, key) && Object.propertyIsEnumerable.call(target, key));
+    }
+    function mergeObject(target, source, options) {
+      var destination = {};
+      return options.isMergeableObject(target) && getKeys(target).forEach(function(key) {
+        destination[key] = cloneUnlessOtherwiseSpecified(target[key], options);
+      }), getKeys(source).forEach(function(key) {
+        propertyIsUnsafe(target, key) || (propertyIsOnObject(target, key) && options.isMergeableObject(source[key]) ? destination[key] = getMergeFunction(key, options)(target[key], source[key], options) : destination[key] = cloneUnlessOtherwiseSpecified(source[key], options));
+      }), destination;
+    }
+    function deepmerge(target, source, options) {
+      options = options || {}, options.arrayMerge = options.arrayMerge || defaultArrayMerge, options.isMergeableObject = options.isMergeableObject || isMergeableObject, options.cloneUnlessOtherwiseSpecified = cloneUnlessOtherwiseSpecified;
+      var sourceIsArray = Array.isArray(source), targetIsArray = Array.isArray(target), sourceAndTargetTypesMatch = sourceIsArray === targetIsArray;
+      return sourceAndTargetTypesMatch ? sourceIsArray ? options.arrayMerge(target, source, options) : mergeObject(target, source, options) : cloneUnlessOtherwiseSpecified(source, options);
+    }
+    deepmerge.all = function(array, options) {
+      if (!Array.isArray(array))
+        throw new Error("first argument should be an array");
+      return array.reduce(function(prev, next) {
+        return deepmerge(prev, next, options);
+      }, {});
+    };
+    var deepmerge_1 = deepmerge;
+    module.exports = deepmerge_1;
   }
 });
 
@@ -50344,28 +50430,28 @@ var require_react_responsive = __commonJS({
                 } catch {
                 }
               };
-              function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+              function checkPropTypes(typeSpecs, values, location2, componentName, getStack) {
                 for (var typeSpecName in typeSpecs)
                   if (has(typeSpecs, typeSpecName)) {
                     var error;
                     try {
                       if (typeof typeSpecs[typeSpecName] != "function") {
                         var err = Error(
-                          (componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`."
+                          (componentName || "React class") + ": " + location2 + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`."
                         );
                         throw err.name = "Invariant Violation", err;
                       }
-                      error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+                      error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location2, null, ReactPropTypesSecret);
                     } catch (ex) {
                       error = ex;
                     }
                     if (error && !(error instanceof Error) && printWarning(
-                      (componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker function must return `null` or an `Error` but returned a " + typeof error + ". You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument)."
+                      (componentName || "React class") + ": type specification of " + location2 + " `" + typeSpecName + "` is invalid; the type checker function must return `null` or an `Error` but returned a " + typeof error + ". You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument)."
                     ), error instanceof Error && !(error.message in loggedTypeFailures)) {
                       loggedTypeFailures[error.message] = !0;
                       var stack = getStack ? getStack() : "";
                       printWarning(
-                        "Failed " + location + " type: " + error.message + (stack ?? "")
+                        "Failed " + location2 + " type: " + error.message + (stack ?? "")
                       );
                     }
                   }
@@ -50448,7 +50534,7 @@ var require_react_responsive = __commonJS({
                 PropTypeError.prototype = Error.prototype;
                 function createChainableTypeChecker(validate) {
                   var manualPropTypeCallCache = {}, manualPropTypeWarningCount = 0;
-                  function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+                  function checkType(isRequired, props, propName, componentName, location2, propFullName, secret) {
                     if (componentName = componentName || ANONYMOUS, propFullName = propFullName || propName, secret !== ReactPropTypesSecret) {
                       if (throwOnDirectAccess) {
                         var err = new Error(
@@ -50463,18 +50549,18 @@ var require_react_responsive = __commonJS({
                         ), manualPropTypeCallCache[cacheKey] = !0, manualPropTypeWarningCount++);
                       }
                     }
-                    return props[propName] == null ? isRequired ? props[propName] === null ? new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`.")) : new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`.")) : null : validate(props, propName, componentName, location, propFullName);
+                    return props[propName] == null ? isRequired ? props[propName] === null ? new PropTypeError("The " + location2 + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`.")) : new PropTypeError("The " + location2 + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`.")) : null : validate(props, propName, componentName, location2, propFullName);
                   }
                   var chainedCheckType = checkType.bind(null, !1);
                   return chainedCheckType.isRequired = checkType.bind(null, !0), chainedCheckType;
                 }
                 function createPrimitiveTypeChecker(expectedType) {
-                  function validate(props, propName, componentName, location, propFullName, secret) {
+                  function validate(props, propName, componentName, location2, propFullName, secret) {
                     var propValue = props[propName], propType = getPropType(propValue);
                     if (propType !== expectedType) {
                       var preciseType = getPreciseType(propValue);
                       return new PropTypeError(
-                        "Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."),
+                        "Invalid " + location2 + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."),
                         { expectedType }
                       );
                     }
@@ -50486,16 +50572,16 @@ var require_react_responsive = __commonJS({
                   return createChainableTypeChecker(emptyFunctionThatReturnsNull);
                 }
                 function createArrayOfTypeChecker(typeChecker) {
-                  function validate(props, propName, componentName, location, propFullName) {
+                  function validate(props, propName, componentName, location2, propFullName) {
                     if (typeof typeChecker != "function")
                       return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
                     var propValue = props[propName];
                     if (!Array.isArray(propValue)) {
                       var propType = getPropType(propValue);
-                      return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
+                      return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
                     }
                     for (var i6 = 0; i6 < propValue.length; i6++) {
-                      var error = typeChecker(propValue, i6, componentName, location, propFullName + "[" + i6 + "]", ReactPropTypesSecret);
+                      var error = typeChecker(propValue, i6, componentName, location2, propFullName + "[" + i6 + "]", ReactPropTypesSecret);
                       if (error instanceof Error)
                         return error;
                     }
@@ -50504,32 +50590,32 @@ var require_react_responsive = __commonJS({
                   return createChainableTypeChecker(validate);
                 }
                 function createElementTypeChecker() {
-                  function validate(props, propName, componentName, location, propFullName) {
+                  function validate(props, propName, componentName, location2, propFullName) {
                     var propValue = props[propName];
                     if (!isValidElement2(propValue)) {
                       var propType = getPropType(propValue);
-                      return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
+                      return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
                     }
                     return null;
                   }
                   return createChainableTypeChecker(validate);
                 }
                 function createElementTypeTypeChecker() {
-                  function validate(props, propName, componentName, location, propFullName) {
+                  function validate(props, propName, componentName, location2, propFullName) {
                     var propValue = props[propName];
                     if (!ReactIs.isValidElementType(propValue)) {
                       var propType = getPropType(propValue);
-                      return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
+                      return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
                     }
                     return null;
                   }
                   return createChainableTypeChecker(validate);
                 }
                 function createInstanceTypeChecker(expectedClass) {
-                  function validate(props, propName, componentName, location, propFullName) {
+                  function validate(props, propName, componentName, location2, propFullName) {
                     if (!(props[propName] instanceof expectedClass)) {
                       var expectedClassName = expectedClass.name || ANONYMOUS, actualClassName = getClassName(props[propName]);
-                      return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
+                      return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
                     }
                     return null;
                   }
@@ -50540,7 +50626,7 @@ var require_react_responsive = __commonJS({
                     return arguments.length > 1 ? printWarning(
                       "Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z])."
                     ) : printWarning("Invalid argument supplied to oneOf, expected an array."), emptyFunctionThatReturnsNull;
-                  function validate(props, propName, componentName, location, propFullName) {
+                  function validate(props, propName, componentName, location2, propFullName) {
                     for (var propValue = props[propName], i6 = 0; i6 < expectedValues.length; i6++)
                       if (is(propValue, expectedValues[i6]))
                         return null;
@@ -50548,20 +50634,20 @@ var require_react_responsive = __commonJS({
                       var type = getPreciseType(value);
                       return type === "symbol" ? String(value) : value;
                     });
-                    return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
+                    return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
                   }
                   return createChainableTypeChecker(validate);
                 }
                 function createObjectOfTypeChecker(typeChecker) {
-                  function validate(props, propName, componentName, location, propFullName) {
+                  function validate(props, propName, componentName, location2, propFullName) {
                     if (typeof typeChecker != "function")
                       return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
                     var propValue = props[propName], propType = getPropType(propValue);
                     if (propType !== "object")
-                      return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
+                      return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
                     for (var key in propValue)
                       if (has(propValue, key)) {
-                        var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                        var error = typeChecker(propValue, key, componentName, location2, propFullName + "." + key, ReactPropTypesSecret);
                         if (error instanceof Error)
                           return error;
                       }
@@ -50579,39 +50665,39 @@ var require_react_responsive = __commonJS({
                         "Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i6 + "."
                       ), emptyFunctionThatReturnsNull;
                   }
-                  function validate(props, propName, componentName, location, propFullName) {
+                  function validate(props, propName, componentName, location2, propFullName) {
                     for (var expectedTypes = [], i7 = 0; i7 < arrayOfTypeCheckers.length; i7++) {
-                      var checker2 = arrayOfTypeCheckers[i7], checkerResult = checker2(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+                      var checker2 = arrayOfTypeCheckers[i7], checkerResult = checker2(props, propName, componentName, location2, propFullName, ReactPropTypesSecret);
                       if (checkerResult == null)
                         return null;
                       checkerResult.data && has(checkerResult.data, "expectedType") && expectedTypes.push(checkerResult.data.expectedType);
                     }
                     var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
-                    return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
+                    return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
                   }
                   return createChainableTypeChecker(validate);
                 }
                 function createNodeChecker() {
-                  function validate(props, propName, componentName, location, propFullName) {
-                    return isNode(props[propName]) ? null : new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
+                  function validate(props, propName, componentName, location2, propFullName) {
+                    return isNode(props[propName]) ? null : new PropTypeError("Invalid " + location2 + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
                   }
                   return createChainableTypeChecker(validate);
                 }
-                function invalidValidatorError(componentName, location, propFullName, key, type) {
+                function invalidValidatorError(componentName, location2, propFullName, key, type) {
                   return new PropTypeError(
-                    (componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + type + "`."
+                    (componentName || "React class") + ": " + location2 + " type `" + propFullName + "." + key + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + type + "`."
                   );
                 }
                 function createShapeTypeChecker(shapeTypes) {
-                  function validate(props, propName, componentName, location, propFullName) {
+                  function validate(props, propName, componentName, location2, propFullName) {
                     var propValue = props[propName], propType = getPropType(propValue);
                     if (propType !== "object")
-                      return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+                      return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
                     for (var key in shapeTypes) {
                       var checker = shapeTypes[key];
                       if (typeof checker != "function")
-                        return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-                      var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                        return invalidValidatorError(componentName, location2, propFullName, key, getPreciseType(checker));
+                      var error = checker(propValue, key, componentName, location2, propFullName + "." + key, ReactPropTypesSecret);
                       if (error)
                         return error;
                     }
@@ -50620,21 +50706,21 @@ var require_react_responsive = __commonJS({
                   return createChainableTypeChecker(validate);
                 }
                 function createStrictShapeTypeChecker(shapeTypes) {
-                  function validate(props, propName, componentName, location, propFullName) {
+                  function validate(props, propName, componentName, location2, propFullName) {
                     var propValue = props[propName], propType = getPropType(propValue);
                     if (propType !== "object")
-                      return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+                      return new PropTypeError("Invalid " + location2 + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
                     var allKeys = assign({}, props[propName], shapeTypes);
                     for (var key in allKeys) {
                       var checker = shapeTypes[key];
                       if (has(shapeTypes, key) && typeof checker != "function")
-                        return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                        return invalidValidatorError(componentName, location2, propFullName, key, getPreciseType(checker));
                       if (!checker)
                         return new PropTypeError(
-                          "Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`.\nBad object: " + JSON.stringify(props[propName], null, "  ") + `
+                          "Invalid " + location2 + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`.\nBad object: " + JSON.stringify(props[propName], null, "  ") + `
 Valid keys: ` + JSON.stringify(Object.keys(shapeTypes), null, "  ")
                         );
-                      var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                      var error = checker(propValue, key, componentName, location2, propFullName + "." + key, ReactPropTypesSecret);
                       if (error)
                         return error;
                     }
@@ -50801,7 +50887,7 @@ Valid keys: ` + JSON.stringify(Object.keys(shapeTypes), null, "  ")
                     }
                   }
                 }
-                var AsyncMode = REACT_ASYNC_MODE_TYPE, ConcurrentMode = REACT_CONCURRENT_MODE_TYPE, ContextConsumer = REACT_CONTEXT_TYPE, ContextProvider = REACT_PROVIDER_TYPE, Element2 = REACT_ELEMENT_TYPE, ForwardRef10 = REACT_FORWARD_REF_TYPE, Fragment22 = REACT_FRAGMENT_TYPE, Lazy = REACT_LAZY_TYPE, Memo = REACT_MEMO_TYPE, Portal = REACT_PORTAL_TYPE, Profiler = REACT_PROFILER_TYPE, StrictMode = REACT_STRICT_MODE_TYPE, Suspense8 = REACT_SUSPENSE_TYPE, hasWarnedAboutDeprecatedIsAsyncMode = !1;
+                var AsyncMode = REACT_ASYNC_MODE_TYPE, ConcurrentMode = REACT_CONCURRENT_MODE_TYPE, ContextConsumer = REACT_CONTEXT_TYPE, ContextProvider = REACT_PROVIDER_TYPE, Element2 = REACT_ELEMENT_TYPE, ForwardRef10 = REACT_FORWARD_REF_TYPE, Fragment23 = REACT_FRAGMENT_TYPE, Lazy = REACT_LAZY_TYPE, Memo = REACT_MEMO_TYPE, Portal = REACT_PORTAL_TYPE, Profiler = REACT_PROFILER_TYPE, StrictMode = REACT_STRICT_MODE_TYPE, Suspense8 = REACT_SUSPENSE_TYPE, hasWarnedAboutDeprecatedIsAsyncMode = !1;
                 function isAsyncMode(object) {
                   return hasWarnedAboutDeprecatedIsAsyncMode || (hasWarnedAboutDeprecatedIsAsyncMode = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
                 }
@@ -50841,7 +50927,7 @@ Valid keys: ` + JSON.stringify(Object.keys(shapeTypes), null, "  ")
                 function isSuspense(object) {
                   return typeOf(object) === REACT_SUSPENSE_TYPE;
                 }
-                exports2.AsyncMode = AsyncMode, exports2.ConcurrentMode = ConcurrentMode, exports2.ContextConsumer = ContextConsumer, exports2.ContextProvider = ContextProvider, exports2.Element = Element2, exports2.ForwardRef = ForwardRef10, exports2.Fragment = Fragment22, exports2.Lazy = Lazy, exports2.Memo = Memo, exports2.Portal = Portal, exports2.Profiler = Profiler, exports2.StrictMode = StrictMode, exports2.Suspense = Suspense8, exports2.isAsyncMode = isAsyncMode, exports2.isConcurrentMode = isConcurrentMode, exports2.isContextConsumer = isContextConsumer, exports2.isContextProvider = isContextProvider, exports2.isElement = isElement, exports2.isForwardRef = isForwardRef, exports2.isFragment = isFragment, exports2.isLazy = isLazy, exports2.isMemo = isMemo, exports2.isPortal = isPortal, exports2.isProfiler = isProfiler, exports2.isStrictMode = isStrictMode, exports2.isSuspense = isSuspense, exports2.isValidElementType = isValidElementType, exports2.typeOf = typeOf;
+                exports2.AsyncMode = AsyncMode, exports2.ConcurrentMode = ConcurrentMode, exports2.ContextConsumer = ContextConsumer, exports2.ContextProvider = ContextProvider, exports2.Element = Element2, exports2.ForwardRef = ForwardRef10, exports2.Fragment = Fragment23, exports2.Lazy = Lazy, exports2.Memo = Memo, exports2.Portal = Portal, exports2.Profiler = Profiler, exports2.StrictMode = StrictMode, exports2.Suspense = Suspense8, exports2.isAsyncMode = isAsyncMode, exports2.isConcurrentMode = isConcurrentMode, exports2.isContextConsumer = isContextConsumer, exports2.isContextProvider = isContextProvider, exports2.isElement = isElement, exports2.isForwardRef = isForwardRef, exports2.isFragment = isFragment, exports2.isLazy = isLazy, exports2.isMemo = isMemo, exports2.isPortal = isPortal, exports2.isProfiler = isProfiler, exports2.isStrictMode = isStrictMode, exports2.isSuspense = isSuspense, exports2.isValidElementType = isValidElementType, exports2.typeOf = typeOf;
               })();
             }
           ),
@@ -51089,16 +51175,16 @@ Valid keys: ` + JSON.stringify(Object.keys(shapeTypes), null, "  ")
                 "./src/mediaQuery.ts"
               )), negate = function(cond) {
                 return "not ".concat(cond);
-              }, keyVal = function(k2, v4) {
+              }, keyVal = function(k2, v5) {
                 var realKey = (0, hyphenate_style_name_1.default)(k2);
-                return typeof v4 == "number" && (v4 = "".concat(v4, "px")), v4 === !0 ? realKey : v4 === !1 ? negate(realKey) : "(".concat(realKey, ": ").concat(v4, ")");
+                return typeof v5 == "number" && (v5 = "".concat(v5, "px")), v5 === !0 ? realKey : v5 === !1 ? negate(realKey) : "(".concat(realKey, ": ").concat(v5, ")");
               }, join = function(conds) {
                 return conds.join(" and ");
               }, toQuery = function(obj) {
                 var rules = [];
                 return Object.keys(mediaQuery_1.default.all).forEach(function(k2) {
-                  var v4 = obj[k2];
-                  v4 != null && rules.push(keyVal(k2, v4));
+                  var v5 = obj[k2];
+                  v5 != null && rules.push(keyVal(k2, v5));
                 }), join(rules);
               };
               exports2.default = toQuery;
@@ -51243,9 +51329,27 @@ Valid keys: ` + JSON.stringify(Object.keys(shapeTypes), null, "  ")
   }
 });
 
-// node_modules/@shopify/hydrogen/dist/development/log-seo-tags-URUAZSXD.js
-var log_seo_tags_URUAZSXD_exports = {};
-__export(log_seo_tags_URUAZSXD_exports, {
+// node_modules/content-security-policy-builder/dist/index.js
+var require_dist2 = __commonJS({
+  "node_modules/content-security-policy-builder/dist/index.js"(exports, module) {
+    "use strict";
+    module.exports = function(_a2) {
+      var directives = _a2.directives, namesSeen = /* @__PURE__ */ new Set(), result = [];
+      return Object.keys(directives).forEach(function(originalName) {
+        var name = originalName.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+        if (namesSeen.has(name))
+          throw new Error("".concat(originalName, " is specified more than once"));
+        namesSeen.add(name);
+        var value = directives[originalName];
+        Array.isArray(value) ? value = value.join(" ") : value === !0 && (value = ""), value ? result.push("".concat(name, " ").concat(value)) : value !== !1 && result.push(name);
+      }), result.join("; ");
+    };
+  }
+});
+
+// node_modules/@shopify/hydrogen/dist/development/log-seo-tags-IG37ONQ2.js
+var log_seo_tags_IG37ONQ2_exports = {};
+__export(log_seo_tags_IG37ONQ2_exports, {
   default: () => Logger,
   logSeoTags: () => logSeoTags
 });
@@ -51299,8 +51403,8 @@ function arrayBufferToBase64(buffer) {
     binary += String.fromCharCode(bytes[index2]);
   return btoa(binary);
 }
-var headingStyle, titleStyle, init_log_seo_tags_URUAZSXD = __esm({
-  "node_modules/@shopify/hydrogen/dist/development/log-seo-tags-URUAZSXD.js"() {
+var headingStyle, titleStyle, init_log_seo_tags_IG37ONQ2 = __esm({
+  "node_modules/@shopify/hydrogen/dist/development/log-seo-tags-IG37ONQ2.js"() {
     headingStyle = "text-transform: uppercase;", titleStyle = "text-transform: uppercase; font-weight: bold; text-transform: uppercase;font-weight: bold";
   }
 });
@@ -51521,7 +51625,7 @@ async function getStylesheetPrefetchLinks(matches, manifest, routeModules) {
     as: "style"
   });
 }
-function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, location, mode) {
+function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, location2, mode) {
   let path = parsePathPatch(page), isNew = (match, index2) => currentMatches[index2] ? match.route.id !== currentMatches[index2].route.id : !0, matchPathChanged = (match, index2) => {
     var _currentMatches$index;
     return (
@@ -51531,7 +51635,7 @@ function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, loca
       ((_currentMatches$index = currentMatches[index2].route.path) === null || _currentMatches$index === void 0 ? void 0 : _currentMatches$index.endsWith("*")) && currentMatches[index2].params["*"] !== match.params["*"]
     );
   };
-  return mode === "data" && location.search !== path.search ? (
+  return mode === "data" && location2.search !== path.search ? (
     // this is really similar to stuff in transition.ts, maybe somebody smarter
     // than me (or in less of a hurry) can share some of it. You're the best.
     nextMatches.filter((match, index2) => {
@@ -51542,7 +51646,7 @@ function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, loca
       if (match.route.shouldRevalidate) {
         var _currentMatches$;
         let routeChoice = match.route.shouldRevalidate({
-          currentUrl: new URL(location.pathname + location.search + location.hash, window.origin),
+          currentUrl: new URL(location2.pathname + location2.search + location2.hash, window.origin),
           currentParams: ((_currentMatches$ = currentMatches[0]) === null || _currentMatches$ === void 0 ? void 0 : _currentMatches$.params) || {},
           nextUrl: new URL(page, window.origin),
           nextParams: match.params,
@@ -51661,10 +51765,10 @@ Check this link for more details:
 https://remix.run/pages/gotchas#server-code-in-client-bundles`);
   let {
     default: Component2,
-    ErrorBoundary: ErrorBoundary4,
+    ErrorBoundary: ErrorBoundary5,
     CatchBoundary
   } = routeModules[id];
-  return !Component2 && (ErrorBoundary4 || !future2.v2_errorBoundary && CatchBoundary) && (Component2 = Outlet), invariant2(Component2, `Route "${id}" has no component! Please go add a \`default\` export in the route module file.
+  return !Component2 && (ErrorBoundary5 || !future2.v2_errorBoundary && CatchBoundary) && (Component2 = Outlet), invariant2(Component2, `Route "${id}" has no component! Please go add a \`default\` export in the route module file.
 If you were trying to navigate or submit to a resource route, use \`<a>\` instead of \`<Link>\` or \`<Form reloadDocument>\`.`), /* @__PURE__ */ React3.createElement(Component2, null);
 }
 function RemixRouteError({
@@ -51679,17 +51783,17 @@ Check this link for more details:
 https://remix.run/pages/gotchas#server-code-in-client-bundles`);
   let error = useRouteError(), {
     CatchBoundary,
-    ErrorBoundary: ErrorBoundary4
+    ErrorBoundary: ErrorBoundary5
   } = routeModules[id];
   if (future2.v2_errorBoundary) {
-    if (id === "root" && (ErrorBoundary4 || (ErrorBoundary4 = V2_RemixRootDefaultErrorBoundary)), ErrorBoundary4)
-      return /* @__PURE__ */ React3.createElement(ErrorBoundary4, null);
+    if (id === "root" && (ErrorBoundary5 || (ErrorBoundary5 = V2_RemixRootDefaultErrorBoundary)), ErrorBoundary5)
+      return /* @__PURE__ */ React3.createElement(ErrorBoundary5, null);
     throw error;
   }
-  if (id === "root" && (CatchBoundary || (CatchBoundary = RemixRootDefaultCatchBoundary), ErrorBoundary4 || (ErrorBoundary4 = RemixRootDefaultErrorBoundary)), isRouteErrorResponse(error)) {
+  if (id === "root" && (CatchBoundary || (CatchBoundary = RemixRootDefaultCatchBoundary), ErrorBoundary5 || (ErrorBoundary5 = RemixRootDefaultErrorBoundary)), isRouteErrorResponse(error)) {
     let tError = error;
-    if (tError != null && tError.error && tError.status !== 404 && ErrorBoundary4)
-      return /* @__PURE__ */ React3.createElement(ErrorBoundary4, {
+    if (tError != null && tError.error && tError.status !== 404 && ErrorBoundary5)
+      return /* @__PURE__ */ React3.createElement(ErrorBoundary5, {
         error: tError.error
       });
     if (CatchBoundary)
@@ -51698,8 +51802,8 @@ https://remix.run/pages/gotchas#server-code-in-client-bundles`);
         component: CatchBoundary
       });
   }
-  if (error instanceof Error && ErrorBoundary4)
-    return /* @__PURE__ */ React3.createElement(ErrorBoundary4, {
+  if (error instanceof Error && ErrorBoundary5)
+    return /* @__PURE__ */ React3.createElement(ErrorBoundary5, {
       error
     });
   throw error;
@@ -51835,11 +51939,11 @@ function PrefetchPageLinksImpl({
   matches: nextMatches,
   ...linkProps
 }) {
-  let location = useLocation(), {
+  let location2 = useLocation(), {
     manifest
   } = useRemixContext(), {
     matches
-  } = useDataRouterStateContext(), newMatchesForData = React3.useMemo(() => getNewMatchesForLinks(page, nextMatches, matches, manifest, location, "data"), [page, nextMatches, matches, manifest, location]), newMatchesForAssets = React3.useMemo(() => getNewMatchesForLinks(page, nextMatches, matches, manifest, location, "assets"), [page, nextMatches, matches, manifest, location]), dataHrefs = React3.useMemo(() => getDataLinkHrefs(page, newMatchesForData, manifest), [newMatchesForData, page, manifest]), moduleHrefs = React3.useMemo(() => getModuleLinkHrefs(newMatchesForAssets, manifest), [newMatchesForAssets, manifest]), styleLinks = usePrefetchedStylesheets(newMatchesForAssets);
+  } = useDataRouterStateContext(), newMatchesForData = React3.useMemo(() => getNewMatchesForLinks(page, nextMatches, matches, manifest, location2, "data"), [page, nextMatches, matches, manifest, location2]), newMatchesForAssets = React3.useMemo(() => getNewMatchesForLinks(page, nextMatches, matches, manifest, location2, "assets"), [page, nextMatches, matches, manifest, location2]), dataHrefs = React3.useMemo(() => getDataLinkHrefs(page, newMatchesForData, manifest), [newMatchesForData, page, manifest]), moduleHrefs = React3.useMemo(() => getModuleLinkHrefs(newMatchesForAssets, manifest), [newMatchesForAssets, manifest]), styleLinks = usePrefetchedStylesheets(newMatchesForAssets);
   return /* @__PURE__ */ React3.createElement(React3.Fragment, null, dataHrefs.map((href) => /* @__PURE__ */ React3.createElement("link", _extends4({
     key: href,
     rel: "prefetch",
@@ -51864,7 +51968,7 @@ function V1Meta() {
     errors,
     matches: routerMatches,
     loaderData
-  } = useDataRouterStateContext(), location = useLocation(), matches = errors ? routerMatches.slice(0, routerMatches.findIndex((m10) => errors[m10.route.id]) + 1) : routerMatches, meta19 = {}, parentsData = {};
+  } = useDataRouterStateContext(), location2 = useLocation(), matches = errors ? routerMatches.slice(0, routerMatches.findIndex((m10) => errors[m10.route.id]) + 1) : routerMatches, meta19 = {}, parentsData = {};
   for (let match of matches) {
     let routeId = match.route.id, data2 = loaderData[routeId], params = match.params, routeModule = routeModules[routeId];
     if (routeModule.meta) {
@@ -51872,7 +51976,7 @@ function V1Meta() {
         data: data2,
         parentsData,
         params,
-        location
+        location: location2
       }) : routeModule.meta;
       if (routeMeta && Array.isArray(routeMeta))
         throw new Error(
@@ -51917,7 +52021,7 @@ function V2Meta() {
     errors,
     matches: routerMatches,
     loaderData
-  } = useDataRouterStateContext(), location = useLocation(), _matches = errors ? routerMatches.slice(0, routerMatches.findIndex((m10) => errors[m10.route.id]) + 1) : routerMatches, meta19 = [], leafMeta = null, matches = [];
+  } = useDataRouterStateContext(), location2 = useLocation(), _matches = errors ? routerMatches.slice(0, routerMatches.findIndex((m10) => errors[m10.route.id]) + 1) : routerMatches, meta19 = [], leafMeta = null, matches = [];
   for (let i6 = 0; i6 < _matches.length; i6++) {
     let _match = _matches[i6], routeId = _match.route.id, data2 = loaderData[routeId], params = _match.params, routeModule = routeModules[routeId], routeMeta = [], match = {
       id: routeId,
@@ -51937,7 +52041,7 @@ function V2Meta() {
     if (matches[i6] = match, routeModule != null && routeModule.meta ? routeMeta = typeof routeModule.meta == "function" ? routeModule.meta({
       data: data2,
       params,
-      location,
+      location: location2,
       matches
     }) : Array.isArray(routeModule.meta) ? [...routeModule.meta] : routeModule.meta : leafMeta && (routeMeta = [...leafMeta]), routeMeta = routeMeta || [], !Array.isArray(routeMeta))
       throw new Error("The `v2_meta` API is enabled in the Remix config, but the route at " + _match.route.path + ` returns an invalid value. In v2, all route meta functions must return an array of meta objects.
@@ -52438,7 +52542,7 @@ function ScrollRestoration2({
   getKey,
   ...props
 }) {
-  let location = useLocation(), matches = useMatches2();
+  let location2 = useLocation(), matches = useMatches2();
   useScrollRestoration({
     getKey,
     storageKey: STORAGE_KEY
@@ -52447,8 +52551,8 @@ function ScrollRestoration2({
     () => {
       if (!getKey)
         return null;
-      let userKey = getKey(location, matches);
-      return userKey !== location.key ? userKey : null;
+      let userKey = getKey(location2, matches);
+      return userKey !== location2.key ? userKey : null;
     },
     // Nah, we only need this the first time for the SSR render
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -52508,30 +52612,30 @@ function RemixServer({
 }
 
 // node_modules/isbot/index.mjs
-function _iterableToArrayLimit(arr, i6) {
-  var _i = arr == null ? null : typeof Symbol < "u" && arr[Symbol.iterator] || arr["@@iterator"];
-  if (_i != null) {
-    var _s, _e3, _x, _r, _arr = [], _n = !0, _d = !1;
+function _iterableToArrayLimit(r8, l12) {
+  var t17 = r8 == null ? null : typeof Symbol < "u" && r8[Symbol.iterator] || r8["@@iterator"];
+  if (t17 != null) {
+    var e4, n6, i6, u11, a12 = [], f10 = !0, o10 = !1;
     try {
-      if (_x = (_i = _i.call(arr)).next, i6 === 0) {
-        if (Object(_i) !== _i)
+      if (i6 = (t17 = t17.call(r8)).next, l12 === 0) {
+        if (Object(t17) !== t17)
           return;
-        _n = !1;
+        f10 = !1;
       } else
-        for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i6); _n = !0)
+        for (; !(f10 = (e4 = i6.call(t17)).done) && (a12.push(e4.value), a12.length !== l12); f10 = !0)
           ;
-    } catch (err) {
-      _d = !0, _e3 = err;
+    } catch (r9) {
+      o10 = !0, n6 = r9;
     } finally {
       try {
-        if (!_n && _i.return != null && (_r = _i.return(), Object(_r) !== _r))
+        if (!f10 && t17.return != null && (u11 = t17.return(), Object(u11) !== u11))
           return;
       } finally {
-        if (_d)
-          throw _e3;
+        if (o10)
+          throw n6;
       }
     }
-    return _arr;
+    return a12;
   }
 }
 function _classCallCheck(instance, Constructor) {
@@ -52753,7 +52857,6 @@ var list = [
   "feed",
   "firephp",
   "freesafeip",
-  "ghost",
   "gomezagent",
   "google",
   "headlesschrome/",
@@ -52763,6 +52866,7 @@ var list = [
   "hydra",
   "ibisbrowser",
   "images",
+  "inspect",
   "iplabel",
   "ips-agent",
   "java",
@@ -52803,7 +52907,6 @@ var list = [
   "supercleaner",
   "synapse",
   "synthetic",
-  "taginspector/",
   "torrent",
   "tracemyfile",
   "transcoder",
@@ -53723,7 +53826,38 @@ function byteStringToUint8Array(byteString) {
     array[i6] = byteString.charCodeAt(i6);
   return array;
 }
-var createCookie = createCookieFactory({ sign, unsign }), createCookieSessionStorage = createCookieSessionStorageFactory(createCookie), createSessionStorage = createSessionStorageFactory(createCookie), createMemorySessionStorage = createMemorySessionStorageFactory(createSessionStorage);
+var createCookie = createCookieFactory({ sign, unsign }), createCookieSessionStorage = createCookieSessionStorageFactory(createCookie), createSessionStorage = createSessionStorageFactory(createCookie), createMemorySessionStorage = createMemorySessionStorageFactory(createSessionStorage), hasWarned = !1;
+function createEventLogger(appLoadContext) {
+  var _a2;
+  let context = appLoadContext || {}, eventLoggerService = (_a2 = context == null ? void 0 : context.env) == null ? void 0 : _a2.H2O_LOG_EVENT;
+  if (typeof (eventLoggerService == null ? void 0 : eventLoggerService.fetch) == "function")
+    return ({
+      url,
+      endTime = Date.now(),
+      waitUntil = context == null ? void 0 : context.waitUntil,
+      ...rest
+    }) => {
+      let promise = Promise.resolve().then(
+        () => eventLoggerService.fetch(
+          new Request(url, {
+            method: "POST",
+            body: JSON.stringify({
+              endTime,
+              ...rest
+            })
+          })
+        ).catch((error) => {
+          hasWarned || (console.debug(`Failed to log H2O event
+`, error.stack), hasWarned = !0);
+        })
+      );
+      promise && (waitUntil == null || waitUntil(promise));
+    };
+}
+var originalErrorToString = Error.prototype.toString;
+Error.prototype.toString = function() {
+  return this.stack || originalErrorToString.call(this);
+};
 function createRequestHandler2({
   build,
   mode,
@@ -53732,11 +53866,17 @@ function createRequestHandler2({
 }) {
   let handleRequest2 = createRequestHandler(build, mode);
   return async (request) => {
-    let response = await handleRequest2(
-      request,
-      await (getLoadContext == null ? void 0 : getLoadContext(request))
-    );
-    return poweredByHeader && response.headers.append("powered-by", "Shopify, Hydrogen"), response;
+    var _a2;
+    let context = getLoadContext ? await getLoadContext(request) : void 0;
+    context && (globalThis.__H2O_LOG_EVENT = createEventLogger(context));
+    let startTime = Date.now(), response = await handleRequest2(request, context);
+    return (_a2 = globalThis.__H2O_LOG_EVENT) == null || _a2.call(globalThis, {
+      eventType: "request",
+      url: request.url,
+      requestId: request.headers.get("request-id"),
+      purpose: request.headers.get("purpose"),
+      startTime
+    }), poweredByHeader && response.headers.append("powered-by", "Shopify, Hydrogen"), response;
   };
 }
 function getStorefrontHeaders(request) {
@@ -53744,7 +53884,8 @@ function getStorefrontHeaders(request) {
   return {
     requestGroupId: headers.get("request-id"),
     buyerIp: headers.get("oxygen-buyer-ip"),
-    cookie: headers.get("cookie")
+    cookie: headers.get("cookie"),
+    purpose: headers.get("purpose")
   };
 }
 
@@ -53763,7 +53904,7 @@ var import_react27 = __toESM(require_react());
 // app/components/Aside.jsx
 var import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime());
 function Aside({ children, heading, id = "aside" }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { "aria-modal": !0, className: "overlay", id, role: "dialog", children: [
+  return console.log(heading), /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { "aria-modal": !0, className: "overlay", id, role: "dialog", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
       "button",
       {
@@ -53830,62 +53971,63 @@ var import_react4 = __toESM(require_react2());
 
 // node_modules/tw-elements-react/dist/js/tw-elements-react.es.min.js
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1), import_react3 = __toESM(require_react(), 1), import_react_dom = __toESM(require_react_dom(), 1);
-function re(t17) {
-  var r8, e4, a12 = "";
-  if (typeof t17 == "string" || typeof t17 == "number")
-    a12 += t17;
-  else if (typeof t17 == "object")
-    if (Array.isArray(t17))
-      for (r8 = 0; r8 < t17.length; r8++)
-        t17[r8] && (e4 = re(t17[r8])) && (a12 && (a12 += " "), a12 += e4);
+var import_deepmerge = __toESM(require_cjs3(), 1);
+function rt(e4) {
+  var r8, t17, i6 = "";
+  if (typeof e4 == "string" || typeof e4 == "number")
+    i6 += e4;
+  else if (typeof e4 == "object")
+    if (Array.isArray(e4))
+      for (r8 = 0; r8 < e4.length; r8++)
+        e4[r8] && (t17 = rt(e4[r8])) && (i6 && (i6 += " "), i6 += t17);
     else
-      for (r8 in t17)
-        t17[r8] && (a12 && (a12 += " "), a12 += r8);
-  return a12;
+      for (r8 in e4)
+        e4[r8] && (i6 && (i6 += " "), i6 += r8);
+  return i6;
 }
-function C() {
-  for (var t17, r8, e4 = 0, a12 = ""; e4 < arguments.length; )
-    (t17 = arguments[e4++]) && (r8 = re(t17)) && (a12 && (a12 += " "), a12 += r8);
-  return a12;
+function U() {
+  for (var e4, r8, t17 = 0, i6 = ""; t17 < arguments.length; )
+    (e4 = arguments[t17++]) && (r8 = rt(e4)) && (i6 && (i6 += " "), i6 += r8);
+  return i6;
 }
-var le = ({ theme: t17, style: r8 }) => {
-  let [e4, a12] = (0, import_react3.useState)(!1), c12 = C(
-    t17.rippleWave,
-    e4 ? t17.rippleWaveActive : t17.rippleWaveInactive
+var It = ({ theme: e4, style: r8 }) => {
+  let [t17, i6] = (0, import_react3.useState)(!1), l12 = U(
+    e4.rippleWave,
+    t17 ? e4.rippleWaveActive : e4.rippleWaveInactive
   );
   return (0, import_react3.useEffect)(() => {
-    a12(!0);
-  }, []), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: r8, className: c12 });
-}, ce = {
+    i6(!0);
+  }, []), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: r8, className: l12 });
+}, Nt = {
   ripple: "relative inline-block align-bottom",
   rippleOverflow: "absolute left-0 top-0 overflow-hidden w-full h-full pointer-events-none",
   rippleWave: "block rounded-[50%] pointer-events-none absolute touch-none transition-[transform,_opacity] ease-[cubic-bezier(0,0,0.15,1),_cubic-bezier(0,0,0.15,1)] z-[999] scale-0",
   rippleWaveActive: "scale-100 opacity-0",
   rippleWaveInactive: "scale-0 opacity-50",
   unbound: "overflow-visible"
-}, de = (...t17) => {
+}, Dt = (...e4) => {
   let r8 = import_react3.default.useRef();
   return import_react3.default.useEffect(() => {
-    t17.forEach((e4) => {
-      e4 && (typeof e4 == "function" ? e4(r8.current) : e4.current = r8.current);
+    e4.forEach((t17) => {
+      t17 && (typeof t17 == "function" ? t17(r8.current) : t17.current = r8.current);
     });
-  }, [t17]), r8;
-}, De = import_react3.default.forwardRef(
+  }, [e4]), r8;
+}, kr = /* @__PURE__ */ import_react3.default.forwardRef(
   ({
-    className: t17,
+    className: e4,
     rippleTag: r8 = "div",
-    rippleCentered: e4,
-    rippleDuration: a12 = 500,
-    rippleUnbound: c12,
-    rippleRadius: l12 = 0,
-    rippleColor: i6 = "dark",
-    rippleColorDark: d11 = "",
-    children: u11,
+    rippleCentered: t17,
+    rippleDuration: i6 = 500,
+    rippleUnbound: l12,
+    rippleRadius: o10 = 0,
+    rippleColor: c12 = "dark",
+    rippleColorDark: f10 = "",
+    children: s14,
     onMouseDown: n6,
     theme: m10,
-    ...S9
-  }, v4) => {
-    let y6 = (0, import_react3.useRef)(null), s14 = de(v4, y6), p6 = { ...ce, ...m10 }, g8 = "rgba({{color}}, 0.2) 0, rgba({{color}}, 0.3) 40%, rgba({{color}}, 0.4) 50%, rgba({{color}}, 0.5) 60%, rgba({{color}}, 0) 70%", L2 = [0, 0, 0], k2 = [
+    ...a12
+  }, u11) => {
+    let x5 = (0, import_react3.useRef)(null), d11 = Dt(u11, x5), k2 = { ...Nt, ...m10 }, p6 = "rgba({{color}}, 0.2) 0, rgba({{color}}, 0.3) 40%, rgba({{color}}, 0.4) 50%, rgba({{color}}, 0.5) 60%, rgba({{color}}, 0) 70%", h9 = [0, 0, 0], g8 = [
       { name: "primary", gradientColor: "#3B71CA" },
       { name: "secondary", gradientColor: "#9FA6B2" },
       { name: "success", gradientColor: "#14A44D" },
@@ -53894,479 +54036,166 @@ var le = ({ theme: t17, style: r8 }) => {
       { name: "info", gradientColor: "#54B4D3" },
       { name: "light", gradientColor: "#fbfbfb" },
       { name: "dark", gradientColor: "#262626" }
-    ], [_3, z4] = (0, import_react3.useState)([]), [R3, P4] = (0, import_react3.useState)([]), M7 = C(p6.ripple, t17), I6 = C(
-      c12 ? p6.unbound : p6.rippleOverflow,
-      R3
-    ), X4 = () => {
-      let b6 = i6 || "rgb(0,0,0)";
-      (localStorage.theme === "dark" || !("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) && (b6 = d11 || i6 || "rgb(0,0,0)");
-      let x5 = k2.find(
-        (f10) => f10.name === (b6 == null ? void 0 : b6.toLowerCase())
-      ), N6 = x5 ? q3(x5.gradientColor).join(",") : q3(b6).join(",");
-      return `radial-gradient(circle, ${g8.split("{{color}}").join(`${N6}`)})`;
-    }, q3 = (b6) => {
-      let x5 = (f10) => (f10.length < 7 && (f10 = `#${f10[1]}${f10[1]}${f10[2]}${f10[2]}${f10[3]}${f10[3]}`), [
-        parseInt(f10.substr(1, 2), 16),
-        parseInt(f10.substr(3, 2), 16),
-        parseInt(f10.substr(5, 2), 16)
-      ]), N6 = (f10) => {
-        let T7 = document.body.appendChild(
+    ], [b6, w6] = (0, import_react3.useState)([]), [T7, y6] = (0, import_react3.useState)([]), O3 = U(k2.ripple, e4), R3 = U(
+      l12 ? k2.unbound : k2.rippleOverflow,
+      T7
+    ), $4 = () => {
+      let N6 = c12 || "rgb(0,0,0)";
+      (localStorage.theme === "dark" || !("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) && (N6 = f10 || c12 || "rgb(0,0,0)");
+      let D5 = g8.find(
+        (z4) => z4.name === (N6 == null ? void 0 : N6.toLowerCase())
+      ), B2 = D5 ? F6(D5.gradientColor).join(",") : F6(N6).join(",");
+      return `radial-gradient(circle, ${p6.split("{{color}}").join(`${B2}`)})`;
+    }, F6 = (N6) => {
+      let D5 = (z4) => (z4.length < 7 && (z4 = `#${z4[1]}${z4[1]}${z4[2]}${z4[2]}${z4[3]}${z4[3]}`), [
+        parseInt(z4.substr(1, 2), 16),
+        parseInt(z4.substr(3, 2), 16),
+        parseInt(z4.substr(5, 2), 16)
+      ]), B2 = (z4) => {
+        let X4 = document.body.appendChild(
           document.createElement("fictum")
-        ), W2 = "rgb(1, 2, 3)";
-        return T7.style.color = W2, T7.style.color !== W2 || (T7.style.color = f10, T7.style.color === W2 || T7.style.color === "") ? L2 : (f10 = getComputedStyle(T7).color, document.body.removeChild(T7), f10);
-      }, $4 = (f10) => (f10 = f10.match(/[.\d]+/g).map((T7) => +Number(T7)), f10.length = 3, f10);
-      return b6.toLowerCase() === "transparent" ? L2 : b6[0] === "#" ? x5(b6) : (b6.indexOf("rgb") === -1 && (b6 = N6(b6)), b6.indexOf("rgb") === 0 ? $4(b6) : L2);
-    }, F6 = (b6) => {
-      let { offsetX: x5, offsetY: N6, height: $4, width: f10 } = b6, T7 = N6 <= $4 / 2, W2 = x5 <= f10 / 2, B2 = (Q3, ne2) => Math.sqrt(Q3 ** 2 + ne2 ** 2), U4 = N6 === $4 / 2 && x5 === f10 / 2, j5 = {
-        first: T7 === !0 && W2 === !1,
-        second: T7 === !0 && W2 === !0,
-        third: T7 === !1 && W2 === !0,
-        fourth: T7 === !1 && W2 === !1
-      }, Y4 = {
-        topLeft: B2(x5, N6),
-        topRight: B2(f10 - x5, N6),
-        bottomLeft: B2(x5, $4 - N6),
-        bottomRight: B2(f10 - x5, $4 - N6)
-      }, w6 = 0;
-      return U4 || j5.fourth ? w6 = Y4.topLeft : j5.third ? w6 = Y4.topRight : j5.second ? w6 = Y4.bottomRight : j5.first && (w6 = Y4.bottomLeft), w6 * 2;
-    }, o10 = () => !u11 || !import_react3.default.isValidElement(u11) || Array.isArray(u11) ? [] : u11.props.className.split(" ").filter((x5) => x5.includes("rounded")), K3 = (b6) => {
-      var w6;
-      let x5 = (w6 = s14.current) == null ? void 0 : w6.getBoundingClientRect(), N6 = b6.clientX - x5.left, $4 = b6.clientY - x5.top, f10 = x5.height, T7 = x5.width, W2 = {
-        offsetX: e4 ? f10 / 2 : N6,
-        offsetY: e4 ? T7 / 2 : $4,
-        height: f10,
-        width: T7
-      }, B2 = {
-        delay: a12 && a12 * 0.5,
-        duration: a12 && a12 - a12 * 0.5
-      }, U4 = F6(W2), j5 = l12 || U4 / 2, Y4 = {
-        left: e4 ? `${T7 / 2 - j5}px` : `${N6 - j5}px`,
-        top: e4 ? `${f10 / 2 - j5}px` : `${$4 - j5}px`,
-        height: l12 ? `${l12 * 2}px` : `${U4}px`,
-        width: l12 ? `${l12 * 2}px` : `${U4}px`,
-        transitionDelay: `0s, ${B2.delay}ms`,
-        transitionDuration: `${a12}ms, ${B2.duration}ms`
+        ), G2 = "rgb(1, 2, 3)";
+        return X4.style.color = G2, X4.style.color !== G2 || (X4.style.color = z4, X4.style.color === G2 || X4.style.color === "") ? h9 : (z4 = getComputedStyle(X4).color, document.body.removeChild(X4), z4);
+      }, W2 = (z4) => (z4 = z4.match(/[.\d]+/g).map((X4) => +Number(X4)), z4.length = 3, z4);
+      return N6.toLowerCase() === "transparent" ? h9 : N6[0] === "#" ? D5(N6) : (N6.indexOf("rgb") === -1 && (N6 = B2(N6)), N6.indexOf("rgb") === 0 ? W2(N6) : h9);
+    }, K3 = (N6) => {
+      let { offsetX: D5, offsetY: B2, height: W2, width: z4 } = N6, X4 = B2 <= W2 / 2, G2 = D5 <= z4 / 2, J3 = (le3, ce2) => Math.sqrt(le3 ** 2 + ce2 ** 2), q3 = B2 === W2 / 2 && D5 === z4 / 2, te2 = {
+        first: X4 === !0 && G2 === !1,
+        second: X4 === !0 && G2 === !0,
+        third: X4 === !1 && G2 === !0,
+        fourth: X4 === !1 && G2 === !1
+      }, Q3 = {
+        topLeft: J3(D5, B2),
+        topRight: J3(z4 - D5, B2),
+        bottomLeft: J3(D5, W2 - B2),
+        bottomRight: J3(z4 - D5, W2 - B2)
+      }, I6 = 0;
+      return q3 || te2.fourth ? I6 = Q3.topLeft : te2.third ? I6 = Q3.topRight : te2.second ? I6 = Q3.bottomRight : te2.first && (I6 = Q3.bottomLeft), I6 * 2;
+    }, S9 = () => !s14 || !import_react3.default.isValidElement(s14) || Array.isArray(s14) || !s14.props.className ? [] : s14.props.className.split(" ").filter((D5) => D5.includes("rounded")), j5 = (N6) => {
+      var I6;
+      let D5 = (I6 = d11.current) == null ? void 0 : I6.getBoundingClientRect(), B2 = N6.clientX - D5.left, W2 = N6.clientY - D5.top, z4 = D5.height, X4 = D5.width, G2 = {
+        offsetX: t17 ? z4 / 2 : B2,
+        offsetY: t17 ? X4 / 2 : W2,
+        height: z4,
+        width: X4
+      }, J3 = {
+        delay: i6 && i6 * 0.5,
+        duration: i6 && i6 - i6 * 0.5
+      }, q3 = K3(G2), te2 = o10 || q3 / 2, Q3 = {
+        left: t17 ? `${X4 / 2 - te2}px` : `${B2 - te2}px`,
+        top: t17 ? `${z4 / 2 - te2}px` : `${W2 - te2}px`,
+        height: o10 ? `${o10 * 2}px` : `${q3}px`,
+        width: o10 ? `${o10 * 2}px` : `${q3}px`,
+        transitionDelay: `0s, ${J3.delay}ms`,
+        transitionDuration: `${i6}ms, ${J3.duration}ms`
       };
-      return P4(o10()), { ...Y4, backgroundImage: `${X4()}` };
-    }, G2 = (b6) => {
-      let x5 = K3(b6), N6 = _3.concat(x5);
-      z4(N6), n6 && n6(b6);
+      return y6(S9()), { ...Q3, backgroundImage: `${$4()}` };
+    }, M7 = (N6) => {
+      let D5 = j5(N6), B2 = b6.concat(D5);
+      w6(B2), n6 && n6(N6);
     };
     return (0, import_react3.useEffect)(() => {
-      let b6 = setTimeout(() => {
-        _3.length > 0 && z4(_3.splice(1, _3.length - 1));
-      }, a12);
+      let N6 = setTimeout(() => {
+        b6.length > 0 && w6(b6.splice(1, b6.length - 1));
+      }, i6);
       return () => {
-        clearTimeout(b6);
+        clearTimeout(N6);
       };
-    }, [a12, _3]), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+    }, [i6, b6]), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
       r8,
       {
-        className: M7,
-        onMouseDown: (b6) => G2(b6),
-        ref: s14,
-        ...S9,
+        className: O3,
+        onMouseDown: (N6) => M7(N6),
+        ref: d11,
+        ...a12,
         children: [
-          u11,
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: I6, children: _3.map((b6, x5) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(le, { theme: p6, style: b6 }, x5)) })
+          s14,
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: R3, children: b6.map((N6, D5) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(It, { theme: k2, style: N6 }, D5)) })
         ]
       }
     );
   }
-), ee = (0, import_react3.createContext)({
+), We = (0, import_react3.createContext)({
   isOpenModal: !1,
   setTransitionDuration: null,
   scrollable: !1
 });
-var he = {
+var Bt = {
   wrapper: "min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600",
   scrollable: "max-h-full"
-}, Pe = import_react3.default.forwardRef(
-  ({ className: t17, children: r8, theme: e4, tag: a12 = "div", ...c12 }, l12) => {
-    let i6 = { ...he, ...e4 }, { scrollable: d11 } = (0, import_react3.useContext)(ee), u11 = C(
-      i6.wrapper,
-      d11 && i6.scrollable,
-      t17
+}, Lr = import_react3.default.forwardRef(
+  ({ className: e4, children: r8, theme: t17, tag: i6 = "div", ...l12 }, o10) => {
+    let c12 = { ...Bt, ...t17 }, { scrollable: f10 } = (0, import_react3.useContext)(We), s14 = U(
+      c12.wrapper,
+      f10 && c12.scrollable,
+      e4
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(a12, { className: u11, ...c12, ref: l12, children: r8 });
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(i6, { className: s14, ...l12, ref: o10, children: r8 });
   }
-), ve = {
+), Mt = {
   wrapper: "flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
-}, Oe = import_react3.default.forwardRef(
-  ({ className: t17, children: r8, theme: e4, tag: a12 = "div", ...c12 }, l12) => {
-    let i6 = { ...ve, ...e4 }, d11 = C(i6.wrapper, t17);
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(a12, { className: d11, ...c12, ref: l12, children: r8 });
+}, _r = import_react3.default.forwardRef(
+  ({ className: e4, children: r8, theme: t17, tag: i6 = "div", ...l12 }, o10) => {
+    let c12 = { ...Mt, ...t17 }, f10 = U(c12.wrapper, e4);
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(i6, { className: f10, ...l12, ref: o10, children: r8 });
   }
-), xe = {
+), zt = {
   scrollable: "overflow-y-auto",
   wrapper: "relative flex-auto p-4"
-}, We = import_react3.default.forwardRef(
-  ({ className: t17, children: r8, theme: e4, tag: a12 = "div", ...c12 }, l12) => {
-    let i6 = { ...xe, ...e4 }, { scrollable: d11 } = (0, import_react3.useContext)(ee), u11 = C(
-      i6.wrapper,
-      d11 && i6.scrollable,
-      t17
+}, Cr = import_react3.default.forwardRef(
+  ({ className: e4, children: r8, theme: t17, tag: i6 = "div", ...l12 }, o10) => {
+    let c12 = { ...zt, ...t17 }, { scrollable: f10 } = (0, import_react3.useContext)(We), s14 = U(
+      c12.wrapper,
+      f10 && c12.scrollable,
+      e4
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(a12, { className: u11, ...c12, ref: l12, children: r8 });
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(i6, { className: s14, ...l12, ref: o10, children: r8 });
   }
-), Te = {
+), Ft = {
   wrapper: "flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
-}, Be = import_react3.default.forwardRef(
-  ({ className: t17, children: r8, theme: e4, tag: a12 = "div", ...c12 }, l12) => {
-    let i6 = { ...Te, ...e4 }, d11 = C(i6.wrapper, t17);
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(a12, { className: d11, ...c12, ref: l12, children: r8 });
-  }
-), ye = {
-  wrapper: "relative",
-  input: "peer block min-h-[auto] w-full rounded border-0 bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary motion-reduce:transition-none placeholder:opacity-0 disabled:bg-neutral-100 read-only:bg-neutral-100 dark:disabled:bg-neutral-700 dark:read-only:bg-neutral-700 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary",
-  activeInput: "placeholder:opacity-100",
-  label: "pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate text-neutral-500 transition-all duration-200 ease-out peer-focus:scale-[0.8] peer-focus:text-primary motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary",
-  activeLabel: "scale-[0.8]",
-  notch: "group flex absolute left-0 top-0 w-full max-w-full h-full text-left pointer-events-none",
-  notchLeading: "pointer-events-none border border-solid box-border bg-transparent transition-all duration-200 ease-linear motion-reduce:transition-none left-0 top-0 h-full w-2 border-r-0 rounded-l-[0.25rem]",
-  activeNotchLeading: "border-r-0",
-  focusedNotchLeading: "border-r-0",
-  notchLeadingDefault: "border-neutral-300 dark:border-neutral-600",
-  focusedNotchLeadingDefault: "shadow-[-1px_0_0_#3b71ca,_0_1px_0_0_#3b71ca,_0_-1px_0_0_#3b71ca] border-primary dark:border-primary",
-  notchLeadingWhite: "border-neutral-200",
-  focusedNotchLeadingWhite: "shadow-[-1px_0_0_#ffffff,_0_1px_0_0_#ffffff,_0_-1px_0_0_#ffffff] border-white",
-  notchMiddle: "pointer-events-none border border-solid box-border bg-transparent transition-all duration-200 ease-linear motion-reduce:transition-none grow-0 shrink-0 basis-auto w-auto max-w-[calc(100%-1rem)] h-full border-r-0 border-l-0",
-  activeNotchMiddle: "border-x-0 border-t border-solid border-t-transparent dark:border-t-transparent",
-  focusedNotchMiddle: "border-x-0 border-t border-solid border-t-transparent dark:border-t-transparent",
-  notchMiddleDefault: "border-neutral-300 dark:border-neutral-600",
-  focusedNotchMiddleDefault: "shadow-[0_1px_0_0_#3b71ca] border-primary dark:border-primary",
-  notchMiddleWhite: "border-neutral-200",
-  focusedNotchMiddleWhite: "shadow-[0_1px_0_0_#ffffff] border-white",
-  notchTrailing: "pointer-events-none border border-solid box-border bg-transparent transition-all duration-200 ease-linear motion-reduce:transition-none grow h-full border-l-0 rounded-r-[0.25rem]",
-  activeNotchTrailing: "border-l-0",
-  focusedNotchTrailing: "border-l-0",
-  notchTrailingDefault: "border-neutral-300 dark:border-neutral-600",
-  focusedNotchTrailingDefault: "shadow-[1px_0_0_#3b71ca,_0_-1px_0_0_#3b71ca,_0_1px_0_0_#3b71ca] border-primary dark:border-primary",
-  notchTrailingWhite: "border-neutral-200",
-  focusedNotchTrailingWhite: "shadow-[1px_0_0_#ffffff,_0_-1px_0_0_#ffffff,_0_1px_0_0_#ffffff] border-white",
-  counter: "text-right leading-[1.6]",
-  inputSizeLg: "px-3 py-[0.32rem] leading-[2.15]",
-  inputSizeBase: "px-3 py-[0.32rem] leading-[1.6]",
-  inputSizeSm: "px-3 py-[0.33rem] text-xs leading-[1.5]",
-  labelSizeLg: "pt-[0.36rem] leading-[2.15] peer-focus:-translate-y-[1.15rem]",
-  activeLabelSizeLg: "-translate-y-[1.15rem]",
-  labelSizeBase: "pt-[0.30rem] leading-[1.6] peer-focus:-translate-y-[0.9rem]",
-  activeLabelSizeBase: "-translate-y-[0.9rem]",
-  labelSizeSm: "pt-[0.36rem] text-xs leading-[1.5] peer-focus:-translate-y-[0.75rem]",
-  activeLabelSizeSm: "-translate-y-[0.75rem]"
-}, $e = import_react3.default.forwardRef(
-  ({
-    className: t17,
-    size: r8 = "base",
-    value: e4,
-    defaultValue: a12,
-    id: c12,
-    wrapperTag: l12 = "div",
-    label: i6,
-    onChange: d11,
-    children: u11,
-    labelRef: n6,
-    type: m10,
-    onBlur: S9,
-    readonly: v4 = !1,
-    theme: y6,
-    formWhite: s14 = !1,
-    counter: p6 = !1,
-    maxLength: g8,
-    ...L2
-  }, k2) => {
-    var j5, Y4;
-    let [_3, z4] = (0, import_react3.useState)(e4 || a12), [R3, P4] = (0, import_react3.useState)(0), [M7, I6] = (0, import_react3.useState)(!1), [X4, q3] = (0, import_react3.useState)(!1), F6 = (0, import_react3.useRef)(null);
-    (0, import_react3.useImperativeHandle)(k2, () => F6.current);
-    let o10 = { ...ye, ...y6 }, K3 = (0, import_react3.useRef)(null), G2 = n6 || K3, b6 = C(
-      o10.input,
-      M7 && o10.activeInput,
-      r8 === "lg" ? o10.inputSizeLg : r8 === "base" ? o10.inputSizeBase : r8 === "sm" ? o10.inputSizeSm : o10.inputSizeBase,
-      t17
-    ), x5 = C(
-      o10.label,
-      M7 && o10.activeLabel,
-      M7 && (r8 === "lg" ? o10.activeLabelSizeLg : r8 === "base" ? o10.activeLabelSizeBase : r8 === "sm" ? o10.activeLabelSizeSm : o10.activeLabelSizeBase),
-      r8 === "lg" ? o10.labelSizeLg : r8 === "base" ? o10.labelSizeBase : r8 === "sm" ? o10.labelSizeSm : o10.labelSizeBase
-    ), N6 = C(
-      o10.notchLeading,
-      s14 ? o10.notchLeadingWhite : o10.notchLeadingDefault,
-      M7 && o10.activeNotchLeading,
-      X4 && o10.focusedNotchLeading,
-      X4 && (s14 ? o10.focusedNotchLeadingWhite : o10.focusedNotchLeadingDefault)
-    ), $4 = C(
-      o10.notchMiddle,
-      s14 ? o10.notchMiddleWhite : o10.notchMiddleDefault,
-      M7 && o10.activeNotchMiddle,
-      X4 && o10.focusedNotchMiddle,
-      X4 && (s14 ? o10.focusedNotchMiddleWhite : o10.focusedNotchMiddleDefault)
-    ), f10 = C(
-      o10.notchTrailing,
-      s14 ? o10.notchTrailingWhite : o10.notchTrailingDefault,
-      M7 && o10.activeNotchTrailing,
-      X4 && o10.focusedNotchTrailing,
-      X4 && (s14 ? o10.focusedNotchTrailingWhite : o10.focusedNotchTrailingDefault)
-    );
-    (0, import_react3.useEffect)(() => {
-      if (!F6.current)
-        return;
-      let { value: w6 } = F6.current;
-      w6 != "" ? I6(!0) : I6(!1);
-    }, [(j5 = F6.current) == null ? void 0 : j5.value]), (0, import_react3.useEffect)(() => {
-      e4 !== void 0 && (e4 != "" ? I6(!0) : I6(!1));
-    }, [e4]), (0, import_react3.useEffect)(() => {
-      a12 !== void 0 && (a12 != "" ? I6(!0) : I6(!1));
-    }, [a12]);
-    let T7 = (0, import_react3.useCallback)(() => {
-      var w6;
-      (w6 = G2.current) != null && w6.clientWidth && P4(G2.current.clientWidth * 0.8 + 8);
-    }, [G2]);
-    (0, import_react3.useEffect)(() => {
-      T7();
-    }, [(Y4 = G2.current) == null ? void 0 : Y4.clientWidth, T7]);
-    let W2 = (w6) => {
-      p6 ? B2(w6) : z4(w6.target.value), d11 == null || d11(w6);
-    }, B2 = (w6) => {
-      let Q3 = w6.target.value;
-      g8 === void 0 || g8 <= 0 || Q3.length <= g8 && z4(Q3);
-    }, U4 = (0, import_react3.useCallback)(
-      (w6) => {
-        F6.current && (_3 !== void 0 && _3 != "" || e4 !== void 0 && e4 != "" || F6.current.value != "" ? I6(!0) : I6(!1), S9 && S9(w6));
-      },
-      [_3, e4, S9]
-    );
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(l12, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(l12, { className: o10.wrapper, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-          "input",
-          {
-            type: m10,
-            readOnly: v4,
-            className: b6,
-            onBlur: (w6) => {
-              U4(w6), q3(!1);
-            },
-            onChange: W2,
-            onFocus: () => {
-              q3(!0);
-            },
-            value: e4,
-            defaultValue: a12,
-            id: c12,
-            ref: F6,
-            maxLength: g8,
-            ...L2
-          }
-        ),
-        i6 && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", { className: x5, htmlFor: c12, ref: G2, children: i6 }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: o10.notch, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: N6 }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-            "div",
-            {
-              className: $4,
-              style: { width: R3 }
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: f10 })
-        ] }),
-        u11
-      ] }),
-      p6 && g8 !== void 0 && g8 > 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: o10.counter, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [
-        (_3 == null ? void 0 : _3.toString().length) || 0,
-        " / ",
-        g8
-      ] }) })
-    ] });
-  }
-), ke = {
-  defaultTabs: "mb-5 flex list-none flex-row flex-wrap border-b-0 pl-0",
-  verticalTabs: "mr-4 flex list-none flex-col flex-wrap pl-0",
-  pillsTabs: "mb-5 flex list-none flex-col flex-wrap pl-0 md:flex-row"
-}, ae = import_react3.default.createContext({}), Ae = import_react3.default.forwardRef(
-  ({
-    className: t17,
-    children: r8,
-    theme: e4,
-    fill: a12 = !1,
-    justify: c12 = !1,
-    vertical: l12 = !1,
-    pills: i6 = !1,
-    ...d11
-  }, u11) => {
-    let n6 = {
-      ...ke,
-      ...e4
-    }, m10 = C(
-      i6 ? l12 ? n6.verticalTabs : n6.pillsTabs : l12 ? n6.verticalTabs : n6.defaultTabs,
-      t17
-    );
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-      ae.Provider,
-      {
-        value: {
-          fill: a12,
-          justify: c12,
-          vertical: l12,
-          pills: i6
-        },
-        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", { className: m10, ref: u11, ...d11, children: r8 })
-      }
-    );
-  }
-), we = {
-  fillTabsItem: "flex-auto text-center",
-  justifyTabsItem: "flex-grow basis-0 text-center",
-  verticalTabsItem: "flex-grow text-center",
-  disabledTabsItem: "disabled pointer-events-none",
-  tabsLink: "mt-2 block cursor-pointer border-x-0 border-b-2 border-t-0 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight hover:isolate hover:border-x-0 hover:bg-neutral-100 dark:hover:bg-transparent focus:isolate",
-  pillsLink: "mt-2 block cursor-pointer rounded bg-neutral-100 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 dark:bg-neutral-700 dark:text-white md:mr-4",
-  inactiveTabsLink: "border-transparent text-neutral-500 focus:border-transparent dark:text-neutral-400",
-  inactivePillsLink: "bg-neutral-100 dark:bg-neutral-700 dark:text-white md:mr-4",
-  disabledTabsLink: "!text-neutral-400 dark:!text-neutral-600",
-  disabledPillsLink: "!bg-neutral-200 !text-neutral-400 dark:!text-neutral-500 dark:!bg-neutral-600",
-  activePrimaryPillsLink: "!bg-primary-100 !text-primary-700 dark:text-primary-700 ",
-  activeSecondaryPillsLink: "!bg-secondary-200 !text-secondary-900 dark:text-secondary-900",
-  activeSuccessPillsLink: "!bg-success-100 !text-success-700 dark:text-success-700",
-  activeDangerPillsLink: "!bg-danger-100 !text-danger-700 dark:text-danger-700",
-  activeWarningPillsLink: "!bg-warning-100 !text-warning-800 dark:text-warning-800",
-  activeInfoPillsLink: "!bg-info-100 !text-info-800 dark:text-info-800",
-  activeLightPillsLink: "!bg-neutral-50 !text-neutral-600 dark:text-neutral-600",
-  activeDarkPillsLink: "!bg-neutral-800 !text-neutral-50 dark:!bg-neutral-900 dark:text-neutral-50",
-  activePrimaryTabsLink: "text-primary border-primary dark:border-primary-400 dark:text-primary-400",
-  activeSecondaryTabsLink: "text-secondary border-secondary dark:text-secondary",
-  activeSuccessTabsLink: "border-success text-success dark:text-success",
-  activeDangerTabsLink: "border-danger text-danger dark:text-danger",
-  activeWarningTabsLink: "border-warning text-warning dark:text-warning",
-  activeInfoTabsLink: "border-info text-info dark:text-info",
-  activeLightTabsLink: "border-neutral-50 text-neutral-50 dark:text-neutral-50",
-  activeDarkTabsLink: "border-neutral-800 text-neutral-800 dark:border-neutral-600 dark:text-neutral-600"
-}, ze = import_react3.default.forwardRef(
-  ({
-    className: t17,
-    wrapperClass: r8,
-    active: e4 = !1,
-    disabled: a12 = !1,
-    color: c12 = "primary",
-    children: l12,
-    theme: i6,
-    tag: d11 = "a",
-    ...u11
-  }, n6) => {
-    let { fill: m10, justify: S9, vertical: v4, pills: y6 } = (0, import_react3.useContext)(ae), s14 = {
-      ...we,
-      ...i6
-    }, p6 = C(
-      m10 && s14.fillTabsItem,
-      S9 && s14.justifyTabsItem,
-      v4 && s14.verticalTabsItem,
-      a12 && s14.disabledTabsItem,
-      r8
-    ), g8 = {
-      primary: {
-        tabs: s14.activePrimaryTabsLink,
-        pills: s14.activePrimaryPillsLink
-      },
-      secondary: {
-        tabs: s14.activeSecondaryTabsLink,
-        pills: s14.activeSecondaryPillsLink
-      },
-      success: {
-        tabs: s14.activeSuccessTabsLink,
-        pills: s14.activeSuccessPillsLink
-      },
-      danger: {
-        tabs: s14.activeDangerTabsLink,
-        pills: s14.activeDangerPillsLink
-      },
-      warning: {
-        tabs: s14.activeWarningTabsLink,
-        pills: s14.activeWarningPillsLink
-      },
-      info: {
-        tabs: s14.activeInfoTabsLink,
-        pills: s14.activeInfoPillsLink
-      },
-      light: {
-        tabs: s14.activeLightTabsLink,
-        pills: s14.activeLightPillsLink
-      },
-      dark: {
-        tabs: s14.activeDarkTabsLink,
-        pills: s14.activeDarkPillsLink
-      }
-    }, L2 = C(
-      y6 ? s14.pillsLink : s14.tabsLink,
-      a12 ? y6 ? s14.disabledPillsLink : s14.disabledTabsLink : "",
-      y6 && !a12 ? e4 ? g8[c12].pills : s14.inactivePillsLink : e4 ? g8[c12].tabs : s14.inactiveTabsLink,
-      t17
-    );
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { className: p6, role: "presentation", ref: n6, ...u11, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(d11, { className: L2, ref: n6, role: "tab", ...u11, children: l12 }) });
-  }
-), Le = {
-  tabsContent: "my-2"
-}, Fe = import_react3.default.forwardRef(
-  ({ className: t17, tag: r8 = "div", children: e4, theme: a12, ...c12 }, l12) => {
-    let i6 = {
-      ...Le,
-      ...a12
-    }, d11 = C(i6.tabsContent, t17);
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(r8, { className: d11, ref: l12, ...c12, children: e4 });
-  }
-), _e = {
-  tabsPane: "transition-opacity duration-150 ease-linear",
-  isShown: "block",
-  isHidden: "hidden",
-  activeTabsPane: "opacity-100",
-  inactiveTabsPane: "opacity-0"
-}, Re = (...t17) => {
-  let r8 = import_react3.default.useRef();
-  return import_react3.default.useEffect(() => {
-    t17.forEach((e4) => {
-      e4 && (typeof e4 == "function" ? e4(r8.current) : e4.current = r8.current);
-    });
-  }, [t17]), r8;
-}, je = import_react3.default.forwardRef(
-  ({
-    className: t17,
-    tag: r8 = "div",
-    show: e4 = !1,
-    theme: a12,
-    onShow: c12,
-    onShown: l12,
-    onHide: i6,
-    onHidden: d11,
-    children: u11,
-    ...n6
-  }, m10) => {
-    let [S9, v4] = (0, import_react3.useState)(!1), y6 = (0, import_react3.useRef)(null), s14 = Re(m10, y6), p6 = (0, import_react3.useRef)(0), g8 = {
-      ..._e,
-      ...a12
-    }, L2 = C(
-      g8.tabsPane,
-      e4 ? g8.isShown : g8.isHidden,
-      S9 ? g8.activeTabsPane : g8.inactiveTabsPane,
-      t17
-    );
-    return (0, import_react3.useEffect)(() => {
-      if (y6.current) {
-        let { transitionDuration: k2 } = window.getComputedStyle(
-          y6.current
-        ), _3 = Number(k2.replace("s", "")) * 1e3;
-        p6.current = _3;
-      }
-    }, []), (0, import_react3.useEffect)(() => {
-      let k2;
-      return e4 ? (c12 == null || c12(), k2 = setTimeout(() => {
-        v4(!0), l12 == null || l12();
-      }, 100)) : (i6 == null || i6(), v4(!1), k2 = setTimeout(() => {
-        d11 == null || d11();
-      }, p6.current)), () => {
-        clearTimeout(k2);
-      };
-    }, [e4]), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(r8, { className: L2, role: "tabpanel", ref: s14, ...n6, children: u11 });
+}, Er = import_react3.default.forwardRef(
+  ({ className: e4, children: r8, theme: t17, tag: i6 = "div", ...l12 }, o10) => {
+    let c12 = { ...Ft, ...t17 }, f10 = U(c12.wrapper, e4);
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(i6, { className: f10, ...l12, ref: o10, children: r8 });
   }
 );
+var ot = import_react3.default.createContext({});
+var Xe = import_react3.default.createContext({});
+var Ee = (0, import_react3.createContext)({
+  activeIndex: -1,
+  animation: !0,
+  isOpenState: !1,
+  setIsOpenState: () => {
+  },
+  setReferenceElement: () => {
+  },
+  setPopperElement: () => {
+  },
+  setActiveIndex: () => {
+  },
+  popperElement: null,
+  referenceElement: null,
+  autoClose: !0,
+  onHide: () => {
+  },
+  onHidden: () => {
+  },
+  onShow: () => {
+  },
+  onShown: () => {
+  }
+});
+var st = (0, import_react3.createContext)({
+  activeSlide: 0,
+  setTransitionDuration: () => {
+  },
+  block: "",
+  visible: "",
+  crossfade: void 0,
+  setCarouselItems: () => {
+  },
+  isFirstRender: { current: !0 }
+});
 
 // app/components/Footer.jsx
 var import_jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime());
@@ -54379,7 +54208,7 @@ function Footer({ menu }) {
         lineNumber: 121,
         columnNumber: 15
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(De, { rippleColor: "light", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
+      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(kr, { rippleColor: "light", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
         "button",
         {
           type: "button",
@@ -54460,9 +54289,10 @@ function flattenConnection(connection) {
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1), import_react5 = __toESM(require_react(), 1);
 
 // node_modules/@shopify/hydrogen-react/dist/browser-dev/storefront-api-constants.mjs
-var SFAPI_VERSION = "2023-07";
+var SFAPI_VERSION = "2023-10";
 
 // node_modules/@shopify/hydrogen-react/dist/browser-dev/storefront-client.mjs
+var isMockShop = (domain) => domain.includes("mock.shop");
 function createStorefrontClient(props) {
   let {
     storeDomain,
@@ -54479,13 +54309,13 @@ Received "${storeDomain}".`
   storefrontApiVersion !== SFAPI_VERSION && warnOnce2(
     `The Storefront API version that you're using is different than the version this build of Hydrogen React is targeting.
 You may run into unexpected errors if these versions don't match. Received verion: "${storefrontApiVersion}"; expected version "${SFAPI_VERSION}"`
-  ), !privateStorefrontToken && !globalThis.document && warnOnce2(
+  ), !privateStorefrontToken && !globalThis.document && !isMockShop(storeDomain) && warnOnce2(
     `Using a private storefront token is recommended for server environments.
 Refer to the authentication https://shopify.dev/api/storefront#authentication documentation for more details.`
   ), privateStorefrontToken && globalThis.document && warnOnce2(
     "You are attempting to use a private token in an environment where it can be easily accessed by anyone.\nThis is a security risk; please use the public token and the `publicStorefrontToken` prop"
   );
-  let isMockShop = (domain) => domain.includes("mock.shop"), getShopifyDomain = (overrideProps) => {
+  let getShopifyDomain = (overrideProps) => {
     let domain = (overrideProps == null ? void 0 : overrideProps.storeDomain) ?? storeDomain;
     return domain.includes("://") ? domain : `https://${domain}`;
   };
@@ -54605,14 +54435,22 @@ function getShopifyCookies(cookies) {
 
 // node_modules/@shopify/hydrogen-react/dist/browser-dev/analytics-utils.mjs
 function parseGid(gid) {
-  let defaultReturn = { id: "", resource: null };
+  let defaultReturn = {
+    id: "",
+    resource: null,
+    resourceId: null,
+    search: "",
+    searchParams: new URLSearchParams(),
+    hash: ""
+  };
   if (typeof gid != "string")
     return defaultReturn;
-  let matches = gid.match(/^gid:\/\/shopify\/(\w+)\/([^/]+)/);
-  if (!matches || matches.length === 1)
+  try {
+    let { search, searchParams, pathname, hash } = new URL(gid), pathnameParts = pathname.split("/"), lastPathnamePart = pathnameParts[pathnameParts.length - 1], resourcePart = pathnameParts[pathnameParts.length - 2];
+    return !lastPathnamePart || !resourcePart ? defaultReturn : { id: `${lastPathnamePart}${search}${hash}` || "", resource: resourcePart ?? null, resourceId: lastPathnamePart || null, search, searchParams, hash };
+  } catch {
     return defaultReturn;
-  let id = matches[2] ?? null, resource = matches[1] ?? null;
-  return { id, resource };
+  }
 }
 
 // node_modules/@shopify/hydrogen-react/dist/browser-dev/Money.mjs
@@ -54741,7 +54579,6 @@ var Image = React7.forwardRef(
     decoding = "async",
     height = "auto",
     loader: loader29 = shopifyLoader,
-    loaderOptions,
     loading = "lazy",
     sizes,
     src,
@@ -54752,22 +54589,8 @@ var Image = React7.forwardRef(
       placeholderWidth: 100
     },
     width = "100%",
-    widths,
     ...passthroughProps
   }, ref) => {
-    loaderOptions && console.warn(
-      [
-        "Deprecated property from original Image component in use:",
-        "Use the `crop`, `width`, `height`, and src props, or",
-        `the \`data\` prop to achieve the same result. Image used is ${src || (data2 == null ? void 0 : data2.url) || (passthroughProps == null ? void 0 : passthroughProps.key) || "unknown"}`
-      ].join(" ")
-    ), widths && console.warn(
-      [
-        "Deprecated property from original Image component in use:",
-        "`widths` are now calculated automatically based on the",
-        `config and width props. Image used is ${src || (data2 == null ? void 0 : data2.url) || (passthroughProps == null ? void 0 : passthroughProps.key) || "unknown"}`
-      ].join(" ")
-    );
     let normalizedData = React7.useMemo(() => {
       let dataWidth = data2 != null && data2.width && (data2 != null && data2.height) ? data2 == null ? void 0 : data2.width : void 0, dataHeight = data2 != null && data2.width && (data2 != null && data2.height) ? data2 == null ? void 0 : data2.height : void 0;
       return {
@@ -54845,100 +54668,108 @@ var Image = React7.forwardRef(
       }
     );
   }
-);
-function FixedWidthImage({
-  aspectRatio,
-  crop,
-  decoding,
-  height,
-  imageWidths,
-  loader: loader29 = shopifyLoader,
-  loading,
-  normalizedProps,
-  passthroughProps,
-  ref,
-  width
-}) {
-  let fixed = React7.useMemo(() => {
-    let intWidth = getNormalizedFixedUnit(width), intHeight = getNormalizedFixedUnit(height), fixedAspectRatio = aspectRatio || (unitsMatch(normalizedProps.width, normalizedProps.height) ? [intWidth, intHeight].join("/") : normalizedProps.aspectRatio ? normalizedProps.aspectRatio : void 0), sizesArray = imageWidths === void 0 ? void 0 : generateSizes(imageWidths, fixedAspectRatio, crop), fixedHeight = intHeight || (fixedAspectRatio && intWidth ? intWidth * (parseAspectRatio(fixedAspectRatio) ?? 1) : void 0), srcSet = generateSrcSet(normalizedProps.src, sizesArray, loader29), src = loader29({
-      src: normalizedProps.src,
-      width: intWidth,
-      height: fixedHeight,
-      crop: normalizedProps.height === "auto" ? void 0 : crop
-    });
-    return {
-      width: intWidth,
-      aspectRatio: fixedAspectRatio,
-      height: fixedHeight,
-      srcSet,
-      src
-    };
-  }, [aspectRatio, crop, height, imageWidths, loader29, normalizedProps, width]);
-  return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
-    "img",
-    {
-      ref,
-      alt: normalizedProps.alt,
-      decoding,
-      height: fixed.height,
-      loading,
-      src: fixed.src,
-      srcSet: fixed.srcSet,
-      width: fixed.width,
-      style: {
-        aspectRatio: fixed.aspectRatio,
-        ...passthroughProps.style
-      },
-      ...passthroughProps
-    }
-  );
-}
-function FluidImage({
-  crop,
-  decoding,
-  imageWidths,
-  loader: loader29 = shopifyLoader,
-  loading,
-  normalizedProps,
-  passthroughProps,
-  placeholderWidth,
-  ref,
-  sizes
-}) {
-  let fluid = React7.useMemo(() => {
-    let sizesArray = imageWidths === void 0 ? void 0 : generateSizes(imageWidths, normalizedProps.aspectRatio, crop), placeholderHeight = normalizedProps.aspectRatio && placeholderWidth ? placeholderWidth * (parseAspectRatio(normalizedProps.aspectRatio) ?? 1) : void 0, srcSet = generateSrcSet(normalizedProps.src, sizesArray, loader29), src = loader29({
-      src: normalizedProps.src,
-      width: placeholderWidth,
-      height: placeholderHeight,
-      crop
-    });
-    return {
-      placeholderHeight,
-      srcSet,
-      src
-    };
-  }, [crop, imageWidths, loader29, normalizedProps, placeholderWidth]);
-  return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
-    "img",
-    {
-      ref,
-      alt: normalizedProps.alt,
-      decoding,
-      height: fluid.placeholderHeight,
-      loading,
-      sizes,
-      src: fluid.src,
-      srcSet: fluid.srcSet,
-      width: placeholderWidth,
-      ...passthroughProps,
-      style: {
-        width: normalizedProps.width,
-        aspectRatio: normalizedProps.aspectRatio,
-        ...passthroughProps.style
+), FixedWidthImage = React7.forwardRef(
+  ({
+    aspectRatio,
+    crop,
+    decoding,
+    height,
+    imageWidths,
+    loader: loader29 = shopifyLoader,
+    loading,
+    normalizedProps,
+    passthroughProps,
+    width
+  }, ref) => {
+    let fixed = React7.useMemo(() => {
+      let intWidth = getNormalizedFixedUnit(width), intHeight = getNormalizedFixedUnit(height), fixedAspectRatio = aspectRatio || (unitsMatch(normalizedProps.width, normalizedProps.height) ? [intWidth, intHeight].join("/") : normalizedProps.aspectRatio ? normalizedProps.aspectRatio : void 0), sizesArray = imageWidths === void 0 ? void 0 : generateSizes(imageWidths, fixedAspectRatio, crop), fixedHeight = intHeight || (fixedAspectRatio && intWidth ? intWidth * (parseAspectRatio(fixedAspectRatio) ?? 1) : void 0), srcSet = generateSrcSet(normalizedProps.src, sizesArray, loader29), src = loader29({
+        src: normalizedProps.src,
+        width: intWidth,
+        height: fixedHeight,
+        crop: normalizedProps.height === "auto" ? void 0 : crop
+      });
+      return {
+        width: intWidth,
+        aspectRatio: fixedAspectRatio,
+        height: fixedHeight,
+        srcSet,
+        src
+      };
+    }, [
+      aspectRatio,
+      crop,
+      height,
+      imageWidths,
+      loader29,
+      normalizedProps,
+      width
+    ]);
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+      "img",
+      {
+        ref,
+        alt: normalizedProps.alt,
+        decoding,
+        height: fixed.height,
+        loading,
+        src: fixed.src,
+        srcSet: fixed.srcSet,
+        width: fixed.width,
+        style: {
+          aspectRatio: fixed.aspectRatio,
+          ...passthroughProps.style
+        },
+        ...passthroughProps
       }
-    }
-  );
-}
+    );
+  }
+), FluidImage = React7.forwardRef(
+  ({
+    crop,
+    decoding,
+    imageWidths,
+    loader: loader29 = shopifyLoader,
+    loading,
+    normalizedProps,
+    passthroughProps,
+    placeholderWidth,
+    sizes
+  }, ref) => {
+    let fluid = React7.useMemo(() => {
+      let sizesArray = imageWidths === void 0 ? void 0 : generateSizes(imageWidths, normalizedProps.aspectRatio, crop), placeholderHeight = normalizedProps.aspectRatio && placeholderWidth ? placeholderWidth * (parseAspectRatio(normalizedProps.aspectRatio) ?? 1) : void 0, srcSet = generateSrcSet(normalizedProps.src, sizesArray, loader29), src = loader29({
+        src: normalizedProps.src,
+        width: placeholderWidth,
+        height: placeholderHeight,
+        crop
+      });
+      return {
+        placeholderHeight,
+        srcSet,
+        src
+      };
+    }, [crop, imageWidths, loader29, normalizedProps, placeholderWidth]);
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+      "img",
+      {
+        ref,
+        alt: normalizedProps.alt,
+        decoding,
+        height: fluid.placeholderHeight,
+        loading,
+        sizes,
+        src: fluid.src,
+        srcSet: fluid.srcSet,
+        width: placeholderWidth,
+        ...passthroughProps,
+        style: {
+          width: normalizedProps.width,
+          aspectRatio: normalizedProps.aspectRatio,
+          ...passthroughProps.style
+        }
+      }
+    );
+  }
+);
 function shopifyLoader({ src, width, height, crop }) {
   if (!src)
     return "";
@@ -55011,11 +54842,11 @@ function generateSizes(imageWidths, aspectRatio, crop = "center") {
 
 // node_modules/@shopify/hydrogen/dist/development/index.js
 var import_react7 = __toESM(require_react(), 1);
-var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1), import_content_security_policy_builder = __toESM(require_dist2(), 1);
 function hashKey(queryKey) {
   let rawKeys = Array.isArray(queryKey) ? queryKey : [queryKey], hash = "";
   for (let key of rawKeys)
-    key != null && (typeof key == "object" ? key.body && typeof key.body == "string" ? hash += key.body : hash += JSON.stringify(key) : hash += key);
+    key != null && (typeof key == "object" ? hash += JSON.stringify(key) : hash += key.toString());
   return encodeURIComponent(hash);
 }
 var PUBLIC = "public", PRIVATE = "private", NO_STORE = "no-store", optionMapping = {
@@ -55053,7 +54884,18 @@ function CacheLong(overrideOptions) {
   return guardExpirableModeType(overrideOptions), {
     mode: PUBLIC,
     maxAge: 3600,
+    // 1 hour
     staleWhileRevalidate: 82800,
+    // 23 Hours
+    ...overrideOptions
+  };
+}
+function CacheDefault(overrideOptions) {
+  return guardExpirableModeType(overrideOptions), {
+    mode: PUBLIC,
+    maxAge: 1,
+    staleWhileRevalidate: 86399,
+    // 1 second less than 24 hours
     ...overrideOptions
   };
 }
@@ -55063,15 +54905,15 @@ function CacheCustom(overrideOptions) {
 function parseJSON(json4) {
   return String(json4).includes("__proto__") ? JSON.parse(json4, noproto) : JSON.parse(json4);
 }
-function noproto(k2, v4) {
+function noproto(k2, v5) {
   if (k2 !== "__proto__")
-    return v4;
+    return v5;
 }
 function getCacheControlSetting(userCacheOptions, options) {
   return userCacheOptions && options ? {
     ...userCacheOptions,
     ...options
-  } : userCacheOptions || CacheShort();
+  } : userCacheOptions || CacheDefault();
 }
 function generateDefaultCacheControlHeader(userCacheOptions) {
   return generateCacheControlHeader(getCacheControlSetting(userCacheOptions));
@@ -55124,7 +54966,7 @@ function getKeyUrl(key) {
   return `https://shopify.dev/?${key}`;
 }
 function getCacheOption(userCacheOptions) {
-  return userCacheOptions || CacheShort();
+  return userCacheOptions || CacheDefault();
 }
 async function getItemFromCache(cache, key) {
   if (!cache)
@@ -55171,23 +55013,39 @@ async function runWithCache(cacheKey, actionFn, {
   strategy = CacheShort(),
   cacheInstance,
   shouldCacheResult = () => !0,
-  waitUntil
+  waitUntil,
+  debugInfo
 }) {
-  if (!cacheInstance || !strategy || strategy.mode === NO_STORE)
-    return actionFn();
-  let key = hashKey(
+  let startTime = Date.now(), key = hashKey(
     [
+      // '__HYDROGEN_CACHE_ID__', // TODO purgeQueryCacheOnBuild
       ...typeof cacheKey == "string" ? [cacheKey] : cacheKey
     ]
-  ), cachedItem = await getItemFromCache(cacheInstance, key);
+  ), logSubRequestEvent = (cacheStatus, overrideStartTime) => {
+    var _a2;
+    (_a2 = globalThis.__H2O_LOG_EVENT) == null || _a2.call(globalThis, {
+      eventType: "subrequest",
+      url: getKeyUrl(key),
+      startTime: overrideStartTime || startTime,
+      cacheStatus,
+      waitUntil,
+      ...debugInfo
+    });
+  };
+  if (!cacheInstance || !strategy || strategy.mode === NO_STORE) {
+    let result2 = await actionFn();
+    return logSubRequestEvent == null || logSubRequestEvent(), result2;
+  }
+  let cachedItem = await getItemFromCache(cacheInstance, key);
   if (cachedItem) {
-    let [cachedResult, cacheInfo] = cachedItem;
-    if (!swrLock.has(key) && isStale2(key, cacheInfo)) {
+    let [cachedResult, cacheInfo] = cachedItem, cacheStatus = isStale2(key, cacheInfo) ? "STALE" : "HIT";
+    if (!swrLock.has(key) && cacheStatus === "STALE") {
       swrLock.add(key);
       let revalidatingPromise = Promise.resolve().then(async () => {
+        let revalidateStartTime = Date.now();
         try {
           let result2 = await actionFn();
-          shouldCacheResult(result2) && await setItemInCache(cacheInstance, key, result2, strategy);
+          shouldCacheResult(result2) && (await setItemInCache(cacheInstance, key, result2, strategy), logSubRequestEvent == null || logSubRequestEvent("PUT", revalidateStartTime));
         } catch (error) {
           error.message && (error.message = "SWR in sub-request failed: " + error.message), console.error(error);
         } finally {
@@ -55196,16 +55054,14 @@ async function runWithCache(cacheKey, actionFn, {
       });
       waitUntil == null || waitUntil(revalidatingPromise);
     }
-    return cachedResult;
+    return logSubRequestEvent == null || logSubRequestEvent(cacheStatus), cachedResult;
   }
   let result = await actionFn();
-  if (shouldCacheResult(result)) {
-    let setItemInCachePromise = setItemInCache(
-      cacheInstance,
-      key,
-      result,
-      strategy
-    );
+  if (logSubRequestEvent == null || logSubRequestEvent("MISS"), shouldCacheResult(result)) {
+    let setItemInCachePromise = Promise.resolve().then(async () => {
+      let putStartTime = Date.now();
+      await setItemInCache(cacheInstance, key, result, strategy), logSubRequestEvent == null || logSubRequestEvent("PUT", putStartTime);
+    });
     waitUntil == null || waitUntil(setItemInCachePromise);
   }
   return result;
@@ -55216,7 +55072,8 @@ async function fetchWithServerCache(url, requestInit, {
   cacheKey = [url, requestInit],
   shouldCacheResponse = () => !0,
   waitUntil,
-  returnType = "json"
+  returnType = "json",
+  debugInfo
 } = {}) {
   return !cacheOptions && (!requestInit.method || requestInit.method === "GET") && (cacheOptions = CacheShort()), runWithCache(
     cacheKey,
@@ -55239,35 +55096,69 @@ async function fetchWithServerCache(url, requestInit, {
       cacheInstance,
       waitUntil,
       strategy: cacheOptions ?? null,
+      debugInfo,
       shouldCacheResult: (result) => shouldCacheResponse(...fromSerializableResponse(result))
     }
   ).then(fromSerializableResponse);
 }
-var STOREFRONT_REQUEST_GROUP_ID_HEADER = "Custom-Storefront-Request-Group-ID";
+var STOREFRONT_REQUEST_GROUP_ID_HEADER = "Custom-Storefront-Request-Group-ID", STOREFRONT_ACCESS_TOKEN_HEADER = "X-Shopify-Storefront-Access-Token", SDK_VARIANT_HEADER = "X-SDK-Variant", SDK_VARIANT_SOURCE_HEADER = "X-SDK-Variant-Source", SDK_VERSION_HEADER = "X-SDK-Version";
 function generateUUID() {
   return typeof crypto < "u" && crypto.randomUUID ? crypto.randomUUID() : `weak-${Math.random().toString(16).substring(2)}`;
 }
 var warnings2 = /* @__PURE__ */ new Set(), warnOnce3 = (string) => {
   warnings2.has(string) || (console.warn(string), warnings2.add(string));
-}, LIB_VERSION = "2023.7.2", StorefrontApiError = class extends Error {
-}, isStorefrontApiError = (error) => error instanceof StorefrontApiError, isQueryRE = /(^|}\s)query[\s({]/im, isMutationRE = /(^|}\s)mutation[\s({]/im;
+}, LIB_VERSION = "2023.10.3";
 function minifyQuery(string) {
   return string.replace(/\s*#.*$/gm, "").replace(/\s+/gm, " ").trim();
 }
-var defaultI18n = { language: "EN", country: "US" };
+var IS_QUERY_RE = /(^|}\s)query[\s({]/im, IS_MUTATION_RE = /(^|}\s)mutation[\s({]/im;
+function assertQuery(query, callerName) {
+  if (!IS_QUERY_RE.test(query))
+    throw new Error(`[h2:error:${callerName}] Can only execute queries`);
+}
+function assertMutation(query, callerName) {
+  if (!IS_MUTATION_RE.test(query))
+    throw new Error(`[h2:error:${callerName}] Can only execute mutations`);
+}
+function throwGraphQLError({
+  response,
+  errors,
+  type,
+  query,
+  queryVariables,
+  ErrorConstructor = Error,
+  client = "storefront"
+}) {
+  var _a2;
+  let requestId = response.headers.get("x-request-id"), errorMessage = (typeof errors == "string" ? errors : (_a2 = errors == null ? void 0 : errors.map) == null ? void 0 : _a2.call(errors, (error) => error.message).join(`
+`)) || `API response error: ${response.status}`;
+  throw new ErrorConstructor(
+    `[h2:error:${client}.${type}] ` + errorMessage + (requestId ? ` - Request ID: ${requestId}` : ""),
+    {
+      cause: JSON.stringify({
+        errors,
+        requestId,
+        graphql: {
+          query,
+          variables: JSON.stringify(queryVariables)
+        }
+      })
+    }
+  );
+}
+var StorefrontApiError = class extends Error {
+}, isStorefrontApiError = (error) => error instanceof StorefrontApiError, defaultI18n = { language: "EN", country: "US" };
 function createStorefrontClient2(options) {
   let {
     storefrontHeaders,
     cache,
     waitUntil,
-    buyerIp,
     i18n,
-    requestGroupId,
     storefrontId,
     ...clientOptions
-  } = options, H2_PREFIX_WARN2 = "[h2:warn:createStorefrontClient] ";
+  } = options;
   cache || warnOnce3(
-    H2_PREFIX_WARN2 + "Storefront API client created without a cache instance. This may slow down your sub-requests."
+    "[h2:warn:createStorefrontClient] " + "Storefront API client created without a cache instance. This may slow down your sub-requests."
   );
   let {
     getPublicTokenHeaders,
@@ -55276,15 +55167,20 @@ function createStorefrontClient2(options) {
     getShopifyDomain
   } = createStorefrontClient(clientOptions), defaultHeaders = (clientOptions.privateStorefrontToken ? getPrivateTokenHeaders : getPublicTokenHeaders)({
     contentType: "json",
-    buyerIp: (storefrontHeaders == null ? void 0 : storefrontHeaders.buyerIp) || buyerIp
+    buyerIp: (storefrontHeaders == null ? void 0 : storefrontHeaders.buyerIp) || ""
   });
-  if (defaultHeaders[STOREFRONT_REQUEST_GROUP_ID_HEADER] = (storefrontHeaders == null ? void 0 : storefrontHeaders.requestGroupId) || requestGroupId || generateUUID(), storefrontId && (defaultHeaders[SHOPIFY_STOREFRONT_ID_HEADER] = storefrontId), defaultHeaders["user-agent"] = `Hydrogen ${LIB_VERSION}`, storefrontHeaders && storefrontHeaders.cookie) {
+  if (defaultHeaders[STOREFRONT_REQUEST_GROUP_ID_HEADER] = (storefrontHeaders == null ? void 0 : storefrontHeaders.requestGroupId) || generateUUID(), storefrontId && (defaultHeaders[SHOPIFY_STOREFRONT_ID_HEADER] = storefrontId), defaultHeaders["user-agent"] = `Hydrogen ${LIB_VERSION}`, storefrontHeaders && storefrontHeaders.cookie) {
     let cookies = getShopifyCookies(storefrontHeaders.cookie ?? "");
     cookies[SHOPIFY_Y] && (defaultHeaders[SHOPIFY_STOREFRONT_Y_HEADER] = cookies[SHOPIFY_Y]), cookies[SHOPIFY_S] && (defaultHeaders[SHOPIFY_STOREFRONT_S_HEADER] = cookies[SHOPIFY_S]);
   }
-  storefrontHeaders || warnOnce3(
-    H2_PREFIX_WARN2 + "`requestGroupId` and `buyerIp` will be deprecated in the next calendar release. Please use `getStorefrontHeaders`"
-  );
+  let cacheKeyHeader = JSON.stringify({
+    "content-type": defaultHeaders["content-type"],
+    "user-agent": defaultHeaders["user-agent"],
+    [SDK_VARIANT_HEADER]: defaultHeaders[SDK_VARIANT_HEADER],
+    [SDK_VARIANT_SOURCE_HEADER]: defaultHeaders[SDK_VARIANT_SOURCE_HEADER],
+    [SDK_VERSION_HEADER]: defaultHeaders[SDK_VERSION_HEADER],
+    [STOREFRONT_ACCESS_TOKEN_HEADER]: defaultHeaders[STOREFRONT_ACCESS_TOKEN_HEADER]
+  });
   async function fetchStorefrontApi({
     query,
     mutation,
@@ -55297,18 +55193,26 @@ function createStorefrontClient2(options) {
     query = query ?? mutation;
     let queryVariables = { ...variables };
     i18n && (!(variables != null && variables.country) && /\$country/.test(query) && (queryVariables.country = i18n.country), !(variables != null && variables.language) && /\$language/.test(query) && (queryVariables.language = i18n.language));
-    let url = getStorefrontApiUrl({ storefrontApiVersion }), requestInit = {
+    let url = getStorefrontApiUrl({ storefrontApiVersion }), graphqlData = JSON.stringify({ query, variables: queryVariables }), requestInit = {
       method: "POST",
       headers: { ...defaultHeaders, ...userHeaders },
-      body: JSON.stringify({
-        query,
-        variables: queryVariables
-      })
-    }, [body, response] = await fetchWithServerCache(url, requestInit, {
+      body: graphqlData
+    }, cacheKey = [
+      url,
+      requestInit.method,
+      cacheKeyHeader,
+      requestInit.body
+    ], [body, response] = await fetchWithServerCache(url, requestInit, {
       cacheInstance: mutation ? void 0 : cache,
-      cache: cacheOptions || CacheShort(),
+      cache: cacheOptions || CacheDefault(),
+      cacheKey,
       shouldCacheResponse: checkGraphQLErrors,
-      waitUntil
+      waitUntil,
+      debugInfo: {
+        graphql: graphqlData,
+        requestId: requestInit.headers[STOREFRONT_REQUEST_GROUP_ID_HEADER],
+        purpose: storefrontHeaders == null ? void 0 : storefrontHeaders.purpose
+      }
     }), errorOptions = {
       response,
       type: mutation ? "mutation" : "query",
@@ -55323,10 +55227,10 @@ function createStorefrontClient2(options) {
       } catch {
         errors2 = [{ message: body }];
       }
-      throwError({ ...errorOptions, errors: errors2 });
+      throwGraphQLError({ ...errorOptions, errors: errors2 });
     }
     let { data: data2, errors } = body;
-    return errors != null && errors.length && throwError({
+    return errors != null && errors.length && throwGraphQLError({
       ...errorOptions,
       errors,
       ErrorConstructor: StorefrontApiError
@@ -55334,19 +55238,50 @@ function createStorefrontClient2(options) {
   }
   return {
     storefront: {
+      /**
+       * Sends a GraphQL query to the Storefront API.
+       *
+       * Example:
+       *
+       * ```js
+       * async function loader ({context: {storefront}}) {
+       *   const data = await storefront.query('query { ... }', {
+       *     variables: {},
+       *     cache: storefront.CacheLong()
+       *   });
+       * }
+       * ```
+       */
       query: (query, payload) => {
-        if (query = minifyQuery(query), isMutationRE.test(query))
-          throw new Error(
-            "[h2:error:storefront.query] Cannot execute mutations"
-          );
-        return fetchStorefrontApi({ ...payload, query });
+        query = minifyQuery(query), assertQuery(query, "storefront.query");
+        let result = fetchStorefrontApi({
+          ...payload,
+          query
+        });
+        return result.catch(() => {
+        }), result;
       },
+      /**
+       * Sends a GraphQL mutation to the Storefront API.
+       *
+       * Example:
+       *
+       * ```js
+       * async function loader ({context: {storefront}}) {
+       *   await storefront.mutate('mutation { ... }', {
+       *     variables: {},
+       *   });
+       * }
+       * ```
+       */
       mutate: (mutation, payload) => {
-        if (mutation = minifyQuery(mutation), isQueryRE.test(mutation))
-          throw new Error(
-            "[h2:error:storefront.mutate] Cannot execute queries"
-          );
-        return fetchStorefrontApi({ ...payload, mutation });
+        mutation = minifyQuery(mutation), assertMutation(mutation, "storefront.mutate");
+        let result = fetchStorefrontApi({
+          ...payload,
+          mutation
+        });
+        return result.catch(() => {
+        }), result;
       },
       cache,
       CacheNone,
@@ -55358,35 +55293,29 @@ function createStorefrontClient2(options) {
       getPrivateTokenHeaders,
       getShopifyDomain,
       getApiUrl: getStorefrontApiUrl,
+      /**
+       * Wether it's a GraphQL error returned in the Storefront API response.
+       *
+       * Example:
+       *
+       * ```js
+       * async function loader ({context: {storefront}}) {
+       *   try {
+       *     await storefront.query(...);
+       *   } catch(error) {
+       *     if (storefront.isApiError(error)) {
+       *       // ...
+       *     }
+       *
+       *     throw error;
+       *   }
+       * }
+       * ```
+       */
       isApiError: isStorefrontApiError,
       i18n: i18n ?? defaultI18n
     }
   };
-}
-function throwError({
-  response,
-  errors,
-  type,
-  query,
-  queryVariables,
-  ErrorConstructor = Error
-}) {
-  var _a2;
-  let requestId = response.headers.get("x-request-id"), errorMessage = (typeof errors == "string" ? errors : (_a2 = errors == null ? void 0 : errors.map) == null ? void 0 : _a2.call(errors, (error) => error.message).join(`
-`)) || `API response error: ${response.status}`;
-  throw new ErrorConstructor(
-    `[h2:error:storefront.${type}] ` + errorMessage + (requestId ? ` - Request ID: ${requestId}` : ""),
-    {
-      cause: {
-        errors,
-        requestId,
-        graphql: {
-          query,
-          variables: JSON.stringify(queryVariables)
-        }
-      }
-    }
-  );
 }
 var _store, _a, InMemoryCache = (_a = class {
   constructor() {
@@ -55466,9 +55395,9 @@ async function storefrontRedirect(options) {
   try {
     let { urlRedirects } = await storefront.query(REDIRECT_QUERY, {
       variables: { query: "path:" + redirectFrom }
-    }), location = (_c = (_b = (_a2 = urlRedirects == null ? void 0 : urlRedirects.edges) == null ? void 0 : _a2[0]) == null ? void 0 : _b.node) == null ? void 0 : _c.target;
-    if (location)
-      return new Response(null, { status: 301, headers: { location } });
+    }), location2 = (_c = (_b = (_a2 = urlRedirects == null ? void 0 : urlRedirects.edges) == null ? void 0 : _a2[0]) == null ? void 0 : _b.node) == null ? void 0 : _c.target;
+    if (location2)
+      return new Response(null, { status: 301, headers: { location: location2 } });
     let searchParams = new URLSearchParams(search), redirectTo = searchParams.get("return_to") || searchParams.get("redirect");
     if (redirectTo) {
       if (isLocalPath(redirectTo))
@@ -55486,12 +55415,7 @@ async function storefrontRedirect(options) {
   return response;
 }
 function isLocalPath(url) {
-  try {
-    new URL(url);
-  } catch {
-    return !0;
-  }
-  return !1;
+  return !/^(([a-z+-]+:)?\/\/|[a-z+-]+:)/i.test(url.trim());
 }
 var REDIRECT_QUERY = `#graphql
   query redirects($query: String) {
@@ -55511,81 +55435,119 @@ var REDIRECT_QUERY = `#graphql
     throw new Error(
       "GraphiQL: Hydrogen's storefront client must be injected in the loader context."
     );
-  let url = storefront.getApiUrl(), accessToken = storefront.getPublicTokenHeaders()["X-Shopify-Storefront-Access-Token"], favicon = "https://avatars.githubusercontent.com/u/12972006?s=48&v=4";
+  let url = storefront.getApiUrl(), accessToken = storefront.getPublicTokenHeaders()["X-Shopify-Storefront-Access-Token"], favicon = "https://avatars.githubusercontent.com/u/12972006?s=48&v=4", html = String.raw;
   return new Response(
-    `
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>GraphiQL</title>
-    <link rel="icon" type="image/x-icon" href="${favicon}">
-    <style>
-      body {
-        height: 100%;
-        margin: 0;
-        width: 100%;
-        overflow: hidden;
-      }
+    html`
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <title>GraphiQL</title>
+          <link rel="icon" type="image/x-icon" href="${favicon}" />
+          <style>
+            body {
+              height: 100%;
+              margin: 0;
+              width: 100%;
+              overflow: hidden;
+              background-color: hsl(219, 29%, 18%);
+            }
 
-      #graphiql {
-        height: 100vh;
-      }
-    </style>
+            #graphiql {
+              height: 100vh;
+            }
 
-    <script
-      crossorigin
-      src="https://unpkg.com/react@18/umd/react.development.js"
-    ></script>
-    <script
-      crossorigin
-      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
-    ></script>
-    <link rel="stylesheet" href="https://unpkg.com/graphiql@3/graphiql.min.css" />
-  </head>
+            #graphiql > .placeholder {
+              color: slategray;
+              width: fit-content;
+              margin: 40px auto;
+              font-family: Arial;
+            }
+          </style>
 
-  <body>
-    <div id="graphiql">Loading...</div>
-    <script
-      src="https://unpkg.com/graphiql@3/graphiql.min.js"
-      type="application/javascript"
-    ></script>
-    <script>
-      const windowUrl = new URL(document.URL);
+          <script
+            crossorigin
+            src="https://unpkg.com/react@18/umd/react.development.js"
+          ></script>
+          <script
+            crossorigin
+            src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+          ></script>
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/graphiql@3/graphiql.min.css"
+          />
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/@graphiql/plugin-explorer/dist/style.css"
+          />
+        </head>
 
-      let query = '{\\n  shop {\\n    name\\n  }\\n}';
-      if (windowUrl.searchParams.has('query')) {
-        query = decodeURIComponent(windowUrl.searchParams.get('query') ?? '');
-        // Prettify query
-        if (query) query = GraphiQL.GraphQL.print(GraphiQL.GraphQL.parse(query));
-      }
+        <body>
+          <div id="graphiql">
+            <div class="placeholder">Loading GraphiQL...</div>
+          </div>
 
-      let variables;
-      if (windowUrl.searchParams.has('variables')) {
-        variables = decodeURIComponent(windowUrl.searchParams.get('variables') ?? '');
-        // Prettify variables
-        if (variables) variables = JSON.stringify(JSON.parse(variables), null, 2);
-      }
+          <script
+            src="https://unpkg.com/graphiql@3/graphiql.min.js"
+            type="application/javascript"
+            crossorigin="anonymous"
+          ></script>
+          <script
+            src="https://unpkg.com/@graphiql/plugin-explorer/dist/index.umd.js"
+            type="application/javascript"
+            crossorigin="anonymous"
+          ></script>
 
-      const root = ReactDOM.createRoot(document.getElementById('graphiql'));
-      root.render(
-        React.createElement(GraphiQL, {
-          fetcher: GraphiQL.createFetcher({
-            url: '${url}',
-            headers: {'X-Shopify-Storefront-Access-Token': '${accessToken}'}
-          }),
-          defaultEditorToolsVisibility: true,
-          query,
-          variables
-        }),
-      );
-    </script>
-  </body>
-</html>
-  `,
+          <script>
+            const windowUrl = new URL(document.URL);
+
+            let query = '{ shop { name } }';
+            if (windowUrl.searchParams.has('query')) {
+              query = decodeURIComponent(
+                windowUrl.searchParams.get('query') ?? query,
+              );
+            }
+
+            // Prettify query
+            query = GraphiQL.GraphQL.print(GraphiQL.GraphQL.parse(query));
+
+            let variables;
+            if (windowUrl.searchParams.has('variables')) {
+              variables = decodeURIComponent(
+                windowUrl.searchParams.get('variables') ?? '',
+              );
+            }
+
+            // Prettify variables
+            if (variables) {
+              variables = JSON.stringify(JSON.parse(variables), null, 2);
+            }
+
+            const root = ReactDOM.createRoot(
+              document.getElementById('graphiql'),
+            );
+            root.render(
+              React.createElement(GraphiQL, {
+                fetcher: GraphiQL.createFetcher({
+                  url: '${url}',
+                  headers: {
+                    'X-Shopify-Storefront-Access-Token': '${accessToken}',
+                  },
+                }),
+                defaultEditorToolsVisibility: true,
+                query,
+                variables,
+                plugins: [GraphiQLPluginExplorer.explorerPlugin()],
+              }),
+            );
+          </script>
+        </body>
+      </html>
+    `,
     { status: 200, headers: { "content-type": "text/html" } }
   );
 };
-var SeoLogger = (0, import_react7.lazy)(() => Promise.resolve().then(() => (init_log_seo_tags_URUAZSXD(), log_seo_tags_URUAZSXD_exports)));
+var SeoLogger = (0, import_react7.lazy)(() => Promise.resolve().then(() => (init_log_seo_tags_IG37ONQ2(), log_seo_tags_IG37ONQ2_exports)));
 function Pagination({
   connection,
   children = () => (console.warn("<Pagination> requires children to work properly"), null)
@@ -55603,33 +55565,36 @@ function Pagination({
       pageInfo: {
         endCursor,
         hasPreviousPage,
+        hasNextPage,
         startCursor
       },
       nodes
     }),
-    [endCursor, hasPreviousPage, startCursor, nodes]
+    [endCursor, hasNextPage, hasPreviousPage, startCursor, nodes]
   ), NextLink = (0, import_react7.useMemo)(
-    () => function(props) {
+    () => (0, import_react7.forwardRef)(function(props, ref) {
       return hasNextPage ? (0, import_react7.createElement)(Link2, {
         preventScrollReset: !0,
         ...props,
         to: nextPageUrl,
         state,
-        replace: !0
+        replace: !0,
+        ref
       }) : null;
-    },
-    [hasNextPage, nextPageUrl]
+    }),
+    [hasNextPage, nextPageUrl, state]
   ), PreviousLink = (0, import_react7.useMemo)(
-    () => function(props) {
+    () => (0, import_react7.forwardRef)(function(props, ref) {
       return hasPreviousPage ? (0, import_react7.createElement)(Link2, {
         preventScrollReset: !0,
         ...props,
         to: previousPageUrl,
         state,
-        replace: !0
+        replace: !0,
+        ref
       }) : null;
-    },
-    [hasPreviousPage, previousPageUrl]
+    }),
+    [hasPreviousPage, previousPageUrl, state]
   );
   return children({
     state,
@@ -55643,14 +55608,25 @@ function Pagination({
     PreviousLink
   });
 }
+function getParamsWithoutPagination(paramsString) {
+  let params = new URLSearchParams(paramsString);
+  return params.delete("cursor"), params.delete("direction"), params.toString();
+}
+function makeError(prop) {
+  throw new Error(
+    `The Pagination component requires ${"`" + prop + "`"} to be a part of your query. See the guide on how to setup your query to include ${"`" + prop + "`"}: https://shopify.dev/docs/custom-storefronts/hydrogen/data-fetching/pagination#setup-the-paginated-query`
+  );
+}
 function usePagination(connection) {
-  let { state, search } = useLocation(), isPrevious = new URLSearchParams(search).get("direction") === "previous", nodes = (0, import_react7.useMemo)(() => !state || !(state != null && state.nodes) ? flattenConnection(connection) : isPrevious ? [...flattenConnection(connection), ...state.nodes] : [...state.nodes, ...flattenConnection(connection)], [state, connection]), currentPageInfo = (0, import_react7.useMemo)(
+  connection.pageInfo || makeError("pageInfo"), typeof connection.pageInfo.startCursor > "u" && makeError("pageInfo.startCursor"), typeof connection.pageInfo.endCursor > "u" && makeError("pageInfo.endCursor"), typeof connection.pageInfo.hasNextPage > "u" && makeError("pageInfo.hasNextPage"), typeof connection.pageInfo.hasPreviousPage > "u" && makeError("pageInfo.hasPreviousPage");
+  let navigate = useNavigate(), { state, search, pathname } = useLocation(), isPrevious = new URLSearchParams(search).get("direction") === "previous", nodes = (0, import_react7.useMemo)(() => {
+    var _a2;
+    return !((_a2 = globalThis == null ? void 0 : globalThis.window) != null && _a2.__hydrogenHydrated) || !state || !(state != null && state.nodes) ? flattenConnection(connection) : isPrevious ? [...flattenConnection(connection), ...state.nodes] : [...state.nodes, ...flattenConnection(connection)];
+  }, [state, connection]), currentPageInfo = (0, import_react7.useMemo)(
     () => {
-      var _a2, _b, _c, _d;
-      let pageStartCursor = ((_a2 = state == null ? void 0 : state.pageInfo) == null ? void 0 : _a2.startCursor) === void 0 ? connection.pageInfo.startCursor : state.pageInfo.startCursor, pageEndCursor = ((_b = state == null ? void 0 : state.pageInfo) == null ? void 0 : _b.endCursor) === void 0 ? connection.pageInfo.endCursor : state.pageInfo.endCursor;
-      state != null && state.nodes && (isPrevious ? pageStartCursor = connection.pageInfo.startCursor : pageEndCursor = connection.pageInfo.endCursor);
-      let previousPageExists = ((_c = state == null ? void 0 : state.pageInfo) == null ? void 0 : _c.hasPreviousPage) === void 0 ? connection.pageInfo.hasPreviousPage : state.pageInfo.hasPreviousPage, nextPageExists = ((_d = state == null ? void 0 : state.pageInfo) == null ? void 0 : _d.hasNextPage) === void 0 ? connection.pageInfo.hasNextPage : state.pageInfo.hasNextPage;
-      return {
+      var _a2, _b, _c, _d, _e2;
+      let hydrogenHydrated = (_a2 = globalThis == null ? void 0 : globalThis.window) == null ? void 0 : _a2.__hydrogenHydrated, pageStartCursor = !hydrogenHydrated || ((_b = state == null ? void 0 : state.pageInfo) == null ? void 0 : _b.startCursor) === void 0 ? connection.pageInfo.startCursor : state.pageInfo.startCursor, pageEndCursor = !hydrogenHydrated || ((_c = state == null ? void 0 : state.pageInfo) == null ? void 0 : _c.endCursor) === void 0 ? connection.pageInfo.endCursor : state.pageInfo.endCursor, previousPageExists = !hydrogenHydrated || ((_d = state == null ? void 0 : state.pageInfo) == null ? void 0 : _d.hasPreviousPage) === void 0 ? connection.pageInfo.hasPreviousPage : state.pageInfo.hasPreviousPage, nextPageExists = !hydrogenHydrated || ((_e2 = state == null ? void 0 : state.pageInfo) == null ? void 0 : _e2.hasNextPage) === void 0 ? connection.pageInfo.hasNextPage : state.pageInfo.hasNextPage;
+      return state != null && state.nodes && (isPrevious ? (pageStartCursor = connection.pageInfo.startCursor, previousPageExists = connection.pageInfo.hasPreviousPage) : (pageEndCursor = connection.pageInfo.endCursor, nextPageExists = connection.pageInfo.hasNextPage)), {
         startCursor: pageStartCursor,
         endCursor: pageEndCursor,
         hasPreviousPage: previousPageExists,
@@ -55665,7 +55641,25 @@ function usePagination(connection) {
       connection.pageInfo.startCursor,
       connection.pageInfo.endCursor
     ]
-  ), previousPageUrl = (0, import_react7.useMemo)(() => {
+  ), urlRef = (0, import_react7.useRef)({
+    params: getParamsWithoutPagination(search),
+    pathname
+  });
+  (0, import_react7.useEffect)(() => {
+    window.__hydrogenHydrated = !0;
+  }, []), (0, import_react7.useEffect)(() => {
+    // If the URL changes (independent of pagination params)
+    // then reset the pagination params in the URL
+    (getParamsWithoutPagination(search) !== urlRef.current.params || pathname !== urlRef.current.pathname) && (urlRef.current = {
+      pathname,
+      params: getParamsWithoutPagination(search)
+    }, navigate(`${pathname}?${getParamsWithoutPagination(search)}`, {
+      replace: !0,
+      preventScrollReset: !0,
+      state: { nodes: void 0, pageInfo: void 0 }
+    }));
+  }, [pathname, search]);
+  let previousPageUrl = (0, import_react7.useMemo)(() => {
     let params2 = new URLSearchParams(search);
     return params2.set("direction", "previous"), currentPageInfo.startCursor && params2.set("cursor", currentPageInfo.startCursor), `?${params2.toString()}`;
   }, [search, currentPageInfo.startCursor]), nextPageUrl = (0, import_react7.useMemo)(() => {
@@ -55675,7 +55669,7 @@ function usePagination(connection) {
   return { ...currentPageInfo, previousPageUrl, nextPageUrl, nodes };
 }
 function getPaginationVariables(request, options = { pageBy: 20 }) {
-  if (!(request instanceof Request))
+  if (typeof (request == null ? void 0 : request.url) > "u")
     throw new Error(
       "getPaginationVariables must be called with the Request object passed to your loader function"
     );
@@ -55688,6 +55682,7 @@ function getPaginationVariables(request, options = { pageBy: 20 }) {
     endCursor: cursor ?? null
   };
 }
+var USER_AGENT = `Shopify Hydrogen ${LIB_VERSION}`;
 var INPUT_NAME = "cartFormInput";
 function CartForm({
   children,
@@ -55700,11 +55695,14 @@ function CartForm({
     action: route || "",
     method: "post",
     children: [
-      (action11 || inputs) && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("input", {
-        type: "hidden",
-        name: INPUT_NAME,
-        value: JSON.stringify({ action: action11, inputs })
-      }),
+      (action11 || inputs) && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+        "input",
+        {
+          type: "hidden",
+          name: INPUT_NAME,
+          value: JSON.stringify({ action: action11, inputs })
+        }
+      ),
       typeof children == "function" ? children(fetcher) : children
     ]
   });
@@ -56316,18 +56314,22 @@ function createCartHandler(options) {
     ) : await cartCreate({ metafields }, optionalParams),
     deleteMetafield: cartMetafieldDeleteDefault(mutateOptions)
   };
-  return "customMethods__unstable" in options ? {
+  return "customMethods" in options ? {
     ...methods,
-    ...options.customMethods__unstable ?? {}
+    ...options.customMethods ?? {}
   } : methods;
 }
 function VariantSelector({
   handle,
   options = [],
   variants: _variants = [],
+  productPath = "products",
   children
 }) {
-  let variants = _variants instanceof Array ? _variants : flattenConnection(_variants), { searchParams, path, alreadyOnProductPage } = useVariantPath(handle), optionsWithOnlyOneValue = options.filter(
+  let variants = _variants instanceof Array ? _variants : flattenConnection(_variants), { searchParams, path, alreadyOnProductPage } = useVariantPath(
+    handle,
+    productPath
+  ), optionsWithOnlyOneValue = options.filter(
     (option) => {
       var _a2;
       return ((_a2 = option == null ? void 0 : option.values) == null ? void 0 : _a2.length) === 1;
@@ -56355,7 +56357,10 @@ function VariantSelector({
               (selectedOption) => clonedSearchParams.get(selectedOption == null ? void 0 : selectedOption.name) === (selectedOption == null ? void 0 : selectedOption.value)
             );
           }
-        ), currentParam = searchParams.get(option.name), calculatedActiveValue = currentParam ? currentParam === value : !1;
+        ), currentParam = searchParams.get(option.name), calculatedActiveValue = currentParam ? (
+          // If a URL parameter exists for the current option, check if it equals the current value
+          currentParam === value
+        ) : !1;
         calculatedActiveValue && (activeValue = value);
         let searchString = "?" + clonedSearchParams.toString();
         availableValues.push({
@@ -56377,24 +56382,36 @@ function VariantSelector({
   );
 }
 var getSelectedProductOptions = (request) => {
-  if (!(request instanceof Request))
+  if (typeof (request == null ? void 0 : request.url) > "u")
     throw new TypeError(`Expected a Request instance, got ${typeof request}`);
   let searchParams = new URL(request.url).searchParams, selectedOptions = [];
   return searchParams.forEach((value, name) => {
     selectedOptions.push({ name, value });
   }), selectedOptions;
 };
-function useVariantPath(handle) {
+function useVariantPath(handle, productPath) {
   let { pathname, search } = useLocation();
   return (0, import_react7.useMemo)(() => {
-    let match = /(\/[a-zA-Z]{2}-[a-zA-Z]{2}\/)/g.exec(pathname), path = match && match.length > 0 ? `${match[0]}products/${handle}` : `/products/${handle}`;
+    let match = /(\/[a-zA-Z]{2}-[a-zA-Z]{2}\/)/g.exec(pathname), isLocalePathname = match && match.length > 0;
+    productPath = productPath.startsWith("/") ? productPath.substring(1) : productPath;
+    let path = isLocalePathname ? `${match[0]}${productPath}/${handle}` : `/${productPath}/${handle}`;
     return {
       searchParams: new URLSearchParams(search),
+      // If the current pathname matches the product page, we need to make sure
+      // that we append to the current search params. Otherwise all the search
+      // params can be generated new.
       alreadyOnProductPage: path === pathname,
       path
     };
-  }, [pathname, search, handle]);
+  }, [pathname, search, handle, productPath]);
 }
+var NonceContext = (0, import_react7.createContext)(void 0), NonceProvider = NonceContext.Provider, useNonce = () => (0, import_react7.useContext)(NonceContext);
+var Script = (0, import_react7.forwardRef)(
+  (props, ref) => {
+    let nonce = useNonce();
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("script", { suppressHydrationWarning: !0, ...props, nonce, ref });
+  }
+);
 
 // app/components/Search.jsx
 var import_react10 = __toESM(require_react());
@@ -56927,7 +56944,7 @@ function Header({ header, isLoggedIn, cart }) {
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(De, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(kr, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
             "button",
             {
               className: "relative z-[2] rounded-tr-lg rounded-br-lg border border-1 border-black p-[15px] text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0",
@@ -58551,7 +58568,7 @@ function MobileMenuAside({ menu }) {
 }
 
 // app/styles/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-YCBMUQG5.css";
+var tailwind_default = "/build/_assets/tailwind-57N7FBFU.css";
 
 // app/root.jsx
 var import_jsx_dev_runtime12 = __toESM(require_jsx_dev_runtime());
@@ -59475,13 +59492,14 @@ function PowerIcon({
     viewBox: "0 0 24 24",
     fill: "currentColor",
     "aria-hidden": "true",
+    "data-slot": "icon",
     ref: svgRef,
     "aria-labelledby": titleId
   }, props), title ? /* @__PURE__ */ React16.createElement("title", {
     id: titleId
   }, title) : null, /* @__PURE__ */ React16.createElement("path", {
     fillRule: "evenodd",
-    d: "M12 2.25a.75.75 0 01.75.75v9a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM6.166 5.106a.75.75 0 010 1.06 8.25 8.25 0 1011.668 0 .75.75 0 111.06-1.06c3.808 3.807 3.808 9.98 0 13.788-3.807 3.808-9.98 3.808-13.788 0-3.808-3.807-3.808-9.98 0-13.788a.75.75 0 011.06 0z",
+    d: "M12 2.25a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM6.166 5.106a.75.75 0 0 1 0 1.06 8.25 8.25 0 1 0 11.668 0 .75.75 0 1 1 1.06-1.06c3.808 3.807 3.808 9.98 0 13.788-3.807 3.808-9.98 3.808-13.788 0-3.808-3.807-3.808-9.98 0-13.788a.75.75 0 0 1 1.06 0Z",
     clipRule: "evenodd"
   }));
 }
@@ -59499,13 +59517,14 @@ function ShoppingBagIcon({
     viewBox: "0 0 24 24",
     fill: "currentColor",
     "aria-hidden": "true",
+    "data-slot": "icon",
     ref: svgRef,
     "aria-labelledby": titleId
   }, props), title ? /* @__PURE__ */ React17.createElement("title", {
     id: titleId
   }, title) : null, /* @__PURE__ */ React17.createElement("path", {
     fillRule: "evenodd",
-    d: "M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z",
+    d: "M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z",
     clipRule: "evenodd"
   }));
 }
@@ -59523,13 +59542,14 @@ function UserCircleIcon({
     viewBox: "0 0 24 24",
     fill: "currentColor",
     "aria-hidden": "true",
+    "data-slot": "icon",
     ref: svgRef,
     "aria-labelledby": titleId
   }, props), title ? /* @__PURE__ */ React18.createElement("title", {
     id: titleId
   }, title) : null, /* @__PURE__ */ React18.createElement("path", {
     fillRule: "evenodd",
-    d: "M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z",
+    d: "M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z",
     clipRule: "evenodd"
   }));
 }
@@ -59549,6 +59569,7 @@ function XMarkIcon({
     strokeWidth: 1.5,
     stroke: "currentColor",
     "aria-hidden": "true",
+    "data-slot": "icon",
     ref: svgRef,
     "aria-labelledby": titleId
   }, props), title ? /* @__PURE__ */ React19.createElement("title", {
@@ -59556,7 +59577,7 @@ function XMarkIcon({
   }, title) : null, /* @__PURE__ */ React19.createElement("path", {
     strokeLinecap: "round",
     strokeLinejoin: "round",
-    d: "M6 18L18 6M6 6l12 12"
+    d: "M6 18 18 6M6 6l12 12"
   }));
 }
 var ForwardRef4 = React19.forwardRef(XMarkIcon), XMarkIcon_default = ForwardRef4;
@@ -60371,7 +60392,7 @@ function f(e4 = document.body) {
   return e4 == null ? [] : Array.from(e4.querySelectorAll(c2)).sort((r8, t17) => Math.sign((r8.tabIndex || Number.MAX_SAFE_INTEGER) - (t17.tabIndex || Number.MAX_SAFE_INTEGER)));
 }
 var T = ((t17) => (t17[t17.Strict = 0] = "Strict", t17[t17.Loose = 1] = "Loose", t17))(T || {});
-function h2(e4, r8 = 0) {
+function h(e4, r8 = 0) {
   var t17;
   return e4 === ((t17 = e(e4)) == null ? void 0 : t17.body) ? !1 : u3(r8, { [0]() {
     return e4.matches(c2);
@@ -60385,10 +60406,10 @@ function h2(e4, r8 = 0) {
     return !1;
   } });
 }
-function D2(e4) {
+function D(e4) {
   let r8 = e(e4);
   o2().nextFrame(() => {
-    r8 && !h2(r8.activeElement, 0) && y(e4);
+    r8 && !h(r8.activeElement, 0) && y(e4);
   });
 }
 var w = ((t17) => (t17[t17.Keyboard = 0] = "Keyboard", t17[t17.Mouse = 1] = "Mouse", t17))(w || {});
@@ -60401,7 +60422,7 @@ function y(e4) {
   e4 == null || e4.focus({ preventScroll: !0 });
 }
 var S = ["textarea", "input"].join(",");
-function H2(e4) {
+function H(e4) {
   var r8, t17;
   return (t17 = (r8 = e4 == null ? void 0 : e4.matches) == null ? void 0 : r8.call(e4, S)) != null ? t17 : !1;
 }
@@ -60415,9 +60436,9 @@ function I2(e4, r8 = (t17) => t17) {
   });
 }
 function _(e4, r8) {
-  return O2(f(), r8, { relativeTo: e4 });
+  return O(f(), r8, { relativeTo: e4 });
 }
-function O2(e4, r8, { sorted: t17 = !0, relativeTo: l12 = null, skipElements: o10 = [] } = {}) {
+function O(e4, r8, { sorted: t17 = !0, relativeTo: l12 = null, skipElements: o10 = [] } = {}) {
   let i6 = Array.isArray(e4) ? e4.length > 0 ? e4[0].ownerDocument : document : e4.ownerDocument, n6 = Array.isArray(e4) ? t17 ? I2(e4) : e4 : f(e4);
   o10.length > 0 && n6.length > 1 && (n6 = n6.filter((s14) => !o10.includes(s14))), l12 = l12 ?? i6.activeElement;
   let E9 = (() => {
@@ -60451,7 +60472,7 @@ function O2(e4, r8, { sorted: t17 = !0, relativeTo: l12 = null, skipElements: o1
     }
     u11 = n6[s14], u11 == null || u11.focus(p6), d11 += E9;
   } while (u11 !== i6.activeElement);
-  return r8 & 6 && H2(u11) && u11.select(), 2;
+  return r8 & 6 && H(u11) && u11.select(), 2;
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-document-event.js
@@ -60479,7 +60500,7 @@ function s5(e4, r8, n6) {
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-outside-click.js
-function h3(s14, m10, a12 = !0) {
+function h2(s14, m10, a12 = !0) {
   let i6 = (0, import_react42.useRef)(!1);
   (0, import_react42.useEffect)(() => {
     requestAnimationFrame(() => {
@@ -60502,7 +60523,7 @@ function h3(s14, m10, a12 = !0) {
       if (n6 != null && n6.contains(t17) || e4.composed && e4.composedPath().includes(n6))
         return;
     }
-    return !h2(t17, T.Loose) && t17.tabIndex !== -1 && e4.preventDefault(), m10(e4, t17);
+    return !h(t17, T.Loose) && t17.tabIndex !== -1 && e4.preventDefault(), m10(e4, t17);
   }
   let o10 = (0, import_react42.useRef)(null);
   d2("pointerdown", (e4) => {
@@ -60685,7 +60706,7 @@ function N2(...r8) {
     } });
   return t17;
 }
-function D3(r8) {
+function D2(r8) {
   var t17;
   return Object.assign((0, import_react46.forwardRef)(r8), { displayName: (t17 = r8.displayName) != null ? t17 : r8.name });
 }
@@ -60728,7 +60749,7 @@ function s7(t17, o10) {
   let { features: n6 = 1, ...e4 } = t17, d11 = { ref: o10, "aria-hidden": (n6 & 2) === 2 ? !0 : void 0, style: { position: "fixed", top: 1, left: 1, width: 1, height: 0, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0, 0, 0, 0)", whiteSpace: "nowrap", borderWidth: "0", ...(n6 & 4) === 4 && (n6 & 2) !== 2 && { display: "none" } } };
   return X({ ourProps: d11, theirProps: e4, slot: {}, defaultTag: a3, name: "Hidden" });
 }
-var c4 = D3(s7);
+var c4 = D2(s7);
 
 // node_modules/@headlessui/react/dist/internal/open-closed.js
 var import_react47 = __toESM(require_react(), 1), n = (0, import_react47.createContext)(null);
@@ -60842,7 +60863,7 @@ function c6(t17) {
 }
 
 // node_modules/@headlessui/react/dist/components/focus-trap/focus-trap.js
-function P(t17) {
+function P2(t17) {
   if (!t17)
     return /* @__PURE__ */ new Set();
   if (typeof t17 == "function")
@@ -60852,21 +60873,21 @@ function P(t17) {
     e4.current instanceof HTMLElement && r8.add(e4.current);
   return r8;
 }
-var J2 = "div", h5 = ((n6) => (n6[n6.None = 1] = "None", n6[n6.InitialFocus = 2] = "InitialFocus", n6[n6.TabLock = 4] = "TabLock", n6[n6.FocusLock = 8] = "FocusLock", n6[n6.RestoreFocus = 16] = "RestoreFocus", n6[n6.All = 30] = "All", n6))(h5 || {});
+var J = "div", h4 = ((n6) => (n6[n6.None = 1] = "None", n6[n6.InitialFocus = 2] = "InitialFocus", n6[n6.TabLock = 4] = "TabLock", n6[n6.FocusLock = 8] = "FocusLock", n6[n6.RestoreFocus = 16] = "RestoreFocus", n6[n6.All = 30] = "All", n6))(h4 || {});
 function X2(t17, r8) {
   let e4 = (0, import_react55.useRef)(null), o10 = y2(e4, r8), { initialFocus: u11, containers: i6, features: n6 = 30, ...l12 } = t17;
   l3() || (n6 = 1);
   let m10 = n2(e4);
   Y({ ownerDocument: m10 }, Boolean(n6 & 16));
-  let c12 = Z2({ ownerDocument: m10, container: e4, initialFocus: u11 }, Boolean(n6 & 2));
+  let c12 = Z({ ownerDocument: m10, container: e4, initialFocus: u11 }, Boolean(n6 & 2));
   $({ ownerDocument: m10, container: e4, containers: i6, previousActiveElement: c12 }, Boolean(n6 & 8));
-  let v4 = n3(), y6 = o4((s14) => {
+  let v5 = n3(), y6 = o4((s14) => {
     let T7 = e4.current;
     T7 && ((B2) => B2())(() => {
-      u3(v4.current, { [s9.Forwards]: () => {
-        O2(T7, M.First, { skipElements: [s14.relatedTarget] });
+      u3(v5.current, { [s9.Forwards]: () => {
+        O(T7, M.First, { skipElements: [s14.relatedTarget] });
       }, [s9.Backwards]: () => {
-        O2(T7, M.Last, { skipElements: [s14.relatedTarget] });
+        O(T7, M.Last, { skipElements: [s14.relatedTarget] });
       } });
     });
   }), _3 = p(), b6 = (0, import_react55.useRef)(!1), j5 = { ref: o10, onKeyDown(s14) {
@@ -60874,14 +60895,14 @@ function X2(t17, r8) {
       b6.current = !1;
     }));
   }, onBlur(s14) {
-    let T7 = P(i6);
+    let T7 = P2(i6);
     e4.current instanceof HTMLElement && T7.add(e4.current);
     let d11 = s14.relatedTarget;
-    d11 instanceof HTMLElement && d11.dataset.headlessuiFocusGuard !== "true" && (S3(T7, d11) || (b6.current ? O2(e4.current, u3(v4.current, { [s9.Forwards]: () => M.Next, [s9.Backwards]: () => M.Previous }) | M.WrapAround, { relativeTo: s14.target }) : s14.target instanceof HTMLElement && y(s14.target)));
+    d11 instanceof HTMLElement && d11.dataset.headlessuiFocusGuard !== "true" && (S3(T7, d11) || (b6.current ? O(e4.current, u3(v5.current, { [s9.Forwards]: () => M.Next, [s9.Backwards]: () => M.Previous }) | M.WrapAround, { relativeTo: s14.target }) : s14.target instanceof HTMLElement && y(s14.target)));
   } };
-  return import_react55.default.createElement(import_react55.default.Fragment, null, Boolean(n6 & 4) && import_react55.default.createElement(c4, { as: "button", type: "button", "data-headlessui-focus-guard": !0, onFocus: y6, features: p2.Focusable }), X({ ourProps: j5, theirProps: l12, defaultTag: J2, name: "FocusTrap" }), Boolean(n6 & 4) && import_react55.default.createElement(c4, { as: "button", type: "button", "data-headlessui-focus-guard": !0, onFocus: y6, features: p2.Focusable }));
+  return import_react55.default.createElement(import_react55.default.Fragment, null, Boolean(n6 & 4) && import_react55.default.createElement(c4, { as: "button", type: "button", "data-headlessui-focus-guard": !0, onFocus: y6, features: p2.Focusable }), X({ ourProps: j5, theirProps: l12, defaultTag: J, name: "FocusTrap" }), Boolean(n6 & 4) && import_react55.default.createElement(c4, { as: "button", type: "button", "data-headlessui-focus-guard": !0, onFocus: y6, features: p2.Focusable }));
 }
-var z = D3(X2), ge = Object.assign(z, { features: h5 }), a4 = [];
+var z = D2(X2), ge = Object.assign(z, { features: h4 }), a4 = [];
 t12(() => {
   function t17(r8) {
     r8.target instanceof HTMLElement && r8.target !== document.body && a4[0] !== r8.target && (a4.unshift(r8.target), a4 = a4.filter((e4) => e4 != null && e4.isConnected), a4.splice(10));
@@ -60907,7 +60928,7 @@ function Y({ ownerDocument: t17 }, r8) {
     r8 && y(e4());
   });
 }
-function Z2({ ownerDocument: t17, container: r8, initialFocus: e4 }, o10) {
+function Z({ ownerDocument: t17, container: r8, initialFocus: e4 }, o10) {
   let u11 = (0, import_react55.useRef)(null), i6 = f5();
   return m3(() => {
     if (!o10)
@@ -60926,7 +60947,7 @@ function Z2({ ownerDocument: t17, container: r8, initialFocus: e4 }, o10) {
         u11.current = l12;
         return;
       }
-      e4 != null && e4.current ? y(e4.current) : O2(n6, M.First) === N.Error && console.warn("There are no focusable elements inside the <FocusTrap />"), u11.current = t17 == null ? void 0 : t17.activeElement;
+      e4 != null && e4.current ? y(e4.current) : O(n6, M.First) === N.Error && console.warn("There are no focusable elements inside the <FocusTrap />"), u11.current = t17 == null ? void 0 : t17.activeElement;
     });
   }, [o10]), u11;
 }
@@ -60935,7 +60956,7 @@ function $({ ownerDocument: t17, container: r8, containers: e4, previousActiveEl
   E4(t17 == null ? void 0 : t17.defaultView, "focus", (n6) => {
     if (!u11 || !i6.current)
       return;
-    let l12 = P(e4);
+    let l12 = P2(e4);
     r8.current instanceof HTMLElement && l12.add(r8.current);
     let m10 = o10.current;
     if (!m10)
@@ -60959,13 +60980,13 @@ var import_react56 = __toESM(require_react(), 1), e2 = (0, import_react56.create
 function l6() {
   return (0, import_react56.useContext)(e2);
 }
-function P2(o10) {
+function P3(o10) {
   return import_react56.default.createElement(e2.Provider, { value: o10.force }, o10.children);
 }
 
 // node_modules/@headlessui/react/dist/components/portal/portal.js
 function F3(p6) {
-  let l12 = l6(), n6 = (0, import_react57.useContext)(v), e4 = n2(p6), [a12, o10] = (0, import_react57.useState)(() => {
+  let l12 = l6(), n6 = (0, import_react57.useContext)(v2), e4 = n2(p6), [a12, o10] = (0, import_react57.useState)(() => {
     if (!l12 && n6 !== null || s.isServer)
       return null;
     let t17 = e4 == null ? void 0 : e4.getElementById("headlessui-portal-root");
@@ -60982,7 +61003,7 @@ function F3(p6) {
     l12 || n6 !== null && o10(n6.current);
   }, [n6, o10, l12]), a12;
 }
-var U = import_react57.Fragment;
+var U2 = import_react57.Fragment;
 function N3(p6, l12) {
   let n6 = p6, e4 = (0, import_react57.useRef)(null), a12 = y2(T2((u11) => {
     e4.current = u11;
@@ -60998,15 +61019,15 @@ function N3(p6, l12) {
   }, [i6, r8]), c6(() => {
     var u11;
     !t17 || !r8 || (r8 instanceof Node && t17.contains(r8) && t17.removeChild(r8), t17.childNodes.length <= 0 && ((u11 = t17.parentElement) == null || u11.removeChild(t17)));
-  }), C5 ? !t17 || !r8 ? null : (0, import_react_dom2.createPortal)(X({ ourProps: { ref: a12 }, theirProps: n6, defaultTag: U, name: "Portal" }), r8) : null;
+  }), C5 ? !t17 || !r8 ? null : (0, import_react_dom2.createPortal)(X({ ourProps: { ref: a12 }, theirProps: n6, defaultTag: U2, name: "Portal" }), r8) : null;
 }
-var S4 = import_react57.Fragment, v = (0, import_react57.createContext)(null);
+var S4 = import_react57.Fragment, v2 = (0, import_react57.createContext)(null);
 function j2(p6, l12) {
   let { target: n6, ...e4 } = p6, o10 = { ref: y2(l12) };
-  return import_react57.default.createElement(v.Provider, { value: n6 }, X({ ourProps: o10, theirProps: e4, defaultTag: S4, name: "Popover.Group" }));
+  return import_react57.default.createElement(v2.Provider, { value: n6 }, X({ ourProps: o10, theirProps: e4, defaultTag: S4, name: "Popover.Group" }));
 }
 var f6 = (0, import_react57.createContext)(null);
-function ae2() {
+function ae() {
   let p6 = (0, import_react57.useContext)(f6), l12 = (0, import_react57.useRef)([]), n6 = o4((o10) => (l12.current.push(o10), p6 && p6.register(o10), () => e4(o10))), e4 = o4((o10) => {
     let t17 = l12.current.indexOf(o10);
     t17 !== -1 && l12.current.splice(t17, 1), p6 && p6.unregister(o10);
@@ -61015,7 +61036,7 @@ function ae2() {
     return import_react57.default.createElement(f6.Provider, { value: a12 }, t17);
   }, [a12])];
 }
-var D4 = D3(N3), I3 = D3(j2), pe = Object.assign(D4, { Group: I3 });
+var D3 = D2(N3), I3 = D2(j2), pe = Object.assign(D3, { Group: I3 });
 
 // node_modules/@headlessui/react/dist/components/description/description.js
 var import_react58 = __toESM(require_react(), 1);
@@ -61039,13 +61060,13 @@ function M2() {
   }, [t17])];
 }
 var S5 = "p";
-function h6(r8, t17) {
+function h5(r8, t17) {
   let a12 = I(), { id: e4 = `headlessui-description-${a12}`, ...i6 } = r8, n6 = f7(), s14 = y2(t17);
   l2(() => n6.register(e4), [e4, n6.register]);
   let o10 = { ref: s14, ...n6.props, id: e4 };
   return X({ ourProps: o10, theirProps: i6, slot: n6.slot || {}, defaultTag: S5, name: n6.name || "Description" });
 }
-var y3 = D3(h6), b2 = Object.assign(y3, {});
+var y3 = D2(h5), b2 = Object.assign(y3, {});
 
 // node_modules/@headlessui/react/dist/internal/stack-context.js
 var import_react59 = __toESM(require_react(), 1);
@@ -61076,12 +61097,12 @@ var l8 = __toESM(require_react(), 1);
 function i5(e4, t17) {
   return e4 === t17 && (e4 !== 0 || 1 / e4 === 1 / t17) || e4 !== e4 && t17 !== t17;
 }
-var d10 = typeof Object.is == "function" ? Object.is : i5, { useState: u8, useEffect: h7, useLayoutEffect: f8, useDebugValue: p4 } = l8;
+var d10 = typeof Object.is == "function" ? Object.is : i5, { useState: u8, useEffect: h6, useLayoutEffect: f8, useDebugValue: p4 } = l8;
 function y4(e4, t17, c12) {
   let a12 = t17(), [{ inst: n6 }, o10] = u8({ inst: { value: a12, getSnapshot: t17 } });
   return f8(() => {
     n6.value = a12, n6.getSnapshot = t17, r5(n6) && o10({ inst: n6 });
-  }, [e4, a12, t17]), h7(() => (r5(n6) && o10({ inst: n6 }), e4(() => {
+  }, [e4, a12, t17]), h6(() => (r5(n6) && o10({ inst: n6 }), e4(() => {
     r5(n6) && o10({ inst: n6 });
   })), [e4]), p4(a12), a12;
 }
@@ -61221,7 +61242,7 @@ function p5(e4, r8, n6) {
 
 // node_modules/@headlessui/react/dist/hooks/use-inert.js
 var u9 = /* @__PURE__ */ new Map(), t15 = /* @__PURE__ */ new Map();
-function h8(r8, l12 = !0) {
+function h7(r8, l12 = !0) {
   l2(() => {
     var o10;
     if (!l12)
@@ -61266,7 +61287,7 @@ function j3({ defaultContainers: t17 = [], portals: r8, mainTreeNodeRef: u11 } =
 }
 
 // node_modules/@headlessui/react/dist/components/dialog/dialog.js
-var _e2 = ((o10) => (o10[o10.Open = 0] = "Open", o10[o10.Closed = 1] = "Closed", o10))(_e2 || {}), Ie = ((e4) => (e4[e4.SetTitleId = 0] = "SetTitleId", e4))(Ie || {}), Me = { [0](t17, e4) {
+var _e = ((o10) => (o10[o10.Open = 0] = "Open", o10[o10.Closed = 1] = "Closed", o10))(_e || {}), Ie = ((e4) => (e4[e4.SetTitleId = 0] = "SetTitleId", e4))(Ie || {}), Me = { [0](t17, e4) {
   return t17.titleId === e4.id ? t17 : { ...t17, titleId: e4.id };
 } }, I4 = (0, import_react61.createContext)(null);
 I4.displayName = "DialogContext";
@@ -61278,63 +61299,63 @@ function b3(t17) {
   }
   return e4;
 }
-function we2(t17, e4, o10 = () => [document.body]) {
+function we(t17, e4, o10 = () => [document.body]) {
   p5(t17, e4, (i6) => {
     var n6;
     return { containers: [...(n6 = i6.containers) != null ? n6 : [], o10] };
   });
 }
-function Be2(t17, e4) {
+function Be(t17, e4) {
   return u3(e4.type, Me, t17, e4);
 }
 var He = "div", Ge = S2.RenderStrategy | S2.Static;
 function Ne(t17, e4) {
   var X4;
-  let o10 = I(), { id: i6 = `headlessui-dialog-${o10}`, open: n6, onClose: l12, initialFocus: s14, __demoMode: g8 = !1, ...T7 } = t17, [m10, h10] = (0, import_react61.useState)(0), a12 = C2();
+  let o10 = I(), { id: i6 = `headlessui-dialog-${o10}`, open: n6, onClose: l12, initialFocus: s14, __demoMode: g8 = !1, ...T7 } = t17, [m10, h9] = (0, import_react61.useState)(0), a12 = C2();
   n6 === void 0 && a12 !== null && (n6 = (a12 & d5.Open) === d5.Open);
-  let D6 = (0, import_react61.useRef)(null), Q3 = y2(D6, e4), f10 = n2(D6), N6 = t17.hasOwnProperty("open") || a12 !== null, U4 = t17.hasOwnProperty("onClose");
-  if (!N6 && !U4)
+  let D5 = (0, import_react61.useRef)(null), Q3 = y2(D5, e4), f10 = n2(D5), N6 = t17.hasOwnProperty("open") || a12 !== null, U5 = t17.hasOwnProperty("onClose");
+  if (!N6 && !U5)
     throw new Error("You have to provide an `open` and an `onClose` prop to the `Dialog` component.");
   if (!N6)
     throw new Error("You provided an `onClose` prop to the `Dialog`, but forgot an `open` prop.");
-  if (!U4)
+  if (!U5)
     throw new Error("You provided an `open` prop to the `Dialog`, but forgot an `onClose` prop.");
   if (typeof n6 != "boolean")
     throw new Error(`You provided an \`open\` prop to the \`Dialog\`, but the value is not a boolean. Received: ${n6}`);
   if (typeof l12 != "function")
     throw new Error(`You provided an \`onClose\` prop to the \`Dialog\`, but the value is not a function. Received: ${l12}`);
-  let p6 = n6 ? 0 : 1, [S9, Z5] = (0, import_react61.useReducer)(Be2, { titleId: null, descriptionId: null, panelRef: (0, import_react61.createRef)() }), P4 = o4(() => l12(!1)), W2 = o4((r8) => Z5({ type: 0, id: r8 })), L2 = l3() ? g8 ? !1 : p6 === 0 : !1, F6 = m10 > 1, Y4 = (0, import_react61.useContext)(I4) !== null, [ee3, te3] = ae2(), { resolveContainers: M7, mainTreeNodeRef: k2, MainTreeNode: oe3 } = j3({ portals: ee3, defaultContainers: [(X4 = S9.panelRef.current) != null ? X4 : D6.current] }), re3 = F6 ? "parent" : "leaf", $4 = a12 !== null ? (a12 & d5.Closing) === d5.Closing : !1, ne2 = (() => Y4 || $4 ? !1 : L2)(), le4 = (0, import_react61.useCallback)(() => {
+  let p6 = n6 ? 0 : 1, [S9, Z4] = (0, import_react61.useReducer)(Be, { titleId: null, descriptionId: null, panelRef: (0, import_react61.createRef)() }), P5 = o4(() => l12(!1)), W2 = o4((r8) => Z4({ type: 0, id: r8 })), L2 = l3() ? g8 ? !1 : p6 === 0 : !1, F6 = m10 > 1, Y4 = (0, import_react61.useContext)(I4) !== null, [ee2, te2] = ae(), { resolveContainers: M7, mainTreeNodeRef: k2, MainTreeNode: oe4 } = j3({ portals: ee2, defaultContainers: [(X4 = S9.panelRef.current) != null ? X4 : D5.current] }), re2 = F6 ? "parent" : "leaf", $4 = a12 !== null ? (a12 & d5.Closing) === d5.Closing : !1, ne3 = (() => Y4 || $4 ? !1 : L2)(), le3 = (0, import_react61.useCallback)(() => {
     var r8, c12;
     return (c12 = Array.from((r8 = f10 == null ? void 0 : f10.querySelectorAll("body > *")) != null ? r8 : []).find((d11) => d11.id === "headlessui-portal-root" ? !1 : d11.contains(k2.current) && d11 instanceof HTMLElement)) != null ? c12 : null;
   }, [k2]);
-  h8(le4, ne2);
-  let ae4 = (() => F6 ? !0 : L2)(), ie3 = (0, import_react61.useCallback)(() => {
+  h7(le3, ne3);
+  let ae3 = (() => F6 ? !0 : L2)(), ie2 = (0, import_react61.useCallback)(() => {
     var r8, c12;
     return (c12 = Array.from((r8 = f10 == null ? void 0 : f10.querySelectorAll("[data-headlessui-portal]")) != null ? r8 : []).find((d11) => d11.contains(k2.current) && d11 instanceof HTMLElement)) != null ? c12 : null;
   }, [k2]);
-  h8(ie3, ae4);
-  let se4 = (() => !(!L2 || F6))();
-  h3(M7, P4, se4);
+  h7(ie2, ae3);
+  let se3 = (() => !(!L2 || F6))();
+  h2(M7, P5, se3);
   let pe2 = (() => !(F6 || p6 !== 0))();
   E4(f10 == null ? void 0 : f10.defaultView, "keydown", (r8) => {
-    pe2 && (r8.defaultPrevented || r8.key === o7.Escape && (r8.preventDefault(), r8.stopPropagation(), P4()));
+    pe2 && (r8.defaultPrevented || r8.key === o7.Escape && (r8.preventDefault(), r8.stopPropagation(), P5()));
   });
-  let de3 = (() => !($4 || p6 !== 0 || Y4))();
-  we2(f10, de3, M7), (0, import_react61.useEffect)(() => {
-    if (p6 !== 0 || !D6.current)
+  let de2 = (() => !($4 || p6 !== 0 || Y4))();
+  we(f10, de2, M7), (0, import_react61.useEffect)(() => {
+    if (p6 !== 0 || !D5.current)
       return;
     let r8 = new ResizeObserver((c12) => {
       for (let d11 of c12) {
         let x5 = d11.target.getBoundingClientRect();
-        x5.x === 0 && x5.y === 0 && x5.width === 0 && x5.height === 0 && P4();
+        x5.x === 0 && x5.y === 0 && x5.width === 0 && x5.height === 0 && P5();
       }
     });
-    return r8.observe(D6.current), () => r8.disconnect();
-  }, [p6, D6, P4]);
-  let [ue2, fe2] = M2(), ge3 = (0, import_react61.useMemo)(() => [{ dialogState: p6, close: P4, setTitleId: W2 }, S9], [p6, S9, P4, W2]), J4 = (0, import_react61.useMemo)(() => ({ open: p6 === 0 }), [p6]), Te3 = { ref: Q3, id: i6, role: "dialog", "aria-modal": p6 === 0 ? !0 : void 0, "aria-labelledby": S9.titleId, "aria-describedby": ue2 };
-  return import_react61.default.createElement(M3, { type: "Dialog", enabled: p6 === 0, element: D6, onUpdate: o4((r8, c12) => {
-    c12 === "Dialog" && u3(r8, { [s11.Add]: () => h10((d11) => d11 + 1), [s11.Remove]: () => h10((d11) => d11 - 1) });
-  }) }, import_react61.default.createElement(P2, { force: !0 }, import_react61.default.createElement(pe, null, import_react61.default.createElement(I4.Provider, { value: ge3 }, import_react61.default.createElement(pe.Group, { target: D6 }, import_react61.default.createElement(P2, { force: !1 }, import_react61.default.createElement(fe2, { slot: J4, name: "Dialog.Description" }, import_react61.default.createElement(ge, { initialFocus: s14, containers: M7, features: L2 ? u3(re3, { parent: ge.features.RestoreFocus, leaf: ge.features.All & ~ge.features.FocusLock }) : ge.features.None }, import_react61.default.createElement(te3, null, X({ ourProps: Te3, theirProps: T7, slot: J4, defaultTag: He, features: Ge, visible: p6 === 0, name: "Dialog" }))))))))), import_react61.default.createElement(oe3, null));
+    return r8.observe(D5.current), () => r8.disconnect();
+  }, [p6, D5, P5]);
+  let [ue3, fe2] = M2(), ge3 = (0, import_react61.useMemo)(() => [{ dialogState: p6, close: P5, setTitleId: W2 }, S9], [p6, S9, P5, W2]), J3 = (0, import_react61.useMemo)(() => ({ open: p6 === 0 }), [p6]), Te2 = { ref: Q3, id: i6, role: "dialog", "aria-modal": p6 === 0 ? !0 : void 0, "aria-labelledby": S9.titleId, "aria-describedby": ue3 };
+  return import_react61.default.createElement(M3, { type: "Dialog", enabled: p6 === 0, element: D5, onUpdate: o4((r8, c12) => {
+    c12 === "Dialog" && u3(r8, { [s11.Add]: () => h9((d11) => d11 + 1), [s11.Remove]: () => h9((d11) => d11 - 1) });
+  }) }, import_react61.default.createElement(P3, { force: !0 }, import_react61.default.createElement(pe, null, import_react61.default.createElement(I4.Provider, { value: ge3 }, import_react61.default.createElement(pe.Group, { target: D5 }, import_react61.default.createElement(P3, { force: !1 }, import_react61.default.createElement(fe2, { slot: J3, name: "Dialog.Description" }, import_react61.default.createElement(ge, { initialFocus: s14, containers: M7, features: L2 ? u3(re2, { parent: ge.features.RestoreFocus, leaf: ge.features.All & ~ge.features.FocusLock }) : ge.features.None }, import_react61.default.createElement(te2, null, X({ ourProps: Te2, theirProps: T7, slot: J3, defaultTag: He, features: Ge, visible: p6 === 0, name: "Dialog" }))))))))), import_react61.default.createElement(oe4, null));
 }
 var Ue = "div";
 function We2(t17, e4) {
@@ -61348,21 +61369,21 @@ function We2(t17, e4) {
   return X({ ourProps: { ref: g8, id: i6, "aria-hidden": !0, onClick: T7 }, theirProps: n6, slot: m10, defaultTag: Ue, name: "Dialog.Overlay" });
 }
 var Ye = "div";
-function $e2(t17, e4) {
+function $e(t17, e4) {
   let o10 = I(), { id: i6 = `headlessui-dialog-backdrop-${o10}`, ...n6 } = t17, [{ dialogState: l12 }, s14] = b3("Dialog.Backdrop"), g8 = y2(e4);
   (0, import_react61.useEffect)(() => {
     if (s14.panelRef.current === null)
       throw new Error("A <Dialog.Backdrop /> component is being used, but a <Dialog.Panel /> component is missing.");
   }, [s14.panelRef]);
   let T7 = (0, import_react61.useMemo)(() => ({ open: l12 === 0 }), [l12]);
-  return import_react61.default.createElement(P2, { force: !0 }, import_react61.default.createElement(pe, null, X({ ourProps: { ref: g8, id: i6, "aria-hidden": !0 }, theirProps: n6, slot: T7, defaultTag: Ye, name: "Dialog.Backdrop" })));
+  return import_react61.default.createElement(P3, { force: !0 }, import_react61.default.createElement(pe, null, X({ ourProps: { ref: g8, id: i6, "aria-hidden": !0 }, theirProps: n6, slot: T7, defaultTag: Ye, name: "Dialog.Backdrop" })));
 }
-var Je = "div";
-function Xe(t17, e4) {
+var Je2 = "div";
+function Xe2(t17, e4) {
   let o10 = I(), { id: i6 = `headlessui-dialog-panel-${o10}`, ...n6 } = t17, [{ dialogState: l12 }, s14] = b3("Dialog.Panel"), g8 = y2(e4, s14.panelRef), T7 = (0, import_react61.useMemo)(() => ({ open: l12 === 0 }), [l12]), m10 = o4((a12) => {
     a12.stopPropagation();
   });
-  return X({ ourProps: { ref: g8, id: i6, onClick: m10 }, theirProps: n6, slot: T7, defaultTag: Je, name: "Dialog.Panel" });
+  return X({ ourProps: { ref: g8, id: i6, onClick: m10 }, theirProps: n6, slot: T7, defaultTag: Je2, name: "Dialog.Panel" });
 }
 var je2 = "h2";
 function Ke(t17, e4) {
@@ -61371,7 +61392,7 @@ function Ke(t17, e4) {
   let T7 = (0, import_react61.useMemo)(() => ({ open: l12 === 0 }), [l12]);
   return X({ ourProps: { ref: g8, id: i6 }, theirProps: n6, slot: T7, defaultTag: je2, name: "Dialog.Title" });
 }
-var Ve = D3(Ne), qe = D3($e2), ze2 = D3(Xe), Qe = D3(We2), Ze = D3(Ke), _t = Object.assign(Ve, { Backdrop: qe, Panel: ze2, Overlay: Qe, Title: Ze, Description: b2 });
+var Ve = D2(Ne), qe = D2($e), ze = D2(Xe2), Qe = D2(We2), Ze = D2(Ke), _t2 = Object.assign(Ve, { Backdrop: qe, Panel: ze, Overlay: Qe, Title: Ze, Description: b2 });
 
 // node_modules/@headlessui/react/dist/components/disclosure/disclosure.js
 var import_react63 = __toESM(require_react(), 1);
@@ -61400,48 +61421,48 @@ function M4(e4) {
   }
   return n6;
 }
-var v2 = (0, import_react63.createContext)(null);
-v2.displayName = "DisclosureAPIContext";
+var v3 = (0, import_react63.createContext)(null);
+v3.displayName = "DisclosureAPIContext";
 function w4(e4) {
-  let n6 = (0, import_react63.useContext)(v2);
+  let n6 = (0, import_react63.useContext)(v3);
   if (n6 === null) {
     let o10 = new Error(`<${e4} /> is missing a parent <Disclosure /> component.`);
     throw Error.captureStackTrace && Error.captureStackTrace(o10, w4), o10;
   }
   return n6;
 }
-var H4 = (0, import_react63.createContext)(null);
-H4.displayName = "DisclosurePanelContext";
-function V2() {
-  return (0, import_react63.useContext)(H4);
+var H3 = (0, import_react63.createContext)(null);
+H3.displayName = "DisclosurePanelContext";
+function V() {
+  return (0, import_react63.useContext)(H3);
 }
 function Y2(e4, n6) {
   return u3(n6.type, Q2, e4, n6);
 }
-var Z3 = import_react63.Fragment;
-function ee2(e4, n6) {
+var Z2 = import_react63.Fragment;
+function ee(e4, n6) {
   let { defaultOpen: o10 = !1, ...u11 } = e4, T7 = (0, import_react63.useRef)(null), l12 = y2(n6, T2((a12) => {
     T7.current = a12;
-  }, e4.as === void 0 || e4.as === import_react63.Fragment)), t17 = (0, import_react63.useRef)(null), f10 = (0, import_react63.useRef)(null), s14 = (0, import_react63.useReducer)(Y2, { disclosureState: o10 ? 0 : 1, linkedPanel: !1, buttonRef: f10, panelRef: t17, buttonId: null, panelId: null }), [{ disclosureState: i6, buttonId: c12 }, D6] = s14, d11 = o4((a12) => {
-    D6({ type: 1 });
+  }, e4.as === void 0 || e4.as === import_react63.Fragment)), t17 = (0, import_react63.useRef)(null), f10 = (0, import_react63.useRef)(null), s14 = (0, import_react63.useReducer)(Y2, { disclosureState: o10 ? 0 : 1, linkedPanel: !1, buttonRef: f10, panelRef: t17, buttonId: null, panelId: null }), [{ disclosureState: i6, buttonId: c12 }, D5] = s14, d11 = o4((a12) => {
+    D5({ type: 1 });
     let r8 = e(T7);
     if (!r8 || !c12)
       return;
     let p6 = (() => a12 ? a12 instanceof HTMLElement ? a12 : a12.current instanceof HTMLElement ? a12.current : r8.getElementById(c12) : r8.getElementById(c12))();
     p6 == null || p6.focus();
-  }), P4 = (0, import_react63.useMemo)(() => ({ close: d11 }), [d11]), b6 = (0, import_react63.useMemo)(() => ({ open: i6 === 0, close: d11 }), [i6, d11]), y6 = { ref: l12 };
-  return import_react63.default.createElement(k.Provider, { value: s14 }, import_react63.default.createElement(v2.Provider, { value: P4 }, import_react63.default.createElement(c5, { value: u3(i6, { [0]: d5.Open, [1]: d5.Closed }) }, X({ ourProps: y6, theirProps: u11, slot: b6, defaultTag: Z3, name: "Disclosure" }))));
+  }), P5 = (0, import_react63.useMemo)(() => ({ close: d11 }), [d11]), b6 = (0, import_react63.useMemo)(() => ({ open: i6 === 0, close: d11 }), [i6, d11]), y6 = { ref: l12 };
+  return import_react63.default.createElement(k.Provider, { value: s14 }, import_react63.default.createElement(v3.Provider, { value: P5 }, import_react63.default.createElement(c5, { value: u3(i6, { [0]: d5.Open, [1]: d5.Closed }) }, X({ ourProps: y6, theirProps: u11, slot: b6, defaultTag: Z2, name: "Disclosure" }))));
 }
-var te2 = "button";
-function ne(e4, n6) {
-  let o10 = I(), { id: u11 = `headlessui-disclosure-button-${o10}`, ...T7 } = e4, [l12, t17] = M4("Disclosure.Button"), f10 = V2(), s14 = f10 === null ? !1 : f10 === l12.panelId, i6 = (0, import_react63.useRef)(null), c12 = y2(i6, n6, s14 ? null : l12.buttonRef);
+var te = "button";
+function ne2(e4, n6) {
+  let o10 = I(), { id: u11 = `headlessui-disclosure-button-${o10}`, ...T7 } = e4, [l12, t17] = M4("Disclosure.Button"), f10 = V(), s14 = f10 === null ? !1 : f10 === l12.panelId, i6 = (0, import_react63.useRef)(null), c12 = y2(i6, n6, s14 ? null : l12.buttonRef);
   (0, import_react63.useEffect)(() => {
     if (!s14)
       return t17({ type: 2, buttonId: u11 }), () => {
         t17({ type: 2, buttonId: null });
       };
   }, [u11, t17, s14]);
-  let D6 = o4((r8) => {
+  let D5 = o4((r8) => {
     var p6;
     if (s14) {
       if (l12.disclosureState === 1)
@@ -61465,24 +61486,24 @@ function ne(e4, n6) {
         r8.preventDefault();
         break;
     }
-  }), P4 = o4((r8) => {
+  }), P5 = o4((r8) => {
     var p6;
     r2(r8.currentTarget) || e4.disabled || (s14 ? (t17({ type: 0 }), (p6 = l12.buttonRef.current) == null || p6.focus()) : t17({ type: 0 }));
-  }), b6 = (0, import_react63.useMemo)(() => ({ open: l12.disclosureState === 0 }), [l12]), y6 = s6(e4, i6), a12 = s14 ? { ref: c12, type: y6, onKeyDown: D6, onClick: P4 } : { ref: c12, id: u11, type: y6, "aria-expanded": l12.disclosureState === 0, "aria-controls": l12.linkedPanel ? l12.panelId : void 0, onKeyDown: D6, onKeyUp: d11, onClick: P4 };
-  return X({ ourProps: a12, theirProps: T7, slot: b6, defaultTag: te2, name: "Disclosure.Button" });
+  }), b6 = (0, import_react63.useMemo)(() => ({ open: l12.disclosureState === 0 }), [l12]), y6 = s6(e4, i6), a12 = s14 ? { ref: c12, type: y6, onKeyDown: D5, onClick: P5 } : { ref: c12, id: u11, type: y6, "aria-expanded": l12.disclosureState === 0, "aria-controls": l12.linkedPanel ? l12.panelId : void 0, onKeyDown: D5, onKeyUp: d11, onClick: P5 };
+  return X({ ourProps: a12, theirProps: T7, slot: b6, defaultTag: te, name: "Disclosure.Button" });
 }
-var le2 = "div", oe = S2.RenderStrategy | S2.Static;
-function re2(e4, n6) {
-  let o10 = I(), { id: u11 = `headlessui-disclosure-panel-${o10}`, ...T7 } = e4, [l12, t17] = M4("Disclosure.Panel"), { close: f10 } = w4("Disclosure.Panel"), s14 = y2(n6, l12.panelRef, (P4) => {
-    a10(() => t17({ type: P4 ? 4 : 5 }));
+var le = "div", oe2 = S2.RenderStrategy | S2.Static;
+function re(e4, n6) {
+  let o10 = I(), { id: u11 = `headlessui-disclosure-panel-${o10}`, ...T7 } = e4, [l12, t17] = M4("Disclosure.Panel"), { close: f10 } = w4("Disclosure.Panel"), s14 = y2(n6, l12.panelRef, (P5) => {
+    a10(() => t17({ type: P5 ? 4 : 5 }));
   });
   (0, import_react63.useEffect)(() => (t17({ type: 3, panelId: u11 }), () => {
     t17({ type: 3, panelId: null });
   }), [u11, t17]);
-  let i6 = C2(), c12 = (() => i6 !== null ? (i6 & d5.Open) === d5.Open : l12.disclosureState === 0)(), D6 = (0, import_react63.useMemo)(() => ({ open: l12.disclosureState === 0, close: f10 }), [l12, f10]), d11 = { ref: s14, id: u11 };
-  return import_react63.default.createElement(H4.Provider, { value: l12.panelId }, X({ ourProps: d11, theirProps: T7, slot: D6, defaultTag: le2, features: oe, visible: c12, name: "Disclosure.Panel" }));
+  let i6 = C2(), c12 = (() => i6 !== null ? (i6 & d5.Open) === d5.Open : l12.disclosureState === 0)(), D5 = (0, import_react63.useMemo)(() => ({ open: l12.disclosureState === 0, close: f10 }), [l12, f10]), d11 = { ref: s14, id: u11 };
+  return import_react63.default.createElement(H3.Provider, { value: l12.panelId }, X({ ourProps: d11, theirProps: T7, slot: D5, defaultTag: le, features: oe2, visible: c12, name: "Disclosure.Panel" }));
 }
-var se2 = D3(ee2), ue = D3(ne), ie2 = D3(re2), ve2 = Object.assign(se2, { Button: ue, Panel: ie2 });
+var se = D2(ee), ue2 = D2(ne2), ie = D2(re), ve = Object.assign(se, { Button: ue2, Panel: ie });
 
 // node_modules/@headlessui/react/dist/hooks/use-text-value.js
 var import_react64 = __toESM(require_react(), 1);
@@ -61537,12 +61558,12 @@ function b4(c12) {
 
 // node_modules/@headlessui/react/dist/components/menu/menu.js
 var import_react65 = __toESM(require_react(), 1);
-var me2 = ((r8) => (r8[r8.Open = 0] = "Open", r8[r8.Closed = 1] = "Closed", r8))(me2 || {}), de2 = ((r8) => (r8[r8.Pointer = 0] = "Pointer", r8[r8.Other = 1] = "Other", r8))(de2 || {}), fe = ((a12) => (a12[a12.OpenMenu = 0] = "OpenMenu", a12[a12.CloseMenu = 1] = "CloseMenu", a12[a12.GoToItem = 2] = "GoToItem", a12[a12.Search = 3] = "Search", a12[a12.ClearSearch = 4] = "ClearSearch", a12[a12.RegisterItem = 5] = "RegisterItem", a12[a12.UnregisterItem = 6] = "UnregisterItem", a12))(fe || {});
+var me3 = ((r8) => (r8[r8.Open = 0] = "Open", r8[r8.Closed = 1] = "Closed", r8))(me3 || {}), de = ((r8) => (r8[r8.Pointer = 0] = "Pointer", r8[r8.Other = 1] = "Other", r8))(de || {}), fe = ((a12) => (a12[a12.OpenMenu = 0] = "OpenMenu", a12[a12.CloseMenu = 1] = "CloseMenu", a12[a12.GoToItem = 2] = "GoToItem", a12[a12.Search = 3] = "Search", a12[a12.ClearSearch = 4] = "ClearSearch", a12[a12.RegisterItem = 5] = "RegisterItem", a12[a12.UnregisterItem = 6] = "UnregisterItem", a12))(fe || {});
 function w5(e4, u11 = (r8) => r8) {
   let r8 = e4.activeItemIndex !== null ? e4.items[e4.activeItemIndex] : null, i6 = I2(u11(e4.items.slice()), (t17) => t17.dataRef.current.domRef.current), s14 = r8 ? i6.indexOf(r8) : null;
   return s14 === -1 && (s14 = null), { items: i6, activeItemIndex: s14 };
 }
-var Te2 = { [1](e4) {
+var Te = { [1](e4) {
   return e4.menuState === 1 ? e4 : { ...e4, activeItemIndex: null, menuState: 1 };
 }, [0](e4) {
   return e4.menuState === 0 ? e4 : { ...e4, __demoMode: !1, menuState: 0 };
@@ -61567,35 +61588,35 @@ var Te2 = { [1](e4) {
     return s14 !== -1 && i6.splice(s14, 1), i6;
   });
   return { ...e4, ...r8, activationTrigger: 1 };
-} }, U2 = (0, import_react65.createContext)(null);
-U2.displayName = "MenuContext";
-function O3(e4) {
-  let u11 = (0, import_react65.useContext)(U2);
+} }, U3 = (0, import_react65.createContext)(null);
+U3.displayName = "MenuContext";
+function O2(e4) {
+  let u11 = (0, import_react65.useContext)(U3);
   if (u11 === null) {
     let r8 = new Error(`<${e4} /> is missing a parent <Menu /> component.`);
-    throw Error.captureStackTrace && Error.captureStackTrace(r8, O3), r8;
+    throw Error.captureStackTrace && Error.captureStackTrace(r8, O2), r8;
   }
   return u11;
 }
-function ye3(e4, u11) {
-  return u3(u11.type, Te2, e4, u11);
+function ye2(e4, u11) {
+  return u3(u11.type, Te, e4, u11);
 }
 var Ie2 = import_react65.Fragment;
 function Me2(e4, u11) {
-  let { __demoMode: r8 = !1, ...i6 } = e4, s14 = (0, import_react65.useReducer)(ye3, { __demoMode: r8, menuState: r8 ? 0 : 1, buttonRef: (0, import_react65.createRef)(), itemsRef: (0, import_react65.createRef)(), items: [], searchQuery: "", activeItemIndex: null, activationTrigger: 1 }), [{ menuState: t17, itemsRef: o10, buttonRef: a12 }, l12] = s14, m10 = y2(u11);
-  h3([a12, o10], (g8, R3) => {
+  let { __demoMode: r8 = !1, ...i6 } = e4, s14 = (0, import_react65.useReducer)(ye2, { __demoMode: r8, menuState: r8 ? 0 : 1, buttonRef: (0, import_react65.createRef)(), itemsRef: (0, import_react65.createRef)(), items: [], searchQuery: "", activeItemIndex: null, activationTrigger: 1 }), [{ menuState: t17, itemsRef: o10, buttonRef: a12 }, l12] = s14, m10 = y2(u11);
+  h2([a12, o10], (g8, R3) => {
     var p6;
-    l12({ type: 1 }), h2(R3, T.Loose) || (g8.preventDefault(), (p6 = a12.current) == null || p6.focus());
+    l12({ type: 1 }), h(R3, T.Loose) || (g8.preventDefault(), (p6 = a12.current) == null || p6.focus());
   }, t17 === 0);
   let I6 = o4(() => {
     l12({ type: 1 });
-  }), A2 = (0, import_react65.useMemo)(() => ({ open: t17 === 0, close: I6 }), [t17, I6]), f10 = { ref: m10 };
-  return import_react65.default.createElement(U2.Provider, { value: s14 }, import_react65.default.createElement(c5, { value: u3(t17, { [0]: d5.Open, [1]: d5.Closed }) }, X({ ourProps: f10, theirProps: i6, slot: A2, defaultTag: Ie2, name: "Menu" })));
+  }), A = (0, import_react65.useMemo)(() => ({ open: t17 === 0, close: I6 }), [t17, I6]), f10 = { ref: m10 };
+  return import_react65.default.createElement(U3.Provider, { value: s14 }, import_react65.default.createElement(c5, { value: u3(t17, { [0]: d5.Open, [1]: d5.Closed }) }, X({ ourProps: f10, theirProps: i6, slot: A, defaultTag: Ie2, name: "Menu" })));
 }
 var ge2 = "button";
-function Re2(e4, u11) {
+function Re(e4, u11) {
   var R3;
-  let r8 = I(), { id: i6 = `headlessui-menu-button-${r8}`, ...s14 } = e4, [t17, o10] = O3("Menu.Button"), a12 = y2(t17.buttonRef, u11), l12 = p(), m10 = o4((p6) => {
+  let r8 = I(), { id: i6 = `headlessui-menu-button-${r8}`, ...s14 } = e4, [t17, o10] = O2("Menu.Button"), a12 = y2(t17.buttonRef, u11), l12 = p(), m10 = o4((p6) => {
     switch (p6.key) {
       case o7.Space:
       case o7.Enter:
@@ -61612,20 +61633,20 @@ function Re2(e4, u11) {
         p6.preventDefault();
         break;
     }
-  }), A2 = o4((p6) => {
+  }), A = o4((p6) => {
     if (r2(p6.currentTarget))
       return p6.preventDefault();
     e4.disabled || (t17.menuState === 0 ? (o10({ type: 1 }), l12.nextFrame(() => {
       var M7;
       return (M7 = t17.buttonRef.current) == null ? void 0 : M7.focus({ preventScroll: !0 });
     })) : (p6.preventDefault(), o10({ type: 0 })));
-  }), f10 = (0, import_react65.useMemo)(() => ({ open: t17.menuState === 0 }), [t17]), g8 = { ref: a12, id: i6, type: s6(e4, t17.buttonRef), "aria-haspopup": "menu", "aria-controls": (R3 = t17.itemsRef.current) == null ? void 0 : R3.id, "aria-expanded": t17.menuState === 0, onKeyDown: m10, onKeyUp: I6, onClick: A2 };
+  }), f10 = (0, import_react65.useMemo)(() => ({ open: t17.menuState === 0 }), [t17]), g8 = { ref: a12, id: i6, type: s6(e4, t17.buttonRef), "aria-haspopup": "menu", "aria-controls": (R3 = t17.itemsRef.current) == null ? void 0 : R3.id, "aria-expanded": t17.menuState === 0, onKeyDown: m10, onKeyUp: I6, onClick: A };
   return X({ ourProps: g8, theirProps: s14, slot: f10, defaultTag: ge2, name: "Menu.Button" });
 }
-var Ae2 = "div", be = S2.RenderStrategy | S2.Static;
-function Ee(e4, u11) {
+var Ae2 = "div", be2 = S2.RenderStrategy | S2.Static;
+function Ee2(e4, u11) {
   var M7, b6;
-  let r8 = I(), { id: i6 = `headlessui-menu-items-${r8}`, ...s14 } = e4, [t17, o10] = O3("Menu.Items"), a12 = y2(t17.itemsRef, u11), l12 = n2(t17.itemsRef), m10 = p(), I6 = C2(), A2 = (() => I6 !== null ? (I6 & d5.Open) === d5.Open : t17.menuState === 0)();
+  let r8 = I(), { id: i6 = `headlessui-menu-items-${r8}`, ...s14 } = e4, [t17, o10] = O2("Menu.Items"), a12 = y2(t17.itemsRef, u11), l12 = n2(t17.itemsRef), m10 = p(), I6 = C2(), A = (() => I6 !== null ? (I6 & d5.Open) === d5.Open : t17.menuState === 0)();
   (0, import_react65.useEffect)(() => {
     let n6 = t17.itemsRef.current;
     n6 && t17.menuState === 0 && n6 !== (l12 == null ? void 0 : l12.activeElement) && n6.focus({ preventScroll: !0 });
@@ -61635,7 +61656,7 @@ function Ee(e4, u11) {
     n6.setAttribute("role", "none");
   } });
   let f10 = o4((n6) => {
-    var E9, P4;
+    var E9, P5;
     switch (m10.dispose(), n6.key) {
       case o7.Space:
         if (t17.searchQuery !== "")
@@ -61643,9 +61664,9 @@ function Ee(e4, u11) {
       case o7.Enter:
         if (n6.preventDefault(), n6.stopPropagation(), o10({ type: 1 }), t17.activeItemIndex !== null) {
           let { dataRef: S9 } = t17.items[t17.activeItemIndex];
-          (P4 = (E9 = S9.current) == null ? void 0 : E9.domRef.current) == null || P4.click();
+          (P5 = (E9 = S9.current) == null ? void 0 : E9.domRef.current) == null || P5.click();
         }
-        D2(t17.buttonRef.current);
+        D(t17.buttonRef.current);
         break;
       case o7.ArrowDown:
         return n6.preventDefault(), n6.stopPropagation(), o10({ type: 2, focus: a2.Next });
@@ -61679,22 +61700,22 @@ function Ee(e4, u11) {
         break;
     }
   }), R3 = (0, import_react65.useMemo)(() => ({ open: t17.menuState === 0 }), [t17]), p6 = { "aria-activedescendant": t17.activeItemIndex === null || (M7 = t17.items[t17.activeItemIndex]) == null ? void 0 : M7.id, "aria-labelledby": (b6 = t17.buttonRef.current) == null ? void 0 : b6.id, id: i6, onKeyDown: f10, onKeyUp: g8, role: "menu", tabIndex: 0, ref: a12 };
-  return X({ ourProps: p6, theirProps: s14, slot: R3, defaultTag: Ae2, features: be, visible: A2, name: "Menu.Items" });
+  return X({ ourProps: p6, theirProps: s14, slot: R3, defaultTag: Ae2, features: be2, visible: A, name: "Menu.Items" });
 }
 var Se = import_react65.Fragment;
 function Pe3(e4, u11) {
-  let r8 = I(), { id: i6 = `headlessui-menu-item-${r8}`, disabled: s14 = !1, ...t17 } = e4, [o10, a12] = O3("Menu.Item"), l12 = o10.activeItemIndex !== null ? o10.items[o10.activeItemIndex].id === i6 : !1, m10 = (0, import_react65.useRef)(null), I6 = y2(u11, m10);
+  let r8 = I(), { id: i6 = `headlessui-menu-item-${r8}`, disabled: s14 = !1, ...t17 } = e4, [o10, a12] = O2("Menu.Item"), l12 = o10.activeItemIndex !== null ? o10.items[o10.activeItemIndex].id === i6 : !1, m10 = (0, import_react65.useRef)(null), I6 = y2(u11, m10);
   l2(() => {
     if (o10.__demoMode || o10.menuState !== 0 || !l12 || o10.activationTrigger === 0)
       return;
     let T7 = o2();
     return T7.requestAnimationFrame(() => {
-      var v4, B2;
-      (B2 = (v4 = m10.current) == null ? void 0 : v4.scrollIntoView) == null || B2.call(v4, { block: "nearest" });
+      var v5, B2;
+      (B2 = (v5 = m10.current) == null ? void 0 : v5.scrollIntoView) == null || B2.call(v5, { block: "nearest" });
     }), T7.dispose;
   }, [o10.__demoMode, m10, l12, o10.menuState, o10.activationTrigger, o10.activeItemIndex]);
-  let A2 = b4(m10), f10 = (0, import_react65.useRef)({ disabled: s14, domRef: m10, get textValue() {
-    return A2();
+  let A = b4(m10), f10 = (0, import_react65.useRef)({ disabled: s14, domRef: m10, get textValue() {
+    return A();
   } });
   l2(() => {
     f10.current.disabled = s14;
@@ -61704,7 +61725,7 @@ function Pe3(e4, u11) {
   }), R3 = o4((T7) => {
     if (s14)
       return T7.preventDefault();
-    a12({ type: 1 }), D2(o10.buttonRef.current);
+    a12({ type: 1 }), D(o10.buttonRef.current);
   }), p6 = o4(() => {
     if (s14)
       return a12({ type: 2, focus: a2.Nothing });
@@ -61713,10 +61734,10 @@ function Pe3(e4, u11) {
     M7.wasMoved(T7) && (s14 || l12 || a12({ type: 2, focus: a2.Specific, id: i6, trigger: 0 }));
   }), E9 = o4((T7) => {
     M7.wasMoved(T7) && (s14 || l12 && a12({ type: 2, focus: a2.Nothing }));
-  }), P4 = (0, import_react65.useMemo)(() => ({ active: l12, disabled: s14, close: g8 }), [l12, s14, g8]);
-  return X({ ourProps: { id: i6, ref: I6, role: "menuitem", tabIndex: s14 === !0 ? void 0 : -1, "aria-disabled": s14 === !0 ? !0 : void 0, disabled: void 0, onClick: R3, onFocus: p6, onPointerEnter: b6, onMouseEnter: b6, onPointerMove: n6, onMouseMove: n6, onPointerLeave: E9, onMouseLeave: E9 }, theirProps: t17, slot: P4, defaultTag: Se, name: "Menu.Item" });
+  }), P5 = (0, import_react65.useMemo)(() => ({ active: l12, disabled: s14, close: g8 }), [l12, s14, g8]);
+  return X({ ourProps: { id: i6, ref: I6, role: "menuitem", tabIndex: s14 === !0 ? void 0 : -1, "aria-disabled": s14 === !0 ? !0 : void 0, disabled: void 0, onClick: R3, onFocus: p6, onPointerEnter: b6, onMouseEnter: b6, onPointerMove: n6, onMouseMove: n6, onPointerLeave: E9, onMouseLeave: E9 }, theirProps: t17, slot: P5, defaultTag: Se, name: "Menu.Item" });
 }
-var ve3 = D3(Me2), xe2 = D3(Re2), he2 = D3(Ee), De3 = D3(Pe3), it = Object.assign(ve3, { Button: xe2, Items: he2, Item: De3 });
+var ve2 = D2(Me2), xe = D2(Re), he = D2(Ee2), De2 = D2(Pe3), it = Object.assign(ve2, { Button: xe, Items: he, Item: De2 });
 
 // node_modules/@headlessui/react/dist/hooks/use-flags.js
 var import_react66 = __toESM(require_react(), 1);
@@ -61747,7 +61768,7 @@ function l11(r8) {
 function g7(t17, ...e4) {
   t17 && e4.length > 0 && t17.classList.add(...e4);
 }
-function v3(t17, ...e4) {
+function v4(t17, ...e4) {
   t17 && e4.length > 0 && t17.classList.remove(...e4);
 }
 function b5(t17, e4) {
@@ -61778,8 +61799,8 @@ function M5(t17, e4, n6, m10) {
   };
   a12 === "enter" && (t17.removeAttribute("hidden"), t17.style.display = "");
   let o10 = u3(a12, { enter: () => e4.enter, leave: () => e4.leave }), l12 = u3(a12, { enter: () => e4.enterTo, leave: () => e4.leaveTo }), r8 = u3(a12, { enter: () => e4.enterFrom, leave: () => e4.leaveFrom });
-  return v3(t17, ...e4.base, ...e4.enter, ...e4.enterTo, ...e4.enterFrom, ...e4.leave, ...e4.leaveFrom, ...e4.leaveTo, ...e4.entered), g7(t17, ...e4.base, ...o10, ...r8), u11.nextFrame(() => {
-    v3(t17, ...e4.base, ...o10, ...r8), g7(t17, ...e4.base, ...o10, ...l12), b5(t17, () => (v3(t17, ...e4.base, ...o10), g7(t17, ...e4.base, ...e4.entered), p6()));
+  return v4(t17, ...e4.base, ...e4.enter, ...e4.enterTo, ...e4.enterFrom, ...e4.leave, ...e4.leaveFrom, ...e4.leaveTo, ...e4.entered), g7(t17, ...e4.base, ...o10, ...r8), u11.nextFrame(() => {
+    v4(t17, ...e4.base, ...o10, ...r8), g7(t17, ...e4.base, ...o10, ...l12), b5(t17, () => (v4(t17, ...e4.base, ...o10), g7(t17, ...e4.base, ...e4.entered), p6()));
   }), u11.dispose;
 }
 
@@ -61805,7 +61826,7 @@ function S8(t17 = "") {
 }
 var _2 = (0, import_react67.createContext)(null);
 _2.displayName = "TransitionContext";
-var be2 = ((r8) => (r8.Visible = "visible", r8.Hidden = "hidden", r8))(be2 || {});
+var be3 = ((r8) => (r8.Visible = "visible", r8.Hidden = "hidden", r8))(be3 || {});
 function Se2() {
   let t17 = (0, import_react67.useContext)(_2);
   if (t17 === null)
@@ -61820,99 +61841,99 @@ function Ne2() {
 }
 var M6 = (0, import_react67.createContext)(null);
 M6.displayName = "NestingContext";
-function U3(t17) {
-  return "children" in t17 ? U3(t17.children) : t17.current.filter(({ el: n6 }) => n6.current !== null).filter(({ state: n6 }) => n6 === "visible").length > 0;
+function U4(t17) {
+  return "children" in t17 ? U4(t17.children) : t17.current.filter(({ el: n6 }) => n6.current !== null).filter(({ state: n6 }) => n6 === "visible").length > 0;
 }
-function oe2(t17, n6) {
-  let r8 = s2(t17), s14 = (0, import_react67.useRef)([]), y6 = f5(), D6 = p(), c12 = o4((i6, e4 = j.Hidden) => {
+function oe3(t17, n6) {
+  let r8 = s2(t17), s14 = (0, import_react67.useRef)([]), y6 = f5(), D5 = p(), c12 = o4((i6, e4 = j.Hidden) => {
     let a12 = s14.current.findIndex(({ el: o10 }) => o10 === i6);
     a12 !== -1 && (u3(e4, { [j.Unmount]() {
       s14.current.splice(a12, 1);
     }, [j.Hidden]() {
       s14.current[a12].state = "hidden";
-    } }), D6.microTask(() => {
+    } }), D5.microTask(() => {
       var o10;
-      !U3(s14) && y6.current && ((o10 = r8.current) == null || o10.call(r8));
+      !U4(s14) && y6.current && ((o10 = r8.current) == null || o10.call(r8));
     }));
   }), x5 = o4((i6) => {
     let e4 = s14.current.find(({ el: a12 }) => a12 === i6);
     return e4 ? e4.state !== "visible" && (e4.state = "visible") : s14.current.push({ el: i6, state: "visible" }), () => c12(i6, j.Unmount);
-  }), p6 = (0, import_react67.useRef)([]), h10 = (0, import_react67.useRef)(Promise.resolve()), u11 = (0, import_react67.useRef)({ enter: [], leave: [], idle: [] }), v4 = o4((i6, e4, a12) => {
+  }), p6 = (0, import_react67.useRef)([]), h9 = (0, import_react67.useRef)(Promise.resolve()), u11 = (0, import_react67.useRef)({ enter: [], leave: [], idle: [] }), v5 = o4((i6, e4, a12) => {
     p6.current.splice(0), n6 && (n6.chains.current[e4] = n6.chains.current[e4].filter(([o10]) => o10 !== i6)), n6 == null || n6.chains.current[e4].push([i6, new Promise((o10) => {
       p6.current.push(o10);
     })]), n6 == null || n6.chains.current[e4].push([i6, new Promise((o10) => {
-      Promise.all(u11.current[e4].map(([f10, P4]) => P4)).then(() => o10());
-    })]), e4 === "enter" ? h10.current = h10.current.then(() => n6 == null ? void 0 : n6.wait.current).then(() => a12(e4)) : a12(e4);
+      Promise.all(u11.current[e4].map(([f10, P5]) => P5)).then(() => o10());
+    })]), e4 === "enter" ? h9.current = h9.current.then(() => n6 == null ? void 0 : n6.wait.current).then(() => a12(e4)) : a12(e4);
   }), d11 = o4((i6, e4, a12) => {
     Promise.all(u11.current[e4].splice(0).map(([o10, f10]) => f10)).then(() => {
       var o10;
       (o10 = p6.current.shift()) == null || o10();
     }).then(() => a12(e4));
   });
-  return (0, import_react67.useMemo)(() => ({ children: s14, register: x5, unregister: c12, onStart: v4, onStop: d11, wait: h10, chains: u11 }), [x5, c12, s14, v4, d11, u11, h10]);
+  return (0, import_react67.useMemo)(() => ({ children: s14, register: x5, unregister: c12, onStart: v5, onStop: d11, wait: h9, chains: u11 }), [x5, c12, s14, v5, d11, u11, h9]);
 }
-function xe3() {
+function xe2() {
 }
 var Pe4 = ["beforeEnter", "afterEnter", "beforeLeave", "afterLeave"];
-function se3(t17) {
+function se2(t17) {
   var r8;
   let n6 = {};
   for (let s14 of Pe4)
-    n6[s14] = (r8 = t17[s14]) != null ? r8 : xe3;
+    n6[s14] = (r8 = t17[s14]) != null ? r8 : xe2;
   return n6;
 }
-function Re3(t17) {
-  let n6 = (0, import_react67.useRef)(se3(t17));
+function Re2(t17) {
+  let n6 = (0, import_react67.useRef)(se2(t17));
   return (0, import_react67.useEffect)(() => {
-    n6.current = se3(t17);
+    n6.current = se2(t17);
   }, [t17]), n6;
 }
-var ye4 = "div", ae3 = S2.RenderStrategy;
-function De4(t17, n6) {
+var ye3 = "div", ae2 = S2.RenderStrategy;
+function De3(t17, n6) {
   var K3, Q3;
-  let { beforeEnter: r8, afterEnter: s14, beforeLeave: y6, afterLeave: D6, enter: c12, enterFrom: x5, enterTo: p6, entered: h10, leave: u11, leaveFrom: v4, leaveTo: d11, ...i6 } = t17, e4 = (0, import_react67.useRef)(null), a12 = y2(e4, n6), o10 = (K3 = i6.unmount) == null || K3 ? j.Unmount : j.Hidden, { show: f10, appear: P4, initial: T7 } = Se2(), [l12, j5] = (0, import_react67.useState)(f10 ? "visible" : "hidden"), q3 = Ne2(), { register: O4, unregister: V3 } = q3;
-  (0, import_react67.useEffect)(() => O4(e4), [O4, e4]), (0, import_react67.useEffect)(() => {
+  let { beforeEnter: r8, afterEnter: s14, beforeLeave: y6, afterLeave: D5, enter: c12, enterFrom: x5, enterTo: p6, entered: h9, leave: u11, leaveFrom: v5, leaveTo: d11, ...i6 } = t17, e4 = (0, import_react67.useRef)(null), a12 = y2(e4, n6), o10 = (K3 = i6.unmount) == null || K3 ? j.Unmount : j.Hidden, { show: f10, appear: P5, initial: T7 } = Se2(), [l12, j5] = (0, import_react67.useState)(f10 ? "visible" : "hidden"), q3 = Ne2(), { register: O3, unregister: V2 } = q3;
+  (0, import_react67.useEffect)(() => O3(e4), [O3, e4]), (0, import_react67.useEffect)(() => {
     if (o10 === j.Hidden && e4.current) {
       if (f10 && l12 !== "visible") {
         j5("visible");
         return;
       }
-      return u3(l12, { hidden: () => V3(e4), visible: () => O4(e4) });
+      return u3(l12, { hidden: () => V2(e4), visible: () => O3(e4) });
     }
-  }, [l12, e4, O4, V3, f10, o10]);
-  let k2 = s2({ base: S8(i6.className), enter: S8(c12), enterFrom: S8(x5), enterTo: S8(p6), entered: S8(h10), leave: S8(u11), leaveFrom: S8(v4), leaveTo: S8(d11) }), w6 = Re3({ beforeEnter: r8, afterEnter: s14, beforeLeave: y6, afterLeave: D6 }), G2 = l3();
+  }, [l12, e4, O3, V2, f10, o10]);
+  let k2 = s2({ base: S8(i6.className), enter: S8(c12), enterFrom: S8(x5), enterTo: S8(p6), entered: S8(h9), leave: S8(u11), leaveFrom: S8(v5), leaveTo: S8(d11) }), w6 = Re2({ beforeEnter: r8, afterEnter: s14, beforeLeave: y6, afterLeave: D5 }), G2 = l3();
   (0, import_react67.useEffect)(() => {
     if (G2 && l12 === "visible" && e4.current === null)
       throw new Error("Did you forget to passthrough the `ref` to the actual DOM node?");
   }, [e4, l12, G2]);
-  let ue2 = T7 && !P4, z4 = P4 && f10 && T7, Te3 = (() => !G2 || ue2 ? "idle" : f10 ? "enter" : "leave")(), H6 = c11(0), de3 = o4((g8) => u3(g8, { enter: () => {
-    H6.addFlag(d5.Opening), w6.current.beforeEnter();
+  let ue3 = T7 && !P5, z4 = P5 && f10 && T7, Te2 = (() => !G2 || ue3 ? "idle" : f10 ? "enter" : "leave")(), H5 = c11(0), de2 = o4((g8) => u3(g8, { enter: () => {
+    H5.addFlag(d5.Opening), w6.current.beforeEnter();
   }, leave: () => {
-    H6.addFlag(d5.Closing), w6.current.beforeLeave();
+    H5.addFlag(d5.Closing), w6.current.beforeLeave();
   }, idle: () => {
   } })), fe2 = o4((g8) => u3(g8, { enter: () => {
-    H6.removeFlag(d5.Opening), w6.current.afterEnter();
+    H5.removeFlag(d5.Opening), w6.current.afterEnter();
   }, leave: () => {
-    H6.removeFlag(d5.Closing), w6.current.afterLeave();
+    H5.removeFlag(d5.Closing), w6.current.afterLeave();
   }, idle: () => {
-  } })), A2 = oe2(() => {
-    j5("hidden"), V3(e4);
+  } })), A = oe3(() => {
+    j5("hidden"), V2(e4);
   }, q3);
-  E8({ immediate: z4, container: e4, classes: k2, direction: Te3, onStart: s2((g8) => {
-    A2.onStart(e4, g8, de3);
+  E8({ immediate: z4, container: e4, classes: k2, direction: Te2, onStart: s2((g8) => {
+    A.onStart(e4, g8, de2);
   }), onStop: s2((g8) => {
-    A2.onStop(e4, g8, fe2), g8 === "leave" && !U3(A2) && (j5("hidden"), V3(e4));
+    A.onStop(e4, g8, fe2), g8 === "leave" && !U4(A) && (j5("hidden"), V2(e4));
   }) });
-  let R3 = i6, me3 = { ref: a12 };
-  return z4 ? R3 = { ...R3, className: t6(i6.className, ...k2.current.enter, ...k2.current.enterFrom) } : (R3.className = t6(i6.className, (Q3 = e4.current) == null ? void 0 : Q3.className), R3.className === "" && delete R3.className), import_react67.default.createElement(M6.Provider, { value: A2 }, import_react67.default.createElement(c5, { value: u3(l12, { visible: d5.Open, hidden: d5.Closed }) | H6.flags }, X({ ourProps: me3, theirProps: R3, defaultTag: ye4, features: ae3, visible: l12 === "visible", name: "Transition.Child" })));
+  let R3 = i6, me4 = { ref: a12 };
+  return z4 ? R3 = { ...R3, className: t6(i6.className, ...k2.current.enter, ...k2.current.enterFrom) } : (R3.className = t6(i6.className, (Q3 = e4.current) == null ? void 0 : Q3.className), R3.className === "" && delete R3.className), import_react67.default.createElement(M6.Provider, { value: A }, import_react67.default.createElement(c5, { value: u3(l12, { visible: d5.Open, hidden: d5.Closed }) | H5.flags }, X({ ourProps: me4, theirProps: R3, defaultTag: ye3, features: ae2, visible: l12 === "visible", name: "Transition.Child" })));
 }
 function He2(t17, n6) {
-  let { show: r8, appear: s14 = !1, unmount: y6 = !0, ...D6 } = t17, c12 = (0, import_react67.useRef)(null), x5 = y2(c12, n6);
+  let { show: r8, appear: s14 = !1, unmount: y6 = !0, ...D5 } = t17, c12 = (0, import_react67.useRef)(null), x5 = y2(c12, n6);
   l3();
   let p6 = C2();
   if (r8 === void 0 && p6 !== null && (r8 = (p6 & d5.Open) === d5.Open), ![!0, !1].includes(r8))
     throw new Error("A <Transition /> is used but it is missing a `show={true | false}` prop.");
-  let [h10, u11] = (0, import_react67.useState)(r8 ? "visible" : "hidden"), v4 = oe2(() => {
+  let [h9, u11] = (0, import_react67.useState)(r8 ? "visible" : "hidden"), v5 = oe3(() => {
     u11("hidden");
   }), [d11, i6] = (0, import_react67.useState)(!0), e4 = (0, import_react67.useRef)([r8]);
   l2(() => {
@@ -61922,7 +61943,7 @@ function He2(t17, n6) {
   (0, import_react67.useEffect)(() => {
     if (r8)
       u11("visible");
-    else if (!U3(v4))
+    else if (!U4(v5))
       u11("hidden");
     else {
       let T7 = c12.current;
@@ -61931,21 +61952,21 @@ function He2(t17, n6) {
       let l12 = T7.getBoundingClientRect();
       l12.x === 0 && l12.y === 0 && l12.width === 0 && l12.height === 0 && u11("hidden");
     }
-  }, [r8, v4]);
+  }, [r8, v5]);
   let o10 = { unmount: y6 }, f10 = o4(() => {
     var T7;
     d11 && i6(!1), (T7 = t17.beforeEnter) == null || T7.call(t17);
-  }), P4 = o4(() => {
+  }), P5 = o4(() => {
     var T7;
     d11 && i6(!1), (T7 = t17.beforeLeave) == null || T7.call(t17);
   });
-  return import_react67.default.createElement(M6.Provider, { value: v4 }, import_react67.default.createElement(_2.Provider, { value: a12 }, X({ ourProps: { ...o10, as: import_react67.Fragment, children: import_react67.default.createElement(le3, { ref: x5, ...o10, ...D6, beforeEnter: f10, beforeLeave: P4 }) }, theirProps: {}, defaultTag: import_react67.Fragment, features: ae3, visible: h10 === "visible", name: "Transition" })));
+  return import_react67.default.createElement(M6.Provider, { value: v5 }, import_react67.default.createElement(_2.Provider, { value: a12 }, X({ ourProps: { ...o10, as: import_react67.Fragment, children: import_react67.default.createElement(le2, { ref: x5, ...o10, ...D5, beforeEnter: f10, beforeLeave: P5 }) }, theirProps: {}, defaultTag: import_react67.Fragment, features: ae2, visible: h9 === "visible", name: "Transition" })));
 }
-function Fe2(t17, n6) {
+function Fe(t17, n6) {
   let r8 = (0, import_react67.useContext)(_2) !== null, s14 = C2() !== null;
-  return import_react67.default.createElement(import_react67.default.Fragment, null, !r8 && s14 ? import_react67.default.createElement(W, { ref: n6, ...t17 }) : import_react67.default.createElement(le3, { ref: n6, ...t17 }));
+  return import_react67.default.createElement(import_react67.default.Fragment, null, !r8 && s14 ? import_react67.default.createElement(W, { ref: n6, ...t17 }) : import_react67.default.createElement(le2, { ref: n6, ...t17 }));
 }
-var W = D3(He2), le3 = D3(De4), Le2 = D3(Fe2), tt = Object.assign(W, { Child: Le2, Root: W });
+var W = D2(He2), le2 = D2(De3), Le = D2(Fe), tt2 = Object.assign(W, { Child: Le, Root: W });
 
 // node_modules/@heroicons/react/20/solid/esm/ChevronDownIcon.js
 var React20 = __toESM(require_react(), 1);
@@ -61959,13 +61980,14 @@ function ChevronDownIcon({
     viewBox: "0 0 20 20",
     fill: "currentColor",
     "aria-hidden": "true",
+    "data-slot": "icon",
     ref: svgRef,
     "aria-labelledby": titleId
   }, props), title ? /* @__PURE__ */ React20.createElement("title", {
     id: titleId
   }, title) : null, /* @__PURE__ */ React20.createElement("path", {
     fillRule: "evenodd",
-    d: "M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z",
+    d: "M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z",
     clipRule: "evenodd"
   }));
 }
@@ -61983,13 +62005,14 @@ function FunnelIcon({
     viewBox: "0 0 20 20",
     fill: "currentColor",
     "aria-hidden": "true",
+    "data-slot": "icon",
     ref: svgRef,
     "aria-labelledby": titleId
   }, props), title ? /* @__PURE__ */ React21.createElement("title", {
     id: titleId
   }, title) : null, /* @__PURE__ */ React21.createElement("path", {
     fillRule: "evenodd",
-    d: "M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 01.628.74v2.288a2.25 2.25 0 01-.659 1.59l-4.682 4.683a2.25 2.25 0 00-.659 1.59v3.037c0 .684-.31 1.33-.844 1.757l-1.937 1.55A.75.75 0 018 18.25v-5.757a2.25 2.25 0 00-.659-1.591L2.659 6.22A2.25 2.25 0 012 4.629V2.34a.75.75 0 01.628-.74z",
+    d: "M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 0 1 .628.74v2.288a2.25 2.25 0 0 1-.659 1.59l-4.682 4.683a2.25 2.25 0 0 0-.659 1.59v3.037c0 .684-.31 1.33-.844 1.757l-1.937 1.55A.75.75 0 0 1 8 18.25v-5.757a2.25 2.25 0 0 0-.659-1.591L2.659 6.22A2.25 2.25 0 0 1 2 4.629V2.34a.75.75 0 0 1 .628-.74Z",
     clipRule: "evenodd"
   }));
 }
@@ -62007,13 +62030,14 @@ function MinusIcon({
     viewBox: "0 0 20 20",
     fill: "currentColor",
     "aria-hidden": "true",
+    "data-slot": "icon",
     ref: svgRef,
     "aria-labelledby": titleId
   }, props), title ? /* @__PURE__ */ React22.createElement("title", {
     id: titleId
   }, title) : null, /* @__PURE__ */ React22.createElement("path", {
     fillRule: "evenodd",
-    d: "M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z",
+    d: "M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z",
     clipRule: "evenodd"
   }));
 }
@@ -62031,12 +62055,13 @@ function PlusIcon({
     viewBox: "0 0 20 20",
     fill: "currentColor",
     "aria-hidden": "true",
+    "data-slot": "icon",
     ref: svgRef,
     "aria-labelledby": titleId
   }, props), title ? /* @__PURE__ */ React23.createElement("title", {
     id: titleId
   }, title) : null, /* @__PURE__ */ React23.createElement("path", {
-    d: "M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
+    d: "M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z"
   }));
 }
 var ForwardRef8 = React23.forwardRef(PlusIcon), PlusIcon_default = ForwardRef8;
@@ -62053,13 +62078,14 @@ function Squares2X2Icon({
     viewBox: "0 0 20 20",
     fill: "currentColor",
     "aria-hidden": "true",
+    "data-slot": "icon",
     ref: svgRef,
     "aria-labelledby": titleId
   }, props), title ? /* @__PURE__ */ React24.createElement("title", {
     id: titleId
   }, title) : null, /* @__PURE__ */ React24.createElement("path", {
     fillRule: "evenodd",
-    d: "M4.25 2A2.25 2.25 0 002 4.25v2.5A2.25 2.25 0 004.25 9h2.5A2.25 2.25 0 009 6.75v-2.5A2.25 2.25 0 006.75 2h-2.5zm0 9A2.25 2.25 0 002 13.25v2.5A2.25 2.25 0 004.25 18h2.5A2.25 2.25 0 009 15.75v-2.5A2.25 2.25 0 006.75 11h-2.5zm9-9A2.25 2.25 0 0011 4.25v2.5A2.25 2.25 0 0013.25 9h2.5A2.25 2.25 0 0018 6.75v-2.5A2.25 2.25 0 0015.75 2h-2.5zm0 9A2.25 2.25 0 0011 13.25v2.5A2.25 2.25 0 0013.25 18h2.5A2.25 2.25 0 0018 15.75v-2.5A2.25 2.25 0 0015.75 11h-2.5z",
+    d: "M4.25 2A2.25 2.25 0 0 0 2 4.25v2.5A2.25 2.25 0 0 0 4.25 9h2.5A2.25 2.25 0 0 0 9 6.75v-2.5A2.25 2.25 0 0 0 6.75 2h-2.5Zm0 9A2.25 2.25 0 0 0 2 13.25v2.5A2.25 2.25 0 0 0 4.25 18h2.5A2.25 2.25 0 0 0 9 15.75v-2.5A2.25 2.25 0 0 0 6.75 11h-2.5Zm9-9A2.25 2.25 0 0 0 11 4.25v2.5A2.25 2.25 0 0 0 13.25 9h2.5A2.25 2.25 0 0 0 18 6.75v-2.5A2.25 2.25 0 0 0 15.75 2h-2.5Zm0 9A2.25 2.25 0 0 0 11 13.25v2.5A2.25 2.25 0 0 0 13.25 18h2.5A2.25 2.25 0 0 0 18 15.75v-2.5A2.25 2.25 0 0 0 15.75 11h-2.5Z",
     clipRule: "evenodd"
   }));
 }
@@ -62200,15 +62226,15 @@ function Collection() {
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "bg-white mx-2.5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(tt.Root, { show: mobileFiltersOpen, as: import_react70.Fragment, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-        _t,
+      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(tt2.Root, { show: mobileFiltersOpen, as: import_react70.Fragment, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+        _t2,
         {
           as: "div",
           className: "relative z-40 lg:hidden",
           onClose: setMobileFiltersOpen,
           children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-              tt.Child,
+              tt2.Child,
               {
                 as: import_react70.Fragment,
                 enter: "transition-opacity ease-linear duration-300",
@@ -62233,7 +62259,7 @@ function Collection() {
               this
             ),
             /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "fixed inset-0 z-40 flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-              tt.Child,
+              tt2.Child,
               {
                 as: import_react70.Fragment,
                 enter: "transition ease-in-out duration-300 transform",
@@ -62242,7 +62268,7 @@ function Collection() {
                 leave: "transition ease-in-out duration-300 transform",
                 leaveFrom: "translate-x-0",
                 leaveTo: "translate-x-full",
-                children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(_t.Panel, { className: "relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl", children: [
+                children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(_t2.Panel, { className: "relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl", children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex items-center justify-between px-4", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { className: "text-lg font-medium text-gray-900", children: "Filters" }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
@@ -62313,13 +62339,13 @@ function Collection() {
                       this
                     ),
                     filters.map((section) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                      ve2,
+                      ve,
                       {
                         as: "div",
                         className: "border-t border-gray-200 px-4 py-6",
                         children: ({ open }) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: [
                           console.log(filters),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "-mx-2 -my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400", children: [
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "-mx-2 -my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve.Button, { className: "flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400", children: [
                             /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "font-medium text-gray-900", children: section.name }, void 0, !1, {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
                               lineNumber: 299,
@@ -62367,7 +62393,7 @@ function Collection() {
                             lineNumber: 297,
                             columnNumber: 31
                           }, this),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "space-y-6", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "space-y-6", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
                             "div",
                             {
                               className: "flex items-center",
@@ -62587,7 +62613,7 @@ function Collection() {
                 columnNumber: 19
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                tt,
+                tt2,
                 {
                   as: import_react70.Fragment,
                   enter: "transition ease-out duration-100",
@@ -62767,12 +62793,12 @@ function Collection() {
                 this
               ),
               filters.map((section) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                ve2,
+                ve,
                 {
                   as: "div",
                   className: "border-b border-gray-200 py-2",
                   children: ({ open }) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "-my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white py-3 text-[18px] text-black font-bold", children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "-my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve.Button, { className: "flex w-full items-center justify-between bg-white py-3 text-[18px] text-black font-bold", children: [
                       /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "", children: section.name }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
                         lineNumber: 490,
@@ -62820,7 +62846,7 @@ function Collection() {
                       lineNumber: 488,
                       columnNumber: 29
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "space-y-4", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "space-y-4", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
                       "div",
                       {
                         className: "flex items-center",
@@ -63926,7 +63952,7 @@ async function loader9({ context }) {
   return await session.get("customerAccessToken") ? json3({}) : redirect3("/account/login");
 }
 async function action4({ request, context }) {
-  var _a2, _b, _c, _d, _e3;
+  var _a2, _b, _c, _d, _e2;
   let { storefront, session } = context;
   try {
     let form = await request.formData(), addressId = form.has("addressId") ? String(form.get("addressId")) : null;
@@ -64031,7 +64057,7 @@ async function action4({ request, context }) {
               variables: { customerAccessToken: accessToken, id: addressId }
             }
           );
-          if ((_e3 = customerAddressDelete == null ? void 0 : customerAddressDelete.customerUserErrors) != null && _e3.length) {
+          if ((_e2 = customerAddressDelete == null ? void 0 : customerAddressDelete.customerUserErrors) != null && _e2.length) {
             let error = customerAddressDelete.customerUserErrors[0];
             throw new Error(error.message);
           }
@@ -66698,7 +66724,7 @@ async function loader14({ context }) {
   return await context.session.get("customerAccessToken") ? json3({}) : redirect3("/account/login");
 }
 async function action7({ request, context }) {
-  var _a2, _b, _c, _d, _e3, _f, _g;
+  var _a2, _b, _c, _d, _e2, _f, _g;
   let { session, storefront } = context;
   if (request.method !== "PUT")
     return json3({ error: "Method not allowed" }, { status: 405 });
@@ -66725,7 +66751,7 @@ async function action7({ request, context }) {
     return (_b = (_a2 = updated.customerUpdate) == null ? void 0 : _a2.customerUserErrors) != null && _b.length ? json3(
       { error: (_c = updated.customerUpdate) == null ? void 0 : _c.customerUserErrors[0] },
       { status: 400 }
-    ) : ((_e3 = (_d = updated.customerUpdate) == null ? void 0 : _d.customerAccessToken) != null && _e3.accessToken && session.set(
+    ) : ((_e2 = (_d = updated.customerUpdate) == null ? void 0 : _d.customerAccessToken) != null && _e2.accessToken && session.set(
       "customerAccessToken",
       (_f = updated.customerUpdate) == null ? void 0 : _f.customerAccessToken
     ), json3(
@@ -69525,19 +69551,441 @@ async function loader26({ request }) {
   });
 }
 
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/graphiql.jsx
-var graphiql_exports = {};
-__export(graphiql_exports, {
-  loader: () => loader27
+// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/debug-network.jsx
+var debug_network_exports = {};
+__export(debug_network_exports, {
+  default: () => DebugNetwork
 });
-var loader27 = graphiqlLoader;
+var import_jsx_runtime7 = __toESM(require_jsx_runtime(), 1), import_react104 = __toESM(require_react(), 1);
+
+// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/FlameChartWrapper.jsx
+var import_jsx_runtime6 = __toESM(require_jsx_runtime(), 1), import_react103 = __toESM(require_react(), 1);
+
+// node_modules/use-resize-observer/dist/bundle.esm.js
+var import_react102 = __toESM(require_react());
+function useResolvedElement(subscriber, refOrElement) {
+  var lastReportRef = (0, import_react102.useRef)(null), refOrElementRef = (0, import_react102.useRef)(null);
+  refOrElementRef.current = refOrElement;
+  var cbElementRef = (0, import_react102.useRef)(null);
+  (0, import_react102.useEffect)(function() {
+    evaluateSubscription();
+  });
+  var evaluateSubscription = (0, import_react102.useCallback)(function() {
+    var cbElement = cbElementRef.current, refOrElement2 = refOrElementRef.current, element = cbElement || (refOrElement2 ? refOrElement2 instanceof Element ? refOrElement2 : refOrElement2.current : null);
+    lastReportRef.current && lastReportRef.current.element === element && lastReportRef.current.subscriber === subscriber || (lastReportRef.current && lastReportRef.current.cleanup && lastReportRef.current.cleanup(), lastReportRef.current = {
+      element,
+      subscriber,
+      // Only calling the subscriber, if there's an actual element to report.
+      // Setting cleanup to undefined unless a subscriber returns one, as an existing cleanup function would've been just called.
+      cleanup: element ? subscriber(element) : void 0
+    });
+  }, [subscriber]);
+  return (0, import_react102.useEffect)(function() {
+    return function() {
+      lastReportRef.current && lastReportRef.current.cleanup && (lastReportRef.current.cleanup(), lastReportRef.current = null);
+    };
+  }, []), (0, import_react102.useCallback)(function(element) {
+    cbElementRef.current = element, evaluateSubscription();
+  }, [evaluateSubscription]);
+}
+function extractSize(entry2, boxProp, sizeType) {
+  return entry2[boxProp] ? entry2[boxProp][0] ? entry2[boxProp][0][sizeType] : (
+    // TS complains about this, because the RO entry type follows the spec and does not reflect Firefox's current
+    // behaviour of returning objects instead of arrays for `borderBoxSize` and `contentBoxSize`.
+    // @ts-ignore
+    entry2[boxProp][sizeType]
+  ) : boxProp === "contentBoxSize" ? entry2.contentRect[sizeType === "inlineSize" ? "width" : "height"] : void 0;
+}
+function useResizeObserver(opts) {
+  opts === void 0 && (opts = {});
+  var onResize = opts.onResize, onResizeRef = (0, import_react102.useRef)(void 0);
+  onResizeRef.current = onResize;
+  var round = opts.round || Math.round, resizeObserverRef = (0, import_react102.useRef)(), _useState = (0, import_react102.useState)({
+    width: void 0,
+    height: void 0
+  }), size = _useState[0], setSize = _useState[1], didUnmount = (0, import_react102.useRef)(!1);
+  (0, import_react102.useEffect)(function() {
+    return didUnmount.current = !1, function() {
+      didUnmount.current = !0;
+    };
+  }, []);
+  var previous = (0, import_react102.useRef)({
+    width: void 0,
+    height: void 0
+  }), refCallback = useResolvedElement((0, import_react102.useCallback)(function(element) {
+    return (!resizeObserverRef.current || resizeObserverRef.current.box !== opts.box || resizeObserverRef.current.round !== round) && (resizeObserverRef.current = {
+      box: opts.box,
+      round,
+      instance: new ResizeObserver(function(entries) {
+        var entry2 = entries[0], boxProp = opts.box === "border-box" ? "borderBoxSize" : opts.box === "device-pixel-content-box" ? "devicePixelContentBoxSize" : "contentBoxSize", reportedWidth = extractSize(entry2, boxProp, "inlineSize"), reportedHeight = extractSize(entry2, boxProp, "blockSize"), newWidth = reportedWidth ? round(reportedWidth) : void 0, newHeight = reportedHeight ? round(reportedHeight) : void 0;
+        if (previous.current.width !== newWidth || previous.current.height !== newHeight) {
+          var newSize = {
+            width: newWidth,
+            height: newHeight
+          };
+          previous.current.width = newWidth, previous.current.height = newHeight, onResizeRef.current ? onResizeRef.current(newSize) : didUnmount.current || setSize(newSize);
+        }
+      })
+    }), resizeObserverRef.current.instance.observe(element, {
+      box: opts.box
+    }), function() {
+      resizeObserverRef.current && resizeObserverRef.current.instance.unobserve(element);
+    };
+  }, [opts.box, round]), opts.ref);
+  return (0, import_react102.useMemo)(function() {
+    return {
+      ref: refCallback,
+      width: size.width,
+      height: size.height
+    };
+  }, [refCallback, size.width, size.height]);
+}
+
+// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/FlameChartWrapper.jsx
+var useResizeObserver2 = useResizeObserver, FlameChartWrapper = (props) => {
+  let boxRef = (0, import_react103.useRef)(null), canvasRef = (0, import_react103.useRef)(null), flameChart = (0, import_react103.useRef)(null);
+  useResizeObserver2({
+    ref: boxRef,
+    onResize: ({ width = 0, height = 0 }) => {
+      var _a2;
+      return (_a2 = flameChart.current) == null ? void 0 : _a2.resize(width, height - 3);
+    }
+  });
+  let initialize = (0, import_react103.useCallback)(() => {
+    let {
+      data: data2,
+      marks,
+      waterfall,
+      timeseries,
+      settings,
+      colors,
+      plugins,
+      timeframeTimeseries
+    } = props;
+    if (canvasRef.current && boxRef.current) {
+      let { width = 0, height = 0 } = boxRef.current.getBoundingClientRect();
+      canvasRef.current.width = width, canvasRef.current.height = height - 3, flameChart.current = new flameChartJs.FlameChart({
+        canvas: canvasRef.current,
+        data: data2,
+        marks,
+        waterfall,
+        timeseries,
+        timeframeTimeseries,
+        settings,
+        colors,
+        plugins
+      });
+    }
+  }, [props]), setBoxRef = (0, import_react103.useCallback)(
+    (ref) => {
+      let isNewRef = ref !== boxRef.current;
+      boxRef.current = ref, isNewRef && initialize();
+    },
+    [initialize]
+  ), setCanvasRef = (0, import_react103.useCallback)(
+    (ref) => {
+      let isNewRef = ref !== canvasRef.current;
+      canvasRef.current = ref, isNewRef && initialize();
+    },
+    [initialize]
+  );
+  return (0, import_react103.useEffect)(() => {
+    var _a2;
+    props.data && ((_a2 = flameChart.current) == null || _a2.setNodes(props.data));
+  }, [props.data]), (0, import_react103.useEffect)(() => {
+    var _a2;
+    props.marks && ((_a2 = flameChart.current) == null || _a2.setMarks(props.marks));
+  }, [props.marks]), (0, import_react103.useEffect)(() => {
+    var _a2;
+    props.waterfall && ((_a2 = flameChart.current) == null || _a2.setWaterfall(props.waterfall));
+  }, [props.waterfall]), (0, import_react103.useEffect)(() => {
+    var _a2;
+    props.timeseries && ((_a2 = flameChart.current) == null || _a2.setTimeseries(props.timeseries));
+  }, [props.timeseries]), (0, import_react103.useEffect)(() => {
+    var _a2;
+    props.timeframeTimeseries && ((_a2 = flameChart.current) == null || _a2.setTimeframeTimeseries(props.timeframeTimeseries));
+  }, [props.timeframeTimeseries]), (0, import_react103.useEffect)(() => {
+    props.settings && flameChart.current && (flameChart.current.setSettings(props.settings), flameChart.current.renderEngine.recalcChildrenSizes(), flameChart.current.render());
+  }, [props.settings]), (0, import_react103.useEffect)(() => {
+    var _a2;
+    props.position && ((_a2 = flameChart.current) == null || _a2.setFlameChartPosition(props.position));
+  }, [props.position]), (0, import_react103.useEffect)(() => {
+    var _a2;
+    props.zoom && ((_a2 = flameChart.current) == null || _a2.setZoom(props.zoom.start, props.zoom.end));
+  }, [props.zoom]), (0, import_react103.useEffect)(() => {
+    var _a2;
+    return props.onSelect && ((_a2 = flameChart.current) == null || _a2.on("select", props.onSelect)), () => {
+      var _a3;
+      props.onSelect && ((_a3 = flameChart.current) == null || _a3.removeListener("select", props.onSelect));
+    };
+  }, [props.onSelect]), /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+    "div",
+    {
+      style: { height: `${props.height ? props.height : 300}px` },
+      className: props.className,
+      ref: setBoxRef,
+      children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("canvas", { ref: setCanvasRef })
+    }
+  );
+};
+
+// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/debug-network.jsx
+function DebugNetwork() {
+  let serverEvents = (0, import_react104.useRef)({
+    smallestStartTime: 0,
+    mainRequests: [],
+    subRequests: {},
+    showPutRequests: !1
+  }), [timestamp, setTimestamp] = (0, import_react104.useState)();
+  function serverEventHandler(onEvent) {
+    return (event) => {
+      let data2 = JSON.parse(event.data);
+      serverEvents.current.smallestStartTime === 0 ? serverEvents.current.smallestStartTime = data2.startTime : serverEvents.current.smallestStartTime = Math.min(
+        data2.startTime,
+        serverEvents.current.smallestStartTime
+      ), onEvent(data2), setTimeout(() => {
+        setTimestamp((/* @__PURE__ */ new Date()).getTime());
+      }, 0);
+    };
+  }
+  return (0, import_react104.useEffect)(() => {
+    let evtSource = new EventSource("/debug-network-server", {
+      withCredentials: !0
+    }), mainRequestHandler = serverEventHandler((data2) => {
+      serverEvents.current.mainRequests = [
+        ...serverEvents.current.mainRequests,
+        {
+          ...data2,
+          url: data2.url.replace(location.origin, "")
+        }
+      ];
+    });
+    evtSource.addEventListener("Request", mainRequestHandler);
+    let subRequestHandler = serverEventHandler((data2) => {
+      let groupEvents = serverEvents.current.subRequests[data2.id] || [];
+      groupEvents = [...groupEvents, data2], serverEvents.current.subRequests = {
+        ...serverEvents.current.subRequests,
+        [data2.id]: groupEvents
+      };
+    });
+    return evtSource.addEventListener("Sub request", subRequestHandler), () => {
+      evtSource.removeEventListener("Request", mainRequestHandler), evtSource.removeEventListener("Sub request", subRequestHandler), evtSource.close();
+    };
+  }, []), /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(import_jsx_runtime7.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+      Script,
+      {
+        src: "https://unpkg.com/flame-chart-js@2.3.1/dist/index.min.js",
+        suppressHydrationWarning: !0
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+      "div",
+      {
+        style: {
+          width: "100vw",
+          backgroundColor: "#F5F5F5",
+          fontSize: "0.8rem"
+        },
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+            "div",
+            {
+              style: {
+                display: "flex",
+                justifyContent: "space-between"
+              },
+              children: [
+                /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+                  "div",
+                  {
+                    style: {
+                      display: "flex",
+                      alignItems: "center"
+                    },
+                    children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                        "button",
+                        {
+                          onClick: () => {
+                            fetch("/debug-network-server", { method: "DELETE" }).catch(
+                              (error) => console.error("Could not clear history:", error)
+                            ), serverEvents.current = {
+                              smallestStartTime: 0,
+                              mainRequests: [],
+                              subRequests: {},
+                              showPutRequests: serverEvents.current.showPutRequests
+                            }, setTimestamp((/* @__PURE__ */ new Date()).getTime());
+                          },
+                          children: "Clear"
+                        }
+                      ),
+                      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                        "input",
+                        {
+                          id: "showPutRequests",
+                          type: "checkbox",
+                          checked: serverEvents.current.showPutRequests,
+                          onChange: (event) => {
+                            serverEvents.current.showPutRequests = event.target.checked, setTimestamp((/* @__PURE__ */ new Date()).getTime());
+                          }
+                        }
+                      ),
+                      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("label", { htmlFor: "showPutRequests", children: "Show cache update requests (PUT)" })
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                  "p",
+                  {
+                    style: {
+                      paddingRight: "5px"
+                    },
+                    children: "Unstable"
+                  }
+                )
+              ]
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(FlameChart, { serverEvents: serverEvents.current }, timestamp),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("p", { style: { color: "#777", fontSize: "0.7rem", paddingLeft: "5px" }, children: [
+            "Note: You may need to turn on '",
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("b", { children: "Disable Cache" }),
+            "' for your navigating window. If you are not seeing any requests, try re-running '",
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("b", { children: "npm run dev" }),
+            "' in your terminal while leaving this window open."
+          ] })
+        ]
+      }
+    )
+  ] });
+}
+var PANEL_HEIGHT = 300;
+function FlameChart({ serverEvents }) {
+  if (serverEvents.mainRequests.length === 0)
+    return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+      "div",
+      {
+        style: {
+          height: `${PANEL_HEIGHT}px`,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#FAFAFA"
+        },
+        children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("p", { style: { fontWeight: "bold", color: "#777" }, children: [
+          "Navigate your",
+          " ",
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Link2, { to: "/", target: "_blank", children: "app" })
+        ] })
+      }
+    );
+  let totalRequests = 0, totalSubRequests = 0, calcDuration = (time2) => time2 - serverEvents.smallestStartTime, items = [];
+  return serverEvents.mainRequests.forEach((mainRequest) => {
+    let mainResponseStart = calcDuration(mainRequest.endTime), mainResponseEnd = mainResponseStart, subRequestItems = [];
+    (serverEvents.subRequests[mainRequest.id] || []).forEach((subRequest) => {
+      let subRequestEnd = calcDuration(subRequest.endTime);
+      subRequest.cacheStatus !== "PUT" && (mainResponseEnd = Math.max(mainResponseEnd, subRequestEnd));
+      let subRequestItem = {
+        name: `${subRequest.cacheStatus} ${subRequest.url}`.trim(),
+        intervals: "request",
+        timing: {
+          requestStart: calcDuration(subRequest.startTime),
+          requestEnd: subRequestEnd
+        }
+      };
+      (serverEvents.showPutRequests || subRequest.cacheStatus !== "PUT") && subRequestItems.push(subRequestItem), totalSubRequests++;
+    }), totalRequests++, items.push({
+      name: mainRequest.url,
+      intervals: "mainRequest",
+      timing: {
+        requestStart: calcDuration(mainRequest.startTime),
+        responseStart: mainResponseStart,
+        responseEnd: mainResponseEnd
+      }
+    }), items = items.concat(subRequestItems);
+  }), /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(import_jsx_runtime7.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+      FlameChartWrapper,
+      {
+        height: PANEL_HEIGHT,
+        waterfall: {
+          items,
+          intervals: {
+            mainRequest: [
+              {
+                name: "server",
+                color: "#99CC00",
+                type: "block",
+                start: "requestStart",
+                end: "responseStart"
+              },
+              {
+                name: "streaming",
+                color: "#33CCFF",
+                type: "block",
+                start: "responseStart",
+                end: "responseEnd"
+              }
+            ],
+            request: [
+              {
+                name: "request",
+                color: "#FFCC00",
+                type: "block",
+                start: "requestStart",
+                end: "requestEnd"
+              }
+            ]
+          }
+        },
+        settings: {
+          styles: {
+            waterfallPlugin: {
+              defaultHeight: PANEL_HEIGHT
+            }
+          }
+        }
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+      "div",
+      {
+        style: {
+          display: "flex",
+          padding: "5px",
+          borderTop: "1px solid #CCC",
+          borderBottom: "1px solid #CCC"
+        },
+        children: [
+          totalRequests,
+          " requests",
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+            "span",
+            {
+              style: {
+                paddingLeft: "2px",
+                paddingRight: "2px"
+              },
+              children: "|"
+            }
+          ),
+          totalSubRequests,
+          " sub requests"
+        ]
+      }
+    )
+  ] });
+}
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx
 var virtual_root_exports = {};
 __export(virtual_root_exports, {
+  ErrorBoundary: () => ErrorBoundary3,
   default: () => App2,
   links: () => links2
 });
+var import_jsx_runtime9 = __toESM(require_jsx_runtime(), 1);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/assets/styles.css
 var styles_default = "/build/_assets/styles-G72WKIIU.css";
@@ -69546,499 +69994,587 @@ var styles_default = "/build/_assets/styles-G72WKIIU.css";
 var favicon_default2 = "/build/_assets/favicon-5FIZBM2K.svg";
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/Layout.jsx
-var import_jsx_dev_runtime41 = __toESM(require_jsx_dev_runtime(), 1);
+var import_jsx_runtime8 = __toESM(require_jsx_runtime(), 1);
 function Layout2(props) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime41.jsxDEV)("div", { className: "hydrogen-virtual-route", children: props.children }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/Layout.jsx",
-    lineNumber: 2,
-    columnNumber: 10
-  }, this);
+  return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "hydrogen-virtual-route", children: props.children });
 }
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx
-var import_jsx_dev_runtime42 = __toESM(require_jsx_dev_runtime(), 1), links2 = () => [
+var links2 = () => [
   { rel: "stylesheet", href: styles_default },
   { rel: "icon", type: "image/svg+xml", href: favicon_default2 }
 ];
 function App2() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)("html", { lang: "en", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)("head", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 20,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)("meta", { name: "viewport", content: "width=device-width,initial-scale=1" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 21,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)("title", { children: "Hydrogen" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 22,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)("meta", { name: "description", content: "A custom storefront powered by Hydrogen" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 23,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)(Meta, {}, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 24,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)(Links, {}, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 25,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-      lineNumber: 19,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)("body", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)(Layout2, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)(Outlet, {}, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 28,
-        columnNumber: 15
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 28,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 29,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)(Scripts, {}, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 30,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-      lineNumber: 27,
-      columnNumber: 5
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-    lineNumber: 18,
-    columnNumber: 10
-  }, this);
+  let nonce = useNonce();
+  return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("html", {
+    lang: "en",
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("head", {
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("meta", { charSet: "utf-8" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("meta", { name: "viewport", content: "width=device-width,initial-scale=1" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("title", { children: "Hydrogen" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+            "meta",
+            {
+              name: "description",
+              content: "A custom storefront powered by Hydrogen"
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Meta, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Links, {})
+        ]
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("body", {
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Layout2, { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Outlet, {}) }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(ScrollRestoration2, { nonce }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Scripts, { nonce })
+        ]
+      })
+    ]
+  });
 }
+function ErrorBoundary3() {
+  var _a2;
+  let nonce = useNonce(), error = useRouteError(), errorMessage = "Unknown error", errorStatus = 500;
+  return isRouteErrorResponse(error) ? (errorMessage = ((_a2 = error == null ? void 0 : error.data) == null ? void 0 : _a2.message) ?? error.data, errorStatus = error.status) : error instanceof Error && (errorMessage = error.message), /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("html", {
+    lang: "en",
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("head", {
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("meta", { charSet: "utf-8" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("meta", { name: "viewport", content: "width=device-width,initial-scale=1" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("title", { children: "Hydrogen" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+            "meta",
+            {
+              name: "description",
+              content: "A custom storefront powered by Hydrogen"
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Meta, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Links, {})
+        ]
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("body", {
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Layout2, { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", {
+            className: "route-error",
+            children: [
+              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h1", { children: "Please report this error" }),
+              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h2", { children: errorStatus }),
+              errorMessage && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("fieldset", { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("pre", { children: errorMessage }) })
+            ]
+          }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(ScrollRestoration2, { nonce }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Scripts, { nonce })
+        ]
+      })
+    ]
+  });
+}
+
+// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/graphiql.jsx
+var graphiql_exports = {};
+__export(graphiql_exports, {
+  loader: () => loader27
+});
+var loader27 = graphiqlLoader;
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx
 var routes_exports = {};
 __export(routes_exports, {
-  ErrorBoundary: () => ErrorBoundary3,
+  ErrorBoundary: () => ErrorBoundary4,
   HYDROGEN_SHOP_ID: () => HYDROGEN_SHOP_ID,
   default: () => Index,
   links: () => links3,
   loader: () => loader28
 });
+var import_jsx_runtime17 = __toESM(require_jsx_runtime(), 1);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseBW.jsx
-var import_jsx_dev_runtime43 = __toESM(require_jsx_dev_runtime(), 1), HydrogenLogoBaseBW = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("svg", { width: 81, height: 82, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("path", { d: "M39.955 81.28 2.138 61.19l12.933-6.818 14.562 7.733 12.218-6.441L27.29 47.93l12.933-6.833L78.04 61.189l-12.934 6.817L51.35 60.7l-12.236 6.457 13.774 7.308-12.933 6.817Z", fill: "#000" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseBW.jsx",
-    lineNumber: 2,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("path", { fillRule: "evenodd", clipRule: "evenodd", d: "m40.225 0 39.953 21.227-15.073 7.945-13.756-7.308-10.096 5.328 13.775 7.309-15.075 7.945L0 21.22l15.073-7.945 14.562 7.732 10.078-5.313-14.56-7.731L40.225 0ZM29.426 7.967l14.564 7.734L29.63 23.27 15.07 15.537l-10.794 5.69 35.68 18.956 10.793-5.688-13.773-7.307L51.352 19.6l13.757 7.308 10.794-5.69-35.68-18.956-10.797 5.704Z", fill: "#000" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseBW.jsx",
-    lineNumber: 3,
-    columnNumber: 3
-  }, this)
-] }, void 0, !0, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseBW.jsx",
-  lineNumber: 1,
-  columnNumber: 39
-}, this);
+var import_jsx_runtime10 = __toESM(require_jsx_runtime(), 1), HydrogenLogoBaseBW = (props) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
+  "svg",
+  {
+    width: 81,
+    height: 82,
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    ...props,
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+        "path",
+        {
+          d: "M39.955 81.28 2.138 61.19l12.933-6.818 14.562 7.733 12.218-6.441L27.29 47.93l12.933-6.833L78.04 61.189l-12.934 6.817L51.35 60.7l-12.236 6.457 13.774 7.308-12.933 6.817Z",
+          fill: "#000"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+        "path",
+        {
+          fillRule: "evenodd",
+          clipRule: "evenodd",
+          d: "m40.225 0 39.953 21.227-15.073 7.945-13.756-7.308-10.096 5.328 13.775 7.309-15.075 7.945L0 21.22l15.073-7.945 14.562 7.732 10.078-5.313-14.56-7.731L40.225 0ZM29.426 7.967l14.564 7.734L29.63 23.27 15.07 15.537l-10.794 5.69 35.68 18.956 10.793-5.688-13.773-7.307L51.352 19.6l13.757 7.308 10.794-5.69-35.68-18.956-10.797 5.704Z",
+          fill: "#000"
+        }
+      )
+    ]
+  }
+);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx
-var import_jsx_dev_runtime44 = __toESM(require_jsx_dev_runtime(), 1), HydrogenLogoBaseColor = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("svg", { width: 76, height: 81, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("path", { d: "M37.817 80.149 0 60.057l12.934-6.817 14.561 7.733 12.218-6.441-14.561-7.733 12.933-6.833 37.818 20.091-12.934 6.817-13.757-7.307-12.236 6.457 13.775 7.308-12.934 6.817Z", fill: "#000" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-    lineNumber: 2,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("path", { d: "M37.818 40.183 0 20.092l12.934-6.818 14.562 7.733 12.218-6.441-14.562-7.733L38.086 0l37.817 20.091-12.934 6.817-13.756-7.307-12.236 6.457 13.774 7.308-12.933 6.817Z", fill: "url(#a)" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-    lineNumber: 3,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("defs", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("linearGradient", { id: "a", x1: 74.48, y1: 21.654, x2: 18.735, y2: 51.694, gradientUnits: "userSpaceOnUse", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("stop", { offset: 2e-3, stopColor: "#430470" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-      lineNumber: 5,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("stop", { offset: 0.385, stopColor: "#8E01F0" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-      lineNumber: 6,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("stop", { offset: 0.635, stopColor: "#354CF6" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-      lineNumber: 7,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("stop", { offset: 1, stopColor: "#01FFFF" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-      lineNumber: 8,
-      columnNumber: 5
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-    lineNumber: 4,
-    columnNumber: 9
-  }, this) }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-    lineNumber: 4,
-    columnNumber: 3
-  }, this)
-] }, void 0, !0, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-  lineNumber: 1,
-  columnNumber: 42
-}, this);
+var import_jsx_runtime11 = __toESM(require_jsx_runtime(), 1), HydrogenLogoBaseColor = (props) => /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
+  "svg",
+  {
+    width: 76,
+    height: 81,
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    ...props,
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+        "path",
+        {
+          d: "M37.817 80.149 0 60.057l12.934-6.817 14.561 7.733 12.218-6.441-14.561-7.733 12.933-6.833 37.818 20.091-12.934 6.817-13.757-7.307-12.236 6.457 13.775 7.308-12.934 6.817Z",
+          fill: "#000"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+        "path",
+        {
+          d: "M37.818 40.183 0 20.092l12.934-6.818 14.562 7.733 12.218-6.441-14.562-7.733L38.086 0l37.817 20.091-12.934 6.817-13.756-7.307-12.236 6.457 13.774 7.308-12.933 6.817Z",
+          fill: "url(#a)"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("defs", { children: /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
+        "linearGradient",
+        {
+          id: "a",
+          x1: 74.48,
+          y1: 21.654,
+          x2: 18.735,
+          y2: 51.694,
+          gradientUnits: "userSpaceOnUse",
+          children: [
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("stop", { offset: 2e-3, stopColor: "#430470" }),
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("stop", { offset: 0.385, stopColor: "#8E01F0" }),
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("stop", { offset: 0.635, stopColor: "#354CF6" }),
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("stop", { offset: 1, stopColor: "#01FFFF" })
+          ]
+        }
+      ) })
+    ]
+  }
+);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconDiscord.jsx
-var import_jsx_dev_runtime45 = __toESM(require_jsx_dev_runtime(), 1), IconDiscord = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("svg", { width: 26, height: 20, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("path", { d: "M21.19 1.675A19.91 19.91 0 0 0 16.03 0c-.223.415-.482.973-.661 1.418a18.355 18.355 0 0 0-5.72 0A15.367 15.367 0 0 0 8.98 0a19.844 19.844 0 0 0-5.165 1.68C.55 6.776-.336 11.747.106 16.647c2.167 1.67 4.266 2.686 6.33 3.35.51-.724.964-1.495 1.356-2.306a13.149 13.149 0 0 1-2.135-1.073c.179-.137.354-.28.523-.428 4.116 1.989 8.588 1.989 12.655 0 .172.148.347.291.524.428a13.12 13.12 0 0 1-2.139 1.075c.392.81.844 1.582 1.356 2.306 2.066-.664 4.167-1.68 6.333-3.352.52-5.68-.887-10.606-3.718-14.973ZM8.353 13.635c-1.235 0-2.249-1.192-2.249-2.643 0-1.45.992-2.644 2.25-2.644 1.257 0 2.27 1.191 2.248 2.644.002 1.45-.991 2.642-2.249 2.642Zm8.311 0c-1.235 0-2.249-1.192-2.249-2.643 0-1.45.992-2.644 2.25-2.644 1.257 0 2.27 1.191 2.248 2.644 0 1.45-.991 2.642-2.249 2.642Z", fill: "#5C5F62" }, void 0, !1, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconDiscord.jsx",
-  lineNumber: 1,
-  columnNumber: 118
-}, this) }, void 0, !1, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconDiscord.jsx",
-  lineNumber: 1,
-  columnNumber: 32
-}, this);
+var import_jsx_runtime12 = __toESM(require_jsx_runtime(), 1), IconDiscord = (props) => /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
+  "svg",
+  {
+    width: 26,
+    height: 20,
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    ...props,
+    children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
+      "path",
+      {
+        d: "M21.19 1.675A19.91 19.91 0 0 0 16.03 0c-.223.415-.482.973-.661 1.418a18.355 18.355 0 0 0-5.72 0A15.367 15.367 0 0 0 8.98 0a19.844 19.844 0 0 0-5.165 1.68C.55 6.776-.336 11.747.106 16.647c2.167 1.67 4.266 2.686 6.33 3.35.51-.724.964-1.495 1.356-2.306a13.149 13.149 0 0 1-2.135-1.073c.179-.137.354-.28.523-.428 4.116 1.989 8.588 1.989 12.655 0 .172.148.347.291.524.428a13.12 13.12 0 0 1-2.139 1.075c.392.81.844 1.582 1.356 2.306 2.066-.664 4.167-1.68 6.333-3.352.52-5.68-.887-10.606-3.718-14.973ZM8.353 13.635c-1.235 0-2.249-1.192-2.249-2.643 0-1.45.992-2.644 2.25-2.644 1.257 0 2.27 1.191 2.248 2.644.002 1.45-.991 2.642-2.249 2.642Zm8.311 0c-1.235 0-2.249-1.192-2.249-2.643 0-1.45.992-2.644 2.25-2.644 1.257 0 2.27 1.191 2.248 2.644 0 1.45-.991 2.642-2.249 2.642Z",
+        fill: "#5C5F62"
+      }
+    )
+  }
+);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconGithub.jsx
-var import_jsx_dev_runtime46 = __toESM(require_jsx_dev_runtime(), 1), IconGithub = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime46.jsxDEV)("svg", { width: 20, height: 20, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime46.jsxDEV)("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M9.997 0C4.473 0 0 4.588 0 10.253c0 4.537 2.862 8.369 6.835 9.727.5.09.687-.218.687-.487 0-.243-.012-1.05-.012-1.91-2.512.475-3.161-.627-3.361-1.204-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.537 1.052.9 1.55 2.337 1.114 2.912.845.087-.666.35-1.115.637-1.371-2.224-.256-4.548-1.14-4.548-5.062 0-1.115.387-2.038 1.024-2.756-.1-.256-.45-1.307.1-2.717 0 0 .838-.269 2.75 1.051.8-.23 1.649-.346 2.499-.346.85 0 1.699.115 2.499.346 1.912-1.333 2.749-1.05 2.749-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.561 5.062.362.32.674.936.674 1.897 0 1.371-.012 2.473-.012 2.82 0 .268.187.589.687.486a10.036 10.036 0 0 0 4.93-3.74 10.45 10.45 0 0 0 1.88-5.987C19.993 4.588 15.52 0 9.997 0Z", fill: "#5C5F62" }, void 0, !1, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconGithub.jsx",
-  lineNumber: 1,
-  columnNumber: 117
-}, this) }, void 0, !1, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconGithub.jsx",
-  lineNumber: 1,
-  columnNumber: 31
-}, this);
+var import_jsx_runtime13 = __toESM(require_jsx_runtime(), 1), IconGithub = (props) => /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
+  "svg",
+  {
+    width: 20,
+    height: 20,
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    ...props,
+    children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
+      "path",
+      {
+        fillRule: "evenodd",
+        clipRule: "evenodd",
+        d: "M9.997 0C4.473 0 0 4.588 0 10.253c0 4.537 2.862 8.369 6.835 9.727.5.09.687-.218.687-.487 0-.243-.012-1.05-.012-1.91-2.512.475-3.161-.627-3.361-1.204-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.537 1.052.9 1.55 2.337 1.114 2.912.845.087-.666.35-1.115.637-1.371-2.224-.256-4.548-1.14-4.548-5.062 0-1.115.387-2.038 1.024-2.756-.1-.256-.45-1.307.1-2.717 0 0 .838-.269 2.75 1.051.8-.23 1.649-.346 2.499-.346.85 0 1.699.115 2.499.346 1.912-1.333 2.749-1.05 2.749-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.561 5.062.362.32.674.936.674 1.897 0 1.371-.012 2.473-.012 2.82 0 .268.187.589.687.486a10.036 10.036 0 0 0 4.93-3.74 10.45 10.45 0 0 0 1.88-5.987C19.993 4.588 15.52 0 9.997 0Z",
+        fill: "#5C5F62"
+      }
+    )
+  }
+);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconTwitter.jsx
-var import_jsx_dev_runtime47 = __toESM(require_jsx_dev_runtime(), 1), IconTwitter = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("svg", { width: 23, height: 20, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { d: "M20.53 4.979c.014.217.014.434.014.653C20.544 12.305 15.824 20 7.193 20v-.004C4.643 20 2.146 19.214 0 17.732c.37.048.743.072 1.117.073 2.113.002 4.165-.76 5.828-2.166-2.008-.04-3.77-1.45-4.384-3.506a4.356 4.356 0 0 0 2.118-.087C2.49 11.57.915 9.5.915 7.096v-.064a4.414 4.414 0 0 0 2.13.632C.983 6.18.348 3.229 1.593.92c2.382 3.155 5.897 5.073 9.67 5.276-.378-1.754.139-3.592 1.358-4.825 1.89-1.912 4.862-1.814 6.639.22A9.023 9.023 0 0 0 22.24.364c-.35 1.17-1.084 2.162-2.063 2.793a8.822 8.822 0 0 0 2.694-.795A9.97 9.97 0 0 1 20.53 4.98Z", fill: "#5C5F62" }, void 0, !1, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconTwitter.jsx",
-  lineNumber: 1,
-  columnNumber: 118
-}, this) }, void 0, !1, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconTwitter.jsx",
-  lineNumber: 1,
-  columnNumber: 32
-}, this);
+var import_jsx_runtime14 = __toESM(require_jsx_runtime(), 1), IconTwitter = (props) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+  "svg",
+  {
+    width: 23,
+    height: 20,
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    ...props,
+    children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+      "path",
+      {
+        d: "M20.53 4.979c.014.217.014.434.014.653C20.544 12.305 15.824 20 7.193 20v-.004C4.643 20 2.146 19.214 0 17.732c.37.048.743.072 1.117.073 2.113.002 4.165-.76 5.828-2.166-2.008-.04-3.77-1.45-4.384-3.506a4.356 4.356 0 0 0 2.118-.087C2.49 11.57.915 9.5.915 7.096v-.064a4.414 4.414 0 0 0 2.13.632C.983 6.18.348 3.229 1.593.92c2.382 3.155 5.897 5.073 9.67 5.276-.378-1.754.139-3.592 1.358-4.825 1.89-1.912 4.862-1.814 6.639.22A9.023 9.023 0 0 0 22.24.364c-.35 1.17-1.084 2.162-2.063 2.793a8.822 8.822 0 0 0 2.694-.795A9.97 9.97 0 0 1 20.53 4.98Z",
+        fill: "#5C5F62"
+      }
+    )
+  }
+);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx
-var import_jsx_dev_runtime48 = __toESM(require_jsx_dev_runtime(), 1), IconBanner = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("svg", { width: 32, height: 36, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M0 9.726h1.455v1.455H0z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 2,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#E172AC", d: "M1.454 9.726h1.455v1.455H1.454zM13.091 3.907h1.455v1.455h-1.455zM24.727 9.726h1.455v1.455h-1.455zM24.727 24.271h1.455v1.455h-1.455zM13.091 30.09h1.455v1.455h-1.455zM1.454 24.271h1.455v1.455H1.454z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 3,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#AC217D", d: "M5.818 9.726h1.455v1.455H5.818zM17.454 3.907h1.455v1.455h-1.455zM29.091 9.726h1.455v1.455h-1.455zM21.818 16.998h1.455v1.455h-1.455zM21.818 18.454h1.455v1.455h-1.455zM20.363 24.271h1.455v1.455h-1.455zM20.363 11.181h1.455v1.455h-1.455zM29.091 24.271h1.455v1.455h-1.455zM17.455 30.09h1.455v1.455h-1.455zM5.818 24.271h1.455v1.455H5.818z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 4,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M7.273 9.726h1.455v1.455H7.273zM1.454 8.271h1.455v1.455H1.454zM5.818 8.271h1.455v1.455H5.818zM2.909 6.817h1.455v1.455H2.909z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 5,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D43694", d: "M2.909 9.726h1.455v1.455H2.909zM14.546 3.907h1.455v1.455h-1.455zM26.182 9.726h1.455v1.455h-1.455zM18.909 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 6,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D43694", d: "M20.363 12.635h1.455v1.455h-1.455zM20.363 14.09h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 7,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D43694", d: "M20.363 15.544h1.455v1.455h-1.455zM11.636 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 8,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D43694", d: "M10.182 12.635h1.455v1.455h-1.455zM10.182 14.09h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 9,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D43694", d: "M10.182 15.544h1.455v1.455h-1.455zM10.182 19.908h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 10,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D43694", d: "M10.182 21.362h1.455v1.455h-1.455zM10.182 22.817h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 11,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D43694", d: "M11.636 24.271h1.455v1.455h-1.455zM20.363 19.908h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 12,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D43694", d: "M20.363 21.362h1.455v1.455h-1.455zM20.363 22.817h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 13,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D43694", d: "M18.909 24.271h1.455v1.455h-1.455zM26.182 24.271h1.455v1.455h-1.455zM14.545 30.09H16v1.455h-1.455zM2.909 24.271h1.455v1.455H2.909zM2.909 11.181h1.455v1.455H2.909zM14.546 5.361h1.455v1.455h-1.455zM26.182 11.181h1.455v1.455h-1.455zM26.182 25.726h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 14,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D43694", d: "M14.546 31.544h1.455v1.455h-1.455zM2.909 25.726h1.455v1.455H2.909z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 15,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M4.364 6.817h1.455v1.455H4.364z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 16,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D43694", d: "M4.364 9.726h1.455v1.455H4.364zM16 3.907h1.455v1.455H16zM27.637 9.726h1.455v1.455h-1.455zM27.637 24.271h1.455v1.455h-1.455zM16 30.09h1.455v1.455H16zM4.364 24.271h1.455v1.455H4.364z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 17,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D43694", d: "M4.364 11.181h1.455v1.455H4.364zM16 5.361h1.455v1.455H16zM27.637 11.181h1.455v1.455h-1.455zM27.637 25.726h1.455v1.455h-1.455zM16 31.544h1.455v1.455H16zM4.364 25.726h1.455v1.455H4.364z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 18,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#E172AC", d: "M2.909 8.271h1.455v1.455H2.909zM14.545 2.453H16v1.455h-1.455zM26.182 8.271h1.455v1.455h-1.455zM26.182 22.817h1.455v1.455h-1.455zM14.546 28.635h1.455v1.455h-1.455zM2.909 22.817h1.455v1.455H2.909z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 19,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#AC217D", d: "M2.909 12.635h1.455v1.455H2.909zM14.545 6.817H16v1.455h-1.455zM26.182 12.635h1.455v1.455h-1.455zM26.182 27.181h1.455v1.455h-1.455zM14.546 32.998h1.455v1.455h-1.455zM2.909 27.181h1.455v1.455H2.909z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 20,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#E172AC", d: "M4.364 8.271h1.455v1.455H4.364zM16 2.453h1.455v1.455H16zM27.637 8.271h1.455v1.455h-1.455zM27.637 22.817h1.455v1.455h-1.455zM16 28.635h1.455v1.455H16zM4.364 22.817h1.455v1.455H4.364z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 21,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#AC217D", d: "M4.364 12.635h1.455v1.455H4.364zM16 6.817h1.455v1.455H16zM27.637 12.635h1.455v1.455h-1.455zM27.637 27.181h1.455v1.455h-1.455zM16 32.998h1.455v1.455H16zM4.364 27.181h1.455v1.455H4.364z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 22,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M2.909 14.09h1.455v1.455H2.909zM4.364 14.09h1.455v1.455H4.364zM0 11.181h1.455v1.455H0z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 23,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M1.454 12.635h1.455v1.455H1.454z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 24,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#E172AC", d: "M1.454 11.181h1.455v1.455H1.454zM8.727 16.998h1.455v1.455H8.727zM10.182 11.181h1.455v1.455h-1.455zM10.182 24.271h1.455v1.455h-1.455zM8.727 18.454h1.455v1.455H8.727zM13.091 5.361h1.455v1.455h-1.455zM24.727 11.181h1.455v1.455h-1.455zM24.727 25.726h1.455v1.455h-1.455zM13.091 31.544h1.455v1.455h-1.455zM1.454 25.726h1.455v1.455H1.454z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 25,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#AC217D", d: "M5.818 11.181h1.455v1.455H5.818zM17.454 5.361h1.455v1.455h-1.455zM29.091 11.181h1.455v1.455h-1.455zM29.091 25.726h1.455v1.455h-1.455zM17.454 31.544h1.455v1.455h-1.455zM5.818 25.726h1.455v1.455H5.818z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 26,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M5.818 12.635h1.455v1.455H5.818zM7.273 11.181h1.455v1.455H7.273zM0 24.271h1.455v1.455H0zM23.273 9.726h1.455v1.455h-1.455zM7.273 24.271h1.455v1.455H7.273zM30.546 9.726h1.455v1.455h-1.455zM1.455 22.817H2.91v1.455H1.455zM24.727 8.271h1.455v1.455h-1.455zM5.818 22.817h1.455v1.455H5.818zM29.091 8.271h1.455v1.455h-1.455zM2.909 21.362h1.455v1.455H2.909z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 27,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M26.182 6.817h1.455v1.455h-1.455zM4.364 21.362h1.455v1.455H4.364zM27.637 6.817h1.455v1.455h-1.455zM2.909 28.635h1.455v1.455H2.909zM26.182 14.09h1.455v1.455h-1.455zM4.364 28.635h1.455v1.455H4.364zM27.637 14.09h1.455v1.455h-1.455zM1.454 27.181h1.455v1.455H1.454zM24.727 12.635h1.455v1.455h-1.455zM0 25.726h1.455v1.455H0z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 28,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M23.273 11.181h1.455v1.455h-1.455zM5.818 27.181h1.455v1.455H5.818zM29.091 12.635h1.455v1.455h-1.455zM7.273 25.726h1.455v1.455H7.273zM30.546 11.181h1.455v1.455h-1.455zM23.273 24.271h1.455v1.455h-1.455zM11.636 30.09h1.455v1.455h-1.455zM11.636 3.907h1.455v1.455h-1.455zM18.909 30.09h1.455v1.455h-1.455zM30.546 24.271h1.455v1.455h-1.455zM13.091 28.635h1.455v1.455h-1.455zM18.909 3.907h1.455v1.455h-1.455zM17.454 28.635h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 29,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M24.727 22.817h1.455v1.455h-1.455zM14.546 27.181h1.455v1.455h-1.455zM13.091 2.453h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 30,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M16 27.181h1.455v1.455H16zM29.091 22.817h1.455v1.455h-1.455zM14.545 34.454H16v1.455h-1.455zM17.455 2.453h1.455v1.455h-1.455zM16 34.454h1.455v1.455H16zM26.182 21.362h1.455v1.455h-1.455zM13.091 32.998h1.455v1.455h-1.455zM14.546.998h1.455v1.455h-1.455zM11.636 31.544h1.455v1.455h-1.455zM27.637 21.362h1.455v1.455h-1.455zM17.454 32.998h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 31,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M16 .998h1.455v1.455H16zM18.909 31.544h1.455v1.455h-1.455zM26.182 28.635h1.455v1.455h-1.455zM14.546 8.271h1.455v1.455h-1.455zM27.637 28.635h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 32,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M16 8.271h1.455v1.455H16zM24.727 27.181h1.455v1.455h-1.455zM13.091 6.817h1.455v1.455h-1.455zM23.273 25.726h1.455v1.455h-1.455zM11.636 5.361h1.455v1.455h-1.455zM29.091 27.181h1.455v1.455h-1.455zM17.455 6.817h1.455v1.455h-1.455zM30.546 25.726h1.455v1.455h-1.455zM18.909 5.361h1.455v1.455h-1.455zM8.727 11.181h1.455v1.455H8.727z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 33,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M8.727 12.635h1.455v1.455H8.727zM8.727 19.908h1.455v1.455H8.727zM21.818 19.908h1.455v1.455h-1.455zM21.818 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 34,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M8.727 21.362h1.455v1.455H8.727zM21.818 21.362h1.455v1.455h-1.455zM8.727 14.09h1.455v1.455H8.727zM21.818 12.635h1.455v1.455h-1.455zM8.727 22.817h1.455v1.455H8.727z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 35,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M8.727 24.271h1.455v1.455H8.727zM7.273 16.998h1.455v1.455H7.273zM21.818 22.817h1.455v1.455h-1.455zM23.273 16.998h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 36,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M21.818 24.271h1.455v1.455h-1.455zM8.727 15.544h1.455v1.455H8.727zM21.818 14.09h1.455v1.455h-1.455zM7.273 18.454h1.455v1.455H7.273z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 37,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M21.818 15.544h1.455v1.455h-1.455zM23.273 18.454h1.455v1.455h-1.455zM11.636 12.635h1.455v1.455h-1.455zM11.636 19.908h1.455v1.455h-1.455zM18.909 19.908h1.455v1.455h-1.455zM18.909 12.635h1.455v1.455h-1.455zM11.636 14.09h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 38,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M11.636 21.362h1.455v1.455h-1.455zM18.909 21.362h1.455v1.455h-1.455zM18.909 14.09h1.455v1.455h-1.455zM10.182 16.998h1.455v1.455h-1.455zM20.363 16.998h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 39,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M11.636 15.544h1.455v1.455h-1.455zM11.636 22.817h1.455v1.455h-1.455zM18.909 22.817h1.455v1.455h-1.455zM18.909 15.544h1.455v1.455h-1.455zM13.091 24.271h1.455v1.455h-1.455zM17.454 24.271h1.455v1.455h-1.455zM13.091 25.726h1.455v1.455h-1.455zM17.454 25.726h1.455v1.455h-1.455zM11.636 25.726h1.455v1.455h-1.455zM20.363 25.726h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 40,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M10.182 25.726h1.455v1.455h-1.455zM18.909 25.726h1.455v1.455h-1.455zM10.182 18.454h1.455v1.455h-1.455zM20.363 18.454h1.455v1.455h-1.455zM10.182 9.726h1.455v1.455h-1.455zM18.909 9.726h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 41,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M11.636 9.726h1.455v1.455h-1.455zM20.363 9.726h1.455v1.455h-1.455zM13.091 9.726h1.455v1.455h-1.455zM17.454 9.726h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 42,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M13.091 11.181h1.455v1.455h-1.455zM17.454 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 43,
-    columnNumber: 3
-  }, this)
-] }, void 0, !0, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-  lineNumber: 1,
-  columnNumber: 31
-}, this);
+var import_jsx_runtime15 = __toESM(require_jsx_runtime(), 1), IconBanner = (props) => /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(
+  "svg",
+  {
+    width: 32,
+    height: 36,
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    ...props,
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("path", { fill: "#000", d: "M0 9.726h1.455v1.455H0z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#E172AC",
+          d: "M1.454 9.726h1.455v1.455H1.454zM13.091 3.907h1.455v1.455h-1.455zM24.727 9.726h1.455v1.455h-1.455zM24.727 24.271h1.455v1.455h-1.455zM13.091 30.09h1.455v1.455h-1.455zM1.454 24.271h1.455v1.455H1.454z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#AC217D",
+          d: "M5.818 9.726h1.455v1.455H5.818zM17.454 3.907h1.455v1.455h-1.455zM29.091 9.726h1.455v1.455h-1.455zM21.818 16.998h1.455v1.455h-1.455zM21.818 18.454h1.455v1.455h-1.455zM20.363 24.271h1.455v1.455h-1.455zM20.363 11.181h1.455v1.455h-1.455zM29.091 24.271h1.455v1.455h-1.455zM17.455 30.09h1.455v1.455h-1.455zM5.818 24.271h1.455v1.455H5.818z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M7.273 9.726h1.455v1.455H7.273zM1.454 8.271h1.455v1.455H1.454zM5.818 8.271h1.455v1.455H5.818zM2.909 6.817h1.455v1.455H2.909z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#D43694",
+          d: "M2.909 9.726h1.455v1.455H2.909zM14.546 3.907h1.455v1.455h-1.455zM26.182 9.726h1.455v1.455h-1.455zM18.909 11.181h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#D43694",
+          d: "M20.363 12.635h1.455v1.455h-1.455zM20.363 14.09h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#D43694",
+          d: "M20.363 15.544h1.455v1.455h-1.455zM11.636 11.181h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#D43694",
+          d: "M10.182 12.635h1.455v1.455h-1.455zM10.182 14.09h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#D43694",
+          d: "M10.182 15.544h1.455v1.455h-1.455zM10.182 19.908h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#D43694",
+          d: "M10.182 21.362h1.455v1.455h-1.455zM10.182 22.817h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#D43694",
+          d: "M11.636 24.271h1.455v1.455h-1.455zM20.363 19.908h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#D43694",
+          d: "M20.363 21.362h1.455v1.455h-1.455zM20.363 22.817h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#D43694",
+          d: "M18.909 24.271h1.455v1.455h-1.455zM26.182 24.271h1.455v1.455h-1.455zM14.545 30.09H16v1.455h-1.455zM2.909 24.271h1.455v1.455H2.909zM2.909 11.181h1.455v1.455H2.909zM14.546 5.361h1.455v1.455h-1.455zM26.182 11.181h1.455v1.455h-1.455zM26.182 25.726h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#D43694",
+          d: "M14.546 31.544h1.455v1.455h-1.455zM2.909 25.726h1.455v1.455H2.909z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("path", { fill: "#000", d: "M4.364 6.817h1.455v1.455H4.364z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#D43694",
+          d: "M4.364 9.726h1.455v1.455H4.364zM16 3.907h1.455v1.455H16zM27.637 9.726h1.455v1.455h-1.455zM27.637 24.271h1.455v1.455h-1.455zM16 30.09h1.455v1.455H16zM4.364 24.271h1.455v1.455H4.364z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#D43694",
+          d: "M4.364 11.181h1.455v1.455H4.364zM16 5.361h1.455v1.455H16zM27.637 11.181h1.455v1.455h-1.455zM27.637 25.726h1.455v1.455h-1.455zM16 31.544h1.455v1.455H16zM4.364 25.726h1.455v1.455H4.364z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#E172AC",
+          d: "M2.909 8.271h1.455v1.455H2.909zM14.545 2.453H16v1.455h-1.455zM26.182 8.271h1.455v1.455h-1.455zM26.182 22.817h1.455v1.455h-1.455zM14.546 28.635h1.455v1.455h-1.455zM2.909 22.817h1.455v1.455H2.909z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#AC217D",
+          d: "M2.909 12.635h1.455v1.455H2.909zM14.545 6.817H16v1.455h-1.455zM26.182 12.635h1.455v1.455h-1.455zM26.182 27.181h1.455v1.455h-1.455zM14.546 32.998h1.455v1.455h-1.455zM2.909 27.181h1.455v1.455H2.909z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#E172AC",
+          d: "M4.364 8.271h1.455v1.455H4.364zM16 2.453h1.455v1.455H16zM27.637 8.271h1.455v1.455h-1.455zM27.637 22.817h1.455v1.455h-1.455zM16 28.635h1.455v1.455H16zM4.364 22.817h1.455v1.455H4.364z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#AC217D",
+          d: "M4.364 12.635h1.455v1.455H4.364zM16 6.817h1.455v1.455H16zM27.637 12.635h1.455v1.455h-1.455zM27.637 27.181h1.455v1.455h-1.455zM16 32.998h1.455v1.455H16zM4.364 27.181h1.455v1.455H4.364z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M2.909 14.09h1.455v1.455H2.909zM4.364 14.09h1.455v1.455H4.364zM0 11.181h1.455v1.455H0z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("path", { fill: "#000", d: "M1.454 12.635h1.455v1.455H1.454z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#E172AC",
+          d: "M1.454 11.181h1.455v1.455H1.454zM8.727 16.998h1.455v1.455H8.727zM10.182 11.181h1.455v1.455h-1.455zM10.182 24.271h1.455v1.455h-1.455zM8.727 18.454h1.455v1.455H8.727zM13.091 5.361h1.455v1.455h-1.455zM24.727 11.181h1.455v1.455h-1.455zM24.727 25.726h1.455v1.455h-1.455zM13.091 31.544h1.455v1.455h-1.455zM1.454 25.726h1.455v1.455H1.454z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#AC217D",
+          d: "M5.818 11.181h1.455v1.455H5.818zM17.454 5.361h1.455v1.455h-1.455zM29.091 11.181h1.455v1.455h-1.455zM29.091 25.726h1.455v1.455h-1.455zM17.454 31.544h1.455v1.455h-1.455zM5.818 25.726h1.455v1.455H5.818z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M5.818 12.635h1.455v1.455H5.818zM7.273 11.181h1.455v1.455H7.273zM0 24.271h1.455v1.455H0zM23.273 9.726h1.455v1.455h-1.455zM7.273 24.271h1.455v1.455H7.273zM30.546 9.726h1.455v1.455h-1.455zM1.455 22.817H2.91v1.455H1.455zM24.727 8.271h1.455v1.455h-1.455zM5.818 22.817h1.455v1.455H5.818zM29.091 8.271h1.455v1.455h-1.455zM2.909 21.362h1.455v1.455H2.909z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M26.182 6.817h1.455v1.455h-1.455zM4.364 21.362h1.455v1.455H4.364zM27.637 6.817h1.455v1.455h-1.455zM2.909 28.635h1.455v1.455H2.909zM26.182 14.09h1.455v1.455h-1.455zM4.364 28.635h1.455v1.455H4.364zM27.637 14.09h1.455v1.455h-1.455zM1.454 27.181h1.455v1.455H1.454zM24.727 12.635h1.455v1.455h-1.455zM0 25.726h1.455v1.455H0z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M23.273 11.181h1.455v1.455h-1.455zM5.818 27.181h1.455v1.455H5.818zM29.091 12.635h1.455v1.455h-1.455zM7.273 25.726h1.455v1.455H7.273zM30.546 11.181h1.455v1.455h-1.455zM23.273 24.271h1.455v1.455h-1.455zM11.636 30.09h1.455v1.455h-1.455zM11.636 3.907h1.455v1.455h-1.455zM18.909 30.09h1.455v1.455h-1.455zM30.546 24.271h1.455v1.455h-1.455zM13.091 28.635h1.455v1.455h-1.455zM18.909 3.907h1.455v1.455h-1.455zM17.454 28.635h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M24.727 22.817h1.455v1.455h-1.455zM14.546 27.181h1.455v1.455h-1.455zM13.091 2.453h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M16 27.181h1.455v1.455H16zM29.091 22.817h1.455v1.455h-1.455zM14.545 34.454H16v1.455h-1.455zM17.455 2.453h1.455v1.455h-1.455zM16 34.454h1.455v1.455H16zM26.182 21.362h1.455v1.455h-1.455zM13.091 32.998h1.455v1.455h-1.455zM14.546.998h1.455v1.455h-1.455zM11.636 31.544h1.455v1.455h-1.455zM27.637 21.362h1.455v1.455h-1.455zM17.454 32.998h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M16 .998h1.455v1.455H16zM18.909 31.544h1.455v1.455h-1.455zM26.182 28.635h1.455v1.455h-1.455zM14.546 8.271h1.455v1.455h-1.455zM27.637 28.635h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M16 8.271h1.455v1.455H16zM24.727 27.181h1.455v1.455h-1.455zM13.091 6.817h1.455v1.455h-1.455zM23.273 25.726h1.455v1.455h-1.455zM11.636 5.361h1.455v1.455h-1.455zM29.091 27.181h1.455v1.455h-1.455zM17.455 6.817h1.455v1.455h-1.455zM30.546 25.726h1.455v1.455h-1.455zM18.909 5.361h1.455v1.455h-1.455zM8.727 11.181h1.455v1.455H8.727z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M8.727 12.635h1.455v1.455H8.727zM8.727 19.908h1.455v1.455H8.727zM21.818 19.908h1.455v1.455h-1.455zM21.818 11.181h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M8.727 21.362h1.455v1.455H8.727zM21.818 21.362h1.455v1.455h-1.455zM8.727 14.09h1.455v1.455H8.727zM21.818 12.635h1.455v1.455h-1.455zM8.727 22.817h1.455v1.455H8.727z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M8.727 24.271h1.455v1.455H8.727zM7.273 16.998h1.455v1.455H7.273zM21.818 22.817h1.455v1.455h-1.455zM23.273 16.998h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M21.818 24.271h1.455v1.455h-1.455zM8.727 15.544h1.455v1.455H8.727zM21.818 14.09h1.455v1.455h-1.455zM7.273 18.454h1.455v1.455H7.273z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M21.818 15.544h1.455v1.455h-1.455zM23.273 18.454h1.455v1.455h-1.455zM11.636 12.635h1.455v1.455h-1.455zM11.636 19.908h1.455v1.455h-1.455zM18.909 19.908h1.455v1.455h-1.455zM18.909 12.635h1.455v1.455h-1.455zM11.636 14.09h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M11.636 21.362h1.455v1.455h-1.455zM18.909 21.362h1.455v1.455h-1.455zM18.909 14.09h1.455v1.455h-1.455zM10.182 16.998h1.455v1.455h-1.455zM20.363 16.998h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M11.636 15.544h1.455v1.455h-1.455zM11.636 22.817h1.455v1.455h-1.455zM18.909 22.817h1.455v1.455h-1.455zM18.909 15.544h1.455v1.455h-1.455zM13.091 24.271h1.455v1.455h-1.455zM17.454 24.271h1.455v1.455h-1.455zM13.091 25.726h1.455v1.455h-1.455zM17.454 25.726h1.455v1.455h-1.455zM11.636 25.726h1.455v1.455h-1.455zM20.363 25.726h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M10.182 25.726h1.455v1.455h-1.455zM18.909 25.726h1.455v1.455h-1.455zM10.182 18.454h1.455v1.455h-1.455zM20.363 18.454h1.455v1.455h-1.455zM10.182 9.726h1.455v1.455h-1.455zM18.909 9.726h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M11.636 9.726h1.455v1.455h-1.455zM20.363 9.726h1.455v1.455h-1.455zM13.091 9.726h1.455v1.455h-1.455zM17.454 9.726h1.455v1.455h-1.455z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M13.091 11.181h1.455v1.455h-1.455zM17.454 11.181h1.455v1.455h-1.455z"
+        }
+      )
+    ]
+  }
+);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx
-var import_jsx_dev_runtime49 = __toESM(require_jsx_dev_runtime(), 1), IconError = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("svg", { width: 32, height: 32, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M6 18h20v2H6zM30 8h2v16h-2zM0 8h2v16H0z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 2,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#F63310", d: "M2 8h2v16H2zM4 6h2v4H4zM6 4h2v4H6zM8 2h2v4H8zM24 4h2v2h-2zM26 6h2v2h-2z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 3,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#74170B", d: "M26 24h2v2h-2zM28 22h2v2h-2zM24 26h2v2h-2zM22 28h2v2h-2z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 4,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#971C06", d: "M6 26h2v2H6zM4 24h2v2H4zM4 18h2v2H4zM26 18h2v2h-2zM26 12h2v2h-2z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 5,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D62C0D", d: "M26 8h2v4h-2zM4 10h2v2H4zM8 6h18v2H8zM10 4h14v2H10zM6 8h20v2H6z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 6,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#971C06", d: "M28 10h2v12h-2zM8 28h14v2H8z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 7,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D62C0D", d: "M26 20h2v2h-2zM4 20h2v2H4z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 8,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#F63310", d: "M4 12h2v2H4z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 9,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#971C06", d: "M6 20h20v2H6z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 10,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#F63310", d: "M28 8h2v2h-2zM10 2h14v2H10zM6 10h20v2H6z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 11,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D62C0D", d: "M4 22h24v2H4zM6 24h20v2H6zM8 26h16v2H8z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 12,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M6 12h20v2H6z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 13,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#fff", d: "M6 14h20v2H6zM6 16h2v2H6z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 14,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#ECEDEE", d: "M8 16h18v2H8z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 15,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M4 14h2v4H4zM26 14h2v4h-2zM2 6h2v2H2zM4 4h2v2H4zM6 2h2v2H6zM24 2h2v2h-2zM26 4h2v2h-2zM26 26h2v2h-2zM24 28h2v2h-2zM6 28h2v2H6zM4 26h2v2H4zM2 24h2v2H2zM8 30h16v2H8zM28 6h2v2h-2zM28 24h2v2h-2zM8 0h16v2H8z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 16,
-    columnNumber: 3
-  }, this)
-] }, void 0, !0, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-  lineNumber: 1,
-  columnNumber: 30
-}, this);
+var import_jsx_runtime16 = __toESM(require_jsx_runtime(), 1), IconError = (props) => /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(
+  "svg",
+  {
+    width: 32,
+    height: 32,
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    ...props,
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { fill: "#000", d: "M6 18h20v2H6zM30 8h2v16h-2zM0 8h2v16H0z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+        "path",
+        {
+          fill: "#F63310",
+          d: "M2 8h2v16H2zM4 6h2v4H4zM6 4h2v4H6zM8 2h2v4H8zM24 4h2v2h-2zM26 6h2v2h-2z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+        "path",
+        {
+          fill: "#74170B",
+          d: "M26 24h2v2h-2zM28 22h2v2h-2zM24 26h2v2h-2zM22 28h2v2h-2z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+        "path",
+        {
+          fill: "#971C06",
+          d: "M6 26h2v2H6zM4 24h2v2H4zM4 18h2v2H4zM26 18h2v2h-2zM26 12h2v2h-2z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+        "path",
+        {
+          fill: "#D62C0D",
+          d: "M26 8h2v4h-2zM4 10h2v2H4zM8 6h18v2H8zM10 4h14v2H10zM6 8h20v2H6z"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { fill: "#971C06", d: "M28 10h2v12h-2zM8 28h14v2H8z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { fill: "#D62C0D", d: "M26 20h2v2h-2zM4 20h2v2H4z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { fill: "#F63310", d: "M4 12h2v2H4z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { fill: "#971C06", d: "M6 20h20v2H6z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { fill: "#F63310", d: "M28 8h2v2h-2zM10 2h14v2H10zM6 10h20v2H6z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { fill: "#D62C0D", d: "M4 22h24v2H4zM6 24h20v2H6zM8 26h16v2H8z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { fill: "#000", d: "M6 12h20v2H6z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { fill: "#fff", d: "M6 14h20v2H6zM6 16h2v2H6z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { fill: "#ECEDEE", d: "M8 16h18v2H8z" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+        "path",
+        {
+          fill: "#000",
+          d: "M4 14h2v4H4zM26 14h2v4h-2zM2 6h2v2H2zM4 4h2v2H4zM6 2h2v2H6zM24 2h2v2h-2zM26 4h2v2h-2zM26 26h2v2h-2zM24 28h2v2h-2zM6 28h2v2H6zM4 26h2v2H4zM2 24h2v2H2zM8 30h16v2H8zM28 6h2v2h-2zM28 24h2v2h-2zM8 0h16v2H8z"
+        }
+      )
+    ]
+  }
+);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/assets/inter-variable-font.woff2
 var inter_variable_font_default = "/build/_assets/inter-variable-font-PIM5FCLG.woff2";
@@ -70047,7 +70583,7 @@ var inter_variable_font_default = "/build/_assets/inter-variable-font-PIM5FCLG.w
 var jetbrainsmono_variable_font_default = "/build/_assets/jetbrainsmono-variable-font-QJMIHK5L.woff2";
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx
-var import_jsx_dev_runtime50 = __toESM(require_jsx_dev_runtime(), 1), links3 = () => [
+var links3 = () => [
   {
     rel: "icon",
     type: "image/svg+xml",
@@ -70074,402 +70610,222 @@ async function loader28({
   return { layout: await storefront.query(LAYOUT_QUERY), isMockShop: storefront.getApiUrl().includes("mock.shop") };
 }
 var HYDROGEN_SHOP_ID = "gid://shopify/Shop/55145660472";
-function ErrorBoundary3() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(ErrorPage, {}, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 41,
-    columnNumber: 10
-  }, this);
+function ErrorBoundary4() {
+  return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ErrorPage, {});
 }
 function Index() {
   let {
-    isMockShop,
+    isMockShop: isMockShop2,
     layout: { shop }
-  } = useLoaderData2(), { name: shopName, id: shopId } = shop, configDone = shopId !== HYDROGEN_SHOP_ID && !isMockShop;
-  return (isMockShop || !shopName) && (shopName = "Hydrogen"), /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(import_jsx_dev_runtime50.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(Layout3, { shopName, children: [
-    configDone ? /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(HydrogenLogoBaseColor, {}, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 53,
-      columnNumber: 19
-    }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(HydrogenLogoBaseBW, {}, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 53,
-      columnNumber: 47
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("h1", { children: [
+  } = useLoaderData2(), { name: shopName, id: shopId } = shop, configDone = shopId !== HYDROGEN_SHOP_ID && !isMockShop2;
+  return (isMockShop2 || !shopName) && (shopName = "Hydrogen"), /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_jsx_runtime17.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(Layout3, { shopName, children: [
+    configDone ? /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(HydrogenLogoBaseColor, {}) : /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(HydrogenLogoBaseBW, {}),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("h1", { children: [
       "Hello, ",
       shopName
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 54,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("p", { children: "Welcome to your new custom storefront" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 58,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("section", { className: "Banner", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(IconBanner, {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 61,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("h2", { children: configDone ? "Create your first route" : "Configure storefront token" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 62,
-          columnNumber: 9
-        }, this)
-      ] }, void 0, !0, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 60,
-        columnNumber: 7
-      }, this),
-      configDone ? /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("p", { children: [
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: "Welcome to your new custom storefront" }),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("section", { className: "Banner", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconBanner, {}),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { children: configDone ? "Create your first route" : "Configure storefront token" })
+      ] }),
+      configDone ? /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("p", { children: [
         "You\u2019re seeing this because you don\u2019t have a home route in your project yet. ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("br", {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 66,
-          columnNumber: 9
-        }, this),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("br", {}),
         "Run ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("code", { children: "h2 generate route home" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 68,
-          columnNumber: 9
-        }, this),
-        " to create your home route. Learn more about",
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("code", { children: "h2 setup" }),
+        " to scaffold standard Shopify routes. Learn more about",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(CreateRoutesLink, {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 71,
-          columnNumber: 9
-        }, this)
-      ] }, void 0, !0, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 64,
-        columnNumber: 21
-      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("p", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(CreateRoutesLink, {})
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("p", { children: [
         "You\u2019re seeing this because you have not yet configured your storefront token. ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("br", {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 74,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("br", {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 75,
-          columnNumber: 9
-        }, this),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("br", {}),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("br", {}),
         " To link your store,",
         " ",
         "run ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("code", { children: "h2 link && h2 env pull" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 79,
-          columnNumber: 9
-        }, this),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("code", { children: "h2 link && h2 env pull" }),
         ". Then, run",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("code", { children: "h2 generate route home" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 82,
-          columnNumber: 9
-        }, this),
-        " to create your first route.",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("br", {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 84,
-          columnNumber: 9
-        }, this),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("code", { children: "h2 setup" }),
+        " to scaffold standard Shopify routes.",
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("br", {}),
         "Learn more about",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/docs/custom-storefronts/hydrogen/environment-variables", children: "editing environment variables" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 87,
-          columnNumber: 9
-        }, this),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+          "a",
+          {
+            target: "_blank",
+            rel: "norefferer noopener",
+            href: "https://shopify.dev/docs/custom-storefronts/hydrogen/environment-variables",
+            children: "editing environment variables"
+          }
+        ),
         " ",
         "and",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(CreateRoutesLink, {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 91,
-          columnNumber: 9
-        }, this),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(CreateRoutesLink, {}),
         "."
-      ] }, void 0, !0, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 72,
-        columnNumber: 14
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 59,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(ResourcesLinks, {}, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 95,
-      columnNumber: 5
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 52,
-    columnNumber: 12
-  }, this) }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 52,
-    columnNumber: 10
-  }, this);
+      ] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ResourcesLinks, {})
+  ] }) });
 }
 function CreateRoutesLink() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/docs/custom-storefronts/hydrogen/building/begin-development#step-4-create-a-route", children: "creating routes" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 99,
-    columnNumber: 10
-  }, this);
+  return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+    "a",
+    {
+      target: "_blank",
+      rel: "norefferer noopener",
+      href: "https://shopify.dev/docs/custom-storefronts/hydrogen/building/begin-development#step-4-create-a-route",
+      children: "creating routes"
+    }
+  );
 }
 function ErrorPage() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(import_jsx_dev_runtime50.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(Layout3, { shopName: "Hydrogen", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(HydrogenLogoBaseBW, {}, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 103,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("h1", { children: "Hello, Hydrogen" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 104,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("p", { children: "Welcome to your new custom storefront" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 105,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("section", { className: "Banner ErrorBanner", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(IconError, {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 108,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("h2", { children: "There\u2019s a problem with your storefront" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 109,
-          columnNumber: 9
-        }, this)
-      ] }, void 0, !0, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 107,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("p", { children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_jsx_runtime17.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(Layout3, { shopName: "Hydrogen", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(HydrogenLogoBaseBW, {}),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h1", { children: "Hello, Hydrogen" }),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: "Welcome to your new custom storefront" }),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("section", { className: "Banner ErrorBanner", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconError, {}),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { children: "There\u2019s a problem with your storefront" })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("p", { children: [
         "Check your domain and API token in your ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("code", { children: ".env" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 113,
-          columnNumber: 9
-        }, this),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("code", { children: ".env" }),
         " file. Learn more about",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/docs/custom-storefronts/hydrogen/environment-variables", children: "editing environment variables" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 116,
-          columnNumber: 9
-        }, this),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+          "a",
+          {
+            target: "_blank",
+            rel: "norefferer noopener",
+            href: "https://shopify.dev/docs/custom-storefronts/hydrogen/environment-variables",
+            children: "editing environment variables"
+          }
+        ),
         "."
-      ] }, void 0, !0, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 111,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 106,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(ResourcesLinks, {}, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 120,
-      columnNumber: 5
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 102,
-    columnNumber: 12
-  }, this) }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 102,
-    columnNumber: 10
-  }, this);
+      ] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ResourcesLinks, {})
+  ] }) });
 }
 function ResourcesLinks() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(import_jsx_dev_runtime50.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("section", { className: "Links", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("h2", { children: "Start building" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 125,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("ul", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/building/collection-page", children: "Collection template" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 127,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 127,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/building/product-details-page", children: "Product template" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 128,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 128,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/building/cart", children: "Cart" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 129,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 129,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 126,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("h2", { children: "Resources" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 131,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("ul", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen", children: "Hydrogen docs" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 133,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 133,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/project-structure", children: "Remix and project structure" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 134,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 134,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/data-fetching/fetch-data", children: "Data queries and fetching" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 135,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 135,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 132,
-      columnNumber: 5
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 124,
-    columnNumber: 12
-  }, this) }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 124,
-    columnNumber: 10
-  }, this);
+  return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_jsx_runtime17.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("section", { className: "Links", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { children: "Start building" }),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+        "a",
+        {
+          target: "_blank",
+          rel: "norefferer noopener",
+          href: "https://shopify.dev/custom-storefronts/hydrogen/building/collection-page",
+          children: "Collection template"
+        }
+      ) }),
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+        "a",
+        {
+          target: "_blank",
+          rel: "norefferer noopener",
+          href: "https://shopify.dev/custom-storefronts/hydrogen/building/product-details-page",
+          children: "Product template"
+        }
+      ) }),
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+        "a",
+        {
+          target: "_blank",
+          rel: "norefferer noopener",
+          href: "https://shopify.dev/custom-storefronts/hydrogen/building/cart",
+          children: "Cart"
+        }
+      ) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { children: "Resources" }),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+        "a",
+        {
+          target: "_blank",
+          rel: "norefferer noopener",
+          href: "https://shopify.dev/custom-storefronts/hydrogen",
+          children: "Hydrogen docs"
+        }
+      ) }),
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+        "a",
+        {
+          target: "_blank",
+          rel: "norefferer noopener",
+          href: "https://shopify.dev/custom-storefronts/hydrogen/project-structure",
+          children: "Remix and project structure"
+        }
+      ) }),
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+        "a",
+        {
+          target: "_blank",
+          rel: "norefferer noopener",
+          href: "https://shopify.dev/custom-storefronts/hydrogen/data-fetching/fetch-data",
+          children: "Data queries and fetching"
+        }
+      ) })
+    ] })
+  ] }) });
 }
 function Layout3({
   shopName,
   children
 }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(import_jsx_dev_runtime50.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("header", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("h1", { children: shopName == null ? void 0 : shopName.toUpperCase() }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 145,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("p", { children: "\xA0Dev Mode\xA0" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 146,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("nav", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://discord.com/invite/shopifydevs", children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(IconDiscord, {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 148,
-          columnNumber: 100
-        }, this) }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 148,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://github.com/Shopify/hydrogen", children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(IconGithub, {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 149,
-          columnNumber: 97
-        }, this) }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 149,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://twitter.com/shopifydevs?lang=en", children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)(IconTwitter, {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 150,
-          columnNumber: 101
-        }, this) }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 150,
-          columnNumber: 9
-        }, this)
-      ] }, void 0, !0, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 147,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 144,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("main", { children }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 153,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("footer", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("a", { href: "https://shopify.com", target: "_blank", rel: "noreferrer noopener", children: "Powered by Shopify" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 154,
-      columnNumber: 18
-    }, this) }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 154,
-      columnNumber: 13
-    }, this) }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 154,
-      columnNumber: 5
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 143,
-    columnNumber: 10
-  }, this);
+  return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("header", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h1", { children: shopName == null ? void 0 : shopName.toUpperCase() }),
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: "\xA0Dev Mode\xA0" }),
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("nav", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+          "a",
+          {
+            target: "_blank",
+            rel: "norefferer noopener",
+            href: "https://discord.com/invite/shopifydevs",
+            children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconDiscord, {})
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+          "a",
+          {
+            target: "_blank",
+            rel: "norefferer noopener",
+            href: "https://github.com/Shopify/hydrogen",
+            children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconGithub, {})
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+          "a",
+          {
+            target: "_blank",
+            rel: "norefferer noopener",
+            href: "https://twitter.com/shopifydevs?lang=en",
+            children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconTwitter, {})
+          }
+        )
+      ] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("main", { children }),
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("footer", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+      "a",
+      {
+        href: "https://shopify.com",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        children: "Powered by Shopify"
+      }
+    ) }) })
+  ] });
 }
 var LAYOUT_QUERY = `#graphql
   query layout {
@@ -70481,7 +70837,7 @@ var LAYOUT_QUERY = `#graphql
 `;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-5D4RV7AF.js", imports: ["/build/_shared/chunk-JGYP5LFQ.js", "/build/_shared/chunk-ND6AE27L.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-DFY2UAGS.js", imports: ["/build/_shared/chunk-GGJW3J2E.js", "/build/_shared/chunk-RGNCV552.js", "/build/_shared/chunk-WF6WAY7Q.js", "/build/_shared/chunk-PWHQKGDM.js", "/build/_shared/chunk-WM2HYJEI.js", "/build/_shared/chunk-CXM5GY6O.js", "/build/_shared/chunk-ENQ62WDJ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-QHL2ANJD.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-GFHODAIH.js", imports: ["/build/_shared/chunk-AJYTPGA2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-DQK5LWAO.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-GJPLP5AR.js", imports: ["/build/_shared/chunk-ENQ62WDJ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-LOF44ZHB.js", imports: ["/build/_shared/chunk-7WSGMIWG.js", "/build/_shared/chunk-CXM5GY6O.js", "/build/_shared/chunk-ENQ62WDJ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-2KGGFYSI.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-VW4W3FYE.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-IABHRACN.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-HYJDYNDM.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-DAZQKUGQ.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-2LIYZ4IN.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-3LDZCZDH.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-G63PLFIV.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-3ZTSS3OU.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-YZJI2ODM.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-BHTREJJI.js", imports: ["/build/_shared/chunk-7WSGMIWG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-6XS5ZDPP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-GUH6U42Q.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-L7ZSXGGD.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-L7WOK5SG.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-BPN65YKS.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-QTL2S62L.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-U6JBDPIC.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-W3IMDMNK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-J3ACRUWL.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "e38a6cb0", hmr: void 0, url: "/build/manifest-E38A6CB0.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-25Q5MJXH.js", imports: ["/build/_shared/chunk-3AT4CWP5.js", "/build/_shared/chunk-KDVUVIZM.js", "/build/_shared/chunk-CEJ3M5BR.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-IPJ46ODK.js", imports: ["/build/_shared/chunk-P4R6SYIC.js", "/build/_shared/chunk-Y2KJULHC.js", "/build/_shared/chunk-WFVUQ3YA.js", "/build/_shared/chunk-XW32WZV3.js", "/build/_shared/chunk-I43S4N2W.js", "/build/_shared/chunk-X6AVKGC7.js", "/build/_shared/chunk-6WOZ56Z2.js", "/build/_shared/chunk-EN5NNG2J.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-7LQUFXN7.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-3WQPMH57.js", imports: ["/build/_shared/chunk-CIZNZYTY.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-T5NF5FRO.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-U6D6Y3RR.js", imports: ["/build/_shared/chunk-6WOZ56Z2.js", "/build/_shared/chunk-EN5NNG2J.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-BPTFVRFD.js", imports: ["/build/_shared/chunk-TIBQAIHA.js", "/build/_shared/chunk-X6AVKGC7.js", "/build/_shared/chunk-6WOZ56Z2.js", "/build/_shared/chunk-EN5NNG2J.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-A7LWCKDJ.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-IFQ64Y5U.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-WCOXN6BU.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-776ZBH2M.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-B3CTGO5Z.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-HHGXF4TX.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-BJDERRAU.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-LKQIFVQO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-Q7MYHNTB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-TB6IAQ36.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-2T6MJ4U3.js", imports: ["/build/_shared/chunk-TIBQAIHA.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-VPLHPIT3.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-CZPHGKKL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-ATCGAJ6U.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-YG2VO4LW.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-DICPSS5B.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-6JXF4BVP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-ALUOKNOK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/debug-network": { id: "virtual-routes/routes/debug-network", parentId: "virtual-routes/virtual-root", path: "debug-network", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/debug-network-UQ6S7QVE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-DOM6EQ4N.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-VM3GRJB6.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js", "/build/_shared/chunk-6WOZ56Z2.js", "/build/_shared/chunk-EN5NNG2J.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !0 } }, version: "c8d0cd35", hmr: void 0, url: "/build/manifest-C8D0CD35.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "dist/client/build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -70717,13 +71073,13 @@ var assetsBuildDirectory = "dist/client/build", future = { v2_dev: !1, unstable_
     caseSensitive: void 0,
     module: locale_exports
   },
-  "virtual-routes/routes/graphiql": {
-    id: "virtual-routes/routes/graphiql",
+  "virtual-routes/routes/debug-network": {
+    id: "virtual-routes/routes/debug-network",
     parentId: "virtual-routes/virtual-root",
-    path: "graphiql",
+    path: "debug-network",
     index: void 0,
     caseSensitive: void 0,
-    module: graphiql_exports
+    module: debug_network_exports
   },
   "virtual-routes/virtual-root": {
     id: "virtual-routes/virtual-root",
@@ -70732,6 +71088,14 @@ var assetsBuildDirectory = "dist/client/build", future = { v2_dev: !1, unstable_
     index: void 0,
     caseSensitive: void 0,
     module: virtual_root_exports
+  },
+  "virtual-routes/routes/graphiql": {
+    id: "virtual-routes/routes/graphiql",
+    parentId: "virtual-routes/virtual-root",
+    path: "graphiql",
+    index: void 0,
+    caseSensitive: void 0,
+    module: graphiql_exports
   },
   "virtual-routes/routes/index": {
     id: "virtual-routes/routes/index",
@@ -70747,8 +71111,8 @@ var assetsBuildDirectory = "dist/client/build", future = { v2_dev: !1, unstable_
 var server_default = {
   async fetch(request, env, executionContext) {
     try {
-      if (!(env != null && env.SESSION_SECRET))
-        throw new Error("SESSION_SECRET environment variable is not set");
+      if (console.log(env), !(env != null && env.SESSION_SECRET))
+        throw new Error("SESSION_SECRET environment variable is not set", env);
       let waitUntil = (p6) => executionContext.waitUntil(p6), [cache, session] = await Promise.all([
         caches.open("hydrogen"),
         HydrogenSession.init(request, [env.SESSION_SECRET])
@@ -71480,9 +71844,9 @@ react-responsive/dist/react-responsive.js:
 
 tw-elements-react/dist/js/tw-elements-react.es.min.js:
   (*!
-  * Tailwind Elements React 1.0.0-alpha1
+  * TW Elements React 1.0.0-alpha2
   * 
-  * Tailwind Elements React is an open-source UI kit of advanced components for TailwindCSS.
+  * TW Elements React is an open-source UI kit of advanced components for TailwindCSS.
   * Copyright © 2023 MDBootstrap.com
   * 
   * Unless a custom, individually assigned license has been granted, this program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -71492,16 +71856,16 @@ tw-elements-react/dist/js/tw-elements-react.es.min.js:
   *)
 
 @shopify/hydrogen/dist/development/index.js:
-  (*! @see https://shopify.dev/docs/api/storefront/2023-07/mutations/cartMetafieldDelete *)
-  (*! @see https://shopify.dev/docs/api/storefront/latest/mutations/cartBuyerIdentityUpdate *)
+  (*! @see: https://shopify.dev/docs/api/storefront/latest/mutations/cartCreate *)
+  (*! @see https://shopify.dev/docs/api/storefront/latest/queries/cart *)
+  (*! @see: https://shopify.dev/docs/api/storefront/latest/mutations/cartLinesAdd *)
+  (*! @see: https://shopify.dev/docs/api/storefront/latest/mutations/cartLinesUpdate *)
+  (*! @see: https://shopify.dev/docs/api/storefront/latest/mutations/cartLinesRemove *)
   (*! @see https://shopify.dev/docs/api/storefront/latest/mutations/cartDiscountCodesUpdate *)
-  (*! @see https://shopify.dev/docs/api/storefront/latest/mutations/cartMetafieldsSet *)
+  (*! @see https://shopify.dev/docs/api/storefront/latest/mutations/cartBuyerIdentityUpdate *)
   (*! @see https://shopify.dev/docs/api/storefront/latest/mutations/cartNoteUpdate *)
   (*! @see https://shopify.dev/docs/api/storefront/latest/mutations/cartSelectedDeliveryOptionsUpdate *)
-  (*! @see https://shopify.dev/docs/api/storefront/latest/queries/cart *)
-  (*! @see: https://shopify.dev/docs/api/storefront/latest/mutations/cartCreate *)
-  (*! @see: https://shopify.dev/docs/api/storefront/latest/mutations/cartLinesAdd *)
-  (*! @see: https://shopify.dev/docs/api/storefront/latest/mutations/cartLinesRemove *)
-  (*! @see: https://shopify.dev/docs/api/storefront/latest/mutations/cartLinesUpdate *)
+  (*! @see https://shopify.dev/docs/api/storefront/latest/mutations/cartMetafieldsSet *)
+  (*! @see https://shopify.dev/docs/api/storefront/2023-10/mutations/cartMetafieldDelete *)
 */
 //# sourceMappingURL=index.js.map
