@@ -39,14 +39,25 @@ export default {
 
       console.log("ENV VARS ::",env) 
 
+      let custEnv= {
+        PUBLIC_STOREFRONT_ID: '1000010454',
+        PUBLIC_STOREFRONT_API_TOKEN: '785fa7133fb078800d0cb2966d616f72',
+        PUBLIC_STORE_DOMAIN: 'bhuvaneshwari-arts.myshopify.com',
+        PRIVATE_STOREFRONT_API_TOKEN: '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',
+        PUBLIC_CUSTOMER_ACCOUNT_API_CLIENT_ID: 'shp_23bb20ef-3094-4a3e-89bf-47c97410c597',
+        PUBLIC_CUSTOMER_ACCOUNT_API_URL: 'https://shopify.com/80942530882',
+        SESSION_SECRET: 'foobar',
+      }
+
+
       const {storefront} = createStorefrontClient({
         cache,
         waitUntil,
         i18n: getLocaleFromRequest(request),
-        publicStorefrontToken: env.PUBLIC_STOREFRONT_API_TOKEN,
-        privateStorefrontToken: env.PRIVATE_STOREFRONT_API_TOKEN,
-        storeDomain: env.PUBLIC_STORE_DOMAIN,
-        storefrontId: env.PUBLIC_STOREFRONT_ID,
+        publicStorefrontToken: custEnv.PUBLIC_STOREFRONT_API_TOKEN,
+        privateStorefrontToken: custEnv.PRIVATE_STOREFRONT_API_TOKEN,
+        storeDomain: custEnv.PUBLIC_STORE_DOMAIN,
+        storefrontId: custEnv.PUBLIC_STOREFRONT_ID,
         storefrontHeaders: getStorefrontHeaders(request),
       });
 
@@ -69,7 +80,7 @@ export default {
       const handleRequest = createRequestHandler({
         build: remixBuild,
         mode: process.env.NODE_ENV,
-        getLoadContext: () => ({session, storefront, env, cart}),
+        getLoadContext: () => ({session, storefront, custEnv, cart}),
       });
 
       const response = await handleRequest(request);
