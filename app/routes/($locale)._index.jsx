@@ -126,9 +126,9 @@ export default function Homepage() {
         products={data.collectionProducts.nodes[0]?.products}
         title={data.collectionProducts.nodes[0]?.title}
       />
-      {/* -- Section 3 -- */}
+      {/* -- Section 3 -- data.products.nodes[0]?.id  */}
       <CustomizedProducts
-        key={data.products.nodes[0]?.id || "index_1" }
+        key={ "index_1" }
         products={data.products.nodes}
       ></CustomizedProducts>
 
