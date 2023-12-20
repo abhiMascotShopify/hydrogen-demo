@@ -128,7 +128,7 @@ export default function Homepage() {
       />
       {/* -- Section 3 -- */}
       <CustomizedProducts
-        key={data.products.nodes[0]?.id}
+        key={data.products.nodes[0]?.id || "index_1" }
         products={data.products.nodes}
       ></CustomizedProducts>
 
