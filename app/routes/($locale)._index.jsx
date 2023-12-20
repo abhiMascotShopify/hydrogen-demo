@@ -32,6 +32,8 @@ export async function loader({context}) {
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
   const {products} = await storefront.query(RECOMMENDED_PRODUCTS_QUERY);
   const {blogs} = await storefront.query(BLOGS_QUERY);
+
+  console.log("products:",products)
   //console.log(products.nodes[0].variants.edges[0].node.metafields);
   //console.log(products.nodes[0].variants.edges[0].node.metafields);
   const collection = collections;
