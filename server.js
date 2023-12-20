@@ -36,6 +36,10 @@ export default {
       /**
        * Create Hydrogen's Storefront client.
        */
+
+
+      console.log("ENV VARS ::",env) 
+
       const {storefront} = createStorefrontClient({
         cache,
         waitUntil,
@@ -47,7 +51,7 @@ export default {
         storefrontHeaders: getStorefrontHeaders(request),
       });
 
-      console.log("storefront ::",JSON.stringify(storefront)) 
+      console.log("storefront ::",env.PUBLIC_STOREFRONT_API_TOKEN) 
       /*
        * Create a cart handler that will be used to
        * create and update the cart in the session.
