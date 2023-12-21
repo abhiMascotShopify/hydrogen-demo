@@ -22,9 +22,8 @@ export default {
       /**
        * Open a cache instance in the worker and a custom session instance.
        */
-
       if (!env?.SESSION_SECRET) {
-        throw new Error('SESSION_SECRET environment variable is not set',env);
+        throw new Error('SESSION_SECRET environment variable is not set');
       }
 
       const waitUntil = (p) => executionContext.waitUntil(p);
@@ -36,19 +35,17 @@ export default {
       /**
        * Create Hydrogen's Storefront client.
        */
-
       const {storefront} = createStorefrontClient({
         cache,
         waitUntil,
         i18n: getLocaleFromRequest(request),
-        publicStorefrontToken: "785fa7133fb078800d0cb2966d616f72",//env.PUBLIC_STOREFRONT_API_TOKEN,
+        publicStorefrontToken: "8a86833a9662d5cb1d69b9b88200dc3f",//env.PUBLIC_STOREFRONT_API_TOKEN,
         privateStorefrontToken: "",//env.PRIVATE_STOREFRONT_API_TOKEN,
-        storeDomain: "bhuvaneshwari-arts.myshopify.com",//env.PUBLIC_STORE_DOMAIN,
+        storeDomain: "15f63f.myshopify.com",//env.PUBLIC_STORE_DOMAIN,
         storefrontId: "",//env.PUBLIC_STOREFRONT_ID,
         storefrontHeaders: getStorefrontHeaders(request),
       });
 
-      
       /*
        * Create a cart handler that will be used to
        * create and update the cart in the session.
@@ -70,9 +67,8 @@ export default {
         getLoadContext: () => ({session, storefront, env, cart}),
       });
 
-      console.log("handleRequest ::",JSON.stringify(handleRequest)) 
-
       const response = await handleRequest(request);
+
       if (response.status === 404) {
         /**
          * Check for redirects only when there's a 404 from the app.

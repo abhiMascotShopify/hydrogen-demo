@@ -114,8 +114,35 @@ export function Footer({menu}) {
         </div>
       </div>
                 </footer>*/}
-      <footer className="text-center text-white bg-blue-900">
-        <div className="container p-6 mx-auto">
+      <footer className="mt-8">
+        <div className="max-w-[1000px] m-auto p-2">
+          <div className="footer-section text-center text-xl font-semibold border-y-2 py-4">
+            <div className="cursor-pointer">Stores</div>
+            <div className="cursor-pointer">Terms & Conditions</div>
+            <div className="cursor-pointer">Returns</div>
+            <div className="cursor-pointer">FAQs</div>
+            <div className="cursor-pointer">About Us</div>
+          </div>
+          <div className="mt-4 py-6 footer-contact max-w-[600px] m-auto">
+            <div>
+              <h2 className="font-semibold text-2xl">GET IN TOUCH</h2>
+              <h3 className="mt-4 mb-2 text-md font-semibold">Call us at</h3>
+              <a className="mt-2 font-bold text-xl text-[#969696]" href="#">
+                +91-9999999999
+              </a>
+              <p className="mt-2 font-semibold text-[#969696]">
+                Monday to Friday : 9 AM to 7 PM
+              </p>
+            </div>
+            <div>
+              <h2 className="font-semibold text-xl">Support</h2>
+              <a className="mt-2 font-bold text-xl text-[#969696]" href="#">
+                helpdesk@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+        {/* <div className="container p-6 mx-auto">
           <div className="">
             <span className="flex items-center justify-center w-full">
               <span className="mr-4">Register for free</span>
@@ -129,7 +156,7 @@ export function Footer({menu}) {
               </TERipple>
             </span>
           </div>
-        </div>
+        </div> */}
 
         {/* <!--Copyright section--> */}
         <div className="p-4 text-center bg-black bg-opacity-20">

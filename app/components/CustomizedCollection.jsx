@@ -69,7 +69,7 @@ const DesktopCorousel = ({products}) => {
             ))}
           </div>
           <button
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full ml-1 hover:bg-opacity-75"
+            className="absolute left-0 top-1/2 transform border border-[#e5e5e5] -translate-y-1/2 bg-white bg-opacity-50 rounded-full ml-1 hover:bg-opacity-75 p-2"
             onClick={() =>
               setStartIndex((prevIndex) =>
                 prevIndex === 0
@@ -84,7 +84,7 @@ const DesktopCorousel = ({products}) => {
             />
           </button>
           <button
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75"
+            className="absolute right-0 top-1/2 transform border border-[#e5e5e5] -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-1 hover:bg-opacity-75"
             onClick={() =>
               setStartIndex((prevIndex) => (prevIndex + 3) % products.length)
             }

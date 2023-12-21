@@ -24,10 +24,10 @@ export const meta = () => {
 };
 
 export async function loader({context}) {
-  console.log("context::",context)
+  console.log("content::",context.storefront)
   const {storefront} = context;
   const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
-  //console.log(collections.nodes[0].products);
+  //console.log("collections::",collections);
   const collectionProducts = collections;
   const featuredCollection = collections.nodes;
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
@@ -173,9 +173,9 @@ export default function Homepage() {
       )}
       {/* -- Section 9 -- */}
       <RecommendedProducts
-        key={data.collectionProducts.nodes[2].id}
-        products={data.collectionProducts.nodes[2].products}
-        title={data.collectionProducts.nodes[2].title}
+        key={data.collectionProducts.nodes[1].id}
+        products={data.collectionProducts.nodes[1].products}
+        title={data.collectionProducts.nodes[1].title}
       />
       {/* section 10 - Instagram -- */}
       {/* -- sectio 11 -Review -- */}

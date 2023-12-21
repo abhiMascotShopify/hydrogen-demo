@@ -25,7 +25,7 @@ const ImageCarousel = ({images}) => {
         }
       >
         <MdChevronLeft
-          className="opacity-50 cursor-pointer hover:opacity-100"
+          className=" cursor-pointer hover:opacity-100 lg:bg-[#faebd7] bg-white bg-opacity-75 rounded-full text-black"
           size={40}
         />
       </button>
@@ -40,7 +40,7 @@ const ImageCarousel = ({images}) => {
         }
       >
         <MdChevronRight
-          className="opacity-50 cursor-pointer hover:opacity-100"
+          className="lg:bg-[#faebd7] bg-white bg-opacity-75 rounded-full text-black cursor-pointer hover:opacity-100"
           size={40}
         />
       </button>

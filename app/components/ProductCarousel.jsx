@@ -156,7 +156,7 @@ const ProductCarousel = ({products}) => {
           }
         >
           <MdChevronLeft
-            className="opacity-50 cursor-pointer hover:opacity-100"
+            className="opacity-50 cursor-pointer hover:opacity-100 "
             size={30}
           />
         </button>
