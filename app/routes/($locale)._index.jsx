@@ -24,11 +24,11 @@ export const meta = () => {
 };
 
 export async function loader({context}) {
-  console.log("content::",context.storefront)
+  console.log("content::",context.storefront.query)
   const {storefront} = context;
   const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
-  //console.log("collections::",collections);
   const collectionProducts = collections;
+ 
   const featuredCollection = collections.nodes;
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
   const {products} = await storefront.query(RECOMMENDED_PRODUCTS_QUERY);

@@ -104,7 +104,7 @@ export function HeaderMenu({menu, viewport}) {
   const publicStoreDomain = root?.data?.publicStoreDomain;
   const className = `header-menu-${viewport}`;
   //const [isOpen, setisOpen] = useState(false)
-  //console.log(menu);
+  console.log("Menu::",menu);
   function closeAside(event) {
     if (viewport === 'mobile') {
       event.preventDefault();

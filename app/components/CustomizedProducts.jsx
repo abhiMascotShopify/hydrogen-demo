@@ -17,7 +17,7 @@ const MobileProductCorousel = ({products, title}) => {
         <div className="flex overflow-y-auto product-40">
           {products.map((product) => (
             <img
-              src={`${product.images.nodes[0].url}`} // Make sure to put your images in the 'public/images/' directory
+              src={`${product.images.nodes[0]?.url}`} // Make sure to put your images in the 'public/images/' directory
               alt={product.name}
               className="w-full h-auto rounded-lg lg:px-5 sm:px-3 sm:mx-3 mr-2"
             />
