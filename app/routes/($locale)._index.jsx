@@ -24,11 +24,10 @@ export const meta = () => {
 };
 
 export async function loader({context}) {
-  console.log("content::",context.storefront.query)
   const {storefront} = context;
   const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
+  //console.log(collections.nodes[0].products);
   const collectionProducts = collections;
- 
   const featuredCollection = collections.nodes;
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
   const {products} = await storefront.query(RECOMMENDED_PRODUCTS_QUERY);
@@ -68,18 +67,29 @@ export default function Homepage() {
   const isSmall = useMediaQuery({maxWidth: 640});
   var GiftCollections = [];
   var ReviewCollection = [];
+  var BuildYourOwnColl = [];
+  var ThirdHeroCollection = [];
   data.collectionProducts.nodes.forEach((col) => {
     if (col.metafields[0] != null && col.metafields[0].value == 'true') {
       ReviewCollection.push(col);
       //console.log('Added')
     }
-    if (col.metafields[1] != null && col.metafields[1].value == 'true') {
+    if (col.title == "Build Your Own Kit") {
+      BuildYourOwnColl.push(col);
+      //console.log(col)
+    }
+    if(col.title=='3rd Hero Collection'){
+      ThirdHeroCollection.push(col)
+    }
+    if (col.title == "Gift Under 500" || col.title == "Gift Under 1000" || col.title == "Gifts Under 2000") {
       GiftCollections.push(col);
       //console.log(col)
     }
   });
-  //console.log(GiftCollections)
-  //console.log('Review Collection '+ ReviewCollection)
+  //console.log("BuildYourOwnColl::",BuildYourOwnColl[0].products.edges)
+  BuildYourOwnColl = BuildYourOwnColl[0].products.edges;
+  ThirdHeroCollection =  ThirdHeroCollection[0].products;
+  GiftCollections = GiftCollections;
   //console.log(data.collectionProducts.nodes[7].metafields[1].value)
 
   return (
@@ -124,28 +134,28 @@ export default function Homepage() {
         products={data.collectionProducts.nodes[0].products}
         title={data.collectionProducts.nodes[0].title}
       />
-      {/* -- Section 3 -- */}
+      {/* -- Section 3 -- Collection Name : Build Your Own Kit */}
       <CustomizedProducts
         key={data.products.nodes[0].id}
-        products={data.products.nodes}
+        products={BuildYourOwnColl}
       ></CustomizedProducts>
 
       {/*---Banner Statis -section 4 -- */}
       {isLargeScreen && (
-        <div>
+        <a href="/collections/face">
           <img
             src="https://cdn.shopify.com/s/files/1/0810/9863/7603/files/Banner1.jpg"
             className="rounded-2xl mt-[15px]"
           ></img>
-        </div>
+        </a>
       )}
       {isSmall && (
-        <div>
+       <a href="/collections/face">
           <img
             src="https://cdn.shopify.com/s/files/1/0810/9863/7603/files/Liquid-concealer_1c3a4678-78f2-4c94-921b-cf77022205f7.jpg?v=1695059222"
             className="rounded-2xl w-[100%] m-auto"
           ></img>
-        </div>
+        </a>
       )}
       <RecommendedProducts
         key={data.collectionProducts.nodes[1].id}
@@ -156,26 +166,30 @@ export default function Homepage() {
       <YouTubeVideo></YouTubeVideo>
       {/*---Banner Statis section 8 --- */}
       {isLargeScreen && (
-        <div className="my-[15px]">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0810/9863/7603/files/Banner1.jpg"
-            className="rounded-2xl"
-          ></img>
-        </div>
+         <a href="/collections/eyes">
+          <div className="my-[15px]">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0810/9863/7603/files/Banner1.jpg"
+              className="rounded-2xl"
+            ></img>
+          </div>
+        </a>
       )}
       {isSmall && (
-        <div className="my-[15px]">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0810/9863/7603/files/Liquid-concealer_1c3a4678-78f2-4c94-921b-cf77022205f7.jpg?v=1695059222"
-            className="rounded-2xl w-[100%] m-auto"
-          ></img>
-        </div>
+        <a href="/collections/eyes">
+          <div className="my-[15px]">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0810/9863/7603/files/Liquid-concealer_1c3a4678-78f2-4c94-921b-cf77022205f7.jpg?v=1695059222"
+              className="rounded-2xl w-[100%] m-auto"
+            ></img>
+          </div>
+        </a>
       )}
-      {/* -- Section 9 -- */}
+      {/* -- Section 9 --  COll Name : 3rd Hero Collection */}
       <RecommendedProducts
-        key={data.collectionProducts.nodes[1].id}
-        products={data.collectionProducts.nodes[1].products}
-        title={data.collectionProducts.nodes[1].title}
+        key={ThirdHeroCollection.edges[0].node.id}
+        products={ThirdHeroCollection}
+        title="3rd Hero Collection"
       />
       {/* section 10 - Instagram -- */}
       {/* -- sectio 11 -Review -- */}
@@ -243,36 +257,38 @@ function RecommendedProducts({products, title}) {
 const FEATURED_COLLECTION_QUERY = `#graphql
   fragment FeaturedCollection on Collection {
     products(first:100){
-          edges{
-            node{
-              id
-              title
-              handle
-              variants(first: 100) {
-              edges {
-              node {
-                    id
-                    metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
-                              key
-                              value
-                            }
-                    }
-                  }
-            }
-              images(first:1){
-                edges{
-                  node{
-                    url
-                  }
+      edges{
+        node{
+          id
+          title
+          handle
+          variants(first: 100) {
+          edges {
+          node {
+                id
+                metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
+                          key
+                          value
+                        }
                 }
+              }
+        }
+          images(first:1){
+            edges{
+              node{
+                url
               }
             }
           }
         }
+      }
+    }
     id
     title
-    metafields(identifiers: [{namespace: "custom", key: "from_customer_inbox"}, {namespace: "custom", key: "gifting_collection"}]){
+    metafields(identifiers: [{namespace: "custom", key: "from_customer_inbox"}, {namespace: "custom", key: "1_custom_colllection"}]){
+      id
       key
+      namespace
       value
     }
     image {

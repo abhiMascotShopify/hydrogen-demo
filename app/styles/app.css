@@ -406,18 +406,8 @@ aside li {
 
 .collection-item img {
   height: auto;
-  border-radius: 20px;
 }
-.footer-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-}
-.footer-contact {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
-  align-items: center;
-}
+
 /*
 * --------------------------------------------------
 * routes/collections.$handle.tsx
@@ -617,14 +607,6 @@ aside li {
   .shadow-p {
     box-shadow: #0003 0 2px 12px !important;
     border-radius: 8px;
-  }
-  .footer-section {
-    grid-template-columns: 1fr;
-    align-items: center;
-    text-align: center;
-  }
-  .footer-section div {
-    margin-bottom: 10px;
   }
   .sharelogo {
     width: 20px !important;

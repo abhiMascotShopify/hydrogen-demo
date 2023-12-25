@@ -11,27 +11,10 @@ import {
 //import products from './products';
 
 const ProductCarousel = ({products}) => {
-  //console.log(products)
-  /*const products = [
-    { id: 1, name: 'Product 1', image: 'https://cdn.shopify.com/s/files/1/0810/9863/7603/files/6995513d5b84551a7c89579bda02b56d.jpg?v=1693061468' },
-    { id: 2, name: 'Product 2', image: 'https://cdn.shopify.com/s/files/1/0810/9863/7603/files/6995513d5b84551a7c89579bda02b56d.jpg?v=1693061468' },
-    { id: 3, name: 'Product 3', image: 'https://cdn.shopify.com/s/files/1/0810/9863/7603/files/6995513d5b84551a7c89579bda02b56d.jpg?v=1693061468' },
-    { id: 4, name: 'Product 3', image: 'https://cdn.shopify.com/s/files/1/0810/9863/7603/files/6995513d5b84551a7c89579bda02b56d.jpg?v=1693061468' },
-    { id: 5, name: 'Product 3', image: 'https://cdn.shopify.com/s/files/1/0810/9863/7603/files/6995513d5b84551a7c89579bda02b56d.jpg?v=1693061468' },
-    { id: 6, name: 'Product 3', image: 'https://cdn.shopify.com/s/files/1/0810/9863/7603/files/purepng.com-white-t-shirtt-shirtfabrict-shapegramnetsmenswhite-14215264292423zp8k_2677b2d8-59f3-4e10-9cb8-b26178515ac5.png?v=1693692132' },
-    { id: 7, name: 'Product 3', image: 'https://cdn.shopify.com/s/files/1/0810/9863/7603/files/purepng.com-white-t-shirtt-shirtfabrict-shapegramnetsmenswhite-14215264292423zp8k_2677b2d8-59f3-4e10-9cb8-b26178515ac5.png?v=1693692132' },
-    // Add more products as needed
-  ];*/
-
-  //const products = products.edges;
-  //console.log(products)
-
   let productsToShow = [];
   const lines = [];
-
   const [startIndex, setStartIndex] = useState(0);
   //const [endIndex, setEndIndex]  = useState();
-
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const endIndex = isLargeScreen ? 4 : 2;
 
@@ -156,7 +139,7 @@ const ProductCarousel = ({products}) => {
           }
         >
           <MdChevronLeft
-            className="opacity-50 cursor-pointer hover:opacity-100 "
+            className="opacity-50 cursor-pointer hover:opacity-100"
             size={30}
           />
         </button>

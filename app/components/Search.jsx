@@ -54,7 +54,7 @@ export function SearchResults({results}) {
     return null;
   }
   const keys = Object.keys(results);
-  console.log(results);
+  console.log(results)
   return (
     <div>
       {results &&
@@ -238,7 +238,7 @@ export function PredictiveSearchResults() {
     return <NoPredictiveSearchResults searchTerm={searchTerm} />;
   }
   return (
-    <div className="predictive-search-results mx-3 rounded-2xl absolute p-4 bg-white w-full top-[100px]">
+    <div className="predictive-search-results mx-3 rounded-2xl">
       <div>
         {results.map(({type, items}) => (
           <PredictiveSearchResult

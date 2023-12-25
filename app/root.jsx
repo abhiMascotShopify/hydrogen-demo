@@ -54,7 +54,7 @@ export async function loader({context}) {
 
   // defer the footer query (below the fold)
   const footerPromise = storefront.query(FOOTER_QUERY, {
-    cache: storefront.CacheNone(),
+    cache: storefront.CacheLong(),
     variables: {
       footerMenuHandle: 'footer', // Adjust to your footer menu handle
     },

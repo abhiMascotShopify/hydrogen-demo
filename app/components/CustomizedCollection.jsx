@@ -1,6 +1,7 @@
 // src/ProductCarousel.js
 import React, {useState} from 'react';
 //import products from './products';
+import { MediaFile,Image,parseMetafield } from '@shopify/hydrogen';
 import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
 import {useMediaQuery} from 'react-responsive';
 
@@ -34,7 +35,7 @@ const DesktopCorousel = ({products}) => {
   const [startIndex, setStartIndex] = useState(0);
 
   const productsToShow = products.slice(startIndex, startIndex + 3);
-  //console.log(productsToShow)
+  console.log("DesktopCorousel::",productsToShow)
   const isMobile = useMediaQuery({maxWidth: 640});
 
   const nextProducts = () => {
@@ -57,11 +58,13 @@ const DesktopCorousel = ({products}) => {
               <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
                 <div className="bg-white rounded-lg shadow-lg p-1">
                   <a href={`/collections/${product.handle}`}>
-                    <img
-                      src={`${product.image.url}`} // Make sure to put your images in the 'public/images/' directory
+                    {/* <img
+                      //src={`${product.image.url}`} // Make sure to put your images in the 'public/images/' directory
+                      src={product.metafields[1].value}
                       alt={product.title}
                       className="w-full h-auto rounded-lg"
-                    />
+                    /> */}
+                    <MediaFile data={parseMetafield(product.metafields[1].value)} type="image" key={product.id} />
                   </a>
                   {/* Add more product information here */}
                 </div>
@@ -69,7 +72,7 @@ const DesktopCorousel = ({products}) => {
             ))}
           </div>
           <button
-            className="absolute left-0 top-1/2 transform border border-[#e5e5e5] -translate-y-1/2 bg-white bg-opacity-50 rounded-full ml-1 hover:bg-opacity-75 p-2"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full ml-1 hover:bg-opacity-75"
             onClick={() =>
               setStartIndex((prevIndex) =>
                 prevIndex === 0
@@ -84,7 +87,7 @@ const DesktopCorousel = ({products}) => {
             />
           </button>
           <button
-            className="absolute right-0 top-1/2 transform border border-[#e5e5e5] -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-1 hover:bg-opacity-75"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75"
             onClick={() =>
               setStartIndex((prevIndex) => (prevIndex + 3) % products.length)
             }
@@ -101,7 +104,6 @@ const DesktopCorousel = ({products}) => {
 };
 
 const CustomizedCollection = ({collections}) => {
-  //console.log(collections);
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const isSmall = useMediaQuery({maxWidth: 640});
   //console.log('is Tablet: '+isLargeScreen);

@@ -1,5 +1,6 @@
 // src/ProductCarousel.js
 import React, {useState} from 'react';
+import {MediaFile} from '@shopify/hydrogen-react';
 //import products from './products';
 import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
 import {useMediaQuery} from 'react-responsive';
@@ -17,7 +18,7 @@ const MobileProductCorousel = ({products, title}) => {
         <div className="flex overflow-y-auto product-40">
           {products.map((product) => (
             <img
-              src={`${product.images.nodes[0]?.url}`} // Make sure to put your images in the 'public/images/' directory
+              src={`${product.node.images?.edges[0].node.url}`}  // Make sure to put your images in the 'public/images/' directory
               alt={product.name}
               className="w-full h-auto rounded-lg lg:px-5 sm:px-3 sm:mx-3 mr-2"
             />
@@ -29,10 +30,10 @@ const MobileProductCorousel = ({products, title}) => {
 };
 
 const DesktopCorousel = ({products, title}) => {
+  console.log("DesktopCorousel::",products)
   const [startIndex, setStartIndex] = useState(0);
-
   const productsToShow = products.slice(startIndex, startIndex + 3);
-  //console.log(productsToShow)
+  console.log("productsToShow::",productsToShow)
   const isMobile = useMediaQuery({maxWidth: 640});
 
   const nextProducts = () => {
@@ -55,7 +56,7 @@ const DesktopCorousel = ({products, title}) => {
               <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
                 <div className="bg-white rounded-lg shadow-lg p-1">
                   <img
-                    src={`${product.images.nodes[0].url}`} // Make sure to put your images in the 'public/images/' directory
+                    src={`${product.node.images?.edges[0].node.url}`} // Make sure to put your images in the 'public/images/' directory
                     alt={product.name}
                     className="w-full h-auto rounded-lg"
                   />

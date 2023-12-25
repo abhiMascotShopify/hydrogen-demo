@@ -39,6 +39,7 @@ export async function loader({params, request, context}) {
   const {product} = await storefront.query(PRODUCT_QUERY, {
     variables: {handle, selectedOptions},
   });
+
   const products = await storefront.query(PRODUCTS_QUERY);
   // console.log(products.products.edges);
 
@@ -100,7 +101,7 @@ function redirectToFirstVariant({product, request}) {
 export default function Product() {
   const {product, variants, productsreturn} = useLoaderData();
   const {selectedVariant} = product;
-  console.log("Product Comp ::",product);
+  //console.log(productsreturn);
   return (
     <>
       {/*<ProductVariantColrousel className="col-span-1 overflow-x-auto" product={product}></ProductVariantColrousel>*/}
@@ -155,17 +156,74 @@ function ProductImage({image, activeImg, setActiveImage, product}) {
 }
 
 function ProductMain({selectedVariant, product, variants}) {
+  {
+    /*const {title, descriptionHtml} = product;
+  return (
+    <div className="col-span-5">
+      <h1>{title}</h1>
+      <ProductPrice selectedVariant={selectedVariant} />
+      <div className='shadow-2xl bg-grey'>
+      AVAILABLE OFFERS!!
+      </div>
+      <br />
+      <Suspense
+        fallback={
+          <ProductForm
+            product={product}
+            selectedVariant={selectedVariant}
+            variants={[]}
+          />
+        }
+      >
+        <Await
+          errorElement="There was a problem loading product variants"
+          resolve={variants}
+        >
+          {(data) => (
+            <ProductForm
+              product={product}
+              selectedVariant={selectedVariant}
+              variants={data.product?.variants.nodes || []}
+            />
+          )}
+        </Await>
+      </Suspense>
+      <br />
+      <br />
+      <p>
+        <strong>Description</strong>
+      </p>
+      <br />
+      <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />
+      <br />
+    </div>
+          );*/
+  }
+
+  //console.log(product)
+
+  /*const [images, setImages] = useState({
+              img0 : "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/3396ee3c-08cc-4ada-baa9-655af12e3120/scarpa-da-running-su-strada-invincible-3-xk5gLh.png",
+              img1 : "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_440/e44d151a-e27a-4f7b-8650-68bc2e8cd37e/scarpa-da-running-su-strada-invincible-3-xk5gLh.png",
+              img2 : "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_440/44fc74b6-0553-4eef-a0cc-db4f815c9450/scarpa-da-running-su-strada-invincible-3-xk5gLh.png",
+              img3 : "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_440/d3eb254d-0901-4158-956a-4610180545e5/scarpa-da-running-su-strada-invincible-3-xk5gLh.png"
+          })*/
   const ImageSrc = [];
-  console.log("ProductMain ::",product.metafields)
+
   product.images.edges.forEach((item) => {
     ImageSrc.push(item.node.url);
   });
+
+  //console.log(ImageSrc)
+
   const [images, setImages] = useState(ImageSrc);
-  const expaction = product.metafields[0]?.value;
-  const key_ingredients = product.metafields[1]?.value;
-  const How_To_use = product.metafields[2]?.value;
-  const who_can_use = product.metafields[3]?.value;
-  const why_us = product.metafields[4]?.value;
+
+  const expaction = product.metafields[0].value;
+  //console.log(expaction)
+  const key_ingredients = product.metafields[1].value;
+  const How_To_use = product.metafields[2].value;
+  const who_can_use = product.metafields[3].value;
+  const why_us = product.metafields[4].value;
   //console.log(why_us);
 
   const [activeTab, setActiveTab] = useState('Key Ingredients');
@@ -380,7 +438,7 @@ function ProductMain({selectedVariant, product, variants}) {
             />
           )}
         </div>
-        <div className="container mx-auto mt-5 h-[450px] mt-8">
+        <div className="container mx-auto mt-5">
           <h1 className="lg:text-3xl font-semibold mb-4 text-center mt-[4%] mb-[2%]">
             Product Information
           </h1>
@@ -424,7 +482,7 @@ function ProductMain({selectedVariant, product, variants}) {
           </div>
           <div className="mt-4">
             {activeTab === 'Key Ingredients' && key_ingredients && (
-              <div className="overflow-y-auto overflow-x-auto h-[450px] mt-8">
+              <div className="overflow-y-auto overflow-x-auto">
                 {key_ingredients && (
                   <div
                     className="expect"

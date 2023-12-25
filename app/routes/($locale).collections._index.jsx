@@ -18,7 +18,7 @@ export default function Collections() {
   const {collections} = useLoaderData();
 
   return (
-    <div className="collections px-8 ">
+    <div className="collections">
       <h1>Collections</h1>
       <Pagination connection={collections}>
         {({nodes, isLoading, PreviousLink, NextLink}) => (
@@ -54,7 +54,7 @@ function CollectionsGrid({collections}) {
 function CollectionItem({collection, index}) {
   return (
     <Link
-      className="collection-item "
+      className="collection-item"
       key={collection.id}
       to={`/collections/${collection.handle}`}
       prefetch="intent"
@@ -65,7 +65,6 @@ function CollectionItem({collection, index}) {
           aspectRatio="1/1"
           data={collection.image}
           loading={index < 3 ? 'eager' : undefined}
-          className="rounded-2xl"
         />
       )}
       <h5>{collection.title}</h5>
