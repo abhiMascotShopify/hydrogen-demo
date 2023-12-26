@@ -75,6 +75,7 @@ export const meta = ({data}) => {
 
 export async function loader({request, params, context}) {
   const {handle} = params;
+  console.log("handle::",handle)
   const {storefront} = context;
   const paginationVariables = getPaginationVariables(request, {
     pageBy: 8,
@@ -87,23 +88,23 @@ export async function loader({request, params, context}) {
   const {collection} = await storefront.query(COLLECTION_QUERY, {
     variables: {handle, ...paginationVariables},
   });
-  console.log(collection);
-  const {productTags} = await storefront.query(PRODUCTTAGS_QUERY);
+  console.log("Collection Handle ::",collection);
+  //const {productTags} = await storefront.query(PRODUCTTAGS_QUERY);
   console.log('Product tag');
-  console.log(productTags);
-  productTags.edges.forEach((n) => {
-    if (n.node.startsWith('Colour-')) {
-      console.log();
-      filters[0].options.push({value: n.node, label: n.node, checked: true});
-      console.log(filters[0]);
-      console.log('added' + JSON.stringify(filters[0]));
-    }
-    if (n.node.startsWith('Size-')) {
-      filters[2].options.push({value: n.node, label: n.node, checked: true});
-      console.log(filters[2]);
-      console.log('added' + JSON.stringify(filters[2]));
-    }
-  });
+  // console.log(productTags);
+  // productTags.edges.forEach((n) => {
+  //   if (n.node.startsWith('Colour-')) {
+  //     console.log();
+  //     filters[0].options.push({value: n.node, label: n.node, checked: true});
+  //     console.log(filters[0]);
+  //     console.log('added' + JSON.stringify(filters[0]));
+  //   }
+  //   if (n.node.startsWith('Size-')) {
+  //     filters[2].options.push({value: n.node, label: n.node, checked: true});
+  //     console.log(filters[2]);
+  //     console.log('added' + JSON.stringify(filters[2]));
+  //   }
+  // });
 
   if (!collection) {
     throw new Response(`Collection ${handle} not found`, {
@@ -116,29 +117,6 @@ export async function loader({request, params, context}) {
 export default function Collection() {
   const {collection} = useLoaderData();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  /*
-  return (
-    <div className="collection">
-      <h1>{collection.title}</h1>
-      <p className="collection-description">{collection.description}</p>
-      <Pagination connection={collection.products}>
-        {({nodes, isLoading, PreviousLink, NextLink}) => (
-          <>
-            <PreviousLink>
-              {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
-            </PreviousLink>
-            <ProductsGrid products={nodes} />
-            <br />
-            <NextLink>
-              {isLoading ? 'Loading...' : <span>Load more ↓</span>}
-            </NextLink>
-          </>
-        )}
-      </Pagination>
-    </div>
-  );
-}
-*/
   let productsToShow = [];
   const lines = [];
 
@@ -219,7 +197,7 @@ export default function Collection() {
     <>
       <div>
         <img
-          src={collection.image.url}
+          src={collection?.image?.url}
           style={{height: '650px', objectFit: 'cover', width: '100%'}}
         ></img>
       </div>
@@ -549,7 +527,7 @@ export default function Collection() {
                             }}
                           >
                             <img
-                              src={product.images.edges[0].node.url}
+                              src={product.images.edges[0]?.node?.url}
                               alt={product.title}
                               className="w-full h-auto"
                             />

@@ -128,7 +128,7 @@ export default function Homepage() {
         <RecommendedProducts key={coll.id} products={coll.products} title={coll.title}/>
       ))
       }*/}
-      {/* -- Section 2 -- */}
+      {/* -- Section 2 -- 1st Hero Collection */}
       <RecommendedProducts
         key={data.collectionProducts.nodes[0].id}
         products={data.collectionProducts.nodes[0].products}

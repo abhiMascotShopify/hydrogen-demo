@@ -218,12 +218,12 @@ function ProductMain({selectedVariant, product, variants}) {
 
   const [images, setImages] = useState(ImageSrc);
 
-  const expaction = product.metafields[0].value;
+  const expaction = product.metafields[0]?.value;
   //console.log(expaction)
-  const key_ingredients = product.metafields[1].value;
-  const How_To_use = product.metafields[2].value;
-  const who_can_use = product.metafields[3].value;
-  const why_us = product.metafields[4].value;
+  const key_ingredients = product.metafields[1]?.value;
+  const How_To_use = product.metafields[2]?.value;
+  const who_can_use = product.metafields[3]?.value;
+  const why_us = product.metafields[4]?.value;
   //console.log(why_us);
 
   const [activeTab, setActiveTab] = useState('Key Ingredients');

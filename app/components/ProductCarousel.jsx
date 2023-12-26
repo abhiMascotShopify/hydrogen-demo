@@ -14,18 +14,26 @@ const ProductCarousel = ({products}) => {
   let productsToShow = [];
   const lines = [];
   const [startIndex, setStartIndex] = useState(0);
-  //const [endIndex, setEndIndex]  = useState();
   const isLargeScreen = useMediaQuery({minWidth: 1024});
-  const endIndex = isLargeScreen ? 4 : 2;
-
+  const eIndex = isLargeScreen ? 4 : 2;
+  const [endIndex, setEndIndex]  = useState(eIndex);
+  var len = products.edges.length;
   if (products != null || products != undefined) {
-    //console.log(products.edges[0].node)
     productsToShow = products.edges.slice(startIndex, startIndex + endIndex);
     //console.log(productsToShow);
   }
-  //  const isMobile = useMediaQuery({ maxWidth: 640 });
-  //  const isTablet = useMediaQuery({ minWidth: 641, maxWidth: 1024 });
 
+  const nextProducts = () => {
+    setStartIndex((prevIndex) => len == endIndex ? prevIndex -1 : prevIndex + 1 );
+    setEndIndex((prevIndex) => len == endIndex ? prevIndex-1 : prevIndex + 1);
+  };
+
+  const prevProducts = () => {
+    setStartIndex((prevIndex) => len == endIndex ? prevIndex -1 : prevIndex + 1 );
+    setEndIndex((prevIndex) => len == endIndex ? prevIndex-1 : prevIndex + 1);
+  };
+
+  console.log("start INDEX ::",startIndex,"End Index ::",endIndex,"Length::",len);
   products.edges.map((product) => {
     product.node.variants.edges.map((line) => {
       if (
@@ -41,20 +49,6 @@ const ProductCarousel = ({products}) => {
       }
     });
   });
-
-  // products.slice(startIndex, startIndex + 3);
-
-  //const nextProducts = () => {
-  //  setStartIndex((prevIndex) => (prevIndex + 2) % products.length);
-  //};
-
-  //const prevProducts = () => {
-  // setStartIndex((prevIndex) =>
-  //  prevIndex === 0
-  //   ? products.length - (products.length % 2)
-  //   : prevIndex - 2
-  //);
-  //};
 
   return (
     <div className="w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
@@ -99,7 +93,7 @@ const ProductCarousel = ({products}) => {
                       ></path>
                     </svg>
                   </div>
-                  {console.log(lines)}
+             
                   <div className="w-[75%]">
                     <CartForm
                       route="/cart"
@@ -128,28 +122,18 @@ const ProductCarousel = ({products}) => {
             </div>
           ))}
         </div>
-        <button
+        <button 
           className="absolute lg:left-[-150px] top-1/2 transform -translate-y-1/2 lg:bg-[#faebd7] bg-white bg-opacity-75 rounded-full p-2 ml-4 hover:bg-opacity-100"
-          onClick={() =>
-            setStartIndex((prevIndex) =>
-              prevIndex === 0
-                ? products.edges.length - (products.edges.length % 2)
-                : prevIndex,
-            )
-          }
+          onClick={() => prevProducts() }
         >
           <MdChevronLeft
             className="opacity-50 cursor-pointer hover:opacity-100"
             size={30}
           />
         </button>
-        <button
+        <button 
           className="absolute lg:right-[-150px] right-0 top-1/2 transform -translate-y-1/2 lg:bg-[#faebd7] bg-white bg-opacity-75 rounded-full p-2 mr-4 hover:bg-opacity-100"
-          onClick={() =>
-            setStartIndex(
-              (prevIndex) => (prevIndex + 1) % products.edges.length,
-            )
-          }
+          onClick={() => nextProducts() }
         >
           <MdChevronRight
             className="opacity-50 cursor-pointer hover:opacity-100"

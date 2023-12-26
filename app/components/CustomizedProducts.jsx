@@ -30,7 +30,6 @@ const MobileProductCorousel = ({products, title}) => {
 };
 
 const DesktopCorousel = ({products, title}) => {
-  console.log("DesktopCorousel::",products)
   const [startIndex, setStartIndex] = useState(0);
   const productsToShow = products.slice(startIndex, startIndex + 3);
   console.log("productsToShow::",productsToShow)
@@ -38,14 +37,17 @@ const DesktopCorousel = ({products, title}) => {
 
   const nextProducts = () => {
     setStartIndex((prevIndex) => (prevIndex + 3) % products.length);
+    console.log("nextProducts INDEX ::",startIndex)
   };
 
   const prevProducts = () => {
     setStartIndex((prevIndex) =>
       prevIndex === 0 ? products.length - (products.length % 3) : prevIndex - 1,
     );
+    console.log("prevProducts INDEX ::",startIndex)
   };
 
+  
   return (
     <div>
       <div className="w-full max-w-screen-2xl mx-auto px-1">
@@ -67,13 +69,7 @@ const DesktopCorousel = ({products, title}) => {
           </div>
           <button
             className="absolute left-[5px] top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full ml-1 p-2 mr-2 hover:bg-opacity-75"
-            onClick={() =>
-              setStartIndex((prevIndex) =>
-                prevIndex === 0
-                  ? products.length - (products.length % 3)
-                  : prevIndex - 1,
-              )
-            }
+            onClick={() => prevProducts() }
           >
             <MdChevronLeft
               className="opacity-50 cursor-pointer hover:opacity-100"
@@ -82,9 +78,7 @@ const DesktopCorousel = ({products, title}) => {
           </button>
           <button
             className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75"
-            onClick={() =>
-              setStartIndex((prevIndex) => (prevIndex + 3) % products.length)
-            }
+            onClick={() => nextProducts() }
           >
             <MdChevronRight
               className="opacity-50 cursor-pointer hover:opacity-100"
@@ -101,7 +95,6 @@ const CustomizedProducts = ({products, title}) => {
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const isSmall = useMediaQuery({maxWidth: 640});
   //console.log('is Tablet: '+isLargeScreen);
-
   return (
     <div>
       {isSmall && (

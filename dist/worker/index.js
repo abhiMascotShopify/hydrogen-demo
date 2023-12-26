@@ -375,7 +375,7 @@ var require_react_development = __commonJS({
           value: source
         }), Object.freeze && (Object.freeze(element.props), Object.freeze(element)), element;
       };
-      function createElement18(type, config, children) {
+      function createElement17(type, config, children) {
         var propName, props = {}, key = null, ref = null, self2 = null, source = null;
         if (config != null) {
           hasValidRef(config) && (ref = config.ref, warnIfStringRefCannotBeAutoConverted(config)), hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key), self2 = config.__self === void 0 ? null : config.__self, source = config.__source === void 0 ? null : config.__source;
@@ -753,7 +753,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         }
         return dispatcher.useContext(Context);
       }
-      function useState18(initialState) {
+      function useState16(initialState) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useState(initialState);
       }
@@ -765,7 +765,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         var dispatcher = resolveDispatcher();
         return dispatcher.useRef(initialValue);
       }
-      function useEffect9(create, deps) {
+      function useEffect7(create, deps) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useEffect(create, deps);
       }
@@ -777,7 +777,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         var dispatcher = resolveDispatcher();
         return dispatcher.useLayoutEffect(create, deps);
       }
-      function useCallback4(callback, deps) {
+      function useCallback3(callback, deps) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useCallback(callback, deps);
       }
@@ -1143,7 +1143,7 @@ Check the top-level render call using <` + parentName + ">.");
           var typeString;
           type === null ? typeString = "null" : isArray(type) ? typeString = "array" : type !== void 0 && type.$$typeof === REACT_ELEMENT_TYPE ? (typeString = "<" + (getComponentNameFromType(type.type) || "Unknown") + " />", info = " Did you accidentally export a JSX literal instead of a component?") : typeString = typeof type, error("React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
         }
-        var element = createElement18.apply(this, arguments);
+        var element = createElement17.apply(this, arguments);
         if (element == null)
           return element;
         if (validType)
@@ -1294,7 +1294,7 @@ Check the top-level render call using <` + parentName + ">.");
         toArray,
         only: onlyChild
       };
-      exports.Children = Children2, exports.Component = Component2, exports.Fragment = REACT_FRAGMENT_TYPE, exports.Profiler = REACT_PROFILER_TYPE, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE, exports.Suspense = REACT_SUSPENSE_TYPE, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext5, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef14, exports.isValidElement = isValidElement2, exports.lazy = lazy2, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback4, exports.useContext = useContext7, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect9, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo10, exports.useReducer = useReducer, exports.useRef = useRef7, exports.useState = useState18, exports.useSyncExternalStore = useSyncExternalStore, exports.useTransition = useTransition2, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+      exports.Children = Children2, exports.Component = Component2, exports.Fragment = REACT_FRAGMENT_TYPE, exports.Profiler = REACT_PROFILER_TYPE, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE, exports.Suspense = REACT_SUSPENSE_TYPE, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext5, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef14, exports.isValidElement = isValidElement2, exports.lazy = lazy2, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback3, exports.useContext = useContext7, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect7, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo10, exports.useReducer = useReducer, exports.useRef = useRef7, exports.useState = useState16, exports.useSyncExternalStore = useSyncExternalStore, exports.useTransition = useTransition2, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
     })();
   }
 });
@@ -8138,7 +8138,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function basicStateReducer(state, action11) {
         return typeof action11 == "function" ? action11(state) : action11;
       }
-      function useState18(initialState) {
+      function useState16(initialState) {
         return currentHookNameInDev = "useState", useReducer(
           basicStateReducer,
           // useReducer has a special case to support lazy useState initializers
@@ -8221,7 +8221,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
           }
         }
       }
-      function useCallback4(callback, deps) {
+      function useCallback3(callback, deps) {
         return useMemo10(function() {
           return callback;
         }, deps);
@@ -8258,10 +8258,10 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         useMemo: useMemo10,
         useReducer,
         useRef: useRef7,
-        useState: useState18,
+        useState: useState16,
         useInsertionEffect: noop2,
         useLayoutEffect: useLayoutEffect3,
-        useCallback: useCallback4,
+        useCallback: useCallback3,
         // useImperativeHandle is not run in the server environment
         useImperativeHandle: noop2,
         // Effects are not run in the server environment.
@@ -11690,7 +11690,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function basicStateReducer(state, action11) {
         return typeof action11 == "function" ? action11(state) : action11;
       }
-      function useState18(initialState) {
+      function useState16(initialState) {
         return currentHookNameInDev = "useState", useReducer(
           basicStateReducer,
           // useReducer has a special case to support lazy useState initializers
@@ -11773,7 +11773,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
           }
         }
       }
-      function useCallback4(callback, deps) {
+      function useCallback3(callback, deps) {
         return useMemo10(function() {
           return callback;
         }, deps);
@@ -11810,10 +11810,10 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         useMemo: useMemo10,
         useReducer,
         useRef: useRef7,
-        useState: useState18,
+        useState: useState16,
         useInsertionEffect: noop2,
         useLayoutEffect: useLayoutEffect3,
-        useCallback: useCallback4,
+        useCallback: useCallback3,
         // useImperativeHandle is not run in the server environment
         useImperativeHandle: noop2,
         // Effects are not run in the server environment.
@@ -32409,7 +32409,7 @@ Check the render method of \`` + ownerName + "`." : "";
           propKey === STYLE ? setValueForStyles(domElement, propValue) : propKey === DANGEROUSLY_SET_INNER_HTML ? setInnerHTML(domElement, propValue) : propKey === CHILDREN ? setTextContent(domElement, propValue) : setValueForProperty(domElement, propKey, propValue, isCustomComponentTag);
         }
       }
-      function createElement18(type, props, rootContainerElement, parentNamespace) {
+      function createElement17(type, props, rootContainerElement, parentNamespace) {
         var isCustomComponentTag, ownerDocument = getOwnerDocumentFromRootContainer(rootContainerElement), domElement, namespaceURI = parentNamespace;
         if (namespaceURI === HTML_NAMESPACE && (namespaceURI = getIntrinsicNamespace(type)), namespaceURI === HTML_NAMESPACE) {
           if (isCustomComponentTag = isCustomComponent(type, props), !isCustomComponentTag && type !== type.toLowerCase() && error("<%s /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.", type), type === "script") {
@@ -32949,7 +32949,7 @@ Check the render method of \`` + ownerName + "`." : "";
           }
           parentNamespace = hostContextDev.namespace;
         }
-        var domElement = createElement18(type, props, rootContainerInstance, parentNamespace);
+        var domElement = createElement17(type, props, rootContainerInstance, parentNamespace);
         return precacheFiberNode(internalInstanceHandle, domElement), updateFiberProps(domElement, props), domElement;
       }
       function appendInitialChild(parentInstance, child) {
@@ -50072,8 +50072,8 @@ Check the top-level render call using <` + parentName + ">.");
       function jsxWithValidationDynamic(type, props, key) {
         return jsxWithValidation(type, props, key, !1);
       }
-      var jsx8 = jsxWithValidationDynamic, jsxs3 = jsxWithValidationStatic;
-      exports.Fragment = REACT_FRAGMENT_TYPE, exports.jsx = jsx8, exports.jsxs = jsxs3;
+      var jsx4 = jsxWithValidationDynamic, jsxs3 = jsxWithValidationStatic;
+      exports.Fragment = REACT_FRAGMENT_TYPE, exports.jsx = jsx4, exports.jsxs = jsxs3;
     })();
   }
 });
@@ -53773,10 +53773,10 @@ var favicon_default = "/build/_assets/favicon-5FIZBM2K.svg";
 var reset_default = "/build/_assets/reset-GF4OX5GB.css";
 
 // app/styles/app.css
-var app_default = "/build/_assets/app-3SEFORTC.css";
+var app_default = "/build/_assets/app-E2CDJET3.css";
 
 // app/components/Layout.jsx
-var import_react30 = __toESM(require_react());
+var import_react27 = __toESM(require_react());
 
 // app/components/Aside.jsx
 var import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime());
@@ -54454,8 +54454,8 @@ function Footer({ menu }) {
 }
 
 // app/components/Header.jsx
-var import_react16 = __toESM(require_react());
-var import_react17 = __toESM(require_react()), import_react_responsive = __toESM(require_react_responsive()), import_react18 = __toESM(require_react2());
+var import_react13 = __toESM(require_react());
+var import_react14 = __toESM(require_react()), import_react_responsive = __toESM(require_react_responsive()), import_react15 = __toESM(require_react2());
 
 // node_modules/@shopify/hydrogen/node_modules/@shopify/hydrogen-react/dist/browser-dev/flatten-connection.mjs
 function flattenConnection(connection) {
@@ -54757,45 +54757,8 @@ function isMoney(maybeMoney) {
   return typeof maybeMoney.amount == "string" && !!maybeMoney.amount && typeof maybeMoney.currencyCode == "string" && !!maybeMoney.currencyCode;
 }
 
-// node_modules/@shopify/hydrogen/node_modules/@shopify/hydrogen-react/dist/browser-dev/ExternalVideo.mjs
-var import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
-function ExternalVideo(props) {
-  let {
-    data: data2,
-    options,
-    id = data2.id,
-    frameBorder = "0",
-    allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-    allowFullScreen = !0,
-    loading = "lazy",
-    ...passthroughProps
-  } = props;
-  if (!data2.embedUrl)
-    throw new Error("<ExternalVideo/> requires the 'embedUrl' property");
-  let finalUrl = data2.embedUrl;
-  if (options) {
-    let urlObject = new URL(data2.embedUrl);
-    for (let key of Object.keys(options))
-      urlObject.searchParams.set(key, options[key]);
-    finalUrl = urlObject.toString();
-  }
-  return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
-    "iframe",
-    {
-      ...passthroughProps,
-      id: id ?? data2.embedUrl,
-      title: data2.alt ?? data2.id ?? "external video",
-      frameBorder,
-      allow,
-      allowFullScreen,
-      src: finalUrl,
-      loading
-    }
-  );
-}
-
 // node_modules/@shopify/hydrogen/node_modules/@shopify/hydrogen-react/dist/browser-dev/Image.mjs
-var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1), React7 = __toESM(require_react(), 1);
+var import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1), React7 = __toESM(require_react(), 1);
 var Image = React7.forwardRef(
   ({
     alt,
@@ -54862,7 +54825,7 @@ var Image = React7.forwardRef(
         "you may be loading unnecessarily large images.",
         `Image used is ${src || (data2 == null ? void 0 : data2.url) || (passthroughProps == null ? void 0 : passthroughProps.key) || "unknown"}`
       ].join(" ")
-    ), fixedWidth ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+    ), fixedWidth ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
       FixedWidthImage,
       {
         aspectRatio,
@@ -54877,7 +54840,7 @@ var Image = React7.forwardRef(
         ref,
         width
       }
-    ) : /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+    ) : /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
       FluidImage,
       {
         aspectRatio,
@@ -54930,7 +54893,7 @@ var Image = React7.forwardRef(
       normalizedProps,
       width
     ]);
-    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
       "img",
       {
         ref,
@@ -54974,7 +54937,7 @@ var Image = React7.forwardRef(
         src
       };
     }, [crop, imageWidths, loader30, normalizedProps, placeholderWidth]);
-    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
       "img",
       {
         ref,
@@ -55066,380 +55029,9 @@ function generateSizes(imageWidths, aspectRatio, crop = "center") {
   })) : void 0;
 }
 
-// node_modules/@shopify/hydrogen/node_modules/@shopify/hydrogen-react/dist/browser-dev/load-script.mjs
-var import_react7 = __toESM(require_react(), 1), SCRIPTS_LOADED = {};
-function loadScript(src, options) {
-  let isScriptLoaded = SCRIPTS_LOADED[src];
-  if (isScriptLoaded)
-    return isScriptLoaded;
-  let promise = new Promise((resolve, reject) => {
-    let script = document.createElement("script");
-    options != null && options.module ? script.type = "module" : script.type = "text/javascript", script.src = src, script.onload = () => {
-      resolve(!0);
-    }, script.onerror = () => {
-      reject(!1);
-    }, (options == null ? void 0 : options.in) === "head" ? document.head.appendChild(script) : document.body.appendChild(script);
-    let attributes = options == null ? void 0 : options.attributes;
-    attributes && Object.keys(attributes).forEach((key) => {
-      script.setAttribute(key, attributes[key]);
-    });
-  });
-  return SCRIPTS_LOADED[src] = promise, promise;
-}
-function useLoadScript(url, options) {
-  let [status, setStatus] = (0, import_react7.useState)("loading"), stringifiedOptions = JSON.stringify(options);
-  return (0, import_react7.useEffect)(() => {
-    async function loadScriptWrapper() {
-      try {
-        setStatus("loading"), await loadScript(url, options), setStatus("done");
-      } catch {
-        setStatus("error");
-      }
-    }
-    loadScriptWrapper().catch(() => {
-      setStatus("error");
-    });
-  }, [url, stringifiedOptions, options]), status;
-}
-
-// node_modules/@shopify/hydrogen/node_modules/@shopify/hydrogen-react/dist/browser-dev/MediaFile.mjs
-var import_jsx_runtime8 = __toESM(require_jsx_runtime(), 1);
-
-// node_modules/@shopify/hydrogen/node_modules/@shopify/hydrogen-react/dist/browser-dev/Video.mjs
-var import_jsx_runtime6 = __toESM(require_jsx_runtime(), 1), import_react8 = __toESM(require_react(), 1);
-function Video(props) {
-  var _a2;
-  let {
-    data: data2,
-    previewImageOptions,
-    id = data2.id,
-    playsInline = !0,
-    controls: controls2 = !0,
-    sourceProps = {},
-    ...passthroughProps
-  } = props, posterUrl = shopifyLoader({
-    src: ((_a2 = data2.previewImage) == null ? void 0 : _a2.url) ?? "",
-    ...previewImageOptions
-  });
-  if (!data2.sources)
-    throw new Error("<Video/> requires a 'data.sources' array");
-  return (
-    // eslint-disable-next-line jsx-a11y/media-has-caption
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
-      "video",
-      {
-        ...passthroughProps,
-        id,
-        playsInline,
-        controls: controls2,
-        poster: posterUrl,
-        children: data2.sources.map((source) => {
-          if (!(source != null && source.url && (source != null && source.mimeType)))
-            throw new Error("<Video/> needs 'source.url' and 'source.mimeType'");
-          return /* @__PURE__ */ (0, import_react8.createElement)(
-            "source",
-            {
-              ...sourceProps,
-              key: source.url,
-              src: source.url,
-              type: source.mimeType
-            }
-          );
-        })
-      }
-    )
-  );
-}
-
-// node_modules/@shopify/hydrogen/node_modules/@shopify/hydrogen-react/dist/browser-dev/ModelViewer.mjs
-var import_jsx_runtime7 = __toESM(require_jsx_runtime(), 1), import_react9 = __toESM(require_react(), 1);
-function ModelViewer(props) {
-  var _a2, _b, _c;
-  let [modelViewer, setModelViewer] = (0, import_react9.useState)(
-    void 0
-  ), callbackRef = (0, import_react9.useCallback)((node) => {
-    setModelViewer(node);
-  }, []), { data: data2, children, className, ...passthroughProps } = props, modelViewerLoadedStatus = useLoadScript(
-    "https://unpkg.com/@google/model-viewer@v1.12.1/dist/model-viewer.min.js",
-    {
-      module: !0
-    }
-  );
-  if ((0, import_react9.useEffect)(() => {
-    if (modelViewer)
-      return passthroughProps.onError && modelViewer.addEventListener("error", passthroughProps.onError), passthroughProps.onLoad && modelViewer.addEventListener("load", passthroughProps.onLoad), passthroughProps.onPreload && modelViewer.addEventListener("preload", passthroughProps.onPreload), passthroughProps.onModelVisibility && modelViewer.addEventListener(
-        "model-visibility",
-        passthroughProps.onModelVisibility
-      ), passthroughProps.onProgress && modelViewer.addEventListener("progress", passthroughProps.onProgress), passthroughProps.onArStatus && modelViewer.addEventListener("ar-status", passthroughProps.onArStatus), passthroughProps.onArTracking && modelViewer.addEventListener(
-        "ar-tracking",
-        passthroughProps.onArTracking
-      ), passthroughProps.onQuickLookButtonTapped && modelViewer.addEventListener(
-        "quick-look-button-tapped",
-        passthroughProps.onQuickLookButtonTapped
-      ), passthroughProps.onCameraChange && modelViewer.addEventListener(
-        "camera-change",
-        passthroughProps.onCameraChange
-      ), passthroughProps.onEnvironmentChange && modelViewer.addEventListener(
-        "environment-change",
-        passthroughProps.onEnvironmentChange
-      ), passthroughProps.onPlay && modelViewer.addEventListener("play", passthroughProps.onPlay), passthroughProps.onPause && modelViewer.addEventListener("ar-status", passthroughProps.onPause), passthroughProps.onSceneGraphReady && modelViewer.addEventListener(
-        "scene-graph-ready",
-        passthroughProps.onSceneGraphReady
-      ), () => {
-        modelViewer != null && (passthroughProps.onError && modelViewer.removeEventListener("error", passthroughProps.onError), passthroughProps.onLoad && modelViewer.removeEventListener("load", passthroughProps.onLoad), passthroughProps.onPreload && modelViewer.removeEventListener("preload", passthroughProps.onPreload), passthroughProps.onModelVisibility && modelViewer.removeEventListener(
-          "model-visibility",
-          passthroughProps.onModelVisibility
-        ), passthroughProps.onProgress && modelViewer.removeEventListener(
-          "progress",
-          passthroughProps.onProgress
-        ), passthroughProps.onArStatus && modelViewer.removeEventListener(
-          "ar-status",
-          passthroughProps.onArStatus
-        ), passthroughProps.onArTracking && modelViewer.removeEventListener(
-          "ar-tracking",
-          passthroughProps.onArTracking
-        ), passthroughProps.onQuickLookButtonTapped && modelViewer.removeEventListener(
-          "quick-look-button-tapped",
-          passthroughProps.onQuickLookButtonTapped
-        ), passthroughProps.onCameraChange && modelViewer.removeEventListener(
-          "camera-change",
-          passthroughProps.onCameraChange
-        ), passthroughProps.onEnvironmentChange && modelViewer.removeEventListener(
-          "environment-change",
-          passthroughProps.onEnvironmentChange
-        ), passthroughProps.onPlay && modelViewer.removeEventListener("play", passthroughProps.onPlay), passthroughProps.onPause && modelViewer.removeEventListener("ar-status", passthroughProps.onPause), passthroughProps.onSceneGraphReady && modelViewer.removeEventListener(
-          "scene-graph-ready",
-          passthroughProps.onSceneGraphReady
-        ));
-      };
-  }, [
-    modelViewer,
-    passthroughProps.onArStatus,
-    passthroughProps.onArTracking,
-    passthroughProps.onCameraChange,
-    passthroughProps.onEnvironmentChange,
-    passthroughProps.onError,
-    passthroughProps.onLoad,
-    passthroughProps.onModelVisibility,
-    passthroughProps.onPause,
-    passthroughProps.onPlay,
-    passthroughProps.onPreload,
-    passthroughProps.onProgress,
-    passthroughProps.onQuickLookButtonTapped,
-    passthroughProps.onSceneGraphReady
-  ]), modelViewerLoadedStatus !== "done")
-    return null;
-  if (!((_b = (_a2 = data2.sources) == null ? void 0 : _a2[0]) != null && _b.url)) {
-    let sourcesUrlError = "<ModelViewer/> requires 'data.sources' prop to be an array, with an object that has a property 'url' on it. Rendering 'null'";
-    throw new Error(sourcesUrlError);
-  }
-  return data2.alt || console.warn(
-    "<ModelViewer/> requires the 'data.alt' prop for accessibility"
-  ), /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-    "model-viewer",
-    {
-      ref: callbackRef,
-      ...passthroughProps,
-      class: className,
-      id: passthroughProps.id ?? data2.id,
-      src: data2.sources[0].url,
-      alt: data2.alt ?? null,
-      "camera-controls": passthroughProps.cameraControls ?? !0,
-      poster: (passthroughProps.poster || ((_c = data2.previewImage) == null ? void 0 : _c.url)) ?? null,
-      autoplay: passthroughProps.autoplay ?? !0,
-      loading: passthroughProps.loading,
-      reveal: passthroughProps.reveal,
-      ar: passthroughProps.ar,
-      "ar-modes": passthroughProps.arModes,
-      "ar-scale": passthroughProps.arScale,
-      "ar-placement": passthroughProps.arPlacement,
-      "ios-src": passthroughProps.iosSrc,
-      "touch-action": passthroughProps.touchAction,
-      "disable-zoom": passthroughProps.disableZoom,
-      "orbit-sensitivity": passthroughProps.orbitSensitivity,
-      "auto-rotate": passthroughProps.autoRotate,
-      "auto-rotate-delay": passthroughProps.autoRotateDelay,
-      "rotation-per-second": passthroughProps.rotationPerSecond,
-      "interaction-policy": passthroughProps.interactionPolicy,
-      "interaction-prompt": passthroughProps.interactionPrompt,
-      "interaction-prompt-style": passthroughProps.interactionPromptStyle,
-      "interaction-prompt-threshold": passthroughProps.interactionPromptThreshold,
-      "camera-orbit": passthroughProps.cameraOrbit,
-      "camera-target": passthroughProps.cameraTarget,
-      "field-of-view": passthroughProps.fieldOfView,
-      "max-camera-orbit": passthroughProps.maxCameraOrbit,
-      "min-camera-orbit": passthroughProps.minCameraOrbit,
-      "max-field-of-view": passthroughProps.maxFieldOfView,
-      "min-field-of-view": passthroughProps.minFieldOfView,
-      bounds: passthroughProps.bounds,
-      "interpolation-decay": passthroughProps.interpolationDecay ?? 100,
-      "skybox-image": passthroughProps.skyboxImage,
-      "environment-image": passthroughProps.environmentImage,
-      exposure: passthroughProps.exposure,
-      "shadow-intensity": passthroughProps.shadowIntensity ?? 0,
-      "shadow-softness": passthroughProps.shadowSoftness ?? 0,
-      "animation-name": passthroughProps.animationName,
-      "animation-crossfade-duration": passthroughProps.animationCrossfadeDuration,
-      "variant-name": passthroughProps.variantName,
-      orientation: passthroughProps.orientation,
-      scale: passthroughProps.scale,
-      children
-    }
-  );
-}
-
-// node_modules/@shopify/hydrogen/node_modules/@shopify/hydrogen-react/dist/browser-dev/MediaFile.mjs
-function MediaFile({
-  data: data2,
-  mediaOptions,
-  ...passthroughProps
-}) {
-  switch (data2.__typename) {
-    case "MediaImage": {
-      if (!data2.image) {
-        let noDataImage = "<MediaFile/>: 'data.image' does not exist for __typename of 'MediaImage'; rendering 'null' by default.";
-        throw new Error(noDataImage);
-      }
-      return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
-        Image,
-        {
-          ...passthroughProps,
-          ...mediaOptions == null ? void 0 : mediaOptions.image,
-          data: data2.image
-        }
-      );
-    }
-    case "Video":
-      return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Video, { ...passthroughProps, ...mediaOptions == null ? void 0 : mediaOptions.video, data: data2 });
-    case "ExternalVideo":
-      return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
-        ExternalVideo,
-        {
-          ...passthroughProps,
-          ...mediaOptions == null ? void 0 : mediaOptions.externalVideo,
-          data: data2
-        }
-      );
-    case "Model3d":
-      return (
-        // @ts-expect-error There are issues with the inferred HTML attribute types here for ModelViewer (and contentEditable), but I think that's a little bit beyond me at the moment
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
-          ModelViewer,
-          {
-            ...passthroughProps,
-            ...mediaOptions == null ? void 0 : mediaOptions.modelViewer,
-            data: data2
-          }
-        )
-      );
-    default: {
-      let typenameMissingMessage = "<MediaFile /> requires the '__typename' property to exist on the 'data' prop in order to render the matching sub-component for this type of media.";
-      throw new Error(typenameMissingMessage);
-    }
-  }
-}
-
-// node_modules/@shopify/hydrogen/node_modules/@shopify/hydrogen-react/dist/browser-dev/parse-metafield.mjs
-function parseMetafield(metafield) {
-  if (!metafield.type) {
-    let noTypeError = "parseMetafield(): The 'type' field is required in order to parse the Metafield.";
-    throw new Error(noTypeError);
-  }
-  switch (metafield.type) {
-    case "boolean":
-      return {
-        ...metafield,
-        parsedValue: metafield.value === "true"
-      };
-    case "collection_reference":
-    case "file_reference":
-    case "page_reference":
-    case "product_reference":
-    case "variant_reference":
-      return {
-        ...metafield,
-        parsedValue: metafield.reference
-      };
-    case "color":
-    case "multi_line_text_field":
-    case "single_line_text_field":
-    case "url":
-      return {
-        ...metafield,
-        parsedValue: metafield.value
-      };
-    case "dimension":
-    case "money":
-    case "json":
-    case "rating":
-    case "volume":
-    case "weight":
-    case "list.color":
-    case "list.dimension":
-    case "list.number_integer":
-    case "list.number_decimal":
-    case "list.rating":
-    case "list.single_line_text_field":
-    case "list.url":
-    case "list.volume":
-    case "list.weight": {
-      let parsedValue = null;
-      try {
-        parsedValue = parseJSON(metafield.value ?? "");
-      } catch {
-        let parseError = "parseMetafield(): attempted to JSON.parse the 'metafield.value' property, but failed.";
-        throw new Error(parseError);
-      }
-      return {
-        ...metafield,
-        parsedValue
-      };
-    }
-    case "date":
-    case "date_time":
-      return {
-        ...metafield,
-        parsedValue: new Date(metafield.value ?? "")
-      };
-    case "list.date":
-    case "list.date_time": {
-      let jsonParseValue = parseJSON((metafield == null ? void 0 : metafield.value) ?? "");
-      return {
-        ...metafield,
-        parsedValue: jsonParseValue.map((dateString) => new Date(dateString))
-      };
-    }
-    case "number_decimal":
-    case "number_integer":
-      return {
-        ...metafield,
-        parsedValue: Number(metafield.value)
-      };
-    case "list.collection_reference":
-    case "list.file_reference":
-    case "list.page_reference":
-    case "list.product_reference":
-    case "list.variant_reference":
-      return {
-        ...metafield,
-        parsedValue: flattenConnection(metafield.references ?? void 0)
-      };
-    default: {
-      let typeNotFoundError = `parseMetafield(): the 'metafield.type' you passed in is not supported. Your type: "${metafield.type}". If you believe this is an error, please open an issue on GitHub.`;
-      throw new Error(typeNotFoundError);
-    }
-  }
-}
-function parseJSON(json4) {
-  return String(json4).includes("__proto__") ? JSON.parse(json4, (k2, v4) => {
-    if (k2 !== "__proto__")
-      return v4;
-  }) : JSON.parse(json4);
-}
-
 // node_modules/@shopify/hydrogen/dist/development/index.js
-var import_react10 = __toESM(require_react(), 1);
-var import_jsx_runtime9 = __toESM(require_jsx_runtime(), 1), import_content_security_policy_builder = __toESM(require_dist2(), 1);
+var import_react7 = __toESM(require_react(), 1);
+var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1), import_content_security_policy_builder = __toESM(require_dist2(), 1);
 function hashKey(queryKey) {
   let rawKeys = Array.isArray(queryKey) ? queryKey : [queryKey], hash = "";
   for (let key of rawKeys)
@@ -55499,7 +55091,7 @@ function CacheDefault(overrideOptions) {
 function CacheCustom(overrideOptions) {
   return overrideOptions;
 }
-function parseJSON2(json4) {
+function parseJSON(json4) {
   return String(json4).includes("__proto__") ? JSON.parse(json4, noproto) : JSON.parse(json4);
 }
 function noproto(k2, v4) {
@@ -55573,7 +55165,7 @@ async function getItemFromCache(cache, key) {
     return;
   let text = await response.text();
   try {
-    return [parseJSON2(text), response];
+    return [parseJSON(text), response];
   } catch {
     return [text, response];
   }
@@ -55820,7 +55412,7 @@ function createStorefrontClient2(options) {
     if (!response.ok) {
       let errors2;
       try {
-        errors2 = parseJSON2(body);
+        errors2 = parseJSON(body);
       } catch {
         errors2 = [{ message: body }];
       }
@@ -56144,7 +55736,7 @@ var REDIRECT_QUERY = `#graphql
     { status: 200, headers: { "content-type": "text/html" } }
   );
 };
-var SeoLogger = (0, import_react10.lazy)(() => Promise.resolve().then(() => (init_log_seo_tags_IG37ONQ2(), log_seo_tags_IG37ONQ2_exports)));
+var SeoLogger = (0, import_react7.lazy)(() => Promise.resolve().then(() => (init_log_seo_tags_IG37ONQ2(), log_seo_tags_IG37ONQ2_exports)));
 function Pagination({
   connection,
   children = () => (console.warn("<Pagination> requires children to work properly"), null)
@@ -56157,7 +55749,7 @@ function Pagination({
     nodes,
     previousPageUrl,
     startCursor
-  } = usePagination(connection), state = (0, import_react10.useMemo)(
+  } = usePagination(connection), state = (0, import_react7.useMemo)(
     () => ({
       pageInfo: {
         endCursor,
@@ -56168,9 +55760,9 @@ function Pagination({
       nodes
     }),
     [endCursor, hasNextPage, hasPreviousPage, startCursor, nodes]
-  ), NextLink = (0, import_react10.useMemo)(
-    () => (0, import_react10.forwardRef)(function(props, ref) {
-      return hasNextPage ? (0, import_react10.createElement)(Link2, {
+  ), NextLink = (0, import_react7.useMemo)(
+    () => (0, import_react7.forwardRef)(function(props, ref) {
+      return hasNextPage ? (0, import_react7.createElement)(Link2, {
         preventScrollReset: !0,
         ...props,
         to: nextPageUrl,
@@ -56180,9 +55772,9 @@ function Pagination({
       }) : null;
     }),
     [hasNextPage, nextPageUrl, state]
-  ), PreviousLink = (0, import_react10.useMemo)(
-    () => (0, import_react10.forwardRef)(function(props, ref) {
-      return hasPreviousPage ? (0, import_react10.createElement)(Link2, {
+  ), PreviousLink = (0, import_react7.useMemo)(
+    () => (0, import_react7.forwardRef)(function(props, ref) {
+      return hasPreviousPage ? (0, import_react7.createElement)(Link2, {
         preventScrollReset: !0,
         ...props,
         to: previousPageUrl,
@@ -56216,10 +55808,10 @@ function makeError(prop) {
 }
 function usePagination(connection) {
   connection.pageInfo || makeError("pageInfo"), typeof connection.pageInfo.startCursor > "u" && makeError("pageInfo.startCursor"), typeof connection.pageInfo.endCursor > "u" && makeError("pageInfo.endCursor"), typeof connection.pageInfo.hasNextPage > "u" && makeError("pageInfo.hasNextPage"), typeof connection.pageInfo.hasPreviousPage > "u" && makeError("pageInfo.hasPreviousPage");
-  let navigate = useNavigate(), { state, search, pathname } = useLocation(), isPrevious = new URLSearchParams(search).get("direction") === "previous", nodes = (0, import_react10.useMemo)(() => {
+  let navigate = useNavigate(), { state, search, pathname } = useLocation(), isPrevious = new URLSearchParams(search).get("direction") === "previous", nodes = (0, import_react7.useMemo)(() => {
     var _a2;
     return !((_a2 = globalThis == null ? void 0 : globalThis.window) != null && _a2.__hydrogenHydrated) || !state || !(state != null && state.nodes) ? flattenConnection(connection) : isPrevious ? [...flattenConnection(connection), ...state.nodes] : [...state.nodes, ...flattenConnection(connection)];
-  }, [state, connection]), currentPageInfo = (0, import_react10.useMemo)(
+  }, [state, connection]), currentPageInfo = (0, import_react7.useMemo)(
     () => {
       var _a2, _b, _c, _d, _e3;
       let hydrogenHydrated = (_a2 = globalThis == null ? void 0 : globalThis.window) == null ? void 0 : _a2.__hydrogenHydrated, pageStartCursor = !hydrogenHydrated || ((_b = state == null ? void 0 : state.pageInfo) == null ? void 0 : _b.startCursor) === void 0 ? connection.pageInfo.startCursor : state.pageInfo.startCursor, pageEndCursor = !hydrogenHydrated || ((_c = state == null ? void 0 : state.pageInfo) == null ? void 0 : _c.endCursor) === void 0 ? connection.pageInfo.endCursor : state.pageInfo.endCursor, previousPageExists = !hydrogenHydrated || ((_d = state == null ? void 0 : state.pageInfo) == null ? void 0 : _d.hasPreviousPage) === void 0 ? connection.pageInfo.hasPreviousPage : state.pageInfo.hasPreviousPage, nextPageExists = !hydrogenHydrated || ((_e3 = state == null ? void 0 : state.pageInfo) == null ? void 0 : _e3.hasNextPage) === void 0 ? connection.pageInfo.hasNextPage : state.pageInfo.hasNextPage;
@@ -56238,13 +55830,13 @@ function usePagination(connection) {
       connection.pageInfo.startCursor,
       connection.pageInfo.endCursor
     ]
-  ), urlRef = (0, import_react10.useRef)({
+  ), urlRef = (0, import_react7.useRef)({
     params: getParamsWithoutPagination(search),
     pathname
   });
-  (0, import_react10.useEffect)(() => {
+  (0, import_react7.useEffect)(() => {
     window.__hydrogenHydrated = !0;
-  }, []), (0, import_react10.useEffect)(() => {
+  }, []), (0, import_react7.useEffect)(() => {
     // If the URL changes (independent of pagination params)
     // then reset the pagination params in the URL
     (getParamsWithoutPagination(search) !== urlRef.current.params || pathname !== urlRef.current.pathname) && (urlRef.current = {
@@ -56256,10 +55848,10 @@ function usePagination(connection) {
       state: { nodes: void 0, pageInfo: void 0 }
     }));
   }, [pathname, search]);
-  let previousPageUrl = (0, import_react10.useMemo)(() => {
+  let previousPageUrl = (0, import_react7.useMemo)(() => {
     let params2 = new URLSearchParams(search);
     return params2.set("direction", "previous"), currentPageInfo.startCursor && params2.set("cursor", currentPageInfo.startCursor), `?${params2.toString()}`;
-  }, [search, currentPageInfo.startCursor]), nextPageUrl = (0, import_react10.useMemo)(() => {
+  }, [search, currentPageInfo.startCursor]), nextPageUrl = (0, import_react7.useMemo)(() => {
     let params2 = new URLSearchParams(search);
     return params2.set("direction", "next"), currentPageInfo.endCursor && params2.set("cursor", currentPageInfo.endCursor), `?${params2.toString()}`;
   }, [search, currentPageInfo.endCursor]);
@@ -56288,11 +55880,11 @@ function CartForm({
   route
 }) {
   let fetcher = useFetcher2();
-  return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(fetcher.Form, {
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(fetcher.Form, {
     action: route || "",
     method: "post",
     children: [
-      (action11 || inputs) && /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+      (action11 || inputs) && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "input",
         {
           type: "hidden",
@@ -56932,10 +56524,10 @@ function VariantSelector({
       return ((_a2 = option == null ? void 0 : option.values) == null ? void 0 : _a2.length) === 1;
     }
   );
-  return (0, import_react10.createElement)(
-    import_react10.Fragment,
+  return (0, import_react7.createElement)(
+    import_react7.Fragment,
     null,
-    ...(0, import_react10.useMemo)(() => options.filter((option) => {
+    ...(0, import_react7.useMemo)(() => options.filter((option) => {
       var _a2;
       return ((_a2 = option == null ? void 0 : option.values) == null ? void 0 : _a2.length) > 1;
     }).map((option) => {
@@ -56988,7 +56580,7 @@ var getSelectedProductOptions = (request) => {
 };
 function useVariantPath(handle, productPath) {
   let { pathname, search } = useLocation();
-  return (0, import_react10.useMemo)(() => {
+  return (0, import_react7.useMemo)(() => {
     let match = /(\/[a-zA-Z]{2}-[a-zA-Z]{2}\/)/g.exec(pathname), isLocalePathname = match && match.length > 0;
     productPath = productPath.startsWith("/") ? productPath.substring(1) : productPath;
     let path = isLocalePathname ? `${match[0]}${productPath}/${handle}` : `/${productPath}/${handle}`;
@@ -57002,16 +56594,16 @@ function useVariantPath(handle, productPath) {
     };
   }, [pathname, search, handle, productPath]);
 }
-var NonceContext = (0, import_react10.createContext)(void 0), NonceProvider = NonceContext.Provider, useNonce = () => (0, import_react10.useContext)(NonceContext);
-var Script = (0, import_react10.forwardRef)(
+var NonceContext = (0, import_react7.createContext)(void 0), NonceProvider = NonceContext.Provider, useNonce = () => (0, import_react7.useContext)(NonceContext);
+var Script = (0, import_react7.forwardRef)(
   (props, ref) => {
     let nonce = useNonce();
-    return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("script", { suppressHydrationWarning: !0, ...props, nonce, ref });
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("script", { suppressHydrationWarning: !0, ...props, nonce, ref });
   }
 );
 
 // app/components/Search.jsx
-var import_react13 = __toESM(require_react());
+var import_react10 = __toESM(require_react());
 var import_jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime()), NO_PREDICTIVE_SEARCH_RESULTS = [
   { type: "queries", items: [] },
   { type: "products", items: [] },
@@ -57020,8 +56612,8 @@ var import_jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime()), NO_PREDICTIVE_
   { type: "articles", items: [] }
 ];
 function SearchForm({ searchTerm }) {
-  let inputRef = (0, import_react13.useRef)(null);
-  return (0, import_react13.useEffect)(() => {
+  let inputRef = (0, import_react10.useRef)(null);
+  return (0, import_react10.useEffect)(() => {
     function handleKeyDown(event) {
       var _a2, _b;
       event.key === "k" && event.metaKey && (event.preventDefault(), (_a2 = inputRef.current) == null || _a2.focus()), event.key === "Escape" && ((_b = inputRef.current) == null || _b.blur());
@@ -57275,7 +56867,7 @@ function PredictiveSearchForm({
   method = "POST",
   ...props
 }) {
-  let params = useParams(), fetcher = useFetcher2(), inputRef = (0, import_react13.useRef)(null);
+  let params = useParams(), fetcher = useFetcher2(), inputRef = (0, import_react10.useRef)(null);
   function fetchResults(event) {
     let searchAction = action11 ?? "/api/predictive-search", localizedAction = params.locale ? `/${params.locale}${searchAction}` : searchAction, newSearchTerm = event.target.value || "";
     fetcher.submit(
@@ -57283,7 +56875,7 @@ function PredictiveSearchForm({
       { method, action: localizedAction }
     );
   }
-  return (0, import_react13.useEffect)(() => {
+  return (0, import_react10.useEffect)(() => {
     var _a2;
     (_a2 = inputRef == null ? void 0 : inputRef.current) == null || _a2.setAttribute("type", "search");
   }, []), /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
@@ -57478,7 +57070,7 @@ function SearchResultItem({ goToSearchResult, item }) {
 }
 function usePredictiveSearch() {
   var _a2, _b;
-  let fetchers = useFetchers2(), searchTerm = (0, import_react13.useRef)(""), searchInputRef = (0, import_react13.useRef)(null), searchFetcher = fetchers.find((fetcher) => {
+  let fetchers = useFetchers2(), searchTerm = (0, import_react10.useRef)(""), searchInputRef = (0, import_react10.useRef)(null), searchFetcher = fetchers.find((fetcher) => {
     var _a3;
     return (_a3 = fetcher.data) == null ? void 0 : _a3.searchResults;
   });
@@ -57487,7 +57079,7 @@ function usePredictiveSearch() {
     results: NO_PREDICTIVE_SEARCH_RESULTS,
     totalResults: 0
   };
-  return (0, import_react13.useEffect)(() => {
+  return (0, import_react10.useEffect)(() => {
     searchInputRef.current || (searchInputRef.current = document.querySelector('input[type="search"]'));
   }, []), { ...search, searchInputRef, searchTerm };
 }
@@ -57593,8 +57185,8 @@ function Header({ header, isLoggedIn, cart }) {
         lineNumber: 34,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "sm:flex gap-2 items-center sm:block hidden ", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(NavLink2, { prefetch: "intent", to: "/account", style: activeLinkStyle, children: isLoggedIn ? "Acc" : /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "sm:flex gap-2 items-center sm:block hidden ", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(NavLink2, { prefetch: "intent", to: "/account", style: activeLinkStyle, children: isLoggedIn ? "Acc" : /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "login_wrapper", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
           "svg",
           {
             xmlns: "http://www.w3.org/2000/svg",
@@ -57612,8 +57204,8 @@ function Header({ header, isLoggedIn, cart }) {
               !1,
               {
                 fileName: "app/components/Header.jsx",
-                lineNumber: 82,
-                columnNumber: 17
+                lineNumber: 83,
+                columnNumber: 19
               },
               this
             )
@@ -57622,28 +57214,32 @@ function Header({ header, isLoggedIn, cart }) {
           !1,
           {
             fileName: "app/components/Header.jsx",
-            lineNumber: 76,
-            columnNumber: 15
+            lineNumber: 77,
+            columnNumber: 17
           },
           this
-        ) }, void 0, !1, {
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "login_span font-semibold mt-[-3px] ", children: "Login/Register" }, void 0, !1, {
           fileName: "app/components/Header.jsx",
-          lineNumber: 72,
-          columnNumber: 11
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "font-semibold mt-[-3px] ", children: "Login/Register" }, void 0, !1, {
-          fileName: "app/components/Header.jsx",
-          lineNumber: 90,
-          columnNumber: 11
+          lineNumber: 89,
+          columnNumber: 15
         }, this)
       ] }, void 0, !0, {
+        fileName: "app/components/Header.jsx",
+        lineNumber: 76,
+        columnNumber: 15
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Header.jsx",
+        lineNumber: 72,
+        columnNumber: 11
+      }, this) }, void 0, !1, {
         fileName: "app/components/Header.jsx",
         lineNumber: 70,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(HeaderCtas, { isLoggedIn, cart }, void 0, !1, {
         fileName: "app/components/Header.jsx",
-        lineNumber: 92,
+        lineNumber: 95,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
@@ -57653,7 +57249,7 @@ function Header({ header, isLoggedIn, cart }) {
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(HeaderMenu, { menu, viewport: "desktop" }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 94,
+      lineNumber: 97,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
@@ -57667,6 +57263,9 @@ function HeaderMenu({ menu, viewport }) {
   let [root] = useMatches2(), publicStoreDomain = (_a2 = root == null ? void 0 : root.data) == null ? void 0 : _a2.publicStoreDomain, className = `header-menu-${viewport}`;
   function closeAside(event) {
     viewport === "mobile" && (event.preventDefault(), window.location.href = event.currentTarget.href);
+  }
+  function getPath(url_path) {
+    return new URL(url_path).pathname;
   }
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("nav", { className, role: "navigation", children: [
     viewport === "mobile" && /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -57682,7 +57281,7 @@ function HeaderMenu({ menu, viewport }) {
       !1,
       {
         fileName: "app/components/Header.jsx",
-        lineNumber: 114,
+        lineNumber: 123,
         columnNumber: 9
       },
       this
@@ -57694,42 +57293,42 @@ function HeaderMenu({ menu, viewport }) {
       return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "relative inline-block text-left group", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("button", { className: "px-4 py-2 text-gray-800 focus:outline-none", children: item.title }, void 0, !1, {
           fileName: "app/components/Header.jsx",
-          lineNumber: 133,
+          lineNumber: 141,
           columnNumber: 13
         }, this),
         item.items.length > 0 && /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "absolute hidden mt-2 w-48 bg-white border border-gray-300 divide-y divide-gray-200 rounded-lg shadow-lg group-hover:block", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "py-1", children: item.items.map((it2) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
           "a",
           {
-            href: `${it2.url}`,
-            className: "block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:opacity-100",
+            href: getPath(it2.url),
+            className: "menu block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:opacity-100",
             children: it2.title
           },
           void 0,
           !1,
           {
             fileName: "app/components/Header.jsx",
-            lineNumber: 140,
+            lineNumber: 148,
             columnNumber: 21
           },
           this
         )) }, void 0, !1, {
           fileName: "app/components/Header.jsx",
-          lineNumber: 138,
+          lineNumber: 146,
           columnNumber: 17
         }, this) }, void 0, !1, {
           fileName: "app/components/Header.jsx",
-          lineNumber: 137,
+          lineNumber: 145,
           columnNumber: 15
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/Header.jsx",
-        lineNumber: 132,
+        lineNumber: 140,
         columnNumber: 11
       }, this);
     })
   ] }, void 0, !0, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 112,
+    lineNumber: 121,
     columnNumber: 5
   }, this);
 }
@@ -57753,7 +57352,7 @@ function HeaderCtas({ isLoggedIn, cart }) {
           !1,
           {
             fileName: "app/components/Header.jsx",
-            lineNumber: 171,
+            lineNumber: 179,
             columnNumber: 13
           },
           this
@@ -57763,44 +57362,44 @@ function HeaderCtas({ isLoggedIn, cart }) {
       !1,
       {
         fileName: "app/components/Header.jsx",
-        lineNumber: 165,
+        lineNumber: 173,
         columnNumber: 11
       },
       this
     ) }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 161,
+      lineNumber: 169,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(SearchToggle, {}, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 179,
+      lineNumber: 187,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(CartToggle, { cart }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 180,
+      lineNumber: 188,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(HeaderMenuMobileToggle, {}, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 181,
+      lineNumber: 189,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 159,
+    lineNumber: 167,
     columnNumber: 5
   }, this);
 }
 function HeaderMenuMobileToggle() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("a", { className: "header-menu-mobile-toggle", href: "#mobile-menu-aside", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h3", { children: "\u2630" }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 189,
+    lineNumber: 197,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 188,
+    lineNumber: 196,
     columnNumber: 5
   }, this);
 }
@@ -57825,7 +57424,7 @@ function SearchToggle() {
         !1,
         {
           fileName: "app/components/Header.jsx",
-          lineNumber: 205,
+          lineNumber: 213,
           columnNumber: 9
         },
         this
@@ -57835,13 +57434,13 @@ function SearchToggle() {
     !1,
     {
       fileName: "app/components/Header.jsx",
-      lineNumber: 197,
+      lineNumber: 205,
       columnNumber: 7
     },
     this
   ) }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 196,
+    lineNumber: 204,
     columnNumber: 5
   }, this);
 }
@@ -57867,7 +57466,7 @@ function CartBadge({ count }) {
           !1,
           {
             fileName: "app/components/Header.jsx",
-            lineNumber: 227,
+            lineNumber: 235,
             columnNumber: 9
           },
           this
@@ -57877,54 +57476,54 @@ function CartBadge({ count }) {
       !1,
       {
         fileName: "app/components/Header.jsx",
-        lineNumber: 219,
+        lineNumber: 227,
         columnNumber: 7
       },
       this
     ) }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 218,
+      lineNumber: 226,
       columnNumber: 5
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("a", { href: "/offers", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("svg", { width: "22.81px", height: "22px", viewBox: "0 0 20 21", fill: "var(--navbar-color)", xmlns: "http://www.w3.org/2000/svg", alt: "discount_icon", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "m8.744 3.662.832-.803.832.803a3 3 0 0 0 2.504.813l1.146-.162.2 1.134a3 3 0 0 0 1.55 2.132l1.018.54-.505 1.03a3 3 0 0 0 0 2.639l.505 1.031-1.018.54a3 3 0 0 0-1.55 2.131l-.2 1.134-1.146-.162a3 3 0 0 0-2.504.813l-.832.804-.832-.804a3 3 0 0 0-2.504-.813l-1.146.162-.2-1.134a3 3 0 0 0-1.55-2.132l-1.018-.539.505-1.031a3 3 0 0 0 0-2.638l-.505-1.032 1.018-.539a3 3 0 0 0 1.55-2.132l.2-1.134 1.146.162a3 3 0 0 0 2.504-.813ZM8.88.75a1 1 0 0 1 1.39 0l1.527 1.475a1 1 0 0 0 .834.27l2.104-.296a1 1 0 0 1 1.125.817l.366 2.086a1 1 0 0 0 .517.71l1.874.993a1 1 0 0 1 .43 1.324l-.93 1.901a1 1 0 0 0 0 .88l.93 1.9a1 1 0 0 1-.43 1.324l-1.874.993a1 1 0 0 0-.517.71l-.366 2.087a1 1 0 0 1-1.125.817l-2.104-.297a1 1 0 0 0-.834.27l-1.527 1.475a1 1 0 0 1-1.39 0l-1.527-1.474a1 1 0 0 0-.834-.271l-2.104.297a1 1 0 0 1-1.125-.817l-.366-2.087a1 1 0 0 0-.517-.71l-1.874-.993a1 1 0 0 1-.43-1.323l.93-1.902a1 1 0 0 0 0-.879l-.93-1.901a1 1 0 0 1 .43-1.324l1.874-.992a1 1 0 0 0 .517-.711l.366-2.086a1 1 0 0 1 1.125-.817l2.104.297a1 1 0 0 0 .834-.271L8.881.749Zm4.524 7.31a1 1 0 0 0-1.413-1.415l-6.245 6.234a1 1 0 1 0 1.413 1.416l6.245-6.235Zm-4.87-.188A1.56 1.56 0 0 1 6.974 9.43 1.56 1.56 0 1 1 8.535 7.87Zm3.642 6.754a1.56 1.56 0 0 0 1.561-1.559 1.56 1.56 0 0 0-1.56-1.558 1.56 1.56 0 1 0 0 3.117Z" }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 235,
+      lineNumber: 243,
       columnNumber: 143
     }, this) }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 235,
+      lineNumber: 243,
       columnNumber: 6
     }, this) }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 234,
+      lineNumber: 242,
       columnNumber: 6
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 217,
+    lineNumber: 225,
     columnNumber: 5
   }, this);
 }
 function CartToggle({ cart }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react17.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(CartBadge, { count: 0 }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react14.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(CartBadge, { count: 0 }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 243,
+    lineNumber: 251,
     columnNumber: 25
   }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Await2, { resolve: cart, children: (cart2) => cart2 ? /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(CartBadge, { count: cart2.totalQuantity || 0 }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 247,
+    lineNumber: 255,
     columnNumber: 18
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(CartBadge, { count: 0 }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 246,
+    lineNumber: 254,
     columnNumber: 29
   }, this) }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 244,
+    lineNumber: 252,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 243,
+    lineNumber: 251,
     columnNumber: 5
   }, this);
 }
@@ -57936,10 +57535,10 @@ function activeLinkStyle({ isActive, isPending }) {
 }
 
 // app/utils.js
-var import_react20 = __toESM(require_react());
+var import_react17 = __toESM(require_react());
 function useVariantUrl(handle, selectedOptions) {
   let { pathname } = useLocation();
-  return (0, import_react20.useMemo)(() => getVariantUrl({
+  return (0, import_react17.useMemo)(() => getVariantUrl({
     handle,
     pathname,
     searchParams: new URLSearchParams(),
@@ -58505,7 +58104,7 @@ function CartLineUpdateButton({ children, lines }) {
 }
 
 // app/components/AnnouncemnetBar.jsx
-var import_react22 = __toESM(require_react()), import_jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime()), AnnouncementBar = () => /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
+var import_react19 = __toESM(require_react()), import_jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime()), AnnouncementBar = () => /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
   "div",
   {
     className: "bg-pink-700 text-center font-black",
@@ -58523,19 +58122,19 @@ var import_react22 = __toESM(require_react()), import_jsx_dev_runtime7 = __toESM
 ), AnnouncemnetBar_default = AnnouncementBar;
 
 // app/components/ImageCarousel.jsx
-var import_react25 = __toESM(require_react());
+var import_react22 = __toESM(require_react());
 
 // node_modules/react-icons/lib/esm/iconBase.js
-var import_react24 = __toESM(require_react());
+var import_react21 = __toESM(require_react());
 
 // node_modules/react-icons/lib/esm/iconContext.js
-var import_react23 = __toESM(require_react()), DefaultContext = {
+var import_react20 = __toESM(require_react()), DefaultContext = {
   color: void 0,
   size: void 0,
   className: void 0,
   style: void 0,
   attr: void 0
-}, IconContext = import_react23.default.createContext && import_react23.default.createContext(DefaultContext);
+}, IconContext = import_react20.default.createContext && import_react20.default.createContext(DefaultContext);
 
 // node_modules/react-icons/lib/esm/iconBase.js
 var __assign = function() {
@@ -58558,14 +58157,14 @@ var __assign = function() {
 };
 function Tree2Element(tree) {
   return tree && tree.map(function(node, i6) {
-    return import_react24.default.createElement(node.tag, __assign({
+    return import_react21.default.createElement(node.tag, __assign({
       key: i6
     }, node.attr), Tree2Element(node.child));
   });
 }
 function GenIcon(data2) {
   return function(props) {
-    return import_react24.default.createElement(IconBase, __assign({
+    return import_react21.default.createElement(IconBase, __assign({
       attr: __assign({}, data2.attr)
     }, props), Tree2Element(data2.child));
   };
@@ -58573,7 +58172,7 @@ function GenIcon(data2) {
 function IconBase(props) {
   var elem = function(conf) {
     var attr = props.attr, size = props.size, title = props.title, svgProps = __rest2(props, ["attr", "size", "title"]), computedSize = size || conf.size || "1em", className;
-    return conf.className && (className = conf.className), props.className && (className = (className ? className + " " : "") + props.className), import_react24.default.createElement("svg", __assign({
+    return conf.className && (className = conf.className), props.className && (className = (className ? className + " " : "") + props.className), import_react21.default.createElement("svg", __assign({
       stroke: "currentColor",
       fill: "currentColor",
       strokeWidth: "0"
@@ -58585,9 +58184,9 @@ function IconBase(props) {
       height: computedSize,
       width: computedSize,
       xmlns: "http://www.w3.org/2000/svg"
-    }), title && import_react24.default.createElement("title", null, title), props.children);
+    }), title && import_react21.default.createElement("title", null, title), props.children);
   };
-  return IconContext !== void 0 ? import_react24.default.createElement(IconContext.Consumer, null, function(conf) {
+  return IconContext !== void 0 ? import_react21.default.createElement(IconContext.Consumer, null, function(conf) {
     return elem(conf);
   }) : elem(DefaultContext);
 }
@@ -58602,7 +58201,7 @@ function MdChevronRight(props) {
 
 // app/components/ImageCarousel.jsx
 var import_jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime()), ImageCarousel = ({ images }) => {
-  let [currentImageIndex, setCurrentImageIndex] = (0, import_react25.useState)(0), nextImage = () => {
+  let [currentImageIndex, setCurrentImageIndex] = (0, import_react22.useState)(0), nextImage = () => {
     setCurrentImageIndex((currentImageIndex + 1) % images.length);
   }, prevImage = () => {
     setCurrentImageIndex(
@@ -58695,11 +58294,18 @@ var import_jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime()), ImageCarousel 
 }, ImageCarousel_default = ImageCarousel;
 
 // app/components/ProductCarousel.jsx
-var import_react26 = __toESM(require_react());
+var import_react23 = __toESM(require_react());
 var import_react_responsive2 = __toESM(require_react_responsive());
 var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarousel = ({ products }) => {
-  let productsToShow = [], lines = [], [startIndex, setStartIndex] = (0, import_react26.useState)(0), endIndex = (0, import_react_responsive2.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2;
-  return (products != null || products != null) && (productsToShow = products.edges.slice(startIndex, startIndex + endIndex)), products.edges.map((product) => {
+  let productsToShow = [], lines = [], [startIndex, setStartIndex] = (0, import_react23.useState)(0), eIndex = (0, import_react_responsive2.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2, [endIndex, setEndIndex] = (0, import_react23.useState)(eIndex);
+  var len = products.edges.length;
+  (products != null || products != null) && (productsToShow = products.edges.slice(startIndex, startIndex + endIndex));
+  let nextProducts = () => {
+    setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
+  }, prevProducts = () => {
+    setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
+  };
+  return console.log("start INDEX ::", startIndex, "End Index ::", endIndex, "Length::", len), products.edges.map((product) => {
     product.node.variants.edges.map((line) => {
       line.node.metafields[0] != null && line.node.metafields[0].value == "true" && lines.push([
         {
@@ -58721,27 +58327,27 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
         !1,
         {
           fileName: "app/components/ProductCarousel.jsx",
-          lineNumber: 66,
+          lineNumber: 60,
           columnNumber: 17
         },
         this
       ),
       /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(Link2, { to: `/products/${product.node.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h2", { className: "text-lg font-semibold mt-2 text-center", children: product.node.title }, void 0, !1, {
         fileName: "app/components/ProductCarousel.jsx",
-        lineNumber: 72,
+        lineNumber: 66,
         columnNumber: 19
       }, this) }, product.id, !1, {
         fileName: "app/components/ProductCarousel.jsx",
-        lineNumber: 71,
+        lineNumber: 65,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "h-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h1", { className: "text-center font-bold h-full w-full m-auto", children: "\u20B9255" }, void 0, !1, {
         fileName: "app/components/ProductCarousel.jsx",
-        lineNumber: 77,
+        lineNumber: 71,
         columnNumber: 19
       }, this) }, void 0, !1, {
         fileName: "app/components/ProductCarousel.jsx",
-        lineNumber: 76,
+        lineNumber: 70,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "px-1 py-1 flex items-center sm:flex-row gap-3 justify-center w-[100%]", children: [
@@ -58764,7 +58370,7 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
                 !1,
                 {
                   fileName: "app/components/ProductCarousel.jsx",
-                  lineNumber: 90,
+                  lineNumber: 84,
                   columnNumber: 23
                 },
                 this
@@ -58780,7 +58386,7 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
                 !1,
                 {
                   fileName: "app/components/ProductCarousel.jsx",
-                  lineNumber: 95,
+                  lineNumber: 89,
                   columnNumber: 23
                 },
                 this
@@ -58791,16 +58397,15 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
           !0,
           {
             fileName: "app/components/ProductCarousel.jsx",
-            lineNumber: 84,
+            lineNumber: 78,
             columnNumber: 21
           },
           this
         ) }, void 0, !1, {
           fileName: "app/components/ProductCarousel.jsx",
-          lineNumber: 83,
+          lineNumber: 77,
           columnNumber: 19
         }, this),
-        console.log(lines),
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "w-[75%]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
           CartForm,
           {
@@ -58822,13 +58427,13 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
               !1,
               {
                 fileName: "app/components/ProductCarousel.jsx",
-                lineNumber: 112,
+                lineNumber: 106,
                 columnNumber: 27
               },
               this
             ) }, void 0, !1, {
               fileName: "app/components/ProductCarousel.jsx",
-              lineNumber: 111,
+              lineNumber: 105,
               columnNumber: 25
             }, this)
           },
@@ -58836,40 +58441,38 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
           !1,
           {
             fileName: "app/components/ProductCarousel.jsx",
-            lineNumber: 104,
+            lineNumber: 98,
             columnNumber: 21
           },
           this
         ) }, void 0, !1, {
           fileName: "app/components/ProductCarousel.jsx",
-          lineNumber: 103,
+          lineNumber: 97,
           columnNumber: 19
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/ProductCarousel.jsx",
-        lineNumber: 82,
+        lineNumber: 76,
         columnNumber: 17
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/ProductCarousel.jsx",
-      lineNumber: 65,
+      lineNumber: 59,
       columnNumber: 15
     }, this) }, product.node.id, !1, {
       fileName: "app/components/ProductCarousel.jsx",
-      lineNumber: 64,
+      lineNumber: 58,
       columnNumber: 13
     }, this)) }, void 0, !1, {
       fileName: "app/components/ProductCarousel.jsx",
-      lineNumber: 62,
+      lineNumber: 56,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
       "button",
       {
         className: "absolute lg:left-[-150px] top-1/2 transform -translate-y-1/2 lg:bg-[#faebd7] bg-white bg-opacity-75 rounded-full p-2 ml-4 hover:bg-opacity-100",
-        onClick: () => setStartIndex(
-          (prevIndex) => prevIndex === 0 ? products.edges.length - products.edges.length % 2 : prevIndex
-        ),
+        onClick: () => prevProducts(),
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
           MdChevronLeft,
           {
@@ -58880,7 +58483,7 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
           !1,
           {
             fileName: "app/components/ProductCarousel.jsx",
-            lineNumber: 141,
+            lineNumber: 129,
             columnNumber: 11
           },
           this
@@ -58890,7 +58493,7 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
       !1,
       {
         fileName: "app/components/ProductCarousel.jsx",
-        lineNumber: 131,
+        lineNumber: 125,
         columnNumber: 9
       },
       this
@@ -58899,9 +58502,7 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
       "button",
       {
         className: "absolute lg:right-[-150px] right-0 top-1/2 transform -translate-y-1/2 lg:bg-[#faebd7] bg-white bg-opacity-75 rounded-full p-2 mr-4 hover:bg-opacity-100",
-        onClick: () => setStartIndex(
-          (prevIndex) => (prevIndex + 1) % products.edges.length
-        ),
+        onClick: () => nextProducts(),
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
           MdChevronRight,
           {
@@ -58912,7 +58513,7 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
           !1,
           {
             fileName: "app/components/ProductCarousel.jsx",
-            lineNumber: 154,
+            lineNumber: 138,
             columnNumber: 11
           },
           this
@@ -58922,24 +58523,24 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
       !1,
       {
         fileName: "app/components/ProductCarousel.jsx",
-        lineNumber: 146,
+        lineNumber: 134,
         columnNumber: 9
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/components/ProductCarousel.jsx",
-    lineNumber: 61,
+    lineNumber: 55,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/ProductCarousel.jsx",
-    lineNumber: 60,
+    lineNumber: 54,
     columnNumber: 5
   }, this);
 }, ProductCarousel_default = ProductCarousel;
 
 // app/components/YouTubeVideo.jsx
-var import_react28 = __toESM(require_react()), import_react_responsive3 = __toESM(require_react_responsive()), import_jsx_dev_runtime10 = __toESM(require_jsx_dev_runtime()), MobileVideo = () => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "w-full h-full mx-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "relative rounded-lg", children: [
+var import_react25 = __toESM(require_react()), import_react_responsive3 = __toESM(require_react_responsive()), import_jsx_dev_runtime10 = __toESM(require_jsx_dev_runtime()), MobileVideo = () => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "w-full h-full mx-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "relative rounded-lg", children: [
   /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("h1", { className: "text-center mt-0 lg:text-[28px] text-[20px]", children: "Demo Header for YouTube Video" }, void 0, !1, {
     fileName: "app/components/YouTubeVideo.jsx",
     lineNumber: 10,
@@ -59072,7 +58673,7 @@ function Layout({ cart, children = null, footer, header, isLoggedIn }) {
       lineNumber: 36,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react30.Suspense, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Await2, { resolve: footer, children: (footer2) => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Footer, { menu: footer2.menu }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react27.Suspense, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Await2, { resolve: footer, children: (footer2) => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Footer, { menu: footer2.menu }, void 0, !1, {
       fileName: "app/components/Layout.jsx",
       lineNumber: 39,
       columnNumber: 24
@@ -59092,7 +58693,7 @@ function Layout({ cart, children = null, footer, header, isLoggedIn }) {
   }, this);
 }
 function CartAside({ cart }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Aside, { id: "cart-aside", heading: "CART", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react30.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { children: "Loading cart ..." }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Aside, { id: "cart-aside", heading: "CART", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react27.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { children: "Loading cart ..." }, void 0, !1, {
     fileName: "app/components/Layout.jsx",
     lineNumber: 49,
     columnNumber: 27
@@ -59184,7 +58785,7 @@ function MobileMenuAside({ menu }) {
 }
 
 // app/styles/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-6ESHW7JV.css";
+var tailwind_default = "/build/_assets/tailwind-YCBMUQG5.css";
 
 // app/root.jsx
 var import_jsx_dev_runtime12 = __toESM(require_jsx_dev_runtime());
@@ -59238,57 +58839,57 @@ function App() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("head", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 90,
+        lineNumber: 85,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("meta", { name: "viewport", content: "width=device-width,initial-scale=1" }, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 91,
+        lineNumber: 86,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Meta, {}, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 92,
+        lineNumber: 87,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Links, {}, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 93,
+        lineNumber: 88,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.jsx",
-      lineNumber: 89,
+      lineNumber: 84,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("body", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Layout, { ...data2, children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Outlet, {}, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 98,
+        lineNumber: 93,
         columnNumber: 11
       }, this) }, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 97,
+        lineNumber: 92,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 101,
+        lineNumber: 96,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Scripts, {}, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 102,
+        lineNumber: 97,
         columnNumber: 3
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.jsx",
-      lineNumber: 95,
+      lineNumber: 90,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/root.jsx",
-    lineNumber: 88,
+    lineNumber: 83,
     columnNumber: 5
   }, this);
 }
@@ -59299,77 +58900,77 @@ function ErrorBoundary() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("head", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 129,
+        lineNumber: 124,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("meta", { name: "viewport", content: "width=device-width,initial-scale=1" }, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 130,
+        lineNumber: 125,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Meta, {}, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 131,
+        lineNumber: 126,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Links, {}, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 132,
+        lineNumber: 127,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.jsx",
-      lineNumber: 128,
+      lineNumber: 123,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("body", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Layout, { ...root.data, children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "route-error", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("h1", { children: "Oops" }, void 0, !1, {
           fileName: "app/root.jsx",
-          lineNumber: 137,
+          lineNumber: 132,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("h2", { children: errorStatus }, void 0, !1, {
           fileName: "app/root.jsx",
-          lineNumber: 138,
+          lineNumber: 133,
           columnNumber: 13
         }, this),
         errorMessage && /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("fieldset", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("pre", { children: errorMessage }, void 0, !1, {
           fileName: "app/root.jsx",
-          lineNumber: 141,
+          lineNumber: 136,
           columnNumber: 17
         }, this) }, void 0, !1, {
           fileName: "app/root.jsx",
-          lineNumber: 140,
+          lineNumber: 135,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
         fileName: "app/root.jsx",
-        lineNumber: 136,
+        lineNumber: 131,
         columnNumber: 11
       }, this) }, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 135,
+        lineNumber: 130,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 146,
+        lineNumber: 141,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Scripts, {}, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 147,
+        lineNumber: 142,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.jsx",
-      lineNumber: 134,
+      lineNumber: 129,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/root.jsx",
-    lineNumber: 127,
+    lineNumber: 122,
     columnNumber: 5
   }, this);
 }
@@ -60195,7 +59796,7 @@ function XMarkIcon({
 var ForwardRef4 = React19.forwardRef(XMarkIcon), XMarkIcon_default = ForwardRef4;
 
 // app/routes/($locale).account.orders._index.jsx
-var import_react37 = __toESM(require_react2()), import_jsx_dev_runtime17 = __toESM(require_jsx_dev_runtime()), meta5 = () => [{ title: "Orders" }];
+var import_react34 = __toESM(require_react2()), import_jsx_dev_runtime17 = __toESM(require_jsx_dev_runtime()), meta5 = () => [{ title: "Orders" }];
 async function loader5({ request, context }) {
   let { session, storefront } = context, customerAccessToken = await session.get("customerAccessToken");
   if (!(customerAccessToken != null && customerAccessToken.accessToken))
@@ -60349,13 +59950,13 @@ function OrderItem({ orders }) {
       expiry: "06/2026"
     }
   ];
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react37.Card, { className: "h-[90] overflow-y-auto w-full", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react37.CardBody, { className: "px-0", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("table", { className: "w-full table-auto text-left", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react34.Card, { className: "h-[90] overflow-y-auto w-full", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react34.CardBody, { className: "px-0", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("table", { className: "w-full table-auto text-left", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("thead", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("tr", { children: TABLE_HEAD.map((head) => /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
       "th",
       {
         className: "border-y border-blue-gray-100 bg-blue-gray-50/50 p-4",
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-          import_react37.Typography,
+          import_react34.Typography,
           {
             variant: "small",
             color: "blue-gray",
@@ -60395,7 +59996,7 @@ function OrderItem({ orders }) {
         return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("tr", { children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("td", { className: classes, children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex items-center gap-3", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-              import_react37.Avatar,
+              import_react34.Avatar,
               {
                 src: order2.lineItems.nodes[0].variant.image.url,
                 alt: order2.lineItems.nodes[0].title,
@@ -60412,7 +60013,7 @@ function OrderItem({ orders }) {
               this
             ),
             /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-              import_react37.Typography,
+              import_react34.Typography,
               {
                 variant: "small",
                 color: "blue-gray",
@@ -60438,7 +60039,7 @@ function OrderItem({ orders }) {
             columnNumber: 23
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("td", { className: classes, children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-            import_react37.Typography,
+            import_react34.Typography,
             {
               variant: "small",
               color: "blue-gray",
@@ -60459,7 +60060,7 @@ function OrderItem({ orders }) {
             columnNumber: 23
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("td", { className: classes, children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-            import_react37.Typography,
+            import_react34.Typography,
             {
               variant: "small",
               color: "blue-gray",
@@ -60480,7 +60081,7 @@ function OrderItem({ orders }) {
             columnNumber: 23
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("td", { className: classes, children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "w-max", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-            import_react37.Chip,
+            import_react34.Chip,
             {
               size: "sm",
               variant: "ghost",
@@ -60839,12 +60440,12 @@ __export(locale_collections_handle_exports, {
   loader: () => loader6,
   meta: () => meta6
 });
-var import_react71 = __toESM(require_react());
+var import_react68 = __toESM(require_react());
 var import_react_responsive4 = __toESM(require_react_responsive());
-var import_react73 = __toESM(require_react());
+var import_react70 = __toESM(require_react());
 
 // node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.js
-var import_react38 = __toESM(require_react(), 1);
+var import_react35 = __toESM(require_react(), 1);
 
 // node_modules/@headlessui/react/dist/utils/env.js
 var i = Object.defineProperty, d = (t17, e4, n6) => e4 in t17 ? i(t17, e4, { enumerable: !0, configurable: !0, writable: !0, value: n6 }) : t17[e4] = n6, r = (t17, e4, n6) => (d(t17, typeof e4 != "symbol" ? e4 + "" : e4, n6), n6), o = class {
@@ -60879,20 +60480,20 @@ var i = Object.defineProperty, d = (t17, e4, n6) => e4 in t17 ? i(t17, e4, { enu
 
 // node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.js
 var l2 = (e4, f10) => {
-  s.isServer ? (0, import_react38.useEffect)(e4, f10) : (0, import_react38.useLayoutEffect)(e4, f10);
+  s.isServer ? (0, import_react35.useEffect)(e4, f10) : (0, import_react35.useLayoutEffect)(e4, f10);
 };
 
 // node_modules/@headlessui/react/dist/hooks/use-latest-value.js
-var import_react39 = __toESM(require_react(), 1);
+var import_react36 = __toESM(require_react(), 1);
 function s2(e4) {
-  let r8 = (0, import_react39.useRef)(e4);
+  let r8 = (0, import_react36.useRef)(e4);
   return l2(() => {
     r8.current = e4;
   }, [e4]), r8;
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-disposables.js
-var import_react40 = __toESM(require_react(), 1);
+var import_react37 = __toESM(require_react(), 1);
 
 // node_modules/@headlessui/react/dist/utils/micro-task.js
 function t3(e4) {
@@ -60944,19 +60545,19 @@ function o2() {
 
 // node_modules/@headlessui/react/dist/hooks/use-disposables.js
 function p() {
-  let [e4] = (0, import_react40.useState)(o2);
-  return (0, import_react40.useEffect)(() => () => e4.dispose(), [e4]), e4;
+  let [e4] = (0, import_react37.useState)(o2);
+  return (0, import_react37.useEffect)(() => () => e4.dispose(), [e4]), e4;
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-event.js
-var import_react41 = __toESM(require_react(), 1);
+var import_react38 = __toESM(require_react(), 1);
 var o4 = function(t17) {
   let e4 = s2(t17);
-  return import_react41.default.useCallback((...r8) => e4.current(...r8), [e4]);
+  return import_react38.default.useCallback((...r8) => e4.current(...r8), [e4]);
 };
 
 // node_modules/@headlessui/react/dist/hooks/use-id.js
-var import_react42 = __toESM(require_react(), 1);
+var import_react39 = __toESM(require_react(), 1);
 
 // node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.js
 var t4 = __toESM(require_react(), 1);
@@ -60973,15 +60574,15 @@ function l3() {
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-id.js
-var o5, I = (o5 = import_react42.default.useId) != null ? o5 : function() {
-  let n6 = l3(), [e4, u11] = import_react42.default.useState(n6 ? () => s.nextId() : null);
+var o5, I = (o5 = import_react39.default.useId) != null ? o5 : function() {
+  let n6 = l3(), [e4, u11] = import_react39.default.useState(n6 ? () => s.nextId() : null);
   return l2(() => {
     e4 === null && u11(s.nextId());
   }, [e4]), e4 != null ? "" + e4 : void 0;
 };
 
 // node_modules/@headlessui/react/dist/hooks/use-outside-click.js
-var import_react45 = __toESM(require_react(), 1);
+var import_react42 = __toESM(require_react(), 1);
 
 // node_modules/@headlessui/react/dist/utils/match.js
 function u3(r8, n6, ...a12) {
@@ -61088,10 +60689,10 @@ function O2(e4, r8, { sorted: t17 = !0, relativeTo: l12 = null, skipElements: o1
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-document-event.js
-var import_react43 = __toESM(require_react(), 1);
+var import_react40 = __toESM(require_react(), 1);
 function d2(e4, r8, n6) {
   let o10 = s2(r8);
-  (0, import_react43.useEffect)(() => {
+  (0, import_react40.useEffect)(() => {
     function t17(u11) {
       o10.current(u11);
     }
@@ -61100,10 +60701,10 @@ function d2(e4, r8, n6) {
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-window-event.js
-var import_react44 = __toESM(require_react(), 1);
+var import_react41 = __toESM(require_react(), 1);
 function s5(e4, r8, n6) {
   let o10 = s2(r8);
-  (0, import_react44.useEffect)(() => {
+  (0, import_react41.useEffect)(() => {
     function t17(i6) {
       o10.current(i6);
     }
@@ -61113,8 +60714,8 @@ function s5(e4, r8, n6) {
 
 // node_modules/@headlessui/react/dist/hooks/use-outside-click.js
 function h3(s14, m10, a12 = !0) {
-  let i6 = (0, import_react45.useRef)(!1);
-  (0, import_react45.useEffect)(() => {
+  let i6 = (0, import_react42.useRef)(!1);
+  (0, import_react42.useEffect)(() => {
     requestAnimationFrame(() => {
       i6.current = a12;
     });
@@ -61137,7 +60738,7 @@ function h3(s14, m10, a12 = !0) {
     }
     return !h2(t17, T.Loose) && t17.tabIndex !== -1 && e4.preventDefault(), m10(e4, t17);
   }
-  let o10 = (0, import_react45.useRef)(null);
+  let o10 = (0, import_react42.useRef)(null);
   d2("pointerdown", (e4) => {
     var r8, t17;
     i6.current && (o10.current = ((t17 = (r8 = e4.composedPath) == null ? void 0 : r8.call(e4)) == null ? void 0 : t17[0]) || e4.target);
@@ -61150,7 +60751,7 @@ function h3(s14, m10, a12 = !0) {
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-resolve-button-type.js
-var import_react46 = __toESM(require_react(), 1);
+var import_react43 = __toESM(require_react(), 1);
 function i2(t17) {
   var n6;
   if (t17.type)
@@ -61160,7 +60761,7 @@ function i2(t17) {
     return "button";
 }
 function s6(t17, e4) {
-  let [n6, u11] = (0, import_react46.useState)(() => i2(t17));
+  let [n6, u11] = (0, import_react43.useState)(() => i2(t17));
   return l2(() => {
     u11(i2(t17));
   }, [t17.type, t17.as]), l2(() => {
@@ -61169,14 +60770,14 @@ function s6(t17, e4) {
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-sync-refs.js
-var import_react47 = __toESM(require_react(), 1);
+var import_react44 = __toESM(require_react(), 1);
 var u4 = Symbol();
 function T2(t17, n6 = !0) {
   return Object.assign(t17, { [u4]: n6 });
 }
 function y2(...t17) {
-  let n6 = (0, import_react47.useRef)(t17);
-  (0, import_react47.useEffect)(() => {
+  let n6 = (0, import_react44.useRef)(t17);
+  (0, import_react44.useEffect)(() => {
     n6.current = t17;
   }, [t17]);
   let c12 = o4((e4) => {
@@ -61187,10 +60788,10 @@ function y2(...t17) {
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-tree-walker.js
-var import_react48 = __toESM(require_react(), 1);
+var import_react45 = __toESM(require_react(), 1);
 function F2({ container: e4, accept: t17, walk: r8, enabled: c12 = !0 }) {
-  let o10 = (0, import_react48.useRef)(t17), l12 = (0, import_react48.useRef)(r8);
-  (0, import_react48.useEffect)(() => {
+  let o10 = (0, import_react45.useRef)(t17), l12 = (0, import_react45.useRef)(r8);
+  (0, import_react45.useEffect)(() => {
     o10.current = t17, l12.current = r8;
   }, [t17, r8]), l2(() => {
     if (!e4 || !c12)
@@ -61239,7 +60840,7 @@ function x(r8, n6) {
 }
 
 // node_modules/@headlessui/react/dist/utils/render.js
-var import_react49 = __toESM(require_react(), 1);
+var import_react46 = __toESM(require_react(), 1);
 
 // node_modules/@headlessui/react/dist/utils/class-names.js
 function t6(...r8) {
@@ -61278,16 +60879,16 @@ function c3(r8, t17 = {}, e4, a12) {
       typeof d11 == "boolean" && (i6 = !0), d11 === !0 && m10.push(y6);
     i6 && (p6["data-headlessui-state"] = m10.join(" "));
   }
-  if (s14 === import_react49.Fragment && Object.keys(R(o10)).length > 0) {
-    if (!(0, import_react49.isValidElement)(l12) || Array.isArray(l12) && l12.length > 1)
+  if (s14 === import_react46.Fragment && Object.keys(R(o10)).length > 0) {
+    if (!(0, import_react46.isValidElement)(l12) || Array.isArray(l12) && l12.length > 1)
       throw new Error(['Passing props on "Fragment"!', "", `The current component <${a12} /> is rendering a "Fragment".`, "However we need to passthrough the following props:", Object.keys(o10).map((d11) => `  - ${d11}`).join(`
 `), "", "You can apply a few solutions:", ['Add an `as="..."` prop, to ensure that we render an actual element instead of a "Fragment".', "Render a single element as the child so that we can forward the props onto that element."].map((d11) => `  - ${d11}`).join(`
 `)].join(`
 `));
     let i6 = l12.props, m10 = typeof (i6 == null ? void 0 : i6.className) == "function" ? (...d11) => t6(i6 == null ? void 0 : i6.className(...d11), o10.className) : t6(i6 == null ? void 0 : i6.className, o10.className), y6 = m10 ? { className: m10 } : {};
-    return (0, import_react49.cloneElement)(l12, Object.assign({}, N2(l12.props, R(g3(o10, ["ref"]))), p6, u11, w2(l12.ref, u11.ref), y6));
+    return (0, import_react46.cloneElement)(l12, Object.assign({}, N2(l12.props, R(g3(o10, ["ref"]))), p6, u11, w2(l12.ref, u11.ref), y6));
   }
-  return (0, import_react49.createElement)(s14, Object.assign({}, g3(o10, ["ref"]), s14 !== import_react49.Fragment && u11, s14 !== import_react49.Fragment && p6), l12);
+  return (0, import_react46.createElement)(s14, Object.assign({}, g3(o10, ["ref"]), s14 !== import_react46.Fragment && u11, s14 !== import_react46.Fragment && p6), l12);
 }
 function w2(...r8) {
   return { ref: r8.every((t17) => t17 == null) ? void 0 : (t17) => {
@@ -61320,7 +60921,7 @@ function N2(...r8) {
 }
 function D3(r8) {
   var t17;
-  return Object.assign((0, import_react49.forwardRef)(r8), { displayName: (t17 = r8.displayName) != null ? t17 : r8.name });
+  return Object.assign((0, import_react46.forwardRef)(r8), { displayName: (t17 = r8.displayName) != null ? t17 : r8.name });
 }
 function R(r8) {
   let t17 = Object.assign({}, r8);
@@ -61364,24 +60965,24 @@ function s7(t17, o10) {
 var c4 = D3(s7);
 
 // node_modules/@headlessui/react/dist/internal/open-closed.js
-var import_react50 = __toESM(require_react(), 1), n = (0, import_react50.createContext)(null);
+var import_react47 = __toESM(require_react(), 1), n = (0, import_react47.createContext)(null);
 n.displayName = "OpenClosedContext";
 var d5 = ((e4) => (e4[e4.Open = 1] = "Open", e4[e4.Closed = 2] = "Closed", e4[e4.Closing = 4] = "Closing", e4[e4.Opening = 8] = "Opening", e4))(d5 || {});
 function C2() {
-  return (0, import_react50.useContext)(n);
+  return (0, import_react47.useContext)(n);
 }
 function c5({ value: o10, children: r8 }) {
-  return import_react50.default.createElement(n.Provider, { value: o10 }, r8);
+  return import_react47.default.createElement(n.Provider, { value: o10 }, r8);
 }
 
 // node_modules/@headlessui/react/dist/components/keyboard.js
 var o7 = ((r8) => (r8.Space = " ", r8.Enter = "Enter", r8.Escape = "Escape", r8.Backspace = "Backspace", r8.Delete = "Delete", r8.ArrowLeft = "ArrowLeft", r8.ArrowUp = "ArrowUp", r8.ArrowRight = "ArrowRight", r8.ArrowDown = "ArrowDown", r8.Home = "Home", r8.End = "End", r8.PageUp = "PageUp", r8.PageDown = "PageDown", r8.Tab = "Tab", r8))(o7 || {});
 
 // node_modules/@headlessui/react/dist/hooks/use-watch.js
-var import_react51 = __toESM(require_react(), 1);
+var import_react48 = __toESM(require_react(), 1);
 function m3(u11, t17) {
-  let e4 = (0, import_react51.useRef)([]), r8 = o4(u11);
-  (0, import_react51.useEffect)(() => {
+  let e4 = (0, import_react48.useRef)([]), r8 = o4(u11);
+  (0, import_react48.useEffect)(() => {
     let o10 = [...e4.current];
     for (let [n6, a12] of t17.entries())
       if (e4.current[n6] !== a12) {
@@ -61392,12 +60993,12 @@ function m3(u11, t17) {
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-tracked-pointer.js
-var import_react52 = __toESM(require_react(), 1);
+var import_react49 = __toESM(require_react(), 1);
 function t8(e4) {
   return [e4.screenX, e4.screenY];
 }
 function u5() {
-  let e4 = (0, import_react52.useRef)([-1, -1]);
+  let e4 = (0, import_react49.useRef)([-1, -1]);
   return { wasMoved(r8) {
     let n6 = t8(r8);
     return e4.current[0] === n6[0] && e4.current[1] === n6[1] ? !1 : (e4.current = n6, !0);
@@ -61412,41 +61013,41 @@ function t9() {
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-owner.js
-var import_react53 = __toESM(require_react(), 1);
+var import_react50 = __toESM(require_react(), 1);
 function n2(...e4) {
-  return (0, import_react53.useMemo)(() => e(...e4), [...e4]);
+  return (0, import_react50.useMemo)(() => e(...e4), [...e4]);
 }
 
 // node_modules/@headlessui/react/dist/components/dialog/dialog.js
-var import_react64 = __toESM(require_react(), 1);
+var import_react61 = __toESM(require_react(), 1);
 
 // node_modules/@headlessui/react/dist/components/focus-trap/focus-trap.js
-var import_react58 = __toESM(require_react(), 1);
+var import_react55 = __toESM(require_react(), 1);
 
 // node_modules/@headlessui/react/dist/hooks/use-tab-direction.js
-var import_react54 = __toESM(require_react(), 1);
+var import_react51 = __toESM(require_react(), 1);
 var s9 = ((r8) => (r8[r8.Forwards = 0] = "Forwards", r8[r8.Backwards = 1] = "Backwards", r8))(s9 || {});
 function n3() {
-  let e4 = (0, import_react54.useRef)(0);
+  let e4 = (0, import_react51.useRef)(0);
   return s5("keydown", (o10) => {
     o10.key === "Tab" && (e4.current = o10.shiftKey ? 1 : 0);
   }, !0), e4;
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-is-mounted.js
-var import_react55 = __toESM(require_react(), 1);
+var import_react52 = __toESM(require_react(), 1);
 function f5() {
-  let e4 = (0, import_react55.useRef)(!1);
+  let e4 = (0, import_react52.useRef)(!1);
   return l2(() => (e4.current = !0, () => {
     e4.current = !1;
   }), []), e4;
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-event-listener.js
-var import_react56 = __toESM(require_react(), 1);
+var import_react53 = __toESM(require_react(), 1);
 function E4(n6, e4, a12, t17) {
   let i6 = s2(a12);
-  (0, import_react56.useEffect)(() => {
+  (0, import_react53.useEffect)(() => {
     n6 = n6 ?? window;
     function r8(o10) {
       i6.current(o10);
@@ -61464,10 +61065,10 @@ function t12(n6) {
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-on-unmount.js
-var import_react57 = __toESM(require_react(), 1);
+var import_react54 = __toESM(require_react(), 1);
 function c6(t17) {
-  let r8 = o4(t17), e4 = (0, import_react57.useRef)(!1);
-  (0, import_react57.useEffect)(() => (e4.current = !1, () => {
+  let r8 = o4(t17), e4 = (0, import_react54.useRef)(!1);
+  (0, import_react54.useEffect)(() => (e4.current = !1, () => {
     e4.current = !0, t3(() => {
       e4.current && r8();
     });
@@ -61487,7 +61088,7 @@ function P(t17) {
 }
 var J2 = "div", h5 = ((n6) => (n6[n6.None = 1] = "None", n6[n6.InitialFocus = 2] = "InitialFocus", n6[n6.TabLock = 4] = "TabLock", n6[n6.FocusLock = 8] = "FocusLock", n6[n6.RestoreFocus = 16] = "RestoreFocus", n6[n6.All = 30] = "All", n6))(h5 || {});
 function X2(t17, r8) {
-  let e4 = (0, import_react58.useRef)(null), o10 = y2(e4, r8), { initialFocus: u11, containers: i6, features: n6 = 30, ...l12 } = t17;
+  let e4 = (0, import_react55.useRef)(null), o10 = y2(e4, r8), { initialFocus: u11, containers: i6, features: n6 = 30, ...l12 } = t17;
   l3() || (n6 = 1);
   let m10 = n2(e4);
   Y({ ownerDocument: m10 }, Boolean(n6 & 16));
@@ -61502,7 +61103,7 @@ function X2(t17, r8) {
         O2(T7, M.Last, { skipElements: [s14.relatedTarget] });
       } });
     });
-  }), _3 = p(), b6 = (0, import_react58.useRef)(!1), j5 = { ref: o10, onKeyDown(s14) {
+  }), _3 = p(), b6 = (0, import_react55.useRef)(!1), j5 = { ref: o10, onKeyDown(s14) {
     s14.key == "Tab" && (b6.current = !0, _3.requestAnimationFrame(() => {
       b6.current = !1;
     }));
@@ -61512,7 +61113,7 @@ function X2(t17, r8) {
     let d11 = s14.relatedTarget;
     d11 instanceof HTMLElement && d11.dataset.headlessuiFocusGuard !== "true" && (S3(T7, d11) || (b6.current ? O2(e4.current, u3(v4.current, { [s9.Forwards]: () => M.Next, [s9.Backwards]: () => M.Previous }) | M.WrapAround, { relativeTo: s14.target }) : s14.target instanceof HTMLElement && y(s14.target)));
   } };
-  return import_react58.default.createElement(import_react58.default.Fragment, null, Boolean(n6 & 4) && import_react58.default.createElement(c4, { as: "button", type: "button", "data-headlessui-focus-guard": !0, onFocus: y6, features: p2.Focusable }), X({ ourProps: j5, theirProps: l12, defaultTag: J2, name: "FocusTrap" }), Boolean(n6 & 4) && import_react58.default.createElement(c4, { as: "button", type: "button", "data-headlessui-focus-guard": !0, onFocus: y6, features: p2.Focusable }));
+  return import_react55.default.createElement(import_react55.default.Fragment, null, Boolean(n6 & 4) && import_react55.default.createElement(c4, { as: "button", type: "button", "data-headlessui-focus-guard": !0, onFocus: y6, features: p2.Focusable }), X({ ourProps: j5, theirProps: l12, defaultTag: J2, name: "FocusTrap" }), Boolean(n6 & 4) && import_react55.default.createElement(c4, { as: "button", type: "button", "data-headlessui-focus-guard": !0, onFocus: y6, features: p2.Focusable }));
 }
 var z = D3(X2), ge = Object.assign(z, { features: h5 }), a4 = [];
 t12(() => {
@@ -61522,7 +61123,7 @@ t12(() => {
   window.addEventListener("click", t17, { capture: !0 }), window.addEventListener("mousedown", t17, { capture: !0 }), window.addEventListener("focus", t17, { capture: !0 }), document.body.addEventListener("click", t17, { capture: !0 }), document.body.addEventListener("mousedown", t17, { capture: !0 }), document.body.addEventListener("focus", t17, { capture: !0 });
 });
 function Q(t17 = !0) {
-  let r8 = (0, import_react58.useRef)(a4.slice());
+  let r8 = (0, import_react55.useRef)(a4.slice());
   return m3(([e4], [o10]) => {
     o10 === !0 && e4 === !1 && t3(() => {
       r8.current.splice(0);
@@ -61541,7 +61142,7 @@ function Y({ ownerDocument: t17 }, r8) {
   });
 }
 function Z2({ ownerDocument: t17, container: r8, initialFocus: e4 }, o10) {
-  let u11 = (0, import_react58.useRef)(null), i6 = f5();
+  let u11 = (0, import_react55.useRef)(null), i6 = f5();
   return m3(() => {
     if (!o10)
       return;
@@ -61585,20 +61186,20 @@ function S3(t17, r8) {
 }
 
 // node_modules/@headlessui/react/dist/components/portal/portal.js
-var import_react60 = __toESM(require_react(), 1), import_react_dom2 = __toESM(require_react_dom(), 1);
+var import_react57 = __toESM(require_react(), 1), import_react_dom2 = __toESM(require_react_dom(), 1);
 
 // node_modules/@headlessui/react/dist/internal/portal-force-root.js
-var import_react59 = __toESM(require_react(), 1), e2 = (0, import_react59.createContext)(!1);
+var import_react56 = __toESM(require_react(), 1), e2 = (0, import_react56.createContext)(!1);
 function l6() {
-  return (0, import_react59.useContext)(e2);
+  return (0, import_react56.useContext)(e2);
 }
 function P2(o10) {
-  return import_react59.default.createElement(e2.Provider, { value: o10.force }, o10.children);
+  return import_react56.default.createElement(e2.Provider, { value: o10.force }, o10.children);
 }
 
 // node_modules/@headlessui/react/dist/components/portal/portal.js
 function F3(p6) {
-  let l12 = l6(), n6 = (0, import_react60.useContext)(v), e4 = n2(p6), [a12, o10] = (0, import_react60.useState)(() => {
+  let l12 = l6(), n6 = (0, import_react57.useContext)(v), e4 = n2(p6), [a12, o10] = (0, import_react57.useState)(() => {
     if (!l12 && n6 !== null || s.isServer)
       return null;
     let t17 = e4 == null ? void 0 : e4.getElementById("headlessui-portal-root");
@@ -61609,20 +61210,20 @@ function F3(p6) {
     let r8 = e4.createElement("div");
     return r8.setAttribute("id", "headlessui-portal-root"), e4.body.appendChild(r8);
   });
-  return (0, import_react60.useEffect)(() => {
+  return (0, import_react57.useEffect)(() => {
     a12 !== null && (e4 != null && e4.body.contains(a12) || e4 == null || e4.body.appendChild(a12));
-  }, [a12, e4]), (0, import_react60.useEffect)(() => {
+  }, [a12, e4]), (0, import_react57.useEffect)(() => {
     l12 || n6 !== null && o10(n6.current);
   }, [n6, o10, l12]), a12;
 }
-var U = import_react60.Fragment;
+var U = import_react57.Fragment;
 function N3(p6, l12) {
-  let n6 = p6, e4 = (0, import_react60.useRef)(null), a12 = y2(T2((u11) => {
+  let n6 = p6, e4 = (0, import_react57.useRef)(null), a12 = y2(T2((u11) => {
     e4.current = u11;
-  }), l12), o10 = n2(e4), t17 = F3(e4), [r8] = (0, import_react60.useState)(() => {
+  }), l12), o10 = n2(e4), t17 = F3(e4), [r8] = (0, import_react57.useState)(() => {
     var u11;
     return s.isServer ? null : (u11 = o10 == null ? void 0 : o10.createElement("div")) != null ? u11 : null;
-  }), i6 = (0, import_react60.useContext)(f6), C5 = l3();
+  }), i6 = (0, import_react57.useContext)(f6), C5 = l3();
   return l2(() => {
     !t17 || !r8 || t17.contains(r8) || (r8.setAttribute("data-headlessui-portal", ""), t17.appendChild(r8));
   }, [t17, r8]), l2(() => {
@@ -61633,28 +61234,28 @@ function N3(p6, l12) {
     !t17 || !r8 || (r8 instanceof Node && t17.contains(r8) && t17.removeChild(r8), t17.childNodes.length <= 0 && ((u11 = t17.parentElement) == null || u11.removeChild(t17)));
   }), C5 ? !t17 || !r8 ? null : (0, import_react_dom2.createPortal)(X({ ourProps: { ref: a12 }, theirProps: n6, defaultTag: U, name: "Portal" }), r8) : null;
 }
-var S4 = import_react60.Fragment, v = (0, import_react60.createContext)(null);
+var S4 = import_react57.Fragment, v = (0, import_react57.createContext)(null);
 function j2(p6, l12) {
   let { target: n6, ...e4 } = p6, o10 = { ref: y2(l12) };
-  return import_react60.default.createElement(v.Provider, { value: n6 }, X({ ourProps: o10, theirProps: e4, defaultTag: S4, name: "Popover.Group" }));
+  return import_react57.default.createElement(v.Provider, { value: n6 }, X({ ourProps: o10, theirProps: e4, defaultTag: S4, name: "Popover.Group" }));
 }
-var f6 = (0, import_react60.createContext)(null);
+var f6 = (0, import_react57.createContext)(null);
 function ae2() {
-  let p6 = (0, import_react60.useContext)(f6), l12 = (0, import_react60.useRef)([]), n6 = o4((o10) => (l12.current.push(o10), p6 && p6.register(o10), () => e4(o10))), e4 = o4((o10) => {
+  let p6 = (0, import_react57.useContext)(f6), l12 = (0, import_react57.useRef)([]), n6 = o4((o10) => (l12.current.push(o10), p6 && p6.register(o10), () => e4(o10))), e4 = o4((o10) => {
     let t17 = l12.current.indexOf(o10);
     t17 !== -1 && l12.current.splice(t17, 1), p6 && p6.unregister(o10);
-  }), a12 = (0, import_react60.useMemo)(() => ({ register: n6, unregister: e4, portals: l12 }), [n6, e4, l12]);
-  return [l12, (0, import_react60.useMemo)(() => function({ children: t17 }) {
-    return import_react60.default.createElement(f6.Provider, { value: a12 }, t17);
+  }), a12 = (0, import_react57.useMemo)(() => ({ register: n6, unregister: e4, portals: l12 }), [n6, e4, l12]);
+  return [l12, (0, import_react57.useMemo)(() => function({ children: t17 }) {
+    return import_react57.default.createElement(f6.Provider, { value: a12 }, t17);
   }, [a12])];
 }
 var D4 = D3(N3), I3 = D3(j2), pe = Object.assign(D4, { Group: I3 });
 
 // node_modules/@headlessui/react/dist/components/description/description.js
-var import_react61 = __toESM(require_react(), 1);
-var d8 = (0, import_react61.createContext)(null);
+var import_react58 = __toESM(require_react(), 1);
+var d8 = (0, import_react58.createContext)(null);
 function f7() {
-  let r8 = (0, import_react61.useContext)(d8);
+  let r8 = (0, import_react58.useContext)(d8);
   if (r8 === null) {
     let t17 = new Error("You used a <Description /> component, but it is not inside a relevant parent.");
     throw Error.captureStackTrace && Error.captureStackTrace(t17, f7), t17;
@@ -61662,13 +61263,13 @@ function f7() {
   return r8;
 }
 function M2() {
-  let [r8, t17] = (0, import_react61.useState)([]);
-  return [r8.length > 0 ? r8.join(" ") : void 0, (0, import_react61.useMemo)(() => function(e4) {
+  let [r8, t17] = (0, import_react58.useState)([]);
+  return [r8.length > 0 ? r8.join(" ") : void 0, (0, import_react58.useMemo)(() => function(e4) {
     let i6 = o4((s14) => (t17((o10) => [...o10, s14]), () => t17((o10) => {
       let p6 = o10.slice(), c12 = p6.indexOf(s14);
       return c12 !== -1 && p6.splice(c12, 1), p6;
-    }))), n6 = (0, import_react61.useMemo)(() => ({ register: i6, slot: e4.slot, name: e4.name, props: e4.props }), [i6, e4.slot, e4.name, e4.props]);
-    return import_react61.default.createElement(d8.Provider, { value: n6 }, e4.children);
+    }))), n6 = (0, import_react58.useMemo)(() => ({ register: i6, slot: e4.slot, name: e4.name, props: e4.props }), [i6, e4.slot, e4.name, e4.props]);
+    return import_react58.default.createElement(d8.Provider, { value: n6 }, e4.children);
   }, [t17])];
 }
 var S5 = "p";
@@ -61681,13 +61282,13 @@ function h6(r8, t17) {
 var y3 = D3(h6), b2 = Object.assign(y3, {});
 
 // node_modules/@headlessui/react/dist/internal/stack-context.js
-var import_react62 = __toESM(require_react(), 1);
-var a5 = (0, import_react62.createContext)(() => {
+var import_react59 = __toESM(require_react(), 1);
+var a5 = (0, import_react59.createContext)(() => {
 });
 a5.displayName = "StackContext";
 var s11 = ((e4) => (e4[e4.Add = 0] = "Add", e4[e4.Remove = 1] = "Remove", e4))(s11 || {});
 function x3() {
-  return (0, import_react62.useContext)(a5);
+  return (0, import_react59.useContext)(a5);
 }
 function M3({ children: i6, onUpdate: r8, type: e4, element: n6, enabled: u11 }) {
   let l12 = x3(), o10 = o4((...t17) => {
@@ -61698,7 +61299,7 @@ function M3({ children: i6, onUpdate: r8, type: e4, element: n6, enabled: u11 })
     return t17 && o10(0, e4, n6), () => {
       t17 && o10(1, e4, n6);
     };
-  }, [o10, e4, n6, u11]), import_react62.default.createElement(a5.Provider, { value: o10 }, i6);
+  }, [o10, e4, n6, u11]), import_react59.default.createElement(a5.Provider, { value: o10 }, i6);
 }
 
 // node_modules/@headlessui/react/dist/use-sync-external-store-shim/index.js
@@ -61878,10 +61479,10 @@ function h8(r8, l12 = !0) {
 }
 
 // node_modules/@headlessui/react/dist/hooks/use-root-containers.js
-var import_react63 = __toESM(require_react(), 1);
+var import_react60 = __toESM(require_react(), 1);
 function j3({ defaultContainers: t17 = [], portals: r8, mainTreeNodeRef: u11 } = {}) {
   var c12;
-  let o10 = (0, import_react63.useRef)((c12 = u11 == null ? void 0 : u11.current) != null ? c12 : null), l12 = n2(o10), f10 = o4(() => {
+  let o10 = (0, import_react60.useRef)((c12 = u11 == null ? void 0 : u11.current) != null ? c12 : null), l12 = n2(o10), f10 = o4(() => {
     var i6;
     let n6 = [];
     for (let e4 of t17)
@@ -61893,18 +61494,18 @@ function j3({ defaultContainers: t17 = [], portals: r8, mainTreeNodeRef: u11 } =
       e4 !== document.body && e4 !== document.head && e4 instanceof HTMLElement && e4.id !== "headlessui-portal-root" && (e4.contains(o10.current) || n6.some((T7) => e4.contains(T7)) || n6.push(e4));
     return n6;
   });
-  return { resolveContainers: f10, contains: o4((n6) => f10().some((i6) => i6.contains(n6))), mainTreeNodeRef: o10, MainTreeNode: (0, import_react63.useMemo)(() => function() {
-    return u11 != null ? null : import_react63.default.createElement(c4, { features: p2.Hidden, ref: o10 });
+  return { resolveContainers: f10, contains: o4((n6) => f10().some((i6) => i6.contains(n6))), mainTreeNodeRef: o10, MainTreeNode: (0, import_react60.useMemo)(() => function() {
+    return u11 != null ? null : import_react60.default.createElement(c4, { features: p2.Hidden, ref: o10 });
   }, [o10, u11]) };
 }
 
 // node_modules/@headlessui/react/dist/components/dialog/dialog.js
 var _e2 = ((o10) => (o10[o10.Open = 0] = "Open", o10[o10.Closed = 1] = "Closed", o10))(_e2 || {}), Ie = ((e4) => (e4[e4.SetTitleId = 0] = "SetTitleId", e4))(Ie || {}), Me = { [0](t17, e4) {
   return t17.titleId === e4.id ? t17 : { ...t17, titleId: e4.id };
-} }, I4 = (0, import_react64.createContext)(null);
+} }, I4 = (0, import_react61.createContext)(null);
 I4.displayName = "DialogContext";
 function b3(t17) {
-  let e4 = (0, import_react64.useContext)(I4);
+  let e4 = (0, import_react61.useContext)(I4);
   if (e4 === null) {
     let o10 = new Error(`<${t17} /> is missing a parent <Dialog /> component.`);
     throw Error.captureStackTrace && Error.captureStackTrace(o10, b3), o10;
@@ -61923,9 +61524,9 @@ function Be2(t17, e4) {
 var He = "div", Ge = S2.RenderStrategy | S2.Static;
 function Ne(t17, e4) {
   var X4;
-  let o10 = I(), { id: i6 = `headlessui-dialog-${o10}`, open: n6, onClose: l12, initialFocus: s14, __demoMode: g8 = !1, ...T7 } = t17, [m10, h10] = (0, import_react64.useState)(0), a12 = C2();
+  let o10 = I(), { id: i6 = `headlessui-dialog-${o10}`, open: n6, onClose: l12, initialFocus: s14, __demoMode: g8 = !1, ...T7 } = t17, [m10, h10] = (0, import_react61.useState)(0), a12 = C2();
   n6 === void 0 && a12 !== null && (n6 = (a12 & d5.Open) === d5.Open);
-  let D6 = (0, import_react64.useRef)(null), Q3 = y2(D6, e4), f10 = n2(D6), N6 = t17.hasOwnProperty("open") || a12 !== null, U4 = t17.hasOwnProperty("onClose");
+  let D6 = (0, import_react61.useRef)(null), Q3 = y2(D6, e4), f10 = n2(D6), N6 = t17.hasOwnProperty("open") || a12 !== null, U4 = t17.hasOwnProperty("onClose");
   if (!N6 && !U4)
     throw new Error("You have to provide an `open` and an `onClose` prop to the `Dialog` component.");
   if (!N6)
@@ -61936,12 +61537,12 @@ function Ne(t17, e4) {
     throw new Error(`You provided an \`open\` prop to the \`Dialog\`, but the value is not a boolean. Received: ${n6}`);
   if (typeof l12 != "function")
     throw new Error(`You provided an \`onClose\` prop to the \`Dialog\`, but the value is not a function. Received: ${l12}`);
-  let p6 = n6 ? 0 : 1, [S9, Z5] = (0, import_react64.useReducer)(Be2, { titleId: null, descriptionId: null, panelRef: (0, import_react64.createRef)() }), P4 = o4(() => l12(!1)), W2 = o4((r8) => Z5({ type: 0, id: r8 })), L2 = l3() ? g8 ? !1 : p6 === 0 : !1, F6 = m10 > 1, Y4 = (0, import_react64.useContext)(I4) !== null, [ee3, te3] = ae2(), { resolveContainers: M7, mainTreeNodeRef: k2, MainTreeNode: oe3 } = j3({ portals: ee3, defaultContainers: [(X4 = S9.panelRef.current) != null ? X4 : D6.current] }), re3 = F6 ? "parent" : "leaf", $4 = a12 !== null ? (a12 & d5.Closing) === d5.Closing : !1, ne2 = (() => Y4 || $4 ? !1 : L2)(), le4 = (0, import_react64.useCallback)(() => {
+  let p6 = n6 ? 0 : 1, [S9, Z5] = (0, import_react61.useReducer)(Be2, { titleId: null, descriptionId: null, panelRef: (0, import_react61.createRef)() }), P4 = o4(() => l12(!1)), W2 = o4((r8) => Z5({ type: 0, id: r8 })), L2 = l3() ? g8 ? !1 : p6 === 0 : !1, F6 = m10 > 1, Y4 = (0, import_react61.useContext)(I4) !== null, [ee3, te3] = ae2(), { resolveContainers: M7, mainTreeNodeRef: k2, MainTreeNode: oe3 } = j3({ portals: ee3, defaultContainers: [(X4 = S9.panelRef.current) != null ? X4 : D6.current] }), re3 = F6 ? "parent" : "leaf", $4 = a12 !== null ? (a12 & d5.Closing) === d5.Closing : !1, ne2 = (() => Y4 || $4 ? !1 : L2)(), le4 = (0, import_react61.useCallback)(() => {
     var r8, c12;
     return (c12 = Array.from((r8 = f10 == null ? void 0 : f10.querySelectorAll("body > *")) != null ? r8 : []).find((d11) => d11.id === "headlessui-portal-root" ? !1 : d11.contains(k2.current) && d11 instanceof HTMLElement)) != null ? c12 : null;
   }, [k2]);
   h8(le4, ne2);
-  let ae4 = (() => F6 ? !0 : L2)(), ie3 = (0, import_react64.useCallback)(() => {
+  let ae4 = (() => F6 ? !0 : L2)(), ie3 = (0, import_react61.useCallback)(() => {
     var r8, c12;
     return (c12 = Array.from((r8 = f10 == null ? void 0 : f10.querySelectorAll("[data-headlessui-portal]")) != null ? r8 : []).find((d11) => d11.contains(k2.current) && d11 instanceof HTMLElement)) != null ? c12 : null;
   }, [k2]);
@@ -61953,7 +61554,7 @@ function Ne(t17, e4) {
     pe2 && (r8.defaultPrevented || r8.key === o7.Escape && (r8.preventDefault(), r8.stopPropagation(), P4()));
   });
   let de3 = (() => !($4 || p6 !== 0 || Y4))();
-  we2(f10, de3, M7), (0, import_react64.useEffect)(() => {
+  we2(f10, de3, M7), (0, import_react61.useEffect)(() => {
     if (p6 !== 0 || !D6.current)
       return;
     let r8 = new ResizeObserver((c12) => {
@@ -61964,10 +61565,10 @@ function Ne(t17, e4) {
     });
     return r8.observe(D6.current), () => r8.disconnect();
   }, [p6, D6, P4]);
-  let [ue2, fe2] = M2(), ge3 = (0, import_react64.useMemo)(() => [{ dialogState: p6, close: P4, setTitleId: W2 }, S9], [p6, S9, P4, W2]), J4 = (0, import_react64.useMemo)(() => ({ open: p6 === 0 }), [p6]), Te3 = { ref: Q3, id: i6, role: "dialog", "aria-modal": p6 === 0 ? !0 : void 0, "aria-labelledby": S9.titleId, "aria-describedby": ue2 };
-  return import_react64.default.createElement(M3, { type: "Dialog", enabled: p6 === 0, element: D6, onUpdate: o4((r8, c12) => {
+  let [ue2, fe2] = M2(), ge3 = (0, import_react61.useMemo)(() => [{ dialogState: p6, close: P4, setTitleId: W2 }, S9], [p6, S9, P4, W2]), J4 = (0, import_react61.useMemo)(() => ({ open: p6 === 0 }), [p6]), Te3 = { ref: Q3, id: i6, role: "dialog", "aria-modal": p6 === 0 ? !0 : void 0, "aria-labelledby": S9.titleId, "aria-describedby": ue2 };
+  return import_react61.default.createElement(M3, { type: "Dialog", enabled: p6 === 0, element: D6, onUpdate: o4((r8, c12) => {
     c12 === "Dialog" && u3(r8, { [s11.Add]: () => h10((d11) => d11 + 1), [s11.Remove]: () => h10((d11) => d11 - 1) });
-  }) }, import_react64.default.createElement(P2, { force: !0 }, import_react64.default.createElement(pe, null, import_react64.default.createElement(I4.Provider, { value: ge3 }, import_react64.default.createElement(pe.Group, { target: D6 }, import_react64.default.createElement(P2, { force: !1 }, import_react64.default.createElement(fe2, { slot: J4, name: "Dialog.Description" }, import_react64.default.createElement(ge, { initialFocus: s14, containers: M7, features: L2 ? u3(re3, { parent: ge.features.RestoreFocus, leaf: ge.features.All & ~ge.features.FocusLock }) : ge.features.None }, import_react64.default.createElement(te3, null, X({ ourProps: Te3, theirProps: T7, slot: J4, defaultTag: He, features: Ge, visible: p6 === 0, name: "Dialog" }))))))))), import_react64.default.createElement(oe3, null));
+  }) }, import_react61.default.createElement(P2, { force: !0 }, import_react61.default.createElement(pe, null, import_react61.default.createElement(I4.Provider, { value: ge3 }, import_react61.default.createElement(pe.Group, { target: D6 }, import_react61.default.createElement(P2, { force: !1 }, import_react61.default.createElement(fe2, { slot: J4, name: "Dialog.Description" }, import_react61.default.createElement(ge, { initialFocus: s14, containers: M7, features: L2 ? u3(re3, { parent: ge.features.RestoreFocus, leaf: ge.features.All & ~ge.features.FocusLock }) : ge.features.None }, import_react61.default.createElement(te3, null, X({ ourProps: Te3, theirProps: T7, slot: J4, defaultTag: He, features: Ge, visible: p6 === 0, name: "Dialog" }))))))))), import_react61.default.createElement(oe3, null));
 }
 var Ue = "div";
 function We2(t17, e4) {
@@ -61977,22 +61578,22 @@ function We2(t17, e4) {
         return a12.preventDefault();
       a12.preventDefault(), a12.stopPropagation(), s14();
     }
-  }), m10 = (0, import_react64.useMemo)(() => ({ open: l12 === 0 }), [l12]);
+  }), m10 = (0, import_react61.useMemo)(() => ({ open: l12 === 0 }), [l12]);
   return X({ ourProps: { ref: g8, id: i6, "aria-hidden": !0, onClick: T7 }, theirProps: n6, slot: m10, defaultTag: Ue, name: "Dialog.Overlay" });
 }
 var Ye = "div";
 function $e2(t17, e4) {
   let o10 = I(), { id: i6 = `headlessui-dialog-backdrop-${o10}`, ...n6 } = t17, [{ dialogState: l12 }, s14] = b3("Dialog.Backdrop"), g8 = y2(e4);
-  (0, import_react64.useEffect)(() => {
+  (0, import_react61.useEffect)(() => {
     if (s14.panelRef.current === null)
       throw new Error("A <Dialog.Backdrop /> component is being used, but a <Dialog.Panel /> component is missing.");
   }, [s14.panelRef]);
-  let T7 = (0, import_react64.useMemo)(() => ({ open: l12 === 0 }), [l12]);
-  return import_react64.default.createElement(P2, { force: !0 }, import_react64.default.createElement(pe, null, X({ ourProps: { ref: g8, id: i6, "aria-hidden": !0 }, theirProps: n6, slot: T7, defaultTag: Ye, name: "Dialog.Backdrop" })));
+  let T7 = (0, import_react61.useMemo)(() => ({ open: l12 === 0 }), [l12]);
+  return import_react61.default.createElement(P2, { force: !0 }, import_react61.default.createElement(pe, null, X({ ourProps: { ref: g8, id: i6, "aria-hidden": !0 }, theirProps: n6, slot: T7, defaultTag: Ye, name: "Dialog.Backdrop" })));
 }
 var Je = "div";
 function Xe(t17, e4) {
-  let o10 = I(), { id: i6 = `headlessui-dialog-panel-${o10}`, ...n6 } = t17, [{ dialogState: l12 }, s14] = b3("Dialog.Panel"), g8 = y2(e4, s14.panelRef), T7 = (0, import_react64.useMemo)(() => ({ open: l12 === 0 }), [l12]), m10 = o4((a12) => {
+  let o10 = I(), { id: i6 = `headlessui-dialog-panel-${o10}`, ...n6 } = t17, [{ dialogState: l12 }, s14] = b3("Dialog.Panel"), g8 = y2(e4, s14.panelRef), T7 = (0, import_react61.useMemo)(() => ({ open: l12 === 0 }), [l12]), m10 = o4((a12) => {
     a12.stopPropagation();
   });
   return X({ ourProps: { ref: g8, id: i6, onClick: m10 }, theirProps: n6, slot: T7, defaultTag: Je, name: "Dialog.Panel" });
@@ -62000,17 +61601,17 @@ function Xe(t17, e4) {
 var je2 = "h2";
 function Ke(t17, e4) {
   let o10 = I(), { id: i6 = `headlessui-dialog-title-${o10}`, ...n6 } = t17, [{ dialogState: l12, setTitleId: s14 }] = b3("Dialog.Title"), g8 = y2(e4);
-  (0, import_react64.useEffect)(() => (s14(i6), () => s14(null)), [i6, s14]);
-  let T7 = (0, import_react64.useMemo)(() => ({ open: l12 === 0 }), [l12]);
+  (0, import_react61.useEffect)(() => (s14(i6), () => s14(null)), [i6, s14]);
+  let T7 = (0, import_react61.useMemo)(() => ({ open: l12 === 0 }), [l12]);
   return X({ ourProps: { ref: g8, id: i6 }, theirProps: n6, slot: T7, defaultTag: je2, name: "Dialog.Title" });
 }
 var Ve = D3(Ne), qe = D3($e2), ze2 = D3(Xe), Qe = D3(We2), Ze = D3(Ke), _t = Object.assign(Ve, { Backdrop: qe, Panel: ze2, Overlay: Qe, Title: Ze, Description: b2 });
 
 // node_modules/@headlessui/react/dist/components/disclosure/disclosure.js
-var import_react66 = __toESM(require_react(), 1);
+var import_react63 = __toESM(require_react(), 1);
 
 // node_modules/@headlessui/react/dist/utils/start-transition.js
-var import_react65 = __toESM(require_react(), 1), t16, a10 = (t16 = import_react65.default.startTransition) != null ? t16 : function(i6) {
+var import_react62 = __toESM(require_react(), 1), t16, a10 = (t16 = import_react62.default.startTransition) != null ? t16 : function(i6) {
   i6();
 };
 
@@ -62023,52 +61624,52 @@ var q = ((o10) => (o10[o10.Open = 0] = "Open", o10[o10.Closed = 1] = "Closed", o
   return e4.buttonId === n6.buttonId ? e4 : { ...e4, buttonId: n6.buttonId };
 }, [3](e4, n6) {
   return e4.panelId === n6.panelId ? e4 : { ...e4, panelId: n6.panelId };
-} }, k = (0, import_react66.createContext)(null);
+} }, k = (0, import_react63.createContext)(null);
 k.displayName = "DisclosureContext";
 function M4(e4) {
-  let n6 = (0, import_react66.useContext)(k);
+  let n6 = (0, import_react63.useContext)(k);
   if (n6 === null) {
     let o10 = new Error(`<${e4} /> is missing a parent <Disclosure /> component.`);
     throw Error.captureStackTrace && Error.captureStackTrace(o10, M4), o10;
   }
   return n6;
 }
-var v2 = (0, import_react66.createContext)(null);
+var v2 = (0, import_react63.createContext)(null);
 v2.displayName = "DisclosureAPIContext";
 function w4(e4) {
-  let n6 = (0, import_react66.useContext)(v2);
+  let n6 = (0, import_react63.useContext)(v2);
   if (n6 === null) {
     let o10 = new Error(`<${e4} /> is missing a parent <Disclosure /> component.`);
     throw Error.captureStackTrace && Error.captureStackTrace(o10, w4), o10;
   }
   return n6;
 }
-var H4 = (0, import_react66.createContext)(null);
+var H4 = (0, import_react63.createContext)(null);
 H4.displayName = "DisclosurePanelContext";
 function V2() {
-  return (0, import_react66.useContext)(H4);
+  return (0, import_react63.useContext)(H4);
 }
 function Y2(e4, n6) {
   return u3(n6.type, Q2, e4, n6);
 }
-var Z3 = import_react66.Fragment;
+var Z3 = import_react63.Fragment;
 function ee2(e4, n6) {
-  let { defaultOpen: o10 = !1, ...u11 } = e4, T7 = (0, import_react66.useRef)(null), l12 = y2(n6, T2((a12) => {
+  let { defaultOpen: o10 = !1, ...u11 } = e4, T7 = (0, import_react63.useRef)(null), l12 = y2(n6, T2((a12) => {
     T7.current = a12;
-  }, e4.as === void 0 || e4.as === import_react66.Fragment)), t17 = (0, import_react66.useRef)(null), f10 = (0, import_react66.useRef)(null), s14 = (0, import_react66.useReducer)(Y2, { disclosureState: o10 ? 0 : 1, linkedPanel: !1, buttonRef: f10, panelRef: t17, buttonId: null, panelId: null }), [{ disclosureState: i6, buttonId: c12 }, D6] = s14, d11 = o4((a12) => {
+  }, e4.as === void 0 || e4.as === import_react63.Fragment)), t17 = (0, import_react63.useRef)(null), f10 = (0, import_react63.useRef)(null), s14 = (0, import_react63.useReducer)(Y2, { disclosureState: o10 ? 0 : 1, linkedPanel: !1, buttonRef: f10, panelRef: t17, buttonId: null, panelId: null }), [{ disclosureState: i6, buttonId: c12 }, D6] = s14, d11 = o4((a12) => {
     D6({ type: 1 });
     let r8 = e(T7);
     if (!r8 || !c12)
       return;
     let p6 = (() => a12 ? a12 instanceof HTMLElement ? a12 : a12.current instanceof HTMLElement ? a12.current : r8.getElementById(c12) : r8.getElementById(c12))();
     p6 == null || p6.focus();
-  }), P4 = (0, import_react66.useMemo)(() => ({ close: d11 }), [d11]), b6 = (0, import_react66.useMemo)(() => ({ open: i6 === 0, close: d11 }), [i6, d11]), y6 = { ref: l12 };
-  return import_react66.default.createElement(k.Provider, { value: s14 }, import_react66.default.createElement(v2.Provider, { value: P4 }, import_react66.default.createElement(c5, { value: u3(i6, { [0]: d5.Open, [1]: d5.Closed }) }, X({ ourProps: y6, theirProps: u11, slot: b6, defaultTag: Z3, name: "Disclosure" }))));
+  }), P4 = (0, import_react63.useMemo)(() => ({ close: d11 }), [d11]), b6 = (0, import_react63.useMemo)(() => ({ open: i6 === 0, close: d11 }), [i6, d11]), y6 = { ref: l12 };
+  return import_react63.default.createElement(k.Provider, { value: s14 }, import_react63.default.createElement(v2.Provider, { value: P4 }, import_react63.default.createElement(c5, { value: u3(i6, { [0]: d5.Open, [1]: d5.Closed }) }, X({ ourProps: y6, theirProps: u11, slot: b6, defaultTag: Z3, name: "Disclosure" }))));
 }
 var te2 = "button";
 function ne(e4, n6) {
-  let o10 = I(), { id: u11 = `headlessui-disclosure-button-${o10}`, ...T7 } = e4, [l12, t17] = M4("Disclosure.Button"), f10 = V2(), s14 = f10 === null ? !1 : f10 === l12.panelId, i6 = (0, import_react66.useRef)(null), c12 = y2(i6, n6, s14 ? null : l12.buttonRef);
-  (0, import_react66.useEffect)(() => {
+  let o10 = I(), { id: u11 = `headlessui-disclosure-button-${o10}`, ...T7 } = e4, [l12, t17] = M4("Disclosure.Button"), f10 = V2(), s14 = f10 === null ? !1 : f10 === l12.panelId, i6 = (0, import_react63.useRef)(null), c12 = y2(i6, n6, s14 ? null : l12.buttonRef);
+  (0, import_react63.useEffect)(() => {
     if (!s14)
       return t17({ type: 2, buttonId: u11 }), () => {
         t17({ type: 2, buttonId: null });
@@ -62101,7 +61702,7 @@ function ne(e4, n6) {
   }), P4 = o4((r8) => {
     var p6;
     r2(r8.currentTarget) || e4.disabled || (s14 ? (t17({ type: 0 }), (p6 = l12.buttonRef.current) == null || p6.focus()) : t17({ type: 0 }));
-  }), b6 = (0, import_react66.useMemo)(() => ({ open: l12.disclosureState === 0 }), [l12]), y6 = s6(e4, i6), a12 = s14 ? { ref: c12, type: y6, onKeyDown: D6, onClick: P4 } : { ref: c12, id: u11, type: y6, "aria-expanded": l12.disclosureState === 0, "aria-controls": l12.linkedPanel ? l12.panelId : void 0, onKeyDown: D6, onKeyUp: d11, onClick: P4 };
+  }), b6 = (0, import_react63.useMemo)(() => ({ open: l12.disclosureState === 0 }), [l12]), y6 = s6(e4, i6), a12 = s14 ? { ref: c12, type: y6, onKeyDown: D6, onClick: P4 } : { ref: c12, id: u11, type: y6, "aria-expanded": l12.disclosureState === 0, "aria-controls": l12.linkedPanel ? l12.panelId : void 0, onKeyDown: D6, onKeyUp: d11, onClick: P4 };
   return X({ ourProps: a12, theirProps: T7, slot: b6, defaultTag: te2, name: "Disclosure.Button" });
 }
 var le2 = "div", oe = S2.RenderStrategy | S2.Static;
@@ -62109,16 +61710,16 @@ function re2(e4, n6) {
   let o10 = I(), { id: u11 = `headlessui-disclosure-panel-${o10}`, ...T7 } = e4, [l12, t17] = M4("Disclosure.Panel"), { close: f10 } = w4("Disclosure.Panel"), s14 = y2(n6, l12.panelRef, (P4) => {
     a10(() => t17({ type: P4 ? 4 : 5 }));
   });
-  (0, import_react66.useEffect)(() => (t17({ type: 3, panelId: u11 }), () => {
+  (0, import_react63.useEffect)(() => (t17({ type: 3, panelId: u11 }), () => {
     t17({ type: 3, panelId: null });
   }), [u11, t17]);
-  let i6 = C2(), c12 = (() => i6 !== null ? (i6 & d5.Open) === d5.Open : l12.disclosureState === 0)(), D6 = (0, import_react66.useMemo)(() => ({ open: l12.disclosureState === 0, close: f10 }), [l12, f10]), d11 = { ref: s14, id: u11 };
-  return import_react66.default.createElement(H4.Provider, { value: l12.panelId }, X({ ourProps: d11, theirProps: T7, slot: D6, defaultTag: le2, features: oe, visible: c12, name: "Disclosure.Panel" }));
+  let i6 = C2(), c12 = (() => i6 !== null ? (i6 & d5.Open) === d5.Open : l12.disclosureState === 0)(), D6 = (0, import_react63.useMemo)(() => ({ open: l12.disclosureState === 0, close: f10 }), [l12, f10]), d11 = { ref: s14, id: u11 };
+  return import_react63.default.createElement(H4.Provider, { value: l12.panelId }, X({ ourProps: d11, theirProps: T7, slot: D6, defaultTag: le2, features: oe, visible: c12, name: "Disclosure.Panel" }));
 }
 var se2 = D3(ee2), ue = D3(ne), ie2 = D3(re2), ve2 = Object.assign(se2, { Button: ue, Panel: ie2 });
 
 // node_modules/@headlessui/react/dist/hooks/use-text-value.js
-var import_react67 = __toESM(require_react(), 1);
+var import_react64 = __toESM(require_react(), 1);
 
 // node_modules/@headlessui/react/dist/utils/get-text-value.js
 var a11 = /([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g;
@@ -62155,7 +61756,7 @@ function g6(e4) {
 
 // node_modules/@headlessui/react/dist/hooks/use-text-value.js
 function b4(c12) {
-  let t17 = (0, import_react67.useRef)(""), r8 = (0, import_react67.useRef)("");
+  let t17 = (0, import_react64.useRef)(""), r8 = (0, import_react64.useRef)("");
   return o4(() => {
     let e4 = c12.current;
     if (!e4)
@@ -62169,7 +61770,7 @@ function b4(c12) {
 }
 
 // node_modules/@headlessui/react/dist/components/menu/menu.js
-var import_react68 = __toESM(require_react(), 1);
+var import_react65 = __toESM(require_react(), 1);
 var me2 = ((r8) => (r8[r8.Open = 0] = "Open", r8[r8.Closed = 1] = "Closed", r8))(me2 || {}), de2 = ((r8) => (r8[r8.Pointer = 0] = "Pointer", r8[r8.Other = 1] = "Other", r8))(de2 || {}), fe = ((a12) => (a12[a12.OpenMenu = 0] = "OpenMenu", a12[a12.CloseMenu = 1] = "CloseMenu", a12[a12.GoToItem = 2] = "GoToItem", a12[a12.Search = 3] = "Search", a12[a12.ClearSearch = 4] = "ClearSearch", a12[a12.RegisterItem = 5] = "RegisterItem", a12[a12.UnregisterItem = 6] = "UnregisterItem", a12))(fe || {});
 function w5(e4, u11 = (r8) => r8) {
   let r8 = e4.activeItemIndex !== null ? e4.items[e4.activeItemIndex] : null, i6 = I2(u11(e4.items.slice()), (t17) => t17.dataRef.current.domRef.current), s14 = r8 ? i6.indexOf(r8) : null;
@@ -62200,10 +61801,10 @@ var Te2 = { [1](e4) {
     return s14 !== -1 && i6.splice(s14, 1), i6;
   });
   return { ...e4, ...r8, activationTrigger: 1 };
-} }, U2 = (0, import_react68.createContext)(null);
+} }, U2 = (0, import_react65.createContext)(null);
 U2.displayName = "MenuContext";
 function O3(e4) {
-  let u11 = (0, import_react68.useContext)(U2);
+  let u11 = (0, import_react65.useContext)(U2);
   if (u11 === null) {
     let r8 = new Error(`<${e4} /> is missing a parent <Menu /> component.`);
     throw Error.captureStackTrace && Error.captureStackTrace(r8, O3), r8;
@@ -62213,17 +61814,17 @@ function O3(e4) {
 function ye3(e4, u11) {
   return u3(u11.type, Te2, e4, u11);
 }
-var Ie2 = import_react68.Fragment;
+var Ie2 = import_react65.Fragment;
 function Me2(e4, u11) {
-  let { __demoMode: r8 = !1, ...i6 } = e4, s14 = (0, import_react68.useReducer)(ye3, { __demoMode: r8, menuState: r8 ? 0 : 1, buttonRef: (0, import_react68.createRef)(), itemsRef: (0, import_react68.createRef)(), items: [], searchQuery: "", activeItemIndex: null, activationTrigger: 1 }), [{ menuState: t17, itemsRef: o10, buttonRef: a12 }, l12] = s14, m10 = y2(u11);
+  let { __demoMode: r8 = !1, ...i6 } = e4, s14 = (0, import_react65.useReducer)(ye3, { __demoMode: r8, menuState: r8 ? 0 : 1, buttonRef: (0, import_react65.createRef)(), itemsRef: (0, import_react65.createRef)(), items: [], searchQuery: "", activeItemIndex: null, activationTrigger: 1 }), [{ menuState: t17, itemsRef: o10, buttonRef: a12 }, l12] = s14, m10 = y2(u11);
   h3([a12, o10], (g8, R3) => {
     var p6;
     l12({ type: 1 }), h2(R3, T.Loose) || (g8.preventDefault(), (p6 = a12.current) == null || p6.focus());
   }, t17 === 0);
   let I6 = o4(() => {
     l12({ type: 1 });
-  }), A2 = (0, import_react68.useMemo)(() => ({ open: t17 === 0, close: I6 }), [t17, I6]), f10 = { ref: m10 };
-  return import_react68.default.createElement(U2.Provider, { value: s14 }, import_react68.default.createElement(c5, { value: u3(t17, { [0]: d5.Open, [1]: d5.Closed }) }, X({ ourProps: f10, theirProps: i6, slot: A2, defaultTag: Ie2, name: "Menu" })));
+  }), A2 = (0, import_react65.useMemo)(() => ({ open: t17 === 0, close: I6 }), [t17, I6]), f10 = { ref: m10 };
+  return import_react65.default.createElement(U2.Provider, { value: s14 }, import_react65.default.createElement(c5, { value: u3(t17, { [0]: d5.Open, [1]: d5.Closed }) }, X({ ourProps: f10, theirProps: i6, slot: A2, defaultTag: Ie2, name: "Menu" })));
 }
 var ge2 = "button";
 function Re2(e4, u11) {
@@ -62252,14 +61853,14 @@ function Re2(e4, u11) {
       var M7;
       return (M7 = t17.buttonRef.current) == null ? void 0 : M7.focus({ preventScroll: !0 });
     })) : (p6.preventDefault(), o10({ type: 0 })));
-  }), f10 = (0, import_react68.useMemo)(() => ({ open: t17.menuState === 0 }), [t17]), g8 = { ref: a12, id: i6, type: s6(e4, t17.buttonRef), "aria-haspopup": "menu", "aria-controls": (R3 = t17.itemsRef.current) == null ? void 0 : R3.id, "aria-expanded": t17.menuState === 0, onKeyDown: m10, onKeyUp: I6, onClick: A2 };
+  }), f10 = (0, import_react65.useMemo)(() => ({ open: t17.menuState === 0 }), [t17]), g8 = { ref: a12, id: i6, type: s6(e4, t17.buttonRef), "aria-haspopup": "menu", "aria-controls": (R3 = t17.itemsRef.current) == null ? void 0 : R3.id, "aria-expanded": t17.menuState === 0, onKeyDown: m10, onKeyUp: I6, onClick: A2 };
   return X({ ourProps: g8, theirProps: s14, slot: f10, defaultTag: ge2, name: "Menu.Button" });
 }
 var Ae2 = "div", be = S2.RenderStrategy | S2.Static;
 function Ee(e4, u11) {
   var M7, b6;
   let r8 = I(), { id: i6 = `headlessui-menu-items-${r8}`, ...s14 } = e4, [t17, o10] = O3("Menu.Items"), a12 = y2(t17.itemsRef, u11), l12 = n2(t17.itemsRef), m10 = p(), I6 = C2(), A2 = (() => I6 !== null ? (I6 & d5.Open) === d5.Open : t17.menuState === 0)();
-  (0, import_react68.useEffect)(() => {
+  (0, import_react65.useEffect)(() => {
     let n6 = t17.itemsRef.current;
     n6 && t17.menuState === 0 && n6 !== (l12 == null ? void 0 : l12.activeElement) && n6.focus({ preventScroll: !0 });
   }, [t17.menuState, t17.itemsRef, l12]), F2({ container: t17.itemsRef.current, enabled: t17.menuState === 0, accept(n6) {
@@ -62311,12 +61912,12 @@ function Ee(e4, u11) {
         n6.preventDefault();
         break;
     }
-  }), R3 = (0, import_react68.useMemo)(() => ({ open: t17.menuState === 0 }), [t17]), p6 = { "aria-activedescendant": t17.activeItemIndex === null || (M7 = t17.items[t17.activeItemIndex]) == null ? void 0 : M7.id, "aria-labelledby": (b6 = t17.buttonRef.current) == null ? void 0 : b6.id, id: i6, onKeyDown: f10, onKeyUp: g8, role: "menu", tabIndex: 0, ref: a12 };
+  }), R3 = (0, import_react65.useMemo)(() => ({ open: t17.menuState === 0 }), [t17]), p6 = { "aria-activedescendant": t17.activeItemIndex === null || (M7 = t17.items[t17.activeItemIndex]) == null ? void 0 : M7.id, "aria-labelledby": (b6 = t17.buttonRef.current) == null ? void 0 : b6.id, id: i6, onKeyDown: f10, onKeyUp: g8, role: "menu", tabIndex: 0, ref: a12 };
   return X({ ourProps: p6, theirProps: s14, slot: R3, defaultTag: Ae2, features: be, visible: A2, name: "Menu.Items" });
 }
-var Se = import_react68.Fragment;
+var Se = import_react65.Fragment;
 function Pe3(e4, u11) {
-  let r8 = I(), { id: i6 = `headlessui-menu-item-${r8}`, disabled: s14 = !1, ...t17 } = e4, [o10, a12] = O3("Menu.Item"), l12 = o10.activeItemIndex !== null ? o10.items[o10.activeItemIndex].id === i6 : !1, m10 = (0, import_react68.useRef)(null), I6 = y2(u11, m10);
+  let r8 = I(), { id: i6 = `headlessui-menu-item-${r8}`, disabled: s14 = !1, ...t17 } = e4, [o10, a12] = O3("Menu.Item"), l12 = o10.activeItemIndex !== null ? o10.items[o10.activeItemIndex].id === i6 : !1, m10 = (0, import_react65.useRef)(null), I6 = y2(u11, m10);
   l2(() => {
     if (o10.__demoMode || o10.menuState !== 0 || !l12 || o10.activationTrigger === 0)
       return;
@@ -62326,7 +61927,7 @@ function Pe3(e4, u11) {
       (B2 = (v4 = m10.current) == null ? void 0 : v4.scrollIntoView) == null || B2.call(v4, { block: "nearest" });
     }), T7.dispose;
   }, [o10.__demoMode, m10, l12, o10.menuState, o10.activationTrigger, o10.activeItemIndex]);
-  let A2 = b4(m10), f10 = (0, import_react68.useRef)({ disabled: s14, domRef: m10, get textValue() {
+  let A2 = b4(m10), f10 = (0, import_react65.useRef)({ disabled: s14, domRef: m10, get textValue() {
     return A2();
   } });
   l2(() => {
@@ -62346,26 +61947,26 @@ function Pe3(e4, u11) {
     M7.wasMoved(T7) && (s14 || l12 || a12({ type: 2, focus: a2.Specific, id: i6, trigger: 0 }));
   }), E9 = o4((T7) => {
     M7.wasMoved(T7) && (s14 || l12 && a12({ type: 2, focus: a2.Nothing }));
-  }), P4 = (0, import_react68.useMemo)(() => ({ active: l12, disabled: s14, close: g8 }), [l12, s14, g8]);
+  }), P4 = (0, import_react65.useMemo)(() => ({ active: l12, disabled: s14, close: g8 }), [l12, s14, g8]);
   return X({ ourProps: { id: i6, ref: I6, role: "menuitem", tabIndex: s14 === !0 ? void 0 : -1, "aria-disabled": s14 === !0 ? !0 : void 0, disabled: void 0, onClick: R3, onFocus: p6, onPointerEnter: b6, onMouseEnter: b6, onPointerMove: n6, onMouseMove: n6, onPointerLeave: E9, onMouseLeave: E9 }, theirProps: t17, slot: P4, defaultTag: Se, name: "Menu.Item" });
 }
 var ve3 = D3(Me2), xe2 = D3(Re2), he2 = D3(Ee), De3 = D3(Pe3), it = Object.assign(ve3, { Button: xe2, Items: he2, Item: De3 });
 
 // node_modules/@headlessui/react/dist/hooks/use-flags.js
-var import_react69 = __toESM(require_react(), 1);
+var import_react66 = __toESM(require_react(), 1);
 function c11(a12 = 0) {
-  let [l12, r8] = (0, import_react69.useState)(a12), t17 = f5(), o10 = (0, import_react69.useCallback)((e4) => {
+  let [l12, r8] = (0, import_react66.useState)(a12), t17 = f5(), o10 = (0, import_react66.useCallback)((e4) => {
     t17.current && r8((u11) => u11 | e4);
-  }, [l12, t17]), m10 = (0, import_react69.useCallback)((e4) => Boolean(l12 & e4), [l12]), s14 = (0, import_react69.useCallback)((e4) => {
+  }, [l12, t17]), m10 = (0, import_react66.useCallback)((e4) => Boolean(l12 & e4), [l12]), s14 = (0, import_react66.useCallback)((e4) => {
     t17.current && r8((u11) => u11 & ~e4);
-  }, [r8, t17]), g8 = (0, import_react69.useCallback)((e4) => {
+  }, [r8, t17]), g8 = (0, import_react66.useCallback)((e4) => {
     t17.current && r8((u11) => u11 ^ e4);
   }, [r8]);
   return { flags: l12, addFlag: o10, hasFlag: m10, removeFlag: s14, toggleFlag: g8 };
 }
 
 // node_modules/@headlessui/react/dist/components/transitions/transition.js
-var import_react70 = __toESM(require_react(), 1);
+var import_react67 = __toESM(require_react(), 1);
 
 // node_modules/@headlessui/react/dist/utils/once.js
 function l11(r8) {
@@ -62436,28 +62037,28 @@ function E8({ immediate: t17, container: s14, direction: n6, classes: u11, onSta
 function S8(t17 = "") {
   return t17.split(" ").filter((n6) => n6.trim().length > 1);
 }
-var _2 = (0, import_react70.createContext)(null);
+var _2 = (0, import_react67.createContext)(null);
 _2.displayName = "TransitionContext";
 var be2 = ((r8) => (r8.Visible = "visible", r8.Hidden = "hidden", r8))(be2 || {});
 function Se2() {
-  let t17 = (0, import_react70.useContext)(_2);
+  let t17 = (0, import_react67.useContext)(_2);
   if (t17 === null)
     throw new Error("A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.");
   return t17;
 }
 function Ne2() {
-  let t17 = (0, import_react70.useContext)(M6);
+  let t17 = (0, import_react67.useContext)(M6);
   if (t17 === null)
     throw new Error("A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.");
   return t17;
 }
-var M6 = (0, import_react70.createContext)(null);
+var M6 = (0, import_react67.createContext)(null);
 M6.displayName = "NestingContext";
 function U3(t17) {
   return "children" in t17 ? U3(t17.children) : t17.current.filter(({ el: n6 }) => n6.current !== null).filter(({ state: n6 }) => n6 === "visible").length > 0;
 }
 function oe2(t17, n6) {
-  let r8 = s2(t17), s14 = (0, import_react70.useRef)([]), y6 = f5(), D6 = p(), c12 = o4((i6, e4 = j.Hidden) => {
+  let r8 = s2(t17), s14 = (0, import_react67.useRef)([]), y6 = f5(), D6 = p(), c12 = o4((i6, e4 = j.Hidden) => {
     let a12 = s14.current.findIndex(({ el: o10 }) => o10 === i6);
     a12 !== -1 && (u3(e4, { [j.Unmount]() {
       s14.current.splice(a12, 1);
@@ -62470,7 +62071,7 @@ function oe2(t17, n6) {
   }), x5 = o4((i6) => {
     let e4 = s14.current.find(({ el: a12 }) => a12 === i6);
     return e4 ? e4.state !== "visible" && (e4.state = "visible") : s14.current.push({ el: i6, state: "visible" }), () => c12(i6, j.Unmount);
-  }), p6 = (0, import_react70.useRef)([]), h10 = (0, import_react70.useRef)(Promise.resolve()), u11 = (0, import_react70.useRef)({ enter: [], leave: [], idle: [] }), v4 = o4((i6, e4, a12) => {
+  }), p6 = (0, import_react67.useRef)([]), h10 = (0, import_react67.useRef)(Promise.resolve()), u11 = (0, import_react67.useRef)({ enter: [], leave: [], idle: [] }), v4 = o4((i6, e4, a12) => {
     p6.current.splice(0), n6 && (n6.chains.current[e4] = n6.chains.current[e4].filter(([o10]) => o10 !== i6)), n6 == null || n6.chains.current[e4].push([i6, new Promise((o10) => {
       p6.current.push(o10);
     })]), n6 == null || n6.chains.current[e4].push([i6, new Promise((o10) => {
@@ -62482,7 +62083,7 @@ function oe2(t17, n6) {
       (o10 = p6.current.shift()) == null || o10();
     }).then(() => a12(e4));
   });
-  return (0, import_react70.useMemo)(() => ({ children: s14, register: x5, unregister: c12, onStart: v4, onStop: d11, wait: h10, chains: u11 }), [x5, c12, s14, v4, d11, u11, h10]);
+  return (0, import_react67.useMemo)(() => ({ children: s14, register: x5, unregister: c12, onStart: v4, onStop: d11, wait: h10, chains: u11 }), [x5, c12, s14, v4, d11, u11, h10]);
 }
 function xe3() {
 }
@@ -62495,16 +62096,16 @@ function se3(t17) {
   return n6;
 }
 function Re3(t17) {
-  let n6 = (0, import_react70.useRef)(se3(t17));
-  return (0, import_react70.useEffect)(() => {
+  let n6 = (0, import_react67.useRef)(se3(t17));
+  return (0, import_react67.useEffect)(() => {
     n6.current = se3(t17);
   }, [t17]), n6;
 }
 var ye4 = "div", ae3 = S2.RenderStrategy;
 function De4(t17, n6) {
   var K3, Q3;
-  let { beforeEnter: r8, afterEnter: s14, beforeLeave: y6, afterLeave: D6, enter: c12, enterFrom: x5, enterTo: p6, entered: h10, leave: u11, leaveFrom: v4, leaveTo: d11, ...i6 } = t17, e4 = (0, import_react70.useRef)(null), a12 = y2(e4, n6), o10 = (K3 = i6.unmount) == null || K3 ? j.Unmount : j.Hidden, { show: f10, appear: P4, initial: T7 } = Se2(), [l12, j5] = (0, import_react70.useState)(f10 ? "visible" : "hidden"), q3 = Ne2(), { register: O4, unregister: V3 } = q3;
-  (0, import_react70.useEffect)(() => O4(e4), [O4, e4]), (0, import_react70.useEffect)(() => {
+  let { beforeEnter: r8, afterEnter: s14, beforeLeave: y6, afterLeave: D6, enter: c12, enterFrom: x5, enterTo: p6, entered: h10, leave: u11, leaveFrom: v4, leaveTo: d11, ...i6 } = t17, e4 = (0, import_react67.useRef)(null), a12 = y2(e4, n6), o10 = (K3 = i6.unmount) == null || K3 ? j.Unmount : j.Hidden, { show: f10, appear: P4, initial: T7 } = Se2(), [l12, j5] = (0, import_react67.useState)(f10 ? "visible" : "hidden"), q3 = Ne2(), { register: O4, unregister: V3 } = q3;
+  (0, import_react67.useEffect)(() => O4(e4), [O4, e4]), (0, import_react67.useEffect)(() => {
     if (o10 === j.Hidden && e4.current) {
       if (f10 && l12 !== "visible") {
         j5("visible");
@@ -62514,7 +62115,7 @@ function De4(t17, n6) {
     }
   }, [l12, e4, O4, V3, f10, o10]);
   let k2 = s2({ base: S8(i6.className), enter: S8(c12), enterFrom: S8(x5), enterTo: S8(p6), entered: S8(h10), leave: S8(u11), leaveFrom: S8(v4), leaveTo: S8(d11) }), w6 = Re3({ beforeEnter: r8, afterEnter: s14, beforeLeave: y6, afterLeave: D6 }), G2 = l3();
-  (0, import_react70.useEffect)(() => {
+  (0, import_react67.useEffect)(() => {
     if (G2 && l12 === "visible" && e4.current === null)
       throw new Error("Did you forget to passthrough the `ref` to the actual DOM node?");
   }, [e4, l12, G2]);
@@ -62537,22 +62138,22 @@ function De4(t17, n6) {
     A2.onStop(e4, g8, fe2), g8 === "leave" && !U3(A2) && (j5("hidden"), V3(e4));
   }) });
   let R3 = i6, me3 = { ref: a12 };
-  return z4 ? R3 = { ...R3, className: t6(i6.className, ...k2.current.enter, ...k2.current.enterFrom) } : (R3.className = t6(i6.className, (Q3 = e4.current) == null ? void 0 : Q3.className), R3.className === "" && delete R3.className), import_react70.default.createElement(M6.Provider, { value: A2 }, import_react70.default.createElement(c5, { value: u3(l12, { visible: d5.Open, hidden: d5.Closed }) | H6.flags }, X({ ourProps: me3, theirProps: R3, defaultTag: ye4, features: ae3, visible: l12 === "visible", name: "Transition.Child" })));
+  return z4 ? R3 = { ...R3, className: t6(i6.className, ...k2.current.enter, ...k2.current.enterFrom) } : (R3.className = t6(i6.className, (Q3 = e4.current) == null ? void 0 : Q3.className), R3.className === "" && delete R3.className), import_react67.default.createElement(M6.Provider, { value: A2 }, import_react67.default.createElement(c5, { value: u3(l12, { visible: d5.Open, hidden: d5.Closed }) | H6.flags }, X({ ourProps: me3, theirProps: R3, defaultTag: ye4, features: ae3, visible: l12 === "visible", name: "Transition.Child" })));
 }
 function He2(t17, n6) {
-  let { show: r8, appear: s14 = !1, unmount: y6 = !0, ...D6 } = t17, c12 = (0, import_react70.useRef)(null), x5 = y2(c12, n6);
+  let { show: r8, appear: s14 = !1, unmount: y6 = !0, ...D6 } = t17, c12 = (0, import_react67.useRef)(null), x5 = y2(c12, n6);
   l3();
   let p6 = C2();
   if (r8 === void 0 && p6 !== null && (r8 = (p6 & d5.Open) === d5.Open), ![!0, !1].includes(r8))
     throw new Error("A <Transition /> is used but it is missing a `show={true | false}` prop.");
-  let [h10, u11] = (0, import_react70.useState)(r8 ? "visible" : "hidden"), v4 = oe2(() => {
+  let [h10, u11] = (0, import_react67.useState)(r8 ? "visible" : "hidden"), v4 = oe2(() => {
     u11("hidden");
-  }), [d11, i6] = (0, import_react70.useState)(!0), e4 = (0, import_react70.useRef)([r8]);
+  }), [d11, i6] = (0, import_react67.useState)(!0), e4 = (0, import_react67.useRef)([r8]);
   l2(() => {
     d11 !== !1 && e4.current[e4.current.length - 1] !== r8 && (e4.current.push(r8), i6(!1));
   }, [e4, r8]);
-  let a12 = (0, import_react70.useMemo)(() => ({ show: r8, appear: s14, initial: d11 }), [r8, s14, d11]);
-  (0, import_react70.useEffect)(() => {
+  let a12 = (0, import_react67.useMemo)(() => ({ show: r8, appear: s14, initial: d11 }), [r8, s14, d11]);
+  (0, import_react67.useEffect)(() => {
     if (r8)
       u11("visible");
     else if (!U3(v4))
@@ -62572,11 +62173,11 @@ function He2(t17, n6) {
     var T7;
     d11 && i6(!1), (T7 = t17.beforeLeave) == null || T7.call(t17);
   });
-  return import_react70.default.createElement(M6.Provider, { value: v4 }, import_react70.default.createElement(_2.Provider, { value: a12 }, X({ ourProps: { ...o10, as: import_react70.Fragment, children: import_react70.default.createElement(le3, { ref: x5, ...o10, ...D6, beforeEnter: f10, beforeLeave: P4 }) }, theirProps: {}, defaultTag: import_react70.Fragment, features: ae3, visible: h10 === "visible", name: "Transition" })));
+  return import_react67.default.createElement(M6.Provider, { value: v4 }, import_react67.default.createElement(_2.Provider, { value: a12 }, X({ ourProps: { ...o10, as: import_react67.Fragment, children: import_react67.default.createElement(le3, { ref: x5, ...o10, ...D6, beforeEnter: f10, beforeLeave: P4 }) }, theirProps: {}, defaultTag: import_react67.Fragment, features: ae3, visible: h10 === "visible", name: "Transition" })));
 }
 function Fe2(t17, n6) {
-  let r8 = (0, import_react70.useContext)(_2) !== null, s14 = C2() !== null;
-  return import_react70.default.createElement(import_react70.default.Fragment, null, !r8 && s14 ? import_react70.default.createElement(W, { ref: n6, ...t17 }) : import_react70.default.createElement(le3, { ref: n6, ...t17 }));
+  let r8 = (0, import_react67.useContext)(_2) !== null, s14 = C2() !== null;
+  return import_react67.default.createElement(import_react67.default.Fragment, null, !r8 && s14 ? import_react67.default.createElement(W, { ref: n6, ...t17 }) : import_react67.default.createElement(le3, { ref: n6, ...t17 }));
 }
 var W = D3(He2), le3 = D3(De4), Le2 = D3(Fe2), tt = Object.assign(W, { Child: Le2, Root: W });
 
@@ -62739,7 +62340,9 @@ function classNames(...classes) {
 }
 var meta6 = ({ data: data2 }) => [{ title: `Hydrogen | ${data2.collection.title} Collection` }];
 async function loader6({ request, params, context }) {
-  let { handle } = params, { storefront } = context, paginationVariables = getPaginationVariables(request, {
+  let { handle } = params;
+  console.log("handle::", handle);
+  let { storefront } = context, paginationVariables = getPaginationVariables(request, {
     pageBy: 8
   });
   if (!handle)
@@ -62747,18 +62350,15 @@ async function loader6({ request, params, context }) {
   let { collection } = await storefront.query(COLLECTION_QUERY, {
     variables: { handle, ...paginationVariables }
   });
-  console.log(collection);
-  let { productTags } = await storefront.query(PRODUCTTAGS_QUERY);
-  if (console.log("Product tag"), console.log(productTags), productTags.edges.forEach((n6) => {
-    n6.node.startsWith("Colour-") && (console.log(), filters[0].options.push({ value: n6.node, label: n6.node, checked: !0 }), console.log(filters[0]), console.log("added" + JSON.stringify(filters[0]))), n6.node.startsWith("Size-") && (filters[2].options.push({ value: n6.node, label: n6.node, checked: !0 }), console.log(filters[2]), console.log("added" + JSON.stringify(filters[2])));
-  }), !collection)
+  if (console.log("Collection Handle ::", collection), console.log("Product tag"), !collection)
     throw new Response(`Collection ${handle} not found`, {
       status: 404
     });
   return json3({ collection });
 }
 function Collection() {
-  let { collection } = useLoaderData2(), [mobileFiltersOpen, setMobileFiltersOpen] = (0, import_react71.useState)(!1), productsToShow = [], lines = [], [startIndex, setStartIndex] = (0, import_react71.useState)(0), endIndex = (0, import_react_responsive4.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2;
+  var _a2;
+  let { collection } = useLoaderData2(), [mobileFiltersOpen, setMobileFiltersOpen] = (0, import_react68.useState)(!1), productsToShow = [], lines = [], [startIndex, setStartIndex] = (0, import_react68.useState)(0), endIndex = (0, import_react_responsive4.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2;
   return (collection.products != null || collection.products != null) && (console.log(collection.products.nodes), productsToShow = collection.products.nodes), collection.products.nodes.map((product) => {
     product.variants.nodes.map((line) => {
       console.log(line), line.metafields[0] != null && line.metafields[0].value == "true" && lines.push({
@@ -62816,24 +62416,24 @@ function Collection() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
       "img",
       {
-        src: collection.image.url,
+        src: (_a2 = collection == null ? void 0 : collection.image) == null ? void 0 : _a2.url,
         style: { height: "650px", objectFit: "cover", width: "100%" }
       },
       void 0,
       !1,
       {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 221,
+        lineNumber: 199,
         columnNumber: 9
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 220,
+      lineNumber: 198,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "bg-white mx-2.5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(tt.Root, { show: mobileFiltersOpen, as: import_react73.Fragment, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(tt.Root, { show: mobileFiltersOpen, as: import_react70.Fragment, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
         _t,
         {
           as: "div",
@@ -62843,7 +62443,7 @@ function Collection() {
             /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
               tt.Child,
               {
-                as: import_react73.Fragment,
+                as: import_react70.Fragment,
                 enter: "transition-opacity ease-linear duration-300",
                 enterFrom: "opacity-0",
                 enterTo: "opacity-100",
@@ -62852,7 +62452,7 @@ function Collection() {
                 leaveTo: "opacity-0",
                 children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "fixed inset-0 bg-black bg-opacity-25" }, void 0, !1, {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 244,
+                  lineNumber: 222,
                   columnNumber: 17
                 }, this)
               },
@@ -62860,7 +62460,7 @@ function Collection() {
               !1,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 235,
+                lineNumber: 213,
                 columnNumber: 15
               },
               this
@@ -62868,7 +62468,7 @@ function Collection() {
             /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "fixed inset-0 z-40 flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
               tt.Child,
               {
-                as: import_react73.Fragment,
+                as: import_react70.Fragment,
                 enter: "transition ease-in-out duration-300 transform",
                 enterFrom: "translate-x-full",
                 enterTo: "translate-x-0",
@@ -62879,7 +62479,7 @@ function Collection() {
                   /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex items-center justify-between px-4", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { className: "text-lg font-medium text-gray-900", children: "Filters" }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 259,
+                      lineNumber: 237,
                       columnNumber: 23
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
@@ -62891,12 +62491,12 @@ function Collection() {
                         children: [
                           /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "sr-only", children: "Close menu" }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 267,
+                            lineNumber: 245,
                             columnNumber: 25
                           }, this),
                           /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(XMarkIcon_default, { className: "h-6 w-6", "aria-hidden": "true" }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 268,
+                            lineNumber: 246,
                             columnNumber: 25
                           }, this)
                         ]
@@ -62905,20 +62505,20 @@ function Collection() {
                       !0,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 262,
+                        lineNumber: 240,
                         columnNumber: 23
                       },
                       this
                     )
                   ] }, void 0, !0, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 258,
+                    lineNumber: 236,
                     columnNumber: 21
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("form", { className: "mt-4 border-t border-gray-200", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "sr-only", children: "Categories" }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 274,
+                      lineNumber: 252,
                       columnNumber: 23
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
@@ -62928,11 +62528,11 @@ function Collection() {
                         className: "px-2 py-3 font-medium text-gray-900",
                         children: subCategories.map((category) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("a", { href: category.href, className: "block px-2 py-3", children: category.name }, void 0, !1, {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 281,
+                          lineNumber: 259,
                           columnNumber: 29
                         }, this) }, category.name, !1, {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 280,
+                          lineNumber: 258,
                           columnNumber: 27
                         }, this))
                       },
@@ -62940,7 +62540,7 @@ function Collection() {
                       !1,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 275,
+                        lineNumber: 253,
                         columnNumber: 23
                       },
                       this
@@ -62955,7 +62555,7 @@ function Collection() {
                           /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "-mx-2 -my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400", children: [
                             /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "font-medium text-gray-900", children: section.name }, void 0, !1, {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 299,
+                              lineNumber: 277,
                               columnNumber: 35
                             }, this),
                             /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "ml-6 flex items-center", children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
@@ -62968,7 +62568,7 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 304,
+                                lineNumber: 282,
                                 columnNumber: 39
                               },
                               this
@@ -62982,22 +62582,22 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 309,
+                                lineNumber: 287,
                                 columnNumber: 39
                               },
                               this
                             ) }, void 0, !1, {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 302,
+                              lineNumber: 280,
                               columnNumber: 35
                             }, this)
                           ] }, void 0, !0, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 298,
+                            lineNumber: 276,
                             columnNumber: 33
                           }, this) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 297,
+                            lineNumber: 275,
                             columnNumber: 31
                           }, this),
                           /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "space-y-6", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
@@ -63019,7 +62619,7 @@ function Collection() {
                                   !1,
                                   {
                                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                                    lineNumber: 324,
+                                    lineNumber: 302,
                                     columnNumber: 39
                                   },
                                   this
@@ -63035,7 +62635,7 @@ function Collection() {
                                   !1,
                                   {
                                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                                    lineNumber: 332,
+                                    lineNumber: 310,
                                     columnNumber: 39
                                   },
                                   this
@@ -63046,22 +62646,22 @@ function Collection() {
                             !0,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 320,
+                              lineNumber: 298,
                               columnNumber: 37
                             },
                             this
                           )) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 318,
+                            lineNumber: 296,
                             columnNumber: 33
                           }, this) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 317,
+                            lineNumber: 295,
                             columnNumber: 31
                           }, this)
                         ] }, void 0, !0, {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 295,
+                          lineNumber: 273,
                           columnNumber: 29
                         }, this)
                       },
@@ -63069,19 +62669,19 @@ function Collection() {
                       !1,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 289,
+                        lineNumber: 267,
                         columnNumber: 25
                       },
                       this
                     ))
                   ] }, void 0, !0, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 273,
+                    lineNumber: 251,
                     columnNumber: 21
                   }, this)
                 ] }, void 0, !0, {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 257,
+                  lineNumber: 235,
                   columnNumber: 19
                 }, this)
               },
@@ -63089,13 +62689,13 @@ function Collection() {
               !1,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 248,
+                lineNumber: 226,
                 columnNumber: 17
               },
               this
             ) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 247,
+              lineNumber: 225,
               columnNumber: 15
             }, this)
           ]
@@ -63104,13 +62704,13 @@ function Collection() {
         !0,
         {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 230,
+          lineNumber: 208,
           columnNumber: 13
         },
         this
       ) }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 229,
+        lineNumber: 207,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("section", { className: "collectionContent sm:mt-4 overflow-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "inline-flex gap-4", children: collectionArray == null ? void 0 : collectionArray.map((item, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
@@ -63130,18 +62730,18 @@ function Collection() {
               !1,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 361,
+                lineNumber: 339,
                 columnNumber: 21
               },
               this
             ) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 360,
+              lineNumber: 338,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "collectionname  sm:text-lg text-md font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]", children: item.collectionname }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 368,
+              lineNumber: 346,
               columnNumber: 19
             }, this)
           ]
@@ -63150,45 +62750,45 @@ function Collection() {
         !0,
         {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 356,
+          lineNumber: 334,
           columnNumber: 17
         },
         this
       )) }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 354,
+        lineNumber: 332,
         columnNumber: 13
       }, this) }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 353,
+        lineNumber: 331,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("main", { className: "mx-auto max-w-8xl px-4 sm:px-6 lg:px-8", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex gap-1 items-center", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { children: "Home" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 378,
+            lineNumber: 356,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("img", { src: "/next.png", alt: "next", width: 20, height: 20 }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 379,
+            lineNumber: 357,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "font-semibold", children: "Collection" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 380,
+            lineNumber: 358,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 377,
+          lineNumber: 355,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex items-baseline justify-between border-b border-gray-200 pb-6 m-0 relative", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h1", { className: "text-4xl font-bold tracking-tight text-gray-900 sm:block hidden my-[15px]", children: collection.title }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 383,
+            lineNumber: 361,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex items-center sm:mr-10", children: [
@@ -63205,24 +62805,24 @@ function Collection() {
                   !1,
                   {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 392,
+                    lineNumber: 370,
                     columnNumber: 23
                   },
                   this
                 )
               ] }, void 0, !0, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 390,
+                lineNumber: 368,
                 columnNumber: 21
               }, this) }, void 0, !1, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 389,
+                lineNumber: 367,
                 columnNumber: 19
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
                 tt,
                 {
-                  as: import_react73.Fragment,
+                  as: import_react70.Fragment,
                   enter: "transition ease-out duration-100",
                   enterFrom: "transform opacity-0 scale-95",
                   enterTo: "transform opacity-100 scale-100",
@@ -63244,21 +62844,21 @@ function Collection() {
                     !1,
                     {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 413,
+                      lineNumber: 391,
                       columnNumber: 31
                     },
                     this
                   ) }, option.name, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 411,
+                    lineNumber: 389,
                     columnNumber: 27
                   }, this)) }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 409,
+                    lineNumber: 387,
                     columnNumber: 23
                   }, this) }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 408,
+                    lineNumber: 386,
                     columnNumber: 21
                   }, this)
                 },
@@ -63266,14 +62866,14 @@ function Collection() {
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 399,
+                  lineNumber: 377,
                   columnNumber: 19
                 },
                 this
               )
             ] }, void 0, !0, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 388,
+              lineNumber: 366,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
@@ -63284,12 +62884,12 @@ function Collection() {
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "sr-only", children: "View grid" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 437,
+                    lineNumber: 415,
                     columnNumber: 19
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(Squares2X2Icon_default, { className: "h-5 w-5", "aria-hidden": "true" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 438,
+                    lineNumber: 416,
                     columnNumber: 19
                   }, this)
                 ]
@@ -63298,7 +62898,7 @@ function Collection() {
               !0,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 433,
+                lineNumber: 411,
                 columnNumber: 17
               },
               this
@@ -63312,12 +62912,12 @@ function Collection() {
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "sr-only", children: "Filters" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 445,
+                    lineNumber: 423,
                     columnNumber: 19
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(FunnelIcon_default, { className: "h-5 w-5", "aria-hidden": "true" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 446,
+                    lineNumber: 424,
                     columnNumber: 19
                   }, this)
                 ]
@@ -63326,32 +62926,32 @@ function Collection() {
               !0,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 440,
+                lineNumber: 418,
                 columnNumber: 17
               },
               this
             )
           ] }, void 0, !0, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 387,
+            lineNumber: 365,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 382,
+          lineNumber: 360,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("section", { "aria-labelledby": "products-heading", className: "pb-24 pt-6", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { id: "products-heading", className: "sr-only", children: "Products" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 452,
+            lineNumber: 430,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "shadow-md px-4 py-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("form", { className: "hidden lg:block lg:sticky lg:top-[120px]", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "sr-only", children: "Categories" }, void 0, !1, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 460,
+                lineNumber: 438,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
@@ -63374,7 +62974,7 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 470,
+                          lineNumber: 448,
                           columnNumber: 27
                         },
                         this
@@ -63384,7 +62984,7 @@ function Collection() {
                     !1,
                     {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 466,
+                      lineNumber: 444,
                       columnNumber: 25
                     },
                     this
@@ -63394,7 +62994,7 @@ function Collection() {
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 461,
+                  lineNumber: 439,
                   columnNumber: 21
                 },
                 this
@@ -63408,7 +63008,7 @@ function Collection() {
                     /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "-my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white py-3 text-[18px] text-black font-bold", children: [
                       /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "", children: section.name }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 490,
+                        lineNumber: 468,
                         columnNumber: 33
                       }, this),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "ml-6 flex items-center", children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
@@ -63421,7 +63021,7 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 493,
+                          lineNumber: 471,
                           columnNumber: 37
                         },
                         this
@@ -63435,22 +63035,22 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 498,
+                          lineNumber: 476,
                           columnNumber: 37
                         },
                         this
                       ) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 491,
+                        lineNumber: 469,
                         columnNumber: 33
                       }, this)
                     ] }, void 0, !0, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 489,
+                      lineNumber: 467,
                       columnNumber: 31
                     }, this) }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 488,
+                      lineNumber: 466,
                       columnNumber: 29
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "space-y-4", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
@@ -63472,7 +63072,7 @@ function Collection() {
                             !1,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 513,
+                              lineNumber: 491,
                               columnNumber: 37
                             },
                             this
@@ -63488,7 +63088,7 @@ function Collection() {
                             !1,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 521,
+                              lineNumber: 499,
                               columnNumber: 37
                             },
                             this
@@ -63499,22 +63099,22 @@ function Collection() {
                       !0,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 509,
+                        lineNumber: 487,
                         columnNumber: 35
                       },
                       this
                     )) }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 507,
+                      lineNumber: 485,
                       columnNumber: 31
                     }, this) }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 506,
+                      lineNumber: 484,
                       columnNumber: 29
                     }, this)
                   ] }, void 0, !0, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 487,
+                    lineNumber: 465,
                     columnNumber: 27
                   }, this)
                 },
@@ -63522,218 +63122,221 @@ function Collection() {
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 481,
+                  lineNumber: 459,
                   columnNumber: 23
                 },
                 this
               ))
             ] }, void 0, !0, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 459,
+              lineNumber: 437,
               columnNumber: 19
             }, this) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 458,
+              lineNumber: 436,
               columnNumber: 17
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "lg:col-span-3", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "w-full max-w-screen-xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "product-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4", children: productsToShow.map((product, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-              "div",
-              {
-                className: "bg-white rounded-lg shadow-lg p-2 px-4",
-                style: {
-                  boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
-                },
-                children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                    "img",
-                    {
-                      src: product.images.edges[0].node.url,
-                      alt: product.title,
-                      className: "w-full h-auto"
-                    },
-                    void 0,
-                    !1,
-                    {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 551,
-                      columnNumber: 29
-                    },
-                    this
-                  ),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(Link2, { to: `/products/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { className: "sm:text-lg text-[17px] font-semibold mt-2 text-center", children: product.title }, void 0, !1, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 557,
-                    columnNumber: 31
-                  }, this) }, void 0, !1, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 556,
-                    columnNumber: 29
-                  }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "h-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h1", { className: "text-center sm:text-[26px] text-[21px] font-bold m-auto w-full", children: "\u20B9255" }, void 0, !1, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 562,
-                    columnNumber: 31
-                  }, this) }, void 0, !1, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 561,
-                    columnNumber: 29
-                  }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "px-1 py-1 flex sm:justify-between justify-center gap-[10px] items-center ", children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                      "svg",
-                      {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        viewBox: "0 0 32 33",
-                        xmlSpace: "preserve",
-                        className: "card-like sm:w-[50px] w-[30px]",
-                        children: [
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                            "path",
-                            {
-                              d: "M9 .5h14c4.7 0 8.5 3.8 8.5 8.5v14c0 4.7-3.8 8.5-8.5 8.5H9C4.3 31.5.5 27.7.5 23V9C.5 4.3 4.3.5 9 .5z",
-                              fill: "rgb(255, 255, 255)",
-                              stroke: "rgb(0, 0, 0)"
-                            },
-                            void 0,
-                            !1,
-                            {
-                              fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 576,
-                              columnNumber: 35
-                            },
-                            this
-                          ),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                            "path",
-                            {
-                              d: "M22.3 11.8c.4.4.7.9.9 1.4.2.5.3 1.1.3 1.6 0 .6-.1 1.1-.3 1.6-.2.5-.5 1-.9 1.4l-5.6 5.6s-.1 0-.1.1h-.2s-.1 0-.1-.1l-5.6-5.6C10 17 9.5 16 9.5 14.9c0-1.1.3-2.1 1-2.9.7-.8 1.7-1.3 2.7-1.5 1.1-.1 2.1.2 3 .8l.3.2.3-.2c.8-.6 1.8-.9 2.8-.8 1.1.1 2 .5 2.7 1.3z",
-                              fill: "none",
-                              stroke: "rgb(0, 0, 0)"
-                            },
-                            void 0,
-                            !1,
-                            {
-                              fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 581,
-                              columnNumber: 35
-                            },
-                            this
-                          )
-                        ]
-                      },
-                      void 0,
-                      !0,
-                      {
-                        fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 568,
-                        columnNumber: 33
-                      },
-                      this
-                    ) }, void 0, !1, {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 567,
-                      columnNumber: 31
-                    }, this),
-                    console.log(lines),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "lg:col-span-3", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "w-full max-w-screen-xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "product-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4", children: productsToShow.map((product, index2) => {
+              var _a3, _b;
+              return /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                "div",
+                {
+                  className: "bg-white rounded-lg shadow-lg p-2 px-4",
+                  style: {
+                    boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
+                  },
+                  children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                      CartForm,
+                      "img",
                       {
-                        route: "/cart",
-                        inputs: { lines: lines[index2] },
-                        action: CartForm.ACTIONS.LinesAdd,
-                        className: "flex-grow",
-                        children: (fetcher) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                          "button",
-                          {
-                            className: "cart-button lg:w-[240px] h-[2rem] sm:h-11 px-[25px] bg-black hover:bg-blue-700 text-white font-bold py-1 px-1 rounded-lg sm:text-lg text-[12px]",
-                            type: "submit",
-                            onClick: () => {
-                              window.location.href = window.location.href + "#cart-aside";
-                            },
-                            children: "Add To Cart"
-                          },
-                          void 0,
-                          !1,
-                          {
-                            fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 597,
-                            columnNumber: 37
-                          },
-                          this
-                        ) }, void 0, !1, {
-                          fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 596,
-                          columnNumber: 35
-                        }, this)
+                        src: (_b = (_a3 = product.images.edges[0]) == null ? void 0 : _a3.node) == null ? void 0 : _b.url,
+                        alt: product.title,
+                        className: "w-full h-auto"
                       },
                       void 0,
                       !1,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 589,
-                        columnNumber: 31
+                        lineNumber: 529,
+                        columnNumber: 29
                       },
                       this
-                    )
-                  ] }, void 0, !0, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 566,
-                    columnNumber: 29
-                  }, this)
-                ]
-              },
-              void 0,
-              !0,
-              {
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(Link2, { to: `/products/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { className: "sm:text-lg text-[17px] font-semibold mt-2 text-center", children: product.title }, void 0, !1, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 535,
+                      columnNumber: 31
+                    }, this) }, void 0, !1, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 534,
+                      columnNumber: 29
+                    }, this),
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "h-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h1", { className: "text-center sm:text-[26px] text-[21px] font-bold m-auto w-full", children: "\u20B9255" }, void 0, !1, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 540,
+                      columnNumber: 31
+                    }, this) }, void 0, !1, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 539,
+                      columnNumber: 29
+                    }, this),
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "px-1 py-1 flex sm:justify-between justify-center gap-[10px] items-center ", children: [
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                        "svg",
+                        {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 32 33",
+                          xmlSpace: "preserve",
+                          className: "card-like sm:w-[50px] w-[30px]",
+                          children: [
+                            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                              "path",
+                              {
+                                d: "M9 .5h14c4.7 0 8.5 3.8 8.5 8.5v14c0 4.7-3.8 8.5-8.5 8.5H9C4.3 31.5.5 27.7.5 23V9C.5 4.3 4.3.5 9 .5z",
+                                fill: "rgb(255, 255, 255)",
+                                stroke: "rgb(0, 0, 0)"
+                              },
+                              void 0,
+                              !1,
+                              {
+                                fileName: "app/routes/($locale).collections.$handle.jsx",
+                                lineNumber: 554,
+                                columnNumber: 35
+                              },
+                              this
+                            ),
+                            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                              "path",
+                              {
+                                d: "M22.3 11.8c.4.4.7.9.9 1.4.2.5.3 1.1.3 1.6 0 .6-.1 1.1-.3 1.6-.2.5-.5 1-.9 1.4l-5.6 5.6s-.1 0-.1.1h-.2s-.1 0-.1-.1l-5.6-5.6C10 17 9.5 16 9.5 14.9c0-1.1.3-2.1 1-2.9.7-.8 1.7-1.3 2.7-1.5 1.1-.1 2.1.2 3 .8l.3.2.3-.2c.8-.6 1.8-.9 2.8-.8 1.1.1 2 .5 2.7 1.3z",
+                                fill: "none",
+                                stroke: "rgb(0, 0, 0)"
+                              },
+                              void 0,
+                              !1,
+                              {
+                                fileName: "app/routes/($locale).collections.$handle.jsx",
+                                lineNumber: 559,
+                                columnNumber: 35
+                              },
+                              this
+                            )
+                          ]
+                        },
+                        void 0,
+                        !0,
+                        {
+                          fileName: "app/routes/($locale).collections.$handle.jsx",
+                          lineNumber: 546,
+                          columnNumber: 33
+                        },
+                        this
+                      ) }, void 0, !1, {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 545,
+                        columnNumber: 31
+                      }, this),
+                      console.log(lines),
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                        CartForm,
+                        {
+                          route: "/cart",
+                          inputs: { lines: lines[index2] },
+                          action: CartForm.ACTIONS.LinesAdd,
+                          className: "flex-grow",
+                          children: (fetcher) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                            "button",
+                            {
+                              className: "cart-button lg:w-[240px] h-[2rem] sm:h-11 px-[25px] bg-black hover:bg-blue-700 text-white font-bold py-1 px-1 rounded-lg sm:text-lg text-[12px]",
+                              type: "submit",
+                              onClick: () => {
+                                window.location.href = window.location.href + "#cart-aside";
+                              },
+                              children: "Add To Cart"
+                            },
+                            void 0,
+                            !1,
+                            {
+                              fileName: "app/routes/($locale).collections.$handle.jsx",
+                              lineNumber: 575,
+                              columnNumber: 37
+                            },
+                            this
+                          ) }, void 0, !1, {
+                            fileName: "app/routes/($locale).collections.$handle.jsx",
+                            lineNumber: 574,
+                            columnNumber: 35
+                          }, this)
+                        },
+                        void 0,
+                        !1,
+                        {
+                          fileName: "app/routes/($locale).collections.$handle.jsx",
+                          lineNumber: 567,
+                          columnNumber: 31
+                        },
+                        this
+                      )
+                    ] }, void 0, !0, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 544,
+                      columnNumber: 29
+                    }, this)
+                  ]
+                },
+                void 0,
+                !0,
+                {
+                  fileName: "app/routes/($locale).collections.$handle.jsx",
+                  lineNumber: 522,
+                  columnNumber: 27
+                },
+                this
+              ) }, product.id, !1, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 544,
-                columnNumber: 27
-              },
-              this
-            ) }, product.id, !1, {
+                lineNumber: 521,
+                columnNumber: 25
+              }, this);
+            }) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 543,
-              columnNumber: 25
-            }, this)) }, void 0, !1, {
-              fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 541,
+              lineNumber: 519,
               columnNumber: 21
             }, this) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 540,
+              lineNumber: 518,
               columnNumber: 19
             }, this) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 539,
+              lineNumber: 517,
               columnNumber: 17
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 456,
+            lineNumber: 434,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 451,
+          lineNumber: 429,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 376,
+        lineNumber: 354,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 227,
+      lineNumber: 205,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 226,
+      lineNumber: 204,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($locale).collections.$handle.jsx",
-    lineNumber: 219,
+    lineNumber: 197,
     columnNumber: 5
   }, this);
 }
@@ -63825,15 +63428,8 @@ var PRODUCT_ITEM_FRAGMENT = `#graphql
       }
     }
   }
-`, PRODUCTTAGS_QUERY = `#graphql
-   {
-  productTags(first:16){
-    edges{
-      node
-    }
-  }
-  }
-`, collectionArray = [
+`;
+var collectionArray = [
   {
     collectionname: "Moisturizer",
     collectionimageurl: "/collection/Moisturizer.webp"
@@ -65826,14 +65422,14 @@ __export(locale_products_handle_exports, {
   loader: () => loader13,
   meta: () => meta10
 });
-var import_react83 = __toESM(require_react());
-var import_react85 = __toESM(require_react());
+var import_react80 = __toESM(require_react());
+var import_react82 = __toESM(require_react());
 
 // app/components/ProductsCorousel.jsx
-var import_react81 = __toESM(require_react());
+var import_react78 = __toESM(require_react());
 var import_react_responsive5 = __toESM(require_react_responsive()), import_jsx_dev_runtime25 = __toESM(require_jsx_dev_runtime()), ProductsCorousel = ({ products }) => {
-  let productsToShow = [], [startIndex, setStartIndex] = (0, import_react81.useState)(0), endIndex = (0, import_react_responsive5.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2;
-  return (products != null || products != null) && (productsToShow = products.slice(startIndex, startIndex + endIndex)), /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { className: "w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6 py-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { className: "relative", children: [
+  let productsToShow = [], [startIndex, setStartIndex] = (0, import_react78.useState)(0), endIndex = (0, import_react_responsive5.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2;
+  return (products != null || products != null) && (productsToShow = products.edges.slice(startIndex, startIndex + endIndex)), /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { className: "w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6 py-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { className: "flex mobile-productView", children: productsToShow.map((product) => /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(
       "div",
       {
@@ -65850,27 +65446,27 @@ var import_react_responsive5 = __toESM(require_react_responsive()), import_jsx_d
             !1,
             {
               fileName: "app/components/ProductsCorousel.jsx",
-              lineNumber: 30,
+              lineNumber: 48,
               columnNumber: 17
             },
             this
           ),
           /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(Link2, { to: `/products/${product.node.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("h2", { className: "text-lg font-semibold mt-2 text-center", children: product.node.title }, void 0, !1, {
             fileName: "app/components/ProductsCorousel.jsx",
-            lineNumber: 36,
+            lineNumber: 54,
             columnNumber: 19
           }, this) }, product.id, !1, {
             fileName: "app/components/ProductsCorousel.jsx",
-            lineNumber: 35,
+            lineNumber: 53,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { className: "h-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("h1", { className: "text-center font-bold h-full w-full m-auto", children: "\u20B9255" }, void 0, !1, {
             fileName: "app/components/ProductsCorousel.jsx",
-            lineNumber: 41,
+            lineNumber: 59,
             columnNumber: 19
           }, this) }, void 0, !1, {
             fileName: "app/components/ProductsCorousel.jsx",
-            lineNumber: 40,
+            lineNumber: 58,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { className: "px-1 py-1 flex justify-between items-center  sm:flex-row flex-row", children: [
@@ -65894,7 +65490,7 @@ var import_react_responsive5 = __toESM(require_react_responsive()), import_jsx_d
                     !1,
                     {
                       fileName: "app/components/ProductsCorousel.jsx",
-                      lineNumber: 55,
+                      lineNumber: 73,
                       columnNumber: 23
                     },
                     this
@@ -65910,7 +65506,7 @@ var import_react_responsive5 = __toESM(require_react_responsive()), import_jsx_d
                     !1,
                     {
                       fileName: "app/components/ProductsCorousel.jsx",
-                      lineNumber: 60,
+                      lineNumber: 78,
                       columnNumber: 23
                     },
                     this
@@ -65921,28 +65517,28 @@ var import_react_responsive5 = __toESM(require_react_responsive()), import_jsx_d
               !0,
               {
                 fileName: "app/components/ProductsCorousel.jsx",
-                lineNumber: 48,
+                lineNumber: 66,
                 columnNumber: 21
               },
               this
             ) }, void 0, !1, {
               fileName: "app/components/ProductsCorousel.jsx",
-              lineNumber: 47,
+              lineNumber: 65,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("button", { className: "w-full h-11 bg-black hover:bg-blue-700 text-white text-[13px] sm:text-[18px] font-bold py-1 px-1 rounded-lg", children: "ADD TO Pro" }, void 0, !1, {
               fileName: "app/components/ProductsCorousel.jsx",
-              lineNumber: 67,
+              lineNumber: 85,
               columnNumber: 19
             }, this)
           ] }, void 0, !0, {
             fileName: "app/components/ProductsCorousel.jsx",
-            lineNumber: 46,
+            lineNumber: 64,
             columnNumber: 17
           }, this)
         ] }, void 0, !0, {
           fileName: "app/components/ProductsCorousel.jsx",
-          lineNumber: 29,
+          lineNumber: 47,
           columnNumber: 15
         }, this)
       },
@@ -65950,13 +65546,13 @@ var import_react_responsive5 = __toESM(require_react_responsive()), import_jsx_d
       !1,
       {
         fileName: "app/components/ProductsCorousel.jsx",
-        lineNumber: 25,
+        lineNumber: 43,
         columnNumber: 13
       },
       this
     )) }, void 0, !1, {
       fileName: "app/components/ProductsCorousel.jsx",
-      lineNumber: 23,
+      lineNumber: 41,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(
@@ -65976,7 +65572,7 @@ var import_react_responsive5 = __toESM(require_react_responsive()), import_jsx_d
           !1,
           {
             fileName: "app/components/ProductsCorousel.jsx",
-            lineNumber: 85,
+            lineNumber: 103,
             columnNumber: 11
           },
           this
@@ -65986,7 +65582,7 @@ var import_react_responsive5 = __toESM(require_react_responsive()), import_jsx_d
       !1,
       {
         fileName: "app/components/ProductsCorousel.jsx",
-        lineNumber: 75,
+        lineNumber: 93,
         columnNumber: 9
       },
       this
@@ -66008,7 +65604,7 @@ var import_react_responsive5 = __toESM(require_react_responsive()), import_jsx_d
           !1,
           {
             fileName: "app/components/ProductsCorousel.jsx",
-            lineNumber: 98,
+            lineNumber: 116,
             columnNumber: 11
           },
           this
@@ -66018,18 +65614,18 @@ var import_react_responsive5 = __toESM(require_react_responsive()), import_jsx_d
       !1,
       {
         fileName: "app/components/ProductsCorousel.jsx",
-        lineNumber: 90,
+        lineNumber: 108,
         columnNumber: 9
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/components/ProductsCorousel.jsx",
-    lineNumber: 22,
+    lineNumber: 40,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/ProductsCorousel.jsx",
-    lineNumber: 21,
+    lineNumber: 39,
     columnNumber: 5
   }, this);
 }, ProductsCorousel_default = ProductsCorousel;
@@ -66112,7 +65708,7 @@ function ProductImage({ image, activeImg, setActiveImage, product }) {
   product.images.edges.forEach((item) => {
     ImageSrc.push(item.node.url);
   });
-  let [images, setImages] = (0, import_react85.useState)(ImageSrc);
+  let [images, setImages] = (0, import_react82.useState)(ImageSrc);
   return image ? /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(import_jsx_dev_runtime26.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "lg:grid flex flex-col-reverse lg:grid-cols-[20%_80%] gap-2 lg:gap-0 items-center", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "flex  lg:flex-col  justify-between lg:h-[325px] overflow-x-auto gap-[5px]", children: product.images.edges && product.images.edges.map((item, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
       "img",
@@ -66166,13 +65762,14 @@ function ProductImage({ image, activeImg, setActiveImage, product }) {
   }, this);
 }
 function ProductMain({ selectedVariant: selectedVariant2, product, variants }) {
+  var _a2, _b, _c, _d, _e3;
   let ImageSrc = [];
   product.images.edges.forEach((item) => {
     ImageSrc.push(item.node.url);
   });
-  let [images, setImages] = (0, import_react85.useState)(ImageSrc), expaction = product.metafields[0].value, key_ingredients = product.metafields[1].value, How_To_use = product.metafields[2].value, who_can_use = product.metafields[3].value, why_us = product.metafields[4].value, [activeTab, setActiveTab] = (0, import_react85.useState)("Key Ingredients"), handleTabClick = (tab) => {
+  let [images, setImages] = (0, import_react82.useState)(ImageSrc), expaction = (_a2 = product.metafields[0]) == null ? void 0 : _a2.value, key_ingredients = (_b = product.metafields[1]) == null ? void 0 : _b.value, How_To_use = (_c = product.metafields[2]) == null ? void 0 : _c.value, who_can_use = (_d = product.metafields[3]) == null ? void 0 : _d.value, why_us = (_e3 = product.metafields[4]) == null ? void 0 : _e3.value, [activeTab, setActiveTab] = (0, import_react82.useState)("Key Ingredients"), handleTabClick = (tab) => {
     setActiveTab(tab);
-  }, [activeImg, setActiveImage] = (0, import_react85.useState)(images[0]), [amount, setAmount] = (0, import_react85.useState)(1), [moreText, setMoreText] = (0, import_react85.useState)(!0), [moreOffer, setMoreOffer] = (0, import_react85.useState)(!1);
+  }, [activeImg, setActiveImage] = (0, import_react82.useState)(images[0]), [amount, setAmount] = (0, import_react82.useState)(1), [moreText, setMoreText] = (0, import_react82.useState)(!0), [moreOffer, setMoreOffer] = (0, import_react82.useState)(!1);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(import_jsx_dev_runtime26.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "flex m-[2%] gap-2 items-center", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("span", { children: "Home" }, void 0, !1, {
@@ -66235,7 +65832,7 @@ function ProductMain({ selectedVariant: selectedVariant2, product, variants }) {
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
-          import_react83.Suspense,
+          import_react80.Suspense,
           {
             fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
               ProductForm,
@@ -66261,13 +65858,13 @@ function ProductMain({ selectedVariant: selectedVariant2, product, variants }) {
                 errorElement: "There was a problem loading product variants",
                 resolve: variants,
                 children: (data2) => {
-                  var _a2;
+                  var _a3;
                   return /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
                     ProductForm,
                     {
                       product,
                       selectedVariant: selectedVariant2,
-                      variants: ((_a2 = data2.product) == null ? void 0 : _a2.variants.nodes) || []
+                      variants: ((_a3 = data2.product) == null ? void 0 : _a3.variants.nodes) || []
                     },
                     void 0,
                     !1,
@@ -66891,7 +66488,7 @@ function ProductForm({
   }, this);
 }
 function ProductOptions({ option, activeImg, setActiveImage }) {
-  let [more, setMore] = (0, import_react85.useState)(!1), [moreContent, setMoreContent] = (0, import_react85.useState)("+View More");
+  let [more, setMore] = (0, import_react82.useState)(!1), [moreContent, setMoreContent] = (0, import_react82.useState)("+View More");
   return /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(import_jsx_dev_runtime26.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "product-options", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h5", { className: "font-semibold", children: option.name }, void 0, !1, {
@@ -67019,7 +66616,7 @@ function ProductOptions({ option, activeImg, setActiveImage }) {
   }, this);
 }
 function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
-  let [amount, setAmount] = (0, import_react85.useState)(1);
+  let [amount, setAmount] = (0, import_react82.useState)(1);
   return lines[0].quantity = amount, console.log(lines[0].merchandiseId), /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(import_jsx_dev_runtime26.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
       CartForm,
@@ -67325,7 +66922,7 @@ __export(locale_account_profile_exports, {
   loader: () => loader14,
   meta: () => meta11
 });
-var import_react86 = __toESM(require_react());
+var import_react83 = __toESM(require_react());
 var import_jsx_dev_runtime27 = __toESM(require_jsx_dev_runtime()), meta11 = () => [{ title: "Profile" }];
 async function loader14({ context }) {
   return await context.session.get("customerAccessToken") ? json3({}) : redirect3("/account/login");
@@ -67374,7 +66971,7 @@ async function action7({ request, context }) {
   }
 }
 function AccountProfile() {
-  let account = useOutletContext(), { state } = useNavigation(), action11 = useActionData2(), customer = (action11 == null ? void 0 : action11.customer) ?? (account == null ? void 0 : account.customer), [activeTab, setActiveTab] = (0, import_react86.useState)("profile"), handleTabChange = (tab) => {
+  let account = useOutletContext(), { state } = useNavigation(), action11 = useActionData2(), customer = (action11 == null ? void 0 : action11.customer) ?? (account == null ? void 0 : account.customer), [activeTab, setActiveTab] = (0, import_react83.useState)("profile"), handleTabChange = (tab) => {
     setActiveTab(tab);
   }, handleSubmit = (e4) => {
     e4.preventDefault(), console.log("Profile Data:", profileData), console.log("Password Data:", passwordData);
@@ -67767,7 +67364,7 @@ __export(locale_account_login_exports, {
   loader: () => loader17,
   meta: () => meta13
 });
-var import_react90 = __toESM(require_react2());
+var import_react87 = __toESM(require_react2());
 var import_jsx_dev_runtime29 = __toESM(require_jsx_dev_runtime()), meta13 = () => [{ title: "Login" }];
 async function loader17({ context }) {
   return await context.session.get("customerAccessToken") ? redirect3("/account") : json3({});
@@ -68270,7 +67867,7 @@ __export(locale_account_exports2, {
 });
 
 // app/components/DefaultSidebar.jsx
-var import_react93 = __toESM(require_react2());
+var import_react90 = __toESM(require_react2());
 var import_jsx_dev_runtime32 = __toESM(require_jsx_dev_runtime());
 function DefaultSidebar({ heading }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(import_jsx_dev_runtime32.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("div", { children: [
@@ -68341,7 +67938,7 @@ function DefaultSidebar({ heading }) {
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("a", { href: "/account/order", className: `font-medium text-sm items-center rounded-lg text-gray-900 px-4 py-2.5 flex\r
                     transition-all duration-200 hover:bg-gray-200 group cursor-pointer`, children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(import_react93.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(ShoppingBagIcon_default, { className: "h-5 w-5" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(import_react90.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(ShoppingBagIcon_default, { className: "h-5 w-5" }, void 0, !1, {
             fileName: "app/components/DefaultSidebar.jsx",
             lineNumber: 98,
             columnNumber: 13
@@ -68378,7 +67975,7 @@ function DefaultSidebar({ heading }) {
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("a", { href: "/account/profile", className: `font-medium text-sm items-center rounded-lg text-gray-900 px-4 py-2.5 flex\r
                     transition-all duration-200 hover:bg-gray-200 group cursor-pointer`, children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(import_react93.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(UserCircleIcon_default, { className: "h-5 w-5" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(import_react90.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(UserCircleIcon_default, { className: "h-5 w-5" }, void 0, !1, {
             fileName: "app/components/DefaultSidebar.jsx",
             lineNumber: 113,
             columnNumber: 13
@@ -68415,7 +68012,7 @@ function DefaultSidebar({ heading }) {
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("a", { href: "/account/addresses", className: `font-medium text-sm items-center rounded-lg text-gray-900 px-4 py-2.5 flex\r
                     transition-all duration-200 hover:bg-gray-200 group cursor-pointer`, children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(import_react93.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(UserCircleIcon_default, { className: "h-5 w-5" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(import_react90.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(UserCircleIcon_default, { className: "h-5 w-5" }, void 0, !1, {
             fileName: "app/components/DefaultSidebar.jsx",
             lineNumber: 128,
             columnNumber: 13
@@ -68502,7 +68099,7 @@ function DefaultSidebar({ heading }) {
 function Logout2() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("a", { href: "#", className: `font-medium text-sm items-center rounded-lg text-gray-900 px-4 py-2.5 flex\r
                     transition-all duration-200 hover:bg-gray-200 group cursor-pointer`, children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(import_react93.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(PowerIcon_default, { className: "h-5 w-5" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(import_react90.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(PowerIcon_default, { className: "h-5 w-5" }, void 0, !1, {
       fileName: "app/components/DefaultSidebar.jsx",
       lineNumber: 159,
       columnNumber: 7
@@ -68700,12 +68297,12 @@ __export(locale_index_exports, {
   loader: () => loader23,
   meta: () => meta16
 });
-var import_react100 = __toESM(require_react());
+var import_react97 = __toESM(require_react());
 
 // app/components/CustomizedProducts.jsx
-var import_react96 = __toESM(require_react());
+var import_react93 = __toESM(require_react());
 var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_dev_runtime34 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel = ({ products, title }) => {
-  let [startIndex, setStartIndex] = (0, import_react96.useState)(0), productsToShow = products.slice(startIndex, startIndex + 5);
+  let [startIndex, setStartIndex] = (0, import_react93.useState)(0), productsToShow = products.slice(startIndex, startIndex + 5);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1 ", children: /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("h1", { className: "text-center", children: title }, void 0, !1, {
       fileName: "app/components/CustomizedProducts.jsx",
@@ -68745,20 +68342,19 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
     columnNumber: 5
   }, this);
 }, DesktopCorousel = ({ products, title }) => {
-  console.log("DesktopCorousel::", products);
-  let [startIndex, setStartIndex] = (0, import_react96.useState)(0), productsToShow = products.slice(startIndex, startIndex + 3);
+  let [startIndex, setStartIndex] = (0, import_react93.useState)(0), productsToShow = products.slice(startIndex, startIndex + 3);
   console.log("productsToShow::", productsToShow);
   let isMobile = (0, import_react_responsive6.useMediaQuery)({ maxWidth: 640 }), nextProducts = () => {
-    setStartIndex((prevIndex) => (prevIndex + 3) % products.length);
+    setStartIndex((prevIndex) => (prevIndex + 3) % products.length), console.log("nextProducts INDEX ::", startIndex);
   }, prevProducts = () => {
     setStartIndex(
       (prevIndex) => prevIndex === 0 ? products.length - products.length % 3 : prevIndex - 1
-    );
+    ), console.log("prevProducts INDEX ::", startIndex);
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("h1", { className: "text-center", children: title }, void 0, !1, {
       fileName: "app/components/CustomizedProducts.jsx",
-      lineNumber: 53,
+      lineNumber: 55,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { className: "flex", children: productsToShow.map((product) => {
@@ -68774,31 +68370,29 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
         !1,
         {
           fileName: "app/components/CustomizedProducts.jsx",
-          lineNumber: 58,
+          lineNumber: 60,
           columnNumber: 19
         },
         this
       ) }, void 0, !1, {
         fileName: "app/components/CustomizedProducts.jsx",
-        lineNumber: 57,
+        lineNumber: 59,
         columnNumber: 17
       }, this) }, product.id, !1, {
         fileName: "app/components/CustomizedProducts.jsx",
-        lineNumber: 56,
+        lineNumber: 58,
         columnNumber: 15
       }, this);
     }) }, void 0, !1, {
       fileName: "app/components/CustomizedProducts.jsx",
-      lineNumber: 54,
+      lineNumber: 56,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)(
       "button",
       {
         className: "absolute left-[5px] top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full ml-1 p-2 mr-2 hover:bg-opacity-75",
-        onClick: () => setStartIndex(
-          (prevIndex) => prevIndex === 0 ? products.length - products.length % 3 : prevIndex - 1
-        ),
+        onClick: () => prevProducts(),
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)(
           MdChevronLeft,
           {
@@ -68809,7 +68403,7 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
           !1,
           {
             fileName: "app/components/CustomizedProducts.jsx",
-            lineNumber: 78,
+            lineNumber: 74,
             columnNumber: 13
           },
           this
@@ -68819,7 +68413,7 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
       !1,
       {
         fileName: "app/components/CustomizedProducts.jsx",
-        lineNumber: 68,
+        lineNumber: 70,
         columnNumber: 11
       },
       this
@@ -68828,7 +68422,7 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
       "button",
       {
         className: "absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75",
-        onClick: () => setStartIndex((prevIndex) => (prevIndex + 3) % products.length),
+        onClick: () => nextProducts(),
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)(
           MdChevronRight,
           {
@@ -68839,7 +68433,7 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
           !1,
           {
             fileName: "app/components/CustomizedProducts.jsx",
-            lineNumber: 89,
+            lineNumber: 83,
             columnNumber: 13
           },
           this
@@ -68849,22 +68443,22 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
       !1,
       {
         fileName: "app/components/CustomizedProducts.jsx",
-        lineNumber: 83,
+        lineNumber: 79,
         columnNumber: 11
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/components/CustomizedProducts.jsx",
-    lineNumber: 52,
+    lineNumber: 54,
     columnNumber: 9
   }, this) }, void 0, !1, {
     fileName: "app/components/CustomizedProducts.jsx",
-    lineNumber: 51,
+    lineNumber: 53,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/CustomizedProducts.jsx",
-    lineNumber: 50,
+    lineNumber: 52,
     columnNumber: 5
   }, this);
 }, CustomizedProducts = ({ products, title }) => {
@@ -68880,19 +68474,19 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
       !1,
       {
         fileName: "app/components/CustomizedProducts.jsx",
-        lineNumber: 108,
+        lineNumber: 101,
         columnNumber: 9
       },
       this
     ),
     isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)(DesktopCorousel, { products, title }, void 0, !1, {
       fileName: "app/components/CustomizedProducts.jsx",
-      lineNumber: 114,
+      lineNumber: 107,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/CustomizedProducts.jsx",
-    lineNumber: 106,
+    lineNumber: 99,
     columnNumber: 5
   }, this);
 }, CustomizedProducts_default = CustomizedProducts;
@@ -68901,9 +68495,9 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
 var import_react_responsive9 = __toESM(require_react_responsive());
 
 // app/components/CustomizedCollection.jsx
-var import_react97 = __toESM(require_react());
+var import_react94 = __toESM(require_react());
 var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_dev_runtime35 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel2 = ({ products }) => {
-  let [startIndex, setStartIndex] = (0, import_react97.useState)(0);
+  let [startIndex, setStartIndex] = (0, import_react94.useState)(0);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("h1", { className: "text-center lg:text=[28px] text-[20px] mt-[15px]", children: "Choose Your Own Fashion" }, void 0, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
@@ -68939,41 +68533,52 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
     lineNumber: 15,
     columnNumber: 5
   }, this);
-}, DesktopCorousel2 = ({ products }) => {
-  let [startIndex, setStartIndex] = (0, import_react97.useState)(0), productsToShow = products.slice(startIndex, startIndex + 3);
+}, DesktopCorousel2 = ({ products, title }) => {
+  let [startIndex, setStartIndex] = (0, import_react94.useState)(0), productsToShow = products.slice(startIndex, startIndex + 3);
   console.log("DesktopCorousel::", productsToShow);
   let isMobile = (0, import_react_responsive7.useMediaQuery)({ maxWidth: 640 }), nextProducts = () => {
-    setStartIndex((prevIndex) => (prevIndex + 3) % products.length);
+    setStartIndex((prevIndex) => (prevIndex + 4) % products.length);
   }, prevProducts = () => {
     setStartIndex(
       (prevIndex) => prevIndex === 0 ? products.length - products.length % 3 : prevIndex - 1
     );
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "relative", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("h1", { className: "text-center", children: "Choose Your Own Fashion" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("h1", { className: "text-center", children: title }, void 0, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
-      lineNumber: 55,
+      lineNumber: 53,
       columnNumber: 11
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "flex", children: productsToShow.map((product) => /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "w-full sm:w-1/3 md:w-1/3 px-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "bg-white rounded-lg shadow-lg p-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("a", { href: `/collections/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(MediaFile, { data: parseMetafield(product.metafields[1].value), type: "image" }, product.id, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "flex", children: productsToShow.map((product) => /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "w-full sm:w-1/3 md:w-1/3 px-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "bg-white rounded-lg shadow-lg p-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("a", { href: `/collections/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(
+      "img",
+      {
+        src: product.image.url,
+        alt: product.title,
+        className: "w-full h-auto rounded-lg"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/CustomizedCollection.jsx",
+        lineNumber: 59,
+        columnNumber: 21
+      },
+      this
+    ) }, void 0, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
-      lineNumber: 67,
-      columnNumber: 21
-    }, this) }, void 0, !1, {
-      fileName: "app/components/CustomizedCollection.jsx",
-      lineNumber: 60,
+      lineNumber: 58,
       columnNumber: 19
     }, this) }, void 0, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
-      lineNumber: 59,
+      lineNumber: 57,
       columnNumber: 17
     }, this) }, product.id, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
-      lineNumber: 58,
+      lineNumber: 56,
       columnNumber: 15
     }, this)) }, void 0, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
-      lineNumber: 56,
+      lineNumber: 54,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(
@@ -68993,7 +68598,7 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
           !1,
           {
             fileName: "app/components/CustomizedCollection.jsx",
-            lineNumber: 84,
+            lineNumber: 82,
             columnNumber: 13
           },
           this
@@ -69003,7 +68608,7 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
       !1,
       {
         fileName: "app/components/CustomizedCollection.jsx",
-        lineNumber: 74,
+        lineNumber: 72,
         columnNumber: 11
       },
       this
@@ -69023,7 +68628,7 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
           !1,
           {
             fileName: "app/components/CustomizedCollection.jsx",
-            lineNumber: 95,
+            lineNumber: 93,
             columnNumber: 13
           },
           this
@@ -69033,22 +68638,22 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
       !1,
       {
         fileName: "app/components/CustomizedCollection.jsx",
-        lineNumber: 89,
+        lineNumber: 87,
         columnNumber: 11
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/components/CustomizedCollection.jsx",
-    lineNumber: 54,
+    lineNumber: 52,
     columnNumber: 9
   }, this) }, void 0, !1, {
     fileName: "app/components/CustomizedCollection.jsx",
-    lineNumber: 53,
+    lineNumber: 51,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/CustomizedCollection.jsx",
-    lineNumber: 52,
+    lineNumber: 50,
     columnNumber: 5
   }, this);
 }, CustomizedCollection = ({ collections }) => {
@@ -69056,25 +68661,25 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
   return /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { children: [
     isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(MobileProductCorousel2, { products: collections }, void 0, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
-      lineNumber: 114,
+      lineNumber: 112,
       columnNumber: 9
     }, this),
     isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(DesktopCorousel2, { products: collections }, void 0, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
-      lineNumber: 117,
+      lineNumber: 115,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/CustomizedCollection.jsx",
-    lineNumber: 112,
+    lineNumber: 110,
     columnNumber: 5
   }, this);
 }, CustomizedCollection_default = CustomizedCollection;
 
 // app/components/BlogCorousel.jsx
-var import_react98 = __toESM(require_react());
+var import_react95 = __toESM(require_react());
 var import_react_responsive8 = __toESM(require_react_responsive()), import_jsx_dev_runtime36 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel3 = ({ products }) => {
-  let [startIndex, setStartIndex] = (0, import_react98.useState)(0);
+  let [startIndex, setStartIndex] = (0, import_react95.useState)(0);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("h1", { className: "text-center mt-0 lg:text-[28px] text-[20px]", children: "Choose Your Own Fashion" }, void 0, !1, {
       fileName: "app/components/BlogCorousel.jsx",
@@ -69111,7 +68716,7 @@ var import_react_responsive8 = __toESM(require_react_responsive()), import_jsx_d
     columnNumber: 5
   }, this);
 }, DesktopCorousel3 = ({ products }) => {
-  let [startIndex, setStartIndex] = (0, import_react98.useState)(0), productsToShow = products.nodes.slice(startIndex, startIndex + 3), isMobile = (0, import_react_responsive8.useMediaQuery)({ maxWidth: 640 }), nextProducts = () => {
+  let [startIndex, setStartIndex] = (0, import_react95.useState)(0), productsToShow = products.nodes.slice(startIndex, startIndex + 3), isMobile = (0, import_react_responsive8.useMediaQuery)({ maxWidth: 640 }), nextProducts = () => {
     setStartIndex((prevIndex) => (prevIndex + 3) % products.length);
   }, prevProducts = () => {
     setStartIndex(
@@ -69551,7 +69156,7 @@ function RecommendedProducts({ products, title }) {
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(import_react100.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(import_react97.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
         fileName: "app/routes/($locale)._index.jsx",
         lineNumber: 245,
         columnNumber: 29
@@ -69772,10 +69377,14 @@ function Offers() {
   var GiftCollections = [];
   return data2.collectionProducts.nodes.forEach((col) => {
     (col.title == "Gift Under 500" || col.title == "Gift Under 1000" || col.title == "Gifts Under 2000") && GiftCollections.push(col);
-  }), console.log("Offers::", GiftCollections), GiftCollections = GiftCollections, /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(import_jsx_dev_runtime38.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(CustomizedCollection_default, { collections: GiftCollections, title: "Gifting" }, void 0, !1, {
+  }), console.log("Offers::", GiftCollections), GiftCollections = GiftCollections, /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(import_jsx_dev_runtime38.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { className: "page", children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(CustomizedCollection_default, { collections: GiftCollections, title: "Gifting Offers" }, void 0, !1, {
+    fileName: "app/routes/($locale).offers.jsx",
+    lineNumber: 33,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
     fileName: "app/routes/($locale).offers.jsx",
     lineNumber: 32,
-    columnNumber: 9
+    columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/routes/($locale).offers.jsx",
     lineNumber: 31,
@@ -70009,7 +69618,7 @@ __export(locale_cart_exports, {
   default: () => Cart,
   meta: () => meta19
 });
-var import_react104 = __toESM(require_react());
+var import_react101 = __toESM(require_react());
 var import_jsx_dev_runtime40 = __toESM(require_jsx_dev_runtime()), meta19 = () => [{ title: "Hydrogen | Cart" }];
 async function action10({ request, context }) {
   let { session, cart } = context, [formData, customerAccessToken] = await Promise.all([
@@ -70065,7 +69674,7 @@ function Cart() {
       lineNumber: 89,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime40.jsxDEV)(import_react104.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime40.jsxDEV)("p", { children: "Loading cart ..." }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime40.jsxDEV)(import_react101.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime40.jsxDEV)("p", { children: "Loading cart ..." }, void 0, !1, {
       fileName: "app/routes/($locale).cart.jsx",
       lineNumber: 90,
       columnNumber: 27
@@ -71211,7 +70820,7 @@ var LAYOUT_QUERY = `#graphql
 `;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-HWXT6HWF.js", imports: ["/build/_shared/chunk-FM7TTYIF.js", "/build/_shared/chunk-CFXHHO4K.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-OTHQM3SS.js", imports: ["/build/_shared/chunk-B5JLTUL2.js", "/build/_shared/chunk-OGSWC4LR.js", "/build/_shared/chunk-OUQ3NVZW.js", "/build/_shared/chunk-F7TROZH4.js", "/build/_shared/chunk-NNH77UO3.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-SMAMLHOS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-KQHO7YNJ.js", imports: ["/build/_shared/chunk-RJ277ZS4.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-B2Q4ALJD.js", imports: ["/build/_shared/chunk-7M6P6K7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-UW56T35F.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-FKAWC6EL.js", imports: ["/build/_shared/chunk-SMAMLHOS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-PGGERC5F.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-SMAMLHOS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-NXUTGPGB.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-TWBKTJHT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-ROS3EOYT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-O3ATTRWI.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-LGKAZ4B5.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-QJ3G3N7V.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-EXFUUUMS.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-DZCWJOBK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-UG3B4ZRV.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-3JGDMHCY.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-7FPS4JMF.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-O3PF73DV.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).offers": { id: "routes/($locale).offers", parentId: "root", path: ":locale?/offers", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).offers-GPKCPXOL.js", imports: ["/build/_shared/chunk-RJ277ZS4.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-VRM6CIZM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-XO72JGCK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-C4O43EB5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-3F5LSAJY.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-WGQYYKWZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-VPLGH6WO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-53PT7KYB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-OBQMRAOA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "073ec3f0", hmr: void 0, url: "/build/manifest-073EC3F0.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-HWXT6HWF.js", imports: ["/build/_shared/chunk-FM7TTYIF.js", "/build/_shared/chunk-CFXHHO4K.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-WB65WDGU.js", imports: ["/build/_shared/chunk-4WQHT5WD.js", "/build/_shared/chunk-UFFJBRLD.js", "/build/_shared/chunk-DDGVNA5N.js", "/build/_shared/chunk-F7TROZH4.js", "/build/_shared/chunk-NNH77UO3.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-BROVUE5Z.js", imports: ["/build/_shared/chunk-GHPMVKJO.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-B2Q4ALJD.js", imports: ["/build/_shared/chunk-7M6P6K7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-UW56T35F.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-P4I3QDMF.js", imports: ["/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-CJLES4QN.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-NXUTGPGB.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-TWBKTJHT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-ROS3EOYT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-O3ATTRWI.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-LGKAZ4B5.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-QJ3G3N7V.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-SPZII6NL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-CW2FXTL6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-6FNJVY6E.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-TQE3MDJR.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-MOJIROKZ.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-E444EELP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).offers": { id: "routes/($locale).offers", parentId: "root", path: ":locale?/offers", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).offers-TWQVGM4W.js", imports: ["/build/_shared/chunk-GHPMVKJO.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-VRM6CIZM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-XO72JGCK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-C4O43EB5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-FTL47F53.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-4F75YYEZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-OU6DB2IP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-53PT7KYB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-OBQMRAOA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "3f5501ee", hmr: void 0, url: "/build/manifest-3F5501EE.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "dist/client/build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

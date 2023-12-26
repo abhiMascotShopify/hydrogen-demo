@@ -29,7 +29,9 @@ export default function Offers() {
   GiftCollections = GiftCollections;
   return (
     <>
-        <CustomizedCollection collections={GiftCollections} title={'Gifting'} />
+      <div className="page">
+        <CustomizedCollection collections={GiftCollections} title={'Gifting Offers'} />
+      </div>
     </>
   );
 }

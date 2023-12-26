@@ -15,11 +15,6 @@ import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import {Layout} from '~/components/Layout';
 import tailwindCss from './styles/tailwind.css';
-import Example from './components/Example';
-import Button from "./components/Button";
-import Navbar from "./components/Navbar/Navbar";
-import Products from './components/Products';
-import ShopifyCarousel from './components/ShopifyCarousel'
 
 export function links() {
   return [
@@ -178,7 +173,6 @@ async function validateCustomerAccessToken(customerAccessToken, session) {
   } else {
     isLoggedIn = true;
   }
-
   return {isLoggedIn, headers};
 }
 

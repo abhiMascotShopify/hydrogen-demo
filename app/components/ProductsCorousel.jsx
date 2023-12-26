@@ -9,13 +9,31 @@ const ProductsCorousel = ({products}) => {
   let productsToShow = [];
   const [startIndex, setStartIndex] = useState(0);
   //const [endIndex, setEndIndex]  = useState();
+
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const endIndex = isLargeScreen ? 4 : 2;
+
   if (products != null || products != undefined) {
     //console.log(products.edges[0].node)
-    productsToShow = products.slice(startIndex, startIndex + endIndex);
+    productsToShow = products.edges.slice(startIndex, startIndex + endIndex);
     //console.log(productsToShow);
   }
+  //  const isMobile = useMediaQuery({ maxWidth: 640 });
+  //  const isTablet = useMediaQuery({ minWidth: 641, maxWidth: 1024 });
+
+  // products.slice(startIndex, startIndex + 3);
+
+  //const nextProducts = () => {
+  //  setStartIndex((prevIndex) => (prevIndex + 2) % products.length);
+  //};
+
+  //const prevProducts = () => {
+  // setStartIndex((prevIndex) =>
+  //  prevIndex === 0
+  //   ? products.length - (products.length % 2)
+  //   : prevIndex - 2
+  //);
+  //};
 
   return (
     <div className="w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6 py-6">

@@ -17,6 +17,11 @@ img {
 * components/Aside
 * --------------------------------------------------
 */
+.login_wrapper { display: inline-flex; }
+.login_span { display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0 5px;}
 aside {
   background: var(--color-light);
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
