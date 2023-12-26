@@ -18,6 +18,7 @@ img {
 * --------------------------------------------------
 */
 .login_wrapper { display: inline-flex; }
+.collectionContent{display: flex;justify-content: center;}
 .login_span { display: flex;
   justify-content: center;
   align-items: flex-end;

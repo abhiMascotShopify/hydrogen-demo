@@ -53773,7 +53773,7 @@ var favicon_default = "/build/_assets/favicon-5FIZBM2K.svg";
 var reset_default = "/build/_assets/reset-GF4OX5GB.css";
 
 // app/styles/app.css
-var app_default = "/build/_assets/app-E2CDJET3.css";
+var app_default = "/build/_assets/app-F2BA27J3.css";
 
 // app/components/Layout.jsx
 var import_react27 = __toESM(require_react());
@@ -57267,6 +57267,10 @@ function HeaderMenu({ menu, viewport }) {
   function getPath(url_path) {
     return new URL(url_path).pathname;
   }
+  function goToCollection(url_path) {
+    let url = getPath(url_path);
+    window.location.href = url;
+  }
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("nav", { className, role: "navigation", children: [
     viewport === "mobile" && /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
       NavLink2,
@@ -57281,7 +57285,7 @@ function HeaderMenu({ menu, viewport }) {
       !1,
       {
         fileName: "app/components/Header.jsx",
-        lineNumber: 123,
+        lineNumber: 128,
         columnNumber: 9
       },
       this
@@ -57291,9 +57295,9 @@ function HeaderMenu({ menu, viewport }) {
         return null;
       let url = item.url.includes("myshopify.com") || item.url.includes(publicStoreDomain) ? new URL(item.url).pathname : item.url;
       return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "relative inline-block text-left group", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("button", { className: "px-4 py-2 text-gray-800 focus:outline-none", children: item.title }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("button", { onClick: () => goToCollection(item.url), className: "px-4 py-2 text-gray-800 focus:outline-none", children: item.title }, void 0, !1, {
           fileName: "app/components/Header.jsx",
-          lineNumber: 141,
+          lineNumber: 146,
           columnNumber: 13
         }, this),
         item.items.length > 0 && /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "absolute hidden mt-2 w-48 bg-white border border-gray-300 divide-y divide-gray-200 rounded-lg shadow-lg group-hover:block", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "py-1", children: item.items.map((it2) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -57307,28 +57311,28 @@ function HeaderMenu({ menu, viewport }) {
           !1,
           {
             fileName: "app/components/Header.jsx",
-            lineNumber: 148,
+            lineNumber: 153,
             columnNumber: 21
           },
           this
         )) }, void 0, !1, {
           fileName: "app/components/Header.jsx",
-          lineNumber: 146,
+          lineNumber: 151,
           columnNumber: 17
         }, this) }, void 0, !1, {
           fileName: "app/components/Header.jsx",
-          lineNumber: 145,
+          lineNumber: 150,
           columnNumber: 15
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/Header.jsx",
-        lineNumber: 140,
+        lineNumber: 145,
         columnNumber: 11
       }, this);
     })
   ] }, void 0, !0, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 121,
+    lineNumber: 126,
     columnNumber: 5
   }, this);
 }
@@ -57352,7 +57356,7 @@ function HeaderCtas({ isLoggedIn, cart }) {
           !1,
           {
             fileName: "app/components/Header.jsx",
-            lineNumber: 179,
+            lineNumber: 184,
             columnNumber: 13
           },
           this
@@ -57362,44 +57366,44 @@ function HeaderCtas({ isLoggedIn, cart }) {
       !1,
       {
         fileName: "app/components/Header.jsx",
-        lineNumber: 173,
+        lineNumber: 178,
         columnNumber: 11
       },
       this
     ) }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 169,
+      lineNumber: 174,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(SearchToggle, {}, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 187,
+      lineNumber: 192,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(CartToggle, { cart }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 188,
+      lineNumber: 193,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(HeaderMenuMobileToggle, {}, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 189,
+      lineNumber: 194,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 167,
+    lineNumber: 172,
     columnNumber: 5
   }, this);
 }
 function HeaderMenuMobileToggle() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("a", { className: "header-menu-mobile-toggle", href: "#mobile-menu-aside", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h3", { children: "\u2630" }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 197,
+    lineNumber: 202,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 196,
+    lineNumber: 201,
     columnNumber: 5
   }, this);
 }
@@ -57424,7 +57428,7 @@ function SearchToggle() {
         !1,
         {
           fileName: "app/components/Header.jsx",
-          lineNumber: 213,
+          lineNumber: 218,
           columnNumber: 9
         },
         this
@@ -57434,13 +57438,13 @@ function SearchToggle() {
     !1,
     {
       fileName: "app/components/Header.jsx",
-      lineNumber: 205,
+      lineNumber: 210,
       columnNumber: 7
     },
     this
   ) }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 204,
+    lineNumber: 209,
     columnNumber: 5
   }, this);
 }
@@ -57466,7 +57470,7 @@ function CartBadge({ count }) {
           !1,
           {
             fileName: "app/components/Header.jsx",
-            lineNumber: 235,
+            lineNumber: 240,
             columnNumber: 9
           },
           this
@@ -57476,54 +57480,54 @@ function CartBadge({ count }) {
       !1,
       {
         fileName: "app/components/Header.jsx",
-        lineNumber: 227,
+        lineNumber: 232,
         columnNumber: 7
       },
       this
     ) }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 226,
+      lineNumber: 231,
       columnNumber: 5
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("a", { href: "/offers", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("svg", { width: "22.81px", height: "22px", viewBox: "0 0 20 21", fill: "var(--navbar-color)", xmlns: "http://www.w3.org/2000/svg", alt: "discount_icon", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "m8.744 3.662.832-.803.832.803a3 3 0 0 0 2.504.813l1.146-.162.2 1.134a3 3 0 0 0 1.55 2.132l1.018.54-.505 1.03a3 3 0 0 0 0 2.639l.505 1.031-1.018.54a3 3 0 0 0-1.55 2.131l-.2 1.134-1.146-.162a3 3 0 0 0-2.504.813l-.832.804-.832-.804a3 3 0 0 0-2.504-.813l-1.146.162-.2-1.134a3 3 0 0 0-1.55-2.132l-1.018-.539.505-1.031a3 3 0 0 0 0-2.638l-.505-1.032 1.018-.539a3 3 0 0 0 1.55-2.132l.2-1.134 1.146.162a3 3 0 0 0 2.504-.813ZM8.88.75a1 1 0 0 1 1.39 0l1.527 1.475a1 1 0 0 0 .834.27l2.104-.296a1 1 0 0 1 1.125.817l.366 2.086a1 1 0 0 0 .517.71l1.874.993a1 1 0 0 1 .43 1.324l-.93 1.901a1 1 0 0 0 0 .88l.93 1.9a1 1 0 0 1-.43 1.324l-1.874.993a1 1 0 0 0-.517.71l-.366 2.087a1 1 0 0 1-1.125.817l-2.104-.297a1 1 0 0 0-.834.27l-1.527 1.475a1 1 0 0 1-1.39 0l-1.527-1.474a1 1 0 0 0-.834-.271l-2.104.297a1 1 0 0 1-1.125-.817l-.366-2.087a1 1 0 0 0-.517-.71l-1.874-.993a1 1 0 0 1-.43-1.323l.93-1.902a1 1 0 0 0 0-.879l-.93-1.901a1 1 0 0 1 .43-1.324l1.874-.992a1 1 0 0 0 .517-.711l.366-2.086a1 1 0 0 1 1.125-.817l2.104.297a1 1 0 0 0 .834-.271L8.881.749Zm4.524 7.31a1 1 0 0 0-1.413-1.415l-6.245 6.234a1 1 0 1 0 1.413 1.416l6.245-6.235Zm-4.87-.188A1.56 1.56 0 0 1 6.974 9.43 1.56 1.56 0 1 1 8.535 7.87Zm3.642 6.754a1.56 1.56 0 0 0 1.561-1.559 1.56 1.56 0 0 0-1.56-1.558 1.56 1.56 0 1 0 0 3.117Z" }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 243,
+      lineNumber: 248,
       columnNumber: 143
     }, this) }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 243,
+      lineNumber: 248,
       columnNumber: 6
     }, this) }, void 0, !1, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 242,
+      lineNumber: 247,
       columnNumber: 6
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 225,
+    lineNumber: 230,
     columnNumber: 5
   }, this);
 }
 function CartToggle({ cart }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react14.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(CartBadge, { count: 0 }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 251,
+    lineNumber: 256,
     columnNumber: 25
   }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Await2, { resolve: cart, children: (cart2) => cart2 ? /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(CartBadge, { count: cart2.totalQuantity || 0 }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 255,
+    lineNumber: 260,
     columnNumber: 18
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(CartBadge, { count: 0 }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 254,
+    lineNumber: 259,
     columnNumber: 29
   }, this) }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 252,
+    lineNumber: 257,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 251,
+    lineNumber: 256,
     columnNumber: 5
   }, this);
 }
@@ -58297,9 +58301,9 @@ var import_jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime()), ImageCarousel 
 var import_react23 = __toESM(require_react());
 var import_react_responsive2 = __toESM(require_react_responsive());
 var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarousel = ({ products }) => {
-  let productsToShow = [], lines = [], [startIndex, setStartIndex] = (0, import_react23.useState)(0), eIndex = (0, import_react_responsive2.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2, [endIndex, setEndIndex] = (0, import_react23.useState)(eIndex);
+  let productsToShow = [], lines = [], [startIndex, setStartIndex] = (0, import_react23.useState)(0), eIndex = (0, import_react_responsive2.useMediaQuery)({ minWidth: 1024 }) ? len < 4 ? len : 4 : 2, [endIndex, setEndIndex] = (0, import_react23.useState)(eIndex);
   var len = products.edges.length;
-  (products != null || products != null) && (productsToShow = products.edges.slice(startIndex, startIndex + endIndex));
+  (products != null || products != null) && (productsToShow = products.edges.slice(startIndex, endIndex));
   let nextProducts = () => {
     setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
   }, prevProducts = () => {
@@ -62344,6 +62348,12 @@ async function loader6({ request, params, context }) {
   console.log("handle::", handle);
   let { storefront } = context, paginationVariables = getPaginationVariables(request, {
     pageBy: 8
+  }), headerPromise = storefront.query(HEADER_QUERY2, {
+    cache: storefront.CacheNone(),
+    variables: {
+      headerMenuHandle: "main-menu"
+      // Adjust to your header menu handle
+    }
   });
   if (!handle)
     return redirect3("/collections");
@@ -62354,933 +62364,556 @@ async function loader6({ request, params, context }) {
     throw new Response(`Collection ${handle} not found`, {
       status: 404
     });
-  return json3({ collection });
+  return json3({ collection, header: await headerPromise, handle });
 }
 function Collection() {
   var _a2;
-  let { collection } = useLoaderData2(), [mobileFiltersOpen, setMobileFiltersOpen] = (0, import_react68.useState)(!1), productsToShow = [], lines = [], [startIndex, setStartIndex] = (0, import_react68.useState)(0), endIndex = (0, import_react_responsive4.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2;
-  return (collection.products != null || collection.products != null) && (console.log(collection.products.nodes), productsToShow = collection.products.nodes), collection.products.nodes.map((product) => {
+  let { collection, header, handle } = useLoaderData2(), { menu } = header;
+  var sortArr = menu.items.filter((item) => item.title.toLowerCase() === handle), collectionArray2 = sortArr[0].items;
+  console.log("collectionArray::", collectionArray2);
+  let [mobileFiltersOpen, setMobileFiltersOpen] = (0, import_react68.useState)(!1), productsToShow = [], lines = [], [startIndex, setStartIndex] = (0, import_react68.useState)(0), endIndex = (0, import_react_responsive4.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2;
+  (collection.products != null || collection.products != null) && (console.log(collection.products.nodes), productsToShow = collection.products.nodes), collection.products.nodes.map((product) => {
     product.variants.nodes.map((line) => {
       console.log(line), line.metafields[0] != null && line.metafields[0].value == "true" && lines.push({
         merchandiseId: line.id,
         quantity: 1
       });
     });
-  }), /*
-  <>
-  <Filters></Filters>
-  <div className="w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-      {productsToShow.map((product, index) => (
-        <div key={product.id}>
-          <div className="bg-white rounded-lg shadow-lg p-2" style={{ boxShadow: '0px 4px 8px rgba(255, 217, 90, 0.5)' }}>
-            <img
-              src={product.images.edges[0].node.url}
-              alt={product.title}
-              className="w-full h-auto"
-            />
-            <Link to={`/products/${product.handle}`}>
-              <h2 className="text-lg font-semibold mt-2 text-center">{product.title}</h2>
-            </Link>
-            <div className='h-12'><h1 className='text-center font-bold h-full w-full'>255</h1></div>
-            <div className="px-1 py-1 flex justify-between items-center">
-              <div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 33" xmlSpace="preserve" width="2.8em" height="2.8em">
-                  <path d="M9 .5h14c4.7 0 8.5 3.8 8.5 8.5v14c0 4.7-3.8 8.5-8.5 8.5H9C4.3 31.5.5 27.7.5 23V9C.5 4.3 4.3.5 9 .5z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" />
-                  <path d="M22.3 11.8c.4.4.7.9.9 1.4.2.5.3 1.1.3 1.6 0 .6-.1 1.1-.3 1.6-.2.5-.5 1-.9 1.4l-5.6 5.6s-.1 0-.1.1h-.2s-.1 0-.1-.1l-5.6-5.6C10 17 9.5 16 9.5 14.9c0-1.1.3-2.1 1-2.9.7-.8 1.7-1.3 2.7-1.5 1.1-.1 2.1.2 3 .8l.3.2.3-.2c.8-.6 1.8-.9 2.8-.8 1.1.1 2 .5 2.7 1.3z" fill="none" stroke="rgb(0, 0, 0)"></path>
-                </svg>
+  });
+  function getPath(url_path) {
+    return new URL(url_path).pathname;
+  }
+  function goToCollection(url_path) {
+    let url = getPath(url_path);
+    window.location.href = url;
+  }
+  return (
+    /*
+    <>
+    <Filters></Filters>
+    <div className="w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+        {productsToShow.map((product, index) => (
+          <div key={product.id}>
+            <div className="bg-white rounded-lg shadow-lg p-2" style={{ boxShadow: '0px 4px 8px rgba(255, 217, 90, 0.5)' }}>
+              <img
+                src={product.images.edges[0].node.url}
+                alt={product.title}
+                className="w-full h-auto"
+              />
+              <Link to={`/products/${product.handle}`}>
+                <h2 className="text-lg font-semibold mt-2 text-center">{product.title}</h2>
+              </Link>
+              <div className='h-12'><h1 className='text-center font-bold h-full w-full'>255</h1></div>
+              <div className="px-1 py-1 flex justify-between items-center">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 33" xmlSpace="preserve" width="2.8em" height="2.8em">
+                    <path d="M9 .5h14c4.7 0 8.5 3.8 8.5 8.5v14c0 4.7-3.8 8.5-8.5 8.5H9C4.3 31.5.5 27.7.5 23V9C.5 4.3 4.3.5 9 .5z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" />
+                    <path d="M22.3 11.8c.4.4.7.9.9 1.4.2.5.3 1.1.3 1.6 0 .6-.1 1.1-.3 1.6-.2.5-.5 1-.9 1.4l-5.6 5.6s-.1 0-.1.1h-.2s-.1 0-.1-.1l-5.6-5.6C10 17 9.5 16 9.5 14.9c0-1.1.3-2.1 1-2.9.7-.8 1.7-1.3 2.7-1.5 1.1-.1 2.1.2 3 .8l.3.2.3-.2c.8-.6 1.8-.9 2.8-.8 1.1.1 2 .5 2.7 1.3z" fill="none" stroke="rgb(0, 0, 0)"></path>
+                  </svg>
+                </div>
+                {console.log(lines)}
+                <CartForm route="/cart" inputs={{ lines: lines[index] }} action={CartForm.ACTIONS.LinesAdd} className="flex-grow">
+                  {(fetcher) => (
+                    <>
+                      <button className="lg:w-[200px] h-11 bg-black hover:bg-blue-700 text-white font-bold py-1 px-1 rounded-lg"
+                        type="submit"
+                        onClick={() => {
+                          window.location.href = window.location.href + '#cart-aside';
+                        }}
+                      >
+                        Add To Cart
+                      </button>
+                    </>
+                  )}
+                </CartForm>
               </div>
-              {console.log(lines)}
-              <CartForm route="/cart" inputs={{ lines: lines[index] }} action={CartForm.ACTIONS.LinesAdd} className="flex-grow">
-                {(fetcher) => (
-                  <>
-                    <button className="lg:w-[200px] h-11 bg-black hover:bg-blue-700 text-white font-bold py-1 px-1 rounded-lg"
-                      type="submit"
-                      onClick={() => {
-                        window.location.href = window.location.href + '#cart-aside';
-                      }}
-                    >
-                      Add To Cart
-                    </button>
-                  </>
-                )}
-              </CartForm>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
-  </>*/
-  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-      "img",
-      {
-        src: (_a2 = collection == null ? void 0 : collection.image) == null ? void 0 : _a2.url,
-        style: { height: "650px", objectFit: "cover", width: "100%" }
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 199,
-        columnNumber: 9
-      },
-      this
-    ) }, void 0, !1, {
-      fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 198,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "bg-white mx-2.5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(tt.Root, { show: mobileFiltersOpen, as: import_react70.Fragment, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-        _t,
+    </>*/
+    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+        "img",
         {
-          as: "div",
-          className: "relative z-40 lg:hidden",
-          onClose: setMobileFiltersOpen,
-          children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-              tt.Child,
-              {
-                as: import_react70.Fragment,
-                enter: "transition-opacity ease-linear duration-300",
-                enterFrom: "opacity-0",
-                enterTo: "opacity-100",
-                leave: "transition-opacity ease-linear duration-300",
-                leaveFrom: "opacity-100",
-                leaveTo: "opacity-0",
-                children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "fixed inset-0 bg-black bg-opacity-25" }, void 0, !1, {
-                  fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 222,
-                  columnNumber: 17
-                }, this)
-              },
-              void 0,
-              !1,
-              {
-                fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 213,
-                columnNumber: 15
-              },
-              this
-            ),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "fixed inset-0 z-40 flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-              tt.Child,
-              {
-                as: import_react70.Fragment,
-                enter: "transition ease-in-out duration-300 transform",
-                enterFrom: "translate-x-full",
-                enterTo: "translate-x-0",
-                leave: "transition ease-in-out duration-300 transform",
-                leaveFrom: "translate-x-0",
-                leaveTo: "translate-x-full",
-                children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(_t.Panel, { className: "relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl", children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex items-center justify-between px-4", children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { className: "text-lg font-medium text-gray-900", children: "Filters" }, void 0, !1, {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 237,
-                      columnNumber: 23
-                    }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                      "button",
-                      {
-                        type: "button",
-                        className: "-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400",
-                        onClick: () => setMobileFiltersOpen(!1),
-                        children: [
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "sr-only", children: "Close menu" }, void 0, !1, {
-                            fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 245,
-                            columnNumber: 25
-                          }, this),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(XMarkIcon_default, { className: "h-6 w-6", "aria-hidden": "true" }, void 0, !1, {
-                            fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 246,
-                            columnNumber: 25
-                          }, this)
-                        ]
-                      },
-                      void 0,
-                      !0,
-                      {
-                        fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 240,
-                        columnNumber: 23
-                      },
-                      this
-                    )
-                  ] }, void 0, !0, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 236,
-                    columnNumber: 21
-                  }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("form", { className: "mt-4 border-t border-gray-200", children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "sr-only", children: "Categories" }, void 0, !1, {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 252,
-                      columnNumber: 23
-                    }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                      "ul",
-                      {
-                        role: "list",
-                        className: "px-2 py-3 font-medium text-gray-900",
-                        children: subCategories.map((category) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("a", { href: category.href, className: "block px-2 py-3", children: category.name }, void 0, !1, {
-                          fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 259,
-                          columnNumber: 29
-                        }, this) }, category.name, !1, {
-                          fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 258,
-                          columnNumber: 27
-                        }, this))
-                      },
-                      void 0,
-                      !1,
-                      {
-                        fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 253,
-                        columnNumber: 23
-                      },
-                      this
-                    ),
-                    filters.map((section) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                      ve2,
-                      {
-                        as: "div",
-                        className: "border-t border-gray-200 px-4 py-6",
-                        children: ({ open }) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: [
-                          console.log(filters),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "-mx-2 -my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400", children: [
-                            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "font-medium text-gray-900", children: section.name }, void 0, !1, {
-                              fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 277,
-                              columnNumber: 35
-                            }, this),
-                            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "ml-6 flex items-center", children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                              MinusIcon_default,
-                              {
-                                className: "h-5 w-5",
-                                "aria-hidden": "true"
-                              },
-                              void 0,
-                              !1,
-                              {
-                                fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 282,
-                                columnNumber: 39
-                              },
-                              this
-                            ) : /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                              PlusIcon_default,
-                              {
-                                className: "h-5 w-5",
-                                "aria-hidden": "true"
-                              },
-                              void 0,
-                              !1,
-                              {
-                                fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 287,
-                                columnNumber: 39
-                              },
-                              this
-                            ) }, void 0, !1, {
-                              fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 280,
-                              columnNumber: 35
-                            }, this)
-                          ] }, void 0, !0, {
-                            fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 276,
-                            columnNumber: 33
-                          }, this) }, void 0, !1, {
-                            fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 275,
-                            columnNumber: 31
-                          }, this),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "space-y-6", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                            "div",
-                            {
-                              className: "flex items-center",
-                              children: [
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                                  "input",
-                                  {
-                                    id: `filter-mobile-${section.id}-${optionIdx}`,
-                                    name: `${section.id}[]`,
-                                    defaultValue: option.value,
-                                    type: "checkbox",
-                                    defaultChecked: option.checked,
-                                    className: "h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                  },
-                                  void 0,
-                                  !1,
-                                  {
-                                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                                    lineNumber: 302,
-                                    columnNumber: 39
-                                  },
-                                  this
-                                ),
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                                  "label",
-                                  {
-                                    htmlFor: `filter-mobile-${section.id}-${optionIdx}`,
-                                    className: "ml-3 min-w-0 flex-1 text-gray-500",
-                                    children: option.label
-                                  },
-                                  void 0,
-                                  !1,
-                                  {
-                                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                                    lineNumber: 310,
-                                    columnNumber: 39
-                                  },
-                                  this
-                                )
-                              ]
-                            },
-                            option.value,
-                            !0,
-                            {
-                              fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 298,
-                              columnNumber: 37
-                            },
-                            this
-                          )) }, void 0, !1, {
-                            fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 296,
-                            columnNumber: 33
-                          }, this) }, void 0, !1, {
-                            fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 295,
-                            columnNumber: 31
-                          }, this)
-                        ] }, void 0, !0, {
-                          fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 273,
-                          columnNumber: 29
-                        }, this)
-                      },
-                      section.id,
-                      !1,
-                      {
-                        fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 267,
-                        columnNumber: 25
-                      },
-                      this
-                    ))
-                  ] }, void 0, !0, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 251,
-                    columnNumber: 21
-                  }, this)
-                ] }, void 0, !0, {
-                  fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 235,
-                  columnNumber: 19
-                }, this)
-              },
-              void 0,
-              !1,
-              {
-                fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 226,
-                columnNumber: 17
-              },
-              this
-            ) }, void 0, !1, {
-              fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 225,
-              columnNumber: 15
-            }, this)
-          ]
+          src: (_a2 = collection == null ? void 0 : collection.image) == null ? void 0 : _a2.url,
+          style: { height: "650px", objectFit: "cover", width: "100%" }
         },
         void 0,
-        !0,
+        !1,
         {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 208,
-          columnNumber: 13
+          lineNumber: 216,
+          columnNumber: 9
         },
         this
       ) }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 207,
-        columnNumber: 11
+        lineNumber: 215,
+        columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("section", { className: "collectionContent sm:mt-4 overflow-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "inline-flex gap-4", children: collectionArray == null ? void 0 : collectionArray.map((item, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-        "div",
-        {
-          className: "collection-items sm:w-auto w-[30%] bg-[#f5f5f5] rounded-lg hover:shadow-md cursor-pointer",
-          children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "image", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-              "img",
-              {
-                width: 300,
-                height: 300,
-                alt: item.collectionname,
-                src: item.collectionimageurl
-              },
-              void 0,
-              !1,
-              {
-                fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 339,
-                columnNumber: 21
-              },
-              this
-            ) }, void 0, !1, {
-              fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 338,
-              columnNumber: 19
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "collectionname  sm:text-lg text-md font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]", children: item.collectionname }, void 0, !1, {
-              fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 346,
-              columnNumber: 19
-            }, this)
-          ]
-        },
-        index2,
-        !0,
-        {
-          fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 334,
-          columnNumber: 17
-        },
-        this
-      )) }, void 0, !1, {
-        fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 332,
-        columnNumber: 13
-      }, this) }, void 0, !1, {
-        fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 331,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("main", { className: "mx-auto max-w-8xl px-4 sm:px-6 lg:px-8", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex gap-1 items-center", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { children: "Home" }, void 0, !1, {
-            fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 356,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("img", { src: "/next.png", alt: "next", width: 20, height: 20 }, void 0, !1, {
-            fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 357,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "font-semibold", children: "Collection" }, void 0, !1, {
-            fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 358,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, !0, {
-          fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 355,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex items-baseline justify-between border-b border-gray-200 pb-6 m-0 relative", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h1", { className: "text-4xl font-bold tracking-tight text-gray-900 sm:block hidden my-[15px]", children: collection.title }, void 0, !1, {
-            fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 361,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex items-center sm:mr-10", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(it, { as: "div", className: "relative inline-block text-left", children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(it.Button, { className: "group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900", children: [
-                "Sort",
-                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                  ChevronDownIcon_default,
-                  {
-                    className: "-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500",
-                    "aria-hidden": "true"
-                  },
-                  void 0,
-                  !1,
-                  {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 370,
-                    columnNumber: 23
-                  },
-                  this
-                )
-              ] }, void 0, !0, {
-                fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 368,
-                columnNumber: 21
-              }, this) }, void 0, !1, {
-                fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 367,
-                columnNumber: 19
-              }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "bg-white mx-2.5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(tt.Root, { show: mobileFiltersOpen, as: import_react70.Fragment, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+          _t,
+          {
+            as: "div",
+            className: "relative z-40 lg:hidden",
+            onClose: setMobileFiltersOpen,
+            children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                tt,
+                tt.Child,
                 {
                   as: import_react70.Fragment,
-                  enter: "transition ease-out duration-100",
-                  enterFrom: "transform opacity-0 scale-95",
-                  enterTo: "transform opacity-100 scale-100",
-                  leave: "transition ease-in duration-75",
-                  leaveFrom: "transform opacity-100 scale-100",
-                  leaveTo: "transform opacity-0 scale-95",
-                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(it.Items, { className: "absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "py-1", children: sortOptions.map((option) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(it.Item, { children: ({ active }) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                    "a",
-                    {
-                      href: option.href,
-                      className: classNames(
-                        option.current ? "font-medium text-gray-900" : "text-gray-500",
-                        active ? "bg-gray-100" : "",
-                        "block px-4 py-2 text-sm"
-                      ),
-                      children: option.name
-                    },
-                    void 0,
-                    !1,
-                    {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 391,
-                      columnNumber: 31
-                    },
-                    this
-                  ) }, option.name, !1, {
+                  enter: "transition-opacity ease-linear duration-300",
+                  enterFrom: "opacity-0",
+                  enterTo: "opacity-100",
+                  leave: "transition-opacity ease-linear duration-300",
+                  leaveFrom: "opacity-100",
+                  leaveTo: "opacity-0",
+                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "fixed inset-0 bg-black bg-opacity-25" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 389,
-                    columnNumber: 27
-                  }, this)) }, void 0, !1, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 387,
-                    columnNumber: 23
-                  }, this) }, void 0, !1, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 386,
-                    columnNumber: 21
+                    lineNumber: 239,
+                    columnNumber: 17
                   }, this)
                 },
                 void 0,
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 377,
-                  columnNumber: 19
-                },
-                this
-              )
-            ] }, void 0, !0, {
-              fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 366,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-              "button",
-              {
-                type: "button",
-                className: "second-filter -m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7",
-                children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "sr-only", children: "View grid" }, void 0, !1, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 415,
-                    columnNumber: 19
-                  }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(Squares2X2Icon_default, { className: "h-5 w-5", "aria-hidden": "true" }, void 0, !1, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 416,
-                    columnNumber: 19
-                  }, this)
-                ]
-              },
-              void 0,
-              !0,
-              {
-                fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 411,
-                columnNumber: 17
-              },
-              this
-            ),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-              "button",
-              {
-                type: "button",
-                className: "right-filter -m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden",
-                onClick: () => setMobileFiltersOpen(!0),
-                children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "sr-only", children: "Filters" }, void 0, !1, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 423,
-                    columnNumber: 19
-                  }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(FunnelIcon_default, { className: "h-5 w-5", "aria-hidden": "true" }, void 0, !1, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 424,
-                    columnNumber: 19
-                  }, this)
-                ]
-              },
-              void 0,
-              !0,
-              {
-                fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 418,
-                columnNumber: 17
-              },
-              this
-            )
-          ] }, void 0, !0, {
-            fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 365,
-            columnNumber: 15
-          }, this)
-        ] }, void 0, !0, {
-          fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 360,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("section", { "aria-labelledby": "products-heading", className: "pb-24 pt-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { id: "products-heading", className: "sr-only", children: "Products" }, void 0, !1, {
-            fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 430,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "shadow-md px-4 py-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("form", { className: "hidden lg:block lg:sticky lg:top-[120px]", children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "sr-only", children: "Categories" }, void 0, !1, {
-                fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 438,
-                columnNumber: 21
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                "ul",
-                {
-                  role: "list",
-                  className: "space-y-4 border-gray-200 pb-6 text-sm font-medium text-gray-900",
-                  children: subCategories.map((category) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                    "li",
-                    {
-                      className: "border-b border-[#ece6e6] pb-2",
-                      children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                        "a",
-                        {
-                          href: category.href,
-                          className: "font-bold text-[18px]",
-                          children: category.name
-                        },
-                        void 0,
-                        !1,
-                        {
-                          fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 448,
-                          columnNumber: 27
-                        },
-                        this
-                      )
-                    },
-                    category.name,
-                    !1,
-                    {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 444,
-                      columnNumber: 25
-                    },
-                    this
-                  ))
-                },
-                void 0,
-                !1,
-                {
-                  fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 439,
-                  columnNumber: 21
+                  lineNumber: 230,
+                  columnNumber: 15
                 },
                 this
               ),
-              filters.map((section) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                ve2,
+              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "fixed inset-0 z-40 flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                tt.Child,
                 {
-                  as: "div",
-                  className: "border-b border-gray-200 py-2",
-                  children: ({ open }) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "-my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white py-3 text-[18px] text-black font-bold", children: [
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "", children: section.name }, void 0, !1, {
+                  as: import_react70.Fragment,
+                  enter: "transition ease-in-out duration-300 transform",
+                  enterFrom: "translate-x-full",
+                  enterTo: "translate-x-0",
+                  leave: "transition ease-in-out duration-300 transform",
+                  leaveFrom: "translate-x-0",
+                  leaveTo: "translate-x-full",
+                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(_t.Panel, { className: "relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl", children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex items-center justify-between px-4", children: [
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { className: "text-lg font-medium text-gray-900", children: "Filters" }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 468,
-                        columnNumber: 33
+                        lineNumber: 254,
+                        columnNumber: 23
                       }, this),
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "ml-6 flex items-center", children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                        MinusIcon_default,
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                        "button",
                         {
-                          className: "h-5 w-5",
-                          "aria-hidden": "true"
-                        },
-                        void 0,
-                        !1,
-                        {
-                          fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 471,
-                          columnNumber: 37
-                        },
-                        this
-                      ) : /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                        PlusIcon_default,
-                        {
-                          className: "h-5 w-5",
-                          "aria-hidden": "true"
-                        },
-                        void 0,
-                        !1,
-                        {
-                          fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 476,
-                          columnNumber: 37
-                        },
-                        this
-                      ) }, void 0, !1, {
-                        fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 469,
-                        columnNumber: 33
-                      }, this)
-                    ] }, void 0, !0, {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 467,
-                      columnNumber: 31
-                    }, this) }, void 0, !1, {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 466,
-                      columnNumber: 29
-                    }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "space-y-4", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                      "div",
-                      {
-                        className: "flex items-center",
-                        children: [
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                            "input",
-                            {
-                              id: `filter-${section.id}-${optionIdx}`,
-                              name: `${section.id}[]`,
-                              defaultValue: option.value,
-                              type: "checkbox",
-                              defaultChecked: option.checked,
-                              className: "h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                            },
-                            void 0,
-                            !1,
-                            {
-                              fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 491,
-                              columnNumber: 37
-                            },
-                            this
-                          ),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                            "label",
-                            {
-                              htmlFor: `filter-${section.id}-${optionIdx}`,
-                              className: "ml-3 text-sm text-gray-600",
-                              children: option.label
-                            },
-                            void 0,
-                            !1,
-                            {
-                              fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 499,
-                              columnNumber: 37
-                            },
-                            this
-                          )
-                        ]
-                      },
-                      option.value,
-                      !0,
-                      {
-                        fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 487,
-                        columnNumber: 35
-                      },
-                      this
-                    )) }, void 0, !1, {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 485,
-                      columnNumber: 31
-                    }, this) }, void 0, !1, {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 484,
-                      columnNumber: 29
-                    }, this)
-                  ] }, void 0, !0, {
-                    fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 465,
-                    columnNumber: 27
-                  }, this)
-                },
-                section.id,
-                !1,
-                {
-                  fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 459,
-                  columnNumber: 23
-                },
-                this
-              ))
-            ] }, void 0, !0, {
-              fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 437,
-              columnNumber: 19
-            }, this) }, void 0, !1, {
-              fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 436,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "lg:col-span-3", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "w-full max-w-screen-xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "product-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4", children: productsToShow.map((product, index2) => {
-              var _a3, _b;
-              return /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                "div",
-                {
-                  className: "bg-white rounded-lg shadow-lg p-2 px-4",
-                  style: {
-                    boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
-                  },
-                  children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                      "img",
-                      {
-                        src: (_b = (_a3 = product.images.edges[0]) == null ? void 0 : _a3.node) == null ? void 0 : _b.url,
-                        alt: product.title,
-                        className: "w-full h-auto"
-                      },
-                      void 0,
-                      !1,
-                      {
-                        fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 529,
-                        columnNumber: 29
-                      },
-                      this
-                    ),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(Link2, { to: `/products/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { className: "sm:text-lg text-[17px] font-semibold mt-2 text-center", children: product.title }, void 0, !1, {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 535,
-                      columnNumber: 31
-                    }, this) }, void 0, !1, {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 534,
-                      columnNumber: 29
-                    }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "h-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h1", { className: "text-center sm:text-[26px] text-[21px] font-bold m-auto w-full", children: "\u20B9255" }, void 0, !1, {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 540,
-                      columnNumber: 31
-                    }, this) }, void 0, !1, {
-                      fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 539,
-                      columnNumber: 29
-                    }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "px-1 py-1 flex sm:justify-between justify-center gap-[10px] items-center ", children: [
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                        "svg",
-                        {
-                          xmlns: "http://www.w3.org/2000/svg",
-                          viewBox: "0 0 32 33",
-                          xmlSpace: "preserve",
-                          className: "card-like sm:w-[50px] w-[30px]",
+                          type: "button",
+                          className: "-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400",
+                          onClick: () => setMobileFiltersOpen(!1),
                           children: [
-                            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                              "path",
-                              {
-                                d: "M9 .5h14c4.7 0 8.5 3.8 8.5 8.5v14c0 4.7-3.8 8.5-8.5 8.5H9C4.3 31.5.5 27.7.5 23V9C.5 4.3 4.3.5 9 .5z",
-                                fill: "rgb(255, 255, 255)",
-                                stroke: "rgb(0, 0, 0)"
-                              },
-                              void 0,
-                              !1,
-                              {
-                                fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 554,
-                                columnNumber: 35
-                              },
-                              this
-                            ),
-                            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                              "path",
-                              {
-                                d: "M22.3 11.8c.4.4.7.9.9 1.4.2.5.3 1.1.3 1.6 0 .6-.1 1.1-.3 1.6-.2.5-.5 1-.9 1.4l-5.6 5.6s-.1 0-.1.1h-.2s-.1 0-.1-.1l-5.6-5.6C10 17 9.5 16 9.5 14.9c0-1.1.3-2.1 1-2.9.7-.8 1.7-1.3 2.7-1.5 1.1-.1 2.1.2 3 .8l.3.2.3-.2c.8-.6 1.8-.9 2.8-.8 1.1.1 2 .5 2.7 1.3z",
-                                fill: "none",
-                                stroke: "rgb(0, 0, 0)"
-                              },
-                              void 0,
-                              !1,
-                              {
-                                fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 559,
-                                columnNumber: 35
-                              },
-                              this
-                            )
+                            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "sr-only", children: "Close menu" }, void 0, !1, {
+                              fileName: "app/routes/($locale).collections.$handle.jsx",
+                              lineNumber: 262,
+                              columnNumber: 25
+                            }, this),
+                            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(XMarkIcon_default, { className: "h-6 w-6", "aria-hidden": "true" }, void 0, !1, {
+                              fileName: "app/routes/($locale).collections.$handle.jsx",
+                              lineNumber: 263,
+                              columnNumber: 25
+                            }, this)
                           ]
                         },
                         void 0,
                         !0,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 546,
-                          columnNumber: 33
-                        },
-                        this
-                      ) }, void 0, !1, {
-                        fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 545,
-                        columnNumber: 31
-                      }, this),
-                      console.log(lines),
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                        CartForm,
-                        {
-                          route: "/cart",
-                          inputs: { lines: lines[index2] },
-                          action: CartForm.ACTIONS.LinesAdd,
-                          className: "flex-grow",
-                          children: (fetcher) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                            "button",
-                            {
-                              className: "cart-button lg:w-[240px] h-[2rem] sm:h-11 px-[25px] bg-black hover:bg-blue-700 text-white font-bold py-1 px-1 rounded-lg sm:text-lg text-[12px]",
-                              type: "submit",
-                              onClick: () => {
-                                window.location.href = window.location.href + "#cart-aside";
-                              },
-                              children: "Add To Cart"
-                            },
-                            void 0,
-                            !1,
-                            {
-                              fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 575,
-                              columnNumber: 37
-                            },
-                            this
-                          ) }, void 0, !1, {
-                            fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 574,
-                            columnNumber: 35
-                          }, this)
-                        },
-                        void 0,
-                        !1,
-                        {
-                          fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 567,
-                          columnNumber: 31
+                          lineNumber: 257,
+                          columnNumber: 23
                         },
                         this
                       )
                     ] }, void 0, !0, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 544,
-                      columnNumber: 29
+                      lineNumber: 253,
+                      columnNumber: 21
+                    }, this),
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("form", { className: "mt-4 border-t border-gray-200", children: [
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "sr-only", children: "Categories" }, void 0, !1, {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 269,
+                        columnNumber: 23
+                      }, this),
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                        "ul",
+                        {
+                          role: "list",
+                          className: "px-2 py-3 font-medium text-gray-900",
+                          children: subCategories.map((category) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("a", { href: category.href, className: "block px-2 py-3", children: category.name }, void 0, !1, {
+                            fileName: "app/routes/($locale).collections.$handle.jsx",
+                            lineNumber: 276,
+                            columnNumber: 29
+                          }, this) }, category.name, !1, {
+                            fileName: "app/routes/($locale).collections.$handle.jsx",
+                            lineNumber: 275,
+                            columnNumber: 27
+                          }, this))
+                        },
+                        void 0,
+                        !1,
+                        {
+                          fileName: "app/routes/($locale).collections.$handle.jsx",
+                          lineNumber: 270,
+                          columnNumber: 23
+                        },
+                        this
+                      ),
+                      filters.map((section) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                        ve2,
+                        {
+                          as: "div",
+                          className: "border-t border-gray-200 px-4 py-6",
+                          children: ({ open }) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: [
+                            console.log(filters),
+                            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "-mx-2 -my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400", children: [
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "font-medium text-gray-900", children: section.name }, void 0, !1, {
+                                fileName: "app/routes/($locale).collections.$handle.jsx",
+                                lineNumber: 294,
+                                columnNumber: 35
+                              }, this),
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "ml-6 flex items-center", children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                                MinusIcon_default,
+                                {
+                                  className: "h-5 w-5",
+                                  "aria-hidden": "true"
+                                },
+                                void 0,
+                                !1,
+                                {
+                                  fileName: "app/routes/($locale).collections.$handle.jsx",
+                                  lineNumber: 299,
+                                  columnNumber: 39
+                                },
+                                this
+                              ) : /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                                PlusIcon_default,
+                                {
+                                  className: "h-5 w-5",
+                                  "aria-hidden": "true"
+                                },
+                                void 0,
+                                !1,
+                                {
+                                  fileName: "app/routes/($locale).collections.$handle.jsx",
+                                  lineNumber: 304,
+                                  columnNumber: 39
+                                },
+                                this
+                              ) }, void 0, !1, {
+                                fileName: "app/routes/($locale).collections.$handle.jsx",
+                                lineNumber: 297,
+                                columnNumber: 35
+                              }, this)
+                            ] }, void 0, !0, {
+                              fileName: "app/routes/($locale).collections.$handle.jsx",
+                              lineNumber: 293,
+                              columnNumber: 33
+                            }, this) }, void 0, !1, {
+                              fileName: "app/routes/($locale).collections.$handle.jsx",
+                              lineNumber: 292,
+                              columnNumber: 31
+                            }, this),
+                            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "space-y-6", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                              "div",
+                              {
+                                className: "flex items-center",
+                                children: [
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                                    "input",
+                                    {
+                                      id: `filter-mobile-${section.id}-${optionIdx}`,
+                                      name: `${section.id}[]`,
+                                      defaultValue: option.value,
+                                      type: "checkbox",
+                                      defaultChecked: option.checked,
+                                      className: "h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                    },
+                                    void 0,
+                                    !1,
+                                    {
+                                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                                      lineNumber: 319,
+                                      columnNumber: 39
+                                    },
+                                    this
+                                  ),
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                                    "label",
+                                    {
+                                      htmlFor: `filter-mobile-${section.id}-${optionIdx}`,
+                                      className: "ml-3 min-w-0 flex-1 text-gray-500",
+                                      children: option.label
+                                    },
+                                    void 0,
+                                    !1,
+                                    {
+                                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                                      lineNumber: 327,
+                                      columnNumber: 39
+                                    },
+                                    this
+                                  )
+                                ]
+                              },
+                              option.value,
+                              !0,
+                              {
+                                fileName: "app/routes/($locale).collections.$handle.jsx",
+                                lineNumber: 315,
+                                columnNumber: 37
+                              },
+                              this
+                            )) }, void 0, !1, {
+                              fileName: "app/routes/($locale).collections.$handle.jsx",
+                              lineNumber: 313,
+                              columnNumber: 33
+                            }, this) }, void 0, !1, {
+                              fileName: "app/routes/($locale).collections.$handle.jsx",
+                              lineNumber: 312,
+                              columnNumber: 31
+                            }, this)
+                          ] }, void 0, !0, {
+                            fileName: "app/routes/($locale).collections.$handle.jsx",
+                            lineNumber: 290,
+                            columnNumber: 29
+                          }, this)
+                        },
+                        section.id,
+                        !1,
+                        {
+                          fileName: "app/routes/($locale).collections.$handle.jsx",
+                          lineNumber: 284,
+                          columnNumber: 25
+                        },
+                        this
+                      ))
+                    ] }, void 0, !0, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 268,
+                      columnNumber: 21
+                    }, this)
+                  ] }, void 0, !0, {
+                    fileName: "app/routes/($locale).collections.$handle.jsx",
+                    lineNumber: 252,
+                    columnNumber: 19
+                  }, this)
+                },
+                void 0,
+                !1,
+                {
+                  fileName: "app/routes/($locale).collections.$handle.jsx",
+                  lineNumber: 243,
+                  columnNumber: 17
+                },
+                this
+              ) }, void 0, !1, {
+                fileName: "app/routes/($locale).collections.$handle.jsx",
+                lineNumber: 242,
+                columnNumber: 15
+              }, this)
+            ]
+          },
+          void 0,
+          !0,
+          {
+            fileName: "app/routes/($locale).collections.$handle.jsx",
+            lineNumber: 225,
+            columnNumber: 13
+          },
+          this
+        ) }, void 0, !1, {
+          fileName: "app/routes/($locale).collections.$handle.jsx",
+          lineNumber: 224,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("section", { className: "collectionContent sm:mt-4 overflow-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "inline-flex gap-4", children: collectionArray2 == null ? void 0 : collectionArray2.map((item, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+          "div",
+          {
+            onClick: () => goToCollection(item.url),
+            className: "collection-items sm:w-auto w-[30%] bg-[#f5f5f5] rounded-lg hover:shadow-md cursor-pointer",
+            children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "image", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                "img",
+                {
+                  width: 300,
+                  height: 300,
+                  alt: item.title,
+                  src: item == null ? void 0 : item.collectionimageurl
+                },
+                void 0,
+                !1,
+                {
+                  fileName: "app/routes/($locale).collections.$handle.jsx",
+                  lineNumber: 356,
+                  columnNumber: 21
+                },
+                this
+              ) }, void 0, !1, {
+                fileName: "app/routes/($locale).collections.$handle.jsx",
+                lineNumber: 355,
+                columnNumber: 19
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "collectionname  sm:text-lg text-md font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]", children: item.title }, void 0, !1, {
+                fileName: "app/routes/($locale).collections.$handle.jsx",
+                lineNumber: 363,
+                columnNumber: 19
+              }, this)
+            ]
+          },
+          index2,
+          !0,
+          {
+            fileName: "app/routes/($locale).collections.$handle.jsx",
+            lineNumber: 351,
+            columnNumber: 17
+          },
+          this
+        )) }, void 0, !1, {
+          fileName: "app/routes/($locale).collections.$handle.jsx",
+          lineNumber: 349,
+          columnNumber: 13
+        }, this) }, void 0, !1, {
+          fileName: "app/routes/($locale).collections.$handle.jsx",
+          lineNumber: 348,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("main", { className: "mx-auto max-w-8xl px-4 sm:px-6 lg:px-8", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex gap-1 items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { children: "Home" }, void 0, !1, {
+              fileName: "app/routes/($locale).collections.$handle.jsx",
+              lineNumber: 373,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("img", { src: "/next.png", alt: "next", width: 20, height: 20 }, void 0, !1, {
+              fileName: "app/routes/($locale).collections.$handle.jsx",
+              lineNumber: 374,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "font-semibold", children: "Collection" }, void 0, !1, {
+              fileName: "app/routes/($locale).collections.$handle.jsx",
+              lineNumber: 375,
+              columnNumber: 15
+            }, this)
+          ] }, void 0, !0, {
+            fileName: "app/routes/($locale).collections.$handle.jsx",
+            lineNumber: 372,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex items-baseline justify-between border-b border-gray-200 pb-6 m-0 relative", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h1", { className: "text-4xl font-bold tracking-tight text-gray-900 sm:block hidden my-[15px]", children: collection.title }, void 0, !1, {
+              fileName: "app/routes/($locale).collections.$handle.jsx",
+              lineNumber: 378,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex items-center sm:mr-10", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(it, { as: "div", className: "relative inline-block text-left", children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(it.Button, { className: "group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900", children: [
+                  "Sort",
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                    ChevronDownIcon_default,
+                    {
+                      className: "-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500",
+                      "aria-hidden": "true"
+                    },
+                    void 0,
+                    !1,
+                    {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 387,
+                      columnNumber: 23
+                    },
+                    this
+                  )
+                ] }, void 0, !0, {
+                  fileName: "app/routes/($locale).collections.$handle.jsx",
+                  lineNumber: 385,
+                  columnNumber: 21
+                }, this) }, void 0, !1, {
+                  fileName: "app/routes/($locale).collections.$handle.jsx",
+                  lineNumber: 384,
+                  columnNumber: 19
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                  tt,
+                  {
+                    as: import_react70.Fragment,
+                    enter: "transition ease-out duration-100",
+                    enterFrom: "transform opacity-0 scale-95",
+                    enterTo: "transform opacity-100 scale-100",
+                    leave: "transition ease-in duration-75",
+                    leaveFrom: "transform opacity-100 scale-100",
+                    leaveTo: "transform opacity-0 scale-95",
+                    children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(it.Items, { className: "absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "py-1", children: sortOptions.map((option) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(it.Item, { children: ({ active }) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                      "a",
+                      {
+                        href: option.href,
+                        className: classNames(
+                          option.current ? "font-medium text-gray-900" : "text-gray-500",
+                          active ? "bg-gray-100" : "",
+                          "block px-4 py-2 text-sm"
+                        ),
+                        children: option.name
+                      },
+                      void 0,
+                      !1,
+                      {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 408,
+                        columnNumber: 31
+                      },
+                      this
+                    ) }, option.name, !1, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 406,
+                      columnNumber: 27
+                    }, this)) }, void 0, !1, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 404,
+                      columnNumber: 23
+                    }, this) }, void 0, !1, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 403,
+                      columnNumber: 21
+                    }, this)
+                  },
+                  void 0,
+                  !1,
+                  {
+                    fileName: "app/routes/($locale).collections.$handle.jsx",
+                    lineNumber: 394,
+                    columnNumber: 19
+                  },
+                  this
+                )
+              ] }, void 0, !0, {
+                fileName: "app/routes/($locale).collections.$handle.jsx",
+                lineNumber: 383,
+                columnNumber: 17
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                "button",
+                {
+                  type: "button",
+                  className: "second-filter -m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7",
+                  children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "sr-only", children: "View grid" }, void 0, !1, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 432,
+                      columnNumber: 19
+                    }, this),
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(Squares2X2Icon_default, { className: "h-5 w-5", "aria-hidden": "true" }, void 0, !1, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 433,
+                      columnNumber: 19
                     }, this)
                   ]
                 },
@@ -63288,57 +62921,448 @@ function Collection() {
                 !0,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 522,
-                  columnNumber: 27
+                  lineNumber: 428,
+                  columnNumber: 17
                 },
                 this
-              ) }, product.id, !1, {
-                fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 521,
-                columnNumber: 25
-              }, this);
-            }) }, void 0, !1, {
+              ),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                "button",
+                {
+                  type: "button",
+                  className: "right-filter -m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden",
+                  onClick: () => setMobileFiltersOpen(!0),
+                  children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "sr-only", children: "Filters" }, void 0, !1, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 440,
+                      columnNumber: 19
+                    }, this),
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(FunnelIcon_default, { className: "h-5 w-5", "aria-hidden": "true" }, void 0, !1, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 441,
+                      columnNumber: 19
+                    }, this)
+                  ]
+                },
+                void 0,
+                !0,
+                {
+                  fileName: "app/routes/($locale).collections.$handle.jsx",
+                  lineNumber: 435,
+                  columnNumber: 17
+                },
+                this
+              )
+            ] }, void 0, !0, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 519,
-              columnNumber: 21
-            }, this) }, void 0, !1, {
-              fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 518,
-              columnNumber: 19
-            }, this) }, void 0, !1, {
-              fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 517,
-              columnNumber: 17
+              lineNumber: 382,
+              columnNumber: 15
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 434,
-            columnNumber: 15
+            lineNumber: 377,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("section", { "aria-labelledby": "products-heading", className: "pb-24 pt-6", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { id: "products-heading", className: "sr-only", children: "Products" }, void 0, !1, {
+              fileName: "app/routes/($locale).collections.$handle.jsx",
+              lineNumber: 447,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "shadow-md px-4 py-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("form", { className: "hidden lg:block lg:sticky lg:top-[120px]", children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "sr-only", children: "Categories" }, void 0, !1, {
+                  fileName: "app/routes/($locale).collections.$handle.jsx",
+                  lineNumber: 455,
+                  columnNumber: 21
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                  "ul",
+                  {
+                    role: "list",
+                    className: "space-y-4 border-gray-200 pb-6 text-sm font-medium text-gray-900",
+                    children: subCategories.map((category) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                      "li",
+                      {
+                        className: "border-b border-[#ece6e6] pb-2",
+                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                          "a",
+                          {
+                            href: category.href,
+                            className: "font-bold text-[18px]",
+                            children: category.name
+                          },
+                          void 0,
+                          !1,
+                          {
+                            fileName: "app/routes/($locale).collections.$handle.jsx",
+                            lineNumber: 465,
+                            columnNumber: 27
+                          },
+                          this
+                        )
+                      },
+                      category.name,
+                      !1,
+                      {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 461,
+                        columnNumber: 25
+                      },
+                      this
+                    ))
+                  },
+                  void 0,
+                  !1,
+                  {
+                    fileName: "app/routes/($locale).collections.$handle.jsx",
+                    lineNumber: 456,
+                    columnNumber: 21
+                  },
+                  this
+                ),
+                filters.map((section) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                  ve2,
+                  {
+                    as: "div",
+                    className: "border-b border-gray-200 py-2",
+                    children: ({ open }) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: [
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h3", { className: "-my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white py-3 text-[18px] text-black font-bold", children: [
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "", children: section.name }, void 0, !1, {
+                          fileName: "app/routes/($locale).collections.$handle.jsx",
+                          lineNumber: 485,
+                          columnNumber: 33
+                        }, this),
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "ml-6 flex items-center", children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                          MinusIcon_default,
+                          {
+                            className: "h-5 w-5",
+                            "aria-hidden": "true"
+                          },
+                          void 0,
+                          !1,
+                          {
+                            fileName: "app/routes/($locale).collections.$handle.jsx",
+                            lineNumber: 488,
+                            columnNumber: 37
+                          },
+                          this
+                        ) : /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                          PlusIcon_default,
+                          {
+                            className: "h-5 w-5",
+                            "aria-hidden": "true"
+                          },
+                          void 0,
+                          !1,
+                          {
+                            fileName: "app/routes/($locale).collections.$handle.jsx",
+                            lineNumber: 493,
+                            columnNumber: 37
+                          },
+                          this
+                        ) }, void 0, !1, {
+                          fileName: "app/routes/($locale).collections.$handle.jsx",
+                          lineNumber: 486,
+                          columnNumber: 33
+                        }, this)
+                      ] }, void 0, !0, {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 484,
+                        columnNumber: 31
+                      }, this) }, void 0, !1, {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 483,
+                        columnNumber: 29
+                      }, this),
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "space-y-4", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                        "div",
+                        {
+                          className: "flex items-center",
+                          children: [
+                            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                              "input",
+                              {
+                                id: `filter-${section.id}-${optionIdx}`,
+                                name: `${section.id}[]`,
+                                defaultValue: option.value,
+                                type: "checkbox",
+                                defaultChecked: option.checked,
+                                className: "h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                              },
+                              void 0,
+                              !1,
+                              {
+                                fileName: "app/routes/($locale).collections.$handle.jsx",
+                                lineNumber: 508,
+                                columnNumber: 37
+                              },
+                              this
+                            ),
+                            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                              "label",
+                              {
+                                htmlFor: `filter-${section.id}-${optionIdx}`,
+                                className: "ml-3 text-sm text-gray-600",
+                                children: option.label
+                              },
+                              void 0,
+                              !1,
+                              {
+                                fileName: "app/routes/($locale).collections.$handle.jsx",
+                                lineNumber: 516,
+                                columnNumber: 37
+                              },
+                              this
+                            )
+                          ]
+                        },
+                        option.value,
+                        !0,
+                        {
+                          fileName: "app/routes/($locale).collections.$handle.jsx",
+                          lineNumber: 504,
+                          columnNumber: 35
+                        },
+                        this
+                      )) }, void 0, !1, {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 502,
+                        columnNumber: 31
+                      }, this) }, void 0, !1, {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 501,
+                        columnNumber: 29
+                      }, this)
+                    ] }, void 0, !0, {
+                      fileName: "app/routes/($locale).collections.$handle.jsx",
+                      lineNumber: 482,
+                      columnNumber: 27
+                    }, this)
+                  },
+                  section.id,
+                  !1,
+                  {
+                    fileName: "app/routes/($locale).collections.$handle.jsx",
+                    lineNumber: 476,
+                    columnNumber: 23
+                  },
+                  this
+                ))
+              ] }, void 0, !0, {
+                fileName: "app/routes/($locale).collections.$handle.jsx",
+                lineNumber: 454,
+                columnNumber: 19
+              }, this) }, void 0, !1, {
+                fileName: "app/routes/($locale).collections.$handle.jsx",
+                lineNumber: 453,
+                columnNumber: 17
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "lg:col-span-3", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "w-full max-w-screen-xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "product-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4", children: productsToShow.map((product, index2) => {
+                var _a3, _b;
+                return /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                  "div",
+                  {
+                    className: "bg-white rounded-lg shadow-lg p-2 px-4",
+                    style: {
+                      boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
+                    },
+                    children: [
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                        "img",
+                        {
+                          src: (_b = (_a3 = product.images.edges[0]) == null ? void 0 : _a3.node) == null ? void 0 : _b.url,
+                          alt: product.title,
+                          className: "w-full h-auto"
+                        },
+                        void 0,
+                        !1,
+                        {
+                          fileName: "app/routes/($locale).collections.$handle.jsx",
+                          lineNumber: 546,
+                          columnNumber: 29
+                        },
+                        this
+                      ),
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(Link2, { to: `/products/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { className: "sm:text-lg text-[17px] font-semibold mt-2 text-center", children: product.title }, void 0, !1, {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 552,
+                        columnNumber: 31
+                      }, this) }, void 0, !1, {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 551,
+                        columnNumber: 29
+                      }, this),
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "h-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h1", { className: "text-center sm:text-[26px] text-[21px] font-bold m-auto w-full", children: "\u20B9255" }, void 0, !1, {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 557,
+                        columnNumber: 31
+                      }, this) }, void 0, !1, {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 556,
+                        columnNumber: 29
+                      }, this),
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "px-1 py-1 flex sm:justify-between justify-center gap-[10px] items-center ", children: [
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                          "svg",
+                          {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            viewBox: "0 0 32 33",
+                            xmlSpace: "preserve",
+                            className: "card-like sm:w-[50px] w-[30px]",
+                            children: [
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                                "path",
+                                {
+                                  d: "M9 .5h14c4.7 0 8.5 3.8 8.5 8.5v14c0 4.7-3.8 8.5-8.5 8.5H9C4.3 31.5.5 27.7.5 23V9C.5 4.3 4.3.5 9 .5z",
+                                  fill: "rgb(255, 255, 255)",
+                                  stroke: "rgb(0, 0, 0)"
+                                },
+                                void 0,
+                                !1,
+                                {
+                                  fileName: "app/routes/($locale).collections.$handle.jsx",
+                                  lineNumber: 571,
+                                  columnNumber: 35
+                                },
+                                this
+                              ),
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                                "path",
+                                {
+                                  d: "M22.3 11.8c.4.4.7.9.9 1.4.2.5.3 1.1.3 1.6 0 .6-.1 1.1-.3 1.6-.2.5-.5 1-.9 1.4l-5.6 5.6s-.1 0-.1.1h-.2s-.1 0-.1-.1l-5.6-5.6C10 17 9.5 16 9.5 14.9c0-1.1.3-2.1 1-2.9.7-.8 1.7-1.3 2.7-1.5 1.1-.1 2.1.2 3 .8l.3.2.3-.2c.8-.6 1.8-.9 2.8-.8 1.1.1 2 .5 2.7 1.3z",
+                                  fill: "none",
+                                  stroke: "rgb(0, 0, 0)"
+                                },
+                                void 0,
+                                !1,
+                                {
+                                  fileName: "app/routes/($locale).collections.$handle.jsx",
+                                  lineNumber: 576,
+                                  columnNumber: 35
+                                },
+                                this
+                              )
+                            ]
+                          },
+                          void 0,
+                          !0,
+                          {
+                            fileName: "app/routes/($locale).collections.$handle.jsx",
+                            lineNumber: 563,
+                            columnNumber: 33
+                          },
+                          this
+                        ) }, void 0, !1, {
+                          fileName: "app/routes/($locale).collections.$handle.jsx",
+                          lineNumber: 562,
+                          columnNumber: 31
+                        }, this),
+                        console.log(lines),
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                          CartForm,
+                          {
+                            route: "/cart",
+                            inputs: { lines: lines[index2] },
+                            action: CartForm.ACTIONS.LinesAdd,
+                            className: "flex-grow",
+                            children: (fetcher) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                              "button",
+                              {
+                                className: "cart-button lg:w-[240px] h-[2rem] sm:h-11 px-[25px] bg-black hover:bg-blue-700 text-white font-bold py-1 px-1 rounded-lg sm:text-lg text-[12px]",
+                                type: "submit",
+                                onClick: () => {
+                                  window.location.href = window.location.href + "#cart-aside";
+                                },
+                                children: "Add To Cart"
+                              },
+                              void 0,
+                              !1,
+                              {
+                                fileName: "app/routes/($locale).collections.$handle.jsx",
+                                lineNumber: 592,
+                                columnNumber: 37
+                              },
+                              this
+                            ) }, void 0, !1, {
+                              fileName: "app/routes/($locale).collections.$handle.jsx",
+                              lineNumber: 591,
+                              columnNumber: 35
+                            }, this)
+                          },
+                          void 0,
+                          !1,
+                          {
+                            fileName: "app/routes/($locale).collections.$handle.jsx",
+                            lineNumber: 584,
+                            columnNumber: 31
+                          },
+                          this
+                        )
+                      ] }, void 0, !0, {
+                        fileName: "app/routes/($locale).collections.$handle.jsx",
+                        lineNumber: 561,
+                        columnNumber: 29
+                      }, this)
+                    ]
+                  },
+                  void 0,
+                  !0,
+                  {
+                    fileName: "app/routes/($locale).collections.$handle.jsx",
+                    lineNumber: 539,
+                    columnNumber: 27
+                  },
+                  this
+                ) }, product.id, !1, {
+                  fileName: "app/routes/($locale).collections.$handle.jsx",
+                  lineNumber: 538,
+                  columnNumber: 25
+                }, this);
+              }) }, void 0, !1, {
+                fileName: "app/routes/($locale).collections.$handle.jsx",
+                lineNumber: 536,
+                columnNumber: 21
+              }, this) }, void 0, !1, {
+                fileName: "app/routes/($locale).collections.$handle.jsx",
+                lineNumber: 535,
+                columnNumber: 19
+              }, this) }, void 0, !1, {
+                fileName: "app/routes/($locale).collections.$handle.jsx",
+                lineNumber: 534,
+                columnNumber: 17
+              }, this)
+            ] }, void 0, !0, {
+              fileName: "app/routes/($locale).collections.$handle.jsx",
+              lineNumber: 451,
+              columnNumber: 15
+            }, this)
+          ] }, void 0, !0, {
+            fileName: "app/routes/($locale).collections.$handle.jsx",
+            lineNumber: 446,
+            columnNumber: 13
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 429,
-          columnNumber: 13
+          lineNumber: 371,
+          columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 354,
-        columnNumber: 11
+        lineNumber: 222,
+        columnNumber: 9
+      }, this) }, void 0, !1, {
+        fileName: "app/routes/($locale).collections.$handle.jsx",
+        lineNumber: 221,
+        columnNumber: 7
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 205,
-      columnNumber: 9
-    }, this) }, void 0, !1, {
-      fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 204,
-      columnNumber: 7
+      lineNumber: 214,
+      columnNumber: 5
     }, this)
-  ] }, void 0, !0, {
-    fileName: "app/routes/($locale).collections.$handle.jsx",
-    lineNumber: 197,
-    columnNumber: 5
-  }, this);
+  );
 }
 var PRODUCT_ITEM_FRAGMENT = `#graphql
   fragment MoneyProductItem on MoneyV2 {
@@ -63429,44 +63453,49 @@ var PRODUCT_ITEM_FRAGMENT = `#graphql
     }
   }
 `;
-var collectionArray = [
-  {
-    collectionname: "Moisturizer",
-    collectionimageurl: "/collection/Moisturizer.webp"
-  },
-  {
-    collectionname: "Cream",
-    collectionimageurl: "/collection/Cream.webp"
-  },
-  {
-    collectionname: "Scrub",
-    collectionimageurl: "/collection/Scrub.webp"
-  },
-  {
-    collectionname: "Serum",
-    collectionimageurl: "/collection/Serum.webp"
-  },
-  {
-    collectionname: "Face Wash",
-    collectionimageurl: "/collection/Face-Wash.jpg"
-  },
-  {
-    collectionname: "Face Wash",
-    collectionimageurl: "/collection/Foaming-Face-Wash.jpg"
-  },
-  {
-    collectionname: "Serum",
-    collectionimageurl: "/collection/Serum.webp"
-  },
-  {
-    collectionname: "Face Wash",
-    collectionimageurl: "/collection/Face-Wash.jpg"
-  },
-  {
-    collectionname: "Face Wash",
-    collectionimageurl: "/collection/Foaming-Face-Wash.jpg"
+var MENU_FRAGMENT2 = `#graphql
+  fragment Menu on Menu {
+    id
+    items {
+      id
+      title
+      url
+      items{
+        title
+        url
+      }
+    }
   }
-];
+`, HEADER_QUERY2 = `#graphql
+  fragment Shop on Shop {
+    id
+    name
+    description
+    primaryDomain {
+      url
+    }
+    brand {
+      logo {
+        image {
+          url
+        }
+      }
+    }
+  }
+  query Header(
+    $country: CountryCode
+    $headerMenuHandle: String!
+    $language: LanguageCode
+  ) @inContext(language: $language, country: $country) {
+    shop {
+      ...Shop
+    }
+    menu(handle: $headerMenuHandle) {
+      ...Menu
+    }
+  }
+  ${MENU_FRAGMENT2}
+`;
 
 // app/routes/($locale).account.orders.$id.jsx
 var locale_account_orders_id_exports = {};
@@ -68342,19 +68371,19 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
     columnNumber: 5
   }, this);
 }, DesktopCorousel = ({ products, title }) => {
-  let [startIndex, setStartIndex] = (0, import_react93.useState)(0), productsToShow = products.slice(startIndex, startIndex + 3);
-  console.log("productsToShow::", productsToShow);
-  let isMobile = (0, import_react_responsive6.useMediaQuery)({ maxWidth: 640 }), nextProducts = () => {
-    setStartIndex((prevIndex) => (prevIndex + 3) % products.length), console.log("nextProducts INDEX ::", startIndex);
+  let [startIndex, setStartIndex] = (0, import_react93.useState)(0);
+  var len = products.length;
+  let eIndex = (0, import_react_responsive6.useMediaQuery)({ minWidth: 1024 }) ? len <= 4 ? len : 4 : 2;
+  console.log("eIndex::", eIndex, "Product Length::", len);
+  let [endIndex, setEndIndex] = (0, import_react93.useState)(eIndex), productsToShow = products.slice(startIndex, endIndex), nextProducts = () => {
+    setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
   }, prevProducts = () => {
-    setStartIndex(
-      (prevIndex) => prevIndex === 0 ? products.length - products.length % 3 : prevIndex - 1
-    ), console.log("prevProducts INDEX ::", startIndex);
+    setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { className: "relative", children: [
+  return console.log("start INDEX ::", startIndex, "End Index ::", endIndex, "Length::", len), /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("h1", { className: "text-center", children: title }, void 0, !1, {
       fileName: "app/components/CustomizedProducts.jsx",
-      lineNumber: 55,
+      lineNumber: 59,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { className: "flex", children: productsToShow.map((product) => {
@@ -68370,22 +68399,22 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
         !1,
         {
           fileName: "app/components/CustomizedProducts.jsx",
-          lineNumber: 60,
+          lineNumber: 64,
           columnNumber: 19
         },
         this
       ) }, void 0, !1, {
         fileName: "app/components/CustomizedProducts.jsx",
-        lineNumber: 59,
+        lineNumber: 63,
         columnNumber: 17
       }, this) }, product.id, !1, {
         fileName: "app/components/CustomizedProducts.jsx",
-        lineNumber: 58,
+        lineNumber: 62,
         columnNumber: 15
       }, this);
     }) }, void 0, !1, {
       fileName: "app/components/CustomizedProducts.jsx",
-      lineNumber: 56,
+      lineNumber: 60,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)(
@@ -68403,7 +68432,7 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
           !1,
           {
             fileName: "app/components/CustomizedProducts.jsx",
-            lineNumber: 74,
+            lineNumber: 78,
             columnNumber: 13
           },
           this
@@ -68413,7 +68442,7 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
       !1,
       {
         fileName: "app/components/CustomizedProducts.jsx",
-        lineNumber: 70,
+        lineNumber: 74,
         columnNumber: 11
       },
       this
@@ -68433,7 +68462,7 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
           !1,
           {
             fileName: "app/components/CustomizedProducts.jsx",
-            lineNumber: 83,
+            lineNumber: 87,
             columnNumber: 13
           },
           this
@@ -68443,22 +68472,22 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
       !1,
       {
         fileName: "app/components/CustomizedProducts.jsx",
-        lineNumber: 79,
+        lineNumber: 83,
         columnNumber: 11
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/components/CustomizedProducts.jsx",
-    lineNumber: 54,
+    lineNumber: 58,
     columnNumber: 9
   }, this) }, void 0, !1, {
     fileName: "app/components/CustomizedProducts.jsx",
-    lineNumber: 53,
+    lineNumber: 57,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/CustomizedProducts.jsx",
-    lineNumber: 52,
+    lineNumber: 56,
     columnNumber: 5
   }, this);
 }, CustomizedProducts = ({ products, title }) => {
@@ -68474,19 +68503,19 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
       !1,
       {
         fileName: "app/components/CustomizedProducts.jsx",
-        lineNumber: 101,
+        lineNumber: 105,
         columnNumber: 9
       },
       this
     ),
     isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)(DesktopCorousel, { products, title }, void 0, !1, {
       fileName: "app/components/CustomizedProducts.jsx",
-      lineNumber: 107,
+      lineNumber: 111,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/CustomizedProducts.jsx",
-    lineNumber: 99,
+    lineNumber: 103,
     columnNumber: 5
   }, this);
 }, CustomizedProducts_default = CustomizedProducts;
@@ -68888,61 +68917,6 @@ function Homepage() {
   return data2.collectionProducts.nodes.forEach((col) => {
     col.metafields[0] != null && col.metafields[0].value == "true" && ReviewCollection.push(col), col.title == "Build Your Own Kit" && BuildYourOwnColl.push(col), col.title == "3rd Hero Collection" && ThirdHeroCollection.push(col), (col.title == "Gift Under 500" || col.title == "Gift Under 1000" || col.title == "Gifts Under 2000") && GiftCollections.push(col);
   }), BuildYourOwnColl = BuildYourOwnColl[0].products.edges, ThirdHeroCollection = ThirdHeroCollection[0].products, GiftCollections = GiftCollections, /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "home", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("section", { className: "collectionContent lg:hidden block sm:mt-4 overflow-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "inline-flex gap-4", children: collectionArray2 == null ? void 0 : collectionArray2.map((item, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
-      "div",
-      {
-        className: " col-item sm:w-auto  rounded-lg hover:shadow-md cursor-pointer",
-        children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "image", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
-            "img",
-            {
-              width: 80,
-              height: 80,
-              alt: item.collectionname,
-              src: item.collectionimageurl,
-              style: {
-                width: "80px",
-                borderRadius: "50%",
-                border: "1px solid #e5e5e5"
-              }
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/($locale)._index.jsx",
-              lineNumber: 105,
-              columnNumber: 17
-            },
-            this
-          ) }, void 0, !1, {
-            fileName: "app/routes/($locale)._index.jsx",
-            lineNumber: 104,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "collectionname  sm:text-lg text-[12px] font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]", children: item.collectionname }, void 0, !1, {
-            fileName: "app/routes/($locale)._index.jsx",
-            lineNumber: 117,
-            columnNumber: 15
-          }, this)
-        ]
-      },
-      index2,
-      !0,
-      {
-        fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 100,
-        columnNumber: 13
-      },
-      this
-    )) }, void 0, !1, {
-      fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 98,
-      columnNumber: 9
-    }, this) }, void 0, !1, {
-      fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 97,
-      columnNumber: 7
-    }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(ImageCarousel_default, { images: imageSrc }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
       lineNumber: 125,
@@ -68970,7 +68944,8 @@ function Homepage() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
       CustomizedProducts_default,
       {
-        products: BuildYourOwnColl
+        products: BuildYourOwnColl,
+        title: "Build Your Own Kit"
       },
       data2.products.nodes[0].id,
       !1,
@@ -68991,13 +68966,13 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 146,
+        lineNumber: 147,
         columnNumber: 11
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 145,
+      lineNumber: 146,
       columnNumber: 9
     }, this),
     isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("a", { href: "/collections/face", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
@@ -69010,13 +68985,13 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 154,
+        lineNumber: 155,
         columnNumber: 11
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 153,
+      lineNumber: 154,
       columnNumber: 8
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
@@ -69029,19 +69004,19 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 160,
+        lineNumber: 161,
         columnNumber: 7
       },
       this
     ),
     /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(CustomizedCollection_default, { collections: GiftCollections, title: "Gifting" }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 165,
+      lineNumber: 166,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(YouTubeVideo_default, {}, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 166,
+      lineNumber: 167,
       columnNumber: 7
     }, this),
     isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("a", { href: "/collections/eyes", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "my-[15px]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
@@ -69054,17 +69029,17 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 171,
+        lineNumber: 172,
         columnNumber: 13
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 170,
+      lineNumber: 171,
       columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 169,
+      lineNumber: 170,
       columnNumber: 10
     }, this),
     isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("a", { href: "/collections/eyes", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "my-[15px]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
@@ -69077,17 +69052,17 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 181,
+        lineNumber: 182,
         columnNumber: 13
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 180,
+      lineNumber: 181,
       columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 179,
+      lineNumber: 180,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
@@ -69100,29 +69075,64 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 189,
+        lineNumber: 190,
         columnNumber: 7
       },
       this
     ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
-      CustomizedCollection_default,
+    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("section", { className: "collectionContent sm:mt-4 overflow-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "inline-flex gap-4", children: collectionArray == null ? void 0 : collectionArray.map((item, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
+      "div",
       {
-        collections: ReviewCollection,
-        title: "From Customer's Inbox"
+        className: "collection-items test bg-[#f5f5f5] rounded-lg hover:shadow-md cursor-pointer",
+        children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "image", onClick: () => window.location.href = item.url, children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
+            "img",
+            {
+              width: 300,
+              height: 300,
+              alt: item.collectionname,
+              src: item.collectionimageurl
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/($locale)._index.jsx",
+              lineNumber: 210,
+              columnNumber: 19
+            },
+            this
+          ) }, void 0, !1, {
+            fileName: "app/routes/($locale)._index.jsx",
+            lineNumber: 209,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "collectionname  sm:text-lg text-md font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]", children: item.collectionname }, void 0, !1, {
+            fileName: "app/routes/($locale)._index.jsx",
+            lineNumber: 217,
+            columnNumber: 17
+          }, this)
+        ]
       },
-      void 0,
-      !1,
+      index2,
+      !0,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 196,
-        columnNumber: 7
+        lineNumber: 205,
+        columnNumber: 17
       },
       this
-    ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(BlogCorousel_default, { collections: data2.blogs }, void 0, !1, {
+    )) }, void 0, !1, {
+      fileName: "app/routes/($locale)._index.jsx",
+      lineNumber: 203,
+      columnNumber: 13
+    }, this) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
       lineNumber: 202,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(BlogCorousel_default, { collections: data2.blogs }, void 0, !1, {
+      fileName: "app/routes/($locale)._index.jsx",
+      lineNumber: 225,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
@@ -69152,40 +69162,40 @@ function RecommendedProducts({ products, title }) {
       " "
     ] }, void 0, !0, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 243,
+      lineNumber: 266,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(import_react97.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 245,
+        lineNumber: 268,
         columnNumber: 29
       }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(Await2, { resolve: products, children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(ProductCarousel_default, { products }, void 0, !1, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 248,
+        lineNumber: 271,
         columnNumber: 14
       }, this) }, void 0, !1, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 246,
+        lineNumber: 269,
         columnNumber: 11
       }, this) }, void 0, !1, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 245,
+        lineNumber: 268,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("br", {}, void 0, !1, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 251,
+        lineNumber: 274,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 244,
+      lineNumber: 267,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($locale)._index.jsx",
-    lineNumber: 242,
+    lineNumber: 265,
     columnNumber: 5
   }, this);
 }
@@ -69323,38 +69333,36 @@ var BLOGS_QUERY3 = `#graphql
       }
     }
   }
-`, collectionArray2 = [
+`, collectionArray = [
+  {
+    collectionname: "Moisturizer",
+    url: "/collections/moisturizer",
+    collectionimageurl: "/collection/Moisturizer.webp"
+  },
   {
     collectionname: "Cream",
+    url: "/collections/cream",
     collectionimageurl: "/collection/Cream.webp"
   },
   {
     collectionname: "Scrub",
+    url: "/collections/scrub",
     collectionimageurl: "/collection/Scrub.webp"
   },
   {
     collectionname: "Serum",
+    url: "/collections/serum",
     collectionimageurl: "/collection/Serum.webp"
   },
   {
     collectionname: "Face Wash",
-    collectionimageurl: "/collection/Face-Wash.jpg"
-  },
-  {
-    collectionname: "Face Wash",
+    url: "/collections/face-wash",
     collectionimageurl: "/collection/Foaming-Face-Wash.jpg"
   },
   {
-    collectionname: "Serum",
-    collectionimageurl: "/collection/Serum.webp"
-  },
-  {
     collectionname: "Face Wash",
+    url: "/collections/face-wash",
     collectionimageurl: "/collection/Face-Wash.jpg"
-  },
-  {
-    collectionname: "Face Wash",
-    collectionimageurl: "/collection/Foaming-Face-Wash.jpg"
   }
 ];
 
@@ -69864,129 +69872,24 @@ async function loader27({ request }) {
   });
 }
 
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/graphiql.jsx
-var graphiql_exports = {};
-__export(graphiql_exports, {
-  loader: () => loader28
-});
-var loader28 = graphiqlLoader;
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx
-var virtual_root_exports = {};
-__export(virtual_root_exports, {
-  default: () => App2,
-  links: () => links2
-});
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/assets/styles.css
-var styles_default = "/build/_assets/styles-G72WKIIU.css";
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/assets/favicon.svg
-var favicon_default2 = "/build/_assets/favicon-5FIZBM2K.svg";
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/Layout.jsx
-var import_jsx_dev_runtime42 = __toESM(require_jsx_dev_runtime(), 1);
-function Layout2(props) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)("div", { className: "hydrogen-virtual-route", children: props.children }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/Layout.jsx",
-    lineNumber: 2,
-    columnNumber: 10
-  }, this);
-}
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx
-var import_jsx_dev_runtime43 = __toESM(require_jsx_dev_runtime(), 1), links2 = () => [
-  { rel: "stylesheet", href: styles_default },
-  { rel: "icon", type: "image/svg+xml", href: favicon_default2 }
-];
-function App2() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("html", { lang: "en", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("head", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 20,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("meta", { name: "viewport", content: "width=device-width,initial-scale=1" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 21,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("title", { children: "Hydrogen" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 22,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("meta", { name: "description", content: "A custom storefront powered by Hydrogen" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 23,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)(Meta, {}, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 24,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)(Links, {}, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 25,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-      lineNumber: 19,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("body", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)(Layout2, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)(Outlet, {}, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 28,
-        columnNumber: 15
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 28,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 29,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)(Scripts, {}, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-        lineNumber: 30,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-      lineNumber: 27,
-      columnNumber: 5
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
-    lineNumber: 18,
-    columnNumber: 10
-  }, this);
-}
-
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx
 var routes_exports = {};
 __export(routes_exports, {
   ErrorBoundary: () => ErrorBoundary3,
   HYDROGEN_SHOP_ID: () => HYDROGEN_SHOP_ID,
   default: () => Index,
-  links: () => links3,
-  loader: () => loader29
+  links: () => links2,
+  loader: () => loader28
 });
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseBW.jsx
-var import_jsx_dev_runtime44 = __toESM(require_jsx_dev_runtime(), 1), HydrogenLogoBaseBW = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("svg", { width: 81, height: 82, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("path", { d: "M39.955 81.28 2.138 61.19l12.933-6.818 14.562 7.733 12.218-6.441L27.29 47.93l12.933-6.833L78.04 61.189l-12.934 6.817L51.35 60.7l-12.236 6.457 13.774 7.308-12.933 6.817Z", fill: "#000" }, void 0, !1, {
+var import_jsx_dev_runtime42 = __toESM(require_jsx_dev_runtime(), 1), HydrogenLogoBaseBW = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)("svg", { width: 81, height: 82, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)("path", { d: "M39.955 81.28 2.138 61.19l12.933-6.818 14.562 7.733 12.218-6.441L27.29 47.93l12.933-6.833L78.04 61.189l-12.934 6.817L51.35 60.7l-12.236 6.457 13.774 7.308-12.933 6.817Z", fill: "#000" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseBW.jsx",
     lineNumber: 2,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("path", { fillRule: "evenodd", clipRule: "evenodd", d: "m40.225 0 39.953 21.227-15.073 7.945-13.756-7.308-10.096 5.328 13.775 7.309-15.075 7.945L0 21.22l15.073-7.945 14.562 7.732 10.078-5.313-14.56-7.731L40.225 0ZM29.426 7.967l14.564 7.734L29.63 23.27 15.07 15.537l-10.794 5.69 35.68 18.956 10.793-5.688-13.773-7.307L51.352 19.6l13.757 7.308 10.794-5.69-35.68-18.956-10.797 5.704Z", fill: "#000" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)("path", { fillRule: "evenodd", clipRule: "evenodd", d: "m40.225 0 39.953 21.227-15.073 7.945-13.756-7.308-10.096 5.328 13.775 7.309-15.075 7.945L0 21.22l15.073-7.945 14.562 7.732 10.078-5.313-14.56-7.731L40.225 0ZM29.426 7.967l14.564 7.734L29.63 23.27 15.07 15.537l-10.794 5.69 35.68 18.956 10.793-5.688-13.773-7.307L51.352 19.6l13.757 7.308 10.794-5.69-35.68-18.956-10.797 5.704Z", fill: "#000" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseBW.jsx",
     lineNumber: 3,
     columnNumber: 3
@@ -69998,34 +69901,34 @@ var import_jsx_dev_runtime44 = __toESM(require_jsx_dev_runtime(), 1), HydrogenLo
 }, this);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx
-var import_jsx_dev_runtime45 = __toESM(require_jsx_dev_runtime(), 1), HydrogenLogoBaseColor = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("svg", { width: 76, height: 81, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("path", { d: "M37.817 80.149 0 60.057l12.934-6.817 14.561 7.733 12.218-6.441-14.561-7.733 12.933-6.833 37.818 20.091-12.934 6.817-13.757-7.307-12.236 6.457 13.775 7.308-12.934 6.817Z", fill: "#000" }, void 0, !1, {
+var import_jsx_dev_runtime43 = __toESM(require_jsx_dev_runtime(), 1), HydrogenLogoBaseColor = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("svg", { width: 76, height: 81, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("path", { d: "M37.817 80.149 0 60.057l12.934-6.817 14.561 7.733 12.218-6.441-14.561-7.733 12.933-6.833 37.818 20.091-12.934 6.817-13.757-7.307-12.236 6.457 13.775 7.308-12.934 6.817Z", fill: "#000" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
     lineNumber: 2,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("path", { d: "M37.818 40.183 0 20.092l12.934-6.818 14.562 7.733 12.218-6.441-14.562-7.733L38.086 0l37.817 20.091-12.934 6.817-13.756-7.307-12.236 6.457 13.774 7.308-12.933 6.817Z", fill: "url(#a)" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("path", { d: "M37.818 40.183 0 20.092l12.934-6.818 14.562 7.733 12.218-6.441-14.562-7.733L38.086 0l37.817 20.091-12.934 6.817-13.756-7.307-12.236 6.457 13.774 7.308-12.933 6.817Z", fill: "url(#a)" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
     lineNumber: 3,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("defs", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("linearGradient", { id: "a", x1: 74.48, y1: 21.654, x2: 18.735, y2: 51.694, gradientUnits: "userSpaceOnUse", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("stop", { offset: 2e-3, stopColor: "#430470" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("defs", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("linearGradient", { id: "a", x1: 74.48, y1: 21.654, x2: 18.735, y2: 51.694, gradientUnits: "userSpaceOnUse", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("stop", { offset: 2e-3, stopColor: "#430470" }, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
       lineNumber: 5,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("stop", { offset: 0.385, stopColor: "#8E01F0" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("stop", { offset: 0.385, stopColor: "#8E01F0" }, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
       lineNumber: 6,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("stop", { offset: 0.635, stopColor: "#354CF6" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("stop", { offset: 0.635, stopColor: "#354CF6" }, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
       lineNumber: 7,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("stop", { offset: 1, stopColor: "#01FFFF" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime43.jsxDEV)("stop", { offset: 1, stopColor: "#01FFFF" }, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
       lineNumber: 8,
       columnNumber: 5
@@ -70046,7 +69949,7 @@ var import_jsx_dev_runtime45 = __toESM(require_jsx_dev_runtime(), 1), HydrogenLo
 }, this);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconDiscord.jsx
-var import_jsx_dev_runtime46 = __toESM(require_jsx_dev_runtime(), 1), IconDiscord = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime46.jsxDEV)("svg", { width: 26, height: 20, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime46.jsxDEV)("path", { d: "M21.19 1.675A19.91 19.91 0 0 0 16.03 0c-.223.415-.482.973-.661 1.418a18.355 18.355 0 0 0-5.72 0A15.367 15.367 0 0 0 8.98 0a19.844 19.844 0 0 0-5.165 1.68C.55 6.776-.336 11.747.106 16.647c2.167 1.67 4.266 2.686 6.33 3.35.51-.724.964-1.495 1.356-2.306a13.149 13.149 0 0 1-2.135-1.073c.179-.137.354-.28.523-.428 4.116 1.989 8.588 1.989 12.655 0 .172.148.347.291.524.428a13.12 13.12 0 0 1-2.139 1.075c.392.81.844 1.582 1.356 2.306 2.066-.664 4.167-1.68 6.333-3.352.52-5.68-.887-10.606-3.718-14.973ZM8.353 13.635c-1.235 0-2.249-1.192-2.249-2.643 0-1.45.992-2.644 2.25-2.644 1.257 0 2.27 1.191 2.248 2.644.002 1.45-.991 2.642-2.249 2.642Zm8.311 0c-1.235 0-2.249-1.192-2.249-2.643 0-1.45.992-2.644 2.25-2.644 1.257 0 2.27 1.191 2.248 2.644 0 1.45-.991 2.642-2.249 2.642Z", fill: "#5C5F62" }, void 0, !1, {
+var import_jsx_dev_runtime44 = __toESM(require_jsx_dev_runtime(), 1), IconDiscord = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("svg", { width: 26, height: 20, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime44.jsxDEV)("path", { d: "M21.19 1.675A19.91 19.91 0 0 0 16.03 0c-.223.415-.482.973-.661 1.418a18.355 18.355 0 0 0-5.72 0A15.367 15.367 0 0 0 8.98 0a19.844 19.844 0 0 0-5.165 1.68C.55 6.776-.336 11.747.106 16.647c2.167 1.67 4.266 2.686 6.33 3.35.51-.724.964-1.495 1.356-2.306a13.149 13.149 0 0 1-2.135-1.073c.179-.137.354-.28.523-.428 4.116 1.989 8.588 1.989 12.655 0 .172.148.347.291.524.428a13.12 13.12 0 0 1-2.139 1.075c.392.81.844 1.582 1.356 2.306 2.066-.664 4.167-1.68 6.333-3.352.52-5.68-.887-10.606-3.718-14.973ZM8.353 13.635c-1.235 0-2.249-1.192-2.249-2.643 0-1.45.992-2.644 2.25-2.644 1.257 0 2.27 1.191 2.248 2.644.002 1.45-.991 2.642-2.249 2.642Zm8.311 0c-1.235 0-2.249-1.192-2.249-2.643 0-1.45.992-2.644 2.25-2.644 1.257 0 2.27 1.191 2.248 2.644 0 1.45-.991 2.642-2.249 2.642Z", fill: "#5C5F62" }, void 0, !1, {
   fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconDiscord.jsx",
   lineNumber: 1,
   columnNumber: 118
@@ -70057,7 +69960,7 @@ var import_jsx_dev_runtime46 = __toESM(require_jsx_dev_runtime(), 1), IconDiscor
 }, this);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconGithub.jsx
-var import_jsx_dev_runtime47 = __toESM(require_jsx_dev_runtime(), 1), IconGithub = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("svg", { width: 20, height: 20, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M9.997 0C4.473 0 0 4.588 0 10.253c0 4.537 2.862 8.369 6.835 9.727.5.09.687-.218.687-.487 0-.243-.012-1.05-.012-1.91-2.512.475-3.161-.627-3.361-1.204-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.537 1.052.9 1.55 2.337 1.114 2.912.845.087-.666.35-1.115.637-1.371-2.224-.256-4.548-1.14-4.548-5.062 0-1.115.387-2.038 1.024-2.756-.1-.256-.45-1.307.1-2.717 0 0 .838-.269 2.75 1.051.8-.23 1.649-.346 2.499-.346.85 0 1.699.115 2.499.346 1.912-1.333 2.749-1.05 2.749-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.561 5.062.362.32.674.936.674 1.897 0 1.371-.012 2.473-.012 2.82 0 .268.187.589.687.486a10.036 10.036 0 0 0 4.93-3.74 10.45 10.45 0 0 0 1.88-5.987C19.993 4.588 15.52 0 9.997 0Z", fill: "#5C5F62" }, void 0, !1, {
+var import_jsx_dev_runtime45 = __toESM(require_jsx_dev_runtime(), 1), IconGithub = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("svg", { width: 20, height: 20, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime45.jsxDEV)("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M9.997 0C4.473 0 0 4.588 0 10.253c0 4.537 2.862 8.369 6.835 9.727.5.09.687-.218.687-.487 0-.243-.012-1.05-.012-1.91-2.512.475-3.161-.627-3.361-1.204-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.537 1.052.9 1.55 2.337 1.114 2.912.845.087-.666.35-1.115.637-1.371-2.224-.256-4.548-1.14-4.548-5.062 0-1.115.387-2.038 1.024-2.756-.1-.256-.45-1.307.1-2.717 0 0 .838-.269 2.75 1.051.8-.23 1.649-.346 2.499-.346.85 0 1.699.115 2.499.346 1.912-1.333 2.749-1.05 2.749-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.561 5.062.362.32.674.936.674 1.897 0 1.371-.012 2.473-.012 2.82 0 .268.187.589.687.486a10.036 10.036 0 0 0 4.93-3.74 10.45 10.45 0 0 0 1.88-5.987C19.993 4.588 15.52 0 9.997 0Z", fill: "#5C5F62" }, void 0, !1, {
   fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconGithub.jsx",
   lineNumber: 1,
   columnNumber: 117
@@ -70068,7 +69971,7 @@ var import_jsx_dev_runtime47 = __toESM(require_jsx_dev_runtime(), 1), IconGithub
 }, this);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconTwitter.jsx
-var import_jsx_dev_runtime48 = __toESM(require_jsx_dev_runtime(), 1), IconTwitter = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("svg", { width: 23, height: 20, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { d: "M20.53 4.979c.014.217.014.434.014.653C20.544 12.305 15.824 20 7.193 20v-.004C4.643 20 2.146 19.214 0 17.732c.37.048.743.072 1.117.073 2.113.002 4.165-.76 5.828-2.166-2.008-.04-3.77-1.45-4.384-3.506a4.356 4.356 0 0 0 2.118-.087C2.49 11.57.915 9.5.915 7.096v-.064a4.414 4.414 0 0 0 2.13.632C.983 6.18.348 3.229 1.593.92c2.382 3.155 5.897 5.073 9.67 5.276-.378-1.754.139-3.592 1.358-4.825 1.89-1.912 4.862-1.814 6.639.22A9.023 9.023 0 0 0 22.24.364c-.35 1.17-1.084 2.162-2.063 2.793a8.822 8.822 0 0 0 2.694-.795A9.97 9.97 0 0 1 20.53 4.98Z", fill: "#5C5F62" }, void 0, !1, {
+var import_jsx_dev_runtime46 = __toESM(require_jsx_dev_runtime(), 1), IconTwitter = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime46.jsxDEV)("svg", { width: 23, height: 20, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime46.jsxDEV)("path", { d: "M20.53 4.979c.014.217.014.434.014.653C20.544 12.305 15.824 20 7.193 20v-.004C4.643 20 2.146 19.214 0 17.732c.37.048.743.072 1.117.073 2.113.002 4.165-.76 5.828-2.166-2.008-.04-3.77-1.45-4.384-3.506a4.356 4.356 0 0 0 2.118-.087C2.49 11.57.915 9.5.915 7.096v-.064a4.414 4.414 0 0 0 2.13.632C.983 6.18.348 3.229 1.593.92c2.382 3.155 5.897 5.073 9.67 5.276-.378-1.754.139-3.592 1.358-4.825 1.89-1.912 4.862-1.814 6.639.22A9.023 9.023 0 0 0 22.24.364c-.35 1.17-1.084 2.162-2.063 2.793a8.822 8.822 0 0 0 2.694-.795A9.97 9.97 0 0 1 20.53 4.98Z", fill: "#5C5F62" }, void 0, !1, {
   fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconTwitter.jsx",
   lineNumber: 1,
   columnNumber: 118
@@ -70079,213 +69982,213 @@ var import_jsx_dev_runtime48 = __toESM(require_jsx_dev_runtime(), 1), IconTwitte
 }, this);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx
-var import_jsx_dev_runtime49 = __toESM(require_jsx_dev_runtime(), 1), IconBanner = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("svg", { width: 32, height: 36, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M0 9.726h1.455v1.455H0z" }, void 0, !1, {
+var import_jsx_dev_runtime47 = __toESM(require_jsx_dev_runtime(), 1), IconBanner = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("svg", { width: 32, height: 36, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M0 9.726h1.455v1.455H0z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 2,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#E172AC", d: "M1.454 9.726h1.455v1.455H1.454zM13.091 3.907h1.455v1.455h-1.455zM24.727 9.726h1.455v1.455h-1.455zM24.727 24.271h1.455v1.455h-1.455zM13.091 30.09h1.455v1.455h-1.455zM1.454 24.271h1.455v1.455H1.454z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#E172AC", d: "M1.454 9.726h1.455v1.455H1.454zM13.091 3.907h1.455v1.455h-1.455zM24.727 9.726h1.455v1.455h-1.455zM24.727 24.271h1.455v1.455h-1.455zM13.091 30.09h1.455v1.455h-1.455zM1.454 24.271h1.455v1.455H1.454z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 3,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#AC217D", d: "M5.818 9.726h1.455v1.455H5.818zM17.454 3.907h1.455v1.455h-1.455zM29.091 9.726h1.455v1.455h-1.455zM21.818 16.998h1.455v1.455h-1.455zM21.818 18.454h1.455v1.455h-1.455zM20.363 24.271h1.455v1.455h-1.455zM20.363 11.181h1.455v1.455h-1.455zM29.091 24.271h1.455v1.455h-1.455zM17.455 30.09h1.455v1.455h-1.455zM5.818 24.271h1.455v1.455H5.818z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#AC217D", d: "M5.818 9.726h1.455v1.455H5.818zM17.454 3.907h1.455v1.455h-1.455zM29.091 9.726h1.455v1.455h-1.455zM21.818 16.998h1.455v1.455h-1.455zM21.818 18.454h1.455v1.455h-1.455zM20.363 24.271h1.455v1.455h-1.455zM20.363 11.181h1.455v1.455h-1.455zM29.091 24.271h1.455v1.455h-1.455zM17.455 30.09h1.455v1.455h-1.455zM5.818 24.271h1.455v1.455H5.818z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 4,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M7.273 9.726h1.455v1.455H7.273zM1.454 8.271h1.455v1.455H1.454zM5.818 8.271h1.455v1.455H5.818zM2.909 6.817h1.455v1.455H2.909z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M7.273 9.726h1.455v1.455H7.273zM1.454 8.271h1.455v1.455H1.454zM5.818 8.271h1.455v1.455H5.818zM2.909 6.817h1.455v1.455H2.909z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 5,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D43694", d: "M2.909 9.726h1.455v1.455H2.909zM14.546 3.907h1.455v1.455h-1.455zM26.182 9.726h1.455v1.455h-1.455zM18.909 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#D43694", d: "M2.909 9.726h1.455v1.455H2.909zM14.546 3.907h1.455v1.455h-1.455zM26.182 9.726h1.455v1.455h-1.455zM18.909 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 6,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D43694", d: "M20.363 12.635h1.455v1.455h-1.455zM20.363 14.09h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#D43694", d: "M20.363 12.635h1.455v1.455h-1.455zM20.363 14.09h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 7,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D43694", d: "M20.363 15.544h1.455v1.455h-1.455zM11.636 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#D43694", d: "M20.363 15.544h1.455v1.455h-1.455zM11.636 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 8,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D43694", d: "M10.182 12.635h1.455v1.455h-1.455zM10.182 14.09h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#D43694", d: "M10.182 12.635h1.455v1.455h-1.455zM10.182 14.09h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 9,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D43694", d: "M10.182 15.544h1.455v1.455h-1.455zM10.182 19.908h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#D43694", d: "M10.182 15.544h1.455v1.455h-1.455zM10.182 19.908h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 10,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D43694", d: "M10.182 21.362h1.455v1.455h-1.455zM10.182 22.817h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#D43694", d: "M10.182 21.362h1.455v1.455h-1.455zM10.182 22.817h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 11,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D43694", d: "M11.636 24.271h1.455v1.455h-1.455zM20.363 19.908h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#D43694", d: "M11.636 24.271h1.455v1.455h-1.455zM20.363 19.908h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 12,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D43694", d: "M20.363 21.362h1.455v1.455h-1.455zM20.363 22.817h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#D43694", d: "M20.363 21.362h1.455v1.455h-1.455zM20.363 22.817h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 13,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D43694", d: "M18.909 24.271h1.455v1.455h-1.455zM26.182 24.271h1.455v1.455h-1.455zM14.545 30.09H16v1.455h-1.455zM2.909 24.271h1.455v1.455H2.909zM2.909 11.181h1.455v1.455H2.909zM14.546 5.361h1.455v1.455h-1.455zM26.182 11.181h1.455v1.455h-1.455zM26.182 25.726h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#D43694", d: "M18.909 24.271h1.455v1.455h-1.455zM26.182 24.271h1.455v1.455h-1.455zM14.545 30.09H16v1.455h-1.455zM2.909 24.271h1.455v1.455H2.909zM2.909 11.181h1.455v1.455H2.909zM14.546 5.361h1.455v1.455h-1.455zM26.182 11.181h1.455v1.455h-1.455zM26.182 25.726h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 14,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D43694", d: "M14.546 31.544h1.455v1.455h-1.455zM2.909 25.726h1.455v1.455H2.909z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#D43694", d: "M14.546 31.544h1.455v1.455h-1.455zM2.909 25.726h1.455v1.455H2.909z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 15,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M4.364 6.817h1.455v1.455H4.364z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M4.364 6.817h1.455v1.455H4.364z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 16,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D43694", d: "M4.364 9.726h1.455v1.455H4.364zM16 3.907h1.455v1.455H16zM27.637 9.726h1.455v1.455h-1.455zM27.637 24.271h1.455v1.455h-1.455zM16 30.09h1.455v1.455H16zM4.364 24.271h1.455v1.455H4.364z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#D43694", d: "M4.364 9.726h1.455v1.455H4.364zM16 3.907h1.455v1.455H16zM27.637 9.726h1.455v1.455h-1.455zM27.637 24.271h1.455v1.455h-1.455zM16 30.09h1.455v1.455H16zM4.364 24.271h1.455v1.455H4.364z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 17,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#D43694", d: "M4.364 11.181h1.455v1.455H4.364zM16 5.361h1.455v1.455H16zM27.637 11.181h1.455v1.455h-1.455zM27.637 25.726h1.455v1.455h-1.455zM16 31.544h1.455v1.455H16zM4.364 25.726h1.455v1.455H4.364z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#D43694", d: "M4.364 11.181h1.455v1.455H4.364zM16 5.361h1.455v1.455H16zM27.637 11.181h1.455v1.455h-1.455zM27.637 25.726h1.455v1.455h-1.455zM16 31.544h1.455v1.455H16zM4.364 25.726h1.455v1.455H4.364z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 18,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#E172AC", d: "M2.909 8.271h1.455v1.455H2.909zM14.545 2.453H16v1.455h-1.455zM26.182 8.271h1.455v1.455h-1.455zM26.182 22.817h1.455v1.455h-1.455zM14.546 28.635h1.455v1.455h-1.455zM2.909 22.817h1.455v1.455H2.909z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#E172AC", d: "M2.909 8.271h1.455v1.455H2.909zM14.545 2.453H16v1.455h-1.455zM26.182 8.271h1.455v1.455h-1.455zM26.182 22.817h1.455v1.455h-1.455zM14.546 28.635h1.455v1.455h-1.455zM2.909 22.817h1.455v1.455H2.909z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 19,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#AC217D", d: "M2.909 12.635h1.455v1.455H2.909zM14.545 6.817H16v1.455h-1.455zM26.182 12.635h1.455v1.455h-1.455zM26.182 27.181h1.455v1.455h-1.455zM14.546 32.998h1.455v1.455h-1.455zM2.909 27.181h1.455v1.455H2.909z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#AC217D", d: "M2.909 12.635h1.455v1.455H2.909zM14.545 6.817H16v1.455h-1.455zM26.182 12.635h1.455v1.455h-1.455zM26.182 27.181h1.455v1.455h-1.455zM14.546 32.998h1.455v1.455h-1.455zM2.909 27.181h1.455v1.455H2.909z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 20,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#E172AC", d: "M4.364 8.271h1.455v1.455H4.364zM16 2.453h1.455v1.455H16zM27.637 8.271h1.455v1.455h-1.455zM27.637 22.817h1.455v1.455h-1.455zM16 28.635h1.455v1.455H16zM4.364 22.817h1.455v1.455H4.364z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#E172AC", d: "M4.364 8.271h1.455v1.455H4.364zM16 2.453h1.455v1.455H16zM27.637 8.271h1.455v1.455h-1.455zM27.637 22.817h1.455v1.455h-1.455zM16 28.635h1.455v1.455H16zM4.364 22.817h1.455v1.455H4.364z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 21,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#AC217D", d: "M4.364 12.635h1.455v1.455H4.364zM16 6.817h1.455v1.455H16zM27.637 12.635h1.455v1.455h-1.455zM27.637 27.181h1.455v1.455h-1.455zM16 32.998h1.455v1.455H16zM4.364 27.181h1.455v1.455H4.364z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#AC217D", d: "M4.364 12.635h1.455v1.455H4.364zM16 6.817h1.455v1.455H16zM27.637 12.635h1.455v1.455h-1.455zM27.637 27.181h1.455v1.455h-1.455zM16 32.998h1.455v1.455H16zM4.364 27.181h1.455v1.455H4.364z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 22,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M2.909 14.09h1.455v1.455H2.909zM4.364 14.09h1.455v1.455H4.364zM0 11.181h1.455v1.455H0z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M2.909 14.09h1.455v1.455H2.909zM4.364 14.09h1.455v1.455H4.364zM0 11.181h1.455v1.455H0z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 23,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M1.454 12.635h1.455v1.455H1.454z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M1.454 12.635h1.455v1.455H1.454z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 24,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#E172AC", d: "M1.454 11.181h1.455v1.455H1.454zM8.727 16.998h1.455v1.455H8.727zM10.182 11.181h1.455v1.455h-1.455zM10.182 24.271h1.455v1.455h-1.455zM8.727 18.454h1.455v1.455H8.727zM13.091 5.361h1.455v1.455h-1.455zM24.727 11.181h1.455v1.455h-1.455zM24.727 25.726h1.455v1.455h-1.455zM13.091 31.544h1.455v1.455h-1.455zM1.454 25.726h1.455v1.455H1.454z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#E172AC", d: "M1.454 11.181h1.455v1.455H1.454zM8.727 16.998h1.455v1.455H8.727zM10.182 11.181h1.455v1.455h-1.455zM10.182 24.271h1.455v1.455h-1.455zM8.727 18.454h1.455v1.455H8.727zM13.091 5.361h1.455v1.455h-1.455zM24.727 11.181h1.455v1.455h-1.455zM24.727 25.726h1.455v1.455h-1.455zM13.091 31.544h1.455v1.455h-1.455zM1.454 25.726h1.455v1.455H1.454z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 25,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#AC217D", d: "M5.818 11.181h1.455v1.455H5.818zM17.454 5.361h1.455v1.455h-1.455zM29.091 11.181h1.455v1.455h-1.455zM29.091 25.726h1.455v1.455h-1.455zM17.454 31.544h1.455v1.455h-1.455zM5.818 25.726h1.455v1.455H5.818z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#AC217D", d: "M5.818 11.181h1.455v1.455H5.818zM17.454 5.361h1.455v1.455h-1.455zM29.091 11.181h1.455v1.455h-1.455zM29.091 25.726h1.455v1.455h-1.455zM17.454 31.544h1.455v1.455h-1.455zM5.818 25.726h1.455v1.455H5.818z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 26,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M5.818 12.635h1.455v1.455H5.818zM7.273 11.181h1.455v1.455H7.273zM0 24.271h1.455v1.455H0zM23.273 9.726h1.455v1.455h-1.455zM7.273 24.271h1.455v1.455H7.273zM30.546 9.726h1.455v1.455h-1.455zM1.455 22.817H2.91v1.455H1.455zM24.727 8.271h1.455v1.455h-1.455zM5.818 22.817h1.455v1.455H5.818zM29.091 8.271h1.455v1.455h-1.455zM2.909 21.362h1.455v1.455H2.909z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M5.818 12.635h1.455v1.455H5.818zM7.273 11.181h1.455v1.455H7.273zM0 24.271h1.455v1.455H0zM23.273 9.726h1.455v1.455h-1.455zM7.273 24.271h1.455v1.455H7.273zM30.546 9.726h1.455v1.455h-1.455zM1.455 22.817H2.91v1.455H1.455zM24.727 8.271h1.455v1.455h-1.455zM5.818 22.817h1.455v1.455H5.818zM29.091 8.271h1.455v1.455h-1.455zM2.909 21.362h1.455v1.455H2.909z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 27,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M26.182 6.817h1.455v1.455h-1.455zM4.364 21.362h1.455v1.455H4.364zM27.637 6.817h1.455v1.455h-1.455zM2.909 28.635h1.455v1.455H2.909zM26.182 14.09h1.455v1.455h-1.455zM4.364 28.635h1.455v1.455H4.364zM27.637 14.09h1.455v1.455h-1.455zM1.454 27.181h1.455v1.455H1.454zM24.727 12.635h1.455v1.455h-1.455zM0 25.726h1.455v1.455H0z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M26.182 6.817h1.455v1.455h-1.455zM4.364 21.362h1.455v1.455H4.364zM27.637 6.817h1.455v1.455h-1.455zM2.909 28.635h1.455v1.455H2.909zM26.182 14.09h1.455v1.455h-1.455zM4.364 28.635h1.455v1.455H4.364zM27.637 14.09h1.455v1.455h-1.455zM1.454 27.181h1.455v1.455H1.454zM24.727 12.635h1.455v1.455h-1.455zM0 25.726h1.455v1.455H0z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 28,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M23.273 11.181h1.455v1.455h-1.455zM5.818 27.181h1.455v1.455H5.818zM29.091 12.635h1.455v1.455h-1.455zM7.273 25.726h1.455v1.455H7.273zM30.546 11.181h1.455v1.455h-1.455zM23.273 24.271h1.455v1.455h-1.455zM11.636 30.09h1.455v1.455h-1.455zM11.636 3.907h1.455v1.455h-1.455zM18.909 30.09h1.455v1.455h-1.455zM30.546 24.271h1.455v1.455h-1.455zM13.091 28.635h1.455v1.455h-1.455zM18.909 3.907h1.455v1.455h-1.455zM17.454 28.635h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M23.273 11.181h1.455v1.455h-1.455zM5.818 27.181h1.455v1.455H5.818zM29.091 12.635h1.455v1.455h-1.455zM7.273 25.726h1.455v1.455H7.273zM30.546 11.181h1.455v1.455h-1.455zM23.273 24.271h1.455v1.455h-1.455zM11.636 30.09h1.455v1.455h-1.455zM11.636 3.907h1.455v1.455h-1.455zM18.909 30.09h1.455v1.455h-1.455zM30.546 24.271h1.455v1.455h-1.455zM13.091 28.635h1.455v1.455h-1.455zM18.909 3.907h1.455v1.455h-1.455zM17.454 28.635h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 29,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M24.727 22.817h1.455v1.455h-1.455zM14.546 27.181h1.455v1.455h-1.455zM13.091 2.453h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M24.727 22.817h1.455v1.455h-1.455zM14.546 27.181h1.455v1.455h-1.455zM13.091 2.453h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 30,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M16 27.181h1.455v1.455H16zM29.091 22.817h1.455v1.455h-1.455zM14.545 34.454H16v1.455h-1.455zM17.455 2.453h1.455v1.455h-1.455zM16 34.454h1.455v1.455H16zM26.182 21.362h1.455v1.455h-1.455zM13.091 32.998h1.455v1.455h-1.455zM14.546.998h1.455v1.455h-1.455zM11.636 31.544h1.455v1.455h-1.455zM27.637 21.362h1.455v1.455h-1.455zM17.454 32.998h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M16 27.181h1.455v1.455H16zM29.091 22.817h1.455v1.455h-1.455zM14.545 34.454H16v1.455h-1.455zM17.455 2.453h1.455v1.455h-1.455zM16 34.454h1.455v1.455H16zM26.182 21.362h1.455v1.455h-1.455zM13.091 32.998h1.455v1.455h-1.455zM14.546.998h1.455v1.455h-1.455zM11.636 31.544h1.455v1.455h-1.455zM27.637 21.362h1.455v1.455h-1.455zM17.454 32.998h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 31,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M16 .998h1.455v1.455H16zM18.909 31.544h1.455v1.455h-1.455zM26.182 28.635h1.455v1.455h-1.455zM14.546 8.271h1.455v1.455h-1.455zM27.637 28.635h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M16 .998h1.455v1.455H16zM18.909 31.544h1.455v1.455h-1.455zM26.182 28.635h1.455v1.455h-1.455zM14.546 8.271h1.455v1.455h-1.455zM27.637 28.635h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 32,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M16 8.271h1.455v1.455H16zM24.727 27.181h1.455v1.455h-1.455zM13.091 6.817h1.455v1.455h-1.455zM23.273 25.726h1.455v1.455h-1.455zM11.636 5.361h1.455v1.455h-1.455zM29.091 27.181h1.455v1.455h-1.455zM17.455 6.817h1.455v1.455h-1.455zM30.546 25.726h1.455v1.455h-1.455zM18.909 5.361h1.455v1.455h-1.455zM8.727 11.181h1.455v1.455H8.727z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M16 8.271h1.455v1.455H16zM24.727 27.181h1.455v1.455h-1.455zM13.091 6.817h1.455v1.455h-1.455zM23.273 25.726h1.455v1.455h-1.455zM11.636 5.361h1.455v1.455h-1.455zM29.091 27.181h1.455v1.455h-1.455zM17.455 6.817h1.455v1.455h-1.455zM30.546 25.726h1.455v1.455h-1.455zM18.909 5.361h1.455v1.455h-1.455zM8.727 11.181h1.455v1.455H8.727z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 33,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M8.727 12.635h1.455v1.455H8.727zM8.727 19.908h1.455v1.455H8.727zM21.818 19.908h1.455v1.455h-1.455zM21.818 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M8.727 12.635h1.455v1.455H8.727zM8.727 19.908h1.455v1.455H8.727zM21.818 19.908h1.455v1.455h-1.455zM21.818 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 34,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M8.727 21.362h1.455v1.455H8.727zM21.818 21.362h1.455v1.455h-1.455zM8.727 14.09h1.455v1.455H8.727zM21.818 12.635h1.455v1.455h-1.455zM8.727 22.817h1.455v1.455H8.727z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M8.727 21.362h1.455v1.455H8.727zM21.818 21.362h1.455v1.455h-1.455zM8.727 14.09h1.455v1.455H8.727zM21.818 12.635h1.455v1.455h-1.455zM8.727 22.817h1.455v1.455H8.727z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 35,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M8.727 24.271h1.455v1.455H8.727zM7.273 16.998h1.455v1.455H7.273zM21.818 22.817h1.455v1.455h-1.455zM23.273 16.998h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M8.727 24.271h1.455v1.455H8.727zM7.273 16.998h1.455v1.455H7.273zM21.818 22.817h1.455v1.455h-1.455zM23.273 16.998h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 36,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M21.818 24.271h1.455v1.455h-1.455zM8.727 15.544h1.455v1.455H8.727zM21.818 14.09h1.455v1.455h-1.455zM7.273 18.454h1.455v1.455H7.273z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M21.818 24.271h1.455v1.455h-1.455zM8.727 15.544h1.455v1.455H8.727zM21.818 14.09h1.455v1.455h-1.455zM7.273 18.454h1.455v1.455H7.273z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 37,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M21.818 15.544h1.455v1.455h-1.455zM23.273 18.454h1.455v1.455h-1.455zM11.636 12.635h1.455v1.455h-1.455zM11.636 19.908h1.455v1.455h-1.455zM18.909 19.908h1.455v1.455h-1.455zM18.909 12.635h1.455v1.455h-1.455zM11.636 14.09h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M21.818 15.544h1.455v1.455h-1.455zM23.273 18.454h1.455v1.455h-1.455zM11.636 12.635h1.455v1.455h-1.455zM11.636 19.908h1.455v1.455h-1.455zM18.909 19.908h1.455v1.455h-1.455zM18.909 12.635h1.455v1.455h-1.455zM11.636 14.09h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 38,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M11.636 21.362h1.455v1.455h-1.455zM18.909 21.362h1.455v1.455h-1.455zM18.909 14.09h1.455v1.455h-1.455zM10.182 16.998h1.455v1.455h-1.455zM20.363 16.998h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M11.636 21.362h1.455v1.455h-1.455zM18.909 21.362h1.455v1.455h-1.455zM18.909 14.09h1.455v1.455h-1.455zM10.182 16.998h1.455v1.455h-1.455zM20.363 16.998h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 39,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M11.636 15.544h1.455v1.455h-1.455zM11.636 22.817h1.455v1.455h-1.455zM18.909 22.817h1.455v1.455h-1.455zM18.909 15.544h1.455v1.455h-1.455zM13.091 24.271h1.455v1.455h-1.455zM17.454 24.271h1.455v1.455h-1.455zM13.091 25.726h1.455v1.455h-1.455zM17.454 25.726h1.455v1.455h-1.455zM11.636 25.726h1.455v1.455h-1.455zM20.363 25.726h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M11.636 15.544h1.455v1.455h-1.455zM11.636 22.817h1.455v1.455h-1.455zM18.909 22.817h1.455v1.455h-1.455zM18.909 15.544h1.455v1.455h-1.455zM13.091 24.271h1.455v1.455h-1.455zM17.454 24.271h1.455v1.455h-1.455zM13.091 25.726h1.455v1.455h-1.455zM17.454 25.726h1.455v1.455h-1.455zM11.636 25.726h1.455v1.455h-1.455zM20.363 25.726h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 40,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M10.182 25.726h1.455v1.455h-1.455zM18.909 25.726h1.455v1.455h-1.455zM10.182 18.454h1.455v1.455h-1.455zM20.363 18.454h1.455v1.455h-1.455zM10.182 9.726h1.455v1.455h-1.455zM18.909 9.726h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M10.182 25.726h1.455v1.455h-1.455zM18.909 25.726h1.455v1.455h-1.455zM10.182 18.454h1.455v1.455h-1.455zM20.363 18.454h1.455v1.455h-1.455zM10.182 9.726h1.455v1.455h-1.455zM18.909 9.726h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 41,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M11.636 9.726h1.455v1.455h-1.455zM20.363 9.726h1.455v1.455h-1.455zM13.091 9.726h1.455v1.455h-1.455zM17.454 9.726h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M11.636 9.726h1.455v1.455h-1.455zM20.363 9.726h1.455v1.455h-1.455zM13.091 9.726h1.455v1.455h-1.455zM17.454 9.726h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 42,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("path", { fill: "#000", d: "M13.091 11.181h1.455v1.455h-1.455zM17.454 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime47.jsxDEV)("path", { fill: "#000", d: "M13.091 11.181h1.455v1.455h-1.455zM17.454 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
     lineNumber: 43,
     columnNumber: 3
@@ -70297,78 +70200,78 @@ var import_jsx_dev_runtime49 = __toESM(require_jsx_dev_runtime(), 1), IconBanner
 }, this);
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx
-var import_jsx_dev_runtime50 = __toESM(require_jsx_dev_runtime(), 1), IconError = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("svg", { width: 32, height: 32, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#000", d: "M6 18h20v2H6zM30 8h2v16h-2zM0 8h2v16H0z" }, void 0, !1, {
+var import_jsx_dev_runtime48 = __toESM(require_jsx_dev_runtime(), 1), IconError = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("svg", { width: 32, height: 32, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M6 18h20v2H6zM30 8h2v16h-2zM0 8h2v16H0z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 2,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#F63310", d: "M2 8h2v16H2zM4 6h2v4H4zM6 4h2v4H6zM8 2h2v4H8zM24 4h2v2h-2zM26 6h2v2h-2z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#F63310", d: "M2 8h2v16H2zM4 6h2v4H4zM6 4h2v4H6zM8 2h2v4H8zM24 4h2v2h-2zM26 6h2v2h-2z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 3,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#74170B", d: "M26 24h2v2h-2zM28 22h2v2h-2zM24 26h2v2h-2zM22 28h2v2h-2z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#74170B", d: "M26 24h2v2h-2zM28 22h2v2h-2zM24 26h2v2h-2zM22 28h2v2h-2z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 4,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#971C06", d: "M6 26h2v2H6zM4 24h2v2H4zM4 18h2v2H4zM26 18h2v2h-2zM26 12h2v2h-2z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#971C06", d: "M6 26h2v2H6zM4 24h2v2H4zM4 18h2v2H4zM26 18h2v2h-2zM26 12h2v2h-2z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 5,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#D62C0D", d: "M26 8h2v4h-2zM4 10h2v2H4zM8 6h18v2H8zM10 4h14v2H10zM6 8h20v2H6z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D62C0D", d: "M26 8h2v4h-2zM4 10h2v2H4zM8 6h18v2H8zM10 4h14v2H10zM6 8h20v2H6z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 6,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#971C06", d: "M28 10h2v12h-2zM8 28h14v2H8z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#971C06", d: "M28 10h2v12h-2zM8 28h14v2H8z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 7,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#D62C0D", d: "M26 20h2v2h-2zM4 20h2v2H4z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D62C0D", d: "M26 20h2v2h-2zM4 20h2v2H4z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 8,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#F63310", d: "M4 12h2v2H4z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#F63310", d: "M4 12h2v2H4z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 9,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#971C06", d: "M6 20h20v2H6z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#971C06", d: "M6 20h20v2H6z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 10,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#F63310", d: "M28 8h2v2h-2zM10 2h14v2H10zM6 10h20v2H6z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#F63310", d: "M28 8h2v2h-2zM10 2h14v2H10zM6 10h20v2H6z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 11,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#D62C0D", d: "M4 22h24v2H4zM6 24h20v2H6zM8 26h16v2H8z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#D62C0D", d: "M4 22h24v2H4zM6 24h20v2H6zM8 26h16v2H8z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 12,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#000", d: "M6 12h20v2H6z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M6 12h20v2H6z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 13,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#fff", d: "M6 14h20v2H6zM6 16h2v2H6z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#fff", d: "M6 14h20v2H6zM6 16h2v2H6z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 14,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#ECEDEE", d: "M8 16h18v2H8z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#ECEDEE", d: "M8 16h18v2H8z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 15,
     columnNumber: 3
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("path", { fill: "#000", d: "M4 14h2v4H4zM26 14h2v4h-2zM2 6h2v2H2zM4 4h2v2H4zM6 2h2v2H6zM24 2h2v2h-2zM26 4h2v2h-2zM26 26h2v2h-2zM24 28h2v2h-2zM6 28h2v2H6zM4 26h2v2H4zM2 24h2v2H2zM8 30h16v2H8zM28 6h2v2h-2zM28 24h2v2h-2zM8 0h16v2H8z" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime48.jsxDEV)("path", { fill: "#000", d: "M4 14h2v4H4zM26 14h2v4h-2zM2 6h2v2H2zM4 4h2v2H4zM6 2h2v2H6zM24 2h2v2h-2zM26 4h2v2h-2zM26 26h2v2h-2zM24 28h2v2h-2zM6 28h2v2H6zM4 26h2v2H4zM2 24h2v2H2zM8 30h16v2H8zM28 6h2v2h-2zM28 24h2v2h-2zM8 0h16v2H8z" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
     lineNumber: 16,
     columnNumber: 3
@@ -70379,6 +70282,9 @@ var import_jsx_dev_runtime50 = __toESM(require_jsx_dev_runtime(), 1), IconError 
   columnNumber: 30
 }, this);
 
+// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/assets/favicon.svg
+var favicon_default2 = "/build/_assets/favicon-5FIZBM2K.svg";
+
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/assets/inter-variable-font.woff2
 var inter_variable_font_default = "/build/_assets/inter-variable-font-PIM5FCLG.woff2";
 
@@ -70386,7 +70292,7 @@ var inter_variable_font_default = "/build/_assets/inter-variable-font-PIM5FCLG.w
 var jetbrainsmono_variable_font_default = "/build/_assets/jetbrainsmono-variable-font-QJMIHK5L.woff2";
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx
-var import_jsx_dev_runtime51 = __toESM(require_jsx_dev_runtime(), 1), links3 = () => [
+var import_jsx_dev_runtime49 = __toESM(require_jsx_dev_runtime(), 1), links2 = () => [
   {
     rel: "icon",
     type: "image/svg+xml",
@@ -70407,14 +70313,14 @@ var import_jsx_dev_runtime51 = __toESM(require_jsx_dev_runtime(), 1), links3 = (
     crossOrigin: "anonymous"
   }
 ];
-async function loader29({
+async function loader28({
   context: { storefront }
 }) {
   return { layout: await storefront.query(LAYOUT_QUERY), isMockShop: storefront.getApiUrl().includes("mock.shop") };
 }
 var HYDROGEN_SHOP_ID = "gid://shopify/Shop/55145660472";
 function ErrorBoundary3() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(ErrorPage, {}, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(ErrorPage, {}, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
     lineNumber: 41,
     columnNumber: 10
@@ -70425,17 +70331,17 @@ function Index() {
     isMockShop: isMockShop2,
     layout: { shop }
   } = useLoaderData2(), { name: shopName, id: shopId } = shop, configDone = shopId !== HYDROGEN_SHOP_ID && !isMockShop2;
-  return (isMockShop2 || !shopName) && (shopName = "Hydrogen"), /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_jsx_dev_runtime51.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Layout3, { shopName, children: [
-    configDone ? /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(HydrogenLogoBaseColor, {}, void 0, !1, {
+  return (isMockShop2 || !shopName) && (shopName = "Hydrogen"), /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(import_jsx_dev_runtime49.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(Layout2, { shopName, children: [
+    configDone ? /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(HydrogenLogoBaseColor, {}, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
       lineNumber: 53,
       columnNumber: 19
-    }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(HydrogenLogoBaseBW, {}, void 0, !1, {
+    }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(HydrogenLogoBaseBW, {}, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
       lineNumber: 53,
       columnNumber: 47
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("h1", { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("h1", { children: [
       "Hello, ",
       shopName
     ] }, void 0, !0, {
@@ -70443,19 +70349,19 @@ function Index() {
       lineNumber: 54,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("p", { children: "Welcome to your new custom storefront" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("p", { children: "Welcome to your new custom storefront" }, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
       lineNumber: 58,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("section", { className: "Banner", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(IconBanner, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("section", { className: "Banner", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(IconBanner, {}, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 61,
           columnNumber: 9
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("h2", { children: configDone ? "Create your first route" : "Configure storefront token" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("h2", { children: configDone ? "Create your first route" : "Configure storefront token" }, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 62,
           columnNumber: 9
@@ -70465,22 +70371,22 @@ function Index() {
         lineNumber: 60,
         columnNumber: 7
       }, this),
-      configDone ? /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("p", { children: [
+      configDone ? /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("p", { children: [
         "You\u2019re seeing this because you don\u2019t have a home route in your project yet. ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("br", {}, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("br", {}, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 66,
           columnNumber: 9
         }, this),
         "Run ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("code", { children: "h2 generate route home" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("code", { children: "h2 generate route home" }, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 68,
           columnNumber: 9
         }, this),
         " to create your home route. Learn more about",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(CreateRoutesLink, {}, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(CreateRoutesLink, {}, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 71,
           columnNumber: 9
@@ -70489,14 +70395,14 @@ function Index() {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
         lineNumber: 64,
         columnNumber: 21
-      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("p", { children: [
+      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("p", { children: [
         "You\u2019re seeing this because you have not yet configured your storefront token. ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("br", {}, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("br", {}, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 74,
           columnNumber: 9
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("br", {}, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("br", {}, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 75,
           columnNumber: 9
@@ -70504,27 +70410,27 @@ function Index() {
         " To link your store,",
         " ",
         "run ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("code", { children: "h2 link && h2 env pull" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("code", { children: "h2 link && h2 env pull" }, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 79,
           columnNumber: 9
         }, this),
         ". Then, run",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("code", { children: "h2 generate route home" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("code", { children: "h2 generate route home" }, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 82,
           columnNumber: 9
         }, this),
         " to create your first route.",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("br", {}, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("br", {}, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 84,
           columnNumber: 9
         }, this),
         "Learn more about",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/docs/custom-storefronts/hydrogen/environment-variables", children: "editing environment variables" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/docs/custom-storefronts/hydrogen/environment-variables", children: "editing environment variables" }, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 87,
           columnNumber: 9
@@ -70532,7 +70438,7 @@ function Index() {
         " ",
         "and",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(CreateRoutesLink, {}, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(CreateRoutesLink, {}, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 91,
           columnNumber: 9
@@ -70548,7 +70454,7 @@ function Index() {
       lineNumber: 59,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(ResourcesLinks, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(ResourcesLinks, {}, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
       lineNumber: 95,
       columnNumber: 5
@@ -70564,37 +70470,37 @@ function Index() {
   }, this);
 }
 function CreateRoutesLink() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/docs/custom-storefronts/hydrogen/building/begin-development#step-4-create-a-route", children: "creating routes" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/docs/custom-storefronts/hydrogen/building/begin-development#step-4-create-a-route", children: "creating routes" }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
     lineNumber: 99,
     columnNumber: 10
   }, this);
 }
 function ErrorPage() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_jsx_dev_runtime51.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Layout3, { shopName: "Hydrogen", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(HydrogenLogoBaseBW, {}, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(import_jsx_dev_runtime49.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(Layout2, { shopName: "Hydrogen", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(HydrogenLogoBaseBW, {}, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
       lineNumber: 103,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("h1", { children: "Hello, Hydrogen" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("h1", { children: "Hello, Hydrogen" }, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
       lineNumber: 104,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("p", { children: "Welcome to your new custom storefront" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("p", { children: "Welcome to your new custom storefront" }, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
       lineNumber: 105,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("section", { className: "Banner ErrorBanner", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(IconError, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("section", { className: "Banner ErrorBanner", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(IconError, {}, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 108,
           columnNumber: 9
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("h2", { children: "There\u2019s a problem with your storefront" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("h2", { children: "There\u2019s a problem with your storefront" }, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 109,
           columnNumber: 9
@@ -70604,16 +70510,16 @@ function ErrorPage() {
         lineNumber: 107,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("p", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("p", { children: [
         "Check your domain and API token in your ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("code", { children: ".env" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("code", { children: ".env" }, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 113,
           columnNumber: 9
         }, this),
         " file. Learn more about",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/docs/custom-storefronts/hydrogen/environment-variables", children: "editing environment variables" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/docs/custom-storefronts/hydrogen/environment-variables", children: "editing environment variables" }, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 116,
           columnNumber: 9
@@ -70629,7 +70535,7 @@ function ErrorPage() {
       lineNumber: 106,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(ResourcesLinks, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(ResourcesLinks, {}, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
       lineNumber: 120,
       columnNumber: 5
@@ -70645,14 +70551,14 @@ function ErrorPage() {
   }, this);
 }
 function ResourcesLinks() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_jsx_dev_runtime51.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("section", { className: "Links", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("h2", { children: "Start building" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(import_jsx_dev_runtime49.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("section", { className: "Links", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("h2", { children: "Start building" }, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
       lineNumber: 125,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("ul", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/building/collection-page", children: "Collection template" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/building/collection-page", children: "Collection template" }, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
         lineNumber: 127,
         columnNumber: 11
@@ -70661,7 +70567,7 @@ function ResourcesLinks() {
         lineNumber: 127,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/building/product-details-page", children: "Product template" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/building/product-details-page", children: "Product template" }, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
         lineNumber: 128,
         columnNumber: 11
@@ -70670,7 +70576,7 @@ function ResourcesLinks() {
         lineNumber: 128,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/building/cart", children: "Cart" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/building/cart", children: "Cart" }, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
         lineNumber: 129,
         columnNumber: 11
@@ -70684,13 +70590,13 @@ function ResourcesLinks() {
       lineNumber: 126,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("h2", { children: "Resources" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("h2", { children: "Resources" }, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
       lineNumber: 131,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("ul", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen", children: "Hydrogen docs" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen", children: "Hydrogen docs" }, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
         lineNumber: 133,
         columnNumber: 11
@@ -70699,7 +70605,7 @@ function ResourcesLinks() {
         lineNumber: 133,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/project-structure", children: "Remix and project structure" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/project-structure", children: "Remix and project structure" }, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
         lineNumber: 134,
         columnNumber: 11
@@ -70708,7 +70614,7 @@ function ResourcesLinks() {
         lineNumber: 134,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/data-fetching/fetch-data", children: "Data queries and fetching" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/data-fetching/fetch-data", children: "Data queries and fetching" }, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
         lineNumber: 135,
         columnNumber: 11
@@ -70732,24 +70638,24 @@ function ResourcesLinks() {
     columnNumber: 10
   }, this);
 }
-function Layout3({
+function Layout2({
   shopName,
   children
 }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_jsx_dev_runtime51.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("header", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("h1", { children: shopName == null ? void 0 : shopName.toUpperCase() }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(import_jsx_dev_runtime49.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("header", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("h1", { children: shopName == null ? void 0 : shopName.toUpperCase() }, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
         lineNumber: 145,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("p", { children: "\xA0Dev Mode\xA0" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("p", { children: "\xA0Dev Mode\xA0" }, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
         lineNumber: 146,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("nav", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://discord.com/invite/shopifydevs", children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(IconDiscord, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("nav", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://discord.com/invite/shopifydevs", children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(IconDiscord, {}, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 148,
           columnNumber: 100
@@ -70758,7 +70664,7 @@ function Layout3({
           lineNumber: 148,
           columnNumber: 9
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://github.com/Shopify/hydrogen", children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(IconGithub, {}, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://github.com/Shopify/hydrogen", children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(IconGithub, {}, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 149,
           columnNumber: 97
@@ -70767,7 +70673,7 @@ function Layout3({
           lineNumber: 149,
           columnNumber: 9
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://twitter.com/shopifydevs?lang=en", children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(IconTwitter, {}, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://twitter.com/shopifydevs?lang=en", children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)(IconTwitter, {}, void 0, !1, {
           fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
           lineNumber: 150,
           columnNumber: 101
@@ -70786,12 +70692,12 @@ function Layout3({
       lineNumber: 144,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("main", { children }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("main", { children }, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
       lineNumber: 153,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("footer", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("a", { href: "https://shopify.com", target: "_blank", rel: "noreferrer noopener", children: "Powered by Shopify" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("footer", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime49.jsxDEV)("a", { href: "https://shopify.com", target: "_blank", rel: "noreferrer noopener", children: "Powered by Shopify" }, void 0, !1, {
       fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
       lineNumber: 154,
       columnNumber: 18
@@ -70819,8 +70725,110 @@ var LAYOUT_QUERY = `#graphql
   }
 `;
 
+// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx
+var virtual_root_exports = {};
+__export(virtual_root_exports, {
+  default: () => App2,
+  links: () => links3
+});
+
+// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/assets/styles.css
+var styles_default = "/build/_assets/styles-G72WKIIU.css";
+
+// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/Layout.jsx
+var import_jsx_dev_runtime50 = __toESM(require_jsx_dev_runtime(), 1);
+function Layout3(props) {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime50.jsxDEV)("div", { className: "hydrogen-virtual-route", children: props.children }, void 0, !1, {
+    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/Layout.jsx",
+    lineNumber: 2,
+    columnNumber: 10
+  }, this);
+}
+
+// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx
+var import_jsx_dev_runtime51 = __toESM(require_jsx_dev_runtime(), 1), links3 = () => [
+  { rel: "stylesheet", href: styles_default },
+  { rel: "icon", type: "image/svg+xml", href: favicon_default2 }
+];
+function App2() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("html", { lang: "en", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("head", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
+        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+        lineNumber: 20,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("meta", { name: "viewport", content: "width=device-width,initial-scale=1" }, void 0, !1, {
+        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+        lineNumber: 21,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("title", { children: "Hydrogen" }, void 0, !1, {
+        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+        lineNumber: 22,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("meta", { name: "description", content: "A custom storefront powered by Hydrogen" }, void 0, !1, {
+        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+        lineNumber: 23,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Meta, {}, void 0, !1, {
+        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+        lineNumber: 24,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Links, {}, void 0, !1, {
+        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+        lineNumber: 25,
+        columnNumber: 7
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+      lineNumber: 19,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("body", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Layout3, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Outlet, {}, void 0, !1, {
+        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+        lineNumber: 28,
+        columnNumber: 15
+      }, this) }, void 0, !1, {
+        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+        lineNumber: 28,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
+        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+        lineNumber: 29,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Scripts, {}, void 0, !1, {
+        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+        lineNumber: 30,
+        columnNumber: 7
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+      lineNumber: 27,
+      columnNumber: 5
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
+    lineNumber: 18,
+    columnNumber: 10
+  }, this);
+}
+
+// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/graphiql.jsx
+var graphiql_exports = {};
+__export(graphiql_exports, {
+  loader: () => loader29
+});
+var loader29 = graphiqlLoader;
+
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-HWXT6HWF.js", imports: ["/build/_shared/chunk-FM7TTYIF.js", "/build/_shared/chunk-CFXHHO4K.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-WB65WDGU.js", imports: ["/build/_shared/chunk-4WQHT5WD.js", "/build/_shared/chunk-UFFJBRLD.js", "/build/_shared/chunk-DDGVNA5N.js", "/build/_shared/chunk-F7TROZH4.js", "/build/_shared/chunk-NNH77UO3.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-BROVUE5Z.js", imports: ["/build/_shared/chunk-GHPMVKJO.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-B2Q4ALJD.js", imports: ["/build/_shared/chunk-7M6P6K7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-UW56T35F.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-P4I3QDMF.js", imports: ["/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-CJLES4QN.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-NXUTGPGB.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-TWBKTJHT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-ROS3EOYT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-O3ATTRWI.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-LGKAZ4B5.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-QJ3G3N7V.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-SPZII6NL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-CW2FXTL6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-6FNJVY6E.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-TQE3MDJR.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-MOJIROKZ.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-E444EELP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).offers": { id: "routes/($locale).offers", parentId: "root", path: ":locale?/offers", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).offers-TWQVGM4W.js", imports: ["/build/_shared/chunk-GHPMVKJO.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-VRM6CIZM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-XO72JGCK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-C4O43EB5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-FTL47F53.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-4F75YYEZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-OU6DB2IP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-53PT7KYB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-OBQMRAOA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "3f5501ee", hmr: void 0, url: "/build/manifest-3F5501EE.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-HWXT6HWF.js", imports: ["/build/_shared/chunk-FM7TTYIF.js", "/build/_shared/chunk-CFXHHO4K.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-44FTIRFP.js", imports: ["/build/_shared/chunk-QSH2LBVW.js", "/build/_shared/chunk-UFFJBRLD.js", "/build/_shared/chunk-DDGVNA5N.js", "/build/_shared/chunk-F7TROZH4.js", "/build/_shared/chunk-NNH77UO3.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-YF6WDEU5.js", imports: ["/build/_shared/chunk-GHPMVKJO.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-B2Q4ALJD.js", imports: ["/build/_shared/chunk-7M6P6K7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-UW56T35F.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-P4I3QDMF.js", imports: ["/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-CJLES4QN.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-NXUTGPGB.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-TWBKTJHT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-ROS3EOYT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-O3ATTRWI.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-LGKAZ4B5.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-QJ3G3N7V.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-SPZII6NL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-CW2FXTL6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-6FNJVY6E.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-TQE3MDJR.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-LSYVJEXE.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-E444EELP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).offers": { id: "routes/($locale).offers", parentId: "root", path: ":locale?/offers", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).offers-TWQVGM4W.js", imports: ["/build/_shared/chunk-GHPMVKJO.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-VRM6CIZM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-XO72JGCK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-C4O43EB5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-FTL47F53.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-4F75YYEZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-OU6DB2IP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-53PT7KYB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-OBQMRAOA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "1b1bb91a", hmr: void 0, url: "/build/manifest-1B1BB91A.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "dist/client/build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -71064,13 +71072,13 @@ var assetsBuildDirectory = "dist/client/build", future = { v2_dev: !1, unstable_
     caseSensitive: void 0,
     module: locale_exports
   },
-  "virtual-routes/routes/graphiql": {
-    id: "virtual-routes/routes/graphiql",
+  "virtual-routes/routes/index": {
+    id: "virtual-routes/routes/index",
     parentId: "virtual-routes/virtual-root",
-    path: "graphiql",
-    index: void 0,
+    path: void 0,
+    index: !0,
     caseSensitive: void 0,
-    module: graphiql_exports
+    module: routes_exports
   },
   "virtual-routes/virtual-root": {
     id: "virtual-routes/virtual-root",
@@ -71080,13 +71088,13 @@ var assetsBuildDirectory = "dist/client/build", future = { v2_dev: !1, unstable_
     caseSensitive: void 0,
     module: virtual_root_exports
   },
-  "virtual-routes/routes/index": {
-    id: "virtual-routes/routes/index",
+  "virtual-routes/routes/graphiql": {
+    id: "virtual-routes/routes/graphiql",
     parentId: "virtual-routes/virtual-root",
-    path: void 0,
-    index: !0,
+    path: "graphiql",
+    index: void 0,
     caseSensitive: void 0,
-    module: routes_exports
+    module: graphiql_exports
   }
 };
 

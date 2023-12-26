@@ -117,6 +117,11 @@ export function HeaderMenu({menu, viewport}) {
     let path = url.pathname;
     return path;
   }
+
+  function goToCollection(url_path){
+    let url = getPath(url_path);
+    window.location.href = url
+  }
   return (
     <nav className={className} role="navigation">
       {viewport === 'mobile' && (
@@ -138,7 +143,7 @@ export function HeaderMenu({menu, viewport}) {
             : item.url;
         return (
           <div className="relative inline-block text-left group">
-            <button className="px-4 py-2 text-gray-800 focus:outline-none">
+            <button onClick={()=> goToCollection(item.url) } className="px-4 py-2 text-gray-800 focus:outline-none">
               {item.title}
             </button>
             {item.items.length > 0 && (

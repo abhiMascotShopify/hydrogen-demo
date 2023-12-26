@@ -31,21 +31,25 @@ const MobileProductCorousel = ({products, title}) => {
 
 const DesktopCorousel = ({products, title}) => {
   const [startIndex, setStartIndex] = useState(0);
-  const productsToShow = products.slice(startIndex, startIndex + 3);
-  console.log("productsToShow::",productsToShow)
-  const isMobile = useMediaQuery({maxWidth: 640});
+  var len = products.length;
+  const isLargeScreen = useMediaQuery({minWidth: 1024});
+  const eIndex = isLargeScreen ? len <= 4 ? len : 4 : 2;
+  console.log("eIndex::",eIndex,"Product Length::",len);
+  const [endIndex, setEndIndex]  = useState(eIndex);
+
+  const productsToShow = products.slice(startIndex, endIndex);
 
   const nextProducts = () => {
-    setStartIndex((prevIndex) => (prevIndex + 3) % products.length);
-    console.log("nextProducts INDEX ::",startIndex)
+    setStartIndex((prevIndex) => len == endIndex ? prevIndex -1 : prevIndex + 1 );
+    setEndIndex((prevIndex) => len == endIndex ? prevIndex-1 : prevIndex + 1);
   };
 
   const prevProducts = () => {
-    setStartIndex((prevIndex) =>
-      prevIndex === 0 ? products.length - (products.length % 3) : prevIndex - 1,
-    );
-    console.log("prevProducts INDEX ::",startIndex)
+    setStartIndex((prevIndex) => len == endIndex ? prevIndex -1 : prevIndex + 1 );
+    setEndIndex((prevIndex) => len == endIndex ? prevIndex-1 : prevIndex + 1);
   };
+
+  console.log("start INDEX ::",startIndex,"End Index ::",endIndex,"Length::",len);
 
   
   return (

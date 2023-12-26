@@ -94,11 +94,11 @@ export default function Homepage() {
 
   return (
     <div className="home">
-      <section className="collectionContent lg:hidden block sm:mt-4 overflow-auto">
+      {/* <section className="collectionContent lg:hidden block sm:mt-4 overflow-auto">
         <div className="inline-flex gap-4">
           {collectionArray?.map((item, index) => (
             <div
-              className=" col-item sm:w-auto  rounded-lg hover:shadow-md cursor-pointer"
+              className=" col-item  rounded-lg hover:shadow-md cursor-pointer"
               key={index}
             >
               <div className="image">
@@ -120,7 +120,7 @@ export default function Homepage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
       <div>
         <ImageCarousel images={imageSrc}></ImageCarousel>
       </div>
@@ -138,6 +138,7 @@ export default function Homepage() {
       <CustomizedProducts
         key={data.products.nodes[0].id}
         products={BuildYourOwnColl}
+        title="Build Your Own Kit"
       ></CustomizedProducts>
 
       {/*---Banner Statis -section 4 -- */}
@@ -191,13 +192,35 @@ export default function Homepage() {
         products={ThirdHeroCollection}
         title="3rd Hero Collection"
       />
-      {/* section 10 - Instagram -- */}
+ 
       {/* -- sectio 11 -Review -- */}
-      <CustomizedCollection
+      {/* <CustomizedCollection
         collections={ReviewCollection}
         title={"From Customer's Inbox"}
-      />
-      {/* -- section 12 - Blog -- */}
+      /> */}
+
+        <section className="collectionContent sm:mt-4 overflow-auto">
+            <div className="inline-flex gap-4">
+              {collectionArray?.map((item, index) => (
+                <div
+                  className="collection-items test bg-[#f5f5f5] rounded-lg hover:shadow-md cursor-pointer"
+                  key={index}
+                >
+                <div className="image" onClick={()=> window.location.href = item.url }>
+                  <img
+                    width={300}
+                    height={300}
+                    alt={item.collectionname}
+                    src={item.collectionimageurl}
+                  />
+                </div>
+                <div className="collectionname  sm:text-lg text-md font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]">
+                  {item.collectionname}
+                </div>
+                </div>
+              ))}
+            </div>
+          </section>
       {/*<RecommendedProducts products={data.recommendedProducts} />*/}
       <BlogCorousel collections={data.blogs} />
       {/*console.log(data.collectionProducts)*/}
@@ -435,35 +458,33 @@ const BLOGS_QUERY = `#graphql
 `;
 const collectionArray = [
   {
+    collectionname: 'Moisturizer',
+    url:"/collections/moisturizer",
+    collectionimageurl: '/collection/Moisturizer.webp',
+  },
+  {
     collectionname: 'Cream',
+    url:"/collections/cream",
     collectionimageurl: '/collection/Cream.webp',
   },
   {
     collectionname: 'Scrub',
+    url:"/collections/scrub",
     collectionimageurl: '/collection/Scrub.webp',
   },
   {
     collectionname: 'Serum',
+    url:"/collections/serum",
     collectionimageurl: '/collection/Serum.webp',
   },
   {
     collectionname: 'Face Wash',
-    collectionimageurl: '/collection/Face-Wash.jpg',
-  },
-  {
-    collectionname: 'Face Wash',
+    url:"/collections/face-wash",
     collectionimageurl: '/collection/Foaming-Face-Wash.jpg',
   },
   {
-    collectionname: 'Serum',
-    collectionimageurl: '/collection/Serum.webp',
-  },
-  {
     collectionname: 'Face Wash',
+    url:"/collections/face-wash",
     collectionimageurl: '/collection/Face-Wash.jpg',
-  },
-  {
-    collectionname: 'Face Wash',
-    collectionimageurl: '/collection/Foaming-Face-Wash.jpg',
-  },
+  }
 ];

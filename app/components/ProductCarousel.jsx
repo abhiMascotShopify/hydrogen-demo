@@ -15,11 +15,11 @@ const ProductCarousel = ({products}) => {
   const lines = [];
   const [startIndex, setStartIndex] = useState(0);
   const isLargeScreen = useMediaQuery({minWidth: 1024});
-  const eIndex = isLargeScreen ? 4 : 2;
+  const eIndex = isLargeScreen ? len < 4 ? len : 4 : 2;
   const [endIndex, setEndIndex]  = useState(eIndex);
   var len = products.edges.length;
   if (products != null || products != undefined) {
-    productsToShow = products.edges.slice(startIndex, startIndex + endIndex);
+    productsToShow = products.edges.slice(startIndex, endIndex);
     //console.log(productsToShow);
   }
 

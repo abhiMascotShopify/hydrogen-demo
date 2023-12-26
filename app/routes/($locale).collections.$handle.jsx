@@ -81,6 +81,14 @@ export async function loader({request, params, context}) {
     pageBy: 8,
   });
 
+    // await the header query (above the fold)
+  const headerPromise = storefront.query(HEADER_QUERY, {
+    cache: storefront.CacheNone(),
+    variables: {
+      headerMenuHandle: 'main-menu', // Adjust to your header menu handle
+    },
+  });
+
   if (!handle) {
     return redirect('/collections');
   }
@@ -111,29 +119,27 @@ export async function loader({request, params, context}) {
       status: 404,
     });
   }
-  return json({collection});
+  return json({collection,  header: await headerPromise,handle});
 }
 
 export default function Collection() {
-  const {collection} = useLoaderData();
+  const {collection , header, handle} = useLoaderData();
+  const { menu } = header;
+  let subMenu = menu.items;
+  var sortArr = subMenu.filter((item)=> item.title.toLowerCase() === handle );
+  var collectionArray = sortArr[0].items;
+  console.log("collectionArray::",collectionArray)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   let productsToShow = [];
   const lines = [];
-
   const [startIndex, setStartIndex] = useState(0);
-  //const [endIndex, setEndIndex]  = useState();
-
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const endIndex = isLargeScreen ? 4 : 2;
-
   if (collection.products != null || collection.products != undefined) {
-    //console.log(products.edges[0].node)
     console.log(collection.products.nodes);
     productsToShow = collection.products.nodes;
     //console.log(productsToShow);
   }
-  //  const isMobile = useMediaQuery({ maxWidth: 640 });
-  //  const isTablet = useMediaQuery({ minWidth: 641, maxWidth: 1024 });
 
   collection.products.nodes.map((product) => {
     product.variants.nodes.map((line) => {
@@ -146,6 +152,17 @@ export default function Collection() {
       }
     });
   });
+
+  function getPath(url_path) {
+    let url = new URL(url_path);
+    let path = url.pathname;
+    return path;
+  }
+
+  function goToCollection(url_path){
+    let url = getPath(url_path);
+    window.location.href = url
+  }
 
   return (
     /*
@@ -331,20 +348,20 @@ export default function Collection() {
           <section className="collectionContent sm:mt-4 overflow-auto">
             <div className="inline-flex gap-4">
               {collectionArray?.map((item, index) => (
-                <div
+                <div onClick={()=> goToCollection (item.url) }
                   className="collection-items sm:w-auto w-[30%] bg-[#f5f5f5] rounded-lg hover:shadow-md cursor-pointer"
                   key={index}
                 >
-                  <div className="image">
+                  <div className="image" >
                     <img
                       width={300}
                       height={300}
-                      alt={item.collectionname}
-                      src={item.collectionimageurl}
+                      alt={item.title}
+                      src={item?.collectionimageurl}
                     />
                   </div>
                   <div className="collectionname  sm:text-lg text-md font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]">
-                    {item.collectionname}
+                    {item.title}
                   </div>
                 </div>
               ))}
@@ -747,41 +764,81 @@ const PRODUCTTAGS_QUERY = `#graphql
   }
 `;
 
-const collectionArray = [
-  {
-    collectionname: 'Moisturizer',
-    collectionimageurl: '/collection/Moisturizer.webp',
-  },
-  {
-    collectionname: 'Cream',
-    collectionimageurl: '/collection/Cream.webp',
-  },
-  {
-    collectionname: 'Scrub',
-    collectionimageurl: '/collection/Scrub.webp',
-  },
-  {
-    collectionname: 'Serum',
-    collectionimageurl: '/collection/Serum.webp',
-  },
-  {
-    collectionname: 'Face Wash',
-    collectionimageurl: '/collection/Face-Wash.jpg',
-  },
-  {
-    collectionname: 'Face Wash',
-    collectionimageurl: '/collection/Foaming-Face-Wash.jpg',
-  },
-  {
-    collectionname: 'Serum',
-    collectionimageurl: '/collection/Serum.webp',
-  },
-  {
-    collectionname: 'Face Wash',
-    collectionimageurl: '/collection/Face-Wash.jpg',
-  },
-  {
-    collectionname: 'Face Wash',
-    collectionimageurl: '/collection/Foaming-Face-Wash.jpg',
-  },
-];
+const MENU_FRAGMENT = `#graphql
+  fragment Menu on Menu {
+    id
+    items {
+      id
+      title
+      url
+      items{
+        title
+        url
+      }
+    }
+  }
+`;
+
+const HEADER_QUERY = `#graphql
+  fragment Shop on Shop {
+    id
+    name
+    description
+    primaryDomain {
+      url
+    }
+    brand {
+      logo {
+        image {
+          url
+        }
+      }
+    }
+  }
+  query Header(
+    $country: CountryCode
+    $headerMenuHandle: String!
+    $language: LanguageCode
+  ) @inContext(language: $language, country: $country) {
+    shop {
+      ...Shop
+    }
+    menu(handle: $headerMenuHandle) {
+      ...Menu
+    }
+  }
+  ${MENU_FRAGMENT}
+`;
+
+// const collectionArray = [
+//   {
+//     collectionname: 'Moisturizer',
+//     url:"/collections/moisturizer",
+//     collectionimageurl: '/collection/Moisturizer.webp',
+//   },
+//   {
+//     collectionname: 'Cream',
+//     url:"/collections/cream",
+//     collectionimageurl: '/collection/Cream.webp',
+//   },
+//   {
+//     collectionname: 'Scrub',
+//     url:"/collections/scrub",
+//     collectionimageurl: '/collection/Scrub.webp',
+//   },
+//   {
+//     collectionname: 'Serum',
+//     url:"/collections/serum",
+//     collectionimageurl: '/collection/Serum.webp',
+//   },
+//   {
+//     collectionname: 'Face Wash',
+//     url:"/collections/face-wash",
+//     collectionimageurl: '/collection/Foaming-Face-Wash.jpg',
+//   },
+//   {
+//     collectionname: 'Face Wash',
+//     url:"/collections/face-wash",
+//     collectionimageurl: '/collection/Face-Wash.jpg',
+//   }
+// ];
