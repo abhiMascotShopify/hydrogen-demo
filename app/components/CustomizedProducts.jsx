@@ -17,11 +17,13 @@ const MobileProductCorousel = ({products, title}) => {
         <h1 className="text-center">{title}</h1>
         <div className="flex overflow-y-auto product-40">
           {products.map((product) => (
+            <a href="/collections/build-your-own-kit"> 
             <img
               src={`${product.node.images?.edges[0].node.url}`}  // Make sure to put your images in the 'public/images/' directory
               alt={product.name}
               className="w-full h-auto rounded-lg lg:px-5 sm:px-3 sm:mx-3 mr-2"
             />
+            </a>
           ))}
         </div>
       </div>
