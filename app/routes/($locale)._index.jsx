@@ -36,18 +36,32 @@ export async function loader({context}) {
   //console.log(products.nodes[0].variants.edges[0].node.metafields);
   const collection = collections;
 
+  const headerPromise = storefront.query(HEADER_QUERY, {
+    cache: storefront.CacheNone(),
+    variables: {
+      headerMenuHandle: 'main-menu', // Adjust to your header menu handle
+    },
+  });
+
   return defer({
     featuredCollection,
     recommendedProducts,
     collections,
     collectionProducts,
     products,
-    blogs,
+    blogs, 
+    header: await headerPromise
   });
 }
 
 export default function Homepage() {
+  const noImg = "https://cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_600x600.gif"
   const data = useLoaderData();
+  const { header } = data;
+  //console.log("menu ::",data.collections)
+  var menus = header.menu.items;
+  var collectionArray = menus.filter((item)=> item.title !== "Home")
+  
   const imageSrc = [
     'https://images.unsplash.com/photo-1547005327-ef75a6961556?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8b2NlYW58ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
     'https://images.unsplash.com/photo-1480926965639-9b5f63a0817b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG9jZWFufGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=800&q=60',
@@ -62,13 +76,26 @@ export default function Homepage() {
     'https://images.unsplash.com/photo-1530539595977-0aa9890547c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fG9jZWFufGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=800&q=60',
     'https://images.unsplash.com/photo-1542262868-cec49cce6571?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fG9jZWFufGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=800&q=60',
   ];
-  //console.log(data.blogs);
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const isSmall = useMediaQuery({maxWidth: 640});
   var GiftCollections = [];
   var ReviewCollection = [];
   var BuildYourOwnColl = [];
   var ThirdHeroCollection = [];
+
+  collectionArray.map((col,index)=>{
+    let collNodes = data.collections.nodes;
+    collectionArray[index]['image'] = {'url': noImg } 
+    collNodes.map((item)=> {
+      if(item.title.trim() === col.title.trim()){
+        let isImg = item.image?.url;
+        collectionArray[index]['handle'] = col.title.toLowerCase();
+        collectionArray[index]['image'] = {'url': isImg ? isImg : noImg }
+      };
+    })
+  })
+
+  console.log("collectionArray:",collectionArray)
   data.collectionProducts.nodes.forEach((col) => {
     if (col.metafields[0] != null && col.metafields[0].value == 'true') {
       ReviewCollection.push(col);
@@ -92,35 +119,20 @@ export default function Homepage() {
   GiftCollections = GiftCollections;
   //console.log(data.collectionProducts.nodes[7].metafields[1].value)
 
+  function getPath(url_path) {
+    let url = new URL(url_path);
+    let path = url.pathname;
+    return path;
+  }
+
+  function goToCollection(url_path){
+    let url = getPath(url_path);
+    window.location.href = url
+  }
+
+
   return (
     <div className="home">
-      {/* <section className="collectionContent lg:hidden block sm:mt-4 overflow-auto">
-        <div className="inline-flex gap-4">
-          {collectionArray?.map((item, index) => (
-            <div
-              className=" col-item  rounded-lg hover:shadow-md cursor-pointer"
-              key={index}
-            >
-              <div className="image">
-                <img
-                  width={80}
-                  height={80}
-                  alt={item.collectionname}
-                  src={item.collectionimageurl}
-                  style={{
-                    width: '80px',
-                    borderRadius: '50%',
-                    border: '1px solid #e5e5e5',
-                  }}
-                />
-              </div>
-              <div className="collectionname  sm:text-lg text-[12px] font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]">
-                {item.collectionname}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
       <div>
         <ImageCarousel images={imageSrc}></ImageCarousel>
       </div>
@@ -163,6 +175,7 @@ export default function Homepage() {
         products={data.collectionProducts.nodes[1].products}
         title={data.collectionProducts.nodes[1].title}
       />
+
       <CustomizedCollection collections={GiftCollections} title={'Gifting'} />
       <YouTubeVideo></YouTubeVideo>
       {/*---Banner Statis section 8 --- */}
@@ -198,29 +211,10 @@ export default function Homepage() {
         collections={ReviewCollection}
         title={"From Customer's Inbox"}
       /> */}
+    <section>
+    <CustomizedCollection collections={collectionArray} title={'Collections'} />
+    </section>
 
-        <section className="collectionContent sm:mt-4 overflow-auto">
-            <div className="inline-flex gap-4">
-              {collectionArray?.map((item, index) => (
-                <div
-                  className="collection-items test bg-[#f5f5f5] rounded-lg hover:shadow-md cursor-pointer"
-                  key={index}
-                >
-                <div className="image" onClick={()=> window.location.href = item.url }>
-                  <img
-                    width={300}
-                    height={300}
-                    alt={item.collectionname}
-                    src={item.collectionimageurl}
-                  />
-                </div>
-                <div className="collectionname  sm:text-lg text-md font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]">
-                  {item.collectionname}
-                </div>
-                </div>
-              ))}
-            </div>
-          </section>
       {/*<RecommendedProducts products={data.recommendedProducts} />*/}
       <BlogCorousel collections={data.blogs} />
       {/*console.log(data.collectionProducts)*/}
@@ -230,7 +224,6 @@ export default function Homepage() {
 
 function FeaturedCollection({collection}) {
   const image = collection.image;
-  //console.log(collection.title)
   return (
     <Link
       className="featured-collection"
@@ -456,35 +449,82 @@ const BLOGS_QUERY = `#graphql
     }
   }
 `;
-const collectionArray = [
-  {
-    collectionname: 'Moisturizer',
-    url:"/collections/moisturizer",
-    collectionimageurl: '/collection/Moisturizer.webp',
-  },
-  {
-    collectionname: 'Cream',
-    url:"/collections/cream",
-    collectionimageurl: '/collection/Cream.webp',
-  },
-  {
-    collectionname: 'Scrub',
-    url:"/collections/scrub",
-    collectionimageurl: '/collection/Scrub.webp',
-  },
-  {
-    collectionname: 'Serum',
-    url:"/collections/serum",
-    collectionimageurl: '/collection/Serum.webp',
-  },
-  {
-    collectionname: 'Face Wash',
-    url:"/collections/face-wash",
-    collectionimageurl: '/collection/Foaming-Face-Wash.jpg',
-  },
-  {
-    collectionname: 'Face Wash',
-    url:"/collections/face-wash",
-    collectionimageurl: '/collection/Face-Wash.jpg',
+
+const MENU_FRAGMENT = `#graphql
+  fragment Menu on Menu {
+    id
+    items {
+      id
+      title
+      url
+      items{
+        title
+        url
+      }
+    }
   }
-];
+`;
+
+const HEADER_QUERY = `#graphql
+  fragment Shop on Shop {
+    id
+    name
+    description
+    primaryDomain {
+      url
+    }
+    brand {
+      logo {
+        image {
+          url
+        }
+      }
+    }
+  }
+  query Header(
+    $country: CountryCode
+    $headerMenuHandle: String!
+    $language: LanguageCode
+  ) @inContext(language: $language, country: $country) {
+    shop {
+      ...Shop
+    }
+    menu(handle: $headerMenuHandle) {
+      ...Menu
+    }
+  }
+  ${MENU_FRAGMENT}
+`;
+
+// const collectionArray = [
+//   {
+//     collectionname: 'Moisturizer',
+//     url:"/collections/moisturizer",
+//     collectionimageurl: '/collection/Moisturizer.webp',
+//   },
+//   {
+//     collectionname: 'Cream',
+//     url:"/collections/cream",
+//     collectionimageurl: '/collection/Cream.webp',
+//   },
+//   {
+//     collectionname: 'Scrub',
+//     url:"/collections/scrub",
+//     collectionimageurl: '/collection/Scrub.webp',
+//   },
+//   {
+//     collectionname: 'Serum',
+//     url:"/collections/serum",
+//     collectionimageurl: '/collection/Serum.webp',
+//   },
+//   {
+//     collectionname: 'Face Wash',
+//     url:"/collections/face-wash",
+//     collectionimageurl: '/collection/Foaming-Face-Wash.jpg',
+//   },
+//   {
+//     collectionname: 'Face Wash',
+//     url:"/collections/face-wash",
+//     collectionimageurl: '/collection/Face-Wash.jpg',
+//   }
+// ];

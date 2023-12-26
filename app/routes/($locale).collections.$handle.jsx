@@ -80,8 +80,7 @@ export async function loader({request, params, context}) {
   const paginationVariables = getPaginationVariables(request, {
     pageBy: 8,
   });
-
-    // await the header query (above the fold)
+  // await the header query (above the fold)
   const headerPromise = storefront.query(HEADER_QUERY, {
     cache: storefront.CacheNone(),
     variables: {
@@ -97,23 +96,6 @@ export async function loader({request, params, context}) {
     variables: {handle, ...paginationVariables},
   });
   console.log("Collection Handle ::",collection);
-  //const {productTags} = await storefront.query(PRODUCTTAGS_QUERY);
-  console.log('Product tag');
-  // console.log(productTags);
-  // productTags.edges.forEach((n) => {
-  //   if (n.node.startsWith('Colour-')) {
-  //     console.log();
-  //     filters[0].options.push({value: n.node, label: n.node, checked: true});
-  //     console.log(filters[0]);
-  //     console.log('added' + JSON.stringify(filters[0]));
-  //   }
-  //   if (n.node.startsWith('Size-')) {
-  //     filters[2].options.push({value: n.node, label: n.node, checked: true});
-  //     console.log(filters[2]);
-  //     console.log('added' + JSON.stringify(filters[2]));
-  //   }
-  // });
-
   if (!collection) {
     throw new Response(`Collection ${handle} not found`, {
       status: 404,
@@ -123,11 +105,12 @@ export async function loader({request, params, context}) {
 }
 
 export default function Collection() {
+  var collectionArray = [];
   const {collection , header, handle} = useLoaderData();
   const { menu } = header;
   let subMenu = menu.items;
   var sortArr = subMenu.filter((item)=> item.title.toLowerCase() === handle );
-  var collectionArray = sortArr[0].items;
+  var collectionArray = sortArr[0]?.items;
   console.log("collectionArray::",collectionArray)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   let productsToShow = [];

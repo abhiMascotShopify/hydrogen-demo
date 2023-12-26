@@ -58,7 +58,7 @@ const DesktopCorousel = ({products,title}) => {
                   <a href={`/collections/${product.handle}`}>
                     <img
                       //src={`${product.image.url}`} // Make sure to put your images in the 'public/images/' directory
-                      src={product.image.url}
+                      src={product.image?.url}
                       alt={product.title}
                       className="w-full h-auto rounded-lg"
                     />
