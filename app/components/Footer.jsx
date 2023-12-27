@@ -34,8 +34,8 @@ export function Footer({menu}) {
   return (
     <>
       <footer className="mt-8">
-        <div className="max-w-[1000px] m-auto">
-          <div className="footer-section text-center text-xl font-semibold border-y-2 py-4">
+        <div className="m-4 p-4">
+          <div className="footer-section  text-xl font-semibold border-y-2 py-4">
           <div class="grid grid-cols-2 md:grid-cols-3 gap-1">
             <div className="cursor-pointer">Stores</div>
               <div className="cursor-pointer">Terms & Conditions</div>
@@ -43,26 +43,27 @@ export function Footer({menu}) {
               <div className="cursor-pointer">FAQs</div>
               <div className="cursor-pointer">About Us</div>
             </div>
-           
           </div>
-          <div className="m-4 footer-contact max-w-[600px] m-auto">
-            <div>
-              <h2 className="font-semibold text-2xl">GET IN TOUCH</h2>
-              <h3 className="mt-4 mb-2 text-md font-semibold">Call us at</h3>
-              <a className="mt-2 font-bold text-xl text-[#969696]" href="#">
-                +91-9999999999
-              </a>
-              <p className="mt-2 font-semibold text-[#969696]">
-                Monday to Friday : 9 AM to 7 PM
-              </p>
+          <div className="py-6 footer-contact m-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+                <div className="cursor-pointer">
+                  <h2 className="font-semibold text-xl">GET IN TOUCH</h2>
+                  <h3 className="mt-4 mb-2 text-md font-semibold">Call us at</h3>
+                  <a className="mt-2 font-bold text-xl text-[#969696]" href="#">
+                    +91-9999999999
+                  </a>
+                  <p className="mt-2 font-semibold text-[#969696]">
+                  Monday to Friday : 9 AM to 7 PM
+                  </p>
+                </div>
+                <div className="cursor-pointer">
+                <h2 className="font-semibold text-xl">Support</h2>
+                <a className="mt-2 font-bold text-xl text-[#969696]" href="#">
+                  helpdesk@gmail.com
+                </a>
+                </div>
+              </div>
             </div>
-            <div>
-              <h2 className="font-semibold text-xl">Support</h2>
-              <a className="mt-2 font-bold text-xl text-[#969696]" href="#">
-                helpdesk@gmail.com
-              </a>
-            </div>
-          </div>
         </div>
         {/* <div className="container p-6 mx-auto">
           <div className="">

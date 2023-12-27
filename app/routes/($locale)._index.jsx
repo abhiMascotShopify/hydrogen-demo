@@ -194,6 +194,7 @@ export default function Homepage() {
           ></img>
         </a>
       )}
+      {/* -- Section --  COll Name : 2nd Hero Collection */}
       <RecommendedProducts
         key={data.collectionProducts.nodes[1].id}
         products={data.collectionProducts.nodes[1].products}

@@ -49,7 +49,7 @@ const ProductCarousel = ({products}) => {
   console.log("Lines::",productsToShow)
 
   return (
-    <div className="w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
+    <div className="recommended_section w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
       <div className="relative">
         <div className="flex gap-4">
           {productsToShow.map((product, index) => (
