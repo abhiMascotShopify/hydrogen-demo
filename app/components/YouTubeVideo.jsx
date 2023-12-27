@@ -11,7 +11,7 @@ const MobileVideo = () => {
           Demo Header for YouTube Video
         </h1>
         <iframe
-          className="rounded-lg w-full h-50"
+          className="rounded-lg w-full h-60"
           src={embedUrl}
           frameborder="0"
           allowfullscreen

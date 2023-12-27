@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
 
-const ImageCarousel = ({images}) => {
+const ImageCarousel = ({images , isSmall}) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
+  var mobImgHeight= {height:"inherit"}
   const nextImage = () => {
     setCurrentImageIndex((currentImageIndex + 1) % images.length);
   };
@@ -13,7 +13,7 @@ const ImageCarousel = ({images}) => {
       (currentImageIndex - 1 + images.length) % images.length,
     );
   };
-
+  if(isSmall) mobImgHeight = {height:"250px"}
   return (
     <div className="relative opacity-50">
       <button
@@ -30,6 +30,7 @@ const ImageCarousel = ({images}) => {
         />
       </button>
       <img
+        style={mobImgHeight} 
         className="lg:w-full md:w-full sm:w-full h-[300px] lg:h-80 object-cover rounded-2xl w-[100%]"
         src={images[currentImageIndex]}
       />

@@ -130,6 +130,7 @@ export default function Homepage() {
 
   return (
     <div className="home">
+      { isSmall ?
         <section className="collectionContent lg:hidden block sm:mt-4 overflow-auto">
         <div className="inline-flex gap-4">
           {collectionArrayStatic?.map((item, index) => (
@@ -157,8 +158,11 @@ export default function Homepage() {
           ))}
         </div>
       </section>
+      :
+      null
+      }
       <div>
-        <ImageCarousel images={imageSrc}></ImageCarousel>
+        <ImageCarousel isSmall={isSmall} images={imageSrc}></ImageCarousel>
       </div>
       {/*{data.collectionProducts.nodes.map((coll)=>(
         <RecommendedProducts key={coll.id} products={coll.products} title={coll.title}/>
@@ -180,7 +184,7 @@ export default function Homepage() {
       {/*---Banner Statis -section 4 -- */}
       {isLargeScreen && (
         <a href="/collections/face">
-          <img
+          <img 
             src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662"
             className="rounded-2xl mt-[15px]"
           ></img>
@@ -189,6 +193,7 @@ export default function Homepage() {
       {isSmall && (
        <a href="/collections/face">
           <img
+            style={{height:"250px"}}
             src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662"
             className="rounded-2xl w-[100%] m-auto"
           ></img>
@@ -218,6 +223,7 @@ export default function Homepage() {
         <a href="/collections/eyes">
           <div className="my-[15px]">
             <img
+              style={{height:"250px"}}
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662"
               className="rounded-2xl w-[100%] m-auto"
             ></img>

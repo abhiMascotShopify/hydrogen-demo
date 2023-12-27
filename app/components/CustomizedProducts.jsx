@@ -9,7 +9,7 @@ const MobileProductCorousel = ({products, title}) => {
   const [startIndex, setStartIndex] = useState(0);
   var len = products.length;
   const isLargeScreen = useMediaQuery({minWidth: 1024});
-  const eIndex = isLargeScreen ? len <= 4 ? len : 4 : 1;
+  const eIndex = isLargeScreen ? len <= 4 ? len : 3 : 2;
   const [endIndex, setEndIndex]  = useState(eIndex);
   const productsToShow = products.slice(startIndex, endIndex);
   //console.log("productsToShow Custimized::",productsToShow)
