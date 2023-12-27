@@ -119,7 +119,7 @@ export default function Collection() {
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const endIndex = isLargeScreen ? 4 : 2;
   if (collection.products != null || collection.products != undefined) {
-    console.log(collection.products.nodes);
+    console.log(collection);
     productsToShow = collection.products.nodes;
     //console.log(productsToShow);
   }
@@ -198,7 +198,7 @@ export default function Collection() {
       <div>
         <img
           src={collection?.image?.url}
-          style={{height: '650px', objectFit: 'cover', width: '100%'}}
+          style={{ objectFit: 'cover', width: '100%'}}
         ></img>
       </div>
       <div className="bg-white mx-2.5">
