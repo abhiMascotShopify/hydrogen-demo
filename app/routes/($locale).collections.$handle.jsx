@@ -119,13 +119,12 @@ export default function Collection() {
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const endIndex = isLargeScreen ? 4 : 2;
   if (collection.products != null || collection.products != undefined) {
-    console.log(collection);
+    console.log("collection::",collection);
     productsToShow = collection.products.nodes;
     //console.log(productsToShow);
   }
 
   collection.products.nodes.map((product) => {
-    console.log("NODE ::",product.variants.nodes)
     product.variants.nodes.map((line) => {
         lines.push({
           merchandiseId: line.id,
