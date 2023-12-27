@@ -46,7 +46,7 @@ const ProductCarousel = ({products}) => {
     });
   });
 
-  console.log("Lines::",lines)
+  console.log("Lines::",productsToShow)
 
   return (
     <div className="w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
@@ -67,7 +67,7 @@ const ProductCarousel = ({products}) => {
                 </Link>
                 <div className="h-12">
                   <h1 className="text-center font-bold h-full w-full m-auto">
-                  {product.node.price}
+                  &#x20b9; {product.node.priceRange.minVariantPrice.amount}
                   </h1>
                 </div>
                 {/* Add more product information here */}

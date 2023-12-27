@@ -140,6 +140,8 @@ aside li {
 * components/Header
 * --------------------------------------------------
 */
+.object-cover{ object-fit: fill;}
+.cursor-pointer{font-size: small;}
 .header {
   align-items: center;
   background: #fff;

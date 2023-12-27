@@ -130,6 +130,33 @@ export default function Homepage() {
 
   return (
     <div className="home">
+        <section className="collectionContent lg:hidden block sm:mt-4 overflow-auto">
+        <div className="inline-flex gap-4">
+          {collectionArrayStatic?.map((item, index) => (
+            <div
+              className=" col-item sm:w-auto  rounded-lg hover:shadow-md cursor-pointer"
+              key={index}
+            >
+              <div className="image">
+                <img
+                  width={80}
+                  height={80}
+                  alt={item.collectionname}
+                  src={item.collectionimageurl}
+                  style={{
+                    width: '80px',
+                    borderRadius: '50%',
+                    border: '1px solid #e5e5e5',
+                  }}
+                />
+              </div>
+              <div className="collectionname  sm:text-lg text-[12px] font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]">
+                {item.collectionname}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
       <div>
         <ImageCarousel images={imageSrc}></ImageCarousel>
       </div>
@@ -154,7 +181,7 @@ export default function Homepage() {
       {isLargeScreen && (
         <a href="/collections/face">
           <img
-            src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/2-Collection-banner-PROFESSIONAL.jpg?v=1703657033"
+            src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662"
             className="rounded-2xl mt-[15px]"
           ></img>
         </a>
@@ -162,7 +189,7 @@ export default function Homepage() {
       {isSmall && (
        <a href="/collections/face">
           <img
-            src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/2-Collection-banner-PROFESSIONAL.jpg?v=1703657033"
+            src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662"
             className="rounded-2xl w-[100%] m-auto"
           ></img>
         </a>
@@ -180,7 +207,7 @@ export default function Homepage() {
          <a href="/collections/eyes">
           <div className="my-[15px]">
             <img
-              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/1-Collection-banner-STUIO-ELITE.jpg?v=1703657016"
+              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662"
               className="rounded-2xl"
             ></img>
           </div>
@@ -190,7 +217,7 @@ export default function Homepage() {
         <a href="/collections/eyes">
           <div className="my-[15px]">
             <img
-              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/1-Collection-banner-STUIO-ELITE.jpg?v=1703657016"
+              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662"
               className="rounded-2xl w-[100%] m-auto"
             ></img>
           </div>
@@ -504,35 +531,35 @@ const HEADER_QUERY = `#graphql
   ${MENU_FRAGMENT}
 `;
 
-// const collectionArray = [
-//   {
-//     collectionname: 'Moisturizer',
-//     url:"/collections/moisturizer",
-//     collectionimageurl: '/collection/Moisturizer.webp',
-//   },
-//   {
-//     collectionname: 'Cream',
-//     url:"/collections/cream",
-//     collectionimageurl: '/collection/Cream.webp',
-//   },
-//   {
-//     collectionname: 'Scrub',
-//     url:"/collections/scrub",
-//     collectionimageurl: '/collection/Scrub.webp',
-//   },
-//   {
-//     collectionname: 'Serum',
-//     url:"/collections/serum",
-//     collectionimageurl: '/collection/Serum.webp',
-//   },
-//   {
-//     collectionname: 'Face Wash',
-//     url:"/collections/face-wash",
-//     collectionimageurl: '/collection/Foaming-Face-Wash.jpg',
-//   },
-//   {
-//     collectionname: 'Face Wash',
-//     url:"/collections/face-wash",
-//     collectionimageurl: '/collection/Face-Wash.jpg',
-//   }
-// ];
+const collectionArrayStatic = [
+  {
+    collectionname: 'Moisturizer',
+    url:"/collections/moisturizer",
+    collectionimageurl: '/collection/Moisturizer.webp',
+  },
+  {
+    collectionname: 'Cream',
+    url:"/collections/cream",
+    collectionimageurl: '/collection/Cream.webp',
+  },
+  {
+    collectionname: 'Scrub',
+    url:"/collections/scrub",
+    collectionimageurl: '/collection/Scrub.webp',
+  },
+  {
+    collectionname: 'Serum',
+    url:"/collections/serum",
+    collectionimageurl: '/collection/Serum.webp',
+  },
+  {
+    collectionname: 'Face Wash',
+    url:"/collections/face",
+    collectionimageurl: '/collection/Foaming-Face-Wash.jpg',
+  },
+  {
+    collectionname: 'Face Wash',
+    url:"/collections/face-wash",
+    collectionimageurl: '/collection/Face-Wash.jpg',
+  }
+];

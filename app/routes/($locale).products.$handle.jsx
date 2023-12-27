@@ -301,117 +301,18 @@ function ProductMain({selectedVariant, product, variants}) {
             </Suspense>
           </div>
           <h2 className="mt-[10px]">Product Description</h2>
-          <div className="shadow-p sm:mt-[20px] relative px-[15px] py-[10px]">
+          <div className="shadow-p relative py-[10px]">
             <p className="text-gray-700">
               {product.description.substr(0, 200)}
             </p>
             {moreText && (
               <>
-                <p className="text-gray-700">{product.description}</p>
-                <div className="mt-4 ml-[5%]">
-                  <strong>Features:</strong>
-                  <ul className="list-disc text-sm ml-[5%] font-semibold">
-                    <li>
-                      This long-lasting liquid lipstick coats your lips in a
-                      rich creamy layer of pigment
-                    </li>
-                    <li>
-                      The formula is smudge-proof, water-resistant and
-                      transfer-proof
-                    </li>
-                    <li>
-                      Glides effortlessly over your lips and perfects your pout
-                      in one swipe while offering full coverage
-                    </li>
-                    <li>
-                      The non-sticky, lightweight formula stays put without
-                      creasing and drying and leaves your lips smooth
-                    </li>
-                    <li>
-                      Infused with lip-nourishing oils, this matte mousse
-                      lipstick is ultra-hydrating
-                    </li>
-                    <li>
-                      All SUGAR POP products are 100% vegetarian, cruelty-free
-                      and paraben-free
-                    </li>
-                  </ul>
-                  <em>Indulge in a creamy matte affair!</em>
-                  <p>
-                    SUGAR POP Matte Mousse Lipstick is an ultra-matte liquid
-                    lipstick that coats your lips in a rich creamy layer of
-                    pigment. The lightweight mousse formula glides on super
-                    smooth and perfects your pout in a single swipe while
-                    offering full coverage. No need to worry about lipstick
-                    smears, as this water-resistant lippie does not transfer or
-                    smudge for up to 10 hours. Enriched with nourishing oils,
-                    this matte liquid lipstick not only hydrates your lips but
-                    also prevents them from drying out. Choose from a striking
-                    range of nudes, pinks, reds and bold hues that are perfect
-                    for any occasion or mood
-                  </p>
-                  <strong>Benefits:</strong>
-                  <ul className="list-disc ml-[5%]">
-                    <li>Full-coverage</li>
-                    <li>Lasts up to 10 hours</li>
-                    <li>
-                      <span>Transfer-proof</span>
-                    </li>
-                    <li>Smudge-proof</li>
-                    <li>Lightweight</li>
-                    <li>Highly pigmented</li>
-                    <li>Water-resistant formula</li>
-                  </ul>
-                </div>
+              
+                <div
+                className="expect"
+                dangerouslySetInnerHTML={{__html: product.description}}
+              />
               </>
-            )}
-            {moreText ? (
-              <span
-                className="text-red-700 moreLink"
-                onClick={() => setMoreText(!moreText)}
-              >
-                less-
-              </span>
-            ) : (
-              <span
-                className="text-red-700 moreLink"
-                onClick={() => setMoreText(!moreText)}
-              >
-                more+
-              </span>
-            )}
-          </div>
-
-          <h2 className="mt-[20px]">VIEW ALL OFFERS</h2>
-          <div className="sm:mt-[30px]  relative px-[15px] py-[10px] shadow-p">
-            <ul className="list-disc px-2 text-[14px] font-semibold">
-              <li>FREE Mivi Play Bluetooth Speakers on a spend of Rs.2199</li>
-              <li>Holographic Pouch + Liquid Lipstick on a spend of Rs.599</li>
-              {moreOffer && (
-                <>
-                  <li>
-                    Holographic Pouch + Liquid Lipstick on a spend of Rs.599
-                  </li>
-                  <li>
-                    Holographic Pouch + Liquid Lipstick on a spend of Rs.599
-                  </li>
-                </>
-              )}
-            </ul>
-            {moreOffer ? (
-              <span
-                className="text-red-700 moreLink"
-                onClick={() => setMoreOffer(!moreOffer)}
-              >
-                less-
-              </span>
-            ) : (
-              <span
-                className="text-red-700 moreLink"
-                onClick={() => setMoreOffer(!moreOffer)}
-              >
-                more+
-              </span>
             )}
           </div>
         </div>
