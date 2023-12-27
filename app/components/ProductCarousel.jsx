@@ -20,7 +20,7 @@ const ProductCarousel = ({products}) => {
   var len = products.edges.length;
   if (products != null || products != undefined) {
     productsToShow = products.edges.slice(startIndex, endIndex);
-    //console.log(productsToShow);
+    //console.log("productsToShow::",productsToShow);
   }
 
   const nextProducts = () => {
@@ -36,19 +36,17 @@ const ProductCarousel = ({products}) => {
   console.log("start INDEX ::",startIndex,"End Index ::",endIndex,"Length::",len);
   products.edges.map((product) => {
     product.node.variants.edges.map((line) => {
-      if (
-        line.node.metafields[0] != null &&
-        line.node.metafields[0].value == 'true'
-      ) {
         lines.push([
           {
             merchandiseId: line.node.id,
             quantity: 1,
           },
         ]);
-      }
+      
     });
   });
+
+  console.log("Lines::",lines)
 
   return (
     <div className="w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
@@ -69,7 +67,7 @@ const ProductCarousel = ({products}) => {
                 </Link>
                 <div className="h-12">
                   <h1 className="text-center font-bold h-full w-full m-auto">
-                    ₹255
+                  {product.node.price}
                   </h1>
                 </div>
                 {/* Add more product information here */}

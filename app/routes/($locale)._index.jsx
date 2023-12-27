@@ -32,8 +32,6 @@ export async function loader({context}) {
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
   const {products} = await storefront.query(RECOMMENDED_PRODUCTS_QUERY);
   const {blogs} = await storefront.query(BLOGS_QUERY);
-  //console.log(products.nodes[0].variants.edges[0].node.metafields);
-  //console.log(products.nodes[0].variants.edges[0].node.metafields);
   const collection = collections;
 
   const headerPromise = storefront.query(HEADER_QUERY, {
@@ -61,9 +59,8 @@ export default function Homepage() {
   //console.log("menu ::",data.collections)
   var menus = header.menu.items;
   var collectionArray = menus.filter((item)=> item.title !== "Home")
-  
   const imageSrc = [
-    'https://images.unsplash.com/photo-1547005327-ef75a6961556?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8b2NlYW58ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662',
     'https://images.unsplash.com/photo-1480926965639-9b5f63a0817b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG9jZWFufGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=800&q=60',
     'https://images.unsplash.com/photo-1566024287286-457247b70310?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG9jZWFufGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=800&q=60',
     'https://images.unsplash.com/photo-1494791368093-85217fbbf8de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8b2NlYW58ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
@@ -95,7 +92,7 @@ export default function Homepage() {
     })
   })
 
-  console.log("collectionArray:",collectionArray)
+  //console.log("collectionArray:",collectionArray)
   data.collectionProducts.nodes.forEach((col) => {
     if (col.metafields[0] != null && col.metafields[0].value == 'true') {
       ReviewCollection.push(col);
@@ -113,7 +110,7 @@ export default function Homepage() {
       //console.log(col)
     }
   });
-  //console.log("BuildYourOwnColl::",BuildYourOwnColl[0].products.edges)
+  console.log("BuildYourOwnColl::",BuildYourOwnColl[0].products.edges)
   BuildYourOwnColl = BuildYourOwnColl[0].products.edges;
   ThirdHeroCollection =  ThirdHeroCollection[0].products;
   GiftCollections = GiftCollections;
@@ -157,7 +154,7 @@ export default function Homepage() {
       {isLargeScreen && (
         <a href="/collections/face">
           <img
-            src="https://cdn.shopify.com/s/files/1/0810/9863/7603/files/Banner1.jpg"
+            src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/2-Collection-banner-PROFESSIONAL.jpg?v=1703657033"
             className="rounded-2xl mt-[15px]"
           ></img>
         </a>
@@ -165,7 +162,7 @@ export default function Homepage() {
       {isSmall && (
        <a href="/collections/face">
           <img
-            src="https://cdn.shopify.com/s/files/1/0810/9863/7603/files/Liquid-concealer_1c3a4678-78f2-4c94-921b-cf77022205f7.jpg?v=1695059222"
+            src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/2-Collection-banner-PROFESSIONAL.jpg?v=1703657033"
             className="rounded-2xl w-[100%] m-auto"
           ></img>
         </a>
@@ -183,7 +180,7 @@ export default function Homepage() {
          <a href="/collections/eyes">
           <div className="my-[15px]">
             <img
-              src="https://cdn.shopify.com/s/files/1/0810/9863/7603/files/Banner1.jpg"
+              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/1-Collection-banner-STUIO-ELITE.jpg?v=1703657016"
               className="rounded-2xl"
             ></img>
           </div>
@@ -193,7 +190,7 @@ export default function Homepage() {
         <a href="/collections/eyes">
           <div className="my-[15px]">
             <img
-              src="https://cdn.shopify.com/s/files/1/0810/9863/7603/files/Liquid-concealer_1c3a4678-78f2-4c94-921b-cf77022205f7.jpg?v=1695059222"
+              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/1-Collection-banner-STUIO-ELITE.jpg?v=1703657016"
               className="rounded-2xl w-[100%] m-auto"
             ></img>
           </div>
@@ -278,24 +275,30 @@ const FEATURED_COLLECTION_QUERY = `#graphql
           id
           title
           handle
+          priceRange {
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
           variants(first: 100) {
           edges {
           node {
                 id
                 metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
-                          key
-                          value
-                        }
+                    key
+                    value
+                  }
                 }
               }
         }
-          images(first:1){
-            edges{
-              node{
-                url
-              }
+        images(first:1){
+          edges{
+            node{
+              url
             }
           }
+        }
         }
       }
     }
@@ -331,6 +334,12 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
     id
     title
     handle
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+    }
     metafields(identifiers: [{namespace: "custom", key: "customized"}, {namespace: "custom", key: "reviewed_products"}]){
       key
       value
@@ -338,12 +347,11 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
     variants(first: 100) {
       edges {
         node {
-
           id
           metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
-                              key
-                              value
-                            }
+              key
+              value
+            }
           # Add other variant fields you need
         }
       }

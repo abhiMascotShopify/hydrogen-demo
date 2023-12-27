@@ -31,7 +31,7 @@ export function Header({header, isLoggedIn, cart}) {
         </NavLink>
 
         {isLargeScreen && (
-          <div className="mt-auto ">
+          <div className="m-auto">
             <div className="relative flex w-full flex-wrap items-stretch">
               <div className="bg-white rounded w-full">
                 <PredictiveSearchForm>

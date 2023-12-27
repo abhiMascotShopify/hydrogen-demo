@@ -36,11 +36,9 @@ const DesktopCorousel = ({products, title}) => {
   var len = products.length;
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const eIndex = isLargeScreen ? len <= 4 ? len : 4 : 2;
-  console.log("eIndex::",eIndex,"Product Length::",len);
   const [endIndex, setEndIndex]  = useState(eIndex);
-
   const productsToShow = products.slice(startIndex, endIndex);
-
+  //console.log("productsToShow Custimized::",productsToShow)
   const nextProducts = () => {
     setStartIndex((prevIndex) => len == endIndex ? prevIndex -1 : prevIndex + 1 );
     setEndIndex((prevIndex) => len == endIndex ? prevIndex-1 : prevIndex + 1);
@@ -52,35 +50,46 @@ const DesktopCorousel = ({products, title}) => {
   };
 
   console.log("start INDEX ::",startIndex,"End Index ::",endIndex,"Length::",len);
+  function getPath(url_path) {
+    let url = new URL(url_path);
+    let path = url.pathname;
+    return path;
+  }
 
-  
+  function goToCollection(url_path){
+    let url = getPath(url_path);
+    window.location.href = url
+  }
+
   return (
     <div>
       <div className="w-full max-w-screen-2xl mx-auto px-1">
         <div className="relative">
           <h1 className="text-center">{title}</h1>
-          <div className="flex">
-            {productsToShow.map((product) => (
-              <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
-                <div className="bg-white rounded-lg shadow-lg p-1">
-                  <img
-                    src={`${product.node.images?.edges[0].node.url}`} // Make sure to put your images in the 'public/images/' directory
-                    alt={product.name}
-                    className="w-full h-auto rounded-lg"
-                  />
-                  {/* Add more product information here */}
+            <div className="flex">
+              {productsToShow.map((product) => (
+                <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
+                  <div className="bg-white rounded-lg shadow-lg p-1">
+                    <a href={`/products/${product.node.handle}`}>
+                    <img
+                      src={`${product.node.images?.edges[0].node.url}`} // Make sure to put your images in the 'public/images/' directory
+                      alt={product.name}
+                      className="w-full h-auto rounded-lg"
+                    />
+                    </a>
+                    {/* Add more product information here */}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
           <button
             className="absolute left-[5px] top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full ml-1 p-2 mr-2 hover:bg-opacity-75"
             onClick={() => prevProducts() }
           >
-            <MdChevronLeft
-              className="opacity-50 cursor-pointer hover:opacity-100"
-              size={20}
-            />
+          <MdChevronLeft
+            className="opacity-50 cursor-pointer hover:opacity-100"
+            size={20}
+          />
           </button>
           <button
             className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75"

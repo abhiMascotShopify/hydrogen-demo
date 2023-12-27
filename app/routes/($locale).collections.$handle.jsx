@@ -75,7 +75,7 @@ export const meta = ({data}) => {
 
 export async function loader({request, params, context}) {
   const {handle} = params;
-  console.log("handle::",handle)
+  //console.log("handle::",handle)
   const {storefront} = context;
   const paginationVariables = getPaginationVariables(request, {
     pageBy: 8,
@@ -95,7 +95,7 @@ export async function loader({request, params, context}) {
   const {collection} = await storefront.query(COLLECTION_QUERY, {
     variables: {handle, ...paginationVariables},
   });
-  console.log("Collection Handle ::",collection);
+  //console.log("Collection Handle ::",collection);
   if (!collection) {
     throw new Response(`Collection ${handle} not found`, {
       status: 404,
@@ -111,7 +111,7 @@ export default function Collection() {
   let subMenu = menu.items;
   var sortArr = subMenu.filter((item)=> item.title.toLowerCase() === handle );
   var collectionArray = sortArr[0]?.items;
-  console.log("collectionArray::",collectionArray)
+  //console.log("collectionArray::",collectionArray)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   let productsToShow = [];
   const lines = [];
@@ -125,16 +125,16 @@ export default function Collection() {
   }
 
   collection.products.nodes.map((product) => {
+    console.log("NODE ::",product.variants.nodes)
     product.variants.nodes.map((line) => {
-      console.log(line);
-      if (line.metafields[0] != null && line.metafields[0].value == 'true') {
         lines.push({
           merchandiseId: line.id,
           quantity: 1,
         });
-      }
     });
   });
+
+  console.log("Lines Collection::",lines)
 
   function getPath(url_path) {
     let url = new URL(url_path);
@@ -684,6 +684,7 @@ const PRODUCT_ITEM_FRAGMENT = `#graphql
     }
     variants(first: 1) {
       nodes {
+        id
         selectedOptions {
           name
           value
