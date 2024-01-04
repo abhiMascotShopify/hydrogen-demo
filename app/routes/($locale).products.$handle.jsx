@@ -101,7 +101,7 @@ function redirectToFirstVariant({product, request}) {
 export default function Product() {
   const {product, variants, productsreturn} = useLoaderData();
   const {selectedVariant} = product;
-  //console.log(productsreturn);
+  console.log("selectedVariant ::",selectedVariant);
   return (
     <>
       {/*<ProductVariantColrousel className="col-span-1 overflow-x-auto" product={product}></ProductVariantColrousel>*/}
@@ -260,7 +260,7 @@ function ProductMain({selectedVariant, product, variants}) {
           <ProductImage
             image={selectedVariant?.image}
             product={product}
-            activeImg={activeImg}
+            activeImg={selectedVariant?.image?.url}
             setActiveImage={setActiveImage}
           />
         </div>
