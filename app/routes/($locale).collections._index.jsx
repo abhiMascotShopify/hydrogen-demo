@@ -54,7 +54,7 @@ function CollectionsGrid({collections}) {
 function CollectionItem({collection, index}) {
   return (
     <Link
-      className="collection-item"
+      className="collection-item border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
       key={collection.id}
       to={`/collections/${collection.handle}`}
       prefetch="intent"
