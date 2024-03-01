@@ -55,7 +55,7 @@ const ProductCarousel = ({products}) => {
           {productsToShow.map((product, index) => (
             <div key={product.node.id} className="w-full " >
                 <div className="bg-white rounded-lg shadow-lg p-2">
-                  <div onClick={()=> goToProduct(`/products/${product.node.handle}`)}>
+                  <div className='cursor' onClick={()=> goToProduct(`/products/${product.node.handle}`)}>
                     <img
                       src={`${ product.node.images.edges.length > 0 ? product.node.images.edges[0].node.url : noImg }`} // Make sure to put your images in the 'public/images/' directory
                       alt={product.node.title}

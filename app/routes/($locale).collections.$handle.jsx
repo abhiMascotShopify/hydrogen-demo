@@ -538,7 +538,7 @@ export default function Collection() {
                                 {(fetcher) => (
                                   <>
                                     <button
-                                      className="cart-button lg:w-[240px] h-[2rem] sm:h-11 px-[25px] bg-black hover:bg-blue-700 text-white font-bold py-1 px-1 rounded-lg sm:text-lg text-[12px]"
+                                      className="cart-button lg:w-[200px] h-[2rem] sm:h-11 px-[25px] bg-black hover:bg-blue-700 text-white font-bold py-1 px-1 rounded-lg sm:text-lg text-[12px]"
                                       type="submit"
                                       onClick={() => {
                                         window.location.href =
