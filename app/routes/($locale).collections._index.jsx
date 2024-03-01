@@ -24,11 +24,11 @@ export default function Collections() {
         {({nodes, isLoading, PreviousLink, NextLink}) => (
           <div>
             <PreviousLink>
-              {isLoading ? 'Loading...' : <div className='flex justify-center'>↑ Load previous</div>}
+              {isLoading ? 'Loading...' : <div className='flex justify-center mt-8'>↑ Load previous</div>}
             </PreviousLink>
             <CollectionsGrid collections={nodes} />
             <NextLink>
-              {isLoading ? 'Loading...' : <div className='flex justify-center'>Load more ↓</div>}
+              {isLoading ? 'Loading...' : <div className='flex justify-center mt-8'>Load more ↓</div>}
             </NextLink>
           </div>
         )}
