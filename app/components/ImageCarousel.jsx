@@ -15,7 +15,7 @@ const ImageCarousel = ({images , isSmall}) => {
   };
   if(isSmall) mobImgHeight = {height:"250px"}
   return (
-    <div className="relative opacity-50">
+    <div className="relative">
       <button
         className="absolute left-0 top-1/2 transform -translate-y-1/2 px-4 py-2 text-white"
         onClick={() =>
