@@ -1,18 +1,16 @@
-// src/ProductCarousel.js
-import React, {useState} from 'react';
-import {MediaFile} from '@shopify/hydrogen-react';
-//import products from './products';
+import {useState} from 'react';
 import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
 import {useMediaQuery} from 'react-responsive';
 
 const MobileProductCorousel = ({products, title}) => {
+  const noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129"
   const [startIndex, setStartIndex] = useState(0);
   var len = products.length;
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const eIndex = isLargeScreen ? len <= 4 ? len : 3 : 2;
   const [endIndex, setEndIndex]  = useState(eIndex);
   const productsToShow = products.slice(startIndex, endIndex);
-  //console.log("productsToShow Custimized::",productsToShow)
+  // console.log("productsToShow Custimized::",products[0].node.images.edges[0])
   const nextProducts = () => {
     setStartIndex((prevIndex) => len == endIndex ? prevIndex -1 : prevIndex + 1 );
     setEndIndex((prevIndex) => len == endIndex ? prevIndex-1 : prevIndex + 1);
@@ -29,11 +27,11 @@ const MobileProductCorousel = ({products, title}) => {
           <h1 className="text-center">{title}</h1>
             <div className="flex">
               {productsToShow.map((product) => (
-                <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
-                  <div className="bg-white rounded-lg shadow-lg p-1">
+                <div key={product.id} className="cursor w-full sm:w-1/3 md:w-1/3 px-4">
+                  <div className="cursor bg-white rounded-lg shadow-lg p-1">
                     <a href={`/products/${product.node.handle}`}>
                     <img
-                      src={`${product.node.images?.edges[0].node.url}`} // Make sure to put your images in the 'public/images/' directory
+                      src={`${ product.node.images.edges.length > 0 ? product.node.images.edges[0].node.url : noImg }`} // Make sure to put your images in the 'public/images/' directory
                       alt={product.name}
                       className="w-full h-auto rounded-lg"
                     />
@@ -67,6 +65,7 @@ const MobileProductCorousel = ({products, title}) => {
 };
 
 const DesktopCorousel = ({products, title}) => {
+  const noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129"
   const [startIndex, setStartIndex] = useState(0);
   var len = products.length;
   const isLargeScreen = useMediaQuery({minWidth: 1024});
@@ -84,7 +83,7 @@ const DesktopCorousel = ({products, title}) => {
     setEndIndex((prevIndex) => len == endIndex ? prevIndex-1 : prevIndex + 1);
   };
 
-  console.log("start INDEX ::",startIndex,"End Index ::",endIndex,"Length::",len);
+  //console.log("start INDEX ::",startIndex,"End Index ::",endIndex,"Length::",len);
 
   return (
     <div>
@@ -93,11 +92,11 @@ const DesktopCorousel = ({products, title}) => {
           <h1 className="text-center">{title}</h1>
             <div className="flex">
               {productsToShow.map((product) => (
-                <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
-                  <div className="bg-white rounded-lg shadow-lg p-1">
+                <div key={product.id} className="cursor w-full sm:w-1/3 md:w-1/3 px-4">
+                  <div className="cursor bg-white rounded-lg shadow-lg p-1">
                     <a href={`/products/${product.node.handle}`}>
                     <img
-                      src={`${product.node.images?.edges[0].node.url}`} // Make sure to put your images in the 'public/images/' directory
+                      src={`${ product.node?.images ? product.node.images.edges[0].node.url : noImg }`}  // Make sure to put your images in the 'public/images/' directory
                       alt={product.name}
                       className="w-full h-auto rounded-lg"
                     />

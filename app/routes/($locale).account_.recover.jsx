@@ -99,8 +99,8 @@ export default function Recover() {
         )}
       </div>
               </div>*/}
-              <div className="flex flex-col-reverse sm:flex-row">
-<div className="sm:w-1/2 hidden sm:block">
+              <div className="flex flex-col sm:flex-row">
+<div className="sm:w-1/2  sm:block">
 
         <img
           src="https://media.sugarpop.com/upload/LoginSideImg.png"
@@ -121,7 +121,7 @@ export default function Recover() {
           </>
         ) : (
       <div className="w-full justify-center items-center flex flex-col">
-  <Form className="w-full justify-center items-center" method="POST">
+  <Form className="w-full justify-center items-center login_wrapper" method="POST">
    <fieldset>
     <div className="mb-3" >
       <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
@@ -138,7 +138,6 @@ export default function Recover() {
        required
        type="email"/>
     </div>
-     </fieldset>
     <div className="flex items-center justify-between">
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
         Request Reset Link
@@ -147,6 +146,8 @@ export default function Recover() {
         Login
       </a>
     </div>
+     </fieldset>
+    
   </Form>
   <p className="text-center text-gray-500 text-xs">
     &copy;2023. All rights reserved.

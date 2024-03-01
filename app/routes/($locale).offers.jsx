@@ -1,5 +1,6 @@
 import {defer} from '@shopify/remix-oxygen';
 import CustomizedCollection from '../components/CustomizedCollection';
+import OfferCarousel from "../components/OfferCarousel"
 import {useLoaderData} from '@remix-run/react';
 
 export const meta = () => {
@@ -17,20 +18,18 @@ export async function loader({context}) {
 
 export default function Offers() {
   const data = useLoaderData();
- 
   var GiftCollections = [];
     data.collectionProducts.nodes.forEach((col) => {
     if (col.title == "Gift Under 500" || col.title == "Gift Under 1000" || col.title == "Gifts Under 2000") {
       GiftCollections.push(col);
-      //console.log(col)
     }
   });
-  console.log("Offers::",GiftCollections)
+  // console.log("Offers::",GiftCollections)
   GiftCollections = GiftCollections;
   return (
     <>
       <div className="page">
-        <CustomizedCollection collections={GiftCollections} title={'Gifting Offers'} />
+        <OfferCarousel collections={GiftCollections} title={'Gifting Offers'} />
       </div>
     </>
   );

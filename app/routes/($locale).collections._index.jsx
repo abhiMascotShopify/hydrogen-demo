@@ -39,13 +39,13 @@ export default function Collections() {
 
 function CollectionsGrid({collections}) {
   return (
-    <div className="collections-grid">
-      {collections.map((collection, index) => (
-        <CollectionItem
-          key={collection.id}
-          collection={collection}
-          index={index}
-        />
+    <div className="grid grid-cols-4 gap-4 px-5">
+      {collections.map((collection, index) => (  
+          <CollectionItem
+            key={collection.id}
+            collection={collection}
+            index={index}
+          />
       ))}
     </div>
   );
@@ -59,14 +59,16 @@ function CollectionItem({collection, index}) {
       to={`/collections/${collection.handle}`}
       prefetch="intent"
     >
-      {collection.image && (
+      {collection.image ? 
         <Image
           alt={collection.image.altText || collection.title}
           aspectRatio="1/1"
-          data={collection.image}
+          data={collection.image ? collection.image : ""}
           loading={index < 3 ? 'eager' : undefined}
         />
-      )}
+      :
+      <img src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129" /> 
+      }
       <h5>{collection.title}</h5>
     </Link>
   );

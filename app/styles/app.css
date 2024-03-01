@@ -17,12 +17,17 @@ img {
 * components/Aside
 * --------------------------------------------------
 */
-.login_wrapper { display: inline-flex; }
+
 .collectionContent{display: flex;justify-content: center;}
+.cursor{cursor: pointer;}
 .login_span { display: flex;
   justify-content: center;
   align-items: flex-end;
   margin: 0 5px;}
+  .empty_cart_img{ 
+    max-width: 200px;
+    height: auto;
+  }
 aside {
   background: var(--color-light);
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
@@ -177,7 +182,6 @@ aside li {
     position: sticky;
     top: 78px;
     background: white;
-    z-index: 9;
     font-size: 18px;
     font-weight: 500;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 20px 29px 0px;
@@ -230,7 +234,7 @@ aside li {
 .cart-main {
   height: 100%;
   max-height: calc(100vh - var(--cart-aside-summary-height));
-  overflow-y: auto;
+  overflow: auto;
   width: auto;
   padding-bottom: 20px;
 }
@@ -335,7 +339,9 @@ aside li {
 }
 
 .predictive-search-result {
-  margin-bottom: 2rem;
+  background: #f9f9f9;
+  padding: 5px 10px;
+  border-bottom: 1px dotted #dfdfdf;
 }
 
 .predictive-search-result h5 {
@@ -563,6 +569,7 @@ aside li {
 .home {
   padding: 0 10px;
 }
+.login_wrapper fieldset{margin: 10%;}
 @media only screen and (max-width: 1024px) {
   .mobile-cart-product {
     position: fixed;
@@ -583,13 +590,21 @@ aside li {
   }
 }
 
-@media only screen and (max-width: 776px) {
+@media only screen and (max-width: 767px) {
+  .login_wrapper fieldset{ border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1); 
+    position: relative;
+    top: -50px;
+    background: white;
+    border-radius: 10px;
+  }
   .collection-items {
     /* width: 30% !important; */
     width: calc(100vw - 75vw);
   }
 }
-@media only screen and (min-width: 776px) {
+@media only screen and (min-width: 767px) {
+  
   .collection-items {
     /* width: 30% !important; */
     width: calc(100vw - 87vw);
@@ -667,6 +682,7 @@ aside li {
   .expect > div {
     grid-template-columns: 1fr !important;
   }
+
   .collection-items {
     width: 35vw;
   }

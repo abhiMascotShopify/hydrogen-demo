@@ -238,7 +238,7 @@ export function PredictiveSearchResults() {
     return <NoPredictiveSearchResults searchTerm={searchTerm} />;
   }
   return (
-    <div className="predictive-search-results mx-3 rounded-2xl">
+    <div className="predictive-search-results lg:w-[470px]">
       <div>
         {results.map(({type, items}) => (
           <PredictiveSearchResult
@@ -282,9 +282,9 @@ function PredictiveSearchResult({goToSearchResult, items, searchTerm, type}) {
 
   return (
     <div className="predictive-search-result" key={type}>
-      <Link prefetch="intent" to={categoryUrl} onClick={goToSearchResult}>
+      {/* <Link prefetch="intent" to={categoryUrl} onClick={goToSearchResult}>
         <h5>{isSuggestions ? 'Suggestions' : type}</h5>
-      </Link>
+      </Link> */}
       <ul>
         {items.map((item) => (
           <SearchResultItem

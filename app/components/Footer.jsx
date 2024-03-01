@@ -30,13 +30,13 @@ export function Footer({menu}) {
     </footer>
 
   );*/
-  console.log(menu.items);
+  //console.log(menu.items);
   return (
     <>
       <footer className="mt-8">
         <div className="m-4 p-4">
           <div className="footer-section  text-xl font-semibold border-y-2 py-4">
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-1">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-1">
             <div className="cursor-pointer">Stores</div>
               <div className="cursor-pointer">Terms & Conditions</div>
               <div className="cursor-pointer">Returns</div>
@@ -45,7 +45,7 @@ export function Footer({menu}) {
             </div>
           </div>
           <div className="py-6 footer-contact m-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
                 <div className="cursor-pointer">
                   <h2 className="font-semibold text-xl">GET IN TOUCH</h2>
                   <h3 className="mt-4 mb-2 text-md font-semibold">Call us at</h3>

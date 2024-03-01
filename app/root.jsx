@@ -46,7 +46,6 @@ export async function loader({context}) {
 
   // defer the cart query by not awaiting it
   const cartPromise = cart.get();
-
   // defer the footer query (below the fold)
   const footerPromise = storefront.query(FOOTER_QUERY, {
     cache: storefront.CacheLong(),

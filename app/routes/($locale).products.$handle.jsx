@@ -1,9 +1,9 @@
-import {Suspense} from 'react';
+import {useRef,Suspense} from 'react';
 import {defer, redirect} from '@shopify/remix-oxygen';
 import {Await, Link, useLoaderData} from '@remix-run/react';
 import React, {useState} from 'react';
 import ProductsCorousel from '~/components/ProductsCorousel';
-
+import ProductCarousel from '~/components/ProductCarousel';
 import {
   Image,
   Money,
@@ -12,6 +12,17 @@ import {
   CartForm,
 } from '@shopify/hydrogen';
 import {getVariantUrl} from '~/utils';
+import {
+  JudgemeMedals,
+  JudgemeCarousel,
+  JudgemeReviewsTab,
+  JudgemePreviewBadge,
+  JudgemeReviewWidget,
+  JudgemeVerifiedBadge,
+  JudgemeAllReviewsCount,
+  JudgemeAllReviewsRating,
+} from "@judgeme/shopify-hydrogen";
+import {useJudgeme} from '@judgeme/shopify-hydrogen'
 
 export const meta = ({data}) => {
   return [{title: `Hydrogen | ${data.product.title}`}];
@@ -20,7 +31,7 @@ export const meta = ({data}) => {
 export async function loader({params, request, context}) {
   const {handle} = params;
   const {storefront} = context;
-
+ 
   const selectedOptions = getSelectedProductOptions(request).filter(
     (option) =>
       // Filter out Shopify predictive search query params
@@ -35,18 +46,13 @@ export async function loader({params, request, context}) {
     throw new Error('Expected product handle to be defined');
   }
 
-  // await the query for the critical product data
   const {product} = await storefront.query(PRODUCT_QUERY, {
     variables: {handle, selectedOptions},
   });
 
   const products = await storefront.query(PRODUCTS_QUERY);
-  // console.log(products.products.edges);
 
   const productsreturn = products.products;
-  //console.log(product.variants.nodes[0].image.url);
-  //console.log(product.variants.nodes[0]);
-
   // In order to show which variants are available in the UI, we need to query
   // all of them. But there might be a *lot*, so instead separate the variants
   // into it's own separate query that is deferred. So there's a brief moment
@@ -76,7 +82,17 @@ export async function loader({params, request, context}) {
       return redirectToFirstVariant({product, request});
     }
   }
-  return defer({product, variants, productsreturn});
+  var judgeme = {
+    shopDomain: context.env.JUDGEME_SHOP_DOMAIN,
+    publicToken: context.env.JUDGEME_PUBLIC_TOKEN,
+    cdnHost: context.env.JUDGEME_CDN_HOST,
+    delay: 500, // optional parameter, default to 500ms
+  };
+  const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
+  //console.log(collections.nodes[0].products);
+  const recommendedProducts = collections;
+  //console.log("Recommended Products::",recommendedProducts)
+  return defer({product, variants, productsreturn ,judgeme,recommendedProducts});
 }
 
 function redirectToFirstVariant({product, request}) {
@@ -99,9 +115,10 @@ function redirectToFirstVariant({product, request}) {
 //const [activeImg, setActiveImage] = useState(0)
 
 export default function Product() {
-  const {product, variants, productsreturn} = useLoaderData();
+  const {product, variants, productsreturn,judgeme,recommendedProducts} = useLoaderData();
   const {selectedVariant} = product;
-  console.log("selectedVariant ::",selectedVariant);
+  //useJudgeme(judgeme);
+  //console.log("product:: ::",product);
   return (
     <>
       {/*<ProductVariantColrousel className="col-span-1 overflow-x-auto" product={product}></ProductVariantColrousel>*/}
@@ -110,6 +127,7 @@ export default function Product() {
         selectedVariant={selectedVariant}
         product={product}
         variants={variants}
+        recommendedProducts={recommendedProducts}
       />
       {productsreturn && <ProductsCorousel products={productsreturn} />}
     </>
@@ -148,103 +166,43 @@ function ProductImage({image, activeImg, setActiveImage, product}) {
         <img
           src={activeImg}
           alt=""
-          className="w-[90%] border border-[#e5e5e5] h-full aspect-square object-cover rounded-xl p-[10px] border-1 border-[#e5e5e5]"
+          className="w-[90%] border border-[#e5e5e5] h-full aspect-square object-cover rounded-xl p-[10px] border-1 border-[#e5e5e5] hover:scale-125 transition duration-300 cursor-pointer"
         />
       </div>
     </>
   );
 }
 
-function ProductMain({selectedVariant, product, variants}) {
-  {
-    /*const {title, descriptionHtml} = product;
-  return (
-    <div className="col-span-5">
-      <h1>{title}</h1>
-      <ProductPrice selectedVariant={selectedVariant} />
-      <div className='shadow-2xl bg-grey'>
-      AVAILABLE OFFERS!!
-      </div>
-      <br />
-      <Suspense
-        fallback={
-          <ProductForm
-            product={product}
-            selectedVariant={selectedVariant}
-            variants={[]}
-          />
-        }
-      >
-        <Await
-          errorElement="There was a problem loading product variants"
-          resolve={variants}
-        >
-          {(data) => (
-            <ProductForm
-              product={product}
-              selectedVariant={selectedVariant}
-              variants={data.product?.variants.nodes || []}
-            />
-          )}
-        </Await>
-      </Suspense>
-      <br />
-      <br />
-      <p>
-        <strong>Description</strong>
-      </p>
-      <br />
-      <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />
-      <br />
-    </div>
-          );*/
-  }
-
-  //console.log(product)
-
-  /*const [images, setImages] = useState({
-              img0 : "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/3396ee3c-08cc-4ada-baa9-655af12e3120/scarpa-da-running-su-strada-invincible-3-xk5gLh.png",
-              img1 : "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_440/e44d151a-e27a-4f7b-8650-68bc2e8cd37e/scarpa-da-running-su-strada-invincible-3-xk5gLh.png",
-              img2 : "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_440/44fc74b6-0553-4eef-a0cc-db4f815c9450/scarpa-da-running-su-strada-invincible-3-xk5gLh.png",
-              img3 : "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_440/d3eb254d-0901-4158-956a-4610180545e5/scarpa-da-running-su-strada-invincible-3-xk5gLh.png"
-          })*/
+function ProductMain({selectedVariant, product, variants,recommendedProducts}) {
   const ImageSrc = [];
-
   product.images.edges.forEach((item) => {
     ImageSrc.push(item.node.url);
   });
-
-  //console.log(ImageSrc)
-
   const [images, setImages] = useState(ImageSrc);
-
   const expaction = product.metafields[0]?.value;
-  //console.log(expaction)
+  //console.log("ProductMain ::",selectedVariant)
   const key_ingredients = product.metafields[1]?.value;
   const How_To_use = product.metafields[2]?.value;
   const who_can_use = product.metafields[3]?.value;
   const why_us = product.metafields[4]?.value;
-  //console.log(why_us);
-
-  const [activeTab, setActiveTab] = useState('Key Ingredients');
-
+  const ingredient = product.metafields[5]?.value;
+  const [activeTab, setActiveTab] = useState('Ingredient');
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-
   const [activeImg, setActiveImage] = useState(images[0]);
-
   const [amount, setAmount] = useState(1);
-  //<img src={images[0]} alt="" className='w-24 h-24 rounded-md cursor-pointer' onClick={() => setActiveImage(images[0])}/>
-  //<img src={images[1]} alt="" className='w-24 h-24 rounded-md cursor-pointer' onClick={() => setActiveImage(images[1])}/>
   const [moreText, setMoreText] = useState(true);
   const [moreOffer, setMoreOffer] = useState(false);
+
+  const [more, setMore] = useState(false);
+  const [moreContent, setMoreContent] = useState('+View More');
 
   return (
     <>
       {/*<ProductImage image={selectedVariant?.image} />*/}
       <div className="flex m-[2%] gap-2 items-center">
-        <span>Home</span>
+        <Link to="/">Home</Link>
         <img src="/next.png" alt="next" width={20} height={20} />
         <span className="font-semibold">Product page</span>
       </div>
@@ -267,11 +225,14 @@ function ProductMain({selectedVariant, product, variants}) {
         {/* ABOUT */}
         <div className="flex flex-col lg:w-3/4">
           <div>
-            {/*<!--h6 className='text-2xl font-semibold'></h6 -->*/}
-            {/*<span className=' text-violet-600 font-semibold'>Special Sneaker</span>*/}
             <h1 className="text-2xl font-semibold mt-0 mb-[15px]">
               {product.title}
             </h1>
+            {/* <div className="product_review" id={product.id}>
+              <JudgemeVerifiedBadge id={product.id}/> 
+              <JudgemeAllReviewsCount />
+              <JudgemeReviewWidget id={product.id} />
+            </div> */}
             <ProductPrice selectedVariant={selectedVariant} />
           </div>
           <div>
@@ -294,6 +255,8 @@ function ProductMain({selectedVariant, product, variants}) {
                   <ProductForm
                     product={product}
                     selectedVariant={selectedVariant}
+                    activeImg={activeImg}
+                    setActiveImage={setActiveImage}
                     variants={data.product?.variants.nodes || []}
                   />
                 )}
@@ -344,7 +307,7 @@ function ProductMain({selectedVariant, product, variants}) {
             Product Information
           </h1>
           <div className="flex space-x-4 overflow-y-auto lg:justify-center my-[20px]">
-            <div
+            {/* <div
               className={`cursor-pointer py-2 lg:px-8 px-4  whitespace-nowrap ${
                 activeTab === 'Key Ingredients' ? 'border-active' : ''
               }`}
@@ -352,7 +315,7 @@ function ProductMain({selectedVariant, product, variants}) {
               style={{border: '1px solid #e5e5e5'}}
             >
               Key Ingredients
-            </div>
+            </div> */}
             <div
               className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 whitespace-nowrap ${
                 activeTab === 'How to Use' ? 'border-active' : ''
@@ -364,12 +327,21 @@ function ProductMain({selectedVariant, product, variants}) {
             </div>
             <div
               className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 whitespace-nowrap ${
-                activeTab === 'Who Can Use' ? 'border-active' : ''
+                activeTab === 'Concerns' ? 'border-active' : ''
               }`}
-              onClick={() => handleTabClick('Who Can Use')}
+              onClick={() => handleTabClick('Concerns')}
               style={{border: '1px solid #e5e5e5'}}
             >
-              Who Can Use
+             Concerns
+            </div>
+            <div
+              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 whitespace-nowrap ${
+                activeTab === 'Ingredient' ? 'border-active' : ''
+              }`}
+              onClick={() => handleTabClick('Ingredient')}
+              style={{border: '1px solid #e5e5e5'}}
+            >
+             Ingredient
             </div>
             <div
               className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 whitespace-nowrap ${
@@ -400,9 +372,14 @@ function ProductMain({selectedVariant, product, variants}) {
                 />
               </div>
             )}
-            {activeTab === 'Who Can Use' && who_can_use && (
+            {activeTab === 'Concerns' && who_can_use && (
               <div className="overflow-y-auto">
                 <div dangerouslySetInnerHTML={{__html: who_can_use}} />
+              </div>
+            )}
+            {activeTab === 'Ingredient' && ingredient && (
+              <div className="overflow-y-auto">
+                <div dangerouslySetInnerHTML={{__html: ingredient}} />
               </div>
             )}
             {activeTab === 'Why us' && why_us && (
@@ -412,6 +389,13 @@ function ProductMain({selectedVariant, product, variants}) {
             )}
           </div>
         </div>
+      </div>
+      <div className='recommended_products'>
+      <RecommendedProducts
+        key={recommendedProducts.nodes[0].id}
+        products={recommendedProducts.nodes[0].products}
+        title="Recommended Products"
+      />
       </div>
     </>
   );
@@ -452,6 +436,7 @@ function ProductForm({
   activeImg,
   setActiveImage,
 }) {
+  const closeRef = useRef(null);
   return (
     <div className="product-form">
       <VariantSelector
@@ -464,10 +449,13 @@ function ProductForm({
             key={option.name}
             option={option}
             activeImg={activeImg}
+            closeRef={closeRef}
+            selectedVariant={selectedVariant}
             setActiveImage={setActiveImage}
           />
         )}
       </VariantSelector>
+      <Offers />
       <br />
 
       <AddToCartButton
@@ -492,9 +480,10 @@ function ProductForm({
   );
 }
 
-function ProductOptions({option, activeImg, setActiveImage}) {
-  const [more, setMore] = useState(false);
-  const [moreContent, setMoreContent] = useState('+View More');
+function ProductOptions({option, activeImg, setActiveImage,closeRef}) {
+  var opt_length = option.values.length;
+
+  //console.log("selectedVariant ::",closeRef);
 
   return (
     <>
@@ -504,6 +493,7 @@ function ProductOptions({option, activeImg, setActiveImage}) {
           {option.values.map(({value, isAvailable, isActive, to}) => {
             return (
               <Link
+                ref={closeRef}
                 className="product-options-item"
                 key={option.name + value}
                 prefetch="intent"
@@ -518,50 +508,37 @@ function ProductOptions({option, activeImg, setActiveImage}) {
                   borderRadius: '5px',
                 }}
                 onClick={() => {
-                  setActiveImage(selectedVariant?.image.url);
+                  if (!closeRef?.current) return;
+                  closeRef.current.click();
                 }}
               >
-                <div dangerouslySetInnerHTML={{__html: value}} />
+              <div dangerouslySetInnerHTML={{__html: value}} />
               </Link>
             );
           })}
         </div>
         <br />
       </div>
-      <div className="bg-[#f7f7f7] py-[10px] pl-[50px]">
-        <h2 className="text-[16px]">AVAILABLE OFFERS!!</h2>
-        <ul className="text-[#757575] list-disc">
-          <li>FREE Mivi Play Bluetooth Speakers on a spend of Rs.2199</li>
-          <li>Holographic Pouch + Liquid Lipstick on a spend of Rs.599</li>
-
-          {more && (
-            <>
-              <li>Shop for Rs.999 and get Flat Rs.100 off</li>
-              <li>Shop for Rs.1299 and get Flat Rs.200 off</li>
-              <li>Shop for Rs.1499 and get Flat Rs.300 off</li>
-            </>
-          )}
-          <span
-            onClick={() => {
-              setMore(!more),
-                setMoreContent(
-                  moreContent === '+View More' ? '-View Less' : '+View More',
-                );
-            }}
-            className="text-red-700 cursor-pointer"
-          >
-            {moreContent}
-          </span>
-        </ul>
-      </div>
     </>
   );
+}
+
+const Offers = ()=>{
+  return(
+    <div className="bg-[#f7f7f7] py-[10px] pl-[50px]">
+    <h2 className="text-[16px]">AVAILABLE OFFERS!!</h2>
+    <ul className="text-[#757575] list-disc">
+      <li>FREE Mivi Play Bluetooth Speakers on a spend of Rs.2199</li>
+      <li>Holographic Pouch + Liquid Lipstick on a spend of Rs.599</li>
+    </ul>
+  </div>
+  )
 }
 
 function AddToCartButton({analytics, children, disabled, lines, onClick}) {
   const [amount, setAmount] = useState(1);
   lines[0].quantity = amount;
-  console.log(lines[0].merchandiseId);
+  //console.log("AddToCartButton variant_id::",lines);
   return (
     <>
       <CartForm
@@ -615,13 +592,13 @@ function AddToCartButton({analytics, children, disabled, lines, onClick}) {
         className="lg:mt-6"
         style={{width: '100%', borderBottom: '1px dashed #bdbdbd'}}
       ></p>
-      <div className="mt-2">
+      {/* <div className="mt-2">
         <img src="/BrandBand.svg" alt="brand" />
       </div>
       <p
         className="mt-2"
         style={{width: '100%', borderBottom: '1px dashed #bdbdbd'}}
-      ></p>
+      ></p> */}
     </>
   );
 }
@@ -643,6 +620,22 @@ function ProductVariantColrousel(product) {
         </li>
       </ul>
     </div>
+  );
+}
+function RecommendedProducts({products, title}) {
+  return (
+    <>
+      <h1 className="text-center font-semibold my-[15px]">{title} </h1>
+      <div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Await resolve={products}>
+            {/*<ShopifyCarousel products={products}></ShopifyCarousel>*/}
+            {<ProductsCorousel products={products}></ProductsCorousel>}
+          </Await>
+        </Suspense>
+        <br />
+      </div>
+    </>
   );
 }
 //variants.nodes[0].image.url
@@ -694,7 +687,7 @@ const PRODUCT_FRAGMENT = `#graphql
     description
     tags
     productType
-    metafields(identifiers: [{namespace: "custom", key: "what_to_expect"},{namespace: "custom", key: "key_ingredients"}, {namespace: "custom", key: "how_to_use1"},{namespace: "custom", key: "who_can_use"},{namespace: "custom", key: "why_we"} ]){
+    metafields(identifiers: [{namespace: "custom", key: "what_to_expect"},{namespace: "custom", key: "key_ingredients"}, {namespace: "custom", key: "how_to_use1"},{namespace: "custom", key: "who_can_use"},{namespace: "custom", key: "why_we"},{namespace: "custom", key: "key_ingredients"} ]){
       key
       value
     }
@@ -786,6 +779,120 @@ const PRODUCTS_QUERY = `#graphql
       }
     }
 }
+  }
+`;
+
+const FEATURED_COLLECTION_QUERY = `#graphql
+  fragment FeaturedCollection on Collection {
+    products(first:100){
+      edges{
+        node{
+          id
+          title
+          handle
+          priceRange {
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
+          variants(first: 100) {
+          edges {
+          node {
+                id
+                metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
+                    key
+                    value
+                  }
+                }
+              }
+        }
+        images(first:1){
+          edges{
+            node{
+              url
+            }
+          }
+        }
+        }
+      }
+    }
+    id
+    title
+    metafields(identifiers: [{namespace: "custom", key: "from_customer_inbox"}, {namespace: "custom", key: "1_custom_colllection"}]){
+      id
+      key
+      namespace
+      value
+    }
+    image {
+      id
+      url
+      altText
+      width
+      height
+    }
+    handle
+  }
+  query FeaturedCollection($country: CountryCode, $language: LanguageCode)
+    @inContext(country: $country, language: $language) {
+    collections(first: 100) {
+      nodes {
+        ...FeaturedCollection
+      }
+    }
+  }
+`
+const RECOMMENDED_PRODUCTS_QUERY = `#graphql
+  fragment RecommendedProduct on Product {
+    id
+    title
+    handle
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+    }
+    metafields(identifiers: [{namespace: "custom", key: "customized"}, {namespace: "custom", key: "reviewed_products"}]){
+      key
+      value
+    }
+    variants(first: 100) {
+      edges {
+        node {
+          id
+          metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
+              key
+              value
+            }
+          # Add other variant fields you need
+        }
+      }
+    }
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+    }
+    images(first: 10) {
+      nodes {
+        id
+        url
+        altText
+        width
+        height
+      }
+    }
+  }
+  query RecommendedProducts ($country: CountryCode, $language: LanguageCode)
+    @inContext(country: $country, language: $language) {
+    products(first: 10, sortKey: UPDATED_AT, reverse: true) {
+      nodes {
+        ...RecommendedProduct
+      }
+    }
   }
 `;
 /*

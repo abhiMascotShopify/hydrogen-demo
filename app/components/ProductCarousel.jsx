@@ -11,6 +11,7 @@ import {
 //import products from './products';
 
 const ProductCarousel = ({products}) => {
+  const noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129"
   let productsToShow = [];
   const lines = [];
   const [startIndex, setStartIndex] = useState(0);
@@ -20,7 +21,7 @@ const ProductCarousel = ({products}) => {
   var len = products.edges.length;
   if (products != null || products != undefined) {
     productsToShow = products.edges.slice(startIndex, endIndex);
-    //console.log("productsToShow::",productsToShow);
+    console.log("productsToShow::",productsToShow);
   }
 
   const nextProducts = () => {
@@ -33,43 +34,43 @@ const ProductCarousel = ({products}) => {
     setEndIndex((prevIndex) => len == endIndex ? prevIndex-1 : prevIndex + 1);
   };
 
-  console.log("start INDEX ::",startIndex,"End Index ::",endIndex,"Length::",len);
+  //console.log("start INDEX ::",startIndex,"End Index ::",endIndex,"Length::",len);
   products.edges.map((product) => {
     product.node.variants.edges.map((line) => {
-        lines.push([
-          {
-            merchandiseId: line.node.id,
-            quantity: 1,
-          },
-        ]);
-      
+      lines.push([
+        {
+          merchandiseId: line.node.id,
+          quantity: 1,
+        },
+      ]);
     });
   });
-
-  console.log("Lines::",productsToShow)
-
+  const goToProduct=(url_path)=>{
+    window.location.href = url_path
+  }
   return (
     <div className="recommended_section w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
       <div className="relative">
         <div className="flex gap-4">
           {productsToShow.map((product, index) => (
-            <div key={product.node.id} className="w-full ">
-              <div className="bg-white rounded-lg shadow-lg p-2">
-                <img
-                  src={`${product.node.images.edges[0].node.url}`} // Make sure to put your images in the 'public/images/' directory
-                  alt={product.node.title}
-                  className="w-full h-auto"
-                />
-                <Link key={product.id} to={`/products/${product.node.handle}`}>
-                  <h2 className="text-lg font-semibold mt-2 text-center">
-                    {product.node.title}
-                  </h2>
-                </Link>
-                <div className="h-12">
-                  <h1 className="text-center font-bold h-full w-full m-auto">
-                  &#x20b9; {product.node.priceRange.minVariantPrice.amount}
-                  </h1>
-                </div>
+            <div key={product.node.id} className="w-full " >
+                <div className="bg-white rounded-lg shadow-lg p-2">
+                  <div onClick={()=> goToProduct(`/products/${product.node.handle}`)}>
+                    <img
+                      src={`${ product.node.images.edges.length > 0 ? product.node.images.edges[0].node.url : noImg }`} // Make sure to put your images in the 'public/images/' directory
+                      alt={product.node.title}
+                      className="w-full h-auto"
+                    />
+                    <h2 className="text-lg font-semibold mt-2 text-center">
+                      {product.node.title}
+                    </h2>
+                    <div className="h-12">
+                      <h1 className="text-center font-bold h-full w-full m-auto">
+                      &#x20b9; {product.node.priceRange.minVariantPrice.amount}
+                      </h1>
+                    </div>
+                  </div>
+                
                 {/* Add more product information here */}
                 <div className="px-1 py-1 flex items-center sm:flex-row gap-3 justify-center w-[100%]">
                   <div className="w-[25%] flex justify-center">
@@ -91,7 +92,7 @@ const ProductCarousel = ({products}) => {
                       ></path>
                     </svg>
                   </div>
-             
+              
                   <div className="w-[75%]">
                     <CartForm
                       route="/cart"

@@ -152,79 +152,78 @@ export default function Register() {
         <Link to="/account/login">Login →</Link>
       </p>
     </div>*/}
-    <div className="flex flex-col-reverse sm:flex-row">
-<div className="sm:w-1/2 hidden sm:block">
-
-        <img
-          src="https://media.sugarpop.com/upload/LoginSideImg.png"
-          alt="Login Background"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="w-full justify-center items-center flex flex-col">
-  <Form className="w-full justify-center items-center" method="POST">
-   <fieldset>
-    <div className="mb-3" >
-      <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
-        Email
-      </label>
-      <input className="shadow appearance-none border rounded w-full py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-        id="email"
-        name="email"
-        type="email"
-        autoComplete="email"
-        placeholder="Email address"
-        aria-label="Email address"
-        required/>
+    <div className="flex flex-col sm:flex-row">
+    <div className="sm:w-1/2  sm:block">
+      <img
+        src="https://media.sugarpop.com/upload/LoginSideImg.png"
+        alt="Login Background"
+        className="w-full h-full object-cover"
+      />
     </div>
-    <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
-        Password
-      </label>
-      <input className="shadow appearance-none border rounded w-full py-1 px-2 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" 
-      id="password"
-      name="password"
-      type="password"
-      autoComplete="current-password"
-      placeholder="Password"
-      aria-label="Password"
-      minLength={8}
-      required/>
-      {error ? (
-          <p className="text-red-500 text-xs italic">{error}</p>
-        ) : (
-          <br />
-        )}
-      <label htmlFor="passwordConfirm">Re-enter password</label>
-          <input className="shadow appearance-none border rounded w-full py-1 px-2 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="passwordConfirm"
-            name="passwordConfirm"
-            type="password"
-            autoComplete="current-password"
-            placeholder="Re-enter password"
-            aria-label="Re-enter password"
-            minLength={8}
-            required
-          />
-    </div>
-     </fieldset>
-    <div className="flex items-center justify-between">
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-        Register
-      </button>
-      <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/account/recover">
-        Forgot Password?
-      </a>
-    </div>
-  </Form>
-  <p className="text-center text-gray-500 text-xs">
-    &copy;2023. All rights reserved.
-  </p>
+    <div className="w-full justify-center items-center flex flex-col">
+      <Form className="w-full justify-center items-center login_wrapper" method="POST">
+      <fieldset>
+        <div className="mb-3" >
+          <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+            Email
+          </label>
+          <input className="shadow appearance-none border rounded w-full py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            placeholder="Email address"
+            aria-label="Email address"
+            required/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
+            Password
+          </label>
+          <input className="shadow appearance-none border rounded w-full py-1 px-2 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" 
+          id="password"
+          name="password"
+          type="password"
+          autoComplete="current-password"
+          placeholder="Password"
+          aria-label="Password"
+          minLength={8}
+          required/>
+          {error ? (
+              <p className="text-red-500 text-xs italic">{error}</p>
+            ) : (
+              <br />
+            )}
+          <label htmlFor="passwordConfirm">Re-enter password</label>
+              <input className="shadow appearance-none border rounded w-full py-1 px-2 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="passwordConfirm"
+                name="passwordConfirm"
+                type="password"
+                autoComplete="current-password"
+                placeholder="Re-enter password"
+                aria-label="Re-enter password"
+                minLength={8}
+                required
+              />
+        </div>
+        <div className="flex items-center justify-between">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            Register
+          </button>
+          <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/account/recover">
+            Forgot Password?
+          </a>
+        </div>
+        <a className="py-4 text-blue-500" href="/account/login"> Login </a>
+        </fieldset>
+      </Form>
+    <p className="text-center text-gray-500 text-xs">
+      &copy;2023. All rights reserved.
+    </p>
+  </div>   
 </div>
-      
-    </div>
-    </>
-  );
+</>
+);
 }
 
 // NOTE: https://shopify.dev/docs/api/storefront/latest/mutations/customerCreate

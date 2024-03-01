@@ -4,6 +4,7 @@ import {useVariantUrl} from '~/utils';
 
 export function CartMain({layout, cart}) {
   const linesCount = Boolean(cart?.lines?.nodes?.length || 0);
+  //console.log("layout ::",linesCount)
   const withDiscount =
     cart &&
     Boolean(cart.discountCodes.filter((code) => code.applicable).length);
@@ -51,7 +52,6 @@ function CartLineItem({layout, line}) {
   const {id, merchandise} = line;
   const {product, title, image, selectedOptions} = merchandise;
   const lineItemUrl = useVariantUrl(product.handle, selectedOptions);
-
   //console.log('sahil data', {selectedOptions});
 
   return (
@@ -92,7 +92,7 @@ function CartLineItem({layout, line}) {
         <ul className="">
           {selectedOptions.map((option) => (
             <li key={option.name} className="py-2">
-              <div className="flex items-center justify-between font-semibold text-md">
+              <div className="flex font-semibold text-md">
                 <span className=" text-gray-900">{option.name}:</span>
                 <div className="ml-2">
                   <span
@@ -127,13 +127,13 @@ function CartCheckoutActions({checkoutUrl}) {
 
 export function CartSummary({cost, layout, children = null}) {
   const className =
-    layout === 'page' ? 'cart-summary-page' : 'cart-summary-aside';
+    layout === 'page' ? 'cart-summary-page px-2' : 'cart-summary-aside';
 
   return (
     <div aria-labelledby="cart-summary" className={className}>
-      <h4 className="text-md font-semibold">Totals</h4>
-      <dl className="cart-subtotal flex justify-between">
-        <dt>Subtotal</dt>
+      {/* <h4 className="text-md font-semibold">Totals</h4> */}
+      <dl className="cart-subtotal flex">
+        <dt>Subtotal : &nbsp;</dt>
         <dd>
           {cost?.subtotalAmount?.amount ? (
             <Money data={cost?.subtotalAmount} />
@@ -227,23 +227,30 @@ function CartLinePrice({line, priceType = 'regular', ...passthroughProps}) {
 
 export function CartEmpty({hidden = false, layout = 'aside'}) {
   return (
-    <div hidden={hidden}>
-      <br />
-      <p>
-        Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you
+    <div className="flex justify-center" data-hidden={hidden} hidden={hidden}>
+    { !hidden && (
+    <div className="flex-col flex justify-center">
+      <div className='w-full flex justify-center'>
+        <img className="empty_cart_img" alt="empty_cart" src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Cartdekstop.png?v=1709018650" />
+      </div>
+      <div >
+        <p> Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you 
         started!
-      </p>
-      <br />
-      <Link
-        to="/collections"
-        onClick={() => {
-          if (layout === 'aside') {
-            window.location.href = '/collections';
-          }
-        }}
-      >
-        Continue shopping →
-      </Link>
+        </p>
+        <br/>
+        <button
+          className="w-[100%] h-11 bg-black text-white"
+          onClick={() => {
+            if (layout === 'aside') {
+              window.location.href = '/collections';
+            }
+          }}
+        >
+        Continue shopping 
+        </button>
+      </div>
+      </div>
+    )}
     </div>
   );
 }

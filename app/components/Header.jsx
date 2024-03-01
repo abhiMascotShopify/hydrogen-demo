@@ -27,13 +27,14 @@ export function Header({header, isLoggedIn, cart}) {
     <>
       <header className="header border-b border-gray-200">
         <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-          <strong>{shop.name}</strong>
+          <img className="w-40" src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Mary_Jo_K_Cult_Makeup_Unit-01.png?v=1709204173" />
+          {/* <strong>{shop.name}</strong> */}
         </NavLink>
 
         {isLargeScreen && (
           <div className="m-auto">
             <div className="relative flex w-full flex-wrap items-stretch">
-              <div className="bg-white rounded w-full">
+              <div className="rounded w-full">
                 <PredictiveSearchForm>
                   {({fetchResults, inputRef}) => (
                     <div className=" ">
@@ -73,7 +74,7 @@ export function Header({header, isLoggedIn, cart}) {
             {isLoggedIn ? (
               'Acc'
             ) : (
-              <div className='login_wrapper'>
+              <div className='inline-flex'>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -102,7 +103,7 @@ export function Header({header, isLoggedIn, cart}) {
 export function HeaderMenu({menu, viewport}) {
   const [root] = useMatches();
   const publicStoreDomain = root?.data?.publicStoreDomain;
-  const className = `header-menu-${viewport}`;
+  const className = `header-menu-${viewport} z-10`;
   //const [isOpen, setisOpen] = useState(false)
   //console.log(menu);
   function closeAside(event) {
@@ -133,7 +134,7 @@ export function HeaderMenu({menu, viewport}) {
           to="/"
         ></NavLink>
       )}
-      {menu.items.map((item) => {
+      {menu.items.map((item,index) => {
         if (!item.url) return null;
         // if the url is internal, we strip the domain
         const url =
@@ -142,17 +143,17 @@ export function HeaderMenu({menu, viewport}) {
             ? new URL(item.url).pathname
             : item.url;
         return (
-          <div className="relative inline-block text-left group">
+          <div key={`header_${index}`} className="relative inline-block text-left group">
             <button onClick={()=> goToCollection(item.url) } className="px-4 py-2 text-gray-800 focus:outline-none">
               {item.title}
             </button>
             {item.items.length > 0 && (
-              <div className="absolute hidden mt-2 w-48 bg-white border border-gray-300 divide-y divide-gray-200 rounded-lg shadow-lg group-hover:block">
-                <div className="py-1">
+              <div className="absolute hidden w-48 bg-white border border-gray-300 divide-y divide-gray-200 rounded-lg shadow-lg group-hover:block">
+                <div className="py-1 group-hover:block">
                   {item.items.map((it) => (
                     <a
                       href={getPath(it.url)}
-                      className="menu block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:opacity-100"
+                      className="menu block px-4 py-2 text-gray-800 hover:bg-gray-100 group-hover:block hover:opacity-100"
                     >
                     {it.title}
                     </a>
@@ -245,7 +246,7 @@ function CartBadge({count}) {
       </svg>
     </a>
      <a href="/offers">
-     <svg width="22.81px" height="22px" viewBox="0 0 20 21" fill="var(--navbar-color)" xmlns="http://www.w3.org/2000/svg" alt="discount_icon"><path fill-rule="evenodd" clip-rule="evenodd" d="m8.744 3.662.832-.803.832.803a3 3 0 0 0 2.504.813l1.146-.162.2 1.134a3 3 0 0 0 1.55 2.132l1.018.54-.505 1.03a3 3 0 0 0 0 2.639l.505 1.031-1.018.54a3 3 0 0 0-1.55 2.131l-.2 1.134-1.146-.162a3 3 0 0 0-2.504.813l-.832.804-.832-.804a3 3 0 0 0-2.504-.813l-1.146.162-.2-1.134a3 3 0 0 0-1.55-2.132l-1.018-.539.505-1.031a3 3 0 0 0 0-2.638l-.505-1.032 1.018-.539a3 3 0 0 0 1.55-2.132l.2-1.134 1.146.162a3 3 0 0 0 2.504-.813ZM8.88.75a1 1 0 0 1 1.39 0l1.527 1.475a1 1 0 0 0 .834.27l2.104-.296a1 1 0 0 1 1.125.817l.366 2.086a1 1 0 0 0 .517.71l1.874.993a1 1 0 0 1 .43 1.324l-.93 1.901a1 1 0 0 0 0 .88l.93 1.9a1 1 0 0 1-.43 1.324l-1.874.993a1 1 0 0 0-.517.71l-.366 2.087a1 1 0 0 1-1.125.817l-2.104-.297a1 1 0 0 0-.834.27l-1.527 1.475a1 1 0 0 1-1.39 0l-1.527-1.474a1 1 0 0 0-.834-.271l-2.104.297a1 1 0 0 1-1.125-.817l-.366-2.087a1 1 0 0 0-.517-.71l-1.874-.993a1 1 0 0 1-.43-1.323l.93-1.902a1 1 0 0 0 0-.879l-.93-1.901a1 1 0 0 1 .43-1.324l1.874-.992a1 1 0 0 0 .517-.711l.366-2.086a1 1 0 0 1 1.125-.817l2.104.297a1 1 0 0 0 .834-.271L8.881.749Zm4.524 7.31a1 1 0 0 0-1.413-1.415l-6.245 6.234a1 1 0 1 0 1.413 1.416l6.245-6.235Zm-4.87-.188A1.56 1.56 0 0 1 6.974 9.43 1.56 1.56 0 1 1 8.535 7.87Zm3.642 6.754a1.56 1.56 0 0 0 1.561-1.559 1.56 1.56 0 0 0-1.56-1.558 1.56 1.56 0 1 0 0 3.117Z"></path></svg>
+     <svg width="22.81px" height="22px" viewBox="0 0 20 21" fill="var(--navbar-color)" xmlns="http://www.w3.org/2000/svg" alt="discount_icon"><path fillRule="evenodd" clipRule="evenodd" d="m8.744 3.662.832-.803.832.803a3 3 0 0 0 2.504.813l1.146-.162.2 1.134a3 3 0 0 0 1.55 2.132l1.018.54-.505 1.03a3 3 0 0 0 0 2.639l.505 1.031-1.018.54a3 3 0 0 0-1.55 2.131l-.2 1.134-1.146-.162a3 3 0 0 0-2.504.813l-.832.804-.832-.804a3 3 0 0 0-2.504-.813l-1.146.162-.2-1.134a3 3 0 0 0-1.55-2.132l-1.018-.539.505-1.031a3 3 0 0 0 0-2.638l-.505-1.032 1.018-.539a3 3 0 0 0 1.55-2.132l.2-1.134 1.146.162a3 3 0 0 0 2.504-.813ZM8.88.75a1 1 0 0 1 1.39 0l1.527 1.475a1 1 0 0 0 .834.27l2.104-.296a1 1 0 0 1 1.125.817l.366 2.086a1 1 0 0 0 .517.71l1.874.993a1 1 0 0 1 .43 1.324l-.93 1.901a1 1 0 0 0 0 .88l.93 1.9a1 1 0 0 1-.43 1.324l-1.874.993a1 1 0 0 0-.517.71l-.366 2.087a1 1 0 0 1-1.125.817l-2.104-.297a1 1 0 0 0-.834.27l-1.527 1.475a1 1 0 0 1-1.39 0l-1.527-1.474a1 1 0 0 0-.834-.271l-2.104.297a1 1 0 0 1-1.125-.817l-.366-2.087a1 1 0 0 0-.517-.71l-1.874-.993a1 1 0 0 1-.43-1.323l.93-1.902a1 1 0 0 0 0-.879l-.93-1.901a1 1 0 0 1 .43-1.324l1.874-.992a1 1 0 0 0 .517-.711l.366-2.086a1 1 0 0 1 1.125-.817l2.104.297a1 1 0 0 0 .834-.271L8.881.749Zm4.524 7.31a1 1 0 0 0-1.413-1.415l-6.245 6.234a1 1 0 1 0 1.413 1.416l6.245-6.235Zm-4.87-.188A1.56 1.56 0 0 1 6.974 9.43 1.56 1.56 0 1 1 8.535 7.87Zm3.642 6.754a1.56 1.56 0 0 0 1.561-1.559 1.56 1.56 0 0 0-1.56-1.558 1.56 1.56 0 1 0 0 3.117Z"></path></svg>
       </a>
     </>
   );

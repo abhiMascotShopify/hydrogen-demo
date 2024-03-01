@@ -76,18 +76,17 @@ export default function Login() {
   console.log(error)
   return (
     <>  
-      <div className="flex flex-col-reverse sm:flex-row">
-        <div className="sm:w-1/2 hidden sm:block">
+      <div className="flex flex-col sm:flex-row">
+        <div className="sm:w-1/2 sm:block">
           <img
             src="https://media.sugarpop.com/upload/LoginSideImg.png"
             alt="Login Background"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className='sm:w-1/2 hidden sm:block '>
+        <div className='sm:w-1/2  sm:block '>
         <div className="justify-center items-center flex flex-col">
-        
-        <Form className="w-full h-screen m-auto" method="POST">
+        <Form className="w-full h-screen m-auto login_wrapper" method="POST">
         <fieldset>
           <div className="mb-3" >
             <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
@@ -130,6 +129,7 @@ export default function Login() {
               Forgot Password?
             </a>
           </div>
+          <a className="py-4 text-blue-500" href="/account/register"> Register </a>
           </fieldset>
         </Form>
         <p className="text-center text-gray-500 text-xs">

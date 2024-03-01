@@ -1,7 +1,4 @@
-// src/ProductCarousel.js
 import React, {useState} from 'react';
-//import products from './products';
-import { MediaFile,Image,parseMetafield } from '@shopify/hydrogen';
 import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
 import {useMediaQuery} from 'react-responsive';
 
@@ -34,7 +31,7 @@ const MobileProductCorousel = ({products}) => {
 const DesktopCorousel = ({products,title}) => {
   const [startIndex, setStartIndex] = useState(0);
   const productsToShow = products.slice(startIndex, startIndex + 3);
-  console.log("DesktopCorousel::",productsToShow)
+  //console.log("DesktopCorousel::",productsToShow)
   const isMobile = useMediaQuery({maxWidth: 640});
   const nextProducts = () => {
     setStartIndex((prevIndex) => (prevIndex + 4) % products.length);
@@ -54,7 +51,7 @@ const DesktopCorousel = ({products,title}) => {
           <div className="flex">
             {productsToShow.map((product) => (
               <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
-                <div className="bg-white rounded-lg shadow-lg p-1">
+                <div className="cursor bg-white rounded-lg shadow-lg p-1">
                   <a href={`/collections/${product.handle}`}>
                     <img
                       //src={`${product.image.url}`} // Make sure to put your images in the 'public/images/' directory

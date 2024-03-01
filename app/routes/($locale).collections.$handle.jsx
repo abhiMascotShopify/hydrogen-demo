@@ -40,6 +40,9 @@ const subCategories = [
   {name: 'Travel Bags', href: '#'},
   {name: 'Hip Bags', href: '#'},
   {name: 'Laptop Sleeves', href: '#'},
+  {name: 'Way 2 Slay', href: '#'},
+  {name: 'Rizz & Roll', href: '#'},
+  {name: 'Pro Studio', href: '#'},
 ];
 const filters = [
   {
@@ -62,7 +65,12 @@ const filters = [
     id: 'size',
     name: 'Size',
     options: [],
-  },
+  },{
+    id:"price",
+    name:"Price",
+    options:[{value: '0', label: '"₹0 - ₹299"'},{value: '299', label: "₹300 - ₹499"},
+    {value: '499', label: '₹500 - ₹899'},{value: '899', label:"₹900+"}]
+  }
 ];
 
 function classNames(...classes) {
@@ -133,7 +141,7 @@ export default function Collection() {
     });
   });
 
-  console.log("Lines Collection::",lines)
+  //console.log("Lines Collection::",lines)
 
   function getPath(url_path) {
     let url = new URL(url_path);
@@ -145,54 +153,12 @@ export default function Collection() {
     let url = getPath(url_path);
     window.location.href = url
   }
-
+  
+  const goToProduct=(url_path)=>{
+    window.location.href = url_path
+  }
+  
   return (
-    /*
-  <>
-  <Filters></Filters>
-  <div className="w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-      {productsToShow.map((product, index) => (
-        <div key={product.id}>
-          <div className="bg-white rounded-lg shadow-lg p-2" style={{ boxShadow: '0px 4px 8px rgba(255, 217, 90, 0.5)' }}>
-            <img
-              src={product.images.edges[0].node.url}
-              alt={product.title}
-              className="w-full h-auto"
-            />
-            <Link to={`/products/${product.handle}`}>
-              <h2 className="text-lg font-semibold mt-2 text-center">{product.title}</h2>
-            </Link>
-            <div className='h-12'><h1 className='text-center font-bold h-full w-full'>255</h1></div>
-            <div className="px-1 py-1 flex justify-between items-center">
-              <div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 33" xmlSpace="preserve" width="2.8em" height="2.8em">
-                  <path d="M9 .5h14c4.7 0 8.5 3.8 8.5 8.5v14c0 4.7-3.8 8.5-8.5 8.5H9C4.3 31.5.5 27.7.5 23V9C.5 4.3 4.3.5 9 .5z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" />
-                  <path d="M22.3 11.8c.4.4.7.9.9 1.4.2.5.3 1.1.3 1.6 0 .6-.1 1.1-.3 1.6-.2.5-.5 1-.9 1.4l-5.6 5.6s-.1 0-.1.1h-.2s-.1 0-.1-.1l-5.6-5.6C10 17 9.5 16 9.5 14.9c0-1.1.3-2.1 1-2.9.7-.8 1.7-1.3 2.7-1.5 1.1-.1 2.1.2 3 .8l.3.2.3-.2c.8-.6 1.8-.9 2.8-.8 1.1.1 2 .5 2.7 1.3z" fill="none" stroke="rgb(0, 0, 0)"></path>
-                </svg>
-              </div>
-              {console.log(lines)}
-              <CartForm route="/cart" inputs={{ lines: lines[index] }} action={CartForm.ACTIONS.LinesAdd} className="flex-grow">
-                {(fetcher) => (
-                  <>
-                    <button className="lg:w-[200px] h-11 bg-black hover:bg-blue-700 text-white font-bold py-1 px-1 rounded-lg"
-                      type="submit"
-                      onClick={() => {
-                        window.location.href = window.location.href + '#cart-aside';
-                      }}
-                    >
-                      Add To Cart
-                    </button>
-                  </>
-                )}
-              </CartForm>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-  </>*/
     <>
       <div>
         <img
@@ -270,7 +236,7 @@ export default function Collection() {
                         >
                           {({open}) => (
                             <>
-                              {console.log(filters)}
+                              
                               <h3 className="-mx-2 -my-3 flow-root">
                                 <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400">
                                   <span className="font-medium text-gray-900">
@@ -352,9 +318,9 @@ export default function Collection() {
 
           <main className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
             <div className="flex gap-1 items-center">
-              <span>Home</span>
+              <Link to="/">Home</Link>
               <img src="/next.png" alt="next" width={20} height={20} />
-              <span className="font-semibold">Collection</span>
+              <Link to="/collections" className="font-semibold">Collection</Link>
             </div>
             <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 m-0 relative">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:block hidden my-[15px]">
@@ -382,7 +348,7 @@ export default function Collection() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute left-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <div className="py-1">
                         {sortOptions.map((option) => (
                           <Menu.Item key={option.name}>
@@ -515,9 +481,9 @@ export default function Collection() {
                 {/* Product grid */}
                 <div className="lg:col-span-3">
                   <div className="w-full max-w-screen-xl">
-                    <div className="product-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                    <div className="cursor product-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
                       {productsToShow.map((product, index) => (
-                        <div key={product.id}>
+                        <div className="cursor"  key={product.id}>
                           <div
                             className="bg-white rounded-lg shadow-lg p-2 px-4"
                             style={{
@@ -525,22 +491,22 @@ export default function Collection() {
                                 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
                             }}
                           >
+                          <div onClick={()=>goToProduct(`/products/${product.handle}`)}>
                             <img
                               src={product.images.edges[0]?.node?.url}
                               alt={product.title}
                               className="w-full h-auto"
                             />
-                            <Link to={`/products/${product.handle}`}>
-                              <h2 className="sm:text-lg text-[17px] font-semibold mt-2 text-center">
-                                {product.title}
-                              </h2>
-                            </Link>
+                            <h2 className="sm:text-lg text-[17px] font-semibold mt-2 text-center">
+                              {product.title}
+                            </h2>
                             <div className="h-12">
                               <h1 className="text-center sm:text-[26px] text-[21px] font-bold m-auto w-full">
                                 ₹255
                               </h1>
                             </div>
-                            <div className="px-1 py-1 flex sm:justify-between justify-center gap-[10px] items-center ">
+                          </div>
+                            <div className="px-1 py-1 flex justify-center gap-[10px] items-center ">
                               <div>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
@@ -548,7 +514,7 @@ export default function Collection() {
                                   xmlSpace="preserve"
                                   // width="2.8em"
                                   // height="2.8em"
-                                  className="card-like sm:w-[50px] w-[30px]"
+                                  className="card-like sm:w-[35px] w-[30px]"
                                 >
                                   <path
                                     d="M9 .5h14c4.7 0 8.5 3.8 8.5 8.5v14c0 4.7-3.8 8.5-8.5 8.5H9C4.3 31.5.5 27.7.5 23V9C.5 4.3 4.3.5 9 .5z"
@@ -562,7 +528,7 @@ export default function Collection() {
                                   ></path>
                                 </svg>
                               </div>
-                              {console.log(lines)}
+                              
                               <CartForm
                                 route="/cart"
                                 inputs={{lines: lines[index]}}

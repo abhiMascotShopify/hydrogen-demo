@@ -6,17 +6,21 @@ import {useMediaQuery} from 'react-responsive';
 //import products from './products';
 
 const ProductsCorousel = ({products}) => {
+  const noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129"
   let productsToShow = [];
   const [startIndex, setStartIndex] = useState(0);
   //const [endIndex, setEndIndex]  = useState();
 
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const endIndex = isLargeScreen ? 4 : 2;
-
+ 
   if (products != null || products != undefined) {
-    //console.log(products.edges[0].node)
     productsToShow = products.edges.slice(startIndex, startIndex + endIndex);
     //console.log(productsToShow);
+  }
+
+  const goToProduct=(url_path)=>{
+    window.location.href = url_path
   }
   //  const isMobile = useMediaQuery({ maxWidth: 640 });
   //  const isTablet = useMediaQuery({ minWidth: 641, maxWidth: 1024 });
@@ -40,25 +44,24 @@ const ProductsCorousel = ({products}) => {
       <div className="relative">
         <div className="flex mobile-productView">
           {productsToShow.map((product) => (
-            <div
-              key={product.node.id}
-              className="w-full sm:w-1/3 md:w-1/3 lg:px-4 sm:px-1 md:px-3"
+            <div key={product.node.id}
+              className="cursor w-full sm:w-1/3 md:w-1/3 lg:px-4 sm:px-1 md:px-3"
             >
               <div className="bg-white rounded-lg shadow-lg p-2 shadow-md">
-                <img
-                  src={`${product.node.images.edges[0].node.url}`} // Make sure to put your images in the 'public/images/' directory
-                  alt={product.node.title}
-                  className="w-full h-auto"
-                />
-                <Link key={product.id} to={`/products/${product.node.handle}`}>
+                <div onClick={()=> goToProduct(`/products/${product.node.handle}`)}>
+                  <img
+                    src={`${ product.node.images.edges.length > 0 ? product.node.images.edges[0].node.url : noImg }`} // Make sure to put your images in the 'public/images/' directory
+                    alt={product.node.title}
+                    className="w-full h-auto"
+                  />
                   <h2 className="text-lg font-semibold mt-2 text-center">
                     {product.node.title}
                   </h2>
-                </Link>
-                <div className="h-12">
-                  <h1 className="text-center font-bold h-full w-full m-auto">
-                    ₹255
-                  </h1>
+                  <div className="h-12">
+                    <h1 className="text-center font-bold h-full w-full m-auto">
+                      ₹255
+                    </h1>
+                  </div>
                 </div>
                 {/* Add more product information here */}
                 <div className="px-1 py-1 flex justify-between items-center  sm:flex-row flex-row">
@@ -100,10 +103,10 @@ const ProductsCorousel = ({products}) => {
             )
           }
         >
-          <MdChevronLeft
-            className="opacity-50 cursor-pointer hover:opacity-100"
-            size={40}
-          />
+        <MdChevronLeft
+          className="opacity-50 cursor-pointer hover:opacity-100"
+          size={40}
+        />
         </button>
         <button
           className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75"
@@ -113,10 +116,10 @@ const ProductsCorousel = ({products}) => {
             )
           }
         >
-          <MdChevronRight
-            className="opacity-50 cursor-pointer hover:opacity-100"
-            size={40}
-          />
+        <MdChevronRight
+          className="opacity-50 cursor-pointer hover:opacity-100"
+          size={40}
+        />
         </button>
       </div>
     </div>
