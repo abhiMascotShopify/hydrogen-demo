@@ -24,11 +24,11 @@ export default function Collections() {
         {({nodes, isLoading, PreviousLink, NextLink}) => (
           <div>
             <PreviousLink>
-              {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
+              {isLoading ? 'Loading...' : <div className='flex justify-center'>↑ Load previous</div>}
             </PreviousLink>
             <CollectionsGrid collections={nodes} />
             <NextLink>
-              {isLoading ? 'Loading...' : <span>Load more ↓</span>}
+              {isLoading ? 'Loading...' : <div className='flex justify-center'>Load more ↓</div>}
             </NextLink>
           </div>
         )}
@@ -54,7 +54,7 @@ function CollectionsGrid({collections}) {
 function CollectionItem({collection, index}) {
   return (
     <Link
-      className="collection-item border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+      className="collection-item  border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
       key={collection.id}
       to={`/collections/${collection.handle}`}
       prefetch="intent"
