@@ -68,8 +68,8 @@ const filters = [
   },{
     id:"price",
     name:"Price",
-    options:[{value: '0', label: '"₹0 - ₹299"'},{value: '299', label: "₹300 - ₹499"},
-    {value: '499', label: '₹500 - ₹899'},{value: '899', label:"₹900+"}]
+    options:[{value: '299', label: "₹0 - ₹299"},{value: '499', label: "₹300 - ₹499"},
+    {value: '899', label: '₹500 - ₹899'},{value: '900', label:"₹900+"}]
   }
 ];
 
@@ -121,7 +121,7 @@ export default function Collection() {
   var collectionArray = sortArr[0]?.items;
   //console.log("collectionArray::",collectionArray)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  let productsToShow = [];
+  var productsToShow = [];
   const lines = [];
   const [startIndex, setStartIndex] = useState(0);
   const [productsToShow1, setProductToShow] = useState([])
@@ -155,7 +155,7 @@ export default function Collection() {
       case 'created_desc':sortByDate(data,"descending");
                   break;
       default:
-        setProductToShow(data); 
+        productsToShow=data; 
     }
   }
 
@@ -173,7 +173,7 @@ export default function Collection() {
             return nodeB.title.localeCompare(nodeA.title);
         }
     });
-    setProductToShow(sortedData)
+    productsToShow = sortedData
   }
   
   const sortByDate = (data,sortOrder="ascending") => {
@@ -186,10 +186,16 @@ export default function Collection() {
         return  new Date(nodeB.publishedAt).getTime() - new Date(nodeA.publishedAt).getTime();
       }
     });
-    setProductToShow(sortedData)
+    productsToShow = sortedData
+  }
+
+  const filterData = (e)=>{
+    var price = parent(e.target.value);
+    let filter = productsToShow.filter((item)=> item.priceRange.maxVariantPrice.amount > price )
+    productsToShow = filter;
+    console.log(productsToShow);
   }
   
-
   function getPath(url_path) {
     let url = new URL(url_path);
     let path = url.pathname;
@@ -315,6 +321,7 @@ export default function Collection() {
                                         id={`filter-mobile-${section.id}-${optionIdx}`}
                                         name={`${section.id}[]`}
                                         defaultValue={option.value}
+                                        onChange={(e)=> filterData(e) }
                                         type="checkbox"
                                         defaultChecked={option.checked}
                                         className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
@@ -504,6 +511,7 @@ export default function Collection() {
                                       id={`filter-${section.id}-${optionIdx}`}
                                       name={`${section.id}[]`}
                                       defaultValue={option.value}
+                                      onChange={(e)=> filterData(e)}
                                       type="checkbox"
                                       defaultChecked={option.checked}
                                       className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
@@ -530,7 +538,7 @@ export default function Collection() {
                   <div className="w-full max-w-screen-xl">
                     <div className="cursor product-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
                       {productsToShow.map((product, index) => (
-                        <div className="cursor"  key={product.id}>
+                        <div className="cursor mst-card"  key={product.id}>
                           <div
                             className="bg-white rounded-lg shadow-lg p-2 px-4"
                             style={{
@@ -549,7 +557,7 @@ export default function Collection() {
                             </h2>
                             <div className="h-12">
                               <h1 className="text-center sm:text-[26px] text-[21px] font-bold m-auto w-full">
-                                ₹255
+                              {product.priceRange.maxVariantPrice.amount} &nbsp; Rs
                               </h1>
                             </div>
                           </div>

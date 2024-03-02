@@ -17,7 +17,8 @@ img {
 * components/Aside
 * --------------------------------------------------
 */
-
+.mst-card { box-shadow: 1px 2px 3px 3px #e68573;border-radius: 10px;}
+.coupan_code_wrapper { display: inline-flex;justify-content: end; color: #645c5c;}
 .collectionContent{display: flex;justify-content: center;}
 .cursor{cursor: pointer;}
 .login_span { display: flex;
@@ -256,7 +257,7 @@ aside li {
   max-width: 1320px;
   margin: auto;
   margin-top: 0 5%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 12px !important;
+  
 }
 .cart-line img {
   height: 100%;

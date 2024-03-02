@@ -206,7 +206,7 @@ function ProductMain({selectedVariant, product, variants,recommendedProducts}) {
         <img src="/next.png" alt="next" width={20} height={20} />
         <span className="font-semibold">Product page</span>
       </div>
-      <div className="final-product shadow-lg p-4 flex flex-col justify-between lg:flex-row lg:gap-8 lg:ml-8 lg:mr-8 items-start relative">
+      <div className="final-product mst-card shadow-lg p-4 flex flex-col justify-between lg:flex-row lg:gap-8 lg:ml-8 lg:mr-8 items-start relative">
         <div className="flex flex-col gap-6 lg:w-2/4 flex-wrap items-center lg:sticky top-[240px]">
           {/*<img src={activeImg} alt="" className='w-full h-full aspect-square object-cover rounded-xl'/>
                     <div className='flex flex-row justify-between h-full overflow-y-auto'>

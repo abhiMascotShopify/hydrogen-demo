@@ -45,9 +45,9 @@ const ProductsCorousel = ({products}) => {
         <div className="flex mobile-productView">
           {productsToShow.map((product) => (
             <div key={product.node.id}
-              className="cursor w-full sm:w-1/3 md:w-1/3 lg:px-4 sm:px-1 md:px-3"
+              className="w-full sm:w-1/3 md:w-1/3 lg:px-4 sm:px-1 md:px-3"
             >
-              <div className="bg-white rounded-lg shadow-lg p-2 shadow-md">
+              <div className="mst-card bg-white rounded-lg shadow-lg p-2 shadow-md">
                 <div className='cursor' onClick={()=> goToProduct(`/products/${product.node.handle}`)}>
                   <img
                     src={`${ product.node.images.edges.length > 0 ? product.node.images.edges[0].node.url : noImg }`} // Make sure to put your images in the 'public/images/' directory

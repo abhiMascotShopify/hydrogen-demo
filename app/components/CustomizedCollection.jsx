@@ -51,7 +51,7 @@ const DesktopCorousel = ({products,title}) => {
           <div className="flex">
             {productsToShow.map((product) => (
               <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
-                <div className="cursor bg-white rounded-lg shadow-lg p-1">
+                <div className="cursor mst-card bg-white rounded-lg shadow-lg p-1">
                   <a href={`/collections/${product.handle}`}>
                     <img
                       //src={`${product.image.url}`} // Make sure to put your images in the 'public/images/' directory

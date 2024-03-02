@@ -92,8 +92,8 @@ const DesktopCorousel = ({products, title}) => {
           <h1 className="text-center">{title}</h1>
             <div className="flex">
               {productsToShow.map((product) => (
-                <div key={product.id} className="cursor w-full sm:w-1/3 md:w-1/3 px-4">
-                  <div className="cursor bg-white rounded-lg shadow-lg p-1">
+                <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
+                  <div className="cursor mst-card bg-white rounded-lg shadow-lg p-1">
                     <a href={`/products/${product.node.handle}`}>
                     <img
                       src={`${ product.node?.images ? product.node.images.edges[0].node.url : noImg }`}  // Make sure to put your images in the 'public/images/' directory
