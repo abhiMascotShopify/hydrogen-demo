@@ -1,5 +1,5 @@
 import {json, redirect} from '@shopify/remix-oxygen';
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState,useEffect} from 'react';
 import {Await, useLoaderData, Link} from '@remix-run/react';
 import {
   Pagination,
@@ -29,8 +29,8 @@ import {
 
 const sortOptions = [
   {name: 'Most Popular', href: '#', value:'', current: true},
-  {name: 'Best Rating', href: '#', value:'', current: false},
-  {name: 'Newest', href: '#', value:'created_desc', current: false},
+  // {name: 'Best Rating', href: '#', value:'', current: false},
+  {name: 'Newest', href: '#', value:'created_asc', current: false},
   {name: 'Price: Low to High', value:'lh', href: '#', current: false},
   {name: 'Price: High to Low', value:'hl', href: '#', current: false},
 ];
@@ -121,17 +121,24 @@ export default function Collection() {
   var collectionArray = sortArr[0]?.items;
   //console.log("collectionArray::",collectionArray)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  var productsToShow = [];
+  var productsToShow1 = [];
   const lines = [];
   const [startIndex, setStartIndex] = useState(0);
-  const [productsToShow1, setProductToShow] = useState([])
+  const [productsToShow, setProductToShow] = useState([])
+  const [productsToShowDump, setProductToShowDump] = useState([])
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const endIndex = isLargeScreen ? 4 : 2;
-  if (collection.products != null || collection.products != undefined) {
-    console.log("collection::",collection);
-    productsToShow = collection.products.nodes;
-    //console.log(productsToShow);
-  }
+ 
+
+  useEffect(()=>{
+    if (collection.products != null || collection.products != undefined) {
+      console.log("collection::",collection);
+      productsToShow1 = collection.products.nodes;
+      //console.log(productsToShow);
+      setProductToShow(productsToShow1)
+      setProductToShowDump(productsToShow1)
+    }
+  },[])
 
   collection.products.nodes.map((product) => {
     product.variants.nodes.map((line) => {
@@ -155,45 +162,48 @@ export default function Collection() {
       case 'created_desc':sortByDate(data,"descending");
                   break;
       default:
-        productsToShow=data; 
+        setProductToShow(data)
     }
   }
 
   const sortArray = (data,sortOrder="ascending") => {
     console.log("sortArray::",data)
     const sortedData = [...data].sort((a, b) => {
-        var nodeA =a.node,nodeB=b.node;
-        if(this.state.isSortedProduct) {
-           nodeA = a,
-           nodeB = b;
-        }
+        var nodeA =a,nodeB=b;
         if (sortOrder === 'ascending') {
-            return nodeA.title.localeCompare(nodeB.title);
+            return parseFloat(nodeA.priceRange.maxVariantPrice.amount) - parseFloat(nodeB.priceRange.maxVariantPrice.amount);
         } else {
-            return nodeB.title.localeCompare(nodeA.title);
+            return parseFloat(nodeB.priceRange.maxVariantPrice.amount) - parseFloat(nodeA.priceRange.maxVariantPrice.amount);
         }
     });
-    productsToShow = sortedData
+    setProductToShow(sortedData)
   }
   
   const sortByDate = (data,sortOrder="ascending") => {
     console.log("sortByDate::",data)
     const sortedData = [...data].sort((a, b) => {
-      var nodeA =a.node,nodeB=b.node;
+      var nodeA = a, nodeB = b;
       if (sortOrder === 'ascending') {
         return new Date(nodeA.publishedAt).getTime() - new Date(nodeB.publishedAt).getTime();
       } else {
         return  new Date(nodeB.publishedAt).getTime() - new Date(nodeA.publishedAt).getTime();
       }
     });
-    productsToShow = sortedData
+    setProductToShow(sortedData)
   }
 
   const filterData = (e)=>{
-    var price = parent(e.target.value);
-    let filter = productsToShow.filter((item)=> item.priceRange.maxVariantPrice.amount > price )
-    productsToShow = filter;
-    console.log(productsToShow);
+    var price = parseInt(e.target.value);
+    console.log("filter::",e.target.checked)
+    var isChecked = e.target.checked;
+    var filterData = productsToShow;
+    if(isChecked){
+      let filter = filterData.filter((item)=> item.priceRange.maxVariantPrice.amount > price )
+      console.log("filter::",filter)
+      setProductToShow(filter)
+    }else{
+      setProductToShow(productsToShowDump)
+    }
   }
   
   function getPath(url_path) {

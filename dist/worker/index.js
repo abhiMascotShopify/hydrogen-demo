@@ -765,7 +765,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         var dispatcher = resolveDispatcher();
         return dispatcher.useRef(initialValue);
       }
-      function useEffect8(create, deps) {
+      function useEffect9(create, deps) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useEffect(create, deps);
       }
@@ -1294,7 +1294,7 @@ Check the top-level render call using <` + parentName + ">.");
         toArray,
         only: onlyChild
       };
-      exports.Children = Children2, exports.Component = Component2, exports.Fragment = REACT_FRAGMENT_TYPE, exports.Profiler = REACT_PROFILER_TYPE, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE, exports.Suspense = REACT_SUSPENSE_TYPE, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext5, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef14, exports.isValidElement = isValidElement2, exports.lazy = lazy2, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback3, exports.useContext = useContext7, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect8, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo10, exports.useReducer = useReducer, exports.useRef = useRef8, exports.useState = useState17, exports.useSyncExternalStore = useSyncExternalStore, exports.useTransition = useTransition2, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+      exports.Children = Children2, exports.Component = Component2, exports.Fragment = REACT_FRAGMENT_TYPE, exports.Profiler = REACT_PROFILER_TYPE, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE, exports.Suspense = REACT_SUSPENSE_TYPE, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext5, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef14, exports.isValidElement = isValidElement2, exports.lazy = lazy2, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback3, exports.useContext = useContext7, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect9, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo10, exports.useReducer = useReducer, exports.useRef = useRef8, exports.useState = useState17, exports.useSyncExternalStore = useSyncExternalStore, exports.useTransition = useTransition2, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
     })();
   }
 });
@@ -22078,10 +22078,10 @@ var press, init_press_es = __esm({
 });
 
 // node_modules/@motionone/dom/dist/state/index.es.js
-function createMotionState(options = {}, parent2) {
-  let element, depth = parent2 ? parent2.getDepth() + 1 : 0, activeStates = { initial: !0, animate: !0 }, gestureSubscriptions = {}, context = {};
+function createMotionState(options = {}, parent) {
+  let element, depth = parent ? parent.getDepth() + 1 : 0, activeStates = { initial: !0, animate: !0 }, gestureSubscriptions = {}, context = {};
   for (let name of stateTypes)
-    context[name] = typeof options[name] == "string" ? options[name] : parent2 == null ? void 0 : parent2.getContext()[name];
+    context[name] = typeof options[name] == "string" ? options[name] : parent == null ? void 0 : parent.getContext()[name];
   let initialVariantSource = options.initial === !1 ? "animate" : "initial", _a2 = resolveVariant(options[initialVariantSource] || context[initialVariantSource], options.variants) || {}, target = __rest(_a2, ["transition"]), baseTarget = Object.assign({}, target);
   function* animateUpdates() {
     var _a3, _b;
@@ -22377,10 +22377,10 @@ var require_cjs2 = __commonJS({
       return reducedMotion === "never" ? !1 : reducedMotion === "always" ? !0 : reducedMotionPreference;
     }
     function useVisualElement(Component2, visualState, props, createVisualElement) {
-      var lazyContext = React40.useContext(LazyContext), parent2 = useVisualElementContext(), presenceContext = React40.useContext(PresenceContext), shouldReduceMotion = useReducedMotionConfig(), visualElementRef = React40.useRef(void 0);
+      var lazyContext = React40.useContext(LazyContext), parent = useVisualElementContext(), presenceContext = React40.useContext(PresenceContext), shouldReduceMotion = useReducedMotionConfig(), visualElementRef = React40.useRef(void 0);
       createVisualElement || (createVisualElement = lazyContext.renderer), !visualElementRef.current && createVisualElement && (visualElementRef.current = createVisualElement(Component2, {
         visualState,
-        parent: parent2,
+        parent,
         props,
         presenceId: presenceContext == null ? void 0 : presenceContext.id,
         blockInitialAnimation: (presenceContext == null ? void 0 : presenceContext.initial) === !1,
@@ -23185,8 +23185,8 @@ var require_cjs2 = __commonJS({
       var onHoverStart = _a2.onHoverStart, onHoverEnd = _a2.onHoverEnd, whileHover = _a2.whileHover, visualElement2 = _a2.visualElement;
       usePointerEvent(visualElement2, "pointerenter", onHoverStart || whileHover ? createHoverEvent(visualElement2, !0, onHoverStart) : void 0, { passive: !onHoverStart }), usePointerEvent(visualElement2, "pointerleave", onHoverEnd || whileHover ? createHoverEvent(visualElement2, !1, onHoverEnd) : void 0, { passive: !onHoverEnd });
     }
-    var isNodeOrChild = function(parent2, child) {
-      return child ? parent2 === child ? !0 : isNodeOrChild(parent2, child.parentElement) : !1;
+    var isNodeOrChild = function(parent, child) {
+      return child ? parent === child ? !0 : isNodeOrChild(parent, child.parentElement) : !1;
     };
     function useUnmountEffect(callback) {
       return React40.useEffect(function() {
@@ -23968,17 +23968,17 @@ var require_cjs2 = __commonJS({
     function calcBoxDelta(delta, source, target, origin) {
       calcAxisDelta(delta.x, source.x, target.x, origin == null ? void 0 : origin.originX), calcAxisDelta(delta.y, source.y, target.y, origin == null ? void 0 : origin.originY);
     }
-    function calcRelativeAxis(target, relative, parent2) {
-      target.min = parent2.min + relative.min, target.max = target.min + calcLength(relative);
+    function calcRelativeAxis(target, relative, parent) {
+      target.min = parent.min + relative.min, target.max = target.min + calcLength(relative);
     }
-    function calcRelativeBox(target, relative, parent2) {
-      calcRelativeAxis(target.x, relative.x, parent2.x), calcRelativeAxis(target.y, relative.y, parent2.y);
+    function calcRelativeBox(target, relative, parent) {
+      calcRelativeAxis(target.x, relative.x, parent.x), calcRelativeAxis(target.y, relative.y, parent.y);
     }
-    function calcRelativeAxisPosition(target, layout, parent2) {
-      target.min = layout.min - parent2.min, target.max = target.min + calcLength(layout);
+    function calcRelativeAxisPosition(target, layout, parent) {
+      target.min = layout.min - parent.min, target.max = target.min + calcLength(layout);
     }
-    function calcRelativePosition(target, layout, parent2) {
-      calcRelativeAxisPosition(target.x, layout.x, parent2.x), calcRelativeAxisPosition(target.y, layout.y, parent2.y);
+    function calcRelativePosition(target, layout, parent) {
+      calcRelativeAxisPosition(target.x, layout.x, parent.x), calcRelativeAxisPosition(target.y, layout.y, parent.y);
     }
     function applyConstraints(point2, _a2, elastic) {
       var min = _a2.min, max = _a2.max;
@@ -24402,7 +24402,7 @@ var require_cjs2 = __commonJS({
     var visualElement = function(_a2) {
       var _b = _a2.treeType, treeType = _b === void 0 ? "" : _b, build = _a2.build, getBaseTarget = _a2.getBaseTarget, makeTargetAnimatable = _a2.makeTargetAnimatable, measureViewportBox2 = _a2.measureViewportBox, renderInstance = _a2.render, readValueFromInstance = _a2.readValueFromInstance, removeValueFromRenderState = _a2.removeValueFromRenderState, sortNodePosition = _a2.sortNodePosition, scrapeMotionValuesFromProps2 = _a2.scrapeMotionValuesFromProps;
       return function(_a3, options) {
-        var parent2 = _a3.parent, props = _a3.props, presenceId = _a3.presenceId, blockInitialAnimation = _a3.blockInitialAnimation, visualState = _a3.visualState, shouldReduceMotion = _a3.shouldReduceMotion;
+        var parent = _a3.parent, props = _a3.props, presenceId = _a3.presenceId, blockInitialAnimation = _a3.blockInitialAnimation, visualState = _a3.visualState, shouldReduceMotion = _a3.shouldReduceMotion;
         options === void 0 && (options = {});
         var isMounted = !1, latestValues = visualState.latestValues, renderState = visualState.renderState, instance, lifecycles = createLifecycles(), values = /* @__PURE__ */ new Map(), valueSubscriptions = /* @__PURE__ */ new Map(), prevMotionValues = {}, baseTarget = tslib.__assign({}, latestValues), removeFromVariantTree;
         function render() {
@@ -24437,8 +24437,8 @@ var require_cjs2 = __commonJS({
           /**
            * The depth of this visual element within the visual element tree.
            */
-          depth: parent2 ? parent2.depth + 1 : 0,
-          parent: parent2,
+          depth: parent ? parent.depth + 1 : 0,
+          parent,
           children: /* @__PURE__ */ new Set(),
           /**
            *
@@ -24466,7 +24466,7 @@ var require_cjs2 = __commonJS({
            *
            * TODO: This might be better replaced with a method isParentMounted
            */
-          manuallyAnimateOnMount: Boolean(parent2 == null ? void 0 : parent2.isMounted()),
+          manuallyAnimateOnMount: Boolean(parent == null ? void 0 : parent.isMounted()),
           /**
            * This can be set by AnimatePresence to force components that mount
            * at the same time as it to mount as if they have initial={false} set.
@@ -24481,9 +24481,9 @@ var require_cjs2 = __commonJS({
             return Boolean(instance);
           },
           mount: function(newInstance) {
-            isMounted = !0, instance = element.current = newInstance, element.projection && element.projection.mount(newInstance), isVariantNode && parent2 && !isControllingVariants && (removeFromVariantTree = parent2 == null ? void 0 : parent2.addVariantChild(element)), values.forEach(function(value2, key2) {
+            isMounted = !0, instance = element.current = newInstance, element.projection && element.projection.mount(newInstance), isVariantNode && parent && !isControllingVariants && (removeFromVariantTree = parent == null ? void 0 : parent.addVariantChild(element)), values.forEach(function(value2, key2) {
               return bindToMotionValue(key2, value2);
-            }), parent2 == null || parent2.children.add(element), element.setProps(props);
+            }), parent == null || parent.children.add(element), element.setProps(props);
           },
           /**
            *
@@ -24492,7 +24492,7 @@ var require_cjs2 = __commonJS({
             var _a4;
             (_a4 = element.projection) === null || _a4 === void 0 || _a4.unmount(), sync.cancelSync.update(update), sync.cancelSync.render(render), valueSubscriptions.forEach(function(remove) {
               return remove();
-            }), removeFromVariantTree == null || removeFromVariantTree(), parent2 == null || parent2.children.delete(element), lifecycles.clearAllListeners(), instance = void 0, isMounted = !1;
+            }), removeFromVariantTree == null || removeFromVariantTree(), parent == null || parent.children.delete(element), lifecycles.clearAllListeners(), instance = void 0, isMounted = !1;
           },
           /**
            * Add a child visual element to our set of children.
@@ -24512,7 +24512,7 @@ var require_cjs2 = __commonJS({
            * this visual element.
            */
           getClosestVariantNode: function() {
-            return isVariantNode ? element : parent2 == null ? void 0 : parent2.getClosestVariantNode();
+            return isVariantNode ? element : parent == null ? void 0 : parent.getClosestVariantNode();
           },
           /**
            * Expose the latest layoutId prop.
@@ -24682,9 +24682,9 @@ var require_cjs2 = __commonJS({
            */
           getVariantContext: function(startAtParent) {
             if (startAtParent === void 0 && (startAtParent = !1), startAtParent)
-              return parent2 == null ? void 0 : parent2.getVariantContext();
+              return parent == null ? void 0 : parent.getVariantContext();
             if (!isControllingVariants) {
-              var context_1 = (parent2 == null ? void 0 : parent2.getVariantContext()) || {};
+              var context_1 = (parent == null ? void 0 : parent.getVariantContext()) || {};
               return props.initial !== void 0 && (context_1.initial = props.initial), context_1;
             }
             for (var context = {}, i6 = 0; i6 < numVariantProps; i6++) {
@@ -25183,13 +25183,13 @@ var require_cjs2 = __commonJS({
       return (
         /** @class */
         function() {
-          function ProjectionNode(id2, latestValues, parent2) {
+          function ProjectionNode(id2, latestValues, parent) {
             var _this = this;
-            latestValues === void 0 && (latestValues = {}), parent2 === void 0 && (parent2 = defaultParent == null ? void 0 : defaultParent()), this.children = /* @__PURE__ */ new Set(), this.options = {}, this.isTreeAnimating = !1, this.isAnimationBlocked = !1, this.isLayoutDirty = !1, this.updateManuallyBlocked = !1, this.updateBlockedByResize = !1, this.isUpdating = !1, this.isSVG = !1, this.needsReset = !1, this.shouldResetTransform = !1, this.treeScale = { x: 1, y: 1 }, this.eventHandlers = /* @__PURE__ */ new Map(), this.potentialNodes = /* @__PURE__ */ new Map(), this.checkUpdateFailed = function() {
+            latestValues === void 0 && (latestValues = {}), parent === void 0 && (parent = defaultParent == null ? void 0 : defaultParent()), this.children = /* @__PURE__ */ new Set(), this.options = {}, this.isTreeAnimating = !1, this.isAnimationBlocked = !1, this.isLayoutDirty = !1, this.updateManuallyBlocked = !1, this.updateBlockedByResize = !1, this.isUpdating = !1, this.isSVG = !1, this.needsReset = !1, this.shouldResetTransform = !1, this.treeScale = { x: 1, y: 1 }, this.eventHandlers = /* @__PURE__ */ new Map(), this.potentialNodes = /* @__PURE__ */ new Map(), this.checkUpdateFailed = function() {
               _this.isUpdating && (_this.isUpdating = !1, _this.clearAllSnapshots());
             }, this.updateProjection = function() {
               _this.nodes.forEach(resolveTargetDelta), _this.nodes.forEach(calcProjection);
-            }, this.hasProjected = !1, this.isVisible = !0, this.animationProgress = 0, this.sharedNodes = /* @__PURE__ */ new Map(), this.id = id2, this.latestValues = latestValues, this.root = parent2 ? parent2.root || parent2 : this, this.path = parent2 ? tslib.__spreadArray(tslib.__spreadArray([], tslib.__read(parent2.path), !1), [parent2], !1) : [], this.parent = parent2, this.depth = parent2 ? parent2.depth + 1 : 0, id2 && this.root.registerPotentialNode(id2, this);
+            }, this.hasProjected = !1, this.isVisible = !0, this.animationProgress = 0, this.sharedNodes = /* @__PURE__ */ new Map(), this.id = id2, this.latestValues = latestValues, this.root = parent ? parent.root || parent : this, this.path = parent ? tslib.__spreadArray(tslib.__spreadArray([], tslib.__read(parent.path), !1), [parent], !1) : [], this.parent = parent, this.depth = parent ? parent.depth + 1 : 0, id2 && this.root.registerPotentialNode(id2, this);
             for (var i6 = 0; i6 < this.path.length; i6++)
               this.path[i6].shouldResetTransform = !0;
             this.root === this && (this.nodes = new FlatTree());
@@ -27282,9 +27282,9 @@ var require_scheduler_development = __commonJS({
       }
       function siftUp(heap, node, i6) {
         for (var index2 = i6; index2 > 0; ) {
-          var parentIndex = index2 - 1 >>> 1, parent2 = heap[parentIndex];
-          if (compare(parent2, node) > 0)
-            heap[parentIndex] = node, heap[index2] = parent2, index2 = parentIndex;
+          var parentIndex = index2 - 1 >>> 1, parent = heap[parentIndex];
+          if (compare(parent, node) > 0)
+            heap[parentIndex] = node, heap[index2] = parent, index2 = parentIndex;
           else
             return;
         }
@@ -30113,8 +30113,8 @@ Check the render method of \`` + ownerName + "`." : "";
           throw new Error("Unable to find node on an unmounted component.");
         return a12.stateNode.current === a12 ? fiber : alternate;
       }
-      function findCurrentHostFiber(parent2) {
-        var currentParent = findCurrentFiberUsingSlowPath(parent2);
+      function findCurrentHostFiber(parent) {
+        var currentParent = findCurrentFiberUsingSlowPath(parent);
         return currentParent !== null ? findCurrentHostFiberImpl(currentParent) : null;
       }
       function findCurrentHostFiberImpl(node) {
@@ -30128,8 +30128,8 @@ Check the render method of \`` + ownerName + "`." : "";
         }
         return null;
       }
-      function findCurrentHostFiberWithNoPortals(parent2) {
-        var currentParent = findCurrentFiberUsingSlowPath(parent2);
+      function findCurrentHostFiberWithNoPortals(parent) {
+        var currentParent = findCurrentFiberUsingSlowPath(parent);
         return currentParent !== null ? findCurrentHostFiberWithNoPortalsImpl(currentParent) : null;
       }
       function findCurrentHostFiberWithNoPortalsImpl(node) {
@@ -32360,8 +32360,8 @@ Check the render method of \`` + ownerName + "`." : "";
         }
       }, warnForInvalidEventListener = function(registrationName, listener) {
         listener === !1 ? error("Expected `%s` listener to be a function, instead got `false`.\n\nIf you used to conditionally omit it with %s={condition && value}, pass %s={condition ? value : undefined} instead.", registrationName, registrationName, registrationName) : error("Expected `%s` listener to be a function, instead got a value of `%s` type.", registrationName, typeof listener);
-      }, normalizeHTML = function(parent2, html) {
-        var testElement = parent2.namespaceURI === HTML_NAMESPACE ? parent2.ownerDocument.createElement(parent2.tagName) : parent2.ownerDocument.createElementNS(parent2.namespaceURI, parent2.tagName);
+      }, normalizeHTML = function(parent, html) {
+        var testElement = parent.namespaceURI === HTML_NAMESPACE ? parent.ownerDocument.createElement(parent.tagName) : parent.ownerDocument.createElementNS(parent.namespaceURI, parent.tagName);
         return testElement.innerHTML = html, testElement.innerHTML;
       };
       var NORMALIZE_NEWLINES_REGEX = /\r\n?/g, NORMALIZE_NULL_AND_REPLACEMENT_REGEX = /\u0000|\uFFFD/g;
@@ -33776,9 +33776,9 @@ Check the render method of \`` + ownerName + "`." : "";
         return getNextHydratableInstanceAfterSuspenseInstance(suspenseInstance);
       }
       function popToNextHostParent(fiber) {
-        for (var parent2 = fiber.return; parent2 !== null && parent2.tag !== HostComponent && parent2.tag !== HostRoot && parent2.tag !== SuspenseComponent; )
-          parent2 = parent2.return;
-        hydrationParentFiber = parent2;
+        for (var parent = fiber.return; parent !== null && parent.tag !== HostComponent && parent.tag !== HostRoot && parent.tag !== SuspenseComponent; )
+          parent = parent.return;
+        hydrationParentFiber = parent;
       }
       function popHydrationState(fiber) {
         if (fiber !== hydrationParentFiber)
@@ -33987,8 +33987,8 @@ Learn more about this warning here: https://reactjs.org/link/legacy-context`, so
         var currentValue = valueCursor.current;
         pop(valueCursor, providerFiber), context._currentValue = currentValue;
       }
-      function scheduleContextWorkOnParentPath(parent2, renderLanes2, propagationRoot) {
-        for (var node = parent2; node !== null; ) {
+      function scheduleContextWorkOnParentPath(parent, renderLanes2, propagationRoot) {
+        for (var node = parent; node !== null; ) {
           var alternate = node.alternate;
           if (isSubsetOfLanes(node.childLanes, renderLanes2) ? alternate !== null && !isSubsetOfLanes(alternate.childLanes, renderLanes2) && (alternate.childLanes = mergeLanes(alternate.childLanes, renderLanes2)) : (node.childLanes = mergeLanes(node.childLanes, renderLanes2), alternate !== null && (alternate.childLanes = mergeLanes(alternate.childLanes, renderLanes2))), node === propagationRoot)
             break;
@@ -34122,8 +34122,8 @@ Learn more about this warning here: https://reactjs.org/link/legacy-context`, so
         sourceFiber.lanes = mergeLanes(sourceFiber.lanes, lane);
         var alternate = sourceFiber.alternate;
         alternate !== null && (alternate.lanes = mergeLanes(alternate.lanes, lane)), alternate === null && (sourceFiber.flags & (Placement | Hydrating)) !== NoFlags && warnAboutUpdateOnNotYetMountedFiberInDEV(sourceFiber);
-        for (var node = sourceFiber, parent2 = sourceFiber.return; parent2 !== null; )
-          parent2.childLanes = mergeLanes(parent2.childLanes, lane), alternate = parent2.alternate, alternate !== null ? alternate.childLanes = mergeLanes(alternate.childLanes, lane) : (parent2.flags & (Placement | Hydrating)) !== NoFlags && warnAboutUpdateOnNotYetMountedFiberInDEV(sourceFiber), node = parent2, parent2 = parent2.return;
+        for (var node = sourceFiber, parent = sourceFiber.return; parent !== null; )
+          parent.childLanes = mergeLanes(parent.childLanes, lane), alternate = parent.alternate, alternate !== null ? alternate.childLanes = mergeLanes(alternate.childLanes, lane) : (parent.flags & (Placement | Hydrating)) !== NoFlags && warnAboutUpdateOnNotYetMountedFiberInDEV(sourceFiber), node = parent, parent = parent.return;
         if (node.tag === HostRoot) {
           var root2 = node.stateNode;
           return root2;
@@ -37621,10 +37621,10 @@ Check the render method of \`` + ownerName + "`.");
         workInProgress2.flags |= Ref, workInProgress2.flags |= RefStatic;
       }
       var appendAllChildren, updateHostContainer, updateHostComponent$1, updateHostText$1;
-      appendAllChildren = function(parent2, workInProgress2, needsVisibilityToggle, isHidden) {
+      appendAllChildren = function(parent, workInProgress2, needsVisibilityToggle, isHidden) {
         for (var node = workInProgress2.child; node !== null; ) {
           if (node.tag === HostComponent || node.tag === HostText)
-            appendInitialChild(parent2, node.stateNode);
+            appendInitialChild(parent, node.stateNode);
           else if (node.tag !== HostPortal) {
             if (node.child !== null) {
               node.child.return = node, node = node.child;
@@ -38406,10 +38406,10 @@ Learn more about data fetching with Hooks: https://reactjs.org/link/hooks-data-f
         }
       }
       function getHostParentFiber(fiber) {
-        for (var parent2 = fiber.return; parent2 !== null; ) {
-          if (isHostParent(parent2))
-            return parent2;
-          parent2 = parent2.return;
+        for (var parent = fiber.return; parent !== null; ) {
+          if (isHostParent(parent))
+            return parent;
+          parent = parent.return;
         }
         throw new Error("Expected to find a host parent. This error is likely caused by a bug in React. Please file an issue.");
       }
@@ -38438,10 +38438,10 @@ Learn more about data fetching with Hooks: https://reactjs.org/link/hooks-data-f
         var parentFiber = getHostParentFiber(finishedWork);
         switch (parentFiber.tag) {
           case HostComponent: {
-            var parent2 = parentFiber.stateNode;
-            parentFiber.flags & ContentReset && (resetTextContent(parent2), parentFiber.flags &= ~ContentReset);
+            var parent = parentFiber.stateNode;
+            parentFiber.flags & ContentReset && (resetTextContent(parent), parentFiber.flags &= ~ContentReset);
             var before = getHostSibling(finishedWork);
-            insertOrAppendPlacementNode(finishedWork, before, parent2);
+            insertOrAppendPlacementNode(finishedWork, before, parent);
             break;
           }
           case HostRoot:
@@ -38454,55 +38454,55 @@ Learn more about data fetching with Hooks: https://reactjs.org/link/hooks-data-f
             throw new Error("Invalid host parent fiber. This error is likely caused by a bug in React. Please file an issue.");
         }
       }
-      function insertOrAppendPlacementNodeIntoContainer(node, before, parent2) {
+      function insertOrAppendPlacementNodeIntoContainer(node, before, parent) {
         var tag = node.tag, isHost = tag === HostComponent || tag === HostText;
         if (isHost) {
           var stateNode = node.stateNode;
-          before ? insertInContainerBefore(parent2, stateNode, before) : appendChildToContainer(parent2, stateNode);
+          before ? insertInContainerBefore(parent, stateNode, before) : appendChildToContainer(parent, stateNode);
         } else if (tag !== HostPortal) {
           var child = node.child;
           if (child !== null) {
-            insertOrAppendPlacementNodeIntoContainer(child, before, parent2);
+            insertOrAppendPlacementNodeIntoContainer(child, before, parent);
             for (var sibling = child.sibling; sibling !== null; )
-              insertOrAppendPlacementNodeIntoContainer(sibling, before, parent2), sibling = sibling.sibling;
+              insertOrAppendPlacementNodeIntoContainer(sibling, before, parent), sibling = sibling.sibling;
           }
         }
       }
-      function insertOrAppendPlacementNode(node, before, parent2) {
+      function insertOrAppendPlacementNode(node, before, parent) {
         var tag = node.tag, isHost = tag === HostComponent || tag === HostText;
         if (isHost) {
           var stateNode = node.stateNode;
-          before ? insertBefore(parent2, stateNode, before) : appendChild(parent2, stateNode);
+          before ? insertBefore(parent, stateNode, before) : appendChild(parent, stateNode);
         } else if (tag !== HostPortal) {
           var child = node.child;
           if (child !== null) {
-            insertOrAppendPlacementNode(child, before, parent2);
+            insertOrAppendPlacementNode(child, before, parent);
             for (var sibling = child.sibling; sibling !== null; )
-              insertOrAppendPlacementNode(sibling, before, parent2), sibling = sibling.sibling;
+              insertOrAppendPlacementNode(sibling, before, parent), sibling = sibling.sibling;
           }
         }
       }
       var hostParent = null, hostParentIsContainer = !1;
       function commitDeletionEffects(root2, returnFiber, deletedFiber) {
         {
-          var parent2 = returnFiber;
+          var parent = returnFiber;
           findParent:
-            for (; parent2 !== null; ) {
-              switch (parent2.tag) {
+            for (; parent !== null; ) {
+              switch (parent.tag) {
                 case HostComponent: {
-                  hostParent = parent2.stateNode, hostParentIsContainer = !1;
+                  hostParent = parent.stateNode, hostParentIsContainer = !1;
                   break findParent;
                 }
                 case HostRoot: {
-                  hostParent = parent2.stateNode.containerInfo, hostParentIsContainer = !0;
+                  hostParent = parent.stateNode.containerInfo, hostParentIsContainer = !0;
                   break findParent;
                 }
                 case HostPortal: {
-                  hostParent = parent2.stateNode.containerInfo, hostParentIsContainer = !0;
+                  hostParent = parent.stateNode.containerInfo, hostParentIsContainer = !0;
                   break findParent;
                 }
               }
-              parent2 = parent2.return;
+              parent = parent.return;
             }
           if (hostParent === null)
             throw new Error("Expected to find a host parent. This error is likely caused by a bug in React. Please file an issue.");
@@ -38510,8 +38510,8 @@ Learn more about data fetching with Hooks: https://reactjs.org/link/hooks-data-f
         }
         detachFiberMutation(deletedFiber);
       }
-      function recursivelyTraverseDeletionEffects(finishedRoot, nearestMountedAncestor, parent2) {
-        for (var child = parent2.child; child !== null; )
+      function recursivelyTraverseDeletionEffects(finishedRoot, nearestMountedAncestor, parent) {
+        for (var child = parent.child; child !== null; )
           commitDeletionEffectsOnFiber(finishedRoot, nearestMountedAncestor, child), child = child.sibling;
       }
       function commitDeletionEffectsOnFiber(finishedRoot, nearestMountedAncestor, deletedFiber) {
@@ -42796,8 +42796,8 @@ var require_floating_ui_react_umd = __commonJS({
           !el || elementsToKeep.has(el) || (elementsToKeep.add(el), keep(el.parentNode));
         };
         targets.forEach(keep);
-        var deep = function(parent2) {
-          !parent2 || targets.indexOf(parent2) >= 0 || Array.prototype.forEach.call(parent2.children, function(node) {
+        var deep = function(parent) {
+          !parent || targets.indexOf(parent) >= 0 || Array.prototype.forEach.call(parent.children, function(node) {
             if (elementsToKeep.has(node))
               deep(node);
             else {
@@ -42970,16 +42970,16 @@ var require_floating_ui_react_umd = __commonJS({
         }
         return activeElement2;
       }
-      function contains(parent2, child) {
-        if (!parent2 || !child)
+      function contains(parent, child) {
+        if (!parent || !child)
           return !1;
         let rootNode = child.getRootNode && child.getRootNode();
-        if (parent2.contains(child))
+        if (parent.contains(child))
           return !0;
         if (rootNode && isShadowRoot(rootNode)) {
           let next = child;
           do {
-            if (next && parent2 === next)
+            if (next && parent === next)
               return !0;
             next = next.parentNode || next.host;
           } while (next);
@@ -62473,8 +62473,8 @@ var ForwardRef9 = React25.forwardRef(Squares2X2Icon), Squares2X2Icon_default = F
 // app/routes/($locale).collections.$handle.jsx
 var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime()), sortOptions = [
   { name: "Most Popular", href: "#", value: "", current: !0 },
-  { name: "Best Rating", href: "#", value: "", current: !1 },
-  { name: "Newest", href: "#", value: "created_desc", current: !1 },
+  // {name: 'Best Rating', href: '#', value:'', current: false},
+  { name: "Newest", href: "#", value: "created_asc", current: !1 },
   { name: "Price: Low to High", value: "lh", href: "#", current: !1 },
   { name: "Price: High to Low", value: "hl", href: "#", current: !1 }
 ], subCategories = [
@@ -62550,9 +62550,11 @@ function Collection() {
   let { collection, header, handle } = useLoaderData2(), { menu } = header;
   var sortArr = menu.items.filter((item) => item.title.toLowerCase() === handle), collectionArray = (_a2 = sortArr[0]) == null ? void 0 : _a2.items;
   let [mobileFiltersOpen, setMobileFiltersOpen] = (0, import_react68.useState)(!1);
-  var productsToShow = [];
-  let lines = [], [startIndex, setStartIndex] = (0, import_react68.useState)(0), [productsToShow1, setProductToShow] = (0, import_react68.useState)([]), endIndex = (0, import_react_responsive4.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2;
-  (collection.products != null || collection.products != null) && (console.log("collection::", collection), productsToShow = collection.products.nodes), collection.products.nodes.map((product) => {
+  var productsToShow1 = [];
+  let lines = [], [startIndex, setStartIndex] = (0, import_react68.useState)(0), [productsToShow, setProductToShow] = (0, import_react68.useState)([]), [productsToShowDump, setProductToShowDump] = (0, import_react68.useState)([]), endIndex = (0, import_react_responsive4.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2;
+  (0, import_react68.useEffect)(() => {
+    (collection.products != null || collection.products != null) && (console.log("collection::", collection), productsToShow1 = collection.products.nodes, setProductToShow(productsToShow1), setProductToShowDump(productsToShow1));
+  }, []), collection.products.nodes.map((product) => {
     product.variants.nodes.map((line) => {
       lines.push({
         merchandiseId: line.id,
@@ -62576,21 +62578,31 @@ function Collection() {
         sortByDate(data2, "descending");
         break;
       default:
-        productsToShow = data2;
+        setProductToShow(data2);
     }
   }, sortArray = (data2, sortOrder = "ascending") => {
-    console.log("sortArray::", data2), productsToShow = [...data2].sort((a12, b6) => {
-      var nodeA = a12.node, nodeB = b6.node;
-      return this.state.isSortedProduct && (nodeA = a12, nodeB = b6), sortOrder === "ascending" ? nodeA.title.localeCompare(nodeB.title) : nodeB.title.localeCompare(nodeA.title);
+    console.log("sortArray::", data2);
+    let sortedData = [...data2].sort((a12, b6) => {
+      var nodeA = a12, nodeB = b6;
+      return sortOrder === "ascending" ? parseFloat(nodeA.priceRange.maxVariantPrice.amount) - parseFloat(nodeB.priceRange.maxVariantPrice.amount) : parseFloat(nodeB.priceRange.maxVariantPrice.amount) - parseFloat(nodeA.priceRange.maxVariantPrice.amount);
     });
+    setProductToShow(sortedData);
   }, sortByDate = (data2, sortOrder = "ascending") => {
-    console.log("sortByDate::", data2), productsToShow = [...data2].sort((a12, b6) => {
-      var nodeA = a12.node, nodeB = b6.node;
+    console.log("sortByDate::", data2);
+    let sortedData = [...data2].sort((a12, b6) => {
+      var nodeA = a12, nodeB = b6;
       return sortOrder === "ascending" ? new Date(nodeA.publishedAt).getTime() - new Date(nodeB.publishedAt).getTime() : new Date(nodeB.publishedAt).getTime() - new Date(nodeA.publishedAt).getTime();
     });
+    setProductToShow(sortedData);
   }, filterData = (e4) => {
-    var price = parent(e4.target.value);
-    productsToShow = productsToShow.filter((item) => item.priceRange.maxVariantPrice.amount > price), console.log(productsToShow);
+    var price = parseInt(e4.target.value);
+    console.log("filter::", e4.target.checked);
+    var isChecked = e4.target.checked, filterData2 = productsToShow;
+    if (isChecked) {
+      let filter = filterData2.filter((item) => item.priceRange.maxVariantPrice.amount > price);
+      console.log("filter::", filter), setProductToShow(filter);
+    } else
+      setProductToShow(productsToShowDump);
   };
   function getPath(url_path) {
     return new URL(url_path).pathname;
@@ -62613,13 +62625,13 @@ function Collection() {
       !1,
       {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 217,
+        lineNumber: 227,
         columnNumber: 9
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 216,
+      lineNumber: 226,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "bg-white mx-2.5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { children: [
@@ -62642,7 +62654,7 @@ function Collection() {
                 leaveTo: "opacity-0",
                 children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "fixed inset-0 bg-black bg-opacity-25" }, void 0, !1, {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 240,
+                  lineNumber: 250,
                   columnNumber: 17
                 }, this)
               },
@@ -62650,7 +62662,7 @@ function Collection() {
               !1,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 231,
+                lineNumber: 241,
                 columnNumber: 15
               },
               this
@@ -62669,7 +62681,7 @@ function Collection() {
                   /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex items-center justify-between px-4", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h2", { className: "text-lg font-medium text-gray-900", children: "Filters" }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 255,
+                      lineNumber: 265,
                       columnNumber: 23
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -62681,12 +62693,12 @@ function Collection() {
                         children: [
                           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "sr-only", children: "Close menu" }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 263,
+                            lineNumber: 273,
                             columnNumber: 25
                           }, this),
                           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(XMarkIcon_default, { className: "h-6 w-6", "aria-hidden": "true" }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 264,
+                            lineNumber: 274,
                             columnNumber: 25
                           }, this)
                         ]
@@ -62695,20 +62707,20 @@ function Collection() {
                       !0,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 258,
+                        lineNumber: 268,
                         columnNumber: 23
                       },
                       this
                     )
                   ] }, void 0, !0, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 254,
+                    lineNumber: 264,
                     columnNumber: 21
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("form", { className: "mt-4 border-t border-gray-200", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h3", { className: "sr-only", children: "Categories" }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 270,
+                      lineNumber: 280,
                       columnNumber: 23
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -62718,11 +62730,11 @@ function Collection() {
                         className: "px-2 py-3 font-medium text-gray-900",
                         children: subCategories.map((category) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("a", { href: category.href, className: "block px-2 py-3", children: category.name }, void 0, !1, {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 277,
+                          lineNumber: 287,
                           columnNumber: 29
                         }, this) }, category.name, !1, {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 276,
+                          lineNumber: 286,
                           columnNumber: 27
                         }, this))
                       },
@@ -62730,7 +62742,7 @@ function Collection() {
                       !1,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 271,
+                        lineNumber: 281,
                         columnNumber: 23
                       },
                       this
@@ -62744,7 +62756,7 @@ function Collection() {
                           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h3", { className: "-mx-2 -my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400", children: [
                             /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "font-medium text-gray-900", children: section.name }, void 0, !1, {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 295,
+                              lineNumber: 305,
                               columnNumber: 35
                             }, this),
                             /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "ml-6 flex items-center", children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -62757,7 +62769,7 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 300,
+                                lineNumber: 310,
                                 columnNumber: 39
                               },
                               this
@@ -62771,22 +62783,22 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 305,
+                                lineNumber: 315,
                                 columnNumber: 39
                               },
                               this
                             ) }, void 0, !1, {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 298,
+                              lineNumber: 308,
                               columnNumber: 35
                             }, this)
                           ] }, void 0, !0, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 294,
+                            lineNumber: 304,
                             columnNumber: 33
                           }, this) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 293,
+                            lineNumber: 303,
                             columnNumber: 31
                           }, this),
                           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "space-y-6", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -62809,7 +62821,7 @@ function Collection() {
                                   !1,
                                   {
                                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                                    lineNumber: 320,
+                                    lineNumber: 330,
                                     columnNumber: 39
                                   },
                                   this
@@ -62825,7 +62837,7 @@ function Collection() {
                                   !1,
                                   {
                                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                                    lineNumber: 329,
+                                    lineNumber: 339,
                                     columnNumber: 39
                                   },
                                   this
@@ -62836,22 +62848,22 @@ function Collection() {
                             !0,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 316,
+                              lineNumber: 326,
                               columnNumber: 37
                             },
                             this
                           )) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 314,
+                            lineNumber: 324,
                             columnNumber: 33
                           }, this) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 313,
+                            lineNumber: 323,
                             columnNumber: 31
                           }, this)
                         ] }, void 0, !0, {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 291,
+                          lineNumber: 301,
                           columnNumber: 29
                         }, this)
                       },
@@ -62859,19 +62871,19 @@ function Collection() {
                       !1,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 285,
+                        lineNumber: 295,
                         columnNumber: 25
                       },
                       this
                     ))
                   ] }, void 0, !0, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 269,
+                    lineNumber: 279,
                     columnNumber: 21
                   }, this)
                 ] }, void 0, !0, {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 253,
+                  lineNumber: 263,
                   columnNumber: 19
                 }, this)
               },
@@ -62879,13 +62891,13 @@ function Collection() {
               !1,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 244,
+                lineNumber: 254,
                 columnNumber: 17
               },
               this
             ) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 243,
+              lineNumber: 253,
               columnNumber: 15
             }, this)
           ]
@@ -62894,13 +62906,13 @@ function Collection() {
         !0,
         {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 226,
+          lineNumber: 236,
           columnNumber: 13
         },
         this
       ) }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 225,
+        lineNumber: 235,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("section", { className: "collectionContent sm:mt-4 overflow-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "inline-flex gap-4", children: collectionArray == null ? void 0 : collectionArray.map((item, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -62921,18 +62933,18 @@ function Collection() {
               !1,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 358,
+                lineNumber: 368,
                 columnNumber: 21
               },
               this
             ) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 357,
+              lineNumber: 367,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "collectionname  sm:text-lg text-md font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]", children: item.title }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 365,
+              lineNumber: 375,
               columnNumber: 19
             }, this)
           ]
@@ -62941,45 +62953,45 @@ function Collection() {
         !0,
         {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 353,
+          lineNumber: 363,
           columnNumber: 17
         },
         this
       )) }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 351,
+        lineNumber: 361,
         columnNumber: 13
       }, this) }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 350,
+        lineNumber: 360,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("main", { className: "mx-auto max-w-8xl px-4 sm:px-6 lg:px-8", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex gap-1 items-center", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(Link2, { to: "/", children: "Home" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 375,
+            lineNumber: 385,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("img", { src: "/next.png", alt: "next", width: 20, height: 20 }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 376,
+            lineNumber: 386,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(Link2, { to: "/collections", className: "font-semibold", children: "Collection" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 377,
+            lineNumber: 387,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 374,
+          lineNumber: 384,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex items-baseline justify-between border-b border-gray-200 pb-6 m-0 relative", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h1", { className: "text-4xl font-bold tracking-tight text-gray-900 sm:block hidden my-[15px]", children: collection.title }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 380,
+            lineNumber: 390,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex items-center sm:mr-10", children: [
@@ -62996,18 +63008,18 @@ function Collection() {
                   !1,
                   {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 389,
+                    lineNumber: 399,
                     columnNumber: 23
                   },
                   this
                 )
               ] }, void 0, !0, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 387,
+                lineNumber: 397,
                 columnNumber: 21
               }, this) }, void 0, !1, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 386,
+                lineNumber: 396,
                 columnNumber: 19
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63035,21 +63047,21 @@ function Collection() {
                     !1,
                     {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 410,
+                      lineNumber: 420,
                       columnNumber: 31
                     },
                     this
                   ) }, option.name, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 408,
+                    lineNumber: 418,
                     columnNumber: 27
                   }, this)) }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 406,
+                    lineNumber: 416,
                     columnNumber: 23
                   }, this) }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 405,
+                    lineNumber: 415,
                     columnNumber: 21
                   }, this)
                 },
@@ -63057,14 +63069,14 @@ function Collection() {
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 396,
+                  lineNumber: 406,
                   columnNumber: 19
                 },
                 this
               )
             ] }, void 0, !0, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 385,
+              lineNumber: 395,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63075,12 +63087,12 @@ function Collection() {
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "sr-only", children: "View grid" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 434,
+                    lineNumber: 444,
                     columnNumber: 19
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(Squares2X2Icon_default, { className: "h-5 w-5", "aria-hidden": "true" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 435,
+                    lineNumber: 445,
                     columnNumber: 19
                   }, this)
                 ]
@@ -63089,7 +63101,7 @@ function Collection() {
               !0,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 430,
+                lineNumber: 440,
                 columnNumber: 17
               },
               this
@@ -63103,12 +63115,12 @@ function Collection() {
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "sr-only", children: "Filters" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 442,
+                    lineNumber: 452,
                     columnNumber: 19
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(FunnelIcon_default, { className: "h-5 w-5", "aria-hidden": "true" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 443,
+                    lineNumber: 453,
                     columnNumber: 19
                   }, this)
                 ]
@@ -63117,32 +63129,32 @@ function Collection() {
               !0,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 437,
+                lineNumber: 447,
                 columnNumber: 17
               },
               this
             )
           ] }, void 0, !0, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 384,
+            lineNumber: 394,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 379,
+          lineNumber: 389,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("section", { "aria-labelledby": "products-heading", className: "pb-24 pt-6", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h2", { id: "products-heading", className: "sr-only", children: "Products" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 449,
+            lineNumber: 459,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "shadow-md px-4 py-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("form", { className: "hidden lg:block lg:sticky lg:top-[120px]", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h3", { className: "sr-only", children: "Categories" }, void 0, !1, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 457,
+                lineNumber: 467,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63165,7 +63177,7 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 467,
+                          lineNumber: 477,
                           columnNumber: 27
                         },
                         this
@@ -63175,7 +63187,7 @@ function Collection() {
                     !1,
                     {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 463,
+                      lineNumber: 473,
                       columnNumber: 25
                     },
                     this
@@ -63185,7 +63197,7 @@ function Collection() {
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 458,
+                  lineNumber: 468,
                   columnNumber: 21
                 },
                 this
@@ -63199,7 +63211,7 @@ function Collection() {
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h3", { className: "-my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white py-3 text-[18px] text-black font-bold", children: [
                       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "", children: section.name }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 487,
+                        lineNumber: 497,
                         columnNumber: 33
                       }, this),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "ml-6 flex items-center", children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63212,7 +63224,7 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 490,
+                          lineNumber: 500,
                           columnNumber: 37
                         },
                         this
@@ -63226,22 +63238,22 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 495,
+                          lineNumber: 505,
                           columnNumber: 37
                         },
                         this
                       ) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 488,
+                        lineNumber: 498,
                         columnNumber: 33
                       }, this)
                     ] }, void 0, !0, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 486,
+                      lineNumber: 496,
                       columnNumber: 31
                     }, this) }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 485,
+                      lineNumber: 495,
                       columnNumber: 29
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "space-y-4", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63264,7 +63276,7 @@ function Collection() {
                             !1,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 510,
+                              lineNumber: 520,
                               columnNumber: 37
                             },
                             this
@@ -63280,7 +63292,7 @@ function Collection() {
                             !1,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 519,
+                              lineNumber: 529,
                               columnNumber: 37
                             },
                             this
@@ -63291,22 +63303,22 @@ function Collection() {
                       !0,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 506,
+                        lineNumber: 516,
                         columnNumber: 35
                       },
                       this
                     )) }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 504,
+                      lineNumber: 514,
                       columnNumber: 31
                     }, this) }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 503,
+                      lineNumber: 513,
                       columnNumber: 29
                     }, this)
                   ] }, void 0, !0, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 484,
+                    lineNumber: 494,
                     columnNumber: 27
                   }, this)
                 },
@@ -63314,18 +63326,18 @@ function Collection() {
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 478,
+                  lineNumber: 488,
                   columnNumber: 23
                 },
                 this
               ))
             ] }, void 0, !0, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 456,
+              lineNumber: 466,
               columnNumber: 19
             }, this) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 455,
+              lineNumber: 465,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "lg:col-span-3", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "w-full max-w-screen-xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "cursor product-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4", children: productsToShow.map((product, index2) => {
@@ -63350,14 +63362,14 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 550,
+                          lineNumber: 560,
                           columnNumber: 29
                         },
                         this
                       ),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h2", { className: "sm:text-lg text-[17px] font-semibold mt-2 text-center", children: product.title }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 555,
+                        lineNumber: 565,
                         columnNumber: 29
                       }, this),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "h-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h1", { className: "text-center sm:text-[26px] text-[21px] font-bold m-auto w-full", children: [
@@ -63365,16 +63377,16 @@ function Collection() {
                         " \xA0 Rs"
                       ] }, void 0, !0, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 559,
+                        lineNumber: 569,
                         columnNumber: 31
                       }, this) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 558,
+                        lineNumber: 568,
                         columnNumber: 29
                       }, this)
                     ] }, void 0, !0, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 549,
+                      lineNumber: 559,
                       columnNumber: 27
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "px-1 py-1 flex justify-center gap-[10px] items-center ", children: [
@@ -63397,7 +63409,7 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 575,
+                                lineNumber: 585,
                                 columnNumber: 35
                               },
                               this
@@ -63413,7 +63425,7 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 580,
+                                lineNumber: 590,
                                 columnNumber: 35
                               },
                               this
@@ -63424,13 +63436,13 @@ function Collection() {
                         !0,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 567,
+                          lineNumber: 577,
                           columnNumber: 33
                         },
                         this
                       ) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 565,
+                        lineNumber: 575,
                         columnNumber: 31
                       }, this),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63454,13 +63466,13 @@ function Collection() {
                             !1,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 596,
+                              lineNumber: 606,
                               columnNumber: 37
                             },
                             this
                           ) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 595,
+                            lineNumber: 605,
                             columnNumber: 35
                           }, this)
                         },
@@ -63468,14 +63480,14 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 588,
+                          lineNumber: 598,
                           columnNumber: 31
                         },
                         this
                       )
                     ] }, void 0, !0, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 564,
+                      lineNumber: 574,
                       columnNumber: 29
                     }, this)
                   ]
@@ -63484,55 +63496,55 @@ function Collection() {
                 !0,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 542,
+                  lineNumber: 552,
                   columnNumber: 27
                 },
                 this
               ) }, product.id, !1, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 541,
+                lineNumber: 551,
                 columnNumber: 25
               }, this);
             }) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 539,
+              lineNumber: 549,
               columnNumber: 21
             }, this) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 538,
+              lineNumber: 548,
               columnNumber: 19
             }, this) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 537,
+              lineNumber: 547,
               columnNumber: 17
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 453,
+            lineNumber: 463,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 448,
+          lineNumber: 458,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 373,
+        lineNumber: 383,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 223,
+      lineNumber: 233,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 222,
+      lineNumber: 232,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($locale).collections.$handle.jsx",
-    lineNumber: 215,
+    lineNumber: 225,
     columnNumber: 5
   }, this);
 }
@@ -71237,7 +71249,7 @@ var LAYOUT_QUERY = `#graphql
 `;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-HWXT6HWF.js", imports: ["/build/_shared/chunk-FM7TTYIF.js", "/build/_shared/chunk-CFXHHO4K.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-DCJCZGJW.js", imports: ["/build/_shared/chunk-54XOZSYV.js", "/build/_shared/chunk-4F3247Q3.js", "/build/_shared/chunk-5ZF6DZMS.js", "/build/_shared/chunk-GPJAKHZW.js", "/build/_shared/chunk-AV5ON35J.js", "/build/_shared/chunk-NNH77UO3.js", "/build/_shared/chunk-F7TROZH4.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-THAASILJ.js", imports: ["/build/_shared/chunk-FTNT7ZUN.js", "/build/_shared/chunk-NRLYJF6W.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-26HJANDJ.js", imports: ["/build/_shared/chunk-7M6P6K7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-UW56T35F.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-P4I3QDMF.js", imports: ["/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-CJLES4QN.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-NXUTGPGB.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-TWBKTJHT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-ZBL7YNJU.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-XV2EKBSP.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-FCZOOCU5.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-QJ3G3N7V.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-SPZII6NL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-CW2FXTL6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-6FNJVY6E.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-DH2OINKD.js", imports: ["/build/_shared/chunk-DEPD6FJ4.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-BAV37UGJ.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-R4ZPDQTY.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).offers": { id: "routes/($locale).offers", parentId: "root", path: ":locale?/offers", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).offers-GEQZPVZL.js", imports: ["/build/_shared/chunk-FTNT7ZUN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-VRM6CIZM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-XO72JGCK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-C4O43EB5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-N4ZVCDYU.js", imports: ["/build/_shared/chunk-NRLYJF6W.js", "/build/_shared/chunk-DEPD6FJ4.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-E6ZG4Z33.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-OU6DB2IP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-53PT7KYB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-OBQMRAOA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "e0a0a2ef", hmr: void 0, url: "/build/manifest-E0A0A2EF.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-HWXT6HWF.js", imports: ["/build/_shared/chunk-FM7TTYIF.js", "/build/_shared/chunk-CFXHHO4K.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-DCJCZGJW.js", imports: ["/build/_shared/chunk-54XOZSYV.js", "/build/_shared/chunk-4F3247Q3.js", "/build/_shared/chunk-5ZF6DZMS.js", "/build/_shared/chunk-GPJAKHZW.js", "/build/_shared/chunk-AV5ON35J.js", "/build/_shared/chunk-NNH77UO3.js", "/build/_shared/chunk-F7TROZH4.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-THAASILJ.js", imports: ["/build/_shared/chunk-FTNT7ZUN.js", "/build/_shared/chunk-NRLYJF6W.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-26HJANDJ.js", imports: ["/build/_shared/chunk-7M6P6K7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-UW56T35F.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-P4I3QDMF.js", imports: ["/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-CJLES4QN.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-NXUTGPGB.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-TWBKTJHT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-ZBL7YNJU.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-XV2EKBSP.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-FCZOOCU5.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-QJ3G3N7V.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-SPZII6NL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-CW2FXTL6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-6FNJVY6E.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-DH2OINKD.js", imports: ["/build/_shared/chunk-DEPD6FJ4.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-4NIPOPRM.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-R4ZPDQTY.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).offers": { id: "routes/($locale).offers", parentId: "root", path: ":locale?/offers", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).offers-GEQZPVZL.js", imports: ["/build/_shared/chunk-FTNT7ZUN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-VRM6CIZM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-XO72JGCK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-C4O43EB5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-N4ZVCDYU.js", imports: ["/build/_shared/chunk-NRLYJF6W.js", "/build/_shared/chunk-DEPD6FJ4.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-E6ZG4Z33.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-OU6DB2IP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-53PT7KYB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-OBQMRAOA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "5bf075e2", hmr: void 0, url: "/build/manifest-5BF075E2.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "dist/client/build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
