@@ -16,12 +16,12 @@ const MobileProductCorousel = ({products}) => {
         <h1 className="text-center mt-0 lg:text-[28px] text-[20px]">
           Choose Your Own Fashion
         </h1>
-        <div className="flex gap-2 overflow-y-auto">
+        <div className="flex  gap-2 overflow-y-auto">
           {products.nodes.map((product) => (
             <img
               src={`${product.articles.edges[0].node.image.url}`} // Make sure to put your images in the 'public/images/' directory
               alt={product.title}
-              className="lg:w-full lg:h-auto rounded-lg lg:px-5 sm:px-3 sm:mx-3 w-[320px] h-[40%]"
+              className="mst-card lg:w-full lg:h-auto rounded-lg lg:px-5 sm:px-3 sm:mx-3 w-[320px] h-[40%]"
             />
           ))}
         </div>
@@ -55,12 +55,12 @@ const DesktopCorousel = ({products}) => {
           <div className="flex">
             {productsToShow.map((product) => (
               <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
-                <div className="bg-white rounded-lg shadow-lg p-1">
+                <div className="bg-white  rounded-lg shadow-lg p-1">
                   <a href={`/blogs/${product.handle}`}>
                     <img
                       src={`${product.articles.edges[0].node.image.url}`} // Make sure to put your images in the 'public/images/' directory
                       alt={product.title}
-                      className="w-full h-auto rounded-lg"
+                      className="mst-card w-full h-auto rounded-lg"
                     />
                   </a>
                   {/* Add more product information here */}
