@@ -563,6 +563,7 @@ export default function Collection() {
                           </div>
                             <div className="px-1 py-1 flex justify-center gap-[10px] items-center ">
                               <div>
+                             
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 32 33"

@@ -23,6 +23,7 @@ import {
   JudgemeAllReviewsRating,
 } from "@judgeme/shopify-hydrogen";
 import {useJudgeme} from '@judgeme/shopify-hydrogen'
+//import {getWishlistSocialCount} from '../swym/store-apis';
 
 export const meta = ({data}) => {
   return [{title: `Hydrogen | ${data.product.title}`}];
@@ -45,14 +46,14 @@ export async function loader({params, request, context}) {
   if (!handle) {
     throw new Error('Expected product handle to be defined');
   }
-
+  
   const {product} = await storefront.query(PRODUCT_QUERY, {
     variables: {handle, selectedOptions},
   });
 
   const products = await storefront.query(PRODUCTS_QUERY);
-
   const productsreturn = products.products;
+
   // In order to show which variants are available in the UI, we need to query
   // all of them. But there might be a *lot*, so instead separate the variants
   // into it's own separate query that is deferred. So there's a brief moment
@@ -117,6 +118,23 @@ function redirectToFirstVariant({product, request}) {
 export default function Product() {
   const {product, variants, productsreturn,judgeme,recommendedProducts} = useLoaderData();
   const {selectedVariant} = product;
+  const [socialCount, setSocialCount] = useState();
+
+  async function setWishlistSocialCount(skipCache){
+    // try {
+    //     const productGQLId = product.product.id;
+    //     const productId = productGQLId.split("/")[4];
+    //     const res = await getWishlistSocialCount({empi: productId}, skipCache);
+    //     if(res?.data?.count){
+    //       setSocialCount(res.data.count);
+    //     }else{
+    //       setSocialCount(0);
+    //     }
+    //   } catch (error) {
+    //     console.log(error);
+    //     setSocialCount(0);
+    //   }
+  }
   //useJudgeme(judgeme);
   //console.log("product:: ::",product);
   return (
@@ -125,6 +143,7 @@ export default function Product() {
       {/*<ProductImage image={selectedVariant?.image} />*/}
       <ProductMain
         selectedVariant={selectedVariant}
+        setWishlistSocialCount={setWishlistSocialCount}
         product={product}
         variants={variants}
         recommendedProducts={recommendedProducts}
@@ -173,7 +192,7 @@ function ProductImage({image, activeImg, setActiveImage, product}) {
   );
 }
 
-function ProductMain({selectedVariant, product, variants,recommendedProducts}) {
+function ProductMain({selectedVariant, product, setWishlistSocialCount, variants,recommendedProducts}) {
   const ImageSrc = [];
   product.images.edges.forEach((item) => {
     ImageSrc.push(item.node.url);
@@ -435,6 +454,7 @@ function ProductForm({
   variants,
   activeImg,
   setActiveImage,
+  setWishlistSocialCount
 }) {
   const closeRef = useRef(null);
   return (
@@ -452,12 +472,17 @@ function ProductForm({
             closeRef={closeRef}
             selectedVariant={selectedVariant}
             setActiveImage={setActiveImage}
+            setWishlistSocialCount={setWishlistSocialCount}
           />
         )}
       </VariantSelector>
       <Offers />
       <br />
-
+      {/* <WishlistButton
+        selectedVariant={selectedVariant}
+        productData={product}
+        setWishlistSocialCount={setWishlistSocialCount}
+      /> */}
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
         onClick={() => {
@@ -480,7 +505,7 @@ function ProductForm({
   );
 }
 
-function ProductOptions({option, activeImg, setActiveImage,closeRef}) {
+function ProductOptions({option, activeImg, setWishlistSocialCount,closeRef}) {
   var opt_length = option.values.length;
 
   //console.log("selectedVariant ::",closeRef);
