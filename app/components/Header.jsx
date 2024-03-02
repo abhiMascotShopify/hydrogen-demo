@@ -148,7 +148,7 @@ export function HeaderMenu({menu, viewport}) {
               {item.title}
             </button>
             {item.items.length > 0 && (
-              <div className="absolute hidden w-48 bg-white border border-gray-300 divide-y divide-gray-200 rounded-lg shadow-lg group-hover:block">
+              <div className="absolute left-16 z-20 sm:left-0 sm:z-20 md:left-0 hidden w-48 bg-white border border-gray-300 divide-y divide-gray-200 rounded-lg shadow-lg group-hover:block">
                 <div className="py-1 group-hover:block">
                   {item.items.map((it) => (
                     <a

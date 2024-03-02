@@ -24,10 +24,10 @@ const ImageCarousel = ({images , isSmall}) => {
           )
         }
       >
-        <MdChevronLeft
-          className="opacity-50 cursor-pointer hover:opacity-100"
-          size={40}
-        />
+      <MdChevronLeft
+        className="opacity-50 cursor-pointer hover:opacity-100"
+        size={40}
+      />
       </button>
       <img
         style={mobImgHeight} 

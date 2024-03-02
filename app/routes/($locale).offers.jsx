@@ -42,6 +42,7 @@ const FEATURED_COLLECTION_QUERY = `#graphql
         node{
           id
           title
+          
           handle
           variants(first: 100) {
           edges {
@@ -79,6 +80,7 @@ const FEATURED_COLLECTION_QUERY = `#graphql
       width
       height
     }
+    description
     handle
   }
   query FeaturedCollection($country: CountryCode, $language: LanguageCode)

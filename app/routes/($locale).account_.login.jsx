@@ -77,15 +77,15 @@ export default function Login() {
   return (
     <>  
       <div className="flex flex-col sm:flex-row">
-        <div className="sm:w-1/2 sm:block">
+        <div className="sm:w-2/3 sm:block">
           <img
-            src="https://media.sugarpop.com/upload/LoginSideImg.png"
+            src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/LoginSideImg-Photoroom_1_2.png?v=1709296234"
             alt="Login Background"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className='sm:w-1/2  sm:block '>
-        <div className="justify-center items-center flex flex-col">
+        
+        <div className="w-full justify-center items-center flex flex-col">
         <Form className="w-full h-screen m-auto login_wrapper" method="POST">
         <fieldset>
           <div className="mb-3" >
@@ -137,7 +137,7 @@ export default function Login() {
         </p>
     </div>
     </div>
-    </div>
+
     </>
   );
 }

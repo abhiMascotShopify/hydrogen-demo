@@ -17,7 +17,7 @@ const OfferCarousel = (collections) => {
         : prevIndex - 3
     );
   };
-
+  console.log(productsToShow)
   return (
     <div className="w-full max-w-screen-xl mx-auto px-4">
       <div className="relative">
@@ -33,9 +33,10 @@ const OfferCarousel = (collections) => {
                 />
                 <div className="coupan_code_wrapper grid grid-rows-1 grid-flow-col gap-4"> 
                   <div className="code"> { product.handle } </div>
-                  {/* <div className='cpy_code'>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" id="copy"><path fill="none" d="M0 0h48v48H0z"></path><path d="M32 2H8C5.79 2 4 3.79 4 6v28h4V6h24V2zm6 8H16c-2.21 0-4 1.79-4 4v28c0 2.21 1.79 4 4 4h22c2.21 0 4-1.79 4-4V14c0-2.21-1.79-4-4-4zm0 32H16V14h22v28z"></path></svg>
-                  </div> */}
+                  <div className='inline-flex grid grid-row outline-dotted p-2'>
+                  <span className='grid-cols-9'>{product.description}</span>
+                  <svg className='grid-cols-3 flex justify-center align-center' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect className='w-8 flex justify-center align-center' fill="none"/><polyline points="216 184 216 40 72 40" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><rect x="40" y="72" width="144" height="144" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/></svg>
+                  </div>
                 </div>
                 {/* Add more product information here */}
               </div>

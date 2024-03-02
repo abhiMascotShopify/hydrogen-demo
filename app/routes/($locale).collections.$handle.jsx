@@ -28,11 +28,11 @@ import {
 } from '@heroicons/react/20/solid';
 
 const sortOptions = [
-  {name: 'Most Popular', href: '#', current: true},
-  {name: 'Best Rating', href: '#', current: false},
-  {name: 'Newest', href: '#', current: false},
-  {name: 'Price: Low to High', href: '#', current: false},
-  {name: 'Price: High to Low', href: '#', current: false},
+  {name: 'Most Popular', href: '#', value:'', current: true},
+  {name: 'Best Rating', href: '#', value:'', current: false},
+  {name: 'Newest', href: '#', value:'created_desc', current: false},
+  {name: 'Price: Low to High', value:'lh', href: '#', current: false},
+  {name: 'Price: High to Low', value:'hl', href: '#', current: false},
 ];
 const subCategories = [
   {name: 'Totes', href: '#'},
@@ -124,6 +124,7 @@ export default function Collection() {
   let productsToShow = [];
   const lines = [];
   const [startIndex, setStartIndex] = useState(0);
+  const [productsToShow1, setProductToShow] = useState([])
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const endIndex = isLargeScreen ? 4 : 2;
   if (collection.products != null || collection.products != undefined) {
@@ -140,8 +141,54 @@ export default function Collection() {
         });
     });
   });
+  
+  const sortCollectionProducts= (sort_by)=> {
+    var data = collection.products.nodes;
+    console.log("sortCollectionProducts::",data)
+    switch(sort_by){
+      case 'lh':  sortArray(data,"ascending"); 
+                  break;
+      case 'hl':  sortArray(data,"descending");
+                  break;
+      case 'created_asc': sortByDate(data,"ascending");
+                  break;
+      case 'created_desc':sortByDate(data,"descending");
+                  break;
+      default:
+        setProductToShow(data); 
+    }
+  }
 
-  //console.log("Lines Collection::",lines)
+  const sortArray = (data,sortOrder="ascending") => {
+    console.log("sortArray::",data)
+    const sortedData = [...data].sort((a, b) => {
+        var nodeA =a.node,nodeB=b.node;
+        if(this.state.isSortedProduct) {
+           nodeA = a,
+           nodeB = b;
+        }
+        if (sortOrder === 'ascending') {
+            return nodeA.title.localeCompare(nodeB.title);
+        } else {
+            return nodeB.title.localeCompare(nodeA.title);
+        }
+    });
+    setProductToShow(sortedData)
+  }
+  
+  const sortByDate = (data,sortOrder="ascending") => {
+    console.log("sortByDate::",data)
+    const sortedData = [...data].sort((a, b) => {
+      var nodeA =a.node,nodeB=b.node;
+      if (sortOrder === 'ascending') {
+        return new Date(nodeA.publishedAt).getTime() - new Date(nodeB.publishedAt).getTime();
+      } else {
+        return  new Date(nodeB.publishedAt).getTime() - new Date(nodeA.publishedAt).getTime();
+      }
+    });
+    setProductToShow(sortedData)
+  }
+  
 
   function getPath(url_path) {
     let url = new URL(url_path);
@@ -354,7 +401,7 @@ export default function Collection() {
                           <Menu.Item key={option.name}>
                             {({active}) => (
                               <a
-                                href={option.href}
+                                onClick={()=> sortCollectionProducts(option.value) }
                                 className={classNames(
                                   option.current
                                     ? 'font-medium text-gray-900'
@@ -621,6 +668,7 @@ const PRODUCT_ITEM_FRAGMENT = `#graphql
     handle
     productType
     tags
+    publishedAt
     featuredImage {
       id
       altText
