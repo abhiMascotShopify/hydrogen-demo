@@ -27,6 +27,11 @@ import {
   Squares2X2Icon,
 } from '@heroicons/react/20/solid';
 
+import {
+	OKENDO_PRODUCT_STAR_RATING_FRAGMENT,
+	OkendoStarRating,
+} from "@okendo/shopify-hydrogen";
+
 const sortOptions = [
   {name: 'Most Popular', href: '#', value:'', current: true},
   // {name: 'Best Rating', href: '#', value:'', current: false},
@@ -570,6 +575,12 @@ export default function Collection() {
                               {product.priceRange.maxVariantPrice.amount} &nbsp; Rs
                               </h1>
                             </div>
+                            <div className='flex justify-center py-2'>
+                            <OkendoStarRating
+                              productId={product.id}
+                              okendoStarRatingSnippet={product.OkendoStarRatingSnippet}
+                            />
+                            </div>
                           </div>
                             <div className="px-1 py-1 flex justify-center gap-[10px] items-center ">
                               <div>
@@ -671,11 +682,13 @@ function ProductItem({product, loading}) {
       <small>
         <Money data={product.priceRange.minVariantPrice} />
       </small>
+     
     </Link>
   );
 }
 
 const PRODUCT_ITEM_FRAGMENT = `#graphql
+  ${OKENDO_PRODUCT_STAR_RATING_FRAGMENT}
   fragment MoneyProductItem on MoneyV2 {
     amount
     currencyCode
@@ -722,11 +735,12 @@ const PRODUCT_ITEM_FRAGMENT = `#graphql
           value
         }
         metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
-                              key
-                              value
-                            }
+          key
+          value
+        }
       }
     }
+    ...OkendoStarRatingSnippet
   }
 `;
 

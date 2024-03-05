@@ -13,7 +13,8 @@ import {useMediaQuery} from 'react-responsive';
 import {SearchForm} from '~/components/Search';
 import CustomizedCollection from '~/components/CustomizedCollection';
 import BlogCorousel from '~/components/BlogCorousel';
-import {useJudgeme} from '@judgeme/shopify-hydrogen'
+import {useJudgeme} from '@judgeme/shopify-hydrogen';
+
 
 export const meta = () => {
   return [{title: 'Hydrogen | Home'}];

@@ -21,8 +21,17 @@ import {
   JudgemeVerifiedBadge,
   JudgemeAllReviewsCount,
   JudgemeAllReviewsRating,
+
 } from "@judgeme/shopify-hydrogen";
-import {useJudgeme} from '@judgeme/shopify-hydrogen'
+import {useJudgeme} from '@judgeme/shopify-hydrogen';
+import {
+	OKENDO_PRODUCT_REVIEWS_FRAGMENT,
+	OKENDO_PRODUCT_STAR_RATING_FRAGMENT,
+	OkendoReviews,
+	OkendoStarRating,
+  // WithOkendoReviewsSnippet,
+	// WithOkendoStarRatingSnippet
+} from "@okendo/shopify-hydrogen";
 //import {getWishlistSocialCount} from '../swym/store-apis';
 
 export const meta = ({data}) => {
@@ -247,6 +256,12 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
             <h1 className="text-2xl font-semibold mt-0 mb-[15px]">
               {product.title}
             </h1>
+            <div className='flex py-2'>
+            <OkendoStarRating
+              productId={product.id}
+              okendoStarRatingSnippet={product.okendoStarRatingSnippet}
+            />
+            </div>
             {/* <div className="product_review" id={product.id}>
               <JudgemeVerifiedBadge id={product.id}/> 
               <JudgemeAllReviewsCount />
@@ -296,6 +311,12 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
               />
               </>
             )}
+          </div>
+          <div className='flex'>
+          <OkendoReviews
+            productId={product.id}
+            okendoReviewsSnippet={product.okendoReviewsSnippet}
+          />
           </div>
         </div>
         <div className="absolute cursor-pointer flex flex-col items-center top-[-36px] lg:top-[15px] right-2">
@@ -703,6 +724,8 @@ const PRODUCT_VARIANT_FRAGMENT = `#graphql
 `;
 
 const PRODUCT_FRAGMENT = `#graphql
+  ${OKENDO_PRODUCT_STAR_RATING_FRAGMENT}
+  ${OKENDO_PRODUCT_REVIEWS_FRAGMENT}
   fragment Product on Product {
     id
     title
@@ -739,6 +762,8 @@ const PRODUCT_FRAGMENT = `#graphql
       description
       title
     }
+    ...OkendoStarRatingSnippet
+		...OkendoReviewsSnippet
   }
   ${PRODUCT_VARIANT_FRAGMENT}
 `;

@@ -16,6 +16,11 @@ import appStyles from './styles/app.css';
 import {Layout} from '~/components/Layout';
 import tailwindCss from './styles/tailwind.css';
 
+import {
+	OkendoProvider,
+	getOkendoProviderData,
+} from "@okendo/shopify-hydrogen";
+
 export function links() {
   return [
     {rel: 'stylesheet', href: tailwindCss},
@@ -69,6 +74,10 @@ export async function loader({context}) {
       header: await headerPromise,
       isLoggedIn,
       publicStoreDomain,
+      okendoProviderData: await getOkendoProviderData({
+        context,
+        subscriberId: "866361a1-6116-4d14-abc8-0565f32d51cb",
+      }),
     },
     {headers},
   );
@@ -83,11 +92,14 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="oke:subscriber_id" content="866361a1-6116-4d14-abc8-0565f32d51cb" />
         <Meta />
         <Links />
       </head>
       <body>
-      
+        <OkendoProvider
+          okendoProviderData={data.okendoProviderData}
+        />
         <Layout {...data}>
           <Outlet />
           
