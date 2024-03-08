@@ -23,6 +23,7 @@ img {
 .mst-border { border-color: #d0715f; }
 .mst-arrow { border-radius: 50%; background: #d0715f;}
 .mst-card { border:2px solid #d0715f;border-radius: 10px;}
+.mst-card-md { border:2px solid #d0715f;border-radius: 5px;}
 .coupan_code_wrapper { display: inline-flex;justify-content: end; color: #645c5c;}
 .collectionContent{display: flex;justify-content: center;}
 .cursor{cursor: pointer;}

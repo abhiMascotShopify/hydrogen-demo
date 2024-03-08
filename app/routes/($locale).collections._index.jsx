@@ -19,7 +19,7 @@ export default function Collections() {
 
   return (
     <div className="collections">
-      <h1>Collections</h1>
+      <h1 className='mst-color'>Collections</h1>
       <Pagination connection={collections}>
         {({nodes, isLoading, PreviousLink, NextLink}) => (
           <div>
@@ -39,7 +39,7 @@ export default function Collections() {
 
 function CollectionsGrid({collections}) {
   return (
-    <div className="grid grid-cols-4 gap-4 px-5 mst-card">
+    <div className="grid grid-cols-4 gap-4 px-5">
       {collections.map((collection, index) => (  
           <CollectionItem
             key={collection.id}
@@ -54,7 +54,7 @@ function CollectionsGrid({collections}) {
 function CollectionItem({collection, index}) {
   return (
     <Link
-      className="collection-item  border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+      className="collection-item mst-card-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
       key={collection.id}
       to={`/collections/${collection.handle}`}
       prefetch="intent"
