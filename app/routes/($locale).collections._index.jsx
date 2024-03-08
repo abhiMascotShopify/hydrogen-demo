@@ -39,7 +39,7 @@ export default function Collections() {
 
 function CollectionsGrid({collections}) {
   return (
-    <div className="grid grid-cols-4 gap-4 px-5">
+    <div className="grid grid-cols-4 gap-4 px-5 mst-card">
       {collections.map((collection, index) => (  
           <CollectionItem
             key={collection.id}
