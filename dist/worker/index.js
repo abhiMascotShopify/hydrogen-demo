@@ -5250,7 +5250,7 @@ var require_server = __commonJS({
   "node_modules/react-router-dom/server.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: !0 });
-    var React40 = require_react(), router = (init_router(), __toCommonJS(router_exports)), reactRouter = (init_dist(), __toCommonJS(dist_exports)), reactRouterDom = (init_dist2(), __toCommonJS(dist_exports2));
+    var React39 = require_react(), router = (init_router(), __toCommonJS(router_exports)), reactRouter = (init_dist(), __toCommonJS(dist_exports)), reactRouterDom = (init_dist2(), __toCommonJS(dist_exports2));
     function _interopNamespace(e5) {
       if (e5 && e5.__esModule)
         return e5;
@@ -5267,7 +5267,7 @@ var require_server = __commonJS({
         }
       }), n7.default = e5, Object.freeze(n7);
     }
-    var React__namespace = /* @__PURE__ */ _interopNamespace(React40);
+    var React__namespace = /* @__PURE__ */ _interopNamespace(React39);
     function StaticRouter({
       basename,
       children,
@@ -5496,7 +5496,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React40 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React40.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var React39 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React39.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function warn(format) {
         {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)
@@ -6990,7 +6990,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
       }
       function flattenOptionChildren(children) {
         var content = "";
-        return React40.Children.forEach(children, function(child) {
+        return React39.Children.forEach(children, function(child) {
           child != null && (content += child, !didWarnInvalidOptionChildren && typeof child != "string" && typeof child != "number" && (didWarnInvalidOptionChildren = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }), content;
       }
@@ -9077,7 +9077,7 @@ var require_react_dom_server_browser_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React40 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React40.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var React39 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React39.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function warn(format) {
         {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)
@@ -10586,7 +10586,7 @@ var require_react_dom_server_browser_development = __commonJS({
       }
       function flattenOptionChildren(children) {
         var content = "";
-        return React40.Children.forEach(children, function(child) {
+        return React39.Children.forEach(children, function(child) {
           child != null && (content += child, !didWarnInvalidOptionChildren && typeof child != "string" && typeof child != "number" && (didWarnInvalidOptionChildren = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }), content;
       }
@@ -12649,14 +12649,14 @@ var require_react_jsx_dev_runtime_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React40 = require_react(), REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
+      var React39 = require_react(), REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
       function getIteratorFn(maybeIterable) {
         if (maybeIterable === null || typeof maybeIterable != "object")
           return null;
         var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
         return typeof maybeIterator == "function" ? maybeIterator : null;
       }
-      var ReactSharedInternals = React40.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var ReactSharedInternals = React39.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function error(format) {
         {
           for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)
@@ -15716,7 +15716,7 @@ var require_react_is_development = __commonJS({
           }
         }
       }
-      var AsyncMode = REACT_ASYNC_MODE_TYPE, ConcurrentMode = REACT_CONCURRENT_MODE_TYPE, ContextConsumer = REACT_CONTEXT_TYPE, ContextProvider = REACT_PROVIDER_TYPE, Element2 = REACT_ELEMENT_TYPE, ForwardRef10 = REACT_FORWARD_REF_TYPE, Fragment24 = REACT_FRAGMENT_TYPE, Lazy = REACT_LAZY_TYPE, Memo = REACT_MEMO_TYPE, Portal = REACT_PORTAL_TYPE, Profiler = REACT_PROFILER_TYPE, StrictMode = REACT_STRICT_MODE_TYPE, Suspense8 = REACT_SUSPENSE_TYPE, hasWarnedAboutDeprecatedIsAsyncMode = !1;
+      var AsyncMode = REACT_ASYNC_MODE_TYPE, ConcurrentMode = REACT_CONCURRENT_MODE_TYPE, ContextConsumer = REACT_CONTEXT_TYPE, ContextProvider = REACT_PROVIDER_TYPE, Element2 = REACT_ELEMENT_TYPE, ForwardRef10 = REACT_FORWARD_REF_TYPE, Fragment25 = REACT_FRAGMENT_TYPE, Lazy = REACT_LAZY_TYPE, Memo = REACT_MEMO_TYPE, Portal = REACT_PORTAL_TYPE, Profiler = REACT_PROFILER_TYPE, StrictMode = REACT_STRICT_MODE_TYPE, Suspense8 = REACT_SUSPENSE_TYPE, hasWarnedAboutDeprecatedIsAsyncMode = !1;
       function isAsyncMode(object) {
         return hasWarnedAboutDeprecatedIsAsyncMode || (hasWarnedAboutDeprecatedIsAsyncMode = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
       }
@@ -15756,7 +15756,7 @@ var require_react_is_development = __commonJS({
       function isSuspense(object) {
         return typeOf(object) === REACT_SUSPENSE_TYPE;
       }
-      exports.AsyncMode = AsyncMode, exports.ConcurrentMode = ConcurrentMode, exports.ContextConsumer = ContextConsumer, exports.ContextProvider = ContextProvider, exports.Element = Element2, exports.ForwardRef = ForwardRef10, exports.Fragment = Fragment24, exports.Lazy = Lazy, exports.Memo = Memo, exports.Portal = Portal, exports.Profiler = Profiler, exports.StrictMode = StrictMode, exports.Suspense = Suspense8, exports.isAsyncMode = isAsyncMode, exports.isConcurrentMode = isConcurrentMode, exports.isContextConsumer = isContextConsumer, exports.isContextProvider = isContextProvider, exports.isElement = isElement, exports.isForwardRef = isForwardRef, exports.isFragment = isFragment, exports.isLazy = isLazy, exports.isMemo = isMemo, exports.isPortal = isPortal, exports.isProfiler = isProfiler, exports.isStrictMode = isStrictMode, exports.isSuspense = isSuspense, exports.isValidElementType = isValidElementType, exports.typeOf = typeOf;
+      exports.AsyncMode = AsyncMode, exports.ConcurrentMode = ConcurrentMode, exports.ContextConsumer = ContextConsumer, exports.ContextProvider = ContextProvider, exports.Element = Element2, exports.ForwardRef = ForwardRef10, exports.Fragment = Fragment25, exports.Lazy = Lazy, exports.Memo = Memo, exports.Portal = Portal, exports.Profiler = Profiler, exports.StrictMode = StrictMode, exports.Suspense = Suspense8, exports.isAsyncMode = isAsyncMode, exports.isConcurrentMode = isConcurrentMode, exports.isContextConsumer = isContextConsumer, exports.isContextProvider = isContextProvider, exports.isElement = isElement, exports.isForwardRef = isForwardRef, exports.isFragment = isFragment, exports.isLazy = isLazy, exports.isMemo = isMemo, exports.isPortal = isPortal, exports.isProfiler = isProfiler, exports.isStrictMode = isStrictMode, exports.isSuspense = isSuspense, exports.isValidElementType = isValidElementType, exports.typeOf = typeOf;
     })();
   }
 });
@@ -22273,7 +22273,7 @@ var require_cjs2 = __commonJS({
   "node_modules/framer-motion/dist/cjs/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: !0 });
-    var tslib = require_tslib(), React40 = require_react(), heyListen = (init_hey_listen_es(), __toCommonJS(hey_listen_es_exports)), styleValueTypes = require_valueTypes_cjs(), popmotion = require_popmotion_cjs(), sync = require_framesync_cjs(), dom = (init_index_es16(), __toCommonJS(index_es_exports));
+    var tslib = require_tslib(), React39 = require_react(), heyListen = (init_hey_listen_es(), __toCommonJS(hey_listen_es_exports)), styleValueTypes = require_valueTypes_cjs(), popmotion = require_popmotion_cjs(), sync = require_framesync_cjs(), dom = (init_index_es16(), __toCommonJS(index_es_exports));
     function _interopDefaultLegacy(e5) {
       return e5 && typeof e5 == "object" && "default" in e5 ? e5 : { default: e5 };
     }
@@ -22293,7 +22293,7 @@ var require_cjs2 = __commonJS({
         }
       }), n7.default = e5, Object.freeze(n7);
     }
-    var React__namespace = /* @__PURE__ */ _interopNamespace(React40), React__default2 = /* @__PURE__ */ _interopDefaultLegacy(React40), sync__default = /* @__PURE__ */ _interopDefaultLegacy(sync), defaultEnvironment = "production", env = typeof process > "u" || process.env === void 0 ? defaultEnvironment : "development", createDefinition = function(propNames) {
+    var React__namespace = /* @__PURE__ */ _interopNamespace(React39), React__default2 = /* @__PURE__ */ _interopDefaultLegacy(React39), sync__default = /* @__PURE__ */ _interopDefaultLegacy(sync), defaultEnvironment = "production", env = typeof process > "u" || process.env === void 0 ? defaultEnvironment : "development", createDefinition = function(propNames) {
       return {
         isEnabled: function(props) {
           return propNames.some(function(name) {
@@ -22334,9 +22334,9 @@ var require_cjs2 = __commonJS({
       for (var key in features)
         features[key] !== null && (key === "projectionNodeConstructor" ? featureDefinitions.projectionNodeConstructor = features[key] : featureDefinitions[key].Component = features[key]);
     }
-    var LazyContext = React40.createContext({ strict: !1 }), featureNames = Object.keys(featureDefinitions), numFeatures = featureNames.length;
+    var LazyContext = React39.createContext({ strict: !1 }), featureNames = Object.keys(featureDefinitions), numFeatures = featureNames.length;
     function useFeatures(props, visualElement2, preloadedFeatures) {
-      var features = [], lazyContext = React40.useContext(LazyContext);
+      var features = [], lazyContext = React39.useContext(LazyContext);
       if (!visualElement2)
         return null;
       env !== "production" && preloadedFeatures && lazyContext.strict && heyListen.invariant(!1, "You have rendered a `motion` component within a `LazyMotion` component. This will break tree shaking. Import and render a `m` component instead.");
@@ -22346,17 +22346,17 @@ var require_cjs2 = __commonJS({
       }
       return features;
     }
-    var MotionConfigContext = React40.createContext({
+    var MotionConfigContext = React39.createContext({
       transformPagePoint: function(p7) {
         return p7;
       },
       isStatic: !1,
       reducedMotion: "never"
-    }), MotionContext = React40.createContext({});
+    }), MotionContext = React39.createContext({});
     function useVisualElementContext() {
-      return React40.useContext(MotionContext).visualElement;
+      return React39.useContext(MotionContext).visualElement;
     }
-    var PresenceContext = React40.createContext(null), isBrowser2 = typeof document < "u", useIsomorphicLayoutEffect2 = isBrowser2 ? React40.useLayoutEffect : React40.useEffect, prefersReducedMotion = { current: null }, hasDetected = !1;
+    var PresenceContext = React39.createContext(null), isBrowser2 = typeof document < "u", useIsomorphicLayoutEffect2 = isBrowser2 ? React39.useLayoutEffect : React39.useEffect, prefersReducedMotion = { current: null }, hasDetected = !1;
     function initPrefersReducedMotion() {
       if (hasDetected = !0, !!isBrowser2)
         if (window.matchMedia) {
@@ -22369,15 +22369,15 @@ var require_cjs2 = __commonJS({
     }
     function useReducedMotion() {
       !hasDetected && initPrefersReducedMotion();
-      var _a2 = tslib.__read(React40.useState(prefersReducedMotion.current), 1), shouldReduceMotion = _a2[0];
+      var _a2 = tslib.__read(React39.useState(prefersReducedMotion.current), 1), shouldReduceMotion = _a2[0];
       return shouldReduceMotion;
     }
     function useReducedMotionConfig() {
-      var reducedMotionPreference = useReducedMotion(), reducedMotion = React40.useContext(MotionConfigContext).reducedMotion;
+      var reducedMotionPreference = useReducedMotion(), reducedMotion = React39.useContext(MotionConfigContext).reducedMotion;
       return reducedMotion === "never" ? !1 : reducedMotion === "always" ? !0 : reducedMotionPreference;
     }
     function useVisualElement(Component2, visualState, props, createVisualElement) {
-      var lazyContext = React40.useContext(LazyContext), parent = useVisualElementContext(), presenceContext = React40.useContext(PresenceContext), shouldReduceMotion = useReducedMotionConfig(), visualElementRef = React40.useRef(void 0);
+      var lazyContext = React39.useContext(LazyContext), parent = useVisualElementContext(), presenceContext = React39.useContext(PresenceContext), shouldReduceMotion = useReducedMotionConfig(), visualElementRef = React39.useRef(void 0);
       createVisualElement || (createVisualElement = lazyContext.renderer), !visualElementRef.current && createVisualElement && (visualElementRef.current = createVisualElement(Component2, {
         visualState,
         parent,
@@ -22389,7 +22389,7 @@ var require_cjs2 = __commonJS({
       var visualElement2 = visualElementRef.current;
       return useIsomorphicLayoutEffect2(function() {
         visualElement2 == null || visualElement2.syncRender();
-      }), React40.useEffect(function() {
+      }), React39.useEffect(function() {
         var _a2;
         (_a2 = visualElement2 == null ? void 0 : visualElement2.animationState) === null || _a2 === void 0 || _a2.animateChanges();
       }), useIsomorphicLayoutEffect2(function() {
@@ -22402,7 +22402,7 @@ var require_cjs2 = __commonJS({
       return typeof ref == "object" && Object.prototype.hasOwnProperty.call(ref, "current");
     }
     function useMotionRef(visualState, visualElement2, externalRef) {
-      return React40.useCallback(
+      return React39.useCallback(
         function(instance) {
           var _a2;
           instance && ((_a2 = visualState.mount) === null || _a2 === void 0 || _a2.call(visualState, instance)), visualElement2 && (instance ? visualElement2.mount(instance) : visualElement2.unmount()), externalRef && (typeof externalRef == "function" ? externalRef(instance) : isRefObject(externalRef) && (externalRef.current = instance));
@@ -22459,8 +22459,8 @@ var require_cjs2 = __commonJS({
       return props.inherit !== !1 ? context : {};
     }
     function useCreateMotionContext(props) {
-      var _a2 = getCurrentTreeVariants(props, React40.useContext(MotionContext)), initial = _a2.initial, animate3 = _a2.animate;
-      return React40.useMemo(function() {
+      var _a2 = getCurrentTreeVariants(props, React39.useContext(MotionContext)), initial = _a2.initial, animate3 = _a2.animate;
+      return React39.useMemo(function() {
         return { initial, animate: animate3 };
       }, [variantLabelsAsDependency(initial), variantLabelsAsDependency(animate3)]);
     }
@@ -22468,7 +22468,7 @@ var require_cjs2 = __commonJS({
       return Array.isArray(prop) ? prop.join(" ") : prop;
     }
     function useConstant(init) {
-      var ref = React40.useRef(null);
+      var ref = React39.useRef(null);
       return ref.current === null && (ref.current = init()), ref.current;
     }
     var globalProjectionState = {
@@ -22489,9 +22489,9 @@ var require_cjs2 = __commonJS({
           return id$1++;
       });
     }
-    var LayoutGroupContext = React40.createContext({}), SwitchLayoutGroupContext = React40.createContext({});
+    var LayoutGroupContext = React39.createContext({}), SwitchLayoutGroupContext = React39.createContext({});
     function useProjection(projectionId, _a2, visualElement2, ProjectionNodeConstructor) {
-      var _b, layoutId = _a2.layoutId, layout = _a2.layout, drag2 = _a2.drag, dragConstraints = _a2.dragConstraints, layoutScroll = _a2.layoutScroll, initialPromotionConfig = React40.useContext(SwitchLayoutGroupContext);
+      var _b, layoutId = _a2.layoutId, layout = _a2.layout, drag2 = _a2.drag, dragConstraints = _a2.dragConstraints, layoutScroll = _a2.layoutScroll, initialPromotionConfig = React39.useContext(SwitchLayoutGroupContext);
       !ProjectionNodeConstructor || !visualElement2 || visualElement2 != null && visualElement2.projection || (visualElement2.projection = new ProjectionNodeConstructor(projectionId, visualElement2.getLatestValues(), (_b = visualElement2.parent) === null || _b === void 0 ? void 0 : _b.projection), visualElement2.projection.setOptions({
         layoutId,
         layout,
@@ -22536,7 +22536,7 @@ var require_cjs2 = __commonJS({
       function MotionComponent(props, externalRef) {
         var layoutId = useLayoutId(props);
         props = tslib.__assign(tslib.__assign({}, props), { layoutId });
-        var config = React40.useContext(MotionConfigContext), features = null, context = useCreateMotionContext(props), projectionId = config.isStatic ? void 0 : useProjectionId(), visualState = useVisualState2(props, config.isStatic);
+        var config = React39.useContext(MotionConfigContext), features = null, context = useCreateMotionContext(props), projectionId = config.isStatic ? void 0 : useProjectionId(), visualState = useVisualState2(props, config.isStatic);
         return !config.isStatic && isBrowser2 && (context.visualElement = useVisualElement(Component2, visualState, tslib.__assign(tslib.__assign({}, config), props), createVisualElement), useProjection(projectionId, props, context.visualElement, projectionNodeConstructor || featureDefinitions.projectionNodeConstructor), features = useFeatures(props, context.visualElement, preloadedFeatures)), React__namespace.createElement(
           VisualElementHandler,
           { visualElement: context.visualElement, props: tslib.__assign(tslib.__assign({}, config), props) },
@@ -22544,10 +22544,10 @@ var require_cjs2 = __commonJS({
           React__namespace.createElement(MotionContext.Provider, { value: context }, useRender(Component2, props, projectionId, useMotionRef(visualState, context.visualElement, externalRef), visualState, config.isStatic, context.visualElement))
         );
       }
-      return React40.forwardRef(MotionComponent);
+      return React39.forwardRef(MotionComponent);
     }
     function useLayoutId(_a2) {
-      var _b, layoutId = _a2.layoutId, layoutGroupId = (_b = React40.useContext(LayoutGroupContext)) === null || _b === void 0 ? void 0 : _b.id;
+      var _b, layoutId = _a2.layoutId, layoutGroupId = (_b = React39.useContext(LayoutGroupContext)) === null || _b === void 0 ? void 0 : _b.id;
       return layoutGroupId && layoutId !== void 0 ? layoutGroupId + "-" + layoutId : layoutId;
     }
     function createMotionProxy(createConfig) {
@@ -22767,7 +22767,7 @@ var require_cjs2 = __commonJS({
     }
     function useInitialMotionValues(_a2, visualState, isStatic) {
       var transformTemplate = _a2.transformTemplate;
-      return React40.useMemo(function() {
+      return React39.useMemo(function() {
         var state = createHtmlRenderState();
         buildHTMLStyles(state, visualState, { enableHardwareAcceleration: !isStatic }, transformTemplate);
         var vars = state.vars, style2 = state.style;
@@ -22893,7 +22893,7 @@ var require_cjs2 = __commonJS({
       return tslib.__assign(tslib.__assign({}, createHtmlRenderState()), { attrs: {} });
     };
     function useSVGProps(props, visualState) {
-      var visualProps = React40.useMemo(function() {
+      var visualProps = React39.useMemo(function() {
         var state = createSvgRenderState();
         return buildSVGAttrs(state, visualState, { enableHardwareAcceleration: !1 }, props.transformTemplate), tslib.__assign(tslib.__assign({}, state.attrs), { style: tslib.__assign({}, state.style) });
       }, [visualState]);
@@ -22907,7 +22907,7 @@ var require_cjs2 = __commonJS({
       forwardMotionProps === void 0 && (forwardMotionProps = !1);
       var useRender = function(Component2, props, projectionId, ref, _a2, isStatic) {
         var latestValues = _a2.latestValues, useVisualProps = isSVGComponent(Component2) ? useSVGProps : useHTMLProps, visualProps = useVisualProps(props, latestValues, isStatic), filteredProps = filterProps(props, typeof Component2 == "string", forwardMotionProps), elementProps = tslib.__assign(tslib.__assign(tslib.__assign({}, filteredProps), visualProps), { ref });
-        return projectionId && (elementProps["data-projection-id"] = projectionId), React40.createElement(Component2, elementProps);
+        return projectionId && (elementProps["data-projection-id"] = projectionId), React39.createElement(Component2, elementProps);
       };
       return useRender;
     }
@@ -22987,7 +22987,7 @@ var require_cjs2 = __commonJS({
     }
     var makeUseVisualState = function(config) {
       return function(props, isStatic) {
-        var context = React40.useContext(MotionContext), presenceContext = React40.useContext(PresenceContext);
+        var context = React39.useContext(MotionContext), presenceContext = React39.useContext(PresenceContext);
         return isStatic ? makeState(config, props, context, presenceContext) : useConstant(function() {
           return makeState(config, props, context, presenceContext);
         });
@@ -23062,7 +23062,7 @@ var require_cjs2 = __commonJS({
       };
     }
     function useDomEvent(ref, eventName, handler, options) {
-      React40.useEffect(function() {
+      React39.useEffect(function() {
         var element = ref.current;
         if (handler && element)
           return addDomEvent(element, eventName, handler, options);
@@ -23189,14 +23189,14 @@ var require_cjs2 = __commonJS({
       return child ? parent === child ? !0 : isNodeOrChild(parent, child.parentElement) : !1;
     };
     function useUnmountEffect(callback) {
-      return React40.useEffect(function() {
+      return React39.useEffect(function() {
         return function() {
           return callback();
         };
       }, []);
     }
     function useTapGesture(_a2) {
-      var onTap = _a2.onTap, onTapStart = _a2.onTapStart, onTapCancel = _a2.onTapCancel, whileTap = _a2.whileTap, visualElement2 = _a2.visualElement, hasPressListeners = onTap || onTapStart || onTapCancel || whileTap, isPressing = React40.useRef(!1), cancelPointerEndListeners = React40.useRef(null), eventOptions = {
+      var onTap = _a2.onTap, onTapStart = _a2.onTapStart, onTapCancel = _a2.onTapCancel, whileTap = _a2.whileTap, visualElement2 = _a2.visualElement, hasPressListeners = onTap || onTapStart || onTapCancel || whileTap, isPressing = React39.useRef(!1), cancelPointerEndListeners = React39.useRef(null), eventOptions = {
         passive: !(onTapStart || onTap || onTapCancel || onPointerDown)
       };
       function removePointerEndListener() {
@@ -23242,7 +23242,7 @@ var require_cjs2 = __commonJS({
       };
     }
     function useViewport(_a2) {
-      var visualElement2 = _a2.visualElement, whileInView = _a2.whileInView, onViewportEnter = _a2.onViewportEnter, onViewportLeave = _a2.onViewportLeave, _b = _a2.viewport, viewport = _b === void 0 ? {} : _b, state = React40.useRef({
+      var visualElement2 = _a2.visualElement, whileInView = _a2.whileInView, onViewportEnter = _a2.onViewportEnter, onViewportLeave = _a2.onViewportLeave, _b = _a2.viewport, viewport = _b === void 0 ? {} : _b, state = React39.useRef({
         hasEnteredView: !1,
         isInView: !1
       }), shouldObserve = Boolean(whileInView || onViewportEnter || onViewportLeave);
@@ -23256,7 +23256,7 @@ var require_cjs2 = __commonJS({
     };
     function useIntersectionObserver(shouldObserve, state, visualElement2, _a2) {
       var root = _a2.root, rootMargin = _a2.margin, _b = _a2.amount, amount = _b === void 0 ? "some" : _b, once = _a2.once;
-      React40.useEffect(function() {
+      React39.useEffect(function() {
         if (shouldObserve) {
           var options = {
             root: root == null ? void 0 : root.current,
@@ -23276,7 +23276,7 @@ var require_cjs2 = __commonJS({
     }
     function useMissingIntersectionObserver(shouldObserve, state, visualElement2, _a2) {
       var _b = _a2.fallback, fallback = _b === void 0 ? !0 : _b;
-      React40.useEffect(function() {
+      React39.useEffect(function() {
         !shouldObserve || !fallback || (env !== "production" && warnOnce4(!1, "IntersectionObserver not available on this device. whileInView animations will trigger on mount."), requestAnimationFrame(function() {
           var _a3;
           state.hasEnteredView = !0;
@@ -23300,11 +23300,11 @@ var require_cjs2 = __commonJS({
       return useConstant(incrementId);
     };
     function usePresence() {
-      var context = React40.useContext(PresenceContext);
+      var context = React39.useContext(PresenceContext);
       if (context === null)
         return [!0, null];
       var isPresent2 = context.isPresent, onExitComplete = context.onExitComplete, register = context.register, id2 = useId();
-      React40.useEffect(function() {
+      React39.useEffect(function() {
         return register(id2);
       }, []);
       var safeToRemove = function() {
@@ -23313,7 +23313,7 @@ var require_cjs2 = __commonJS({
       return !isPresent2 && onExitComplete ? [!1, safeToRemove] : [!0];
     }
     function useIsPresent() {
-      return isPresent(React40.useContext(PresenceContext));
+      return isPresent(React39.useContext(PresenceContext));
     }
     function isPresent(context) {
       return context === null ? !0 : context.isPresent;
@@ -23866,13 +23866,13 @@ var require_cjs2 = __commonJS({
     var animations = {
       animation: makeRenderlessComponent(function(_a2) {
         var visualElement2 = _a2.visualElement, animate3 = _a2.animate;
-        visualElement2.animationState || (visualElement2.animationState = createAnimationState(visualElement2)), isAnimationControls(animate3) && React40.useEffect(function() {
+        visualElement2.animationState || (visualElement2.animationState = createAnimationState(visualElement2)), isAnimationControls(animate3) && React39.useEffect(function() {
           return animate3.subscribe(visualElement2);
         }, [animate3]);
       }),
       exit: makeRenderlessComponent(function(props) {
-        var custom = props.custom, visualElement2 = props.visualElement, _a2 = tslib.__read(usePresence(), 2), isPresent2 = _a2[0], safeToRemove = _a2[1], presenceContext = React40.useContext(PresenceContext);
-        React40.useEffect(function() {
+        var custom = props.custom, visualElement2 = props.visualElement, _a2 = tslib.__read(usePresence(), 2), isPresent2 = _a2[0], safeToRemove = _a2[1], presenceContext = React39.useContext(PresenceContext);
+        React39.useEffect(function() {
           var _a3, _b;
           visualElement2.isPresent = isPresent2;
           var animation = (_a3 = visualElement2.animationState) === null || _a3 === void 0 ? void 0 : _a3.setActive(exports.AnimationType.Exit, !isPresent2, { custom: (_b = presenceContext == null ? void 0 : presenceContext.custom) !== null && _b !== void 0 ? _b : custom });
@@ -24310,14 +24310,14 @@ var require_cjs2 = __commonJS({
       var groupDragControls = props.dragControls, visualElement2 = props.visualElement, dragControls = useConstant(function() {
         return new VisualElementDragControls(visualElement2);
       });
-      React40.useEffect(function() {
+      React39.useEffect(function() {
         return groupDragControls && groupDragControls.subscribe(dragControls);
-      }, [dragControls, groupDragControls]), React40.useEffect(function() {
+      }, [dragControls, groupDragControls]), React39.useEffect(function() {
         return dragControls.addListeners();
       }, [dragControls]);
     }
     function usePanGesture(_a2) {
-      var onPan = _a2.onPan, onPanStart = _a2.onPanStart, onPanEnd = _a2.onPanEnd, onPanSessionStart = _a2.onPanSessionStart, visualElement2 = _a2.visualElement, hasPanEvents = onPan || onPanStart || onPanEnd || onPanSessionStart, panSession = React40.useRef(null), transformPagePoint = React40.useContext(MotionConfigContext).transformPagePoint, handlers = {
+      var onPan = _a2.onPan, onPanStart = _a2.onPanStart, onPanEnd = _a2.onPanEnd, onPanSessionStart = _a2.onPanSessionStart, visualElement2 = _a2.visualElement, hasPanEvents = onPan || onPanStart || onPanEnd || onPanSessionStart, panSession = React39.useRef(null), transformPagePoint = React39.useContext(MotionConfigContext).transformPagePoint, handlers = {
         onSessionStart: onPanSessionStart,
         onStart: onPanStart,
         onMove: onPan,
@@ -24325,7 +24325,7 @@ var require_cjs2 = __commonJS({
           panSession.current = null, onPanEnd && onPanEnd(event, info);
         }
       };
-      React40.useEffect(function() {
+      React39.useEffect(function() {
         panSession.current !== null && panSession.current.updateHandlers(handlers);
       });
       function onPointerDown(event) {
@@ -25003,8 +25003,8 @@ var require_cjs2 = __commonJS({
       }(React__default2.default.Component)
     );
     function MeasureLayout(props) {
-      var _a2 = tslib.__read(usePresence(), 2), isPresent2 = _a2[0], safeToRemove = _a2[1], layoutGroup = React40.useContext(LayoutGroupContext);
-      return React__default2.default.createElement(MeasureLayoutWithContext, tslib.__assign({}, props, { layoutGroup, switchLayoutGroup: React40.useContext(SwitchLayoutGroupContext), isPresent: isPresent2, safeToRemove }));
+      var _a2 = tslib.__read(usePresence(), 2), isPresent2 = _a2[0], safeToRemove = _a2[1], layoutGroup = React39.useContext(LayoutGroupContext);
+      return React__default2.default.createElement(MeasureLayoutWithContext, tslib.__assign({}, props, { layoutGroup, switchLayoutGroup: React39.useContext(SwitchLayoutGroupContext), isPresent: isPresent2, safeToRemove }));
     }
     var defaultScaleCorrectors = {
       borderRadius: tslib.__assign(tslib.__assign({}, correctBorderRadius), { applyTo: [
@@ -25646,7 +25646,7 @@ var require_cjs2 = __commonJS({
     }
     var m10 = createMotionProxy(createDomMotionConfig);
     function useIsMounted() {
-      var isMounted = React40.useRef(!1);
+      var isMounted = React39.useRef(!1);
       return useIsomorphicLayoutEffect2(function() {
         return isMounted.current = !0, function() {
           isMounted.current = !1;
@@ -25654,15 +25654,15 @@ var require_cjs2 = __commonJS({
       }, []), isMounted;
     }
     function useForceUpdate() {
-      var isMounted = useIsMounted(), _a2 = tslib.__read(React40.useState(0), 2), forcedRenderCount = _a2[0], setForcedRenderCount = _a2[1], forceRender = React40.useCallback(function() {
+      var isMounted = useIsMounted(), _a2 = tslib.__read(React39.useState(0), 2), forcedRenderCount = _a2[0], setForcedRenderCount = _a2[1], forceRender = React39.useCallback(function() {
         isMounted.current && setForcedRenderCount(forcedRenderCount + 1);
-      }, [forcedRenderCount]), deferredForceRender = React40.useCallback(function() {
+      }, [forcedRenderCount]), deferredForceRender = React39.useCallback(function() {
         return sync__default.default.postRender(forceRender);
       }, [forceRender]);
       return [deferredForceRender, forcedRenderCount];
     }
     var PresenceChild = function(_a2) {
-      var children = _a2.children, initial = _a2.initial, isPresent2 = _a2.isPresent, onExitComplete = _a2.onExitComplete, custom = _a2.custom, presenceAffectsLayout = _a2.presenceAffectsLayout, presenceChildren = useConstant(newChildrenMap), id2 = useId(), context = React40.useMemo(
+      var children = _a2.children, initial = _a2.initial, isPresent2 = _a2.isPresent, onExitComplete = _a2.onExitComplete, custom = _a2.custom, presenceAffectsLayout = _a2.presenceAffectsLayout, presenceChildren = useConstant(newChildrenMap), id2 = useId(), context = React39.useMemo(
         function() {
           return {
             id: id2,
@@ -25704,7 +25704,7 @@ var require_cjs2 = __commonJS({
          */
         presenceAffectsLayout ? void 0 : [isPresent2]
       );
-      return React40.useMemo(function() {
+      return React39.useMemo(function() {
         presenceChildren.forEach(function(_3, key) {
           return presenceChildren.set(key, !1);
         });
@@ -25726,14 +25726,14 @@ var require_cjs2 = __commonJS({
     }
     function onlyElements(children) {
       var filtered = [];
-      return React40.Children.forEach(children, function(child) {
-        React40.isValidElement(child) && filtered.push(child);
+      return React39.Children.forEach(children, function(child) {
+        React39.isValidElement(child) && filtered.push(child);
       }), filtered;
     }
     var AnimatePresence = function(_a2) {
-      var children = _a2.children, custom = _a2.custom, _b = _a2.initial, initial = _b === void 0 ? !0 : _b, onExitComplete = _a2.onExitComplete, exitBeforeEnter = _a2.exitBeforeEnter, _c = _a2.presenceAffectsLayout, presenceAffectsLayout = _c === void 0 ? !0 : _c, _d = tslib.__read(useForceUpdate(), 1), forceRender = _d[0], forceRenderLayoutGroup = React40.useContext(LayoutGroupContext).forceRender;
+      var children = _a2.children, custom = _a2.custom, _b = _a2.initial, initial = _b === void 0 ? !0 : _b, onExitComplete = _a2.onExitComplete, exitBeforeEnter = _a2.exitBeforeEnter, _c = _a2.presenceAffectsLayout, presenceAffectsLayout = _c === void 0 ? !0 : _c, _d = tslib.__read(useForceUpdate(), 1), forceRender = _d[0], forceRenderLayoutGroup = React39.useContext(LayoutGroupContext).forceRender;
       forceRenderLayoutGroup && (forceRender = forceRenderLayoutGroup);
-      var isMounted = useIsMounted(), filteredChildren = onlyElements(children), childrenToRender = filteredChildren, exiting = /* @__PURE__ */ new Set(), presentChildren = React40.useRef(childrenToRender), allChildren = React40.useRef(/* @__PURE__ */ new Map()).current, isInitialRender = React40.useRef(!0);
+      var isMounted = useIsMounted(), filteredChildren = onlyElements(children), childrenToRender = filteredChildren, exiting = /* @__PURE__ */ new Set(), presentChildren = React39.useRef(childrenToRender), allChildren = React39.useRef(/* @__PURE__ */ new Map()).current, isInitialRender = React39.useRef(!0);
       if (useIsomorphicLayoutEffect2(function() {
         isInitialRender.current = !1, updateChildLookup(filteredChildren, allChildren), presentChildren.current = childrenToRender;
       }), useUnmountEffect(function() {
@@ -25769,9 +25769,9 @@ var require_cjs2 = __commonJS({
         var key2 = child.key;
         return exiting.has(key2) ? child : React__namespace.createElement(PresenceChild, { key: getChildKey(child), isPresent: !0, presenceAffectsLayout }, child);
       }), env !== "production" && exitBeforeEnter && childrenToRender.length > 1 && console.warn("You're attempting to animate multiple children within AnimatePresence, but its exitBeforeEnter prop is set to true. This will lead to odd visual behaviour."), React__namespace.createElement(React__namespace.Fragment, null, exiting.size ? childrenToRender : childrenToRender.map(function(child) {
-        return React40.cloneElement(child);
+        return React39.cloneElement(child);
       }));
-    }, DeprecatedLayoutGroupContext = React40.createContext(null), notify = function(node) {
+    }, DeprecatedLayoutGroupContext = React39.createContext(null), notify = function(node) {
       return !node.isLayoutDirty && node.willUpdate(!1);
     };
     function nodeGroup() {
@@ -25796,12 +25796,12 @@ var require_cjs2 = __commonJS({
     }, LayoutGroup = function(_a2) {
       var _b, _c, children = _a2.children, id2 = _a2.id, inheritId = _a2.inheritId, _d = _a2.inherit, inherit = _d === void 0 ? !0 : _d;
       inheritId !== void 0 && (inherit = inheritId);
-      var layoutGroupContext = React40.useContext(LayoutGroupContext), deprecatedLayoutGroupContext = React40.useContext(DeprecatedLayoutGroupContext), _e3 = tslib.__read(useForceUpdate(), 2), forceRender = _e3[0], key = _e3[1], context = React40.useRef(null), upstreamId = (_b = layoutGroupContext.id) !== null && _b !== void 0 ? _b : deprecatedLayoutGroupContext;
+      var layoutGroupContext = React39.useContext(LayoutGroupContext), deprecatedLayoutGroupContext = React39.useContext(DeprecatedLayoutGroupContext), _e3 = tslib.__read(useForceUpdate(), 2), forceRender = _e3[0], key = _e3[1], context = React39.useRef(null), upstreamId = (_b = layoutGroupContext.id) !== null && _b !== void 0 ? _b : deprecatedLayoutGroupContext;
       context.current === null && (shouldInheritId(inherit) && upstreamId && (id2 = id2 ? upstreamId + "-" + id2 : upstreamId), context.current = {
         id: id2,
         group: shouldInheritGroup(inherit) && (_c = layoutGroupContext == null ? void 0 : layoutGroupContext.group) !== null && _c !== void 0 ? _c : nodeGroup()
       });
-      var memoizedContext = React40.useMemo(function() {
+      var memoizedContext = React39.useMemo(function() {
         return tslib.__assign(tslib.__assign({}, context.current), { forceRender });
       }, [key]);
       return React__namespace.createElement(LayoutGroupContext.Provider, { value: memoizedContext }, children);
@@ -25815,21 +25815,21 @@ var require_cjs2 = __commonJS({
     };
     function MotionConfig(_a2) {
       var children = _a2.children, isValidProp = _a2.isValidProp, config = tslib.__rest(_a2, ["children", "isValidProp"]);
-      isValidProp && loadExternalIsValidProp(isValidProp), config = tslib.__assign(tslib.__assign({}, React40.useContext(MotionConfigContext)), config), config.isStatic = useConstant(function() {
+      isValidProp && loadExternalIsValidProp(isValidProp), config = tslib.__assign(tslib.__assign({}, React39.useContext(MotionConfigContext)), config), config.isStatic = useConstant(function() {
         return config.isStatic;
       });
-      var context = React40.useMemo(function() {
+      var context = React39.useMemo(function() {
         return config;
       }, [JSON.stringify(config.transition), config.transformPagePoint, config.reducedMotion]);
       return React__namespace.createElement(MotionConfigContext.Provider, { value: context }, children);
     }
     function LazyMotion(_a2) {
-      var children = _a2.children, features = _a2.features, _b = _a2.strict, strict = _b === void 0 ? !1 : _b, _c = tslib.__read(React40.useState(!isLazyBundle(features)), 2), setIsLoaded = _c[1], loadedRenderer = React40.useRef(void 0);
+      var children = _a2.children, features = _a2.features, _b = _a2.strict, strict = _b === void 0 ? !1 : _b, _c = tslib.__read(React39.useState(!isLazyBundle(features)), 2), setIsLoaded = _c[1], loadedRenderer = React39.useRef(void 0);
       if (!isLazyBundle(features)) {
         var renderer = features.renderer, loadedFeatures = tslib.__rest(features, ["renderer"]);
         loadedRenderer.current = renderer, loadFeatures(loadedFeatures);
       }
-      return React40.useEffect(function() {
+      return React39.useEffect(function() {
         isLazyBundle(features) && features().then(function(_a3) {
           var renderer2 = _a3.renderer, loadedFeatures2 = tslib.__rest(_a3, ["renderer"]);
           loadFeatures(loadedFeatures2), loadedRenderer.current = renderer2, setIsLoaded(!0);
@@ -25839,7 +25839,7 @@ var require_cjs2 = __commonJS({
     function isLazyBundle(features) {
       return typeof features == "function";
     }
-    var ReorderContext = React40.createContext(null);
+    var ReorderContext = React39.createContext(null);
     function checkReorder(order3, value, offset, velocity) {
       if (!velocity)
         return order3;
@@ -25857,7 +25857,7 @@ var require_cjs2 = __commonJS({
     function ReorderGroup(_a2, externalRef) {
       var children = _a2.children, _b = _a2.as, as = _b === void 0 ? "ul" : _b, _c = _a2.axis, axis = _c === void 0 ? "y" : _c, onReorder = _a2.onReorder, values = _a2.values, props = tslib.__rest(_a2, ["children", "as", "axis", "onReorder", "values"]), Component2 = useConstant(function() {
         return motion(as);
-      }), order3 = [], isReordering = React40.useRef(!1);
+      }), order3 = [], isReordering = React39.useRef(!1);
       heyListen.invariant(Boolean(values), "Reorder.Group must be provided a values prop");
       var context = {
         axis,
@@ -25875,7 +25875,7 @@ var require_cjs2 = __commonJS({
           }
         }
       };
-      return React40.useEffect(function() {
+      return React39.useEffect(function() {
         isReordering.current = !1;
       }), React__namespace.createElement(
         Component2,
@@ -25883,7 +25883,7 @@ var require_cjs2 = __commonJS({
         React__namespace.createElement(ReorderContext.Provider, { value: context }, children)
       );
     }
-    var Group = React40.forwardRef(ReorderGroup);
+    var Group = React39.forwardRef(ReorderGroup);
     function getValue(item) {
       return item.value;
     }
@@ -25893,10 +25893,10 @@ var require_cjs2 = __commonJS({
     function useMotionValue(initial) {
       var value = useConstant(function() {
         return motionValue(initial);
-      }), isStatic = React40.useContext(MotionConfigContext).isStatic;
+      }), isStatic = React39.useContext(MotionConfigContext).isStatic;
       if (isStatic) {
-        var _a2 = tslib.__read(React40.useState(initial), 2), setLatest_1 = _a2[1];
-        React40.useEffect(function() {
+        var _a2 = tslib.__read(React39.useState(initial), 2), setLatest_1 = _a2[1];
+        React39.useEffect(function() {
           return value.onChange(setLatest_1);
         }, []);
       }
@@ -25963,16 +25963,16 @@ var require_cjs2 = __commonJS({
     function ReorderItem(_a2, externalRef) {
       var children = _a2.children, style2 = _a2.style, value = _a2.value, _b = _a2.as, as = _b === void 0 ? "li" : _b, onDrag = _a2.onDrag, _c = _a2.layout, layout = _c === void 0 ? !0 : _c, props = tslib.__rest(_a2, ["children", "style", "value", "as", "onDrag", "layout"]), Component2 = useConstant(function() {
         return motion(as);
-      }), context = React40.useContext(ReorderContext), point2 = {
+      }), context = React39.useContext(ReorderContext), point2 = {
         x: useDefaultMotionValue(style2 == null ? void 0 : style2.x),
         y: useDefaultMotionValue(style2 == null ? void 0 : style2.y)
       }, zIndex = useTransform([point2.x, point2.y], function(_a3) {
         var _b2 = tslib.__read(_a3, 2), latestX = _b2[0], latestY = _b2[1];
         return latestX || latestY ? 1 : "unset";
-      }), measuredLayout = React40.useRef(null);
+      }), measuredLayout = React39.useRef(null);
       heyListen.invariant(Boolean(context), "Reorder.Item must be a child of Reorder.Group");
       var _d = context, axis = _d.axis, registerItem = _d.registerItem, updateOrder = _d.updateOrder;
-      return React40.useEffect(function() {
+      return React39.useEffect(function() {
         registerItem(value, measuredLayout.current);
       }, [context]), React__namespace.createElement(Component2, tslib.__assign({ drag: axis }, props, { dragSnapToOrigin: !0, style: tslib.__assign(tslib.__assign({}, style2), { x: point2.x, y: point2.y, zIndex }), layout, onDrag: function(event, gesturePoint) {
         var velocity = gesturePoint.velocity;
@@ -25981,7 +25981,7 @@ var require_cjs2 = __commonJS({
         measuredLayout.current = measured;
       }, ref: externalRef }), children);
     }
-    var Item = React40.forwardRef(ReorderItem), Reorder = {
+    var Item = React39.forwardRef(ReorderItem), Reorder = {
       Group,
       Item
     }, domAnimation = tslib.__assign(tslib.__assign({ renderer: createDomVisualElement }, animations), gestureAnimations), domMax = tslib.__assign(tslib.__assign(tslib.__assign(tslib.__assign({}, domAnimation), drag), layoutFeatures), { projectionNodeConstructor: HTMLProjectionNode });
@@ -26001,8 +26001,8 @@ var require_cjs2 = __commonJS({
     }
     function useSpring(source, config) {
       config === void 0 && (config = {});
-      var isStatic = React40.useContext(MotionConfigContext).isStatic, activeSpringAnimation = React40.useRef(null), value = useMotionValue(isMotionValue(source) ? source.get() : source);
-      return React40.useMemo(function() {
+      var isStatic = React39.useContext(MotionConfigContext).isStatic, activeSpringAnimation = React39.useRef(null), value = useMotionValue(isMotionValue(source) ? source.get() : source);
+      return React39.useMemo(function() {
         return value.attach(function(v4, set) {
           return isStatic ? set(v4) : (activeSpringAnimation.current && activeSpringAnimation.current.stop(), activeSpringAnimation.current = popmotion.animate(tslib.__assign(tslib.__assign({ from: value.get(), to: v4, velocity: value.getVelocity() }, config), { onUpdate: set })), value.get());
         });
@@ -26012,7 +26012,7 @@ var require_cjs2 = __commonJS({
     }
     function useVelocity(value) {
       var velocity = useMotionValue(value.getVelocity());
-      return React40.useEffect(function() {
+      return React39.useEffect(function() {
         return value.velocityUpdateSubscribers.add(function(newVelocity) {
           velocity.set(newVelocity);
         });
@@ -26048,8 +26048,8 @@ var require_cjs2 = __commonJS({
       return Date.now();
     };
     function useAnimationFrame(callback) {
-      var initialTimestamp = useConstant(getCurrentTime), isStatic = React40.useContext(MotionConfigContext).isStatic;
-      React40.useEffect(function() {
+      var initialTimestamp = useConstant(getCurrentTime), isStatic = React39.useContext(MotionConfigContext).isStatic;
+      React39.useEffect(function() {
         if (!isStatic) {
           var provideTimeSinceStart = function(_a2) {
             var timestamp = _a2.timestamp;
@@ -26113,20 +26113,20 @@ var require_cjs2 = __commonJS({
     }
     function useAnimationControls() {
       var controls2 = useConstant(animationControls);
-      return React40.useEffect(controls2.mount, []), controls2;
+      return React39.useEffect(controls2.mount, []), controls2;
     }
     var useAnimation = useAnimationControls;
     function useCycle() {
       for (var items = [], _i = 0; _i < arguments.length; _i++)
         items[_i] = arguments[_i];
-      var index2 = React40.useRef(0), _a2 = tslib.__read(React40.useState(items[index2.current]), 2), item = _a2[0], setItem2 = _a2[1], runCycle = React40.useCallback(function(next) {
+      var index2 = React39.useRef(0), _a2 = tslib.__read(React39.useState(items[index2.current]), 2), item = _a2[0], setItem2 = _a2[1], runCycle = React39.useCallback(function(next) {
         index2.current = typeof next != "number" ? popmotion.wrap(0, items.length, index2.current + 1) : next, setItem2(items[index2.current]);
       }, tslib.__spreadArray([items.length], tslib.__read(items), !1));
       return [item, runCycle];
     }
     function useInView(ref, _a2) {
-      var _b = _a2 === void 0 ? {} : _a2, root = _b.root, margin = _b.margin, amount = _b.amount, _c = _b.once, once = _c === void 0 ? !1 : _c, _d = tslib.__read(React40.useState(!1), 2), isInView = _d[0], setInView = _d[1];
-      return React40.useEffect(function() {
+      var _b = _a2 === void 0 ? {} : _a2, root = _b.root, margin = _b.margin, amount = _b.amount, _c = _b.once, once = _c === void 0 ? !1 : _c, _d = tslib.__read(React39.useState(!1), 2), isInView = _d[0], setInView = _d[1];
+      return React39.useEffect(function() {
         var _a3;
         if (!(!ref.current || once && isInView)) {
           var onEnter = function() {
@@ -26173,7 +26173,7 @@ var require_cjs2 = __commonJS({
     }
     function useInstantTransition() {
       var _a2 = tslib.__read(useForceUpdate(), 2), forceUpdate = _a2[0], forcedRenderCount = _a2[1], startInstantLayoutTransition = useInstantLayoutTransition();
-      return React40.useEffect(function() {
+      return React39.useEffect(function() {
         sync__default.default.postRender(function() {
           return sync__default.default.postRender(function() {
             return instantAnimationState.current = !1;
@@ -26219,12 +26219,12 @@ var require_cjs2 = __commonJS({
       createRenderState: createObject
     });
     function useAnimatedState(initialState) {
-      var _a2 = tslib.__read(React40.useState(initialState), 2), animationState = _a2[0], setAnimationState = _a2[1], visualState = useVisualState({}, !1), element = useConstant(function() {
+      var _a2 = tslib.__read(React39.useState(initialState), 2), animationState = _a2[0], setAnimationState = _a2[1], visualState = useVisualState({}, !1), element = useConstant(function() {
         return stateVisualElement({ props: {}, visualState }, { initialState });
       });
-      React40.useEffect(function() {
+      React39.useEffect(function() {
         return element.mount({}), element.unmount;
-      }, [element]), React40.useEffect(function() {
+      }, [element]), React39.useEffect(function() {
         element.setProps({
           onUpdate: function(v4) {
             setAnimationState(tslib.__assign({}, v4));
@@ -27550,7 +27550,7 @@ var require_react_dom_development = __commonJS({
     (function() {
       "use strict";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-      var React40 = require_react(), Scheduler = require_scheduler(), ReactSharedInternals = React40.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, suppressWarning = !1;
+      var React39 = require_react(), Scheduler = require_scheduler(), ReactSharedInternals = React39.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, suppressWarning = !1;
       function setSuppressWarning(newSuppressWarning) {
         suppressWarning = newSuppressWarning;
       }
@@ -27578,7 +27578,7 @@ var require_react_dom_development = __commonJS({
           argsWithFormat.unshift("Warning: " + format), Function.prototype.apply.call(console[level], console, argsWithFormat);
         }
       }
-      var FunctionComponent = 0, ClassComponent = 1, IndeterminateComponent = 2, HostRoot = 3, HostPortal = 4, HostComponent = 5, HostText = 6, Fragment24 = 7, Mode = 8, ContextConsumer = 9, ContextProvider = 10, ForwardRef10 = 11, Profiler = 12, SuspenseComponent = 13, MemoComponent = 14, SimpleMemoComponent = 15, LazyComponent = 16, IncompleteClassComponent = 17, DehydratedFragment = 18, SuspenseListComponent = 19, ScopeComponent = 21, OffscreenComponent = 22, LegacyHiddenComponent = 23, CacheComponent = 24, TracingMarkerComponent = 25, enableClientRenderFallbackOnTextMismatch = !0, enableNewReconciler = !1, enableLazyContextPropagation = !1, enableLegacyHidden = !1, enableSuspenseAvoidThisFallback = !1, disableCommentsAsDOMContainers = !0, enableCustomElementPropertySupport = !1, warnAboutStringRefs = !1, enableSchedulingProfiler = !0, enableProfilerTimer = !0, enableProfilerCommitHooks = !0, allNativeEvents = /* @__PURE__ */ new Set(), registrationNameDependencies = {}, possibleRegistrationNames = {};
+      var FunctionComponent = 0, ClassComponent = 1, IndeterminateComponent = 2, HostRoot = 3, HostPortal = 4, HostComponent = 5, HostText = 6, Fragment25 = 7, Mode = 8, ContextConsumer = 9, ContextProvider = 10, ForwardRef10 = 11, Profiler = 12, SuspenseComponent = 13, MemoComponent = 14, SimpleMemoComponent = 15, LazyComponent = 16, IncompleteClassComponent = 17, DehydratedFragment = 18, SuspenseListComponent = 19, ScopeComponent = 21, OffscreenComponent = 22, LegacyHiddenComponent = 23, CacheComponent = 24, TracingMarkerComponent = 25, enableClientRenderFallbackOnTextMismatch = !0, enableNewReconciler = !1, enableLazyContextPropagation = !1, enableLegacyHidden = !1, enableSuspenseAvoidThisFallback = !1, disableCommentsAsDOMContainers = !0, enableCustomElementPropertySupport = !1, warnAboutStringRefs = !1, enableSchedulingProfiler = !0, enableProfilerTimer = !0, enableProfilerCommitHooks = !0, allNativeEvents = /* @__PURE__ */ new Set(), registrationNameDependencies = {}, possibleRegistrationNames = {};
       function registerTwoPhaseEvent(registrationName, dependencies) {
         registerDirectEvent(registrationName, dependencies), registerDirectEvent(registrationName + "Capture", dependencies);
       }
@@ -28428,7 +28428,7 @@ Error generating stack: ` + x5.message + `
             return "DehydratedFragment";
           case ForwardRef10:
             return getWrappedName$1(type, type.render, "ForwardRef");
-          case Fragment24:
+          case Fragment25:
             return "Fragment";
           case HostComponent:
             return type;
@@ -28672,7 +28672,7 @@ Error generating stack: ` + x5.message + `
       }
       var didWarnSelectedSetOnOption = !1, didWarnInvalidChild = !1, didWarnInvalidInnerHTML = !1;
       function validateProps(element, props) {
-        props.value == null && (typeof props.children == "object" && props.children !== null ? React40.Children.forEach(props.children, function(child) {
+        props.value == null && (typeof props.children == "object" && props.children !== null ? React39.Children.forEach(props.children, function(child) {
           child != null && (typeof child == "string" || typeof child == "number" || didWarnInvalidChild || (didWarnInvalidChild = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }) : props.dangerouslySetInnerHTML != null && (didWarnInvalidInnerHTML || (didWarnInvalidInnerHTML = !0, error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected.")))), props.selected != null && !didWarnSelectedSetOnOption && (error("Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>."), didWarnSelectedSetOnOption = !0);
       }
@@ -34368,7 +34368,7 @@ Learn more about this warning here: https://reactjs.org/link/legacy-context`, so
             callback !== null && (effect.callback = null, callCallback(callback, instance));
           }
       }
-      var fakeInternalInstance = {}, emptyRefsObject = new React40.Component().refs, didWarnAboutStateAssignmentForComponent, didWarnAboutUninitializedState, didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate, didWarnAboutLegacyLifecyclesAndDerivedState, didWarnAboutUndefinedDerivedState, warnOnUndefinedDerivedState, warnOnInvalidCallback, didWarnAboutDirectlyAssigningPropsToState, didWarnAboutContextTypeAndContextTypes, didWarnAboutInvalidateContextType;
+      var fakeInternalInstance = {}, emptyRefsObject = new React39.Component().refs, didWarnAboutStateAssignmentForComponent, didWarnAboutUninitializedState, didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate, didWarnAboutLegacyLifecyclesAndDerivedState, didWarnAboutUndefinedDerivedState, warnOnUndefinedDerivedState, warnOnInvalidCallback, didWarnAboutDirectlyAssigningPropsToState, didWarnAboutContextTypeAndContextTypes, didWarnAboutInvalidateContextType;
       {
         didWarnAboutStateAssignmentForComponent = /* @__PURE__ */ new Set(), didWarnAboutUninitializedState = /* @__PURE__ */ new Set(), didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = /* @__PURE__ */ new Set(), didWarnAboutLegacyLifecyclesAndDerivedState = /* @__PURE__ */ new Set(), didWarnAboutDirectlyAssigningPropsToState = /* @__PURE__ */ new Set(), didWarnAboutUndefinedDerivedState = /* @__PURE__ */ new Set(), didWarnAboutContextTypeAndContextTypes = /* @__PURE__ */ new Set(), didWarnAboutInvalidateContextType = /* @__PURE__ */ new Set();
         var didWarnOnInvalidCallback = /* @__PURE__ */ new Set();
@@ -34757,7 +34757,7 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`);
           }
         }
         function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-          if (current2 === null || current2.tag !== Fragment24) {
+          if (current2 === null || current2.tag !== Fragment25) {
             var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
             return created.return = returnFiber, created;
           } else {
@@ -34985,7 +34985,7 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`);
             if (child.key === key) {
               var elementType = element.type;
               if (elementType === REACT_FRAGMENT_TYPE) {
-                if (child.tag === Fragment24) {
+                if (child.tag === Fragment25) {
                   deleteRemainingChildren(returnFiber, child.sibling);
                   var existing = useFiber(child, element.props.children);
                   return existing.return = returnFiber, existing._debugSource = element._source, existing._debugOwner = element._owner, existing;
@@ -37575,7 +37575,7 @@ Check the render method of \`` + ownerName + "`.");
             var type = workInProgress2.type, _unresolvedProps2 = workInProgress2.pendingProps, _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
             return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
           }
-          case Fragment24:
+          case Fragment25:
             return updateFragment(current2, workInProgress2, renderLanes2);
           case Mode:
             return updateMode(current2, workInProgress2, renderLanes2);
@@ -37727,7 +37727,7 @@ Check the render method of \`` + ownerName + "`.");
           case SimpleMemoComponent:
           case FunctionComponent:
           case ForwardRef10:
-          case Fragment24:
+          case Fragment25:
           case Mode:
           case Profiler:
           case ContextConsumer:
@@ -40284,7 +40284,7 @@ Check the render method of \`` + ownerName + "`.");
         return fiber._debugSource = element._source, fiber._debugOwner = element._owner, fiber;
       }
       function createFiberFromFragment(elements, mode, lanes, key) {
-        var fiber = createFiber(Fragment24, elements, key, mode);
+        var fiber = createFiber(Fragment25, elements, key, mode);
         return fiber.lanes = lanes, fiber;
       }
       function createFiberFromProfiler(pendingProps, mode, lanes, key) {
@@ -42156,7 +42156,7 @@ var require_floating_ui_react_dom_umd = __commonJS({
   "node_modules/@floating-ui/react-dom/dist/floating-ui.react-dom.umd.js"(exports, module) {
     (function(global2, factory) {
       typeof exports == "object" && typeof module < "u" ? factory(exports, require_floating_ui_dom_umd(), require_react(), require_react_dom()) : typeof define == "function" && define.amd ? define(["exports", "@floating-ui/dom", "react", "react-dom"], factory) : (global2 = typeof globalThis < "u" ? globalThis : global2 || self, factory(global2.FloatingUIReactDOM = {}, global2.FloatingUIDOM, global2.React, global2.ReactDOM));
-    })(exports, function(exports2, dom, React40, ReactDOM) {
+    })(exports, function(exports2, dom, React39, ReactDOM) {
       "use strict";
       function _interopNamespace(e5) {
         if (e5 && e5.__esModule)
@@ -42174,7 +42174,7 @@ var require_floating_ui_react_dom_umd = __commonJS({
           }
         }), n7.default = e5, Object.freeze(n7);
       }
-      var React__namespace = /* @__PURE__ */ _interopNamespace(React40), ReactDOM__namespace = /* @__PURE__ */ _interopNamespace(ReactDOM);
+      var React__namespace = /* @__PURE__ */ _interopNamespace(React39), ReactDOM__namespace = /* @__PURE__ */ _interopNamespace(ReactDOM);
       let arrow = (options) => {
         let {
           element,
@@ -42197,7 +42197,7 @@ var require_floating_ui_react_dom_umd = __commonJS({
           }
         };
       };
-      var index2 = typeof document < "u" ? React40.useLayoutEffect : React40.useEffect;
+      var index2 = typeof document < "u" ? React39.useLayoutEffect : React39.useEffect;
       function deepEqual(a13, b6) {
         if (a13 === b6)
           return !0;
@@ -42384,7 +42384,7 @@ var require_floating_ui_react_umd = __commonJS({
   "node_modules/@floating-ui/react/dist/floating-ui.react.umd.js"(exports, module) {
     (function(global2, factory) {
       typeof exports == "object" && typeof module < "u" ? factory(exports, require_react(), require_react_dom(), require_floating_ui_react_dom_umd(), require_floating_ui_dom_umd()) : typeof define == "function" && define.amd ? define(["exports", "react", "react-dom", "@floating-ui/react-dom", "@floating-ui/dom"], factory) : (global2 = typeof globalThis < "u" ? globalThis : global2 || self, factory(global2.FloatingUIReactDOM = {}, global2.React, global2.ReactDOM, global2.FloatingUIReactDOM, global2.FloatingUIDOM));
-    })(exports, function(exports2, React40, reactDom$1, reactDom, dom) {
+    })(exports, function(exports2, React39, reactDom$1, reactDom, dom) {
       "use strict";
       function _interopNamespace(e5) {
         if (e5 && e5.__esModule)
@@ -42402,7 +42402,7 @@ var require_floating_ui_react_umd = __commonJS({
           }
         }), n7.default = e5, Object.freeze(n7);
       }
-      var React__namespace = /* @__PURE__ */ _interopNamespace(React40), index2 = typeof document < "u" ? React40.useLayoutEffect : React40.useEffect;
+      var React__namespace = /* @__PURE__ */ _interopNamespace(React39), index2 = typeof document < "u" ? React39.useLayoutEffect : React39.useEffect;
       let serverHandoffComplete = !1, count = 0, genId = () => "floating-ui-" + count++;
       function useFloatingId() {
         let [id, setId] = React__namespace.useState(() => serverHandoffComplete ? genId() : void 0);
@@ -42523,7 +42523,7 @@ var require_floating_ui_react_umd = __commonJS({
         return strict || values.push("", void 0), values.includes(pointerType);
       }
       function useLatestRef(value) {
-        let ref = React40.useRef(value);
+        let ref = React39.useRef(value);
         return index2(() => {
           ref.current = value;
         }), ref;
@@ -49492,14 +49492,14 @@ var require_react_jsx_runtime_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React40 = require_react(), REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
+      var React39 = require_react(), REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
       function getIteratorFn(maybeIterable) {
         if (maybeIterable === null || typeof maybeIterable != "object")
           return null;
         var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
         return typeof maybeIterator == "function" ? maybeIterator : null;
       }
-      var ReactSharedInternals = React40.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var ReactSharedInternals = React39.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function error(format) {
         {
           for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)
@@ -50801,7 +50801,7 @@ Valid keys: ` + JSON.stringify(Object.keys(shapeTypes), null, "  ")
                     }
                   }
                 }
-                var AsyncMode = REACT_ASYNC_MODE_TYPE, ConcurrentMode = REACT_CONCURRENT_MODE_TYPE, ContextConsumer = REACT_CONTEXT_TYPE, ContextProvider = REACT_PROVIDER_TYPE, Element2 = REACT_ELEMENT_TYPE, ForwardRef10 = REACT_FORWARD_REF_TYPE, Fragment24 = REACT_FRAGMENT_TYPE, Lazy = REACT_LAZY_TYPE, Memo = REACT_MEMO_TYPE, Portal = REACT_PORTAL_TYPE, Profiler = REACT_PROFILER_TYPE, StrictMode = REACT_STRICT_MODE_TYPE, Suspense8 = REACT_SUSPENSE_TYPE, hasWarnedAboutDeprecatedIsAsyncMode = !1;
+                var AsyncMode = REACT_ASYNC_MODE_TYPE, ConcurrentMode = REACT_CONCURRENT_MODE_TYPE, ContextConsumer = REACT_CONTEXT_TYPE, ContextProvider = REACT_PROVIDER_TYPE, Element2 = REACT_ELEMENT_TYPE, ForwardRef10 = REACT_FORWARD_REF_TYPE, Fragment25 = REACT_FRAGMENT_TYPE, Lazy = REACT_LAZY_TYPE, Memo = REACT_MEMO_TYPE, Portal = REACT_PORTAL_TYPE, Profiler = REACT_PROFILER_TYPE, StrictMode = REACT_STRICT_MODE_TYPE, Suspense8 = REACT_SUSPENSE_TYPE, hasWarnedAboutDeprecatedIsAsyncMode = !1;
                 function isAsyncMode(object) {
                   return hasWarnedAboutDeprecatedIsAsyncMode || (hasWarnedAboutDeprecatedIsAsyncMode = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
                 }
@@ -50841,7 +50841,7 @@ Valid keys: ` + JSON.stringify(Object.keys(shapeTypes), null, "  ")
                 function isSuspense(object) {
                   return typeOf(object) === REACT_SUSPENSE_TYPE;
                 }
-                exports2.AsyncMode = AsyncMode, exports2.ConcurrentMode = ConcurrentMode, exports2.ContextConsumer = ContextConsumer, exports2.ContextProvider = ContextProvider, exports2.Element = Element2, exports2.ForwardRef = ForwardRef10, exports2.Fragment = Fragment24, exports2.Lazy = Lazy, exports2.Memo = Memo, exports2.Portal = Portal, exports2.Profiler = Profiler, exports2.StrictMode = StrictMode, exports2.Suspense = Suspense8, exports2.isAsyncMode = isAsyncMode, exports2.isConcurrentMode = isConcurrentMode, exports2.isContextConsumer = isContextConsumer, exports2.isContextProvider = isContextProvider, exports2.isElement = isElement, exports2.isForwardRef = isForwardRef, exports2.isFragment = isFragment, exports2.isLazy = isLazy, exports2.isMemo = isMemo, exports2.isPortal = isPortal, exports2.isProfiler = isProfiler, exports2.isStrictMode = isStrictMode, exports2.isSuspense = isSuspense, exports2.isValidElementType = isValidElementType, exports2.typeOf = typeOf;
+                exports2.AsyncMode = AsyncMode, exports2.ConcurrentMode = ConcurrentMode, exports2.ContextConsumer = ContextConsumer, exports2.ContextProvider = ContextProvider, exports2.Element = Element2, exports2.ForwardRef = ForwardRef10, exports2.Fragment = Fragment25, exports2.Lazy = Lazy, exports2.Memo = Memo, exports2.Portal = Portal, exports2.Profiler = Profiler, exports2.StrictMode = StrictMode, exports2.Suspense = Suspense8, exports2.isAsyncMode = isAsyncMode, exports2.isConcurrentMode = isConcurrentMode, exports2.isContextConsumer = isContextConsumer, exports2.isContextProvider = isContextProvider, exports2.isElement = isElement, exports2.isForwardRef = isForwardRef, exports2.isFragment = isFragment, exports2.isLazy = isLazy, exports2.isMemo = isMemo, exports2.isPortal = isPortal, exports2.isProfiler = isProfiler, exports2.isStrictMode = isStrictMode, exports2.isSuspense = isSuspense, exports2.isValidElementType = isValidElementType, exports2.typeOf = typeOf;
               })();
             }
           ),
@@ -53773,7 +53773,7 @@ var favicon_default = "/build/_assets/favicon-5FIZBM2K.svg";
 var reset_default = "/build/_assets/reset-2YZIITKC.css";
 
 // app/styles/app.css
-var app_default = "/build/_assets/app-3KQJCUPW.css";
+var app_default = "/build/_assets/app-H3N7XF52.css";
 
 // app/components/Layout.jsx
 var import_react27 = __toESM(require_react());
@@ -56689,7 +56689,7 @@ function SearchForm({ searchTerm }) {
       !1,
       {
         fileName: "app/components/Search.jsx",
-        lineNumber: 39,
+        lineNumber: 37,
         columnNumber: 7
       },
       this
@@ -56697,12 +56697,12 @@ function SearchForm({ searchTerm }) {
     "\xA0",
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("button", { type: "submit", children: "Search from custom" }, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 47,
+      lineNumber: 45,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 38,
+    lineNumber: 36,
     columnNumber: 5
   }, this);
 }
@@ -56717,7 +56717,7 @@ function SearchResults({ results: results2 }) {
       let pageResults = resourceResults;
       return resourceResults.nodes.length ? /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(SearchResultPageGrid, { pages: pageResults }, "pages", !1, {
         fileName: "app/components/Search.jsx",
-        lineNumber: 67,
+        lineNumber: 65,
         columnNumber: 15
       }, this) : null;
     }
@@ -56732,7 +56732,7 @@ function SearchResults({ results: results2 }) {
         !1,
         {
           fileName: "app/components/Search.jsx",
-          lineNumber: 74,
+          lineNumber: 72,
           columnNumber: 15
         },
         this
@@ -56749,7 +56749,7 @@ function SearchResults({ results: results2 }) {
         !1,
         {
           fileName: "app/components/Search.jsx",
-          lineNumber: 84,
+          lineNumber: 82,
           columnNumber: 15
         },
         this
@@ -56758,7 +56758,7 @@ function SearchResults({ results: results2 }) {
     return null;
   }) }, void 0, !1, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 59,
+    lineNumber: 57,
     columnNumber: 5
   }, this);
 }
@@ -56766,80 +56766,80 @@ function SearchResultsProductsGrid({ products: products2 }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "search-result", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h3", { children: "Products" }, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 100,
+      lineNumber: 98,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Pagination, { connection: products2, children: ({ nodes, isLoading, NextLink, PreviousLink }) => {
       let itemsMarkup = nodes.map((product) => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "search-results-item", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Link2, { prefetch: "intent", to: `/products/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { children: product.title }, void 0, !1, {
         fileName: "app/components/Search.jsx",
-        lineNumber: 106,
+        lineNumber: 104,
         columnNumber: 17
       }, this) }, void 0, !1, {
         fileName: "app/components/Search.jsx",
-        lineNumber: 105,
+        lineNumber: 103,
         columnNumber: 15
       }, this) }, product.id, !1, {
         fileName: "app/components/Search.jsx",
-        lineNumber: 104,
+        lineNumber: 102,
         columnNumber: 13
       }, this));
       return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(PreviousLink, { children: isLoading ? "Loading..." : /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { children: "\u2191 Load previous" }, void 0, !1, {
           fileName: "app/components/Search.jsx",
-          lineNumber: 114,
+          lineNumber: 112,
           columnNumber: 47
         }, this) }, void 0, !1, {
           fileName: "app/components/Search.jsx",
-          lineNumber: 113,
+          lineNumber: 111,
           columnNumber: 17
         }, this) }, void 0, !1, {
           fileName: "app/components/Search.jsx",
-          lineNumber: 112,
+          lineNumber: 110,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: [
           itemsMarkup,
           /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("br", {}, void 0, !1, {
             fileName: "app/components/Search.jsx",
-            lineNumber: 119,
+            lineNumber: 117,
             columnNumber: 17
           }, this)
         ] }, void 0, !0, {
           fileName: "app/components/Search.jsx",
-          lineNumber: 117,
+          lineNumber: 115,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(NextLink, { children: isLoading ? "Loading..." : /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { children: "Load more \u2193" }, void 0, !1, {
           fileName: "app/components/Search.jsx",
-          lineNumber: 123,
+          lineNumber: 121,
           columnNumber: 47
         }, this) }, void 0, !1, {
           fileName: "app/components/Search.jsx",
-          lineNumber: 122,
+          lineNumber: 120,
           columnNumber: 17
         }, this) }, void 0, !1, {
           fileName: "app/components/Search.jsx",
-          lineNumber: 121,
+          lineNumber: 119,
           columnNumber: 15
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/Search.jsx",
-        lineNumber: 111,
+        lineNumber: 109,
         columnNumber: 13
       }, this);
     } }, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 101,
+      lineNumber: 99,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("br", {}, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 130,
+      lineNumber: 128,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 99,
+    lineNumber: 97,
     columnNumber: 5
   }, this);
 }
@@ -56848,30 +56848,30 @@ function SearchResultPageGrid({ pages }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "search-result", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h2", { children: "Pages" }, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 138,
+      lineNumber: 136,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: (_a2 = pages == null ? void 0 : pages.nodes) == null ? void 0 : _a2.map((page) => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "search-results-item", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Link2, { prefetch: "intent", to: `/pages/${page.handle}`, children: page.title }, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 142,
+      lineNumber: 140,
       columnNumber: 13
     }, this) }, page.id, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 141,
+      lineNumber: 139,
       columnNumber: 11
     }, this)) }, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 139,
+      lineNumber: 137,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("br", {}, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 148,
+      lineNumber: 146,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 137,
+    lineNumber: 135,
     columnNumber: 5
   }, this);
 }
@@ -56880,37 +56880,37 @@ function SearchResultArticleGrid({ articles }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "search-result", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h2", { children: "Articles" }, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 156,
+      lineNumber: 154,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: (_a2 = articles == null ? void 0 : articles.nodes) == null ? void 0 : _a2.map((article) => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "search-results-item", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Link2, { prefetch: "intent", to: `/blog/${article.handle}`, children: article.title }, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 160,
+      lineNumber: 158,
       columnNumber: 13
     }, this) }, article.id, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 159,
+      lineNumber: 157,
       columnNumber: 11
     }, this)) }, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 157,
+      lineNumber: 155,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("br", {}, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 166,
+      lineNumber: 164,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 155,
+    lineNumber: 153,
     columnNumber: 5
   }, this);
 }
 function NoSearchResults() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { children: "No results, try a different search." }, void 0, !1, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 172,
+    lineNumber: 170,
     columnNumber: 10
   }, this);
 }
@@ -56946,7 +56946,7 @@ function PredictiveSearchForm({
     !1,
     {
       fileName: "app/components/Search.jsx",
-      lineNumber: 208,
+      lineNumber: 206,
       columnNumber: 5
     },
     this
@@ -56970,39 +56970,39 @@ function PredictiveSearchResults() {
       !1,
       {
         fileName: "app/components/Search.jsx",
-        lineNumber: 244,
+        lineNumber: 242,
         columnNumber: 11
       },
       this
     )) }, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 242,
+      lineNumber: 240,
       columnNumber: 7
     }, this),
     searchTerm.current && /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Link2, { onClick: goToSearchResult, to: `/search?q=${searchTerm.current}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { children: [
       "View all results for ",
       /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("q", { children: searchTerm.current }, void 0, !1, {
         fileName: "app/components/Search.jsx",
-        lineNumber: 257,
+        lineNumber: 255,
         columnNumber: 34
       }, this),
       "\xA0 \u2192"
     ] }, void 0, !0, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 256,
+      lineNumber: 254,
       columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 255,
+      lineNumber: 253,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 241,
+    lineNumber: 239,
     columnNumber: 5
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(NoPredictiveSearchResults, { searchTerm }, void 0, !1, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 238,
+    lineNumber: 236,
     columnNumber: 12
   }, this);
 }
@@ -57011,12 +57011,12 @@ function NoPredictiveSearchResults({ searchTerm }) {
     "No results found for ",
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("q", { children: searchTerm.current }, void 0, !1, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 272,
+      lineNumber: 270,
       columnNumber: 28
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 271,
+    lineNumber: 269,
     columnNumber: 5
   }, this) : null;
 }
@@ -57032,17 +57032,17 @@ function PredictiveSearchResult({ goToSearchResult, items, searchTerm, type }) {
     !1,
     {
       fileName: "app/components/Search.jsx",
-      lineNumber: 290,
+      lineNumber: 288,
       columnNumber: 11
     },
     this
   )) }, void 0, !1, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 288,
+    lineNumber: 286,
     columnNumber: 7
   }, this) }, type, !1, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 284,
+    lineNumber: 282,
     columnNumber: 5
   }, this);
 }
@@ -57061,7 +57061,7 @@ function SearchResultItem({ goToSearchResult, item }) {
       !1,
       {
         fileName: "app/components/Search.jsx",
-        lineNumber: 306,
+        lineNumber: 304,
         columnNumber: 11
       },
       this
@@ -57078,36 +57078,36 @@ function SearchResultItem({ goToSearchResult, item }) {
         !1,
         {
           fileName: "app/components/Search.jsx",
-          lineNumber: 315,
+          lineNumber: 313,
           columnNumber: 13
         },
         this
       ) : /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { children: item.title }, void 0, !1, {
         fileName: "app/components/Search.jsx",
-        lineNumber: 321,
+        lineNumber: 319,
         columnNumber: 13
       }, this),
       (item == null ? void 0 : item.price) && /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("small", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Money, { data: item.price }, void 0, !1, {
         fileName: "app/components/Search.jsx",
-        lineNumber: 325,
+        lineNumber: 323,
         columnNumber: 15
       }, this) }, void 0, !1, {
         fileName: "app/components/Search.jsx",
-        lineNumber: 324,
+        lineNumber: 322,
         columnNumber: 13
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/Search.jsx",
-      lineNumber: 313,
+      lineNumber: 311,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 304,
+    lineNumber: 302,
     columnNumber: 7
   }, this) }, item.id, !1, {
     fileName: "app/components/Search.jsx",
-    lineNumber: 303,
+    lineNumber: 301,
     columnNumber: 5
   }, this);
 }
@@ -57152,7 +57152,7 @@ function Header({ header, isLoggedIn, cart }) {
         lineNumber: 29,
         columnNumber: 9
       }, this),
-      isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "m-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "relative flex w-full flex-wrap items-stretch", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rounded w-full", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "m-auto sm:flex gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "relative flex w-full flex-wrap items-stretch", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rounded w-full", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(PredictiveSearchForm, { children: ({ fetchResults, inputRef }) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: " ", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "relative  flex w-full items-center items-stretch", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
             "input",
@@ -57228,7 +57228,7 @@ function Header({ header, isLoggedIn, cart }) {
         lineNumber: 35,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "sm:flex gap-2 items-center sm:block hidden ", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(NavLink2, { prefetch: "intent", to: "/account", style: activeLinkStyle, children: isLoggedIn ? "Acc" : /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "inline-flex", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "sm:flex gap-2 items-center sm:block hidden", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(NavLink2, { prefetch: "intent", to: "/account", style: activeLinkStyle, children: isLoggedIn ? "Acc" : /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "inline-flex", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
           "svg",
           {
@@ -58391,31 +58391,32 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
           !1,
           {
             fileName: "app/components/ProductCarousel.jsx",
-            lineNumber: 59,
+            lineNumber: 60,
             columnNumber: 21
           },
           this
         ),
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h2", { className: "text-lg font-semibold mt-2 text-center", children: product.node.title }, void 0, !1, {
           fileName: "app/components/ProductCarousel.jsx",
-          lineNumber: 64,
+          lineNumber: 65,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "h-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h1", { className: "text-center font-bold h-full w-full m-auto", children: [
           "\u20B9 ",
-          product.node.priceRange.minVariantPrice.amount
+          product.node.priceRange.minVariantPrice.amount,
+          " Rs"
         ] }, void 0, !0, {
           fileName: "app/components/ProductCarousel.jsx",
-          lineNumber: 68,
+          lineNumber: 69,
           columnNumber: 23
         }, this) }, void 0, !1, {
           fileName: "app/components/ProductCarousel.jsx",
-          lineNumber: 67,
+          lineNumber: 68,
           columnNumber: 21
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/ProductCarousel.jsx",
-        lineNumber: 58,
+        lineNumber: 59,
         columnNumber: 19
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "px-1 py-1 flex items-center sm:flex-row gap-3 justify-center w-[100%]", children: [
@@ -58438,7 +58439,7 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
                 !1,
                 {
                   fileName: "app/components/ProductCarousel.jsx",
-                  lineNumber: 83,
+                  lineNumber: 84,
                   columnNumber: 23
                 },
                 this
@@ -58454,7 +58455,7 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
                 !1,
                 {
                   fileName: "app/components/ProductCarousel.jsx",
-                  lineNumber: 88,
+                  lineNumber: 89,
                   columnNumber: 23
                 },
                 this
@@ -58465,16 +58466,16 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
           !0,
           {
             fileName: "app/components/ProductCarousel.jsx",
-            lineNumber: 77,
+            lineNumber: 78,
             columnNumber: 21
           },
           this
         ) }, void 0, !1, {
           fileName: "app/components/ProductCarousel.jsx",
-          lineNumber: 76,
+          lineNumber: 77,
           columnNumber: 19
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "w-[75%]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { "d-line": index2, className: "w-[75%]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
           CartForm,
           {
             route: "/cart",
@@ -58484,24 +58485,25 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
             children: (fetcher) => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_jsx_dev_runtime9.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
               "button",
               {
+                disabled: !product.node.variants || !product.node.variants.edges[0].node.availableForSale,
                 className: "w-[100%] h-11 bg-black hover:bg-blue-700 text-white font-bold py-1 rounded-lg inline-block home-product",
                 type: "submit",
                 onClick: () => {
                   window.location.href = window.location.href + "#cart-aside";
                 },
-                children: "Add To cart"
+                children: product.node.variants && product.node.variants.edges[0].node.availableForSale ? "ADD TO CART" : "Sold out"
               },
               void 0,
               !1,
               {
                 fileName: "app/components/ProductCarousel.jsx",
-                lineNumber: 105,
+                lineNumber: 106,
                 columnNumber: 27
               },
               this
             ) }, void 0, !1, {
               fileName: "app/components/ProductCarousel.jsx",
-              lineNumber: 104,
+              lineNumber: 105,
               columnNumber: 25
             }, this)
           },
@@ -58509,31 +58511,31 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
           !1,
           {
             fileName: "app/components/ProductCarousel.jsx",
-            lineNumber: 97,
+            lineNumber: 98,
             columnNumber: 21
           },
           this
         ) }, void 0, !1, {
           fileName: "app/components/ProductCarousel.jsx",
-          lineNumber: 96,
+          lineNumber: 97,
           columnNumber: 19
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/ProductCarousel.jsx",
-        lineNumber: 75,
+        lineNumber: 76,
         columnNumber: 17
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/ProductCarousel.jsx",
-      lineNumber: 57,
+      lineNumber: 58,
       columnNumber: 17
     }, this) }, product.node.id, !1, {
       fileName: "app/components/ProductCarousel.jsx",
-      lineNumber: 56,
+      lineNumber: 57,
       columnNumber: 13
     }, this)) }, void 0, !1, {
       fileName: "app/components/ProductCarousel.jsx",
-      lineNumber: 54,
+      lineNumber: 55,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
@@ -58551,7 +58553,7 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
           !1,
           {
             fileName: "app/components/ProductCarousel.jsx",
-            lineNumber: 128,
+            lineNumber: 130,
             columnNumber: 11
           },
           this
@@ -58561,7 +58563,7 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
       !1,
       {
         fileName: "app/components/ProductCarousel.jsx",
-        lineNumber: 124,
+        lineNumber: 126,
         columnNumber: 9
       },
       this
@@ -58581,7 +58583,7 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
           !1,
           {
             fileName: "app/components/ProductCarousel.jsx",
-            lineNumber: 137,
+            lineNumber: 139,
             columnNumber: 11
           },
           this
@@ -58591,18 +58593,18 @@ var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), ProductCarouse
       !1,
       {
         fileName: "app/components/ProductCarousel.jsx",
-        lineNumber: 133,
+        lineNumber: 135,
         columnNumber: 9
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/components/ProductCarousel.jsx",
-    lineNumber: 53,
+    lineNumber: 54,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/ProductCarousel.jsx",
-    lineNumber: 52,
+    lineNumber: 53,
     columnNumber: 5
   }, this);
 }, ProductCarousel_default = ProductCarousel;
@@ -58956,7 +58958,7 @@ function MobileMenuAside({ menu }) {
 }
 
 // app/styles/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-SISAKVSS.css";
+var tailwind_default = "/build/_assets/tailwind-6UAOEZGK.css";
 
 // node_modules/@okendo/shopify-hydrogen/dist/esm/index.js
 var import_react28 = __toESM(require_react()), r = async ({ context: t18, subscriberId: e5, apiDomain: n7, cdnDomain: r9 }) => {
@@ -62715,13 +62717,13 @@ function Collection() {
       !1,
       {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 232,
+        lineNumber: 234,
         columnNumber: 9
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 231,
+      lineNumber: 233,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "bg-white mx-2.5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { children: [
@@ -62744,7 +62746,7 @@ function Collection() {
                 leaveTo: "opacity-0",
                 children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "fixed inset-0 bg-black bg-opacity-25" }, void 0, !1, {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 255,
+                  lineNumber: 257,
                   columnNumber: 17
                 }, this)
               },
@@ -62752,7 +62754,7 @@ function Collection() {
               !1,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 246,
+                lineNumber: 248,
                 columnNumber: 15
               },
               this
@@ -62771,7 +62773,7 @@ function Collection() {
                   /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex items-center justify-between px-4", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h2", { className: "text-lg font-medium text-gray-900", children: "Filters" }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 270,
+                      lineNumber: 272,
                       columnNumber: 23
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -62783,12 +62785,12 @@ function Collection() {
                         children: [
                           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "sr-only", children: "Close menu" }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 278,
+                            lineNumber: 280,
                             columnNumber: 25
                           }, this),
                           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(XMarkIcon_default, { className: "h-6 w-6", "aria-hidden": "true" }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 279,
+                            lineNumber: 281,
                             columnNumber: 25
                           }, this)
                         ]
@@ -62797,20 +62799,20 @@ function Collection() {
                       !0,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 273,
+                        lineNumber: 275,
                         columnNumber: 23
                       },
                       this
                     )
                   ] }, void 0, !0, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 269,
+                    lineNumber: 271,
                     columnNumber: 21
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("form", { className: "mt-4 border-t border-gray-200", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h3", { className: "sr-only", children: "Categories" }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 285,
+                      lineNumber: 287,
                       columnNumber: 23
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -62820,11 +62822,11 @@ function Collection() {
                         className: "px-2 py-3 font-medium text-gray-900",
                         children: subCategories.map((category) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("a", { href: category.href, className: "block px-2 py-3", children: category.name }, void 0, !1, {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 292,
+                          lineNumber: 294,
                           columnNumber: 29
                         }, this) }, category.name, !1, {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 291,
+                          lineNumber: 293,
                           columnNumber: 27
                         }, this))
                       },
@@ -62832,7 +62834,7 @@ function Collection() {
                       !1,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 286,
+                        lineNumber: 288,
                         columnNumber: 23
                       },
                       this
@@ -62846,7 +62848,7 @@ function Collection() {
                           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h3", { className: "-mx-2 -my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400", children: [
                             /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "font-medium text-gray-900", children: section.name }, void 0, !1, {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 310,
+                              lineNumber: 312,
                               columnNumber: 35
                             }, this),
                             /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "ml-6 flex items-center", children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -62859,7 +62861,7 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 315,
+                                lineNumber: 317,
                                 columnNumber: 39
                               },
                               this
@@ -62873,22 +62875,22 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 320,
+                                lineNumber: 322,
                                 columnNumber: 39
                               },
                               this
                             ) }, void 0, !1, {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 313,
+                              lineNumber: 315,
                               columnNumber: 35
                             }, this)
                           ] }, void 0, !0, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 309,
+                            lineNumber: 311,
                             columnNumber: 33
                           }, this) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 308,
+                            lineNumber: 310,
                             columnNumber: 31
                           }, this),
                           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "space-y-6", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -62911,7 +62913,7 @@ function Collection() {
                                   !1,
                                   {
                                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                                    lineNumber: 335,
+                                    lineNumber: 337,
                                     columnNumber: 39
                                   },
                                   this
@@ -62927,7 +62929,7 @@ function Collection() {
                                   !1,
                                   {
                                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                                    lineNumber: 344,
+                                    lineNumber: 346,
                                     columnNumber: 39
                                   },
                                   this
@@ -62938,22 +62940,22 @@ function Collection() {
                             !0,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 331,
+                              lineNumber: 333,
                               columnNumber: 37
                             },
                             this
                           )) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 329,
+                            lineNumber: 331,
                             columnNumber: 33
                           }, this) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 328,
+                            lineNumber: 330,
                             columnNumber: 31
                           }, this)
                         ] }, void 0, !0, {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 306,
+                          lineNumber: 308,
                           columnNumber: 29
                         }, this)
                       },
@@ -62961,19 +62963,19 @@ function Collection() {
                       !1,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 300,
+                        lineNumber: 302,
                         columnNumber: 25
                       },
                       this
                     ))
                   ] }, void 0, !0, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 284,
+                    lineNumber: 286,
                     columnNumber: 21
                   }, this)
                 ] }, void 0, !0, {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 268,
+                  lineNumber: 270,
                   columnNumber: 19
                 }, this)
               },
@@ -62981,13 +62983,13 @@ function Collection() {
               !1,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 259,
+                lineNumber: 261,
                 columnNumber: 17
               },
               this
             ) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 258,
+              lineNumber: 260,
               columnNumber: 15
             }, this)
           ]
@@ -62996,13 +62998,13 @@ function Collection() {
         !0,
         {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 241,
+          lineNumber: 243,
           columnNumber: 13
         },
         this
       ) }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 240,
+        lineNumber: 242,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("section", { className: "collectionContent sm:mt-4 overflow-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "inline-flex gap-4", children: collectionArray == null ? void 0 : collectionArray.map((item, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63023,18 +63025,18 @@ function Collection() {
               !1,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 373,
+                lineNumber: 375,
                 columnNumber: 21
               },
               this
             ) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 372,
+              lineNumber: 374,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "collectionname  sm:text-lg text-md font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]", children: item.title }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 380,
+              lineNumber: 382,
               columnNumber: 19
             }, this)
           ]
@@ -63043,45 +63045,45 @@ function Collection() {
         !0,
         {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 368,
+          lineNumber: 370,
           columnNumber: 17
         },
         this
       )) }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 366,
+        lineNumber: 368,
         columnNumber: 13
       }, this) }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 365,
+        lineNumber: 367,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("main", { className: "mx-auto max-w-8xl px-4 sm:px-6 lg:px-8", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex gap-1 items-center", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(Link2, { to: "/", children: "Home" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 390,
+            lineNumber: 392,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("img", { src: "/next.png", alt: "next", width: 20, height: 20 }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 391,
+            lineNumber: 393,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(Link2, { to: "/collections", className: "font-semibold", children: "Collection" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 392,
+            lineNumber: 394,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 389,
+          lineNumber: 391,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex items-baseline justify-between border-b border-gray-200 pb-6 m-0 relative", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h1", { className: "text-4xl font-bold tracking-tight text-gray-900 sm:block hidden my-[15px]", children: collection.title }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 395,
+            lineNumber: 397,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex items-center sm:mr-10", children: [
@@ -63098,18 +63100,18 @@ function Collection() {
                   !1,
                   {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 404,
+                    lineNumber: 406,
                     columnNumber: 23
                   },
                   this
                 )
               ] }, void 0, !0, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 402,
+                lineNumber: 404,
                 columnNumber: 21
               }, this) }, void 0, !1, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 401,
+                lineNumber: 403,
                 columnNumber: 19
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63137,21 +63139,21 @@ function Collection() {
                     !1,
                     {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 425,
+                      lineNumber: 427,
                       columnNumber: 31
                     },
                     this
                   ) }, option.name, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 423,
+                    lineNumber: 425,
                     columnNumber: 27
                   }, this)) }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 421,
+                    lineNumber: 423,
                     columnNumber: 23
                   }, this) }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 420,
+                    lineNumber: 422,
                     columnNumber: 21
                   }, this)
                 },
@@ -63159,14 +63161,14 @@ function Collection() {
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 411,
+                  lineNumber: 413,
                   columnNumber: 19
                 },
                 this
               )
             ] }, void 0, !0, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 400,
+              lineNumber: 402,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63177,12 +63179,12 @@ function Collection() {
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "sr-only", children: "View grid" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 449,
+                    lineNumber: 451,
                     columnNumber: 19
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(Squares2X2Icon_default, { className: "h-5 w-5", "aria-hidden": "true" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 450,
+                    lineNumber: 452,
                     columnNumber: 19
                   }, this)
                 ]
@@ -63191,7 +63193,7 @@ function Collection() {
               !0,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 445,
+                lineNumber: 447,
                 columnNumber: 17
               },
               this
@@ -63205,12 +63207,12 @@ function Collection() {
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "sr-only", children: "Filters" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 457,
+                    lineNumber: 459,
                     columnNumber: 19
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(FunnelIcon_default, { className: "h-5 w-5", "aria-hidden": "true" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 458,
+                    lineNumber: 460,
                     columnNumber: 19
                   }, this)
                 ]
@@ -63219,32 +63221,32 @@ function Collection() {
               !0,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 452,
+                lineNumber: 454,
                 columnNumber: 17
               },
               this
             )
           ] }, void 0, !0, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 399,
+            lineNumber: 401,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 394,
+          lineNumber: 396,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("section", { "aria-labelledby": "products-heading", className: "pb-24 pt-6", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h2", { id: "products-heading", className: "sr-only", children: "Products" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 464,
+            lineNumber: 466,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "shadow-md px-4 py-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("form", { className: "hidden lg:block lg:sticky lg:top-[120px]", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h3", { className: "sr-only", children: "Categories" }, void 0, !1, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 472,
+                lineNumber: 474,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63267,7 +63269,7 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 482,
+                          lineNumber: 484,
                           columnNumber: 27
                         },
                         this
@@ -63277,7 +63279,7 @@ function Collection() {
                     !1,
                     {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 478,
+                      lineNumber: 480,
                       columnNumber: 25
                     },
                     this
@@ -63287,7 +63289,7 @@ function Collection() {
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 473,
+                  lineNumber: 475,
                   columnNumber: 21
                 },
                 this
@@ -63301,7 +63303,7 @@ function Collection() {
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h3", { className: "-my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white py-3 text-[18px] text-black font-bold", children: [
                       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "", children: section.name }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 502,
+                        lineNumber: 504,
                         columnNumber: 33
                       }, this),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("span", { className: "ml-6 flex items-center", children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63314,7 +63316,7 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 505,
+                          lineNumber: 507,
                           columnNumber: 37
                         },
                         this
@@ -63328,22 +63330,22 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 510,
+                          lineNumber: 512,
                           columnNumber: 37
                         },
                         this
                       ) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 503,
+                        lineNumber: 505,
                         columnNumber: 33
                       }, this)
                     ] }, void 0, !0, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 501,
+                      lineNumber: 503,
                       columnNumber: 31
                     }, this) }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 500,
+                      lineNumber: 502,
                       columnNumber: 29
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "space-y-4", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63366,7 +63368,7 @@ function Collection() {
                             !1,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 525,
+                              lineNumber: 527,
                               columnNumber: 37
                             },
                             this
@@ -63382,7 +63384,7 @@ function Collection() {
                             !1,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 534,
+                              lineNumber: 536,
                               columnNumber: 37
                             },
                             this
@@ -63393,22 +63395,22 @@ function Collection() {
                       !0,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 521,
+                        lineNumber: 523,
                         columnNumber: 35
                       },
                       this
                     )) }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 519,
+                      lineNumber: 521,
                       columnNumber: 31
                     }, this) }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 518,
+                      lineNumber: 520,
                       columnNumber: 29
                     }, this)
                   ] }, void 0, !0, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 499,
+                    lineNumber: 501,
                     columnNumber: 27
                   }, this)
                 },
@@ -63416,18 +63418,18 @@ function Collection() {
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 493,
+                  lineNumber: 495,
                   columnNumber: 23
                 },
                 this
               ))
             ] }, void 0, !0, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 471,
+              lineNumber: 473,
               columnNumber: 19
             }, this) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 470,
+              lineNumber: 472,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "lg:col-span-3", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "w-full max-w-screen-xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "cursor product-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4", children: productsToShow.map((product, index2) => {
@@ -63452,14 +63454,14 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 565,
+                          lineNumber: 567,
                           columnNumber: 29
                         },
                         this
                       ),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h2", { className: "sm:text-lg text-[17px] font-semibold mt-2 text-center", children: product.title }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 570,
+                        lineNumber: 572,
                         columnNumber: 29
                       }, this),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "h-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h1", { className: "text-center sm:text-[26px] text-[21px] font-bold m-auto w-full", children: [
@@ -63467,11 +63469,11 @@ function Collection() {
                         " \xA0 Rs"
                       ] }, void 0, !0, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 574,
+                        lineNumber: 576,
                         columnNumber: 31
                       }, this) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 573,
+                        lineNumber: 575,
                         columnNumber: 29
                       }, this),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex justify-center py-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63484,18 +63486,18 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 579,
+                          lineNumber: 581,
                           columnNumber: 29
                         },
                         this
                       ) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 578,
+                        lineNumber: 580,
                         columnNumber: 29
                       }, this)
                     ] }, void 0, !0, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 564,
+                      lineNumber: 566,
                       columnNumber: 27
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "px-1 py-1 flex justify-center gap-[10px] items-center ", children: [
@@ -63518,7 +63520,7 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 596,
+                                lineNumber: 598,
                                 columnNumber: 35
                               },
                               this
@@ -63534,7 +63536,7 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 601,
+                                lineNumber: 603,
                                 columnNumber: 35
                               },
                               this
@@ -63545,13 +63547,13 @@ function Collection() {
                         !0,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 588,
+                          lineNumber: 590,
                           columnNumber: 33
                         },
                         this
                       ) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 586,
+                        lineNumber: 588,
                         columnNumber: 31
                       }, this),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
@@ -63575,13 +63577,13 @@ function Collection() {
                             !1,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 617,
+                              lineNumber: 619,
                               columnNumber: 37
                             },
                             this
                           ) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 616,
+                            lineNumber: 618,
                             columnNumber: 35
                           }, this)
                         },
@@ -63589,14 +63591,14 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 609,
+                          lineNumber: 611,
                           columnNumber: 31
                         },
                         this
                       )
                     ] }, void 0, !0, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 585,
+                      lineNumber: 587,
                       columnNumber: 29
                     }, this)
                   ]
@@ -63605,55 +63607,55 @@ function Collection() {
                 !0,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 557,
+                  lineNumber: 559,
                   columnNumber: 27
                 },
                 this
               ) }, product.id, !1, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 556,
+                lineNumber: 558,
                 columnNumber: 25
               }, this);
             }) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 554,
+              lineNumber: 556,
               columnNumber: 21
             }, this) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 553,
+              lineNumber: 555,
               columnNumber: 19
             }, this) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 552,
+              lineNumber: 554,
               columnNumber: 17
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 468,
+            lineNumber: 470,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 463,
+          lineNumber: 465,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 388,
+        lineNumber: 390,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 238,
+      lineNumber: 240,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 237,
+      lineNumber: 239,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($locale).collections.$handle.jsx",
-    lineNumber: 230,
+    lineNumber: 232,
     columnNumber: 5
   }, this);
 }
@@ -65505,7 +65507,7 @@ function Recover() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "sm:w-1/2  sm:block", children: /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(
       "img",
       {
-        src: "https://media.sugarpop.com/upload/LoginSideImg.png",
+        src: "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/LoginSideImg-Photoroom_1_2.png?v=1709296234",
         alt: "Login Background",
         className: "w-full h-full object-cover"
       },
@@ -65755,270 +65757,204 @@ __export(locale_products_handle_exports, {
   loader: () => loader13,
   meta: () => meta10
 });
-var import_react89 = __toESM(require_react());
-var import_react91 = __toESM(require_react());
+var import_react80 = __toESM(require_react());
+var import_react82 = __toESM(require_react());
 
 // app/components/ProductsCorousel.jsx
-var import_react79 = __toESM(require_react());
-var import_react_responsive5 = __toESM(require_react_responsive()), import_jsx_dev_runtime26 = __toESM(require_jsx_dev_runtime()), ProductsCorousel = ({ products: products2 }) => {
-  let noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129", productsToShow = [], [startIndex, setStartIndex] = (0, import_react79.useState)(0), endIndex = (0, import_react_responsive5.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2;
-  (products2 != null || products2 != null) && (productsToShow = products2.edges.slice(startIndex, startIndex + endIndex));
+var import_react79 = __toESM(require_react()), import_react_responsive5 = __toESM(require_react_responsive());
+var import_jsx_dev_runtime26 = __toESM(require_jsx_dev_runtime()), ProductsCorousel = ({ products: products2 }) => {
+  let noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129", productsToShow = [], [startIndex, setStartIndex] = (0, import_react79.useState)(0), lines = [], endIndex = (0, import_react_responsive5.useMediaQuery)({ minWidth: 1024 }) ? 4 : 2;
+  (products2 != null || products2 != null) && (productsToShow = products2.edges.slice(startIndex, startIndex + endIndex), console.log(productsToShow));
   let goToProduct = (url_path) => {
     window.location.href = url_path;
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6 py-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "relative", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "flex mobile-productView", children: productsToShow.map((product) => /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
-      "div",
-      {
-        className: "w-full sm:w-1/3 md:w-1/3 lg:px-4 sm:px-1 md:px-3",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "mst-card bg-white rounded-lg shadow-lg p-2 shadow-md", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "cursor", onClick: () => goToProduct(`/products/${product.node.handle}`), children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
-              "img",
-              {
-                src: `${product.node.images.edges.length > 0 ? product.node.images.edges[0].node.url : noImg}`,
-                alt: product.node.title,
-                className: "w-full h-auto"
-              },
-              void 0,
-              !1,
-              {
-                fileName: "app/components/ProductsCorousel.jsx",
-                lineNumber: 52,
-                columnNumber: 19
-              },
-              this
-            ),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h2", { className: "text-lg font-semibold mt-2 text-center", children: product.node.title }, void 0, !1, {
+  return products2.edges.map((product) => {
+    product.node.variants.edges.map((line) => {
+      lines.push([
+        {
+          merchandiseId: line.node.id,
+          quantity: 1
+        }
+      ]);
+    });
+  }), /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6 py-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "relative", children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "flex mobile-productView", children: productsToShow.map((product, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
+    "div",
+    {
+      className: "w-full sm:w-1/3 md:w-1/3 lg:px-4 sm:px-1 md:px-3",
+      children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "mst-card bg-white rounded-lg shadow-lg p-2 shadow-md", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "cursor", onClick: () => goToProduct(`/products/${product.node.handle}`), children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
+            "img",
+            {
+              src: `${product.node.images.edges.length > 0 ? product.node.images.edges[0].node.url : noImg}`,
+              alt: product.node.title,
+              className: "w-full h-auto"
+            },
+            void 0,
+            !1,
+            {
               fileName: "app/components/ProductsCorousel.jsx",
-              lineNumber: 57,
+              lineNumber: 65,
               columnNumber: 19
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "h-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h1", { className: "text-center font-bold h-full w-full m-auto", children: "\u20B9255" }, void 0, !1, {
-              fileName: "app/components/ProductsCorousel.jsx",
-              lineNumber: 61,
-              columnNumber: 21
-            }, this) }, void 0, !1, {
-              fileName: "app/components/ProductsCorousel.jsx",
-              lineNumber: 60,
-              columnNumber: 19
-            }, this)
-          ] }, void 0, !0, {
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h2", { className: "text-lg font-semibold mt-2 text-center", children: product.node.title }, void 0, !1, {
             fileName: "app/components/ProductsCorousel.jsx",
-            lineNumber: 51,
-            columnNumber: 17
+            lineNumber: 70,
+            columnNumber: 19
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "px-1 py-1 flex justify-between items-center  sm:flex-row flex-row", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "mr-3", children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
-              "svg",
-              {
-                xmlns: "http://www.w3.org/2000/svg",
-                viewBox: "0 0 32 33",
-                xmlSpace: "preserve",
-                width: "2.8em",
-                height: "2.8em",
-                children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
-                    "path",
-                    {
-                      d: "M9 .5h14c4.7 0 8.5 3.8 8.5 8.5v14c0 4.7-3.8 8.5-8.5 8.5H9C4.3 31.5.5 27.7.5 23V9C.5 4.3 4.3.5 9 .5z",
-                      fill: "rgb(255, 255, 255)",
-                      stroke: "rgb(0, 0, 0)"
-                    },
-                    void 0,
-                    !1,
-                    {
-                      fileName: "app/components/ProductsCorousel.jsx",
-                      lineNumber: 76,
-                      columnNumber: 23
-                    },
-                    this
-                  ),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
-                    "path",
-                    {
-                      d: "M22.3 11.8c.4.4.7.9.9 1.4.2.5.3 1.1.3 1.6 0 .6-.1 1.1-.3 1.6-.2.5-.5 1-.9 1.4l-5.6 5.6s-.1 0-.1.1h-.2s-.1 0-.1-.1l-5.6-5.6C10 17 9.5 16 9.5 14.9c0-1.1.3-2.1 1-2.9.7-.8 1.7-1.3 2.7-1.5 1.1-.1 2.1.2 3 .8l.3.2.3-.2c.8-.6 1.8-.9 2.8-.8 1.1.1 2 .5 2.7 1.3z",
-                      fill: "none",
-                      stroke: "rgb(0, 0, 0)"
-                    },
-                    void 0,
-                    !1,
-                    {
-                      fileName: "app/components/ProductsCorousel.jsx",
-                      lineNumber: 81,
-                      columnNumber: 23
-                    },
-                    this
-                  )
-                ]
-              },
-              void 0,
-              !0,
-              {
-                fileName: "app/components/ProductsCorousel.jsx",
-                lineNumber: 69,
-                columnNumber: 21
-              },
-              this
-            ) }, void 0, !1, {
-              fileName: "app/components/ProductsCorousel.jsx",
-              lineNumber: 68,
-              columnNumber: 19
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("button", { className: "w-full h-11 bg-black hover:bg-blue-700 text-white text-[13px] sm:text-[18px] font-bold py-1 px-1 rounded-lg", children: "ADD TO Pro" }, void 0, !1, {
-              fileName: "app/components/ProductsCorousel.jsx",
-              lineNumber: 88,
-              columnNumber: 19
-            }, this)
+          /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "h-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h1", { className: "text-center font-bold h-full w-full m-auto", children: [
+            product.node.priceRange.minVariantPrice.amount,
+            " Rs"
           ] }, void 0, !0, {
             fileName: "app/components/ProductsCorousel.jsx",
-            lineNumber: 67,
-            columnNumber: 17
+            lineNumber: 74,
+            columnNumber: 21
+          }, this) }, void 0, !1, {
+            fileName: "app/components/ProductsCorousel.jsx",
+            lineNumber: 73,
+            columnNumber: 19
           }, this)
         ] }, void 0, !0, {
           fileName: "app/components/ProductsCorousel.jsx",
-          lineNumber: 50,
-          columnNumber: 15
+          lineNumber: 64,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "px-1 py-1 flex items-center sm:flex-row gap-3 justify-center w-[100%]", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "w-[25%] flex justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
+            "svg",
+            {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 32 33",
+              xmlSpace: "preserve",
+              className: "sm:w-[43px] w-[43px] like-home",
+              children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
+                  "path",
+                  {
+                    d: "M9 .5h14c4.7 0 8.5 3.8 8.5 8.5v14c0 4.7-3.8 8.5-8.5 8.5H9C4.3 31.5.5 27.7.5 23V9C.5 4.3 4.3.5 9 .5z",
+                    fill: "rgb(255, 255, 255)",
+                    stroke: "rgb(0, 0, 0)"
+                  },
+                  void 0,
+                  !1,
+                  {
+                    fileName: "app/components/ProductsCorousel.jsx",
+                    lineNumber: 88,
+                    columnNumber: 23
+                  },
+                  this
+                ),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
+                  "path",
+                  {
+                    d: "M22.3 11.8c.4.4.7.9.9 1.4.2.5.3 1.1.3 1.6 0 .6-.1 1.1-.3 1.6-.2.5-.5 1-.9 1.4l-5.6 5.6s-.1 0-.1.1h-.2s-.1 0-.1-.1l-5.6-5.6C10 17 9.5 16 9.5 14.9c0-1.1.3-2.1 1-2.9.7-.8 1.7-1.3 2.7-1.5 1.1-.1 2.1.2 3 .8l.3.2.3-.2c.8-.6 1.8-.9 2.8-.8 1.1.1 2 .5 2.7 1.3z",
+                    fill: "none",
+                    stroke: "rgb(0, 0, 0)"
+                  },
+                  void 0,
+                  !1,
+                  {
+                    fileName: "app/components/ProductsCorousel.jsx",
+                    lineNumber: 93,
+                    columnNumber: 23
+                  },
+                  this
+                )
+              ]
+            },
+            void 0,
+            !0,
+            {
+              fileName: "app/components/ProductsCorousel.jsx",
+              lineNumber: 82,
+              columnNumber: 21
+            },
+            this
+          ) }, void 0, !1, {
+            fileName: "app/components/ProductsCorousel.jsx",
+            lineNumber: 81,
+            columnNumber: 19
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { "d-line": index2, className: "w-[75%]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
+            CartForm,
+            {
+              route: "/cart",
+              inputs: { lines: lines[index2] },
+              action: CartForm.ACTIONS.LinesAdd,
+              className: "w-[83%] ",
+              children: (fetcher) => /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(import_jsx_dev_runtime26.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
+                "button",
+                {
+                  disabled: !product.node.variants || !product.node.variants.edges[0].node.availableForSale,
+                  className: "w-[100%] h-11 bg-black hover:bg-blue-700 text-white font-bold py-1 rounded-lg inline-block home-product",
+                  type: "submit",
+                  onClick: () => {
+                    window.location.href = window.location.href + "#cart-aside";
+                  },
+                  children: product.node.variants && product.node.variants.edges[0].node.availableForSale ? "ADD TO CART" : "Sold out"
+                },
+                void 0,
+                !1,
+                {
+                  fileName: "app/components/ProductsCorousel.jsx",
+                  lineNumber: 110,
+                  columnNumber: 27
+                },
+                this
+              ) }, void 0, !1, {
+                fileName: "app/components/ProductsCorousel.jsx",
+                lineNumber: 109,
+                columnNumber: 25
+              }, this)
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/components/ProductsCorousel.jsx",
+              lineNumber: 102,
+              columnNumber: 21
+            },
+            this
+          ) }, void 0, !1, {
+            fileName: "app/components/ProductsCorousel.jsx",
+            lineNumber: 101,
+            columnNumber: 19
+          }, this)
+        ] }, void 0, !0, {
+          fileName: "app/components/ProductsCorousel.jsx",
+          lineNumber: 80,
+          columnNumber: 17
         }, this)
-      },
-      product.node.id,
-      !1,
-      {
+      ] }, void 0, !0, {
         fileName: "app/components/ProductsCorousel.jsx",
-        lineNumber: 47,
-        columnNumber: 13
-      },
-      this
-    )) }, void 0, !1, {
+        lineNumber: 63,
+        columnNumber: 15
+      }, this)
+    },
+    product.node.id,
+    !1,
+    {
       fileName: "app/components/ProductsCorousel.jsx",
-      lineNumber: 45,
-      columnNumber: 9
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
-      "button",
-      {
-        className: "absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 ml-4 hover:bg-opacity-75",
-        onClick: () => setStartIndex(
-          (prevIndex) => prevIndex === 0 ? products2.edges.length - products2.edges.length % 2 : prevIndex
-        ),
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
-          MdChevronLeft,
-          {
-            className: "opacity-50 cursor-pointer hover:opacity-100",
-            size: 40
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/components/ProductsCorousel.jsx",
-            lineNumber: 106,
-            columnNumber: 9
-          },
-          this
-        )
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/ProductsCorousel.jsx",
-        lineNumber: 96,
-        columnNumber: 9
-      },
-      this
-    ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
-      "button",
-      {
-        className: "absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75",
-        onClick: () => setStartIndex(
-          (prevIndex) => (prevIndex + 1) % products2.edges.length
-        ),
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
-          MdChevronRight,
-          {
-            className: "opacity-50 cursor-pointer hover:opacity-100",
-            size: 40
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/components/ProductsCorousel.jsx",
-            lineNumber: 119,
-            columnNumber: 9
-          },
-          this
-        )
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/ProductsCorousel.jsx",
-        lineNumber: 111,
-        columnNumber: 9
-      },
-      this
-    )
-  ] }, void 0, !0, {
+      lineNumber: 60,
+      columnNumber: 13
+    },
+    this
+  )) }, void 0, !1, {
     fileName: "app/components/ProductsCorousel.jsx",
-    lineNumber: 44,
+    lineNumber: 58,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
+    fileName: "app/components/ProductsCorousel.jsx",
+    lineNumber: 57,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/ProductsCorousel.jsx",
-    lineNumber: 43,
+    lineNumber: 56,
     columnNumber: 5
   }, this);
 }, ProductsCorousel_default = ProductsCorousel;
-
-// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/providers/JudgemeLoader.js
-var import_react80 = __toESM(require_react()), useJudgeme = ({ shopDomain, publicToken, cdnHost, delay = 500 }) => {
-  (0, import_react80.useEffect)(() => {
-    if (!shopDomain || !publicToken || !cdnHost) {
-      console.log("CONFIG ERROR: Missing config values for store domain, store public token, cdn host");
-      return;
-    }
-    let shopCredentials = `
-      if (typeof jdgm === 'undefined') {
-        let jdgm = {};
-        jdgm.SHOP_DOMAIN = '${shopDomain}';
-        jdgm.PLATFORM = 'shopify';
-        jdgm.PUBLIC_TOKEN = '${publicToken}';
-        window.jdgm = jdgm;
-      };
-    `;
-    fetch(cdnHost + "/widget_preloader.js").then((res) => res.text()).then((text) => {
-      let preloaderFunction = `function jdgm_preloader(){${text}}`, shopCredentialsScript = document.createElement("script"), preloaderScript = document.createElement("script"), installedScript = document.createElement("script");
-      shopCredentialsScript.innerText = shopCredentials, preloaderScript.innerText = preloaderFunction, installedScript.src = cdnHost + "/assets/installed.js", document.head.append(shopCredentialsScript, preloaderScript, installedScript), console.log("Judge.me script loaded");
-    });
-  }, []), (0, import_react80.useEffect)(() => {
-    window.jdgm_rerender && window.clearTimeout(window.jdgm_rerender), window.jdgm_rerender = window.setTimeout(() => {
-      window.clearTimeout(window.jdgm_rerender), window.jdgm_preloader && !window.jdgmCacheServer ? window.jdgm_preloader() : window.jdgmCacheServer ? window.jdgmCacheServer.reloadAll() : console.log("missing Judge.me script");
-    }, delay);
-  });
-}, JudgemeLoader_default = useJudgeme;
-
-// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeCarousel.js
-var import_react81 = __toESM(require_react());
-
-// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeMedals.js
-var import_react82 = __toESM(require_react());
-
-// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeReviewWidget.js
-var import_react83 = __toESM(require_react());
-
-// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeAllReviewsCount.js
-var import_react84 = __toESM(require_react());
-
-// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeAllReviewsRating.js
-var import_react85 = __toESM(require_react());
-
-// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemePreviewBadge.js
-var import_react86 = __toESM(require_react());
-
-// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeVerifiedBadge.js
-var import_react87 = __toESM(require_react());
-
-// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeReviewsTab.js
-var import_react88 = __toESM(require_react());
 
 // app/routes/($locale).products.$handle.jsx
 var import_jsx_dev_runtime27 = __toESM(require_jsx_dev_runtime()), meta10 = ({ data: data2 }) => [{ title: `Hydrogen | ${data2.product.title}` }];
@@ -66047,15 +65983,8 @@ async function loader13({ params, request, context }) {
     product.selectedVariant = firstVariant;
   else if (!product.selectedVariant)
     return redirectToFirstVariant({ product, request });
-  var judgeme = {
-    shopDomain: context.env.JUDGEME_SHOP_DOMAIN,
-    publicToken: context.env.JUDGEME_PUBLIC_TOKEN,
-    cdnHost: context.env.JUDGEME_CDN_HOST,
-    delay: 500
-    // optional parameter, default to 500ms
-  };
   let { collections } = await storefront.query(FEATURED_COLLECTION_QUERY);
-  return defer3({ product, variants, productsreturn, judgeme, recommendedProducts: collections });
+  return defer3({ product, variants, productsreturn, recommendedProducts: collections });
 }
 function redirectToFirstVariant({ product, request }) {
   let url = new URL(request.url), firstVariant = product.variants.nodes[0];
@@ -66072,7 +66001,7 @@ function redirectToFirstVariant({ product, request }) {
   );
 }
 function Product() {
-  let { product, variants, productsreturn, judgeme, recommendedProducts } = useLoaderData2(), { selectedVariant } = product, [socialCount, setSocialCount] = (0, import_react91.useState)();
+  let { product, variants, productsreturn, recommendedProducts } = useLoaderData2(), { selectedVariant } = product, [socialCount, setSocialCount] = (0, import_react82.useState)();
   async function setWishlistSocialCount(skipCache) {
   }
   return /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(import_jsx_dev_runtime27.Fragment, { children: [
@@ -66089,19 +66018,19 @@ function Product() {
       !1,
       {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 153,
+        lineNumber: 135,
         columnNumber: 7
       },
       this
     ),
     productsreturn && /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(ProductsCorousel_default, { products: productsreturn }, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 160,
+      lineNumber: 142,
       columnNumber: 26
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 150,
+    lineNumber: 132,
     columnNumber: 5
   }, this);
 }
@@ -66110,7 +66039,7 @@ function ProductImage({ image, activeImg, setActiveImage, product }) {
   product.images.edges.forEach((item) => {
     ImageSrc.push(item.node.url);
   });
-  let [images, setImages] = (0, import_react91.useState)(ImageSrc);
+  let [images, setImages] = (0, import_react82.useState)(ImageSrc);
   return image ? /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(import_jsx_dev_runtime27.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "lg:grid flex flex-col-reverse lg:grid-cols-[20%_80%] gap-2 lg:gap-0 items-center", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "flex  lg:flex-col  justify-between lg:h-[325px] overflow-x-auto gap-[5px]", children: product.images.edges && product.images.edges.map((item, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
       "img",
@@ -66124,13 +66053,13 @@ function ProductImage({ image, activeImg, setActiveImage, product }) {
       !1,
       {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 186,
+        lineNumber: 168,
         columnNumber: 15
       },
       this
     )) }, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 183,
+      lineNumber: 165,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
@@ -66144,22 +66073,22 @@ function ProductImage({ image, activeImg, setActiveImage, product }) {
       !1,
       {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 194,
+        lineNumber: 176,
         columnNumber: 9
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 182,
+    lineNumber: 164,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 181,
+    lineNumber: 163,
     columnNumber: 5
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "" }, void 0, !1, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 178,
+    lineNumber: 160,
     columnNumber: 12
   }, this);
 }
@@ -66169,29 +66098,29 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
   product.images.edges.forEach((item) => {
     ImageSrc.push(item.node.url);
   });
-  let [images, setImages] = (0, import_react91.useState)(ImageSrc), expaction = (_a2 = product.metafields[0]) == null ? void 0 : _a2.value, key_ingredients = (_b = product.metafields[1]) == null ? void 0 : _b.value, How_To_use = (_c = product.metafields[2]) == null ? void 0 : _c.value, who_can_use = (_d = product.metafields[3]) == null ? void 0 : _d.value, why_us = (_e3 = product.metafields[4]) == null ? void 0 : _e3.value, ingredient = (_f = product.metafields[5]) == null ? void 0 : _f.value, [activeTab, setActiveTab] = (0, import_react91.useState)("Ingredient"), handleTabClick = (tab) => {
+  let [images, setImages] = (0, import_react82.useState)(ImageSrc), expaction = (_a2 = product.metafields[0]) == null ? void 0 : _a2.value, key_ingredients = (_b = product.metafields[1]) == null ? void 0 : _b.value, How_To_use = (_c = product.metafields[2]) == null ? void 0 : _c.value, who_can_use = (_d = product.metafields[3]) == null ? void 0 : _d.value, why_us = (_e3 = product.metafields[4]) == null ? void 0 : _e3.value, ingredient = (_f = product.metafields[5]) == null ? void 0 : _f.value, [activeTab, setActiveTab] = (0, import_react82.useState)("Ingredient"), handleTabClick = (tab) => {
     setActiveTab(tab);
-  }, [activeImg, setActiveImage] = (0, import_react91.useState)(images[0]), [amount, setAmount] = (0, import_react91.useState)(1), [moreText, setMoreText] = (0, import_react91.useState)(!0), [moreOffer, setMoreOffer] = (0, import_react91.useState)(!1), [more, setMore] = (0, import_react91.useState)(!1), [moreContent, setMoreContent] = (0, import_react91.useState)("+View More");
+  }, [activeImg, setActiveImage] = (0, import_react82.useState)(images[0]), [amount, setAmount] = (0, import_react82.useState)(1), [moreText, setMoreText] = (0, import_react82.useState)(!0), [moreOffer, setMoreOffer] = (0, import_react82.useState)(!1), [more, setMore] = (0, import_react82.useState)(!1), [moreContent, setMoreContent] = (0, import_react82.useState)("+View More");
   return /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(import_jsx_dev_runtime27.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "flex m-[2%] gap-2 items-center", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(Link2, { to: "/", children: "Home" }, void 0, !1, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 233,
+        lineNumber: 215,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("img", { src: "/next.png", alt: "next", width: 20, height: 20 }, void 0, !1, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 234,
+        lineNumber: 216,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("span", { className: "font-semibold", children: "Product page" }, void 0, !1, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 235,
+        lineNumber: 217,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 232,
+      lineNumber: 214,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "final-product mst-card shadow-lg p-4 flex flex-col justify-between lg:flex-row lg:gap-8 lg:ml-8 lg:mr-8 items-start relative", children: [
@@ -66207,20 +66136,20 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
         !1,
         {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 246,
+          lineNumber: 228,
           columnNumber: 11
         },
         this
       ) }, void 0, !1, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 238,
+        lineNumber: 220,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "flex flex-col lg:w-3/4", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("h1", { className: "text-2xl font-semibold mt-0 mb-[15px]", children: product.title }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 256,
+            lineNumber: 238,
             columnNumber: 13
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "flex py-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
@@ -66233,27 +66162,27 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             !1,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 260,
+              lineNumber: 242,
               columnNumber: 13
             },
             this
           ) }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 259,
+            lineNumber: 241,
             columnNumber: 13
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(ProductPrice, { selectedVariant }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 270,
+            lineNumber: 252,
             columnNumber: 13
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 255,
+          lineNumber: 237,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
-          import_react89.Suspense,
+          import_react80.Suspense,
           {
             fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
               ProductForm,
@@ -66268,7 +66197,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
               !1,
               {
                 fileName: "app/routes/($locale).products.$handle.jsx",
-                lineNumber: 275,
+                lineNumber: 257,
                 columnNumber: 17
               },
               this
@@ -66293,7 +66222,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
                     !1,
                     {
                       fileName: "app/routes/($locale).products.$handle.jsx",
-                      lineNumber: 289,
+                      lineNumber: 271,
                       columnNumber: 19
                     },
                     this
@@ -66304,7 +66233,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
               !1,
               {
                 fileName: "app/routes/($locale).products.$handle.jsx",
-                lineNumber: 284,
+                lineNumber: 266,
                 columnNumber: 15
               },
               this
@@ -66314,24 +66243,24 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
           !1,
           {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 273,
+            lineNumber: 255,
             columnNumber: 13
           },
           this
         ) }, void 0, !1, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 272,
+          lineNumber: 254,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("h2", { className: "mt-[10px]", children: "Product Description" }, void 0, !1, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 300,
+          lineNumber: 282,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "shadow-p relative py-[10px]", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("p", { className: "text-gray-700", children: product.description.substr(0, 200) }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 302,
+            lineNumber: 284,
             columnNumber: 13
           }, this),
           moreText && /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(import_jsx_dev_runtime27.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
@@ -66344,18 +66273,18 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             !1,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 308,
+              lineNumber: 290,
               columnNumber: 17
             },
             this
           ) }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 306,
+            lineNumber: 288,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 301,
+          lineNumber: 283,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
@@ -66368,18 +66297,18 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
           !1,
           {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 316,
+            lineNumber: 298,
             columnNumber: 11
           },
           this
         ) }, void 0, !1, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 315,
+          lineNumber: 297,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 254,
+        lineNumber: 236,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "absolute cursor-pointer flex flex-col items-center top-[-36px] lg:top-[15px] right-2", children: [
@@ -66396,24 +66325,24 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
           !1,
           {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 323,
+            lineNumber: 305,
             columnNumber: 11
           },
           this
         ),
         /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("span", { className: "text-sm font-semibold ", children: "Share" }, void 0, !1, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 330,
+          lineNumber: 312,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 322,
+        lineNumber: 304,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 237,
+      lineNumber: 219,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "max-w-[1320px] p-[10px] m-auto", children: [
@@ -66424,7 +66353,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
           " ?"
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 335,
+          lineNumber: 317,
           columnNumber: 11
         }, this),
         expaction && /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
@@ -66437,20 +66366,20 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
           !1,
           {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 339,
+            lineNumber: 321,
             columnNumber: 13
           },
           this
         )
       ] }, void 0, !0, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 334,
+        lineNumber: 316,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "container mx-auto mt-5", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("h1", { className: "lg:text-3xl font-semibold mb-4 text-center mt-[4%] mb-[2%]", children: "Product Information" }, void 0, !1, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 346,
+          lineNumber: 328,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "flex space-x-4 overflow-y-auto lg:justify-center my-[20px]", children: [
@@ -66466,7 +66395,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             !1,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 359,
+              lineNumber: 341,
               columnNumber: 13
             },
             this
@@ -66483,7 +66412,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             !1,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 368,
+              lineNumber: 350,
               columnNumber: 13
             },
             this
@@ -66500,7 +66429,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             !1,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 377,
+              lineNumber: 359,
               columnNumber: 13
             },
             this
@@ -66517,14 +66446,14 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             !1,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 386,
+              lineNumber: 368,
               columnNumber: 13
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 349,
+          lineNumber: 331,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "mt-4", children: [
@@ -66538,13 +66467,13 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             !1,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 400,
+              lineNumber: 382,
               columnNumber: 19
             },
             this
           ) }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 398,
+            lineNumber: 380,
             columnNumber: 15
           }, this),
           activeTab === "How to Use" && How_To_use && /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "overflow-y-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
@@ -66557,55 +66486,55 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             !1,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 409,
+              lineNumber: 391,
               columnNumber: 17
             },
             this
           ) }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 408,
+            lineNumber: 390,
             columnNumber: 15
           }, this),
           activeTab === "Concerns" && who_can_use && /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "overflow-y-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { dangerouslySetInnerHTML: { __html: who_can_use } }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 417,
+            lineNumber: 399,
             columnNumber: 17
           }, this) }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 416,
+            lineNumber: 398,
             columnNumber: 15
           }, this),
           activeTab === "Ingredient" && ingredient && /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "overflow-y-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { dangerouslySetInnerHTML: { __html: ingredient } }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 422,
+            lineNumber: 404,
             columnNumber: 17
           }, this) }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 421,
+            lineNumber: 403,
             columnNumber: 15
           }, this),
           activeTab === "Why us" && why_us && /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "overflow-y-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { dangerouslySetInnerHTML: { __html: why_us } }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 427,
+            lineNumber: 409,
             columnNumber: 17
           }, this) }, void 0, !1, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 426,
+            lineNumber: 408,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 396,
+          lineNumber: 378,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 345,
+        lineNumber: 327,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 333,
+      lineNumber: 315,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "recommended_products", children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
@@ -66618,18 +66547,18 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
       !1,
       {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 434,
+        lineNumber: 416,
         columnNumber: 7
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 433,
+      lineNumber: 415,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 230,
+    lineNumber: 212,
     columnNumber: 5
   }, this);
 }
@@ -66638,43 +66567,43 @@ function ProductPrice({ selectedVariant }) {
     selectedVariant != null && selectedVariant.compareAtPrice ? /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(import_jsx_dev_runtime27.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "product-price-on-sale font-semibold", children: [
       selectedVariant ? /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(Money, { data: selectedVariant.price }, void 0, !1, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 452,
+        lineNumber: 434,
         columnNumber: 32
       }, this) : null,
       /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("s", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(Money, { data: selectedVariant.compareAtPrice }, void 0, !1, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 454,
+        lineNumber: 436,
         columnNumber: 15
       }, this) }, void 0, !1, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 453,
+        lineNumber: 435,
         columnNumber: 13
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 451,
+      lineNumber: 433,
       columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 450,
+      lineNumber: 432,
       columnNumber: 9
     }, this) : (selectedVariant == null ? void 0 : selectedVariant.price) && /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(Money, { className: "font-semibold", data: selectedVariant == null ? void 0 : selectedVariant.price }, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 460,
+      lineNumber: 442,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("span", { className: "font-semibold bg-[#e1eecc] py-1 px-2 text-sm rounded", children: "FREE SHIPPING" }, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 464,
+      lineNumber: 446,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 463,
+      lineNumber: 445,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 448,
+    lineNumber: 430,
     columnNumber: 5
   }, this);
 }
@@ -66686,7 +66615,7 @@ function ProductForm({
   setActiveImage,
   setWishlistSocialCount
 }) {
-  let closeRef = (0, import_react89.useRef)(null);
+  let closeRef = (0, import_react80.useRef)(null);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "product-form", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
       VariantSelector,
@@ -66708,7 +66637,7 @@ function ProductForm({
           !1,
           {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 489,
+            lineNumber: 471,
             columnNumber: 11
           },
           this
@@ -66718,19 +66647,19 @@ function ProductForm({
       !1,
       {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 483,
+        lineNumber: 465,
         columnNumber: 7
       },
       this
     ),
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(Offers, {}, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 500,
+      lineNumber: 482,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("br", {}, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 501,
+      lineNumber: 483,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
@@ -66752,14 +66681,14 @@ function ProductForm({
       !1,
       {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 507,
+        lineNumber: 489,
         columnNumber: 7
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 482,
+    lineNumber: 464,
     columnNumber: 5
   }, this);
 }
@@ -66768,7 +66697,7 @@ function ProductOptions({ option, activeImg, setWishlistSocialCount, closeRef })
   return /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(import_jsx_dev_runtime27.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "product-options", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("h5", { className: "font-semibold", children: option.name }, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 537,
+      lineNumber: 519,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "product-options-grid items-center", children: option.values.map(({ value, isAvailable, isActive, to }) => /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
@@ -66790,7 +66719,7 @@ function ProductOptions({ option, activeImg, setWishlistSocialCount, closeRef })
         },
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { dangerouslySetInnerHTML: { __html: value } }, void 0, !1, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 561,
+          lineNumber: 543,
           columnNumber: 15
         }, this)
       },
@@ -66798,59 +66727,59 @@ function ProductOptions({ option, activeImg, setWishlistSocialCount, closeRef })
       !1,
       {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 541,
+        lineNumber: 523,
         columnNumber: 15
       },
       this
     )) }, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 538,
+      lineNumber: 520,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("br", {}, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 566,
+      lineNumber: 548,
       columnNumber: 9
     }, this)
   ] }, option.name, !0, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 536,
+    lineNumber: 518,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 535,
+    lineNumber: 517,
     columnNumber: 5
   }, this);
 }
 var Offers = () => /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "bg-[#f7f7f7] py-[10px] pl-[50px]", children: [
   /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("h2", { className: "text-[16px]", children: "AVAILABLE OFFERS!!" }, void 0, !1, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 575,
+    lineNumber: 557,
     columnNumber: 5
   }, this),
   /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("ul", { className: "text-[#757575] list-disc", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("li", { children: "FREE Mivi Play Bluetooth Speakers on a spend of Rs.2199" }, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 577,
+      lineNumber: 559,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("li", { children: "Holographic Pouch + Liquid Lipstick on a spend of Rs.599" }, void 0, !1, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 578,
+      lineNumber: 560,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 576,
+    lineNumber: 558,
     columnNumber: 5
   }, this)
 ] }, void 0, !0, {
   fileName: "app/routes/($locale).products.$handle.jsx",
-  lineNumber: 574,
+  lineNumber: 556,
   columnNumber: 5
 }, this);
 function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
-  let [amount, setAmount] = (0, import_react91.useState)(1);
+  let [amount, setAmount] = (0, import_react82.useState)(1);
   return lines[0].quantity = amount, /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(import_jsx_dev_runtime27.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
       CartForm,
@@ -66870,7 +66799,7 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
             !1,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 597,
+              lineNumber: 579,
               columnNumber: 13
             },
             this
@@ -66895,14 +66824,14 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
                     !1,
                     {
                       fileName: "app/routes/($locale).products.$handle.jsx",
-                      lineNumber: 607,
+                      lineNumber: 589,
                       columnNumber: 17
                     },
                     this
                   ),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("span", { className: "px-4", children: amount }, void 0, !1, {
                     fileName: "app/routes/($locale).products.$handle.jsx",
-                    lineNumber: 617,
+                    lineNumber: 599,
                     columnNumber: 17
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
@@ -66916,7 +66845,7 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
                     !1,
                     {
                       fileName: "app/routes/($locale).products.$handle.jsx",
-                      lineNumber: 618,
+                      lineNumber: 600,
                       columnNumber: 17
                     },
                     this
@@ -66927,7 +66856,7 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
               !0,
               {
                 fileName: "app/routes/($locale).products.$handle.jsx",
-                lineNumber: 603,
+                lineNumber: 585,
                 columnNumber: 15
               },
               this
@@ -66945,19 +66874,19 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
               !1,
               {
                 fileName: "app/routes/($locale).products.$handle.jsx",
-                lineNumber: 625,
+                lineNumber: 607,
                 columnNumber: 15
               },
               this
             )
           ] }, void 0, !0, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 602,
+            lineNumber: 584,
             columnNumber: 13
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 596,
+          lineNumber: 578,
           columnNumber: 11
         }, this)
       },
@@ -66965,7 +66894,7 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
       !1,
       {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 590,
+        lineNumber: 572,
         columnNumber: 7
       },
       this
@@ -66980,14 +66909,14 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
       !1,
       {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 637,
+        lineNumber: 619,
         columnNumber: 7
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 589,
+    lineNumber: 571,
     columnNumber: 5
   }, this);
 }
@@ -66998,40 +66927,40 @@ function RecommendedProducts({ products: products2, title }) {
       " "
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 674,
+      lineNumber: 656,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(import_react89.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(import_react80.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 676,
+        lineNumber: 658,
         columnNumber: 29
       }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(Await2, { resolve: products2, children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(ProductsCorousel_default, { products: products2 }, void 0, !1, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 679,
+        lineNumber: 661,
         columnNumber: 14
       }, this) }, void 0, !1, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 677,
+        lineNumber: 659,
         columnNumber: 11
       }, this) }, void 0, !1, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 676,
+        lineNumber: 658,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("br", {}, void 0, !1, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 682,
+        lineNumber: 664,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 675,
+      lineNumber: 657,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 673,
+    lineNumber: 655,
     columnNumber: 5
   }, this);
 }
@@ -67187,6 +67116,7 @@ var PRODUCT_VARIANT_FRAGMENT = `#graphql
           variants(first: 100) {
           edges {
           node {
+                availableForSale
                 id
                 metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
                     key
@@ -67240,7 +67170,7 @@ __export(locale_account_profile_exports, {
   loader: () => loader14,
   meta: () => meta11
 });
-var import_react92 = __toESM(require_react());
+var import_react83 = __toESM(require_react());
 var import_jsx_dev_runtime28 = __toESM(require_jsx_dev_runtime()), meta11 = () => [{ title: "Profile" }];
 async function loader14({ context }) {
   return await context.session.get("customerAccessToken") ? json3({}) : redirect3("/account/login");
@@ -67289,7 +67219,7 @@ async function action7({ request, context }) {
   }
 }
 function AccountProfile() {
-  let account = useOutletContext(), { state } = useNavigation(), action11 = useActionData2(), customer = (action11 == null ? void 0 : action11.customer) ?? (account == null ? void 0 : account.customer), [activeTab, setActiveTab] = (0, import_react92.useState)("profile"), handleTabChange = (tab) => {
+  let account = useOutletContext(), { state } = useNavigation(), action11 = useActionData2(), customer = (action11 == null ? void 0 : action11.customer) ?? (account == null ? void 0 : account.customer), [activeTab, setActiveTab] = (0, import_react83.useState)("profile"), handleTabChange = (tab) => {
     setActiveTab(tab);
   }, handleSubmit = (e5) => {
     e5.preventDefault(), console.log("Profile Data:", profileData), console.log("Password Data:", passwordData);
@@ -67682,7 +67612,7 @@ __export(locale_account_login_exports, {
   loader: () => loader17,
   meta: () => meta13
 });
-var import_react96 = __toESM(require_react2());
+var import_react87 = __toESM(require_react2());
 var import_jsx_dev_runtime30 = __toESM(require_jsx_dev_runtime()), meta13 = () => [{ title: "Login" }];
 async function loader17({ context }) {
   return await context.session.get("customerAccessToken") ? redirect3("/account") : json3({});
@@ -68186,7 +68116,7 @@ __export(locale_account_exports2, {
 });
 
 // app/components/DefaultSidebar.jsx
-var import_react99 = __toESM(require_react2());
+var import_react90 = __toESM(require_react2());
 var import_jsx_dev_runtime33 = __toESM(require_jsx_dev_runtime());
 function DefaultSidebar({ heading }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_jsx_dev_runtime33.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("div", { children: [
@@ -68257,7 +68187,7 @@ function DefaultSidebar({ heading }) {
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("a", { href: "/account/order", className: `font-medium text-sm items-center rounded-lg text-gray-900 px-4 py-2.5 flex
                     transition-all duration-200 hover:bg-gray-200 group cursor-pointer`, children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_react99.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(ShoppingBagIcon_default, { className: "h-5 w-5" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_react90.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(ShoppingBagIcon_default, { className: "h-5 w-5" }, void 0, !1, {
             fileName: "app/components/DefaultSidebar.jsx",
             lineNumber: 98,
             columnNumber: 13
@@ -68294,7 +68224,7 @@ function DefaultSidebar({ heading }) {
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("a", { href: "/account/profile", className: `font-medium text-sm items-center rounded-lg text-gray-900 px-4 py-2.5 flex
                     transition-all duration-200 hover:bg-gray-200 group cursor-pointer`, children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_react99.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(UserCircleIcon_default, { className: "h-5 w-5" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_react90.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(UserCircleIcon_default, { className: "h-5 w-5" }, void 0, !1, {
             fileName: "app/components/DefaultSidebar.jsx",
             lineNumber: 113,
             columnNumber: 13
@@ -68331,7 +68261,7 @@ function DefaultSidebar({ heading }) {
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("a", { href: "/account/addresses", className: `font-medium text-sm items-center rounded-lg text-gray-900 px-4 py-2.5 flex
                     transition-all duration-200 hover:bg-gray-200 group cursor-pointer`, children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_react99.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(UserCircleIcon_default, { className: "h-5 w-5" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_react90.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(UserCircleIcon_default, { className: "h-5 w-5" }, void 0, !1, {
             fileName: "app/components/DefaultSidebar.jsx",
             lineNumber: 128,
             columnNumber: 13
@@ -68418,7 +68348,7 @@ function DefaultSidebar({ heading }) {
 function Logout2() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("a", { href: "#", className: `font-medium text-sm items-center rounded-lg text-gray-900 px-4 py-2.5 flex
                     transition-all duration-200 hover:bg-gray-200 group cursor-pointer`, children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_react99.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(PowerIcon_default, { className: "h-5 w-5" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "justify-center items-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("span", { className: "items-center justify-center flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_react90.ListItemPrefix, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(PowerIcon_default, { className: "h-5 w-5" }, void 0, !1, {
       fileName: "app/components/DefaultSidebar.jsx",
       lineNumber: 159,
       columnNumber: 7
@@ -68619,11 +68549,11 @@ __export(locale_index_exports, {
 var import_react106 = __toESM(require_react());
 
 // app/components/CustomizedProducts.jsx
-var import_react102 = __toESM(require_react());
+var import_react93 = __toESM(require_react());
 var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_dev_runtime35 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel = ({ products: products2, title }) => {
-  let noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129", [startIndex, setStartIndex] = (0, import_react102.useState)(0);
+  let noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129", [startIndex, setStartIndex] = (0, import_react93.useState)(0);
   var len = products2.length;
-  let eIndex = (0, import_react_responsive6.useMediaQuery)({ minWidth: 1024 }) ? len <= 4 ? len : 3 : 2, [endIndex, setEndIndex] = (0, import_react102.useState)(eIndex), productsToShow = products2.slice(startIndex, endIndex), nextProducts = () => {
+  let eIndex = (0, import_react_responsive6.useMediaQuery)({ minWidth: 1024 }) ? len <= 4 ? len : 3 : 2, [endIndex, setEndIndex] = (0, import_react93.useState)(eIndex), productsToShow = products2.slice(startIndex, endIndex), nextProducts = () => {
     setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
   }, prevProducts = () => {
     setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
@@ -68736,9 +68666,9 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
     columnNumber: 7
   }, this);
 }, DesktopCorousel = ({ products: products2, title }) => {
-  let noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129", [startIndex, setStartIndex] = (0, import_react102.useState)(0);
+  let noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129", [startIndex, setStartIndex] = (0, import_react93.useState)(0);
   var len = products2.length;
-  let eIndex = (0, import_react_responsive6.useMediaQuery)({ minWidth: 1024 }) ? len <= 4 ? len : 4 : 2, [endIndex, setEndIndex] = (0, import_react102.useState)(eIndex), productsToShow = products2.slice(startIndex, endIndex), nextProducts = () => {
+  let eIndex = (0, import_react_responsive6.useMediaQuery)({ minWidth: 1024 }) ? len <= 4 ? len : 4 : 2, [endIndex, setEndIndex] = (0, import_react93.useState)(eIndex), productsToShow = products2.slice(startIndex, endIndex), nextProducts = () => {
     setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
   }, prevProducts = () => {
     setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
@@ -68891,9 +68821,9 @@ var import_react_responsive6 = __toESM(require_react_responsive()), import_jsx_d
 var import_react_responsive9 = __toESM(require_react_responsive());
 
 // app/components/CustomizedCollection.jsx
-var import_react103 = __toESM(require_react());
+var import_react94 = __toESM(require_react());
 var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_dev_runtime36 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel2 = ({ products: products2 }) => {
-  let [startIndex, setStartIndex] = (0, import_react103.useState)(0);
+  let [startIndex, setStartIndex] = (0, import_react94.useState)(0);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("h1", { className: "text-center lg:text=[28px] text-[20px] mt-[15px]", children: "Choose Your Own Fashion" }, void 0, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
@@ -68930,7 +68860,7 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
     columnNumber: 5
   }, this);
 }, DesktopCorousel2 = ({ products: products2, title }) => {
-  let [startIndex, setStartIndex] = (0, import_react103.useState)(0), productsToShow = products2.slice(startIndex, startIndex + 3), isMobile = (0, import_react_responsive7.useMediaQuery)({ maxWidth: 640 }), nextProducts = () => {
+  let [startIndex, setStartIndex] = (0, import_react94.useState)(0), productsToShow = products2.slice(startIndex, startIndex + 3), isMobile = (0, import_react_responsive7.useMediaQuery)({ maxWidth: 640 }), nextProducts = () => {
     setStartIndex((prevIndex) => (prevIndex + 4) % products2.length);
   }, prevProducts = () => {
     setStartIndex(
@@ -69074,9 +69004,9 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
 }, CustomizedCollection_default = CustomizedCollection;
 
 // app/components/BlogCorousel.jsx
-var import_react104 = __toESM(require_react());
+var import_react95 = __toESM(require_react());
 var import_react_responsive8 = __toESM(require_react_responsive()), import_jsx_dev_runtime37 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel3 = ({ products: products2 }) => {
-  let [startIndex, setStartIndex] = (0, import_react104.useState)(0);
+  let [startIndex, setStartIndex] = (0, import_react95.useState)(0);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("h1", { className: "text-center mt-0 lg:text-[28px] text-[20px]", children: "Choose Your Own Fashion" }, void 0, !1, {
       fileName: "app/components/BlogCorousel.jsx",
@@ -69113,7 +69043,7 @@ var import_react_responsive8 = __toESM(require_react_responsive()), import_jsx_d
     columnNumber: 5
   }, this);
 }, DesktopCorousel3 = ({ products: products2 }) => {
-  let [startIndex, setStartIndex] = (0, import_react104.useState)(0), productsToShow = products2.nodes.slice(startIndex, startIndex + 3), isMobile = (0, import_react_responsive8.useMediaQuery)({ maxWidth: 640 }), nextProducts = () => {
+  let [startIndex, setStartIndex] = (0, import_react95.useState)(0), productsToShow = products2.nodes.slice(startIndex, startIndex + 3), isMobile = (0, import_react_responsive8.useMediaQuery)({ maxWidth: 640 }), nextProducts = () => {
     setStartIndex((prevIndex) => (prevIndex + 3) % products2.length);
   }, prevProducts = () => {
     setStartIndex(
@@ -69253,6 +69183,33 @@ var import_react_responsive8 = __toESM(require_react_responsive()), import_jsx_d
   }, this);
 }, BlogCorousel_default = BlogCorousel;
 
+// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/providers/JudgemeLoader.js
+var import_react96 = __toESM(require_react());
+
+// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeCarousel.js
+var import_react97 = __toESM(require_react());
+
+// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeMedals.js
+var import_react98 = __toESM(require_react());
+
+// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeReviewWidget.js
+var import_react99 = __toESM(require_react());
+
+// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeAllReviewsCount.js
+var import_react100 = __toESM(require_react());
+
+// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeAllReviewsRating.js
+var import_react101 = __toESM(require_react());
+
+// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemePreviewBadge.js
+var import_react102 = __toESM(require_react());
+
+// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeVerifiedBadge.js
+var import_react103 = __toESM(require_react());
+
+// node_modules/@judgeme/shopify-hydrogen/dist/esnext/components/widgets/JudgemeReviewsTab.js
+var import_react104 = __toESM(require_react());
+
 // app/routes/($locale)._index.jsx
 var import_jsx_dev_runtime38 = __toESM(require_jsx_dev_runtime()), meta16 = () => [{ title: "Hydrogen | Home" }];
 async function loader23({ context }) {
@@ -69264,13 +69221,6 @@ async function loader23({ context }) {
     }
   });
   return defer3({
-    judgeme: {
-      shopDomain: context.env.JUDGEME_SHOP_DOMAIN,
-      publicToken: context.env.JUDGEME_PUBLIC_TOKEN,
-      cdnHost: context.env.JUDGEME_CDN_HOST,
-      delay: 500
-      // optional parameter, default to 500ms
-    },
     featuredCollection,
     recommendedProducts,
     collections,
@@ -69281,8 +69231,7 @@ async function loader23({ context }) {
   });
 }
 function Homepage() {
-  let noImg = "https://cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_600x600.gif", data2 = useLoaderData2(), { header, judgeme } = data2;
-  JudgemeLoader_default(judgeme);
+  let noImg = "https://cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_600x600.gif", data2 = useLoaderData2(), { header } = data2;
   var menus = header.menu.items, collectionArray = menus.filter((item) => item.title !== "Home");
   let imageSrc = [
     "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_1.jpg?v=1708767049",
@@ -69329,18 +69278,18 @@ function Homepage() {
             !1,
             {
               fileName: "app/routes/($locale)._index.jsx",
-              lineNumber: 133,
+              lineNumber: 125,
               columnNumber: 17
             },
             this
           ) }, void 0, !1, {
             fileName: "app/routes/($locale)._index.jsx",
-            lineNumber: 132,
+            lineNumber: 124,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { className: "collectionname  sm:text-lg text-[12px] font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]", children: item.collectionname }, void 0, !1, {
             fileName: "app/routes/($locale)._index.jsx",
-            lineNumber: 145,
+            lineNumber: 137,
             columnNumber: 15
           }, this)
         ]
@@ -69349,26 +69298,26 @@ function Homepage() {
       !0,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 128,
+        lineNumber: 120,
         columnNumber: 13
       },
       this
     )) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 126,
+      lineNumber: 118,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 125,
+      lineNumber: 117,
       columnNumber: 9
     }, this) : null,
     /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(ImageCarousel_default, { isSmall, images: imageSrc }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 156,
+      lineNumber: 148,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 155,
+      lineNumber: 147,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(
@@ -69381,7 +69330,7 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 163,
+        lineNumber: 155,
         columnNumber: 7
       },
       this
@@ -69396,7 +69345,7 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 169,
+        lineNumber: 161,
         columnNumber: 7
       },
       this
@@ -69411,13 +69360,13 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 178,
+        lineNumber: 170,
         columnNumber: 11
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 177,
+      lineNumber: 169,
       columnNumber: 9
     }, this),
     isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("a", { href: "/collections/face", children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(
@@ -69431,13 +69380,13 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 186,
+        lineNumber: 178,
         columnNumber: 11
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 185,
+      lineNumber: 177,
       columnNumber: 8
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(
@@ -69450,19 +69399,19 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 194,
+        lineNumber: 186,
         columnNumber: 7
       },
       this
     ),
     /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(CustomizedCollection_default, { collections: GiftCollections, title: "Gifting" }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 200,
+      lineNumber: 192,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(YouTubeVideo_default, {}, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 201,
+      lineNumber: 193,
       columnNumber: 7
     }, this),
     isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("a", { href: "/collections/eyes", children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { className: "my-[15px]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(
@@ -69475,17 +69424,17 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 206,
+        lineNumber: 198,
         columnNumber: 13
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 205,
+      lineNumber: 197,
       columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 204,
+      lineNumber: 196,
       columnNumber: 10
     }, this),
     isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("a", { href: "/collections/eyes", children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { className: "my-[15px]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(
@@ -69499,17 +69448,17 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 216,
+        lineNumber: 208,
         columnNumber: 13
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 215,
+      lineNumber: 207,
       columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 214,
+      lineNumber: 206,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(
@@ -69522,28 +69471,28 @@ function Homepage() {
       !1,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 225,
+        lineNumber: 217,
         columnNumber: 7
       },
       this
     ),
     /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("section", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(CustomizedCollection_default, { collections: collectionArray, title: "Collections" }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 237,
+      lineNumber: 229,
       columnNumber: 5
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 236,
+      lineNumber: 228,
       columnNumber: 5
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(BlogCorousel_default, { collections: data2.blogs }, void 0, !1, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 241,
+      lineNumber: 233,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($locale)._index.jsx",
-    lineNumber: 123,
+    lineNumber: 115,
     columnNumber: 5
   }, this);
 }
@@ -69554,40 +69503,40 @@ function RecommendedProducts2({ products: products2, title }) {
       " "
     ] }, void 0, !0, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 267,
+      lineNumber: 259,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(import_react106.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 269,
+        lineNumber: 261,
         columnNumber: 29
       }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(Await2, { resolve: products2, children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(ProductCarousel_default, { products: products2 }, void 0, !1, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 272,
+        lineNumber: 264,
         columnNumber: 14
       }, this) }, void 0, !1, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 270,
+        lineNumber: 262,
         columnNumber: 11
       }, this) }, void 0, !1, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 269,
+        lineNumber: 261,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("br", {}, void 0, !1, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 275,
+        lineNumber: 267,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 268,
+      lineNumber: 260,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($locale)._index.jsx",
-    lineNumber: 266,
+    lineNumber: 258,
     columnNumber: 5
   }, this);
 }
@@ -69609,6 +69558,7 @@ var FEATURED_COLLECTION_QUERY2 = `#graphql
           edges {
           node {
                 id
+                availableForSale
                 metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
                     key
                     value
@@ -69669,6 +69619,7 @@ var FEATURED_COLLECTION_QUERY2 = `#graphql
     variants(first: 100) {
       edges {
         node {
+          availableForSale
           id
           metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
               key
@@ -71402,7 +71353,7 @@ var LAYOUT_QUERY = `#graphql
 `;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-HWXT6HWF.js", imports: ["/build/_shared/chunk-FM7TTYIF.js", "/build/_shared/chunk-CFXHHO4K.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-EHAMT2IH.js", imports: ["/build/_shared/chunk-54XOZSYV.js", "/build/_shared/chunk-4F3247Q3.js", "/build/_shared/chunk-5ZF6DZMS.js", "/build/_shared/chunk-GPJAKHZW.js", "/build/_shared/chunk-AV5ON35J.js", "/build/_shared/chunk-DGST5VAI.js", "/build/_shared/chunk-NNH77UO3.js", "/build/_shared/chunk-F7TROZH4.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-LB6BDXZ5.js", imports: ["/build/_shared/chunk-FTNT7ZUN.js", "/build/_shared/chunk-NRLYJF6W.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-26HJANDJ.js", imports: ["/build/_shared/chunk-7M6P6K7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-UW56T35F.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-P4I3QDMF.js", imports: ["/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-CJLES4QN.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-NXUTGPGB.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-TWBKTJHT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-ZBL7YNJU.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-XV2EKBSP.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-FCZOOCU5.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-QJ3G3N7V.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-SPZII6NL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-CW2FXTL6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-6FNJVY6E.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-DH2OINKD.js", imports: ["/build/_shared/chunk-DEPD6FJ4.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-P2X7UBML.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-R4ZPDQTY.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).offers": { id: "routes/($locale).offers", parentId: "root", path: ":locale?/offers", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).offers-GEQZPVZL.js", imports: ["/build/_shared/chunk-FTNT7ZUN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-VRM6CIZM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-XO72JGCK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-C4O43EB5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-RZQG7EGL.js", imports: ["/build/_shared/chunk-NRLYJF6W.js", "/build/_shared/chunk-DEPD6FJ4.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-E6ZG4Z33.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-OU6DB2IP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-53PT7KYB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-OBQMRAOA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "ccab6461", hmr: void 0, url: "/build/manifest-CCAB6461.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-HWXT6HWF.js", imports: ["/build/_shared/chunk-FM7TTYIF.js", "/build/_shared/chunk-CFXHHO4K.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-JHZPLBMP.js", imports: ["/build/_shared/chunk-2EN3LGQC.js", "/build/_shared/chunk-4F3247Q3.js", "/build/_shared/chunk-IEJZD5S3.js", "/build/_shared/chunk-GPJAKHZW.js", "/build/_shared/chunk-35A2S6H6.js", "/build/_shared/chunk-DGST5VAI.js", "/build/_shared/chunk-AQMJZ442.js", "/build/_shared/chunk-NNH77UO3.js", "/build/_shared/chunk-D3AIAV2V.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-QGRY75MV.js", imports: ["/build/_shared/chunk-ZVOAH624.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-26HJANDJ.js", imports: ["/build/_shared/chunk-7M6P6K7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-UW56T35F.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-P4I3QDMF.js", imports: ["/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-CJLES4QN.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-NXUTGPGB.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-TWBKTJHT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-ZBL7YNJU.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-WPHFFVHS.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-FCZOOCU5.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-QJ3G3N7V.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-SPZII6NL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-CW2FXTL6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-6FNJVY6E.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-52BW74XW.js", imports: ["/build/_shared/chunk-FE756GBI.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-FXAC4W4T.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-R4ZPDQTY.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).offers": { id: "routes/($locale).offers", parentId: "root", path: ":locale?/offers", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).offers-LG5ROEAN.js", imports: ["/build/_shared/chunk-ZVOAH624.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-VRM6CIZM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-XO72JGCK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-C4O43EB5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-N3RA6XYB.js", imports: ["/build/_shared/chunk-FE756GBI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-WAJ2WHUH.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-OU6DB2IP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-53PT7KYB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-OBQMRAOA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "8da7575d", hmr: void 0, url: "/build/manifest-8DA7575D.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "dist/client/build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

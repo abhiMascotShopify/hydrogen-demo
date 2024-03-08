@@ -45,6 +45,7 @@ const ProductCarousel = ({products}) => {
       ]);
     });
   });
+
   const goToProduct=(url_path)=>{
     window.location.href = url_path
   }
@@ -66,7 +67,7 @@ const ProductCarousel = ({products}) => {
                     </h2>
                     <div className="h-12">
                       <h1 className="text-center font-bold h-full w-full m-auto">
-                      &#x20b9; {product.node.priceRange.minVariantPrice.amount}
+                      &#x20b9; {product.node.priceRange.minVariantPrice.amount} Rs
                       </h1>
                     </div>
                   </div>
@@ -93,7 +94,7 @@ const ProductCarousel = ({products}) => {
                     </svg>
                   </div>
               
-                  <div className="w-[75%]">
+                  <div d-line={index} className="w-[75%]">
                     <CartForm
                       route="/cart"
                       inputs={{lines: lines[index]}}
@@ -103,6 +104,7 @@ const ProductCarousel = ({products}) => {
                       {(fetcher) => (
                         <>
                           <button
+                          disabled={!product.node.variants || !product.node.variants.edges[0].node.availableForSale}
                             className="w-[100%] h-11 bg-black hover:bg-blue-700 text-white font-bold py-1 rounded-lg inline-block home-product"
                             type="submit"
                             onClick={() => {
@@ -110,7 +112,7 @@ const ProductCarousel = ({products}) => {
                                 window.location.href + '#cart-aside';
                             }}
                           >
-                            Add To cart
+                           { product.node.variants && product.node.variants.edges[0].node.availableForSale ? 'ADD TO CART' : 'Sold out'}
                           </button>
                         </>
                       )}

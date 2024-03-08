@@ -39,12 +39,6 @@ export async function loader({context}) {
   });
 
   return defer({
-    judgeme: {
-      shopDomain: context.env.JUDGEME_SHOP_DOMAIN,
-      publicToken: context.env.JUDGEME_PUBLIC_TOKEN,
-      cdnHost: context.env.JUDGEME_CDN_HOST,
-      delay: 500, // optional parameter, default to 500ms
-    },
     featuredCollection,
     recommendedProducts,
     collections,
@@ -58,9 +52,7 @@ export async function loader({context}) {
 export default function Homepage() {
   const noImg = "https://cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_600x600.gif"
   const data = useLoaderData();
-  
-  const { header,judgeme } = data;
-  useJudgeme(judgeme);
+  const { header } = data;
   //console.log("menu ::",data.collections)
   var menus = header.menu.items;
   var collectionArray = menus.filter((item)=> item.title !== "Home")
@@ -296,6 +288,7 @@ const FEATURED_COLLECTION_QUERY = `#graphql
           edges {
           node {
                 id
+                availableForSale
                 metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
                     key
                     value
@@ -358,6 +351,7 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
     variants(first: 100) {
       edges {
         node {
+          availableForSale
           id
           metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
               key

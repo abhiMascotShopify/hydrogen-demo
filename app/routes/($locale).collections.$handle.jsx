@@ -32,6 +32,8 @@ import {
 	OkendoStarRating,
 } from "@okendo/shopify-hydrogen";
 
+
+
 const sortOptions = [
   {name: 'Most Popular', href: '#', value:'', current: true},
   // {name: 'Best Rating', href: '#', value:'', current: false},

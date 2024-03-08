@@ -103,7 +103,7 @@ export default function Recover() {
 <div className="sm:w-1/2  sm:block">
 
         <img
-          src="https://media.sugarpop.com/upload/LoginSideImg.png"
+          src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/LoginSideImg-Photoroom_1_2.png?v=1709296234"
           alt="Login Background"
           className="w-full h-full object-cover"
         />

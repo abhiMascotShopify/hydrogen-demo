@@ -13,18 +13,6 @@ import {
 } from '@shopify/hydrogen';
 import {getVariantUrl} from '~/utils';
 import {
-  JudgemeMedals,
-  JudgemeCarousel,
-  JudgemeReviewsTab,
-  JudgemePreviewBadge,
-  JudgemeReviewWidget,
-  JudgemeVerifiedBadge,
-  JudgemeAllReviewsCount,
-  JudgemeAllReviewsRating,
-
-} from "@judgeme/shopify-hydrogen";
-import {useJudgeme} from '@judgeme/shopify-hydrogen';
-import {
 	OKENDO_PRODUCT_REVIEWS_FRAGMENT,
 	OKENDO_PRODUCT_STAR_RATING_FRAGMENT,
 	OkendoReviews,
@@ -92,17 +80,12 @@ export async function loader({params, request, context}) {
       return redirectToFirstVariant({product, request});
     }
   }
-  var judgeme = {
-    shopDomain: context.env.JUDGEME_SHOP_DOMAIN,
-    publicToken: context.env.JUDGEME_PUBLIC_TOKEN,
-    cdnHost: context.env.JUDGEME_CDN_HOST,
-    delay: 500, // optional parameter, default to 500ms
-  };
+  
   const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
   //console.log(collections.nodes[0].products);
   const recommendedProducts = collections;
   //console.log("Recommended Products::",recommendedProducts)
-  return defer({product, variants, productsreturn ,judgeme,recommendedProducts});
+  return defer({product, variants, productsreturn ,recommendedProducts});
 }
 
 function redirectToFirstVariant({product, request}) {
@@ -125,7 +108,7 @@ function redirectToFirstVariant({product, request}) {
 //const [activeImg, setActiveImage] = useState(0)
 
 export default function Product() {
-  const {product, variants, productsreturn,judgeme,recommendedProducts} = useLoaderData();
+  const {product, variants, productsreturn,recommendedProducts} = useLoaderData();
   const {selectedVariant} = product;
   const [socialCount, setSocialCount] = useState();
 
@@ -144,7 +127,6 @@ export default function Product() {
     //     setSocialCount(0);
     //   }
   }
-  //useJudgeme(judgeme);
   //console.log("product:: ::",product);
   return (
     <>
@@ -849,6 +831,7 @@ const FEATURED_COLLECTION_QUERY = `#graphql
           variants(first: 100) {
           edges {
           node {
+                availableForSale
                 id
                 metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
                     key
@@ -912,6 +895,7 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
       edges {
         node {
           id
+          availableForSale
           metafields(identifiers: [{namespace: "custom", key: "isdefault"} ]){
               key
               value

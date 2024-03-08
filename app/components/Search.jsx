@@ -26,9 +26,7 @@ export function SearchForm({searchTerm}) {
         inputRef.current?.blur();
       }
     }
-
     document.addEventListener('keydown', handleKeyDown);
-
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };

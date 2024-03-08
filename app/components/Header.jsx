@@ -31,8 +31,8 @@ export function Header({header, isLoggedIn, cart}) {
           {/* <strong>{shop.name}</strong> */}
         </NavLink>
 
-        {isLargeScreen && (
-          <div className="m-auto">
+        {/* {isLargeScreen && ( */}
+          <div className="m-auto sm:flex gap-2">
             <div className="relative flex w-full flex-wrap items-stretch">
               <div className="rounded w-full">
                 <PredictiveSearchForm>
@@ -67,8 +67,8 @@ export function Header({header, isLoggedIn, cart}) {
               </div>
             </div>
           </div>
-        )}
-        <div className="sm:flex gap-2 items-center sm:block hidden ">
+        {/* )} */}
+        <div className="sm:flex gap-2 items-center sm:block hidden">
           {/* <img src="/user.png" width={20} height={20} alt="user" /> */}
           <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
             {isLoggedIn ? (
