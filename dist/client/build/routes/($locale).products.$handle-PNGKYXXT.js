@@ -89,7 +89,7 @@ function ProductImage({ image, activeImg, setActiveImage, product }) {
       {
         src: images[index],
         alt: "",
-        className: "w-24 h-24 rounded-md cursor-pointer product-image-caro",
+        className: "w-24 h-24 rounded-md cursor-pointer product-image-caro ",
         onClick: () => setActiveImage(images[index])
       },
       void 0,
@@ -110,7 +110,7 @@ function ProductImage({ image, activeImg, setActiveImage, product }) {
       {
         src: activeImg,
         alt: "",
-        className: "w-[90%] border border-[#e5e5e5] h-full aspect-square object-cover rounded-xl p-[10px] border-1 border-[#e5e5e5] hover:scale-125 transition duration-300 cursor-pointer"
+        className: "w-[90%] border border-[#e5e5e5] h-full aspect-square object-cover rounded-xl p-[10px] border-1 border-[#e5e5e5] hover:scale-125 transition duration-300 cursor-pointer mst-card"
       },
       void 0,
       false,
@@ -155,7 +155,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
   const [moreContent, setMoreContent] = (0, import_react3.useState)("+View More");
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex m-[2%] gap-2 items-center", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Link, { to: "/", children: "Home" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Link, { className: "mst-color", to: "/", children: "Home" }, void 0, false, {
         fileName: "app/routes/($locale).products.$handle.jsx",
         lineNumber: 215,
         columnNumber: 9
@@ -165,7 +165,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
         lineNumber: 216,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "font-semibold", children: "Product page" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "font-semibold mst-color", children: "Product page" }, void 0, false, {
         fileName: "app/routes/($locale).products.$handle.jsx",
         lineNumber: 217,
         columnNumber: 9
@@ -181,7 +181,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
         {
           image: selectedVariant?.image,
           product,
-          activeImg: selectedVariant?.image?.url,
+          activeImg,
           setActiveImage
         },
         void 0,
@@ -364,7 +364,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
           "img",
           {
-            className: "sharelogo",
+            className: "sharelogo mst-color",
             src: "/share.png",
             width: 24,
             height: 24,
@@ -425,7 +425,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
         lineNumber: 316,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "container mx-auto mt-5", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "container mx-auto mt-5 p-5 mst-card", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h1", { className: "lg:text-3xl font-semibold mb-4 text-center mt-[4%] mb-[2%]", children: "Product Information" }, void 0, false, {
           fileName: "app/routes/($locale).products.$handle.jsx",
           lineNumber: 328,
@@ -1142,4 +1142,4 @@ export {
   Product as default,
   meta
 };
-//# sourceMappingURL=/build/routes/($locale).products.$handle-N3RA6XYB.js.map
+//# sourceMappingURL=/build/routes/($locale).products.$handle-PNGKYXXT.js.map

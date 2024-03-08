@@ -40,7 +40,7 @@ var ImageCarousel = ({ images, isSmall }) => {
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
           MdChevronLeft,
           {
-            className: "opacity-50 cursor-pointer hover:opacity-100",
+            className: "opacity-50 cursor-pointer hover:opacity-100 mst-arrow",
             size: 40
           },
           void 0,
@@ -86,7 +86,7 @@ var ImageCarousel = ({ images, isSmall }) => {
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
           MdChevronRight,
           {
-            className: "opacity-50 cursor-pointer hover:opacity-100",
+            className: "opacity-50 cursor-pointer hover:opacity-100 mst-arrow",
             size: 40
           },
           void 0,
@@ -228,4 +228,4 @@ export {
   ImageCarousel_default,
   YouTubeVideo_default
 };
-//# sourceMappingURL=/build/_shared/chunk-2EN3LGQC.js.map
+//# sourceMappingURL=/build/_shared/chunk-KEM5FEDE.js.map

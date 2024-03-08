@@ -11,8 +11,22 @@
 img {
   border-radius: 4px;
 }
+.bg-black,
+.bg-blue-700 {
+  background-color: #d0715f !important;
+}
+.mst-color {
+  color: #d0715f;
+}
+.mst-border {
+  border-color: #d0715f;
+}
+.mst-arrow {
+  border-radius: 50%;
+  background: #d0715f;
+}
 .mst-card {
-  box-shadow: 1px 1px 1px 2px #e68573;
+  border: 2px solid #d0715f;
   border-radius: 10px;
 }
 .coupan_code_wrapper {
@@ -625,4 +639,4 @@ aside li {
     width: 30px !important;
   }
 }
-/*# sourceMappingURL=/build/_assets/app-QLNNG7DC.css.map */
+/*# sourceMappingURL=/build/_assets/app-65HKS63V.css.map */

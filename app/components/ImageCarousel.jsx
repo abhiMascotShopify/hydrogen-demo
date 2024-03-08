@@ -25,7 +25,7 @@ const ImageCarousel = ({images , isSmall}) => {
         }
       >
       <MdChevronLeft
-        className="opacity-50 cursor-pointer hover:opacity-100"
+        className="opacity-50 cursor-pointer hover:opacity-100 mst-arrow"
         size={40}
       />
       </button>
@@ -41,7 +41,7 @@ const ImageCarousel = ({images , isSmall}) => {
         }
       >
         <MdChevronRight
-          className="opacity-50 cursor-pointer hover:opacity-100"
+          className="opacity-50 cursor-pointer hover:opacity-100 mst-arrow"
           size={40}
         />
       </button>

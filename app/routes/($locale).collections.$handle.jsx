@@ -42,37 +42,19 @@ const sortOptions = [
   {name: 'Price: High to Low', value:'hl', href: '#', current: false},
 ];
 const subCategories = [
-  {name: 'Totes', href: '#'},
-  {name: 'Backpacks', href: '#'},
-  {name: 'Travel Bags', href: '#'},
-  {name: 'Hip Bags', href: '#'},
-  {name: 'Laptop Sleeves', href: '#'},
-  {name: 'Way 2 Slay', href: '#'},
-  {name: 'Rizz & Roll', href: '#'},
-  {name: 'Pro Studio', href: '#'},
+  {name: 'Way 2 Slay', href: '/collections/way-2-stay'},
+  {name: 'Rizz & Roll', href: '/collections/rizz-roll'},
+  {name: 'Pro Studio', href: '/collections/pro-studio'},
 ];
 const filters = [
-  {
-    id: 'color',
-    name: 'Color',
-    options: [{value: 'new-arrivals', label: 'New Arrivals', checked: false}],
-  },
   {
     id: 'category',
     name: 'Category',
     options: [
-      {value: 'new-arrivals', label: 'New Arrivals', checked: false},
-      {value: 'sale', label: 'Sale', checked: false},
-      {value: 'travel', label: 'Travel', checked: true},
-      {value: 'organization', label: 'Organization', checked: false},
-      {value: 'accessories', label: 'Accessories', checked: false},
+      {value: 'new-arrivals', label: 'New Arrivals', checked: false}
     ],
   },
   {
-    id: 'size',
-    name: 'Size',
-    options: [],
-  },{
     id:"price",
     name:"Price",
     options:[{value: '299', label: "₹0 - ₹299"},{value: '499', label: "₹300 - ₹499"},
@@ -389,22 +371,22 @@ export default function Collection() {
 
           <main className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
             <div className="flex gap-1 items-center">
-              <Link to="/">Home</Link>
+              <Link className='mst-color' to="/">Home</Link>
               <img src="/next.png" alt="next" width={20} height={20} />
-              <Link to="/collections" className="font-semibold">Collection</Link>
+              <Link to="/collections" className="font-semibold mst-color">Collection</Link>
             </div>
-            <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 m-0 relative">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:block hidden my-[15px]">
+            <div className="flex items-baseline justify-between border-b mst-border pb-6 m-0 relative">
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:block hidden my-[15px] mst-color">
                 {collection.title}
               </h1>
 
               <div className="flex items-center sm:mr-10">
                 <Menu as="div" className="relative inline-block text-left">
                   <div>
-                    <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
+                    <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900 mst-color">
                       Sort
                       <ChevronDownIcon
-                        className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                        className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500 mst-color"
                         aria-hidden="true"
                       />
                     </Menu.Button>
@@ -449,7 +431,7 @@ export default function Collection() {
                   className="second-filter -m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7"
                 >
                   <span className="sr-only">View grid</span>
-                  <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
+                  <Squares2X2Icon className="h-5 w-5 mst-color" aria-hidden="true" />
                 </button>
                 <button
                   type="button"
@@ -469,7 +451,7 @@ export default function Collection() {
 
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                 {/* Filters */}
-                <div className="shadow-md px-4 py-2">
+                <div className="shadow-md px-4 py-2 mst-card">
                   <form className="hidden lg:block lg:sticky lg:top-[120px]">
                     <h3 className="sr-only">Categories</h3>
                     <ul

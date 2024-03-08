@@ -4,7 +4,7 @@ import {
 import {
   ImageCarousel_default,
   YouTubeVideo_default
-} from "/build/_shared/chunk-2EN3LGQC.js";
+} from "/build/_shared/chunk-KEM5FEDE.js";
 import "/build/_shared/chunk-IEJZD5S3.js";
 import {
   ProductCarousel_default
@@ -960,4 +960,4 @@ export {
   Homepage as default,
   meta
 };
-//# sourceMappingURL=/build/routes/($locale)._index-QGRY75MV.js.map
+//# sourceMappingURL=/build/routes/($locale)._index-26AF5ZCH.js.map

@@ -168,7 +168,7 @@ function ProductImage({image, activeImg, setActiveImage, product}) {
               <img
                 src={images[index]}
                 alt=""
-                className="w-24 h-24 rounded-md cursor-pointer product-image-caro"
+                className="w-24 h-24 rounded-md cursor-pointer product-image-caro "
                 onClick={() => setActiveImage(images[index])}
               />
             ))}
@@ -176,7 +176,7 @@ function ProductImage({image, activeImg, setActiveImage, product}) {
         <img
           src={activeImg}
           alt=""
-          className="w-[90%] border border-[#e5e5e5] h-full aspect-square object-cover rounded-xl p-[10px] border-1 border-[#e5e5e5] hover:scale-125 transition duration-300 cursor-pointer"
+          className="w-[90%] border border-[#e5e5e5] h-full aspect-square object-cover rounded-xl p-[10px] border-1 border-[#e5e5e5] hover:scale-125 transition duration-300 cursor-pointer mst-card"
         />
       </div>
     </>
@@ -212,9 +212,9 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
     <>
       {/*<ProductImage image={selectedVariant?.image} />*/}
       <div className="flex m-[2%] gap-2 items-center">
-        <Link to="/">Home</Link>
+        <Link className='mst-color' to="/">Home</Link>
         <img src="/next.png" alt="next" width={20} height={20} />
-        <span className="font-semibold">Product page</span>
+        <span className="font-semibold mst-color">Product page</span>
       </div>
       <div className="final-product mst-card shadow-lg p-4 flex flex-col justify-between lg:flex-row lg:gap-8 lg:ml-8 lg:mr-8 items-start relative">
         <div className="flex flex-col gap-6 lg:w-2/4 flex-wrap items-center lg:sticky top-[240px]">
@@ -228,7 +228,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
           <ProductImage
             image={selectedVariant?.image}
             product={product}
-            activeImg={selectedVariant?.image?.url}
+            activeImg={activeImg}
             setActiveImage={setActiveImage}
           />
         </div>
@@ -303,7 +303,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
         </div>
         <div className="absolute cursor-pointer flex flex-col items-center top-[-36px] lg:top-[15px] right-2">
           <img
-            className="sharelogo"
+            className="sharelogo mst-color"
             src="/share.png"
             width={24}
             height={24}
@@ -324,7 +324,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
             />
           )}
         </div>
-        <div className="container mx-auto mt-5">
+        <div className="container mx-auto mt-5 p-5 mst-card">
           <h1 className="lg:text-3xl font-semibold mb-4 text-center mt-[4%] mb-[2%]">
             Product Information
           </h1>

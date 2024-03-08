@@ -17,7 +17,12 @@ img {
 * components/Aside
 * --------------------------------------------------
 */
-.mst-card { box-shadow:1px 1px 1px 2px #e68573;border-radius: 10px;}
+.bg-black { background-color:  #d0715f !important; }
+.bg-blue-700 { background-color:  #d0715f !important; }
+.mst-color {  color: #d0715f;}
+.mst-border { border-color: #d0715f; }
+.mst-arrow { border-radius: 50%; background: #d0715f;}
+.mst-card { border:2px solid #d0715f;border-radius: 10px;}
 .coupan_code_wrapper { display: inline-flex;justify-content: end; color: #645c5c;}
 .collectionContent{display: flex;justify-content: center;}
 .cursor{cursor: pointer;}
