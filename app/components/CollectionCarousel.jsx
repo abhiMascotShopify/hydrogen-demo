@@ -17,6 +17,8 @@ const CollectionCarousel = ({collection , handle , sortArr}) => {
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const eIndex = isLargeScreen ? len < 4 ? len : 4 : 2;
   const [endIndex, setEndIndex]  = useState(eIndex);
+
+  console.log("sortArr::",sortArr)
   var len = sortArr.length;
   if (sortArr != null || sortArr != undefined) {
     collectionsToShow = sortArr.slice(startIndex, endIndex);

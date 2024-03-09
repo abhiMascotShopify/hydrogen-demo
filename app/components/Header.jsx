@@ -147,6 +147,7 @@ export function HeaderMenu({menu, viewport}) {
           <div key={`header_${index}`} className="relative inline-block text-left group">
             <button onClick={()=> goToCollection(item.url) } className="px-4 py-2 text-gray-800 focus:outline-none">
               {item.title}
+            
             </button>
             {item.items.length > 0 && (
               <div className="absolute left-16 z-20 sm:left-0 sm:z-20 md:left-0 hidden w-48 bg-white border border-gray-300 divide-y divide-gray-200 rounded-lg shadow-lg group-hover:block">

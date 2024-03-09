@@ -108,9 +108,10 @@ export default function Collection() {
   const {collection , header, handle} = useLoaderData();
   const { menu } = header;
   let subMenu = menu.items;
+  //console.log("Handle:",handle,subMenu);
   var sortArr = subMenu.filter((item)=> item.title.toLowerCase() === handle );
-  var collectionArray = sortArr[0]?.items;
-  console.log("collectionArray::",subMenu)
+  collectionArray = sortArr[0]?.items;
+  //console.log("sortArr .. ::",collectionArray)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   var productsToShow1 = [];
   const lines = [];
@@ -203,10 +204,6 @@ export default function Collection() {
     return path;
   }
 
-  function goToCollection(url_path){
-    let url = getPath(url_path);
-    window.location.href = url
-  }
   
   const goToProduct=(url_path)=>{
     window.location.href = url_path
@@ -368,7 +365,12 @@ export default function Collection() {
                   </div>
                 </div>
               ))} */}
-              <CollectionCarousel collections={collection} handle={handle} sortArr={collectionArray} />
+            { sortArr.length ?
+             <CollectionCarousel collections={collection} handle={handle} sortArr={collectionArray} />
+             :
+             null
+            } 
+              
             </div>
           </section>
 
@@ -791,6 +793,7 @@ const MENU_FRAGMENT = `#graphql
       items{
         title
         url
+        
       }
     }
   }
