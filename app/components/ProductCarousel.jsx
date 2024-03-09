@@ -37,12 +37,14 @@ const ProductCarousel = ({products}) => {
   //console.log("start INDEX ::",startIndex,"End Index ::",endIndex,"Length::",len);
   products.edges.map((product) => {
     product.node.variants.edges.map((line) => {
+      if(line.node.availableForSale){
       lines.push([
         {
           merchandiseId: line.node.id,
           quantity: 1,
         },
       ]);
+    }
     });
   });
 
@@ -55,7 +57,7 @@ const ProductCarousel = ({products}) => {
         <div className="flex gap-4">
           {productsToShow.map((product, index) => (
             <div key={product.node.id} className="w-full " >
-                <div className="bg-white mst-card rounded-lg shadow-lg p-2">
+                <div className="bg-white mst-card rounded-lg shadow-lg p-1 sm:p-2 ">
                   <div className='cursor' onClick={()=> goToProduct(`/products/${product.node.handle}`)}>
                     <img
                       src={`${ product.node.images.edges.length > 0 ? product.node.images.edges[0].node.url : noImg }`} // Make sure to put your images in the 'public/images/' directory
@@ -124,21 +126,21 @@ const ProductCarousel = ({products}) => {
           ))}
         </div>
         <button 
-          className="absolute lg:left-[-150px] top-1/2 transform -translate-y-1/2 lg:bg-[#faebd7] bg-white bg-opacity-75 rounded-full p-2 ml-4 hover:bg-opacity-100"
+          className="absolute lg:left-[-90px] top-1/2 transform -translate-y-1/2  bg-white bg-opacity-75 rounded-full p-2 ml-4 hover:bg-opacity-100 text-white"
           onClick={() => prevProducts() }
         >
           <MdChevronLeft
-            className="opacity-50 cursor-pointer hover:opacity-100"
-            size={30}
+            className="opacity-50 cursor-pointer hover:opacity-100 mst-arrow"
+            size={40}
           />
         </button>
         <button 
-          className="absolute lg:right-[-150px] right-0 top-1/2 transform -translate-y-1/2 lg:bg-[#faebd7] bg-white bg-opacity-75 rounded-full p-2 mr-4 hover:bg-opacity-100"
+          className="absolute lg:right-[-90px] right-0 top-1/2 transform -translate-y-1/2  bg-white bg-opacity-75 rounded-full p-2 mr-4 hover:bg-opacity-100 text-white"
           onClick={() => nextProducts() }
         >
           <MdChevronRight
-            className="opacity-50 cursor-pointer hover:opacity-100"
-            size={30}
+            className="opacity-50 cursor-pointer hover:opacity-100 mst-arrow"
+            size={40}
           />
         </button>
       </div>

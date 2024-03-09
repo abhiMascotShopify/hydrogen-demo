@@ -25,9 +25,9 @@ const DesktopVideo = () => {
   const embedUrl = `https://www.youtube.com/embed/TUeHBWEZr0A`;
 
   return (
-    <div className="w-4/5 mx-auto ">
+    <div className="w-4/5 mx-auto">
       <div
-        className="relative rounded-2xl p-20"
+        className="relative rounded-2xl p-10"
         style={{paddingBottom: '35.25%'}}
       >
         <h1 className="text-center">Demo Header for YouTube Video</h1>

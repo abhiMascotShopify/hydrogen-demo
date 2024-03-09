@@ -17,6 +17,7 @@ img {
 * components/Aside
 * --------------------------------------------------
 */
+.coll_cor_img { border: 1px solid #dfdfdf;width: 100px;height: 100px;margin: auto;}
 .bg-black { background-color:  #d0715f !important; }
 .bg-blue-700 { background-color:  #d0715f !important; }
 .mst-color {  color: #d0715f;}

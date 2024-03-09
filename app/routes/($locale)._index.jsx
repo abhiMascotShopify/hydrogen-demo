@@ -191,12 +191,11 @@ export default function Homepage() {
 
       <CustomizedCollection collections={GiftCollections} title={'Gifting'} />
       <YouTubeVideo></YouTubeVideo>
-      {/*---Banner Statis section 8 --- */}
       {isLargeScreen && (
          <a href="/collections/eyes">
           <div className="my-[15px]">
             <img
-              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662"
+              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Lookbook_Banner.jpg?v=1709971241"
               className="rounded-2xl"
             ></img>
           </div>
@@ -207,7 +206,29 @@ export default function Homepage() {
           <div className="my-[15px]">
             <img
               style={{height:"250px"}}
-              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662"
+              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Lookbook_Banner.jpg?v=1709971241"
+              className="rounded-2xl w-[100%] m-auto"
+            ></img>
+          </div>
+        </a>
+      )}
+      {/*---Banner Statis section 8 --- */}
+      {isLargeScreen && (
+         <a href="/collections/eyes">
+          <div className="my-[15px]">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Daily_Essentials_banner.jpg?v=1709971600"
+              className="rounded-2xl"
+            ></img>
+          </div>
+        </a>
+      )}
+      {isSmall && (
+        <a href="/collections/eyes">
+          <div className="my-[15px]">
+            <img
+              style={{height:"250px"}}
+              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Daily_Essentials_banner.jpg?v=1709971600"
               className="rounded-2xl w-[100%] m-auto"
             ></img>
           </div>

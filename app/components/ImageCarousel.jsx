@@ -40,10 +40,10 @@ const ImageCarousel = ({images , isSmall}) => {
           setCurrentImageIndex((currentImageIndex + 1) % images.length)
         }
       >
-        <MdChevronRight
-          className="opacity-50 cursor-pointer hover:opacity-100 mst-arrow"
-          size={40}
-        />
+      <MdChevronRight
+        className="opacity-50 cursor-pointer hover:opacity-100 mst-arrow"
+        size={40}
+      />
       </button>
     </div>
   );

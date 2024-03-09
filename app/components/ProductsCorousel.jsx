@@ -26,12 +26,14 @@ const ProductsCorousel = ({products}) => {
 
   products.edges.map((product) => {
     product.node.variants.edges.map((line) => {
+      if(line.node.availableForSale){
       lines.push([
         {
           merchandiseId: line.node.id,
           quantity: 1,
         },
       ]);
+      }
     });
   });
 
@@ -60,7 +62,7 @@ const ProductsCorousel = ({products}) => {
             <div key={product.node.id}
               className="w-full sm:w-1/3 md:w-1/3 lg:px-4 sm:px-1 md:px-3"
             >
-              <div className="mst-card bg-white rounded-lg shadow-lg p-2 shadow-md">
+              <div className="mst-card bg-white rounded-lg shadow-lg p-1 sm:p-2 shadow-md">
                 <div className='cursor' onClick={()=> goToProduct(`/products/${product.node.handle}`)}>
                   <img
                     src={`${ product.node.images.edges.length > 0 ? product.node.images.edges[0].node.url : noImg }`} // Make sure to put your images in the 'public/images/' directory

@@ -68,8 +68,10 @@ const DesktopCorousel = ({products}) => {
               </div>
             ))}
           </div>
+          {products.length > 3 &&
+          <>
           <button
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75 text-white"
             onClick={() =>
               setStartIndex((prevIndex) =>
                 prevIndex === 0
@@ -79,21 +81,23 @@ const DesktopCorousel = ({products}) => {
             }
           >
             <MdChevronLeft
-              className="opacity-50 cursor-pointer hover:opacity-100"
-              size={20}
+              className="opacity-50 cursor-pointer hover:opacity-100 mst-arrow"
+              size={40}
             />
           </button>
           <button
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75 text-white"
             onClick={() =>
               setStartIndex((prevIndex) => (prevIndex + 3) % products.length)
             }
           >
             <MdChevronRight
-              className="opacity-50 cursor-pointer hover:opacity-100"
-              size={20}
+              className="opacity-50 cursor-pointer hover:opacity-100 mst-arrow"
+              size={40}
             />
           </button>
+          </>
+          }
         </div>
       </div>
     </div>

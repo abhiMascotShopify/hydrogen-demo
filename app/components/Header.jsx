@@ -25,14 +25,14 @@ export function Header({header, isLoggedIn, cart}) {
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   return (
     <>
-      <header className="header border-b border-gray-200">
+      <header className="header border-b border-gray-200 sm:mt-0 mt-4">
         <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
           <img className="w-40" src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Mary_Jo_K_Cult_Makeup_Unit-01.png?v=1709204173" />
           {/* <strong>{shop.name}</strong> */}
         </NavLink>
-
+        <div className='grid grid-rows-2 items-center sm:grid-rows-1 grid-flow-col gap-0 sm:gap-4'>
         {/* {isLargeScreen && ( */}
-          <div className="m-auto sm:flex gap-2">
+          <div className="m-auto sm:flex">
             <div className="relative flex w-full flex-wrap items-stretch">
               <div className="rounded w-full">
                 <PredictiveSearchForm>
@@ -41,7 +41,7 @@ export function Header({header, isLoggedIn, cart}) {
                       <div className="relative  flex w-full items-center items-stretch">
                         <input
                           type="search"
-                          className="relative lg:w-[470px] m-0 py-[10px] px-[15px] block rounded-bl-lg rounded-tl-lg border bg-transparent bg-clip-padding  text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary mst-card"
+                          className="relative w-48 sm:w-[320px] md:w-[400px] lg:w-[470px] m-0 py-[10px] px-[15px] block rounded-bl-lg rounded-tl-lg border bg-transparent bg-clip-padding  text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary mst-card"
                           aria-label="Search"
                           aria-describedby="button-addon3"
                           name="q"
@@ -68,6 +68,7 @@ export function Header({header, isLoggedIn, cart}) {
             </div>
           </div>
         {/* )} */}
+    
         <div className="sm:flex gap-2 items-center sm:block hidden">
           {/* <img src="/user.png" width={20} height={20} alt="user" /> */}
           <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
@@ -90,10 +91,10 @@ export function Header({header, isLoggedIn, cart}) {
               <span className="login_span font-semibold mt-[-3px] ">Login/Register</span>
               </div>
             )}
-            
           </NavLink>
         </div>
         <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
+        </div>
       </header>
       <HeaderMenu menu={menu} viewport="desktop" />
     </>

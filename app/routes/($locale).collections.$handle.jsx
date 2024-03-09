@@ -32,6 +32,8 @@ import {
 	OkendoStarRating,
 } from "@okendo/shopify-hydrogen";
 
+import CollectionCarousel from "../components/CollectionCarousel"
+
 
 
 const sortOptions = [
@@ -108,7 +110,7 @@ export default function Collection() {
   let subMenu = menu.items;
   var sortArr = subMenu.filter((item)=> item.title.toLowerCase() === handle );
   var collectionArray = sortArr[0]?.items;
-  //console.log("collectionArray::",collectionArray)
+  console.log("collectionArray::",subMenu)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   var productsToShow1 = [];
   const lines = [];
@@ -348,9 +350,9 @@ export default function Collection() {
 
           <section className="collectionContent sm:mt-4 overflow-auto">
             <div className="inline-flex gap-4">
-              {collectionArray?.map((item, index) => (
+              {/* {collectionArray?.map((item, index) => (
                 <div onClick={()=> goToCollection (item.url) }
-                  className="collection-items sm:w-auto w-[30%] bg-[#f5f5f5] rounded-lg hover:shadow-md cursor-pointer"
+                  className="collection-items sm:w-auto w-[30%] bg-[#f5f5f5] rounded-lg hover:shadow-md cursor-pointer mst-card"
                   key={index}
                 >
                   <div className="image" >
@@ -365,7 +367,8 @@ export default function Collection() {
                     {item.title}
                   </div>
                 </div>
-              ))}
+              ))} */}
+              <CollectionCarousel collections={collection} handle={handle} sortArr={collectionArray} />
             </div>
           </section>
 
@@ -824,35 +827,3 @@ const HEADER_QUERY = `#graphql
   ${MENU_FRAGMENT}
 `;
 
-// const collectionArray = [
-//   {
-//     collectionname: 'Moisturizer',
-//     url:"/collections/moisturizer",
-//     collectionimageurl: '/collection/Moisturizer.webp',
-//   },
-//   {
-//     collectionname: 'Cream',
-//     url:"/collections/cream",
-//     collectionimageurl: '/collection/Cream.webp',
-//   },
-//   {
-//     collectionname: 'Scrub',
-//     url:"/collections/scrub",
-//     collectionimageurl: '/collection/Scrub.webp',
-//   },
-//   {
-//     collectionname: 'Serum',
-//     url:"/collections/serum",
-//     collectionimageurl: '/collection/Serum.webp',
-//   },
-//   {
-//     collectionname: 'Face Wash',
-//     url:"/collections/face-wash",
-//     collectionimageurl: '/collection/Foaming-Face-Wash.jpg',
-//   },
-//   {
-//     collectionname: 'Face Wash',
-//     url:"/collections/face-wash",
-//     collectionimageurl: '/collection/Face-Wash.jpg',
-//   }
-// ];
