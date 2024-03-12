@@ -114,8 +114,8 @@ export default function Homepage() {
   return (
     <div className="home">
       { isSmall ?
-        <section className="collectionContent lg:hidden block sm:mt-4 overflow-auto">
-        <div className="inline-flex gap-4">
+        <section className="collectionContent lg:hidden block sm:mt-4 overflow-auto ">
+        <div className="inline-flex gap-4 w-[100%]">
           {collectionArrayStatic?.map((item, index) => (
             <div
               className=" col-item sm:w-auto  rounded-lg hover:shadow-md cursor-pointer"
