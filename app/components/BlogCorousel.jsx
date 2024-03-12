@@ -34,7 +34,7 @@ const MobileProductCorousel = ({products,title}) => {
   );
 };
 
-const DesktopCorousel = ({products}) => {
+const DesktopCorousel = ({products ,title}) => {
   const [startIndex, setStartIndex] = useState(0);
 
   const productsToShow = products.nodes.slice(startIndex, startIndex + 3);

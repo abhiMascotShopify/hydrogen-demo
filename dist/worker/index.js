@@ -57726,12 +57726,12 @@ function CartLines({ lines, layout }) {
   }, this) : null;
 }
 function CartLineItem({ layout, line }) {
-  let { id, merchandise } = line, { product, title: title2, image, selectedOptions } = merchandise, lineItemUrl = useVariantUrl(product.handle, selectedOptions);
+  let { id, merchandise } = line, { product, title, image, selectedOptions } = merchandise, lineItemUrl = useVariantUrl(product.handle, selectedOptions);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("li", { className: "cart-line", children: [
     image && /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
       Image,
       {
-        alt: title2,
+        alt: title,
         aspectRatio: "1/1",
         data: image,
         height: 100,
@@ -58279,7 +58279,7 @@ function GenIcon(data2) {
 }
 function IconBase(props) {
   var elem = function(conf) {
-    var attr = props.attr, size = props.size, title2 = props.title, svgProps = __rest2(props, ["attr", "size", "title"]), computedSize = size || conf.size || "1em", className;
+    var attr = props.attr, size = props.size, title = props.title, svgProps = __rest2(props, ["attr", "size", "title"]), computedSize = size || conf.size || "1em", className;
     return conf.className && (className = conf.className), props.className && (className = (className ? className + " " : "") + props.className), import_react21.default.createElement("svg", __assign({
       stroke: "currentColor",
       fill: "currentColor",
@@ -58292,7 +58292,7 @@ function IconBase(props) {
       height: computedSize,
       width: computedSize,
       xmlns: "http://www.w3.org/2000/svg"
-    }), title2 && import_react21.default.createElement("title", null, title2), props.children);
+    }), title && import_react21.default.createElement("title", null, title), props.children);
   };
   return IconContext !== void 0 ? import_react21.default.createElement(IconContext.Consumer, null, function(conf) {
     return elem(conf);
@@ -59013,7 +59013,7 @@ function MobileMenuAside({ menu }) {
 }
 
 // app/styles/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-TCD6YGW2.css";
+var tailwind_default = "/build/_assets/tailwind-J5VNGWYL.css";
 
 // node_modules/@okendo/shopify-hydrogen/dist/esm/index.js
 var import_react28 = __toESM(require_react()), r = async ({ context: t18, subscriberId: e5, apiDomain: n7, cdnDomain: r9 }) => {
@@ -59559,14 +59559,14 @@ async function loader3({ params, context }) {
   return json3({ article });
 }
 function Article() {
-  let { article } = useLoaderData2(), { title: title2, image, contentHtml, author } = article, publishedDate = new Intl.DateTimeFormat("en-US", {
+  let { article } = useLoaderData2(), { title, image, contentHtml, author } = article, publishedDate = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric"
   }).format(new Date(article.publishedAt));
   return /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("div", { className: "article", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("h1", { children: [
-      title2,
+      title,
       /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("span", { children: [
         publishedDate,
         " \xB7 ",
@@ -60019,7 +60019,7 @@ __export(locale_account_orders_index_exports, {
 // node_modules/@heroicons/react/24/solid/esm/PowerIcon.js
 var React17 = __toESM(require_react(), 1);
 function PowerIcon({
-  title: title2,
+  title,
   titleId,
   ...props
 }, svgRef) {
@@ -60030,9 +60030,9 @@ function PowerIcon({
     "aria-hidden": "true",
     ref: svgRef,
     "aria-labelledby": titleId
-  }, props), title2 ? /* @__PURE__ */ React17.createElement("title", {
+  }, props), title ? /* @__PURE__ */ React17.createElement("title", {
     id: titleId
-  }, title2) : null, /* @__PURE__ */ React17.createElement("path", {
+  }, title) : null, /* @__PURE__ */ React17.createElement("path", {
     fillRule: "evenodd",
     d: "M12 2.25a.75.75 0 01.75.75v9a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM6.166 5.106a.75.75 0 010 1.06 8.25 8.25 0 1011.668 0 .75.75 0 111.06-1.06c3.808 3.807 3.808 9.98 0 13.788-3.807 3.808-9.98 3.808-13.788 0-3.808-3.807-3.808-9.98 0-13.788a.75.75 0 011.06 0z",
     clipRule: "evenodd"
@@ -60043,7 +60043,7 @@ var ForwardRef = React17.forwardRef(PowerIcon), PowerIcon_default = ForwardRef;
 // node_modules/@heroicons/react/24/solid/esm/ShoppingBagIcon.js
 var React18 = __toESM(require_react(), 1);
 function ShoppingBagIcon({
-  title: title2,
+  title,
   titleId,
   ...props
 }, svgRef) {
@@ -60054,9 +60054,9 @@ function ShoppingBagIcon({
     "aria-hidden": "true",
     ref: svgRef,
     "aria-labelledby": titleId
-  }, props), title2 ? /* @__PURE__ */ React18.createElement("title", {
+  }, props), title ? /* @__PURE__ */ React18.createElement("title", {
     id: titleId
-  }, title2) : null, /* @__PURE__ */ React18.createElement("path", {
+  }, title) : null, /* @__PURE__ */ React18.createElement("path", {
     fillRule: "evenodd",
     d: "M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z",
     clipRule: "evenodd"
@@ -60067,7 +60067,7 @@ var ForwardRef2 = React18.forwardRef(ShoppingBagIcon), ShoppingBagIcon_default =
 // node_modules/@heroicons/react/24/solid/esm/UserCircleIcon.js
 var React19 = __toESM(require_react(), 1);
 function UserCircleIcon({
-  title: title2,
+  title,
   titleId,
   ...props
 }, svgRef) {
@@ -60078,9 +60078,9 @@ function UserCircleIcon({
     "aria-hidden": "true",
     ref: svgRef,
     "aria-labelledby": titleId
-  }, props), title2 ? /* @__PURE__ */ React19.createElement("title", {
+  }, props), title ? /* @__PURE__ */ React19.createElement("title", {
     id: titleId
-  }, title2) : null, /* @__PURE__ */ React19.createElement("path", {
+  }, title) : null, /* @__PURE__ */ React19.createElement("path", {
     fillRule: "evenodd",
     d: "M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z",
     clipRule: "evenodd"
@@ -60091,7 +60091,7 @@ var ForwardRef3 = React19.forwardRef(UserCircleIcon), UserCircleIcon_default = F
 // node_modules/@heroicons/react/24/outline/esm/XMarkIcon.js
 var React20 = __toESM(require_react(), 1);
 function XMarkIcon({
-  title: title2,
+  title,
   titleId,
   ...props
 }, svgRef) {
@@ -60104,9 +60104,9 @@ function XMarkIcon({
     "aria-hidden": "true",
     ref: svgRef,
     "aria-labelledby": titleId
-  }, props), title2 ? /* @__PURE__ */ React20.createElement("title", {
+  }, props), title ? /* @__PURE__ */ React20.createElement("title", {
     id: titleId
-  }, title2) : null, /* @__PURE__ */ React20.createElement("path", {
+  }, title) : null, /* @__PURE__ */ React20.createElement("path", {
     strokeLinecap: "round",
     strokeLinejoin: "round",
     d: "M6 18L18 6M6 6l12 12"
@@ -62503,7 +62503,7 @@ var W = D3(He2), le3 = D3(De4), Le2 = D3(Fe2), tt = Object.assign(W, { Child: Le
 // node_modules/@heroicons/react/20/solid/esm/ChevronDownIcon.js
 var React21 = __toESM(require_react(), 1);
 function ChevronDownIcon({
-  title: title2,
+  title,
   titleId,
   ...props
 }, svgRef) {
@@ -62514,9 +62514,9 @@ function ChevronDownIcon({
     "aria-hidden": "true",
     ref: svgRef,
     "aria-labelledby": titleId
-  }, props), title2 ? /* @__PURE__ */ React21.createElement("title", {
+  }, props), title ? /* @__PURE__ */ React21.createElement("title", {
     id: titleId
-  }, title2) : null, /* @__PURE__ */ React21.createElement("path", {
+  }, title) : null, /* @__PURE__ */ React21.createElement("path", {
     fillRule: "evenodd",
     d: "M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z",
     clipRule: "evenodd"
@@ -62527,7 +62527,7 @@ var ForwardRef5 = React21.forwardRef(ChevronDownIcon), ChevronDownIcon_default =
 // node_modules/@heroicons/react/20/solid/esm/FunnelIcon.js
 var React22 = __toESM(require_react(), 1);
 function FunnelIcon({
-  title: title2,
+  title,
   titleId,
   ...props
 }, svgRef) {
@@ -62538,9 +62538,9 @@ function FunnelIcon({
     "aria-hidden": "true",
     ref: svgRef,
     "aria-labelledby": titleId
-  }, props), title2 ? /* @__PURE__ */ React22.createElement("title", {
+  }, props), title ? /* @__PURE__ */ React22.createElement("title", {
     id: titleId
-  }, title2) : null, /* @__PURE__ */ React22.createElement("path", {
+  }, title) : null, /* @__PURE__ */ React22.createElement("path", {
     fillRule: "evenodd",
     d: "M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 01.628.74v2.288a2.25 2.25 0 01-.659 1.59l-4.682 4.683a2.25 2.25 0 00-.659 1.59v3.037c0 .684-.31 1.33-.844 1.757l-1.937 1.55A.75.75 0 018 18.25v-5.757a2.25 2.25 0 00-.659-1.591L2.659 6.22A2.25 2.25 0 012 4.629V2.34a.75.75 0 01.628-.74z",
     clipRule: "evenodd"
@@ -62551,7 +62551,7 @@ var ForwardRef6 = React22.forwardRef(FunnelIcon), FunnelIcon_default = ForwardRe
 // node_modules/@heroicons/react/20/solid/esm/MinusIcon.js
 var React23 = __toESM(require_react(), 1);
 function MinusIcon({
-  title: title2,
+  title,
   titleId,
   ...props
 }, svgRef) {
@@ -62562,9 +62562,9 @@ function MinusIcon({
     "aria-hidden": "true",
     ref: svgRef,
     "aria-labelledby": titleId
-  }, props), title2 ? /* @__PURE__ */ React23.createElement("title", {
+  }, props), title ? /* @__PURE__ */ React23.createElement("title", {
     id: titleId
-  }, title2) : null, /* @__PURE__ */ React23.createElement("path", {
+  }, title) : null, /* @__PURE__ */ React23.createElement("path", {
     fillRule: "evenodd",
     d: "M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z",
     clipRule: "evenodd"
@@ -62575,7 +62575,7 @@ var ForwardRef7 = React23.forwardRef(MinusIcon), MinusIcon_default = ForwardRef7
 // node_modules/@heroicons/react/20/solid/esm/PlusIcon.js
 var React24 = __toESM(require_react(), 1);
 function PlusIcon({
-  title: title2,
+  title,
   titleId,
   ...props
 }, svgRef) {
@@ -62586,9 +62586,9 @@ function PlusIcon({
     "aria-hidden": "true",
     ref: svgRef,
     "aria-labelledby": titleId
-  }, props), title2 ? /* @__PURE__ */ React24.createElement("title", {
+  }, props), title ? /* @__PURE__ */ React24.createElement("title", {
     id: titleId
-  }, title2) : null, /* @__PURE__ */ React24.createElement("path", {
+  }, title) : null, /* @__PURE__ */ React24.createElement("path", {
     d: "M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
   }));
 }
@@ -62597,7 +62597,7 @@ var ForwardRef8 = React24.forwardRef(PlusIcon), PlusIcon_default = ForwardRef8;
 // node_modules/@heroicons/react/20/solid/esm/Squares2X2Icon.js
 var React25 = __toESM(require_react(), 1);
 function Squares2X2Icon({
-  title: title2,
+  title,
   titleId,
   ...props
 }, svgRef) {
@@ -62608,9 +62608,9 @@ function Squares2X2Icon({
     "aria-hidden": "true",
     ref: svgRef,
     "aria-labelledby": titleId
-  }, props), title2 ? /* @__PURE__ */ React25.createElement("title", {
+  }, props), title ? /* @__PURE__ */ React25.createElement("title", {
     id: titleId
-  }, title2) : null, /* @__PURE__ */ React25.createElement("path", {
+  }, title) : null, /* @__PURE__ */ React25.createElement("path", {
     fillRule: "evenodd",
     d: "M4.25 2A2.25 2.25 0 002 4.25v2.5A2.25 2.25 0 004.25 9h2.5A2.25 2.25 0 009 6.75v-2.5A2.25 2.25 0 006.75 2h-2.5zm0 9A2.25 2.25 0 002 13.25v2.5A2.25 2.25 0 004.25 18h2.5A2.25 2.25 0 009 15.75v-2.5A2.25 2.25 0 006.75 11h-2.5zm9-9A2.25 2.25 0 0011 4.25v2.5A2.25 2.25 0 0013.25 9h2.5A2.25 2.25 0 0018 6.75v-2.5A2.25 2.25 0 0015.75 2h-2.5zm0 9A2.25 2.25 0 0011 13.25v2.5A2.25 2.25 0 0013.25 18h2.5A2.25 2.25 0 0018 15.75v-2.5A2.25 2.25 0 0015.75 11h-2.5z",
     clipRule: "evenodd"
@@ -67048,10 +67048,10 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
     columnNumber: 5
   }, this);
 }
-function RecommendedProducts({ products: products2, title: title2 }) {
+function RecommendedProducts({ products: products2, title }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)(import_jsx_dev_runtime28.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)("h1", { className: "text-center font-semibold my-[15px]", children: [
-      title2,
+      title,
       " "
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).products.$handle.jsx",
@@ -68678,7 +68678,7 @@ var import_react107 = __toESM(require_react());
 
 // app/components/CustomizedProducts.jsx
 var import_react94 = __toESM(require_react());
-var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_dev_runtime36 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel = ({ products: products2, title: title2 }) => {
+var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_dev_runtime36 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel = ({ products: products2, title }) => {
   let noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129", [startIndex, setStartIndex] = (0, import_react94.useState)(0);
   var len = products2.length;
   let eIndex = (0, import_react_responsive7.useMediaQuery)({ minWidth: 1024 }) ? len <= 4 ? len : 3 : 2, [endIndex, setEndIndex] = (0, import_react94.useState)(eIndex), productsToShow = products2.slice(startIndex, endIndex), nextProducts = () => {
@@ -68687,7 +68687,7 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
     setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1 m-5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { className: "relative", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("h1", { className: "text-center", children: title2 }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("h1", { className: "text-center", children: title }, void 0, !1, {
       fileName: "app/components/CustomizedProducts.jsx",
       lineNumber: 27,
       columnNumber: 11
@@ -68799,7 +68799,7 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
     lineNumber: 25,
     columnNumber: 7
   }, this);
-}, DesktopCorousel = ({ products: products2, title: title2 }) => {
+}, DesktopCorousel = ({ products: products2, title }) => {
   let noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129", [startIndex, setStartIndex] = (0, import_react94.useState)(0);
   var len = products2.length;
   let eIndex = (0, import_react_responsive7.useMediaQuery)({ minWidth: 1024 }) ? len <= 4 ? len : 4 : 2, [endIndex, setEndIndex] = (0, import_react94.useState)(eIndex), productsToShow = products2.slice(startIndex, endIndex), nextProducts = () => {
@@ -68808,7 +68808,7 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
     setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { className: "relative", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("h1", { className: "text-center", children: title2 }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("h1", { className: "text-center", children: title }, void 0, !1, {
       fileName: "app/components/CustomizedProducts.jsx",
       lineNumber: 94,
       columnNumber: 11
@@ -68921,14 +68921,14 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
     lineNumber: 91,
     columnNumber: 5
   }, this);
-}, CustomizedProducts = ({ products: products2, title: title2 }) => {
+}, CustomizedProducts = ({ products: products2, title }) => {
   let isLargeScreen = (0, import_react_responsive7.useMediaQuery)({ minWidth: 1024 }), isSmall = (0, import_react_responsive7.useMediaQuery)({ maxWidth: 640 });
   return /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { children: [
     isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(
       MobileProductCorousel,
       {
         products: products2,
-        title: title2
+        title
       },
       void 0,
       !1,
@@ -68939,7 +68939,7 @@ var import_react_responsive7 = __toESM(require_react_responsive()), import_jsx_d
       },
       this
     ),
-    isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(DesktopCorousel, { products: products2, title: title2 }, void 0, !1, {
+    isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(DesktopCorousel, { products: products2, title }, void 0, !1, {
       fileName: "app/components/CustomizedProducts.jsx",
       lineNumber: 148,
       columnNumber: 9
@@ -68956,12 +68956,12 @@ var import_react_responsive10 = __toESM(require_react_responsive());
 
 // app/components/CustomizedCollection.jsx
 var import_react95 = __toESM(require_react());
-var import_react_responsive8 = __toESM(require_react_responsive()), import_jsx_dev_runtime37 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel2 = ({ products: products2, title: title2 }) => {
+var import_react_responsive8 = __toESM(require_react_responsive()), import_jsx_dev_runtime37 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel2 = ({ products: products2, title }) => {
   let [startIndex, setStartIndex] = (0, import_react95.useState)(0), goToCollection = (url_path) => {
     window.location.href = url_path;
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "relative", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("h1", { className: "text-center lg:text=[28px] text-[20px] mt-[15px]", children: title2 }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("h1", { className: "text-center lg:text=[28px] text-[20px] mt-[15px]", children: title }, void 0, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
       lineNumber: 17,
       columnNumber: 9
@@ -68996,7 +68996,7 @@ var import_react_responsive8 = __toESM(require_react_responsive()), import_jsx_d
     lineNumber: 15,
     columnNumber: 5
   }, this);
-}, DesktopCorousel2 = ({ products: products2, title: title2 }) => {
+}, DesktopCorousel2 = ({ products: products2, title }) => {
   let [startIndex, setStartIndex] = (0, import_react95.useState)(0), productsToShow = products2.slice(startIndex, startIndex + 3), isMobile = (0, import_react_responsive8.useMediaQuery)({ maxWidth: 640 }), nextProducts = () => {
     setStartIndex((prevIndex) => (prevIndex + 4) % products2.length);
   }, prevProducts = () => {
@@ -69005,7 +69005,7 @@ var import_react_responsive8 = __toESM(require_react_responsive()), import_jsx_d
     );
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "relative", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("h1", { className: "text-center", children: title2 }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("h1", { className: "text-center", children: title }, void 0, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
       lineNumber: 55,
       columnNumber: 11
@@ -69120,15 +69120,15 @@ var import_react_responsive8 = __toESM(require_react_responsive()), import_jsx_d
     lineNumber: 52,
     columnNumber: 5
   }, this);
-}, CustomizedCollection = ({ collections, title: title2 }) => {
+}, CustomizedCollection = ({ collections, title }) => {
   let isLargeScreen = (0, import_react_responsive8.useMediaQuery)({ minWidth: 1024 }), isSmall = (0, import_react_responsive8.useMediaQuery)({ maxWidth: 640 });
   return /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { children: [
-    isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(MobileProductCorousel2, { products: collections, title: title2 }, void 0, !1, {
+    isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(MobileProductCorousel2, { products: collections, title }, void 0, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
       lineNumber: 114,
       columnNumber: 9
     }, this),
-    isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(DesktopCorousel2, { products: collections, title: title2 }, void 0, !1, {
+    isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(DesktopCorousel2, { products: collections, title }, void 0, !1, {
       fileName: "app/components/CustomizedCollection.jsx",
       lineNumber: 117,
       columnNumber: 9
@@ -69142,10 +69142,10 @@ var import_react_responsive8 = __toESM(require_react_responsive()), import_jsx_d
 
 // app/components/BlogCorousel.jsx
 var import_react96 = __toESM(require_react());
-var import_react_responsive9 = __toESM(require_react_responsive()), import_jsx_dev_runtime38 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel3 = ({ products: products2, title: title2 }) => {
+var import_react_responsive9 = __toESM(require_react_responsive()), import_jsx_dev_runtime38 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel3 = ({ products: products2, title }) => {
   let [startIndex, setStartIndex] = (0, import_react96.useState)(0);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { className: "relative", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("h1", { className: "text-center mt-0 lg:text-[28px] text-[20px]", children: title2 }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("h1", { className: "text-center mt-0 lg:text-[28px] text-[20px]", children: title }, void 0, !1, {
       fileName: "app/components/BlogCorousel.jsx",
       lineNumber: 16,
       columnNumber: 9
@@ -69187,7 +69187,7 @@ var import_react_responsive9 = __toESM(require_react_responsive()), import_jsx_d
     lineNumber: 14,
     columnNumber: 5
   }, this);
-}, DesktopCorousel3 = ({ products: products2 }) => {
+}, DesktopCorousel3 = ({ products: products2, title }) => {
   let [startIndex, setStartIndex] = (0, import_react96.useState)(0), productsToShow = products2.nodes.slice(startIndex, startIndex + 3), isMobile = (0, import_react_responsive9.useMediaQuery)({ maxWidth: 640 }), nextProducts = () => {
     setStartIndex((prevIndex) => (prevIndex + 3) % products2.length);
   }, prevProducts = () => {
@@ -69314,15 +69314,15 @@ var import_react_responsive9 = __toESM(require_react_responsive()), import_jsx_d
     lineNumber: 55,
     columnNumber: 5
   }, this);
-}, BlogCorousel = ({ collections, title: title2 }) => {
+}, BlogCorousel = ({ collections, title }) => {
   let isLargeScreen = (0, import_react_responsive9.useMediaQuery)({ minWidth: 1024 }), isSmall = (0, import_react_responsive9.useMediaQuery)({ maxWidth: 640 });
   return /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { children: [
-    isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(MobileProductCorousel3, { products: collections, title: title2 }, void 0, !1, {
+    isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(MobileProductCorousel3, { products: collections, title }, void 0, !1, {
       fileName: "app/components/BlogCorousel.jsx",
       lineNumber: 120,
       columnNumber: 9
     }, this),
-    isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(DesktopCorousel3, { products: collections, title: title2 }, void 0, !1, {
+    isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(DesktopCorousel3, { products: collections, title }, void 0, !1, {
       fileName: "app/components/BlogCorousel.jsx",
       lineNumber: 123,
       columnNumber: 9
@@ -69694,10 +69694,10 @@ function Homepage() {
     columnNumber: 5
   }, this);
 }
-function RecommendedProducts2({ products: products2, title: title2 }) {
+function RecommendedProducts2({ products: products2, title }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime39.jsxDEV)(import_jsx_dev_runtime39.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime39.jsxDEV)("h1", { className: "text-center font-semibold my-[15px]", children: [
-      title2,
+      title,
       " "
     ] }, void 0, !0, {
       fileName: "app/routes/($locale)._index.jsx",
@@ -70327,10 +70327,10 @@ function Cart() {
     columnNumber: 5
   }, this);
 }
-function RecommendedProducts3({ products: products2, title: title2 }) {
+function RecommendedProducts3({ products: products2, title }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)(import_jsx_dev_runtime42.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime42.jsxDEV)("h1", { className: "text-center font-semibold my-[15px]", children: [
-      title2,
+      title,
       " "
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).cart.jsx",
@@ -71551,7 +71551,7 @@ var LAYOUT_QUERY = `#graphql
 `;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-HWXT6HWF.js", imports: ["/build/_shared/chunk-FM7TTYIF.js", "/build/_shared/chunk-CFXHHO4K.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-64WK24QD.js", imports: ["/build/_shared/chunk-BQTNZJYF.js", "/build/_shared/chunk-VTRHWZWL.js", "/build/_shared/chunk-IEJZD5S3.js", "/build/_shared/chunk-GPJAKHZW.js", "/build/_shared/chunk-TYB6PR6B.js", "/build/_shared/chunk-DGST5VAI.js", "/build/_shared/chunk-AQMJZ442.js", "/build/_shared/chunk-NNH77UO3.js", "/build/_shared/chunk-D3AIAV2V.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-564AZXDZ.js", imports: ["/build/_shared/chunk-D6DFQCR2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-26HJANDJ.js", imports: ["/build/_shared/chunk-7M6P6K7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-UW56T35F.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-P4I3QDMF.js", imports: ["/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-CJLES4QN.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-NXUTGPGB.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-TWBKTJHT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-ZBL7YNJU.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-WPHFFVHS.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-FCZOOCU5.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-QJ3G3N7V.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-SPZII6NL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-4EJBM3BD.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-6FNJVY6E.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-JTXMEZFG.js", imports: ["/build/_shared/chunk-C2I7FYUF.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-HUVQATAC.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-3INPTDT3.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).offers": { id: "routes/($locale).offers", parentId: "root", path: ":locale?/offers", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).offers-VWSTFSWV.js", imports: ["/build/_shared/chunk-D6DFQCR2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-VRM6CIZM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-XO72JGCK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-C4O43EB5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-HNTB6ITK.js", imports: ["/build/_shared/chunk-C2I7FYUF.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-WAJ2WHUH.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-OU6DB2IP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-53PT7KYB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-OBQMRAOA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "89d41af7", hmr: void 0, url: "/build/manifest-89D41AF7.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-HWXT6HWF.js", imports: ["/build/_shared/chunk-FM7TTYIF.js", "/build/_shared/chunk-CFXHHO4K.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-EV6SWW4K.js", imports: ["/build/_shared/chunk-BQTNZJYF.js", "/build/_shared/chunk-VTRHWZWL.js", "/build/_shared/chunk-IEJZD5S3.js", "/build/_shared/chunk-GPJAKHZW.js", "/build/_shared/chunk-TYB6PR6B.js", "/build/_shared/chunk-DGST5VAI.js", "/build/_shared/chunk-AQMJZ442.js", "/build/_shared/chunk-NNH77UO3.js", "/build/_shared/chunk-D3AIAV2V.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-PZKFCE4I.js", imports: ["/build/_shared/chunk-D6DFQCR2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-26HJANDJ.js", imports: ["/build/_shared/chunk-7M6P6K7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-UW56T35F.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-P4I3QDMF.js", imports: ["/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-CJLES4QN.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js", "/build/_shared/chunk-6BB7K7SI.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-NXUTGPGB.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-TWBKTJHT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-ZBL7YNJU.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-WPHFFVHS.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-FCZOOCU5.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-QJ3G3N7V.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-SPZII6NL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-4EJBM3BD.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-6FNJVY6E.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-JTXMEZFG.js", imports: ["/build/_shared/chunk-C2I7FYUF.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-HUVQATAC.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-3INPTDT3.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).offers": { id: "routes/($locale).offers", parentId: "root", path: ":locale?/offers", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).offers-VWSTFSWV.js", imports: ["/build/_shared/chunk-D6DFQCR2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-VRM6CIZM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-XO72JGCK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-C4O43EB5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-HNTB6ITK.js", imports: ["/build/_shared/chunk-C2I7FYUF.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-WAJ2WHUH.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-OU6DB2IP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-53PT7KYB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-OBQMRAOA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "b1ee7608", hmr: void 0, url: "/build/manifest-B1EE7608.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "dist/client/build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
