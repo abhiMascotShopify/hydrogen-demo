@@ -149,7 +149,7 @@ export function HeaderMenu({menu, viewport}) {
               <button className="px-4 py-2 text-gray-800 focus:outline-none">
                 {item.title} 
                 {viewport === 'mobile' && (
-                    <svg style={{display:'inline'}} height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14 20l10 10 10-10z"/><path d="M0 0h48v48h-48z" fill="none"/></svg>
+                    <>{ item.items.length > 0 && <svg style={{display:'inline'}} height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14 20l10 10 10-10z"/><path d="M0 0h48v48h-48z" fill="none"/></svg> }</>
                   )
                 }
               </button>
