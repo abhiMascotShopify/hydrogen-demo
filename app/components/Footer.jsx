@@ -35,7 +35,7 @@ export function Footer({menu}) {
     <>
       <footer className="mt-8">
         <div className="m-4 p-4">
-          <div className="footer-section  text-xl font-semibold border-y-2 py-4">
+          <div className="footer-section  text-xl font-semibold border-y-4 py-4">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-1">
             <div className="cursor-pointer">Stores</div>
               <div className="cursor-pointer">Terms & Conditions</div>
@@ -82,12 +82,12 @@ export function Footer({menu}) {
         </div> */}
 
         {/* <!--Copyright section--> */}
-        <div className="p-4 text-center bg-black bg-opacity-20">
+        {/* <div className="p-4 text-center bg-black bg-opacity-20">
           © 2023 Copyright:
           <a className="text-white" href="https://tailwind-elements.com/">
             Tailwind Elements
           </a>
-        </div>
+        </div> */}
       </footer>
     </>
   );

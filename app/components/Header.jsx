@@ -145,13 +145,24 @@ export function HeaderMenu({menu, viewport}) {
             : item.url;
         return (
           <div key={`header_${index}`} className="relative inline-block text-left group">
-            <button onClick={()=> goToCollection(item.url) } className="px-4 py-2 text-gray-800 focus:outline-none">
-              {item.title} 
-              {viewport === 'mobile' && (
-                <svg style={{display:'inline'}} height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14 20l10 10 10-10z"/><path d="M0 0h48v48h-48z" fill="none"/></svg>
-              )
-              }
-            </button>
+            {viewport === 'mobile' ? 
+              <button className="px-4 py-2 text-gray-800 focus:outline-none">
+                {item.title} 
+                {viewport === 'mobile' && (
+                    <svg style={{display:'inline'}} height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14 20l10 10 10-10z"/><path d="M0 0h48v48h-48z" fill="none"/></svg>
+                  )
+                }
+              </button>
+              : 
+              <button onClick={()=> goToCollection(item.url) } className="px-4 py-2 text-gray-800 focus:outline-none">
+                {item.title} 
+                {viewport === 'mobile' && (
+                    <svg style={{display:'inline'}} height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14 20l10 10 10-10z"/><path d="M0 0h48v48h-48z" fill="none"/></svg>
+                  )
+                }
+              </button>
+            }
+            
             {item.items.length > 0 && (
               <div className="absolute left-16 z-20 sm:left-0 sm:z-20 md:left-0 hidden w-48 bg-white border border-gray-300 divide-y divide-gray-200 rounded-lg shadow-lg group-hover:block">
                 <div className="py-1 group-hover:block">

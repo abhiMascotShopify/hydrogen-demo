@@ -88,7 +88,7 @@ function ArticleItem({ article, loading }) {
     month: "long",
     day: "numeric"
   }).format(new Date(article.publishedAt));
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "blog-article", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Link, { to: `/blogs/${article.blog.handle}/${article.handle}`, children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mst-card-md p-5 m-4 blog-article", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Link, { to: `/blogs/${article.blog.handle}/${article.handle}`, children: [
     article.image && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "blog-article-image", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
       Image,
       {
@@ -135,4 +135,4 @@ export {
   Blog as default,
   meta
 };
-//# sourceMappingURL=/build/routes/($locale).blogs.$blogHandle._index-CW2FXTL6.js.map
+//# sourceMappingURL=/build/routes/($locale).blogs.$blogHandle._index-4EJBM3BD.js.map

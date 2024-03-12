@@ -72,7 +72,7 @@ function ArticleItem({article, loading}) {
     day: 'numeric',
   }).format(new Date(article.publishedAt));
   return (
-    <div className="blog-article" key={article.id}>
+    <div className="mst-card-md p-5 m-4 blog-article" key={article.id}>
       <Link to={`/blogs/${article.blog.handle}/${article.handle}`}>
         {article.image && (
           <div className="blog-article-image">
@@ -122,6 +122,7 @@ const BLOGS_QUERY = `#graphql
           hasNextPage
           hasNextPage
           endCursor
+          startCursor
         }
 
       }

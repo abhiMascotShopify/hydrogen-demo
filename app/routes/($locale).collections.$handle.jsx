@@ -374,7 +374,7 @@ export default function Collection() {
             </div>
           </section>
 
-          <main className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+          <main className="mx-auto max-w-8xl px-0 sm:px-4 sm:px-6 lg:px-8">
             <div className="flex gap-1 items-center">
               <Link className='mst-color' to="/">Home</Link>
               <img src="/next.png" alt="next" width={20} height={20} />
@@ -456,7 +456,8 @@ export default function Collection() {
 
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                 {/* Filters */}
-                <div className="shadow-md px-4 py-2 mst-card">
+                
+                <div className="shadow-md px-4 py-2 sm:mst-card">
                   <form className="hidden lg:block lg:sticky lg:top-[120px]">
                     <h3 className="sr-only">Categories</h3>
                     <ul
@@ -536,15 +537,16 @@ export default function Collection() {
                     ))}
                   </form>
                 </div>
+                
 
                 {/* Product grid */}
                 <div className="lg:col-span-3">
                   <div className="w-full max-w-screen-xl">
-                    <div className="cursor product-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                    <div className="cursor grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
                       {productsToShow.map((product, index) => (
                         <div className="cursor mst-card"  key={product.id}>
                           <div
-                            className="bg-white rounded-lg shadow-lg p-2 px-4"
+                            className="bg-white rounded-lg shadow-lg p-2 sm:px-4 px-2"
                             style={{
                               boxShadow:
                                 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
@@ -571,16 +573,15 @@ export default function Collection() {
                             />
                             </div>
                           </div>
-                            <div className="px-1 py-1 flex justify-center gap-[10px] items-center ">
-                              <div>
-                             
+                            <div className="px-1 py-1 flex items-center sm:flex-row gap-3 justify-center w-[100%]">
+                              <div className='w-[25%]'>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 32 33"
                                   xmlSpace="preserve"
                                   // width="2.8em"
                                   // height="2.8em"
-                                  className="card-like sm:w-[35px] w-[30px]"
+                                  className="home-like h-[30px] w-[30px] sm:w-[43px] sm:h-[43px]"
                                 >
                                   <path
                                     d="M9 .5h14c4.7 0 8.5 3.8 8.5 8.5v14c0 4.7-3.8 8.5-8.5 8.5H9C4.3 31.5.5 27.7.5 23V9C.5 4.3 4.3.5 9 .5z"
@@ -594,7 +595,7 @@ export default function Collection() {
                                   ></path>
                                 </svg>
                               </div>
-                              
+                              <div className='w-[75%]'>
                               <CartForm
                                 route="/cart"
                                 inputs={{lines: lines[index]}}
@@ -604,7 +605,7 @@ export default function Collection() {
                                 {(fetcher) => (
                                   <>
                                     <button
-                                      className="cart-button lg:w-[200px] h-[2rem] sm:h-11 px-[25px] bg-black hover:bg-blue-700 text-white font-bold py-1 px-1 rounded-lg sm:text-lg text-[12px]"
+                                      className="w-[100%] h-11 bg-black hover:bg-blue-700 text-white font-bold py-1 rounded-lg inline-block home-product"
                                       type="submit"
                                       onClick={() => {
                                         window.location.href =
@@ -616,6 +617,7 @@ export default function Collection() {
                                   </>
                                 )}
                               </CartForm>
+                              </div>
                             </div>
                           </div>
                         </div>

@@ -44,10 +44,10 @@ const CollectionCarousel = ({collection , handle , sortArr}) => {
   return (
     <div className="recommended_section w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
       <div className="relative">
-        <div className="flex gap-4">
+        <div className="flex grid-row-1 grid-cols-2 gap-4">
           {collectionsToShow.map((coll, index) => (
             <div key={coll.id} className="w-full " >
-                <div className="bg-white mst-card rounded-lg shadow-lg p-2  h-40 w-40">
+                <div className="bg-white mst-card rounded-lg shadow-lg p-2 w-32 h-40 sm:w-40">
                   <div className='cursor' onClick={()=> goToCollection(coll.url)}>
                     <img
                       src={coll.imgurl || noImg }// Make sure to put your images in the 'public/images/' directory

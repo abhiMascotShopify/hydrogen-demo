@@ -213,6 +213,13 @@ aside li {
 * components/Footer
 * --------------------------------------------------
 */
+footer{
+  background-color: #010101;
+  color:#fff;
+}
+.footer-section{
+  border-color: #d87558;
+}
 .footer {
   background: var(--color-dark);
   margin-top: auto;
@@ -619,6 +626,7 @@ aside li {
   }
 }
 @media only screen and (max-width: 640px) {
+  .p-2{ padding: 0;}
   .right-filter {
     position: absolute;
     right: 0;

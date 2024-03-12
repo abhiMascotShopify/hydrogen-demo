@@ -51,7 +51,7 @@ var favicon_default = "/build/_assets/favicon-5FIZBM2K.svg";
 var reset_default = "/build/_assets/reset-2YZIITKC.css";
 
 // app/styles/app.css
-var app_default = "/build/_assets/app-MZE5MKGL.css";
+var app_default = "/build/_assets/app-ANJBEFHI.css";
 
 // app/components/Layout.jsx
 var import_react9 = __toESM(require_react());
@@ -695,113 +695,99 @@ var je = import_react.default.forwardRef(
 var import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime());
 var currentYear = (/* @__PURE__ */ new Date()).getFullYear();
 function Footer({ menu }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_jsx_dev_runtime2.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "mt-8", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "m-4 p-4", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "footer-section  text-xl font-semibold border-y-2 py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "grid grid-cols-2 md:grid-cols-3 gap-1", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: "Stores" }, void 0, false, {
-          fileName: "app/components/Footer.jsx",
-          lineNumber: 40,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: "Terms & Conditions" }, void 0, false, {
-          fileName: "app/components/Footer.jsx",
-          lineNumber: 41,
-          columnNumber: 15
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: "Returns" }, void 0, false, {
-          fileName: "app/components/Footer.jsx",
-          lineNumber: 42,
-          columnNumber: 15
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: "FAQs" }, void 0, false, {
-          fileName: "app/components/Footer.jsx",
-          lineNumber: 43,
-          columnNumber: 15
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: "About Us" }, void 0, false, {
-          fileName: "app/components/Footer.jsx",
-          lineNumber: 44,
-          columnNumber: 15
-        }, this)
-      ] }, void 0, true, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_jsx_dev_runtime2.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "mt-8", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "m-4 p-4", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "footer-section  text-xl font-semibold border-y-4 py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "grid grid-cols-2 md:grid-cols-3 gap-1", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: "Stores" }, void 0, false, {
         fileName: "app/components/Footer.jsx",
-        lineNumber: 39,
-        columnNumber: 11
-      }, this) }, void 0, false, {
-        fileName: "app/components/Footer.jsx",
-        lineNumber: 38,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "py-6 footer-contact m-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-1", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h2", { className: "font-semibold text-xl", children: "GET IN TOUCH" }, void 0, false, {
-            fileName: "app/components/Footer.jsx",
-            lineNumber: 50,
-            columnNumber: 19
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h3", { className: "mt-4 mb-2 text-md font-semibold", children: "Call us at" }, void 0, false, {
-            fileName: "app/components/Footer.jsx",
-            lineNumber: 51,
-            columnNumber: 19
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { className: "mt-2 font-bold text-xl text-[#969696]", href: "#", children: "+91-9999999999" }, void 0, false, {
-            fileName: "app/components/Footer.jsx",
-            lineNumber: 52,
-            columnNumber: 19
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "mt-2 font-semibold text-[#969696]", children: "Monday to Friday : 9 AM to 7 PM" }, void 0, false, {
-            fileName: "app/components/Footer.jsx",
-            lineNumber: 55,
-            columnNumber: 19
-          }, this)
-        ] }, void 0, true, {
-          fileName: "app/components/Footer.jsx",
-          lineNumber: 49,
-          columnNumber: 17
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h2", { className: "font-semibold text-xl", children: "Support" }, void 0, false, {
-            fileName: "app/components/Footer.jsx",
-            lineNumber: 60,
-            columnNumber: 17
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { className: "mt-2 font-bold text-xl text-[#969696]", href: "#", children: "helpdesk@gmail.com" }, void 0, false, {
-            fileName: "app/components/Footer.jsx",
-            lineNumber: 61,
-            columnNumber: 17
-          }, this)
-        ] }, void 0, true, {
-          fileName: "app/components/Footer.jsx",
-          lineNumber: 59,
-          columnNumber: 17
-        }, this)
-      ] }, void 0, true, {
-        fileName: "app/components/Footer.jsx",
-        lineNumber: 48,
+        lineNumber: 40,
         columnNumber: 13
-      }, this) }, void 0, false, {
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: "Terms & Conditions" }, void 0, false, {
         fileName: "app/components/Footer.jsx",
-        lineNumber: 47,
-        columnNumber: 11
+        lineNumber: 41,
+        columnNumber: 15
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: "Returns" }, void 0, false, {
+        fileName: "app/components/Footer.jsx",
+        lineNumber: 42,
+        columnNumber: 15
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: "FAQs" }, void 0, false, {
+        fileName: "app/components/Footer.jsx",
+        lineNumber: 43,
+        columnNumber: 15
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: "About Us" }, void 0, false, {
+        fileName: "app/components/Footer.jsx",
+        lineNumber: 44,
+        columnNumber: 15
       }, this)
     ] }, void 0, true, {
       fileName: "app/components/Footer.jsx",
-      lineNumber: 37,
-      columnNumber: 9
+      lineNumber: 39,
+      columnNumber: 11
+    }, this) }, void 0, false, {
+      fileName: "app/components/Footer.jsx",
+      lineNumber: 38,
+      columnNumber: 11
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "p-4 text-center bg-black bg-opacity-20", children: [
-      "\xA9 2023 Copyright:",
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { className: "text-white", href: "https://tailwind-elements.com/", children: "Tailwind Elements" }, void 0, false, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "py-6 footer-contact m-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-1", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h2", { className: "font-semibold text-xl", children: "GET IN TOUCH" }, void 0, false, {
+          fileName: "app/components/Footer.jsx",
+          lineNumber: 50,
+          columnNumber: 19
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h3", { className: "mt-4 mb-2 text-md font-semibold", children: "Call us at" }, void 0, false, {
+          fileName: "app/components/Footer.jsx",
+          lineNumber: 51,
+          columnNumber: 19
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { className: "mt-2 font-bold text-xl text-[#969696]", href: "#", children: "+91-9999999999" }, void 0, false, {
+          fileName: "app/components/Footer.jsx",
+          lineNumber: 52,
+          columnNumber: 19
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "mt-2 font-semibold text-[#969696]", children: "Monday to Friday : 9 AM to 7 PM" }, void 0, false, {
+          fileName: "app/components/Footer.jsx",
+          lineNumber: 55,
+          columnNumber: 19
+        }, this)
+      ] }, void 0, true, {
         fileName: "app/components/Footer.jsx",
-        lineNumber: 87,
-        columnNumber: 11
+        lineNumber: 49,
+        columnNumber: 17
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "cursor-pointer", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h2", { className: "font-semibold text-xl", children: "Support" }, void 0, false, {
+          fileName: "app/components/Footer.jsx",
+          lineNumber: 60,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { className: "mt-2 font-bold text-xl text-[#969696]", href: "#", children: "helpdesk@gmail.com" }, void 0, false, {
+          fileName: "app/components/Footer.jsx",
+          lineNumber: 61,
+          columnNumber: 17
+        }, this)
+      ] }, void 0, true, {
+        fileName: "app/components/Footer.jsx",
+        lineNumber: 59,
+        columnNumber: 17
       }, this)
     ] }, void 0, true, {
       fileName: "app/components/Footer.jsx",
-      lineNumber: 85,
-      columnNumber: 9
+      lineNumber: 48,
+      columnNumber: 13
+    }, this) }, void 0, false, {
+      fileName: "app/components/Footer.jsx",
+      lineNumber: 47,
+      columnNumber: 11
     }, this)
   ] }, void 0, true, {
+    fileName: "app/components/Footer.jsx",
+    lineNumber: 37,
+    columnNumber: 9
+  }, this) }, void 0, false, {
     fileName: "app/components/Footer.jsx",
     lineNumber: 36,
     columnNumber: 7
@@ -1030,28 +1016,50 @@ function HeaderMenu({ menu, viewport }) {
         return null;
       const url = item.url.includes("myshopify.com") || item.url.includes(publicStoreDomain) ? new URL(item.url).pathname : item.url;
       return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "relative inline-block text-left group", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("button", { onClick: () => goToCollection(item.url), className: "px-4 py-2 text-gray-800 focus:outline-none", children: [
+        viewport === "mobile" ? /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("button", { className: "px-4 py-2 text-gray-800 focus:outline-none", children: [
           item.title,
           viewport === "mobile" && /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("svg", { style: { display: "inline" }, height: "24", viewBox: "0 0 48 48", width: "24", xmlns: "http://www.w3.org/2000/svg", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("path", { d: "M14 20l10 10 10-10z" }, void 0, false, {
               fileName: "app/components/Header.jsx",
-              lineNumber: 151,
-              columnNumber: 127
+              lineNumber: 152,
+              columnNumber: 131
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("path", { d: "M0 0h48v48h-48z", fill: "none" }, void 0, false, {
               fileName: "app/components/Header.jsx",
-              lineNumber: 151,
-              columnNumber: 158
+              lineNumber: 152,
+              columnNumber: 162
             }, this)
           ] }, void 0, true, {
             fileName: "app/components/Header.jsx",
-            lineNumber: 151,
-            columnNumber: 17
+            lineNumber: 152,
+            columnNumber: 21
           }, this)
         ] }, void 0, true, {
           fileName: "app/components/Header.jsx",
-          lineNumber: 148,
-          columnNumber: 13
+          lineNumber: 149,
+          columnNumber: 15
+        }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("button", { onClick: () => goToCollection(item.url), className: "px-4 py-2 text-gray-800 focus:outline-none", children: [
+          item.title,
+          viewport === "mobile" && /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("svg", { style: { display: "inline" }, height: "24", viewBox: "0 0 48 48", width: "24", xmlns: "http://www.w3.org/2000/svg", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("path", { d: "M14 20l10 10 10-10z" }, void 0, false, {
+              fileName: "app/components/Header.jsx",
+              lineNumber: 160,
+              columnNumber: 131
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("path", { d: "M0 0h48v48h-48z", fill: "none" }, void 0, false, {
+              fileName: "app/components/Header.jsx",
+              lineNumber: 160,
+              columnNumber: 162
+            }, this)
+          ] }, void 0, true, {
+            fileName: "app/components/Header.jsx",
+            lineNumber: 160,
+            columnNumber: 21
+          }, this)
+        ] }, void 0, true, {
+          fileName: "app/components/Header.jsx",
+          lineNumber: 157,
+          columnNumber: 15
         }, this),
         item.items.length > 0 && /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "absolute left-16 z-20 sm:left-0 sm:z-20 md:left-0 hidden w-48 bg-white border border-gray-300 divide-y divide-gray-200 rounded-lg shadow-lg group-hover:block", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "py-1 group-hover:block", children: item.items.map((it) => /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
           "a",
@@ -1064,17 +1072,17 @@ function HeaderMenu({ menu, viewport }) {
           false,
           {
             fileName: "app/components/Header.jsx",
-            lineNumber: 159,
+            lineNumber: 170,
             columnNumber: 21
           },
           this
         )) }, void 0, false, {
           fileName: "app/components/Header.jsx",
-          lineNumber: 157,
+          lineNumber: 168,
           columnNumber: 17
         }, this) }, void 0, false, {
           fileName: "app/components/Header.jsx",
-          lineNumber: 156,
+          lineNumber: 167,
           columnNumber: 15
         }, this)
       ] }, `header_${index}`, true, {
@@ -1109,7 +1117,7 @@ function HeaderCtas({ isLoggedIn, cart }) {
           false,
           {
             fileName: "app/components/Header.jsx",
-            lineNumber: 190,
+            lineNumber: 201,
             columnNumber: 13
           },
           this
@@ -1119,44 +1127,44 @@ function HeaderCtas({ isLoggedIn, cart }) {
       false,
       {
         fileName: "app/components/Header.jsx",
-        lineNumber: 184,
+        lineNumber: 195,
         columnNumber: 11
       },
       this
     ) }, void 0, false, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 180,
+      lineNumber: 191,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(SearchToggle, {}, void 0, false, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 198,
+      lineNumber: 209,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(CartToggle, { cart }, void 0, false, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 199,
+      lineNumber: 210,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(HeaderMenuMobileToggle, {}, void 0, false, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 200,
+      lineNumber: 211,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 178,
+    lineNumber: 189,
     columnNumber: 5
   }, this);
 }
 function HeaderMenuMobileToggle() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("a", { className: "header-menu-mobile-toggle", href: "#mobile-menu-aside", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h3", { children: "\u2630" }, void 0, false, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 208,
+    lineNumber: 219,
     columnNumber: 7
   }, this) }, void 0, false, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 207,
+    lineNumber: 218,
     columnNumber: 5
   }, this);
 }
@@ -1181,7 +1189,7 @@ function SearchToggle() {
         false,
         {
           fileName: "app/components/Header.jsx",
-          lineNumber: 224,
+          lineNumber: 235,
           columnNumber: 9
         },
         this
@@ -1191,13 +1199,13 @@ function SearchToggle() {
     false,
     {
       fileName: "app/components/Header.jsx",
-      lineNumber: 216,
+      lineNumber: 227,
       columnNumber: 7
     },
     this
   ) }, void 0, false, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 215,
+    lineNumber: 226,
     columnNumber: 5
   }, this);
 }
@@ -1223,7 +1231,7 @@ function CartBadge({ count }) {
           false,
           {
             fileName: "app/components/Header.jsx",
-            lineNumber: 247,
+            lineNumber: 258,
             columnNumber: 9
           },
           this
@@ -1233,58 +1241,58 @@ function CartBadge({ count }) {
       false,
       {
         fileName: "app/components/Header.jsx",
-        lineNumber: 239,
+        lineNumber: 250,
         columnNumber: 7
       },
       this
     ) }, void 0, false, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 238,
+      lineNumber: 249,
       columnNumber: 5
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("a", { href: "/offers", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("svg", { width: "22.81px", fill: "none", stroke: "#d0715f", height: "22px", viewBox: "0 0 20 21", xmlns: "http://www.w3.org/2000/svg", alt: "discount_icon", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("path", { fillRule: "evenodd", clipRule: "evenodd", d: "m8.744 3.662.832-.803.832.803a3 3 0 0 0 2.504.813l1.146-.162.2 1.134a3 3 0 0 0 1.55 2.132l1.018.54-.505 1.03a3 3 0 0 0 0 2.639l.505 1.031-1.018.54a3 3 0 0 0-1.55 2.131l-.2 1.134-1.146-.162a3 3 0 0 0-2.504.813l-.832.804-.832-.804a3 3 0 0 0-2.504-.813l-1.146.162-.2-1.134a3 3 0 0 0-1.55-2.132l-1.018-.539.505-1.031a3 3 0 0 0 0-2.638l-.505-1.032 1.018-.539a3 3 0 0 0 1.55-2.132l.2-1.134 1.146.162a3 3 0 0 0 2.504-.813ZM8.88.75a1 1 0 0 1 1.39 0l1.527 1.475a1 1 0 0 0 .834.27l2.104-.296a1 1 0 0 1 1.125.817l.366 2.086a1 1 0 0 0 .517.71l1.874.993a1 1 0 0 1 .43 1.324l-.93 1.901a1 1 0 0 0 0 .88l.93 1.9a1 1 0 0 1-.43 1.324l-1.874.993a1 1 0 0 0-.517.71l-.366 2.087a1 1 0 0 1-1.125.817l-2.104-.297a1 1 0 0 0-.834.27l-1.527 1.475a1 1 0 0 1-1.39 0l-1.527-1.474a1 1 0 0 0-.834-.271l-2.104.297a1 1 0 0 1-1.125-.817l-.366-2.087a1 1 0 0 0-.517-.71l-1.874-.993a1 1 0 0 1-.43-1.323l.93-1.902a1 1 0 0 0 0-.879l-.93-1.901a1 1 0 0 1 .43-1.324l1.874-.992a1 1 0 0 0 .517-.711l.366-2.086a1 1 0 0 1 1.125-.817l2.104.297a1 1 0 0 0 .834-.271L8.881.749Zm4.524 7.31a1 1 0 0 0-1.413-1.415l-6.245 6.234a1 1 0 1 0 1.413 1.416l6.245-6.235Zm-4.87-.188A1.56 1.56 0 0 1 6.974 9.43 1.56 1.56 0 1 1 8.535 7.87Zm3.642 6.754a1.56 1.56 0 0 0 1.561-1.559 1.56 1.56 0 0 0-1.56-1.558 1.56 1.56 0 1 0 0 3.117Z" }, void 0, false, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 255,
+      lineNumber: 266,
       columnNumber: 146
     }, this) }, void 0, false, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 255,
+      lineNumber: 266,
       columnNumber: 6
     }, this) }, void 0, false, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 254,
+      lineNumber: 265,
       columnNumber: 6
     }, this)
   ] }, void 0, true, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 237,
+    lineNumber: 248,
     columnNumber: 5
   }, this);
 }
 function CartToggle({ cart }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react5.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(CartBadge, { count: 0 }, void 0, false, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 263,
+    lineNumber: 274,
     columnNumber: 25
   }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Await, { resolve: cart, children: (cart2) => {
     if (!cart2)
       return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(CartBadge, { count: 0 }, void 0, false, {
         fileName: "app/components/Header.jsx",
-        lineNumber: 266,
+        lineNumber: 277,
         columnNumber: 29
       }, this);
     return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(CartBadge, { count: cart2.totalQuantity || 0 }, void 0, false, {
       fileName: "app/components/Header.jsx",
-      lineNumber: 267,
+      lineNumber: 278,
       columnNumber: 18
     }, this);
   } }, void 0, false, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 264,
+    lineNumber: 275,
     columnNumber: 7
   }, this) }, void 0, false, {
     fileName: "app/components/Header.jsx",
-    lineNumber: 263,
+    lineNumber: 274,
     columnNumber: 5
   }, this);
 }
@@ -1308,8 +1316,8 @@ var AnnouncementBar = () => {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
     "div",
     {
-      className: "bg-pink-700 text-center font-black",
-      style: { backgroundColor: "#FFD95A", padding: "8px" },
+      className: "text-center",
+      style: { backgroundColor: "#010101", color: "#fff", padding: "8px" },
       children: "Announcement"
     },
     void 0,
@@ -1478,7 +1486,7 @@ function MobileMenuAside({ menu }) {
 }
 
 // app/styles/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-5JAKTGUH.css";
+var tailwind_default = "/build/_assets/tailwind-D7LNJMKG.css";
 
 // app/root.jsx
 var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime());
@@ -1743,4 +1751,4 @@ tw-elements-react/dist/js/tw-elements-react.es.min.js:
   * 
   *)
 */
-//# sourceMappingURL=/build/root-LI3H6NFE.js.map
+//# sourceMappingURL=/build/root-267LYFRD.js.map

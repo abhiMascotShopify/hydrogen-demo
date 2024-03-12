@@ -213,6 +213,13 @@ aside li {
   display: flex;
   grid-gap: 1rem;
 }
+footer {
+  background-color: #010101;
+  color: #fff;
+}
+.footer-section {
+  border-color: #d87558;
+}
 .footer {
   background: #000;
   background: var(--color-dark);
@@ -559,6 +566,9 @@ aside li {
   }
 }
 @media only screen and (max-width: 640px) {
+  .p-2 {
+    padding: 0;
+  }
   .right-filter {
     position: absolute;
     right: 0;
@@ -649,4 +659,4 @@ aside li {
     width: 30px !important;
   }
 }
-/*# sourceMappingURL=/build/_assets/app-BIAEMNSF.css.map */
+/*# sourceMappingURL=/build/_assets/app-KXRQAM57.css.map */

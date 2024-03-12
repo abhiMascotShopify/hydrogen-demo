@@ -3,8 +3,8 @@ import React, {useState} from 'react';
 const AnnouncementBar = () => {
   return (
     <div
-      className="bg-pink-700 text-center font-black"
-      style={{backgroundColor: '#FFD95A', padding: '8px'}}
+      className="text-center"
+      style={{backgroundColor: '#010101', color:"#fff", padding: '8px'}}
     >
       Announcement
     </div>
