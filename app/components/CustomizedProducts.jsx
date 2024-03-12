@@ -42,7 +42,7 @@ const MobileProductCorousel = ({products, title}) => {
               ))}
             </div>
           <button
-            className="absolute left-[5px] top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full ml-1 p-2 mr-2 hover:bg-opacity-75"
+            className="absolute left-[5px] top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full ml-1 p-2 mr-2 hover:bg-opacity-75 mst-arrow"
             onClick={() => prevProducts() }
           >
           <MdChevronLeft
@@ -50,8 +50,8 @@ const MobileProductCorousel = ({products, title}) => {
             size={20}
           />
           </button>
-          <button
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75"
+          <button 
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75 mst-arrow"
             onClick={() => nextProducts() }
           >
             <MdChevronRight
