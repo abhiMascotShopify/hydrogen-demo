@@ -23,7 +23,7 @@ const MobileProductCorousel = ({products}) => {
             <img
               src={`${product.articles.edges[0].node.image.url}`} // Make sure to put your images in the 'public/images/' directory
               alt={product.title}
-              className="mst-card lg:w-full lg:h-auto rounded-lg lg:px-5 sm:px-3 sm:mx-3 w-[320px] h-[40%]"
+              className="mst-card lg:w-full lg:h-auto rounded-lg lg:px-5 sm:px-3 sm:mx-3 w-[320px] h-[80%] sm:h-[40%]"
             />
             </a>
             </div>

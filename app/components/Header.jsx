@@ -26,10 +26,12 @@ export function Header({header, isLoggedIn, cart}) {
   return (
     <>
       <header className="header border-b border-gray-200 sm:mt-0 mt-4">
+
         <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-          <img className="w-40" src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Mary_Jo_K_Cult_Makeup_Unit-01.png?v=1709204173" />
+          <img className="w-40 h-6 sm:h-8 mb-10 sm:mb-0 mst_mobile_img" src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Mary_Jo_K_Cult_Makeup_Unit-01.png?v=1709204173" />
           {/* <strong>{shop.name}</strong> */}
         </NavLink>
+        
         <div className='grid grid-rows-2 items-center sm:grid-rows-1 grid-flow-col gap-0 sm:gap-4'>
         {/* {isLargeScreen && ( */}
           <div className="m-auto sm:flex">
@@ -147,7 +149,7 @@ export function HeaderMenu({menu, viewport}) {
           <div key={`header_${index}`} className="relative inline-block text-left group">
             {viewport === 'mobile' ? 
               <button className="px-4 py-2 text-gray-800 focus:outline-none">
-                {item.title} 
+                <span onClick={()=> goToCollection(item.url) }  > {item.title} </span>
                 {viewport === 'mobile' && (
                     <>{ item.items.length > 0 && <svg style={{display:'inline'}} height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14 20l10 10 10-10z"/><path d="M0 0h48v48h-48z" fill="none"/></svg> }</>
                   )
@@ -155,7 +157,7 @@ export function HeaderMenu({menu, viewport}) {
               </button>
               : 
               <button onClick={()=> goToCollection(item.url) } className="px-4 py-2 text-gray-800 focus:outline-none">
-                {item.title} 
+                 <span onClick={()=> goToCollection(item.url) }  > {item.title} </span>
                 {viewport === 'mobile' && (
                     <svg style={{display:'inline'}} height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14 20l10 10 10-10z"/><path d="M0 0h48v48h-48z" fill="none"/></svg>
                   )

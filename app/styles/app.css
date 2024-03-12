@@ -627,6 +627,7 @@ footer{
 }
 @media only screen and (max-width: 640px) {
   .p-2{ padding: 0;}
+  .mst_mobile_img { margin-left: -5px;}
   .right-filter {
     position: absolute;
     right: 0;
