@@ -628,6 +628,7 @@ footer{
 @media only screen and (max-width: 640px) {
   .p-2{ padding: 0;}
   .mst_mobile_img { margin-left: -5px;}
+  .mst_search_btn{ line-height: 0 !important;}
   .right-filter {
     position: absolute;
     right: 0;

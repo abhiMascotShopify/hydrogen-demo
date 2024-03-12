@@ -36,7 +36,7 @@ const GiftingCarousel = () => {
         <h1 className="text-center">Gifting Offers</h1>
         <div className="flex">
           {productsToShow.map((product) => (
-            <div key={product.id} className="w-full sm:w-1/2 md:w-1/3 px-4">
+            <div key={product.id} className="w-full w-1 sm:w-1/2 md:w-1/3 px-4">
               <div className="bg-white rounded-lg shadow-lg p-4">
                 <img
                   src={`${product.image}`} // Make sure to put your images in the 'public/images/' directory

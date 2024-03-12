@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
 import {useMediaQuery} from 'react-responsive';
 
-const MobileProductCorousel = ({products}) => {
+const MobileProductCorousel = ({products,title}) => {
   const [startIndex, setStartIndex] = useState(0);
   //console.log(products)
   //const productsToShow = products.slice(startIndex, startIndex + 5);
@@ -14,7 +14,7 @@ const MobileProductCorousel = ({products}) => {
     <div className="w-full max-w-screen-2xl mx-auto px-1">
       <div className="relative">
         <h1 className="text-center mt-0 lg:text-[28px] text-[20px]">
-          Choose Your Own Fashion
+         {title}
         </h1>
         <div className="flex gap-2 overflow-y-auto">
           {products.nodes.map((product) => (
@@ -55,7 +55,7 @@ const DesktopCorousel = ({products}) => {
     <div>
       <div className="w-full max-w-screen-2xl mx-auto px-1">
         <div className="relative">
-          <h1 className="text-center">Blogs</h1>
+          <h1 className="text-center">{title}</h1>
           <div className="flex">
             {productsToShow.map((product) => (
               <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
@@ -108,7 +108,7 @@ const DesktopCorousel = ({products}) => {
   );
 };
 
-const BlogCorousel = ({collections}) => {
+const BlogCorousel = ({collections , title}) => {
   //console.log(collections);
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const isSmall = useMediaQuery({maxWidth: 640});
@@ -117,10 +117,10 @@ const BlogCorousel = ({collections}) => {
   return (
     <div>
       {isSmall && (
-        <MobileProductCorousel products={collections}></MobileProductCorousel>
+        <MobileProductCorousel products={collections} title={title}></MobileProductCorousel>
       )}
       {isLargeScreen && (
-        <DesktopCorousel products={collections}></DesktopCorousel>
+        <DesktopCorousel products={collections} title={title}></DesktopCorousel>
       )}
     </div>
   );

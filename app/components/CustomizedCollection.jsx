@@ -2,25 +2,30 @@ import React, {useState} from 'react';
 import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
 import {useMediaQuery} from 'react-responsive';
 
-const MobileProductCorousel = ({products}) => {
+const MobileProductCorousel = ({products,title}) => {
   const [startIndex, setStartIndex] = useState(0);
   //console.log(products)
   //const productsToShow = products.slice(startIndex, startIndex + 5);
   //console.log(productsToShow)
+  const goToCollection=(url_path)=>{
+    window.location.href = url_path
+  }
 
   return (
     <div className="w-full max-w-screen-2xl mx-auto px-1">
       <div className="relative">
         <h1 className="text-center lg:text=[28px] text-[20px] mt-[15px]">
-          Choose Your Own Fashion
+        {title}
         </h1>
         <div className="flex gap-2 overflow-y-auto">
           {products.map((product) => (
             <img
+              onClick={()=> goToCollection(`/collections/${product.handle}`)}
               src={`${product.image.url}`} // Make sure to put your images in the 'public/images/' directory
               alt={product.title}
-              className="lg:w-full lg:h-auto rounded-lg lg:px-5 sm:px-3 sm:mx-3 h-[40%] w-[250px]"
+              className="lg:w-full lg:h-auto rounded-lg lg:px-5 sm:px-3 sm:mx-3 h-[40%] w-[375px] sm:w-[250px]   cursor"
             />
+         
           ))}
         </div>
       </div>
@@ -48,7 +53,7 @@ const DesktopCorousel = ({products,title}) => {
       <div className="w-full max-w-screen-2xl mx-auto px-1">
         <div className="relative">
           <h1 className="text-center">{title}</h1>
-          <div className="flex">
+          <div className="flex w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
             {productsToShow.map((product) => (
               <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
                 <div className="cursor mst-card bg-white rounded-lg shadow-lg p-1">
@@ -98,7 +103,7 @@ const DesktopCorousel = ({products,title}) => {
   );
 };
 
-const CustomizedCollection = ({collections}) => {
+const CustomizedCollection = ({collections,title}) => {
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const isSmall = useMediaQuery({maxWidth: 640});
   //console.log('is Tablet: '+isLargeScreen);
@@ -106,10 +111,10 @@ const CustomizedCollection = ({collections}) => {
   return (
     <div>
       {isSmall && (
-        <MobileProductCorousel products={collections}></MobileProductCorousel>
+        <MobileProductCorousel products={collections} title={title}></MobileProductCorousel>
       )}
       {isLargeScreen && (
-        <DesktopCorousel products={collections}></DesktopCorousel>
+        <DesktopCorousel products={collections} title={title}></DesktopCorousel>
       )}
     </div>
   );

@@ -25,7 +25,8 @@ const MobileProductCorousel = ({products, title}) => {
       <div className="w-full max-w-screen-2xl mx-auto px-1 m-5">
         <div className="relative">
           <h1 className="text-center">{title}</h1>
-            <div className="flex">
+          <div className='relative'>
+            <div className="flex w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
               {productsToShow.map((product) => (
                 <div key={product.id} className="cursor w-full sm:w-1/3 md:w-1/3 px-4">
                   <div className="cursor mst-card bg-white rounded-lg shadow-lg p-1">
@@ -41,24 +42,25 @@ const MobileProductCorousel = ({products, title}) => {
                 </div>
               ))}
             </div>
-          <button
-            className="absolute left-[5px] top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full ml-1 p-2 mr-2 hover:bg-opacity-75 mst-arrow"
+            <button
+            className="absolute lg:left-[-90px] top-1/2 transform bg-white -translate-y-1/2 bg-opacity-75 rounded-full p-2 ml-4 hover:bg-opacity-100 text-white mst-arrow"
             onClick={() => prevProducts() }
-          >
-          <MdChevronLeft
-            className="opacity-50 cursor-pointer hover:opacity-100"
-            size={20}
-          />
-          </button>
-          <button 
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75 mst-arrow"
-            onClick={() => nextProducts() }
-          >
-            <MdChevronRight
+            >
+            <MdChevronLeft
               className="opacity-50 cursor-pointer hover:opacity-100"
               size={20}
             />
-          </button>
+            </button>
+            <button 
+              className="absolute lg:right-[-90px] right-0 top-1/2 transform -translate-y-1/2  bg-white bg-opacity-75 rounded-full p-2 mr-4 hover:bg-opacity-100 text-white mst-arrow"
+              onClick={() => nextProducts() }
+            >
+              <MdChevronRight
+                className="opacity-50 cursor-pointer hover:opacity-100"
+                size={20}
+              />
+            </button>
+          </div>
         </div>
       </div>
   );
@@ -90,7 +92,7 @@ const DesktopCorousel = ({products, title}) => {
       <div className="w-full max-w-screen-2xl mx-auto px-1">
         <div className="relative">
           <h1 className="text-center">{title}</h1>
-            <div className="flex">
+            <div className="flex w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
               {productsToShow.map((product) => (
                 <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
                   <div className="cursor mst-card bg-white rounded-lg shadow-lg p-1">
@@ -107,7 +109,7 @@ const DesktopCorousel = ({products, title}) => {
               ))}
             </div>
           <button
-            className="absolute left-[5px] top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full ml-1 p-2 mr-2 hover:bg-opacity-75 mst-arrow"
+            className="absolute left-[5px] top-1/2 transform  bg-white bg-opacity-50 rounded-full ml-1 p-2 mr-2 hover:bg-opacity-75 mst-arrow"
             onClick={() => prevProducts() }
           >
           <MdChevronLeft
@@ -116,7 +118,7 @@ const DesktopCorousel = ({products, title}) => {
           />
           </button>
           <button
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75 mst-arrow"
+            className="absolute right-0 top-1/2 transform  bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75 mst-arrow"
             onClick={() => nextProducts() }
           >
             <MdChevronRight

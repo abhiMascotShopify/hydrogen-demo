@@ -247,11 +247,11 @@ export default function Homepage() {
         title={"From Customer's Inbox"}
       /> */}
     <section>
-    <CustomizedCollection collections={collectionArray} title={'Collections'} />
+    <CustomizedCollection collections={collectionArray} title="Choose Your Own Fashion" />
     </section>
 
       {/*<RecommendedProducts products={data.recommendedProducts} />*/}
-      <BlogCorousel collections={data.blogs} />
+      <BlogCorousel collections={data.blogs} title="blogs" />
       {/*console.log(data.collectionProducts)*/}
     </div>
   );

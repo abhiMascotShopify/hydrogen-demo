@@ -17,16 +17,20 @@ const OfferCarousel = (collections) => {
         : prevIndex - 3
     );
   };
+  const goToCollection=(url_path)=>{
+    window.location.href = url_path
+  }
   console.log(productsToShow)
   return (
     <div className="w-full max-w-screen-xl mx-auto px-4">
       <div className="relative">
-        <h1 className="text-center">Special Offers</h1>
+        <h1 className="text-center"> Special Offers </h1>
         <div className="flex flex-wrap">
           {productsToShow.map((product) => (
-            <div key={product.id} className="w-full flex-auto sm:w-1/2 md:w-1/3 py-2 px-4">
+            <div key={product.id}  className="w-full flex-auto sm:w-1/2 md:w-1/3 py-2 px-4">
               <div className="bg-white rounded-lg shadow-lg p-4">
                 <img
+                  onClick={()=> goToCollection(`/collections/${product.handle}`)}
                   src={`${product.image.url}`} // Make sure to put your images in the 'public/images/' directory
                   alt={product.name}
                   className="w-full h-auto"

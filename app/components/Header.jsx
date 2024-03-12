@@ -26,7 +26,6 @@ export function Header({header, isLoggedIn, cart}) {
   return (
     <>
       <header className="header border-b border-gray-200 sm:mt-0 mt-4">
-
         <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
           <img className="w-40 h-6 sm:h-8 mb-10 sm:mb-0 mst_mobile_img" src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Mary_Jo_K_Cult_Makeup_Unit-01.png?v=1709204173" />
           {/* <strong>{shop.name}</strong> */}
@@ -43,7 +42,7 @@ export function Header({header, isLoggedIn, cart}) {
                       <div className="relative  flex w-full items-center items-stretch">
                         <input
                           type="search"
-                          className="relative w-48 sm:w-[320px] md:w-[400px] lg:w-[470px] m-0 py-[10px] px-[15px] block rounded-bl-lg rounded-tl-lg border bg-transparent bg-clip-padding  text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary mst-card"
+                          className="relative w-48 sm:h-[50px] h-[40px] sm:w-[320px] md:w-[400px] lg:w-[470px] m-0 py-[10px] px-[15px] block rounded-bl-lg rounded-tl-lg border bg-transparent bg-clip-padding  text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary mst-card"
                           aria-label="Search"
                           aria-describedby="button-addon3"
                           name="q"
@@ -54,7 +53,7 @@ export function Header({header, isLoggedIn, cart}) {
                         />
                         <TERipple>
                           <button
-                            className="relative z-[2] rounded-tr-lg rounded-br-lg border border-1 mst-card p-[15px] text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                            className="mst_search_btn relative z-[2] sm:h-[50px] h-[40px] rounded-tr-lg rounded-br-lg border border-1 mst-card p-[15px] text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                             type="submit"
                             id="button-addon3"
                           >
@@ -149,7 +148,7 @@ export function HeaderMenu({menu, viewport}) {
           <div key={`header_${index}`} className="relative inline-block text-left group">
             {viewport === 'mobile' ? 
               <button className="px-4 py-2 text-gray-800 focus:outline-none">
-                <span onClick={()=> goToCollection(item.url) }  > {item.title} </span>
+                <span onClick={()=> goToCollection(item.url)} > {item.title} </span>
                 {viewport === 'mobile' && (
                     <>{ item.items.length > 0 && <svg style={{display:'inline'}} height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14 20l10 10 10-10z"/><path d="M0 0h48v48h-48z" fill="none"/></svg> }</>
                   )
