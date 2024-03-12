@@ -16,8 +16,9 @@ const MobileProductCorousel = ({products}) => {
         <h1 className="text-center mt-0 lg:text-[28px] text-[20px]">
           Choose Your Own Fashion
         </h1>
-        <div className="flex  gap-2 overflow-y-auto">
+        <div className="flex gap-2 overflow-y-auto">
           {products.nodes.map((product) => (
+             <div className="bg-white  rounded-lg shadow-lg p-1">
             <a href={`/blogs/${product.handle}`}>
             <img
               src={`${product.articles.edges[0].node.image.url}`} // Make sure to put your images in the 'public/images/' directory
@@ -25,6 +26,7 @@ const MobileProductCorousel = ({products}) => {
               className="mst-card lg:w-full lg:h-auto rounded-lg lg:px-5 sm:px-3 sm:mx-3 w-[320px] h-[40%]"
             />
             </a>
+            </div>
           ))}
         </div>
       </div>
