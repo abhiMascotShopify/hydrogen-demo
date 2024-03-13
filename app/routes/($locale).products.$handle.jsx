@@ -176,7 +176,7 @@ function ProductImage({image, activeImg, setActiveImage, product}) {
         <img
           src={activeImg}
           alt=""
-          className="w-[90%] border border-[#e5e5e5] h-full aspect-square object-cover rounded-xl p-[10px] border-1 border-[#e5e5e5] hover:scale-125 transition duration-300 cursor-pointer mst-card"
+          className="w-[90%] border border-[#e5e5e5] h-full aspect-square object-cover rounded-xl p-[10px] border-1 border-[#e5e5e5] hover:scale-x-125 md:hover:scale-125 transition duration-300 cursor-pointer mst-card"
         />
       </div>
     </>
@@ -219,12 +219,12 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
       <div className="final-product mst-card shadow-lg p-4 flex flex-col justify-between lg:flex-row lg:gap-8 lg:ml-8 lg:mr-8 items-start relative">
         <div className="flex flex-col gap-6 lg:w-2/4 flex-wrap items-center lg:sticky top-[240px]">
           {/*<img src={activeImg} alt="" className='w-full h-full aspect-square object-cover rounded-xl'/>
-                    <div className='flex flex-row justify-between h-full overflow-y-auto'>
-                      {product.images.edges && product.images.edges.map((item,index)=>(
-                        <img src={images[index]} alt="" className='w-24 h-24 rounded-md cursor-pointer' onClick={() => setActiveImage(images[index])}/>
-                      ))
-                      }
-                    </div>*/}
+            <div className='flex flex-row justify-between h-full overflow-y-auto'>
+              {product.images.edges && product.images.edges.map((item,index)=>(
+                <img src={images[index]} alt="" className='w-24 h-24 rounded-md cursor-pointer' onClick={() => setActiveImage(images[index])}/>
+              ))
+              }
+            </div>*/}
           <ProductImage
             image={selectedVariant?.image}
             product={product}

@@ -544,9 +544,9 @@ export default function Collection() {
                   <div className="w-full max-w-screen-xl">
                     <div className="cursor grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
                       {productsToShow.map((product, index) => (
-                        <div className="cursor mst-card"  key={product.id}>
+                        <div className="cursor mst-card-md"  key={product.id}>
                           <div
-                            className="bg-white rounded-lg shadow-lg p-2 sm:px-4 px-2"
+                            className="bg-white rounded-lg shadow-lg p-2 px-2 sm:px-4"
                             style={{
                               boxShadow:
                                 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
@@ -561,7 +561,7 @@ export default function Collection() {
                             <h2 className="sm:text-lg text-[17px] font-semibold mt-2 text-center">
                               {product.title}
                             </h2>
-                            <div className="h-12">
+                            <div className="h-8">
                               <h1 className="text-center sm:text-[26px] text-[21px] font-bold m-auto w-full">
                               {product.priceRange.maxVariantPrice.amount} &nbsp; Rs
                               </h1>
@@ -574,7 +574,7 @@ export default function Collection() {
                             </div>
                           </div>
                             <div className="px-1 py-1 flex items-center sm:flex-row gap-3 justify-center w-[100%]">
-                              <div className='w-[25%]'>
+                              <div className='w-[25%] flex justify-center'>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 32 33"

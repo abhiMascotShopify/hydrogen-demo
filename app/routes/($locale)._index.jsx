@@ -1,5 +1,5 @@
 import {defer} from '@shopify/remix-oxygen';
-import {Await, useLoaderData, Link} from '@remix-run/react';
+import {Await, useLoaderData, Link, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Image, Money} from '@shopify/hydrogen';
 import ProductCard from 'app/components/productCard';
@@ -122,17 +122,19 @@ export default function Homepage() {
               key={index}
             >
               <div className="image">
-                <img
-                  width={80}
-                  height={80}
-                  alt={item.collectionname}
-                  src={item.collectionimageurl}
-                  style={{
-                    width: '80px',
-                    borderRadius: '50%',
-                    border: '1px solid #e5e5e5',
-                  }}
-                />
+                <NavLink to={`/collections/${item.collectionname}`}>
+                  <img
+                    width={80}
+                    height={80}
+                    alt={item.collectionname}
+                    src={item.collectionimageurl}
+                    style={{
+                      width: '80px',
+                      borderRadius: '50%',
+                      border: '1px solid #e5e5e5',
+                    }}
+                  />
+                </NavLink>
               </div>
               <div className="collectionname  sm:text-lg text-[12px] font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]">
                 {item.collectionname}

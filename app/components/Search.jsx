@@ -236,7 +236,7 @@ export function PredictiveSearchResults() {
     return <NoPredictiveSearchResults searchTerm={searchTerm} />;
   }
   return (
-    <div className="predictive-search-results lg:w-[470px]">
+    <div className="predictive-search-results w-[270px] lg:w-[470px] absolute">
       <div>
         {results.map(({type, items}) => (
           <PredictiveSearchResult
