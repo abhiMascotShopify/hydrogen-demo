@@ -35,9 +35,16 @@ const CollectionCarousel = ({collection , handle , sortArr}) => {
     setEndIndex((prevIndex) => len == endIndex ? prevIndex-1 : prevIndex + 1);
   };
 
+  function getPath(url_path) {
+    let url = new URL(url_path);
+    let path = url.pathname;
+    return path;
+  }
 
   function goToCollection(url_path){
+    
     let url = getPath(url_path);
+    console.log(url)
     window.location.href = url
   }
 
@@ -46,9 +53,10 @@ const CollectionCarousel = ({collection , handle , sortArr}) => {
       <div className="relative">
         <div className="flex grid-row-1 grid-cols-2 gap-4">
           {collectionsToShow.map((coll, index) => (
-            <div key={coll.id} className="w-full " >
+
+            <div key={coll.id} className="w-full cursor" onClick={()=> goToCollection(coll.url)}>
                 <div className="bg-white mst-card rounded-lg shadow-lg p-2 w-32 h-40 sm:w-40">
-                  <div className='cursor' onClick={()=> goToCollection(coll.url)}>
+                 
                     <img
                       src={coll.imgurl || noImg }// Make sure to put your images in the 'public/images/' directory
                       className="w-full h-auto coll_cor_img rounded-full"
@@ -56,7 +64,7 @@ const CollectionCarousel = ({collection , handle , sortArr}) => {
                     <h2 className="text-sm font-semibold mt-2 text-center">
                       {coll.title}
                     </h2>
-                  </div>
+                 
               </div>
             </div>
           ))}
