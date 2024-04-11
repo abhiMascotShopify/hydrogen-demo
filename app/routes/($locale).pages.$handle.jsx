@@ -9,7 +9,6 @@ export async function loader({params, context}) {
   if (!params.handle) {
     throw new Error('Missing page handle');
   }
-
   const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
       handle: params.handle,
@@ -19,7 +18,6 @@ export async function loader({params, context}) {
   if (!page) {
     throw new Response('Not Found', {status: 404});
   }
-
   return json({page});
 }
 
@@ -27,7 +25,7 @@ export default function Page() {
   const {page} = useLoaderData();
 
   return (
-    <div className="page">
+    <div className="page m-12">
       <header>
         <h1>{page.title}</h1>
       </header>

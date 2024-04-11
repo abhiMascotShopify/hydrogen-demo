@@ -36,7 +36,7 @@ export function Layout({cart, children = null, footer, header, isLoggedIn}) {
       <main>{children}</main>
       <Suspense>
         <Await resolve={footer}>
-          {(footer) => <Footer menu={footer.menu} />}
+          {(footer) => <Footer menu={header.menu} />}
         </Await>
       </Suspense>
     </>

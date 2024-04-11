@@ -2,19 +2,13 @@ import {defer} from '@shopify/remix-oxygen';
 import {Await, useLoaderData, Link, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Image, Money} from '@shopify/hydrogen';
-import ProductCard from 'app/components/productCard';
-import ShopifyCarousel from '~/components/ShopifyCarousel';
 import ImageCarousel from '~/components/ImageCarousel';
 import ProductCarousel from '~/components/ProductCarousel';
 import CustomizedProducts from '~/components/CustomizedProducts';
-import GiftingCarousel from '~/components/GiftingCarousel';
 import YouTubeVideo from '~/components/YouTubeVideo';
 import {useMediaQuery} from 'react-responsive';
-import {SearchForm} from '~/components/Search';
 import CustomizedCollection from '~/components/CustomizedCollection';
 import BlogCorousel from '~/components/BlogCorousel';
-import {useJudgeme} from '@judgeme/shopify-hydrogen';
-
 
 export const meta = () => {
   return [{title: 'Hydrogen | Home'}];
@@ -55,15 +49,26 @@ export default function Homepage() {
   const { header } = data;
   //console.log("menu ::",data.collections)
   var menus = header.menu.items;
-  var collectionArray = menus.filter((item)=> item.title !== "Home")
-  const imageSrc = [
-    'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_1.jpg?v=1708767049',
-    'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_3_opt_1.jpg?v=1708767048',
-    'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_4_opt_2.jpg?v=1708767048',
-    'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_5_opt_2.jpg?v=1708767048'
-  ];
+  var collectionArray = menus.filter((item)=> item.title !== "Home");
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const isSmall = useMediaQuery({maxWidth: 640});
+  var imageSrc = []
+  if(!isSmall){
+    imageSrc = [
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_1.jpg?v=1708767049',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_3_opt_1.jpg?v=1708767048',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_4_opt_2.jpg?v=1708767048',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_5_opt_2.jpg?v=1708767048'
+    ];
+  }else{
+    imageSrc = [
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_1_700_x_470.jpg?v=1712753471',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_4_700_x_470.jpg?v=1712753471',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_3_700_x_470.jpg?v=1712753471',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_5_700_x_470.jpg?v=1712753471'
+    ];
+  }
+
   var GiftCollections = [];
   var ReviewCollection = [];
   var BuildYourOwnColl = [];
@@ -208,7 +213,7 @@ export default function Homepage() {
           <div className="my-[15px]">
             <img
               style={{height:"250px"}}
-              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Lookbook_Banner.jpg?v=1709971241"
+              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_look_book.jpg?v=1712816125"
               className="rounded-2xl w-[100%] m-auto"
             ></img>
           </div>
@@ -230,7 +235,7 @@ export default function Homepage() {
           <div className="my-[15px]">
             <img
               style={{height:"250px"}}
-              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Daily_Essentials_banner.jpg?v=1709971600"
+              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_everyday_style.jpg?v=1712816125"
               className="rounded-2xl w-[100%] m-auto"
             ></img>
           </div>
@@ -240,7 +245,7 @@ export default function Homepage() {
       <RecommendedProducts
         key={ThirdHeroCollection.edges[0].node.id}
         products={ThirdHeroCollection}
-        title="3rd Hero Collection"
+        title="Daily Must-Haves"
       />
  
       {/* -- sectio 11 -Review -- */}

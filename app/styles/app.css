@@ -17,6 +17,7 @@ img {
 * components/Aside
 * --------------------------------------------------
 */
+.oke-button { background-color: #d0715f !important; border-radius: .5rem!important; font-family: 'Philosopher' }
 .coll_cor_img { border: 1px solid #dfdfdf;width: 100px;height: 100px;margin: auto;}
 .bg-black { background-color:  #d0715f !important; }
 .bg-blue-700 { background-color:  #d0715f !important; }
@@ -24,18 +25,19 @@ img {
 .mst-border { border-color: #d0715f; }
 .mst-arrow { border-radius: 50%; background: #d0715f;}
 .mst-card { border:2px solid #d0715f;border-radius: 10px;}
+.mst-card-shadow { border-radius: 8px; box-shadow: 0 2px 4px #CB7060;}
 .mst-card-md { border:2px solid #d0715f;border-radius: 5px;}
 .coupan_code_wrapper { display: inline-flex;justify-content: end; color: #645c5c;}
 .collectionContent{display: flex;justify-content: center;}
 .cursor{cursor: pointer;}
 .login_span { display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin: 0 5px;}
-  .empty_cart_img{ 
-    max-width: 200px;
-    height: auto;
-  }
+justify-content: center;
+align-items: flex-end;
+margin: 0 5px;}
+.empty_cart_img{ 
+  max-width: 200px;
+  height: auto;
+}
 aside {
   background: var(--color-light);
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
@@ -290,7 +292,7 @@ footer{
 .expect > div > div {
   max-width: 100% !important;
 }
-.expect > div > div > div {
+/* .expect > div > div > div {
   display: flex;
   --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
@@ -300,7 +302,7 @@ footer{
     0 4px 6px -4px #0000001a !important;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
     var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow) !important;
-}
+} */
 .expect > div > div > div > div {
   display: block !important;
   margin: auto !important;

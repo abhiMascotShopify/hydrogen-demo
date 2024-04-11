@@ -3,10 +3,6 @@ import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
 import {useMediaQuery} from 'react-responsive';
 
 const DesktopCorousel = ({products,title}) => {
-  //console.log(products)
-  //const productsToShow = products.slice(startIndex, startIndex + 5);
-  //console.log(productsToShow)
-
   let productsToShow = [];
   const [startIndex, setStartIndex] = useState(0);
   const isLargeScreen = useMediaQuery({minWidth: 1024});

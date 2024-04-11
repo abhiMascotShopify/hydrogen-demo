@@ -190,7 +190,6 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
   });
   const [images, setImages] = useState(ImageSrc);
   const expaction = product.metafields[0]?.value;
-  //console.log("ProductMain ::",selectedVariant)
   const key_ingredients = product.metafields[1]?.value;
   const How_To_use = product.metafields[2]?.value;
   const who_can_use = product.metafields[3]?.value;
@@ -201,7 +200,6 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
     setActiveTab(tab);
   };
   const [activeImg, setActiveImage] = useState(images[0]);
-  const [amount, setAmount] = useState(1);
   const [moreText, setMoreText] = useState(true);
   const [moreOffer, setMoreOffer] = useState(false);
 
@@ -216,7 +214,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
         <img src="/next.png" alt="next" width={20} height={20} />
         <span className="font-semibold mst-color">Product page</span>
       </div>
-      <div className="final-product mst-card shadow-lg p-4 flex flex-col justify-between lg:flex-row lg:gap-8 lg:ml-8 lg:mr-8 items-start relative">
+      <div className="final-product mst-card-shadow shadow-lg p-4 flex flex-col justify-between lg:flex-row lg:gap-8 lg:ml-8 lg:mr-8 items-start relative">
         <div className="flex flex-col gap-6 lg:w-2/4 flex-wrap items-center lg:sticky top-[240px]">
           {/*<img src={activeImg} alt="" className='w-full h-full aspect-square object-cover rounded-xl'/>
             <div className='flex flex-row justify-between h-full overflow-y-auto'>
@@ -244,11 +242,6 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
               okendoStarRatingSnippet={product.okendoStarRatingSnippet}
             />
             </div>
-            {/* <div className="product_review" id={product.id}>
-              <JudgemeVerifiedBadge id={product.id}/> 
-              <JudgemeAllReviewsCount />
-              <JudgemeReviewWidget id={product.id} />
-            </div> */}
             <ProductPrice selectedVariant={selectedVariant} />
           </div>
           <div>
@@ -280,13 +273,12 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
             </Suspense>
           </div>
           <h2 className="mt-[10px]">Product Description</h2>
-          <div className="shadow-p relative py-[10px]">
+          <div className="shadow-p relative p-8">
             <p className="text-gray-700">
               {product.description.substr(0, 200)}
             </p>
             {moreText && (
               <>
-              
                 <div
                 className="expect"
                 dangerouslySetInnerHTML={{__html: product.description}}
@@ -314,8 +306,8 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
       </div>
       <div className="max-w-[1320px] p-[10px] m-auto">
         <div>
-          <h2 className="text-center lg:text-2xl mt-[4%] mb-[2%]">
-            What to Expect from {product.title} ?
+          <h2 className="text-center lg:text-2xl mt-[4%] mb-[2%] uppercase">
+            Key Features{/* What to Expect from {product.title} ? */}
           </h2>
           {expaction && (
             <div
@@ -324,40 +316,13 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
             />
           )}
         </div>
-        <div className="container mx-auto mt-5 p-5 mst-card">
-          <h1 className="lg:text-3xl font-semibold mb-4 text-center mt-[4%] mb-[2%]">
+        <div className="container mx-auto mt-5 p-5">
+          <h1 className="lg:text-3xl font-semibold mb-4 text-center mt-[4%] mb-[2%] uppercase">
             Product Information
           </h1>
           <div className="flex space-x-4 overflow-y-auto lg:justify-center my-[20px]">
-            {/* <div
-              className={`cursor-pointer py-2 lg:px-8 px-4  whitespace-nowrap ${
-                activeTab === 'Key Ingredients' ? 'border-active' : ''
-              }`}
-              onClick={() => handleTabClick('Key Ingredients')}
-              style={{border: '1px solid #e5e5e5'}}
-            >
-              Key Ingredients
-            </div> */}
-            <div
-              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 whitespace-nowrap ${
-                activeTab === 'How to Use' ? 'border-active' : ''
-              }`}
-              onClick={() => handleTabClick('How to Use')}
-              style={{border: '1px solid #e5e5e5'}}
-            >
-              How to Use
-            </div>
-            <div
-              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 whitespace-nowrap ${
-                activeTab === 'Concerns' ? 'border-active' : ''
-              }`}
-              onClick={() => handleTabClick('Concerns')}
-              style={{border: '1px solid #e5e5e5'}}
-            >
-             Concerns
-            </div>
-            <div
-              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 whitespace-nowrap ${
+          <div
+              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${
                 activeTab === 'Ingredient' ? 'border-active' : ''
               }`}
               onClick={() => handleTabClick('Ingredient')}
@@ -366,7 +331,25 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
              Ingredient
             </div>
             <div
-              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 whitespace-nowrap ${
+              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${
+                activeTab === 'How to Use' ? 'border-active' : ''
+              }`}
+              onClick={() => handleTabClick('How to Use')}
+              
+            >
+              How to Use
+            </div>
+            <div
+              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${
+                activeTab === 'Concerns' ? 'border-active' : ''
+              }`}
+              onClick={() => handleTabClick('Concerns')}
+              style={{border: '1px solid #e5e5e5'}}
+            >
+             Concerns
+            </div>
+            <div
+              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${
                 activeTab === 'Why us' ? 'border-active' : ''
               }`}
               onClick={() => handleTabClick('Why us')}
@@ -401,7 +384,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
             )}
             {activeTab === 'Ingredient' && ingredient && (
               <div className="overflow-y-auto">
-                <div dangerouslySetInnerHTML={{__html: ingredient}} />
+                <div style={{maxWidth:"100%"}} dangerouslySetInnerHTML={{__html: ingredient}} />
               </div>
             )}
             {activeTab === 'Why us' && why_us && (
@@ -459,6 +442,39 @@ function ProductForm({
   setActiveImage,
   setWishlistSocialCount
 }) {
+
+  const [pincode, setPinCode] = useState(""); 
+  console.log("pincode::",pincode)
+
+  const handlePinChange =(e)=> {
+    setPinCode(e.target.value)
+  }
+  /* 
+  // Get Token Valid to 24 hours;
+  fetch("https://appapi.shipdelight.com/generate-token?api_key=63e4f58629XXXXXXXXXX",{method:"POST"}).then((res) => res.json()).then((result)=>{
+    console.log("Token ResultL:",result)
+  })
+  
+   //Pincode & EDD Check API:
+  const checkAvailibility = ()=>{
+    const headers = {
+      Authorization: `Bearer Token`
+    }
+
+    const data = {
+      "pickup_pincode": Vendor pincode,
+      "delivery_pincode": pincode,
+      "pay_type": "PPD",
+      "service_type": "F",
+      "courier_service_type": "sdd"
+    }  
+
+    fetch("https://appapi.shipdelight.com/serviceability_tat",{method:"POST",headers:headers, body:JSON.stringify(data) }).then((res)=> res.json()).then((result)=>{
+      console.log("Availibility Result :",result)
+    })
+  }
+ 
+  */
   const closeRef = useRef(null);
   return (
     <div className="product-form">
@@ -486,6 +502,13 @@ function ProductForm({
         productData={product}
         setWishlistSocialCount={setWishlistSocialCount}
       /> */}
+      <div className="mb-2">
+        <p> Check Availibility </p>
+        <div className="flex items-baseline">
+        <input className="w-48 sm:w-[320px] block rounded-bl-lg rounded-tl-lg border bg-transparent bg-clip-padding  text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3]  focus:text-neutral-700 focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 mst-card" value={pincode} onChange={handlePinChange} type="text" placeholder="Enter your pincode" /> 
+        <button onClick={()=> checkAvailibility() } className="w-[130px] sm:w-[150px] m-4 h-11 bg-black hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-lg"> Check Now </button>
+        </div>
+      </div>
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
         onClick={() => {
