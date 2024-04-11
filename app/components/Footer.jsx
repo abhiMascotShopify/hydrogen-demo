@@ -48,7 +48,7 @@ export function Footer({menu}) {
                     <>
                     { cat.items.length && viewLinksArr.indexOf(cat.title) >= 0  ?
                     <div>
-                      <div>{ cat.title }</div>
+                      <div className='footer_link_title'>{ cat.title }</div>
                       <div>
                         { cat.items.map((subMenu)=>{ 
                           return <li className='cursor-pointer list-none' onClick={()=> navigateTo(subMenu.url) }>
@@ -65,7 +65,7 @@ export function Footer({menu}) {
               })
             }
             <div>
-              <div>Shop by sub-brands</div>
+              <div className='footer_link_title'>Shop by sub-brands</div>
               <li className='cursor-pointer list-none' onClick={()=> goToCollection("pro-studio") }> Pro Studio </li>
               <li className='cursor-pointer list-none' onClick={()=> goToCollection("way-2-stay") }> Way 2 Slay </li>
               <li className='cursor-pointer list-none' onClick={()=> goToCollection("rizz-roll") }> Rizz and Roll </li>
@@ -85,15 +85,16 @@ export function Footer({menu}) {
               </p>
             </div>
             <div className='social-connect text-center'>
-              <p> Social Connect </p>
-              <div className='flex mt-4 justify-center'>
-                <a className='flex-none w-14' href="https://www.instagram.com/maryjokofficial/?hl=en"><img src="/insta_icon.png" /> </a>
-                {/*<a className='flex-none w-14' href="https://www.instagram.com/maryjokofficial/?hl=en"><img src="/facebook_icon.png" /> </a>*/}
+              <h2 className="font-semibold text-xl"> Social Connect </h2>
+              <div className='flex mt-4 justify-center sm:gap-1'>
+                <a className='flex-none w-10 sm:w-14' href="https://www.instagram.com/maryjokofficial/?hl=en"><img src="/insta_icon.png" /> </a>
+                <a className='flex-none w-10 sm:w-14' href="https://www.facebook.com/profile.php?id=100064798900233&is_tour_dismissed"><img src="/facebook_icon.png" /> </a>
+                <a className='flex-none w-10 sm:w-14' href="https://www.youtube.com/channel/UCPI8xp_XDecCmYh90hCxH3Q"><img src="/youtube_icon.png" /> </a>
               </div>
             </div>
           </div>
           </div>
-          <div className='flex justify-center'> © 2024 Maryjo K Cult Makeup | PP Consumer Pvt Ltd. All Rights Reserved </div>
+          <div className='flex justify-center'> <span className='footer_txt sm:border-0 text-center'> © 2024 Maryjo K Cult Makeup | PP Consumer Pvt Ltd. All Rights Reserved </span> </div>
         </div>
         </div>
       </footer>

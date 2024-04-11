@@ -17,12 +17,15 @@ img {
 * components/Aside
 * --------------------------------------------------
 */
+.footer_txt{ margin-top: 10px; border-top: 2px solid #d0715f; padding-top: 5px;}
+.footer_link_title { font-size: 13px;font-weight: bold;}
 .oke-button { background-color: #d0715f !important; border-radius: .5rem!important; font-family: 'Philosopher' }
 .coll_cor_img { border: 1px solid #dfdfdf;width: 100px;height: 100px;margin: auto;}
 .bg-black { background-color:  #d0715f !important; }
 .bg-blue-700 { background-color:  #d0715f !important; }
 .mst-color {  color: #d0715f;}
 .mst-border { border-color: #d0715f; }
+.border-dotted { border-width: 5px 0; border-color: #d0715f; border-style: dotted; }
 .mst-arrow { border-radius: 50%; background: #d0715f;}
 .mst-card { border:2px solid #d0715f;border-radius: 10px;}
 .mst-card-shadow { border-radius: 8px; box-shadow: 0 2px 4px #CB7060;}

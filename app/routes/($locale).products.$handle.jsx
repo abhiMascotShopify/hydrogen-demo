@@ -233,7 +233,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
         {/* ABOUT */}
         <div className="flex flex-col lg:w-3/4">
           <div>
-            <h1 className="text-2xl font-semibold mt-0 mb-[15px]">
+            <h1 className="text-2xl font-semibold mt-0 mb-0">
               {product.title}
             </h1>
             <div className='flex py-2'>
@@ -272,8 +272,14 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
               </Await>
             </Suspense>
           </div>
+          <div className='grid grid-cols-4 gap-4 p-4 border-dotted mt-4'>
+            <img src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Vegetarian.jpg?v=1712825726"/>  
+            <img src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Cruelty-Free.jpg?v=1712825726"/>  
+            <img src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/High_Quality.jpg?v=1712825727"/>  
+            <img src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Suitable_for_all_Skin_Types.jpg?v=1712825726"/>     
+          </div>
           <h2 className="mt-[10px]">Product Description</h2>
-          <div className="shadow-p relative p-8">
+          <div className="shadow-p relative p-4 sm:p-0">
             <p className="text-gray-700">
               {product.description.substr(0, 200)}
             </p>
@@ -328,7 +334,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
               onClick={() => handleTabClick('Ingredient')}
               style={{border: '1px solid #e5e5e5'}}
             >
-             Ingredient
+             Ingredients
             </div>
             <div
               className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${
@@ -410,7 +416,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
 
 function ProductPrice({selectedVariant}) {
   return (
-    <div className="product-price flex gap-[10px]">
+    <div className="product-price flex gap-[10px] mb-2">
       {selectedVariant?.compareAtPrice ? (
         <>
           <div className="product-price-on-sale font-semibold">
@@ -639,10 +645,10 @@ function AddToCartButton({analytics, children, disabled, lines, onClick}) {
           </>
         )}
       </CartForm>
-      <p
+      {/* <p
         className="lg:mt-6"
         style={{width: '100%', borderBottom: '1px dashed #bdbdbd'}}
-      ></p>
+      ></p> */}
       {/* <div className="mt-2">
         <img src="/BrandBand.svg" alt="brand" />
       </div>
