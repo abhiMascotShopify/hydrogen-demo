@@ -41,7 +41,7 @@ export function Footer({menu}) {
           </div>
           <div className="py-6 footer-contact m-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-4 gap-4 border-b-mobile footer_shop_brand">
                 {
                 menu.items.length && menu.items.map((cat)=>{
                   return(

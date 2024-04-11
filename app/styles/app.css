@@ -17,7 +17,7 @@ img {
 * components/Aside
 * --------------------------------------------------
 */
-.footer_txt{ margin-top: 10px; border-top: 2px solid #d0715f; padding-top: 5px;}
+.footer_txt{ border-top: 0;}
 .footer_link_title { font-size: 13px;font-weight: bold;}
 .oke-button { background-color: #d0715f !important; border-radius: .5rem!important; font-family: 'Philosopher' }
 .coll_cor_img { border: 1px solid #dfdfdf;width: 100px;height: 100px;margin: auto;}
@@ -651,6 +651,9 @@ footer{
 }
 
 @media only screen and (max-width: 450px) {
+  .border-b-mobile{ border-bottom: 2px solid #d0715f; }
+  .footer_txt{ margin-top: 10px; border-top: 2px solid #d0715f; padding-top: 5px;}
+  .footer_shop_brand .cursor-pointer { font-size: 10px; }
   .shadow-p {
     box-shadow: #0003 0 2px 12px !important;
     border-radius: 8px;
