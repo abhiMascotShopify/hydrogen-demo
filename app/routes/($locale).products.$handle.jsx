@@ -448,39 +448,61 @@ function ProductForm({
   setActiveImage,
   setWishlistSocialCount
 }) {
-
   const [pincode, setPinCode] = useState(""); 
-  console.log("pincode::",pincode)
-
+  const [serviceble, setServiceble] = useState({status:null, msg:''})
+  //const [estimatedDelivery,setEstimatedDelivery] = useState("")
   const handlePinChange =(e)=> {
     setPinCode(e.target.value)
   }
-  /* 
-  // Get Token Valid to 24 hours;
-  fetch("https://appapi.shipdelight.com/generate-token?api_key=63e4f58629XXXXXXXXXX",{method:"POST"}).then((res) => res.json()).then((result)=>{
-    console.log("Token ResultL:",result)
-  })
+
+  const getEstimatedDate = (edd)=>{
+    const date = new Date();
+    date.setDate(date.getDate()  + edd);
+    const estimatedDateDelivery = new Intl.DateTimeFormat('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }).format(new Date(date));
+    return estimatedDateDelivery;
+    //setEstimatedDelivery(estimatedDateDelivery)
+  }
   
-   //Pincode & EDD Check API:
   const checkAvailibility = ()=>{
-    const headers = {
-      Authorization: `Bearer Token`
-    }
-
-    const data = {
-      "pickup_pincode": Vendor pincode,
-      "delivery_pincode": pincode,
-      "pay_type": "PPD",
-      "service_type": "F",
-      "courier_service_type": "sdd"
-    }  
-
-    fetch("https://appapi.shipdelight.com/serviceability_tat",{method:"POST",headers:headers, body:JSON.stringify(data) }).then((res)=> res.json()).then((result)=>{
-      console.log("Availibility Result :",result)
+      // Get Token Valid to 24 hours;
+    fetch("https://appapi.shipdelight.com/generate-token?api_key=65eaba0ac23f74c2d7346965",{method:"POST"}).then((res) => res.json()).then((result)=>{
+      const { success,data } = result;
+      if(success){
+        const headers = {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${data.access_token}`
+        }
+        const params = {
+          "pickup_pincode": 400009,
+          "delivery_pincode": parseInt(pincode),
+          "pay_type": "PPD",
+          "service_type": "F",
+          "courier_service_type": "sdd"
+        }  
+        fetch("https://appapi.shipdelight.com/serviceability_tat",{method:"POST",headers:headers, body:JSON.stringify(params) }).then((res)=> res.json()).then((result)=>{
+          const { data, errors } = result;
+          if(errors?.length){
+            setServiceble({status:false,msg:'Invalid Pincode'});
+          }else{
+            const isServicebale = data?.response.delivery_pincode_serviceable;
+            var estimateDate = getEstimatedDate(data?.response.edd);
+            const msg = data?.response.delivery_pincode_serviceable ? estimateDate : 'Service is not available at this location';
+            setServiceble({status:isServicebale,msg:msg});
+          }
+          setTimeout(()=>{
+            setServiceble({status:null,msg:''});
+          },3500)
+        })
+      }
     })
+  
   }
  
-  */
+  console.log("serviceble::",serviceble)
   const closeRef = useRef(null);
   return (
     <div className="product-form">
@@ -509,12 +531,16 @@ function ProductForm({
         setWishlistSocialCount={setWishlistSocialCount}
       /> */}
       <div className="mb-2">
-        <p> Check Availibility </p>
+        <p> Check Availibility / Estimated Delivery </p>
         <div className="flex items-baseline">
         <input className="w-48 sm:w-[320px] block rounded-bl-lg rounded-tl-lg border bg-transparent bg-clip-padding  text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3]  focus:text-neutral-700 focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 mst-card" value={pincode} onChange={handlePinChange} type="text" placeholder="Enter your pincode" /> 
         <button onClick={()=> checkAvailibility() } className="w-[130px] sm:w-[150px] m-4 h-11 bg-black hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-lg"> Check Now </button>
         </div>
-      </div>
+        { serviceble.status!= null &&
+        <p className={`font-bold ${serviceble.status ? 'text-green-500' : 'text-orange-500'}` }> { serviceble.msg } </p>
+        
+        }
+        </div>
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
         onClick={() => {
@@ -539,7 +565,6 @@ function ProductForm({
 
 function ProductOptions({option, activeImg, setWishlistSocialCount,closeRef}) {
   var opt_length = option.values.length;
-
   //console.log("selectedVariant ::",closeRef);
 
   return (

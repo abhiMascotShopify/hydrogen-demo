@@ -4,11 +4,13 @@ import {Suspense} from 'react';
 import {Image, Money} from '@shopify/hydrogen';
 import ImageCarousel from '~/components/ImageCarousel';
 import ProductCarousel from '~/components/ProductCarousel';
+import GiftingCollection from '~/components/GiftingCollection';
 import CustomizedProducts from '~/components/CustomizedProducts';
 import YouTubeVideo from '~/components/YouTubeVideo';
 import {useMediaQuery} from 'react-responsive';
 import CustomizedCollection from '~/components/CustomizedCollection';
-import BlogCorousel from '~/components/BlogCorousel';
+import BlogCorousel from '~/components/BlogCorousel'
+import Testimonials from '~/components/Testimonials';
 
 export const meta = () => {
   return [{title: 'Hydrogen | Home'}];
@@ -23,6 +25,12 @@ export async function loader({context}) {
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
   const {products} = await storefront.query(RECOMMENDED_PRODUCTS_QUERY);
   const {blogs} = await storefront.query(BLOGS_QUERY);
+  const {page} = await storefront.query(PAGE_QUERY, {
+    variables: {
+      handle: 'testimonials'
+    },
+  });
+
   const collection = collections;
 
   const headerPromise = storefront.query(HEADER_QUERY, {
@@ -39,6 +47,7 @@ export async function loader({context}) {
     collectionProducts,
     products,
     blogs, 
+    page,
     header: await headerPromise
   });
 }
@@ -46,8 +55,9 @@ export async function loader({context}) {
 export default function Homepage() {
   const noImg = "https://cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_600x600.gif"
   const data = useLoaderData();
-  const { header } = data;
-  //console.log("menu ::",data.collections)
+  const { header ,page:testimonialPage } = data;
+  
+  //console.log("menu ::",testimonialPage)
   var menus = header.menu.items;
   var collectionArray = menus.filter((item)=> item.title !== "Home");
   const isLargeScreen = useMediaQuery({minWidth: 1024});
@@ -90,18 +100,15 @@ export default function Homepage() {
   data.collectionProducts.nodes.forEach((col) => {
     if (col.metafields[0] != null && col.metafields[0].value == 'true') {
       ReviewCollection.push(col);
-      //console.log('Added')
     }
     if (col.title == "Build Your Own Kit") {
       BuildYourOwnColl.push(col);
-      //console.log(col)
     }
     if(col.title=='3rd Hero Collection'){
       ThirdHeroCollection.push(col)
     }
     if (col.title == "Gift Under 500" || col.title == "Gift Under 1000" || col.title == "Gifts Under 2000") {
       GiftCollections.push(col);
-      //console.log(col)
     }
   });
   //console.log("BuildYourOwnColl::",BuildYourOwnColl[0].products.edges)
@@ -114,6 +121,9 @@ export default function Homepage() {
     let url = new URL(url_path);
     let path = url.pathname;
     return path;
+  }
+  const goToCollection=(url_path)=>{
+    window.location.href = url_path
   }
 
   return (
@@ -151,28 +161,44 @@ export default function Homepage() {
       :
       null
       }
+      
       <div>
         <ImageCarousel isSmall={isSmall} images={imageSrc}></ImageCarousel>
       </div>
-      {/*{data.collectionProducts.nodes.map((coll)=>(
-        <RecommendedProducts key={coll.id} products={coll.products} title={coll.title}/>
-      ))
-      }*/}
-      {/* -- Section 2 -- 1st Hero Collection */}
       <RecommendedProducts
         key={data.collectionProducts.nodes[0].id}
         products={data.collectionProducts.nodes[0].products}
-        title={data.collectionProducts.nodes[0].title}
+        title="CULT FAVS"
       />
       {/* -- Section 3 -- Collection Name : Build Your Own Kit */}
-      <CustomizedProducts
+      {/* <CustomizedProducts
         key={data.products.nodes[0].id}
         products={BuildYourOwnColl}
-        title="Build Your Own Kit"
-      ></CustomizedProducts>
+        title="CHOOSE YOUR CULT"
+      ></CustomizedProducts> */}
+      <h1 className="text-center lg:text=[28px] text-[20px] mt-[15px]">
+      CHOOSE YOUR CULT
+      </h1> 
+      <div className="flex gap-4">
+        {
+          collectionCult.map((coll,index)=>{
+            return <div key={`cult_${index}`} className="w-full " >
+              <div className="bg-white">  
+                <img
+                  onClick={()=> goToCollection(`/collections/${coll.handle}`)}
+                  src={`${coll.url}`} // Make sure to put your images in the 'public/images/' directory
+                  alt={coll.title}
+                  className="lg:w-full lg:h-auto h-[40%] w:[100%] sm:w-[375px] sm:w-[250px] cursor"
+                />
+              </div>
+          </div>
+          })
+        }
+      </div>
 
       {/*---Banner Statis -section 4 -- */}
-      {isLargeScreen && (
+      
+      {/* {isLargeScreen && (
         <a href="/collections/face">
           <img 
             src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662"
@@ -189,43 +215,20 @@ export default function Homepage() {
           ></img>
         </a>
       )}
-      {/* -- Section --  COll Name : 2nd Hero Collection */}
+
       <RecommendedProducts
         key={data.collectionProducts.nodes[1].id}
         products={data.collectionProducts.nodes[1].products}
         title={data.collectionProducts.nodes[1].title}
-      />
+      /> */}
 
-      <CustomizedCollection collections={GiftCollections} title={'Gifting'} />
-      <YouTubeVideo></YouTubeVideo>
-      {isLargeScreen && (
-         <a href="/collections/eyes">
-          <div className="my-[15px]">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Lookbook_Banner.jpg?v=1709971241"
-              className="rounded-2xl"
-            ></img>
-          </div>
-        </a>
-      )}
-      {isSmall && (
-        <a href="/collections/eyes">
-          <div className="my-[15px]">
-            <img
-              style={{height:"250px"}}
-              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_look_book.jpg?v=1712816125"
-              className="rounded-2xl w-[100%] m-auto"
-            ></img>
-          </div>
-        </a>
-      )}
       {/*---Banner Statis section 8 --- */}
       {isLargeScreen && (
          <a href="/collections/eyes">
           <div className="my-[15px]">
             <img
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Daily_Essentials_banner.jpg?v=1709971600"
-              className="rounded-2xl"
+              className="w-[100%] m-auto"
             ></img>
           </div>
         </a>
@@ -236,7 +239,7 @@ export default function Homepage() {
             <img
               style={{height:"250px"}}
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_everyday_style.jpg?v=1712816125"
-              className="rounded-2xl w-[100%] m-auto"
+              className="w-[100%] m-auto"
             ></img>
           </div>
         </a>
@@ -247,19 +250,52 @@ export default function Homepage() {
         products={ThirdHeroCollection}
         title="Daily Must-Haves"
       />
+      <GiftingCollection collections={GiftCollections} title={'Gifting'} />
+      <YouTubeVideo></YouTubeVideo>
+
+      {isLargeScreen && (
+         <a href="/collections/eyes">
+          <div className="my-[15px]">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Lookbook_Banner.jpg?v=1709971241"
+              className="w-[100%] m-auto"
+            ></img>
+          </div>
+        </a>
+      )}
+      {isSmall && (
+        <a href="/collections/eyes">
+          <div className="my-[15px]">
+            <img
+              style={{height:"250px"}}
+              src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_look_book.jpg?v=1712816125"
+              className="w-[100%] m-auto"
+            ></img>
+          </div>
+        </a>
+      )}
  
       {/* -- sectio 11 -Review -- */}
       {/* <CustomizedCollection
         collections={ReviewCollection}
         title={"From Customer's Inbox"}
       /> */}
-    <section>
-    <CustomizedCollection collections={collectionArray} title="Choose Your Own Fashion" />
-    </section>
-
+    <div>
+      <a href="/pages/about-us">
+        <div className="my-[15px]">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/About_US.jpg?v=1712993514"
+            className="w-[100%] m-auto"
+          ></img>
+        </div>
+      </a>
+    
+    {/* <CustomizedCollection collections={collectionArray} title="Choose Your Own Fashion" /> */}
+    </div>
       {/*<RecommendedProducts products={data.recommendedProducts} />*/}
-      <BlogCorousel collections={data.blogs} title="blogs" />
+      <BlogCorousel  collections={data.blogs} title="CULT CHAPTERS" />
       {/*console.log(data.collectionProducts)*/}
+      <Testimonials page={testimonialPage} />
     </div>
   );
 }
@@ -536,6 +572,44 @@ const HEADER_QUERY = `#graphql
   }
   ${MENU_FRAGMENT}
 `;
+
+const PAGE_QUERY = `#graphql
+  query Page(
+    $language: LanguageCode,
+    $country: CountryCode,
+    $handle: String!
+  )
+  @inContext(language: $language, country: $country) {
+    page(handle: $handle) {
+      id
+      title
+      body
+      seo {
+        description
+        title
+      }
+    }
+  }
+`;
+
+
+const collectionCult = [
+  {
+    title: 'Way 2 Stay',
+    handle:"way-2-stay",
+    url: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/collections/Way_2_Slay-01_7ce5063c-89b2-48ed-bb55-49132c99e732.jpg?v=1712581195',
+  },
+  {
+    title: 'Rizz & Roll MJK',
+    handle:"/collections/rizz-roll-mjk",
+    url: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/collections/RIzz_and_Roll-01_f88a8485-9934-4469-9b29-89ba17fcf7cc.jpg?v=1712581214',
+  },
+  {
+    title: 'Pro Studio MJK',
+    handle:"/collections/pro-studio-mjk",
+    url: "https://cdn.shopify.com/s/files/1/0809/4253/0882/collections/Pro-studio_1-01_b98dd6ae-5b21-4486-9e6f-55dd7b7fcf5e.jpg?v=1712581177",
+  }
+];
 
 const collectionArrayStatic = [
   {

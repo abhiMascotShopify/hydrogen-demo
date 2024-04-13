@@ -16,7 +16,7 @@ const ProductsCorousel = ({products}) => {
  
   if (products != null || products != undefined) {
     productsToShow = products.edges.slice(startIndex, startIndex + endIndex);
-    console.log(productsToShow);
+    //console.log(productsToShow);
   }
 
   const goToProduct=(url_path)=>{

@@ -21,7 +21,7 @@ const ProductCarousel = ({products}) => {
   var len = products.edges.length;
   if (products != null || products != undefined) {
     productsToShow = products.edges.slice(startIndex, endIndex);
-    console.log("productsToShow::",productsToShow);
+    //console.log("productsToShow::",productsToShow);
   }
 
   const nextProducts = () => {

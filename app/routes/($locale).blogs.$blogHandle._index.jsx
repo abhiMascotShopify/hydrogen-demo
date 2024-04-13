@@ -48,6 +48,7 @@ export default function Blog() {
                   return (
                     <ArticleItem
                       article={article}
+                      title={blog.title}
                       key={article.id}
                       loading={index < 2 ? 'eager' : 'lazy'}
                     />
@@ -72,7 +73,8 @@ function ArticleItem({article, loading}) {
     day: 'numeric',
   }).format(new Date(article.publishedAt));
   return (
-    <div className="mst-card-md p-5 m-4 blog-article" key={article.id}>
+    <div className="mst-card-md p-5 m-8 blog-article" key={article.id}>
+
       <Link to={`/blogs/${article.blog.handle}/${article.handle}`}>
         {article.image && (
           <div className="blog-article-image">

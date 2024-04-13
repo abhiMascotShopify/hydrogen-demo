@@ -3,8 +3,6 @@ import {useMatches, NavLink} from '@remix-run/react';
 const currentYear = new Date().getFullYear();
 
 export function Footer({menu}) {
-  console.log("Footer::",menu.items);
-
   function getPath(url_path) {
     let url = new URL(url_path);
     let path = url.pathname;
@@ -12,7 +10,6 @@ export function Footer({menu}) {
   }
 
   const viewLinksArr = ["Lips","Face","Eyes"]
-
   const navigateTo = (url_path)=>{
     let url = getPath(url_path);
     window.location.href = url

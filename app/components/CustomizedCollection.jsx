@@ -27,48 +27,25 @@ const DesktopCorousel = ({products,title}) => {
     window.location.href = url_path
   }
 
-  return (
-    // <div className="w-full max-w-screen-2xl mx-auto px-1">
-    //   <div className="relative">
-    //     <h1 className="text-center lg:text=[28px] text-[20px] mt-[15px]">
-    //     {title}
-    //     </h1>
-    //     <div className="flex gap-4 overflow-y-auto">
-          // {products.map((product) => (     
-          //   <img
-          //     onClick={()=> goToCollection(`/collections/${product.handle}`)}
-          //     src={`${product.image.url}`} // Make sure to put your images in the 'public/images/' directory
-          //     alt={product.title}
-          //     className="lg:w-full lg:h-auto rounded-lg lg:px-5 sm:px-3 sm:mx-3 h-[40%] w:[100%] sm:w-[375px] sm:w-[250px]   cursor"
-          //   />
-          // ))}
-    //     </div>
-    //   </div>
-    // </div>
-
+return (
 <div className="recommended_section w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6">
 <h1 className="text-center lg:text=[28px] text-[20px] mt-[15px]">
       {title}
-  </h1> 
+</h1> 
 <div className="relative">
-
-
     <div className="flex gap-4">
       {productsToShow.map((product, index) => (
         <div key={product.id} className="w-full " >
-            <div className="bg-white mst-card rounded-lg shadow-lg p-1 sm:p-2 ">
-              
+            <div className="bg-white mst-card rounded-lg shadow-lg p-1 sm:p-2">
               <img
                 onClick={()=> goToCollection(`/collections/${product.handle}`)}
                 src={`${product.image.url}`} // Make sure to put your images in the 'public/images/' directory
                 alt={product.title}
                 className="lg:w-full lg:h-auto rounded-lg lg:px-5 sm:px-3 sm:mx-3 h-[40%] w:[100%] sm:w-[375px] sm:w-[250px]   cursor"
               />
-          
           </div>
         </div>
       ))}
-   
   </div>
   <button 
     className="absolute lg:left-[-90px] top-1/2 transform -translate-y-1/2  bg-white bg-opacity-75 rounded-full p-2 ml-4 hover:bg-opacity-100 text-white mst-arrow"

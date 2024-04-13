@@ -29,7 +29,6 @@ export async function loader({params, context}) {
 export default function Article() {
   const {article} = useLoaderData();
   const {title, image, contentHtml, author} = article;
-
   const publishedDate = new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
     month: 'long',
@@ -37,14 +36,13 @@ export default function Article() {
   }).format(new Date(article.publishedAt));
 
   return (
-    <div className="article">
+    <div className="article mx-6">
       <h1>
-        {title}
-        <span>
-          {publishedDate} &middot; {author?.name}
-        </span>
+        {title} &nbsp;  <small> { publishedDate } </small>
       </h1>
-
+        {/* <span>
+          {publishedDate} &middot; {author?.name}
+        </span> */}
       {image && <Image data={image} sizes="90vw" loading="eager" />}
       <div
         dangerouslySetInnerHTML={{__html: contentHtml}}
