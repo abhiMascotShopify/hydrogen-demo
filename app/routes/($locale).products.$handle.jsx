@@ -607,12 +607,14 @@ function ProductOptions({option, activeImg, setWishlistSocialCount,closeRef}) {
 
 const Offers = ()=>{
   return(
-    <div className="bg-[#f7f7f7] py-[10px] pl-[50px]">
-    <h2 className="text-[16px]">AVAILABLE OFFERS!!</h2>
-    <ul className="text-[#757575] list-disc">
-      <li>FREE Mivi Play Bluetooth Speakers on a spend of Rs.2199</li>
-      <li>Holographic Pouch + Liquid Lipstick on a spend of Rs.599</li>
-    </ul>
+    <div className="py-[10px]">
+      <div className='bg-[#f7f7f7]'>
+      <h2 className="text-[16px]">AVAILABLE OFFERS!!</h2>
+      <ul className="text-[#757575] list-disc">
+        <li>FREE Mivi Play Bluetooth Speakers on a spend of Rs.2199</li>
+        <li>Holographic Pouch + Liquid Lipstick on a spend of Rs.599</li>
+      </ul>
+      </div>
   </div>
   )
 }

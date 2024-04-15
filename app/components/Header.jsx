@@ -27,7 +27,7 @@ export function Header({header, isLoggedIn, cart}) {
     <>
       <header className="header border-b border-gray-200 sm:mt-0 mt-4">
         <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-          <img className="w-40 h-6 sm:h-8 mb-10 sm:mb-0 mst_mobile_img" src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Mary_Jo_K_Cult_Makeup_Unit-01.png?v=1709204173" />
+          <img className="w-[16rem] h-[7.2rem] mb-10 sm:mb-0 mst_mobile_img" src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/MJK_Logo.png?v=1713158883" />
           {/* <strong>{shop.name}</strong> */}
         </NavLink>
         
@@ -42,18 +42,19 @@ export function Header({header, isLoggedIn, cart}) {
                       <div className="relative  flex w-full items-center items-stretch">
                         <input
                           type="search"
-                          className="relative w-48 sm:h-[50px] h-[40px] sm:w-[320px] md:w-[400px] lg:w-[470px] m-0 py-[10px] px-[15px] block rounded-bl-lg rounded-tl-lg border bg-transparent bg-clip-padding  text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary mst-card"
+                          className="search relative w-48 sm:h-[50px] h-[40px] sm:w-[320px] md:w-[400px] lg:w-[470px] m-0 py-[10px] px-[15px] block rounded-bl-lg rounded-tl-lg border bg-transparent bg-clip-padding  text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary mst-card"
                           aria-label="Search"
                           aria-describedby="button-addon3"
                           name="q"
                           onChange={fetchResults}
                           onFocus={fetchResults}
-                          placeholder='Try "Lipstick"'
+                          placeholder='Mary Jo K'
                           ref={inputRef}
                         />
+                   
                         <TERipple>
                           <button
-                            className="mst_search_btn relative z-[2] sm:h-[50px] h-[40px] rounded-tr-lg rounded-br-lg border border-1 mst-card p-[15px] text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                            className="mst_search_btn relative z-[2] sm:h-[50px] h-[40px] rounded-tr-lg rounded-br-lg border border-1 mst-card p-[15px] text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 mst-color"
                             type="submit"
                             id="button-addon3"
                           >

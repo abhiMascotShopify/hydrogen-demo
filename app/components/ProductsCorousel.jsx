@@ -57,7 +57,7 @@ const ProductsCorousel = ({products}) => {
   return (
     <div className="w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6 py-6">
       <div className="relative">
-        <div className="flex mobile-productView">
+        <div className="flex mobile-productView p-[10px] gap-4">
           {productsToShow.map((product,index) => (
             <div key={product.node.id}
               className="w-full sm:w-1/3 md:w-1/3 lg:px-4 sm:px-1 md:px-3"

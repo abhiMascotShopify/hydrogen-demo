@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
 
 const ImageCarousel = ({images , isSmall}) => {
+  //'cult-makeup','way-2-slay-mjk',rizz-roll-mjk','pro-studio-mjk',
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   var mobImgHeight= {height:"inherit"}
   const nextImage = () => {
@@ -13,6 +14,17 @@ const ImageCarousel = ({images , isSmall}) => {
       (currentImageIndex - 1 + images.length) % images.length,
     );
   };
+  const goToCollection=(index)=>{
+    switch(index){
+      case 0: { window.location.href = "/collections/cult-makeup" }
+      break;
+      case 1: { window.location.href = "/collections/way-2-slay-mjk" }
+      break;
+      case 2: { window.location.href = "/collections/rizz-roll-mjk" }
+      break;
+      default : { window.location.href = "/collections/pro-studio-mjk" }
+    }
+  }
   if(isSmall) mobImgHeight = {height:"250px"}
   return (
     <div className="relative">
@@ -30,8 +42,9 @@ const ImageCarousel = ({images , isSmall}) => {
       />
       </button>
       <img
+        onClick={()=> goToCollection(currentImageIndex) }
         style={mobImgHeight} 
-        className="lg:w-full md:w-full sm:w-full h-[300px] lg:h-80 object-cover rounded-2xl w-[100%]"
+        className="lg:w-full md:w-full cursor-pointer sm:w-full h-[300px] lg:h-80 object-cover rounded-2xl w-[100%]"
         src={images[currentImageIndex]}
       />
       <button

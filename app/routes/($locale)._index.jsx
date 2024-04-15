@@ -11,6 +11,7 @@ import {useMediaQuery} from 'react-responsive';
 import CustomizedCollection from '~/components/CustomizedCollection';
 import BlogCorousel from '~/components/BlogCorousel'
 import Testimonials from '~/components/Testimonials';
+import LooksComp from '~/components/LooksComp'
 
 export const meta = () => {
   return [{title: 'Hydrogen | Home'}];
@@ -95,11 +96,14 @@ export default function Homepage() {
       };
     })
   })
-
+  var looks = [];
   //console.log("collectionArray:",collectionArray)
   data.collectionProducts.nodes.forEach((col) => {
     if (col.metafields[0] != null && col.metafields[0].value == 'true') {
       ReviewCollection.push(col);
+    }
+    if(col.title === "Lookbooks"){
+      looks.push(col)
     }
     if (col.title == "Build Your Own Kit") {
       BuildYourOwnColl.push(col);
@@ -111,7 +115,7 @@ export default function Homepage() {
       GiftCollections.push(col);
     }
   });
-  //console.log("BuildYourOwnColl::",BuildYourOwnColl[0].products.edges)
+  console.log("Lookbooks::",looks)
   BuildYourOwnColl = BuildYourOwnColl[0].products.edges;
   ThirdHeroCollection =  ThirdHeroCollection[0].products;
   GiftCollections = GiftCollections;
@@ -274,12 +278,8 @@ export default function Homepage() {
           </div>
         </a>
       )}
- 
-      {/* -- sectio 11 -Review -- */}
-      {/* <CustomizedCollection
-        collections={ReviewCollection}
-        title={"From Customer's Inbox"}
-      /> */}
+  
+    <LooksComp looks={looks} />
     <div>
       <a href="/pages/about-us">
         <div className="my-[15px]">

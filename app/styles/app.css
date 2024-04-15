@@ -592,7 +592,15 @@ footer{
   padding: 0 10px;
 }
 .login_wrapper fieldset{margin: 10%;}
-
+.search {
+  background-image: url('/search_icon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+.search::placeholder {
+  color: #d0715f;
+}
 .container-testimonials {
 	display: flex;
 	padding: 0 35px;
@@ -690,11 +698,11 @@ footer{
 	color: #6a6d78;
 	font-size: 1.31rem;
 }
-
+.looks_tittle{ background: #dfdfdf8c; width: 100%; padding: 5px;}
 @media only screen and (max-width: 1024px) {
   .mobile-cart-product {
     position: fixed;
-    bottom: 0;
+    bottom: 25px;
     z-index: 9;
     width: 100%;
     justify-content: center;

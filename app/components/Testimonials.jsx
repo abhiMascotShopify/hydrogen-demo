@@ -1,7 +1,6 @@
 const Testimonials = ({page})=>{
-    console.log("body::",page.body, typeof page.body)
     const context = page.body.split('<p>split_code</p>');
-    console.log("Testimonials",context)
+    //console.log("Testimonials",context)
     return(
         <div class="wrapper text-center">
         <h1> Testimonials </h1>
