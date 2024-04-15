@@ -17,12 +17,10 @@ const CollectionCarousel = ({collection , handle , sortArr}) => {
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const eIndex = isLargeScreen ? len < 4 ? len : 4 : 2;
   const [endIndex, setEndIndex]  = useState(eIndex);
-
-  console.log("sortArr::",sortArr)
   var len = sortArr.length;
   if (sortArr != null || sortArr != undefined) {
     collectionsToShow = sortArr.slice(startIndex, endIndex);
-    console.log("collectionsToShow::",collectionsToShow);
+    //console.log("collectionsToShow::",sortArr,eIndex);
   }
 
   const nextCollections= () => {
@@ -42,7 +40,6 @@ const CollectionCarousel = ({collection , handle , sortArr}) => {
   }
 
   function goToCollection(url_path){
-    
     let url = getPath(url_path);
     console.log(url)
     window.location.href = url
@@ -69,6 +66,8 @@ const CollectionCarousel = ({collection , handle , sortArr}) => {
             </div>
           ))}
         </div>
+        { sortArr.length > eIndex &&
+        <>
         <button 
           className="absolute lg:left-[-150px] top-1/2 transform -translate-y-1/2 lg:bg-[#faebd7] bg-white bg-opacity-75 rounded-full p-2 ml-4 hover:bg-opacity-100 mst-arrow"
           onClick={() => prevCollections() }
@@ -87,6 +86,8 @@ const CollectionCarousel = ({collection , handle , sortArr}) => {
             size={30}
           />
         </button>
+        </>
+      }
       </div>
     </div>
   );
