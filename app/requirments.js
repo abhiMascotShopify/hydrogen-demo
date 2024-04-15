@@ -1,5 +1,9 @@
 Canva url : "https://www.canva.com/design/DAGANePlrPQ/i00CHLZ7I0FIZzCvgZh1EQ/view?utm_content=DAGANePlrPQ&utm_campaign=designshare&utm_medium=link&utm_source=editor"
 
+npm create sanity@latest -- --template shopify --project qs0n38yc --dataset production
+
+npm create sanity@latest -- --template shopify-online-storefront --project qs0n38yc --dataset production
+
 1) Page Image Placement Changes.
 
 5) Adding Testimonial List (Document is provided) 

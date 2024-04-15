@@ -32,6 +32,8 @@ export function Footer({menu}) {
             <div className="cursor-pointer"   onClick={()=> goToPage("/") }>Stores</div>
               <div className="cursor-pointer" onClick={()=> goToPage("/pages/terms-conditions") } >Terms & Conditions</div>
               <div className="cursor-pointer" onClick={()=> goToPage("/pages/refund-policy") }>Return & Refund Policy</div>
+              <div className="cursor-pointer" onClick={()=> goToPage("/pages/shipping-delivery") }>Shipping & Delivery</div>
+              <div className="cursor-pointer" onClick={()=> goToPage("/pages/privacy-policy") }>Privacy Policy</div>
               <div className="cursor-pointer" onClick={()=> goToPage("/pages/terms-conditions") } >FAQs</div>
               <div className="cursor-pointer" onClick={()=> goToPage("/pages/about-us") }>About Us</div>
             </div>

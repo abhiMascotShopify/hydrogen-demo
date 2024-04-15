@@ -6,7 +6,7 @@ const MobileVideo = ({playVideo}) => {
   return (
     <div className="w-full h-full mx-auto">
       <div className="relative rounded-lg" cursor-pointer>
-        <img className='relative' src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/youtube_thumbnail.jpg?v=1712992484" alt="Youtube Video"></img>
+        <img className='relative rounded-2xl' src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/youtube_thumbnail.jpg?v=1712992484" alt="Youtube Video"></img>
         <img className='absolute top-[50%] left-[50%]' src="/youtube_icon.png" />
         {/* <iframe
           className="rounded-lg w-full h-60"
@@ -24,7 +24,7 @@ const DesktopVideo = ({playVideo}) => {
   return (
     <div className="w-4/5 mx-auto">
       <div className="relative rounded-2xl p-10 cursor-pointer">
-        <img onClick={()=> playVideo() } className='relative' src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/youtube_thumbnail.jpg?v=1712992484" alt="Youtube Video"></img>
+        <img className="rounded-2xl relative" onClick={()=> playVideo() } src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/youtube_thumbnail.jpg?v=1712992484" alt="Youtube Video"></img>
         <img className='absolute top-[50%] left-[50%]' src="/youtube_icon.png" />
         {/* <iframe
           title="YouTube Video"

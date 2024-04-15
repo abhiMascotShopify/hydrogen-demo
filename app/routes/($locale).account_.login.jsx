@@ -86,7 +86,7 @@ export default function Login() {
         </div>
         
         <div className="w-full justify-center items-center flex flex-col">
-        <Form className="w-full h-screen m-auto login_wrapper" method="POST">
+        <Form className="w-full m-auto login_wrapper" method="POST">
         <fieldset>
           <div className="mb-3" >
             <label className="block text-gray-700 text-sm font-bold mb-2" for="username">

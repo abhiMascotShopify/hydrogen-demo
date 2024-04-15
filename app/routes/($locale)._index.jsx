@@ -66,14 +66,14 @@ export default function Homepage() {
   var imageSrc = []
   if(!isSmall){
     imageSrc = [
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_1.jpg?v=1708767049',
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_3_opt_1.jpg?v=1708767048',
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_4_opt_2.jpg?v=1708767048',
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_5_opt_2.jpg?v=1708767048'
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_1_opt_1.jpg?v=1713184908',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_3.jpg?v=1713185162',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_3.jpg?v=1713185162',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_5.jpg?v=1713185345'
     ];
   }else{
     imageSrc = [
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_1_700_x_470.jpg?v=1712753471',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_4_700_x_470.jpg?v=1712753471',
       'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_4_700_x_470.jpg?v=1712753471',
       'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_3_700_x_470.jpg?v=1712753471',
       'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_5_700_x_470.jpg?v=1712753471'
@@ -141,17 +141,13 @@ export default function Homepage() {
               key={index}
             >
               <div className="image">
-                <NavLink to={`/collections/${item.collectionname}`}>
+                <NavLink to={`/collections/${item.url}`}>
                   <img
                     width={80}
                     height={80}
                     alt={item.collectionname}
                     src={item.collectionimageurl}
-                    style={{
-                      width: '80px',
-                      borderRadius: '50%',
-                      border: '1px solid #e5e5e5',
-                    }}
+                
                   />
                 </NavLink>
               </div>
@@ -192,7 +188,7 @@ export default function Homepage() {
                   onClick={()=> goToCollection(`/collections/${coll.handle}`)}
                   src={`${coll.url}`} // Make sure to put your images in the 'public/images/' directory
                   alt={coll.title}
-                  className="lg:w-full lg:h-auto h-[40%] w:[100%] sm:w-[375px] sm:w-[250px] cursor"
+                  className="lg:w-full lg:h-auto h-[40%] rounded-2xl w:[100%] sm:w-[375px] sm:w-[250px] cursor"
                 />
               </div>
           </div>
@@ -232,7 +228,7 @@ export default function Homepage() {
           <div className="my-[15px]">
             <img
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Daily_Essentials_banner.jpg?v=1709971600"
-              className="w-[100%] m-auto"
+              className="w-[100%] m-auto rounded-2xl"
             ></img>
           </div>
         </a>
@@ -243,7 +239,7 @@ export default function Homepage() {
             <img
               style={{height:"250px"}}
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_everyday_style.jpg?v=1712816125"
-              className="w-[100%] m-auto"
+              className="w-[100%] m-auto rounded-2xl"
             ></img>
           </div>
         </a>
@@ -262,7 +258,7 @@ export default function Homepage() {
           <div className="my-[15px]">
             <img
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Lookbook_Banner.jpg?v=1709971241"
-              className="w-[100%] m-auto"
+              className="w-[100%] m-auto rounded-2xl"
             ></img>
           </div>
         </a>
@@ -273,7 +269,7 @@ export default function Homepage() {
             <img
               style={{height:"250px"}}
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_look_book.jpg?v=1712816125"
-              className="w-[100%] m-auto"
+              className="w-[100%] m-auto rounded-2xl"
             ></img>
           </div>
         </a>
@@ -285,7 +281,7 @@ export default function Homepage() {
         <div className="my-[15px]">
           <img
             src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/About_US.jpg?v=1712993514"
-            className="w-[100%] m-auto"
+            className="w-[100%] m-auto rounded-2xl"
           ></img>
         </div>
       </a>
@@ -613,33 +609,23 @@ const collectionCult = [
 
 const collectionArrayStatic = [
   {
-    collectionname: 'Moisturizer',
-    url:"/collections/moisturizer",
-    collectionimageurl: '/collection/Moisturizer.webp',
+    collectionname: 'Face',
+    url:"face",
+    collectionimageurl: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Face-Icon-Mobile.jpg?v=1713183444',
   },
   {
-    collectionname: 'Cream',
-    url:"/collections/cream",
-    collectionimageurl: '/collection/Cream.webp',
+    collectionname: 'Lips',
+    url:"lips",
+    collectionimageurl: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Lips-icon-mobile.jpg?v=1713183444',
   },
   {
-    collectionname: 'Scrub',
-    url:"/collections/scrub",
-    collectionimageurl: '/collection/Scrub.webp',
+    collectionname: 'Kajal',
+    url:"kajal-pencil",
+    collectionimageurl: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Kajal-Icon-Mobile.jpg?v=1713183444',
   },
   {
-    collectionname: 'Serum',
-    url:"/collections/serum",
-    collectionimageurl: '/collection/Serum.webp',
-  },
-  {
-    collectionname: 'Face Wash',
-    url:"/collections/face",
-    collectionimageurl: '/collection/Foaming-Face-Wash.jpg',
-  },
-  {
-    collectionname: 'Face Wash',
-    url:"/collections/face-wash",
-    collectionimageurl: '/collection/Face-Wash.jpg',
+    collectionname: 'Nail',
+    url:"nails",
+    collectionimageurl: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Nail_Categories-02.jpg?v=1713183501',
   }
 ];
