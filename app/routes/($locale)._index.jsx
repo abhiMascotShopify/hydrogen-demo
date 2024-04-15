@@ -601,12 +601,12 @@ const collectionCult = [
   },
   {
     title: 'Rizz & Roll MJK',
-    handle:"/collections/rizz-roll-mjk",
+    handle:"rizz-roll-mjk",
     url: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/collections/RIzz_and_Roll-01_f88a8485-9934-4469-9b29-89ba17fcf7cc.jpg?v=1712581214',
   },
   {
     title: 'Pro Studio MJK',
-    handle:"/collections/pro-studio-mjk",
+    handle:"pro-studio-mjk",
     url: "https://cdn.shopify.com/s/files/1/0809/4253/0882/collections/Pro-studio_1-01_b98dd6ae-5b21-4486-9e6f-55dd7b7fcf5e.jpg?v=1712581177",
   }
 ];
