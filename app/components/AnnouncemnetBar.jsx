@@ -6,7 +6,7 @@ const AnnouncementBar = () => {
       className="text-center"
       style={{backgroundColor: '#010101', color:"#fff", padding: '8px'}}
     >
-      Announcement
+      Choose Your Makeup Cult Now !
     </div>
   );
 };

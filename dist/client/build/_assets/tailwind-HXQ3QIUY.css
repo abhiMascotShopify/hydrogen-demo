@@ -539,6 +539,22 @@ video {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.mx-\[10px\] {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 .-mr-1 {
   margin-right: -.25rem;
 }
@@ -634,6 +650,9 @@ video {
 }
 .mt-\[4\%\] {
   margin-top: 4%;
+}
+.mb-8 {
+  margin-bottom: 2rem;
 }
 .block {
   display: block;
@@ -828,6 +847,9 @@ video {
 }
 .w-screen {
   width: 100vw;
+}
+.w-\[50\%\] {
+  width: 50%;
 }
 .min-w-0 {
   min-width: 0px;
@@ -2441,4 +2463,4 @@ video {
     font-size: 28px;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-RDDKW4AB.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-ASDS3Y3R.css.map */

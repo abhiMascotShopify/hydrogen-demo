@@ -23,7 +23,7 @@ const ProductCarousel = ({products}) => {
     productsToShow = products.edges.slice(startIndex, endIndex);
   }
 
-  console.log("productsToShow:",productsToShow)
+  //console.log("productsToShow:",productsToShow)
 
   const nextProducts = () => {
     setStartIndex((prevIndex) => len == endIndex ? prevIndex -1 : prevIndex + 1 );

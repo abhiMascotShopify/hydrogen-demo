@@ -11,7 +11,8 @@ import {useMediaQuery} from 'react-responsive';
 import CustomizedCollection from '~/components/CustomizedCollection';
 import BlogCorousel from '~/components/BlogCorousel'
 import Testimonials from '~/components/Testimonials';
-import LooksComp from '~/components/LooksComp'
+import LooksComp from '~/components/LooksComp';
+import Slider from "react-slick";
 
 export const meta = () => {
   return [{title: 'Hydrogen | Home'}];
@@ -130,6 +131,44 @@ export default function Homepage() {
     window.location.href = url_path
   }
 
+  let totalLen = collectionCult.length;
+  const settings = {
+  centerMode: isSmall ? true : false,
+  dots: totalLen > 3 ? true : false,
+  infinite: false,
+  speed: 500,
+  initialSlide: isSmall ? 1 : 0,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true
+      }
+    }
+  ]
+  }
   return (
     <div className="home">
       { isSmall ?
@@ -176,10 +215,27 @@ export default function Homepage() {
         products={BuildYourOwnColl}
         title="CHOOSE YOUR CULT"
       ></CustomizedProducts> */}
-      <h1 className="text-center lg:text=[28px] text-[20px] mt-[15px]">
-      CHOOSE YOUR CULT
-      </h1> 
-      <div className="flex gap-4">
+      <div className='mb-8'>
+        <h1 className="text-center lg:text=[28px] text-[20px] mt-[15px]">
+        CHOOSE YOUR CULT
+        </h1> 
+        <Slider {...settings}>
+          { collectionCult.map((coll,index)=>{
+              return <div key={`cult_${index}`} className="mx-4 px-2" >
+                <div className="bg-white">  
+                  <img
+                    onClick={()=> goToCollection(`/collections/${coll.handle}`)}
+                    src={`${coll.url}`} // Make sure to put your images in the 'public/images/' directory
+                    alt={coll.title}
+                    className="lg:w-full lg:h-auto h-[40%] rounded-2xl w:[100%] sm:w-[375px] sm:w-[250px] cursor"
+                  />
+                </div>
+            </div>
+            })
+          }
+        </Slider>
+      </div>
+      {/* <div className="flex gap-4">
         {
           collectionCult.map((coll,index)=>{
             return <div key={`cult_${index}`} className="w-full " >
@@ -194,7 +250,7 @@ export default function Homepage() {
           </div>
           })
         }
-      </div>
+      </div> */}
 
       {/*---Banner Statis -section 4 -- */}
       
@@ -251,6 +307,7 @@ export default function Homepage() {
         title="Daily Must-Haves"
       />
       <GiftingCollection collections={GiftCollections} title={'Gifting'} />
+      
       <YouTubeVideo></YouTubeVideo>
 
       {isLargeScreen && (
@@ -289,7 +346,9 @@ export default function Homepage() {
     {/* <CustomizedCollection collections={collectionArray} title="Choose Your Own Fashion" /> */}
     </div>
       {/*<RecommendedProducts products={data.recommendedProducts} />*/}
-      <BlogCorousel  collections={data.blogs} title="CULT CHAPTERS" />
+      <div className='mx-8'>
+      <BlogCorousel  isSmall={isSmall} collections={data.blogs} title="CULT CHAPTERS" />
+      </div>
       {/*console.log(data.collectionProducts)*/}
       <Testimonials page={testimonialPage} />
     </div>

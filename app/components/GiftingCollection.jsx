@@ -1,19 +1,52 @@
 import React, {useState} from 'react';
 import {useMediaQuery} from 'react-responsive';
+import Slider from "react-slick";
 
 const GiftingCollection = ({collections,title}) => {
   let productsToShow = [];
   const [startIndex, setStartIndex] = useState(0);
   const isLargeScreen = useMediaQuery({minWidth: 1024});
-//   const eIndex = isLargeScreen ? len < 4 ? len : 4 : 2;
-//   const [endIndex, setEndIndex]  = useState(eIndex);
-//   var len = products.length;
-//   if (products != null || products != undefined) {
-//     productsToShow = products.slice(startIndex, endIndex);
-//     console.log("productsToShow::",productsToShow);
-//   }
   const goToCollection=(url_path)=>{
     window.location.href = url_path
+  }
+  console.log("isLarge ::",isLargeScreen)
+  let totalLen = collections.length;
+  const settings = {
+  centerMode: isLargeScreen ? false : true,
+  dots: totalLen > 3 ? true : false,
+  infinite: false,
+  speed: 500,
+  initialSlide: 0,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true
+      }
+    }
+  ]
   }
 
 return (
@@ -21,8 +54,22 @@ return (
 <h1 className="text-center lg:text=[28px] text-[20px] mt-[15px]">
       {title}
 </h1> 
-<div className="relative">
-    <div className="flex gap-4">
+<div className="relative mb-8">
+    <Slider {...settings}>  
+    {collections.map((coll, index) => {
+        return <div key={`gift_${index}`} className="w-full">
+            <div className={`p-1 sm:p-2`}>
+              <img
+                onClick={()=> goToCollection(`/collections/${coll.handle}`)}
+                src={coll.image.url} // Make sure to put your images in the 'public/images/' directory
+                alt={coll.title}
+                className="lg:w-full lg:h-auto rounded-lg h-[40%] w:[100%] sm:w-[375px] sm:w-[250px]   cursor"
+              />
+          </div>
+        </div>
+        })}
+    </Slider>
+    {/* <div className="flex gap-4">
       {collections.map((coll, index) => {
         return <div key={`gift_${index}`} className="w-full">
             <div className={`p-1 sm:p-2`}>
@@ -35,10 +82,9 @@ return (
           </div>
         </div>
         })}
-  </div>
+  </div>*/}
+  </div> 
 </div>
-</div>
-
   );
 };
 

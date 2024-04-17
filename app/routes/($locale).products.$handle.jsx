@@ -236,7 +236,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
             <h1 className="text-2xl font-semibold mt-0 mb-0">
               {product.title}
             </h1>
-            <div className='flex py-2'>
+            <div className='flex py-2 px-2'>
             <OkendoStarRating
               productId={product.id}
               okendoStarRatingSnippet={product.okendoStarRatingSnippet}
@@ -326,9 +326,9 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
           <h1 className="lg:text-3xl font-semibold mb-4 text-center mt-[4%] mb-[2%] uppercase">
             Product Information
           </h1>
-          <div className="flex space-x-4 overflow-y-auto lg:justify-center my-[20px]">
-          <div
-              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${
+          <div className="grid grid-cols-2 sm:grid-cols-4 overflow-y-auto lg:justify-center gap-2">
+            <div
+              className={`cursor-pointer py-2 px-2 border-b-4 uppercase whitespace-nowrap ${
                 activeTab === 'Ingredient' ? 'border-active' : ''
               }`}
               onClick={() => handleTabClick('Ingredient')}
@@ -337,7 +337,8 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
              Ingredients
             </div>
             <div
-              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${
+              style={{border: '1px solid #e5e5e5'}}
+              className={`cursor-pointer py-2 px-2 border-b-4 uppercase whitespace-nowrap ${
                 activeTab === 'How to Use' ? 'border-active' : ''
               }`}
               onClick={() => handleTabClick('How to Use')}
@@ -346,7 +347,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
               How to Use
             </div>
             <div
-              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${
+              className={`cursor-pointer py-2 px-2 border-b-4 uppercase whitespace-nowrap ${
                 activeTab === 'Concerns' ? 'border-active' : ''
               }`}
               onClick={() => handleTabClick('Concerns')}
@@ -355,7 +356,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
              Concerns
             </div>
             <div
-              className={`cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${
+              className={`cursor-pointer py-2 px-2 border-b-4 uppercase whitespace-nowrap ${
                 activeTab === 'Why us' ? 'border-active' : ''
               }`}
               onClick={() => handleTabClick('Why us')}
@@ -366,7 +367,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
           </div>
           <div className="mt-4">
             {activeTab === 'Key Ingredients' && key_ingredients && (
-              <div className="overflow-y-auto overflow-x-auto">
+              <div className="meta_info_card overflow-y-auto overflow-x-auto">
                 {key_ingredients && (
                   <div
                     className="expect"
@@ -376,7 +377,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
               </div>
             )}
             {activeTab === 'How to Use' && How_To_use && (
-              <div className="overflow-y-auto">
+              <div className="meta_info_card overflow-y-auto">
                 <div
                   className="key-ing"
                   dangerouslySetInnerHTML={{__html: How_To_use}}
@@ -384,16 +385,16 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
               </div>
             )}
             {activeTab === 'Concerns' && who_can_use && (
-              <div className="overflow-y-auto">
+              <div className="meta_info_card overflow-y-auto">
                 <div dangerouslySetInnerHTML={{__html: who_can_use}} />
               </div>
             )}
             {activeTab === 'Ingredient' && ingredient && (
-              <div className="overflow-y-auto">
+              <div className="meta_info_card overflow-y-auto">
                 <div style={{maxWidth:"100%"}} dangerouslySetInnerHTML={{__html: ingredient}} />
               </div>
             )}
-            {activeTab === 'Why us' && why_us && (
+            {activeTab === 'meta_info_card Why us' && why_us && (
               <div className="overflow-y-auto">
                 <div dangerouslySetInnerHTML={{__html: why_us}} />
               </div>

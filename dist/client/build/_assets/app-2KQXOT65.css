@@ -789,6 +789,12 @@ footer {
   .checkout {
     width: 280px;
   }
+  .meta_info_card {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #cb7060;
+  }
   .key-ing ul {
     grid-template-columns: 1fr !important;
   }
@@ -819,4 +825,4 @@ footer {
     width: 30px !important;
   }
 }
-/*# sourceMappingURL=/build/_assets/app-BKRM2NSK.css.map */
+/*# sourceMappingURL=/build/_assets/app-6GAV5YIX.css.map */

@@ -1,7 +1,7 @@
 import {
   ProductsCorousel_default
 } from "/build/_shared/chunk-UZWC6K72.js";
-import "/build/_shared/chunk-R7H3JEAR.js";
+import "/build/_shared/chunk-3C7N4WA2.js";
 import {
   c,
   d,
@@ -203,7 +203,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             lineNumber: 236,
             columnNumber: 13
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex py-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex py-2 px-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
             c,
             {
               productId: product.id,
@@ -452,11 +452,11 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
           lineNumber: 326,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex space-x-4 overflow-y-auto lg:justify-center my-[20px]", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-cols-2 sm:grid-cols-4 overflow-y-auto lg:justify-center gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
             "div",
             {
-              className: `cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${activeTab === "Ingredient" ? "border-active" : ""}`,
+              className: `cursor-pointer py-2 px-2 border-b-4 uppercase whitespace-nowrap ${activeTab === "Ingredient" ? "border-active" : ""}`,
               onClick: () => handleTabClick("Ingredient"),
               style: { border: "1px solid #e5e5e5" },
               children: "Ingredients"
@@ -466,14 +466,15 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
               lineNumber: 330,
-              columnNumber: 11
+              columnNumber: 13
             },
             this
           ),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
             "div",
             {
-              className: `cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${activeTab === "How to Use" ? "border-active" : ""}`,
+              style: { border: "1px solid #e5e5e5" },
+              className: `cursor-pointer py-2 px-2 border-b-4 uppercase whitespace-nowrap ${activeTab === "How to Use" ? "border-active" : ""}`,
               onClick: () => handleTabClick("How to Use"),
               children: "How to Use"
             },
@@ -489,7 +490,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
             "div",
             {
-              className: `cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${activeTab === "Concerns" ? "border-active" : ""}`,
+              className: `cursor-pointer py-2 px-2 border-b-4 uppercase whitespace-nowrap ${activeTab === "Concerns" ? "border-active" : ""}`,
               onClick: () => handleTabClick("Concerns"),
               style: { border: "1px solid #e5e5e5" },
               children: "Concerns"
@@ -498,7 +499,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             false,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 348,
+              lineNumber: 349,
               columnNumber: 13
             },
             this
@@ -506,7 +507,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
             "div",
             {
-              className: `cursor-pointer py-2 lg:px-8 px-4 border-b-4 uppercase whitespace-nowrap ${activeTab === "Why us" ? "border-active" : ""}`,
+              className: `cursor-pointer py-2 px-2 border-b-4 uppercase whitespace-nowrap ${activeTab === "Why us" ? "border-active" : ""}`,
               onClick: () => handleTabClick("Why us"),
               style: { border: "1px solid #e5e5e5" },
               children: "Why us"
@@ -515,7 +516,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             false,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 357,
+              lineNumber: 358,
               columnNumber: 13
             },
             this
@@ -526,7 +527,7 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mt-4", children: [
-          activeTab === "Key Ingredients" && key_ingredients && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "overflow-y-auto overflow-x-auto", children: key_ingredients && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
+          activeTab === "Key Ingredients" && key_ingredients && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "meta_info_card overflow-y-auto overflow-x-auto", children: key_ingredients && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
             "div",
             {
               className: "expect",
@@ -536,16 +537,16 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             false,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 371,
+              lineNumber: 372,
               columnNumber: 19
             },
             this
           ) }, void 0, false, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 369,
+            lineNumber: 370,
             columnNumber: 15
           }, this),
-          activeTab === "How to Use" && How_To_use && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "overflow-y-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
+          activeTab === "How to Use" && How_To_use && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "meta_info_card overflow-y-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
             "div",
             {
               className: "key-ing",
@@ -555,45 +556,45 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
             false,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 380,
+              lineNumber: 381,
               columnNumber: 17
             },
             this
           ) }, void 0, false, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 379,
+            lineNumber: 380,
             columnNumber: 15
           }, this),
-          activeTab === "Concerns" && who_can_use && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "overflow-y-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { dangerouslySetInnerHTML: { __html: who_can_use } }, void 0, false, {
+          activeTab === "Concerns" && who_can_use && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "meta_info_card overflow-y-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { dangerouslySetInnerHTML: { __html: who_can_use } }, void 0, false, {
+            fileName: "app/routes/($locale).products.$handle.jsx",
+            lineNumber: 389,
+            columnNumber: 17
+          }, this) }, void 0, false, {
             fileName: "app/routes/($locale).products.$handle.jsx",
             lineNumber: 388,
-            columnNumber: 17
-          }, this) }, void 0, false, {
-            fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 387,
             columnNumber: 15
           }, this),
-          activeTab === "Ingredient" && ingredient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "overflow-y-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { style: { maxWidth: "100%" }, dangerouslySetInnerHTML: { __html: ingredient } }, void 0, false, {
+          activeTab === "Ingredient" && ingredient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "meta_info_card overflow-y-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { style: { maxWidth: "100%" }, dangerouslySetInnerHTML: { __html: ingredient } }, void 0, false, {
+            fileName: "app/routes/($locale).products.$handle.jsx",
+            lineNumber: 394,
+            columnNumber: 17
+          }, this) }, void 0, false, {
             fileName: "app/routes/($locale).products.$handle.jsx",
             lineNumber: 393,
-            columnNumber: 17
-          }, this) }, void 0, false, {
-            fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 392,
             columnNumber: 15
           }, this),
-          activeTab === "Why us" && why_us && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "overflow-y-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { dangerouslySetInnerHTML: { __html: why_us } }, void 0, false, {
+          activeTab === "meta_info_card Why us" && why_us && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "overflow-y-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { dangerouslySetInnerHTML: { __html: why_us } }, void 0, false, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 398,
+            lineNumber: 399,
             columnNumber: 17
           }, this) }, void 0, false, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 397,
+            lineNumber: 398,
             columnNumber: 15
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 367,
+          lineNumber: 368,
           columnNumber: 11
         }, this)
       ] }, void 0, true, {
@@ -616,13 +617,13 @@ function ProductMain({ selectedVariant, product, setWishlistSocialCount, variant
       false,
       {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 405,
+        lineNumber: 406,
         columnNumber: 7
       },
       this
     ) }, void 0, false, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 404,
+      lineNumber: 405,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
@@ -636,43 +637,43 @@ function ProductPrice({ selectedVariant }) {
     selectedVariant?.compareAtPrice ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "product-price-on-sale font-semibold", children: [
       selectedVariant ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Money, { data: selectedVariant.price }, void 0, false, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 423,
+        lineNumber: 424,
         columnNumber: 32
       }, this) : null,
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("s", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Money, { data: selectedVariant.compareAtPrice }, void 0, false, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 425,
+        lineNumber: 426,
         columnNumber: 15
       }, this) }, void 0, false, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 424,
+        lineNumber: 425,
         columnNumber: 13
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 422,
+      lineNumber: 423,
       columnNumber: 11
     }, this) }, void 0, false, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 421,
+      lineNumber: 422,
       columnNumber: 9
     }, this) : selectedVariant?.price && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Money, { className: "font-semibold", data: selectedVariant?.price }, void 0, false, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 431,
+      lineNumber: 432,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "font-semibold bg-[#e1eecc] py-1 px-2 text-sm rounded", children: "FREE SHIPPING" }, void 0, false, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 435,
+      lineNumber: 436,
       columnNumber: 9
     }, this) }, void 0, false, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 434,
+      lineNumber: 435,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 419,
+    lineNumber: 420,
     columnNumber: 5
   }, this);
 }
@@ -754,7 +755,7 @@ function ProductForm({
           false,
           {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 515,
+            lineNumber: 516,
             columnNumber: 11
           },
           this
@@ -764,41 +765,41 @@ function ProductForm({
       false,
       {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 509,
+        lineNumber: 510,
         columnNumber: 7
       },
       this
     ),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Offers, {}, void 0, false, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 526,
+      lineNumber: 527,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 527,
+      lineNumber: 528,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mb-2", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: " Check Availibility / Estimated Delivery " }, void 0, false, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 534,
+        lineNumber: 535,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-baseline", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { className: "w-48 sm:w-[320px] block rounded-bl-lg rounded-tl-lg border bg-transparent bg-clip-padding  text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3]  focus:text-neutral-700 focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 mst-card", value: pincode, onChange: handlePinChange, type: "text", placeholder: "Enter your pincode" }, void 0, false, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 536,
+          lineNumber: 537,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: () => checkAvailibility(), className: "w-[130px] sm:w-[150px] m-4 h-11 bg-black hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-lg", children: " Check Now " }, void 0, false, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 537,
+          lineNumber: 538,
           columnNumber: 9
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 535,
+        lineNumber: 536,
         columnNumber: 9
       }, this),
       serviceble.status != null && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: `font-bold ${serviceble.status ? "text-green-500" : "text-orange-500"}`, children: [
@@ -807,12 +808,12 @@ function ProductForm({
         " "
       ] }, void 0, true, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 540,
+        lineNumber: 541,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 533,
+      lineNumber: 534,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
@@ -834,14 +835,14 @@ function ProductForm({
       false,
       {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 544,
+        lineNumber: 545,
         columnNumber: 7
       },
       this
     )
   ] }, void 0, true, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 508,
+    lineNumber: 509,
     columnNumber: 5
   }, this);
 }
@@ -850,7 +851,7 @@ function ProductOptions({ option, activeImg, setWishlistSocialCount, closeRef })
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "product-options", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h5", { className: "font-semibold", children: option.name }, void 0, false, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 573,
+      lineNumber: 574,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "product-options-grid items-center", children: option.values.map(({ value, isAvailable, isActive, to }) => {
@@ -875,7 +876,7 @@ function ProductOptions({ option, activeImg, setWishlistSocialCount, closeRef })
           },
           children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { dangerouslySetInnerHTML: { __html: value } }, void 0, false, {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 597,
+            lineNumber: 598,
             columnNumber: 15
           }, this)
         },
@@ -883,35 +884,35 @@ function ProductOptions({ option, activeImg, setWishlistSocialCount, closeRef })
         false,
         {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 577,
+          lineNumber: 578,
           columnNumber: 15
         },
         this
       );
     }) }, void 0, false, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 574,
+      lineNumber: 575,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 602,
+      lineNumber: 603,
       columnNumber: 9
     }, this)
   ] }, option.name, true, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 572,
+    lineNumber: 573,
     columnNumber: 7
   }, this) }, void 0, false, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 571,
+    lineNumber: 572,
     columnNumber: 5
   }, this);
 }
 var Offers = () => {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {}, void 0, false, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 610,
+    lineNumber: 611,
     columnNumber: 5
   }, this);
 };
@@ -936,7 +937,7 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
           false,
           {
             fileName: "app/routes/($locale).products.$handle.jsx",
-            lineNumber: 635,
+            lineNumber: 636,
             columnNumber: 13
           },
           this
@@ -963,14 +964,14 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
                   false,
                   {
                     fileName: "app/routes/($locale).products.$handle.jsx",
-                    lineNumber: 645,
+                    lineNumber: 646,
                     columnNumber: 17
                   },
                   this
                 ),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "px-4", children: amount }, void 0, false, {
                   fileName: "app/routes/($locale).products.$handle.jsx",
-                  lineNumber: 655,
+                  lineNumber: 656,
                   columnNumber: 17
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
@@ -984,7 +985,7 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
                   false,
                   {
                     fileName: "app/routes/($locale).products.$handle.jsx",
-                    lineNumber: 656,
+                    lineNumber: 657,
                     columnNumber: 17
                   },
                   this
@@ -995,7 +996,7 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
             true,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 641,
+              lineNumber: 642,
               columnNumber: 15
             },
             this
@@ -1013,19 +1014,19 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
             false,
             {
               fileName: "app/routes/($locale).products.$handle.jsx",
-              lineNumber: 663,
+              lineNumber: 664,
               columnNumber: 15
             },
             this
           )
         ] }, void 0, true, {
           fileName: "app/routes/($locale).products.$handle.jsx",
-          lineNumber: 640,
+          lineNumber: 641,
           columnNumber: 13
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 634,
+        lineNumber: 635,
         columnNumber: 11
       }, this)
     },
@@ -1033,13 +1034,13 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
     false,
     {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 628,
+      lineNumber: 629,
       columnNumber: 7
     },
     this
   ) }, void 0, false, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 627,
+    lineNumber: 628,
     columnNumber: 5
   }, this);
 }
@@ -1050,40 +1051,40 @@ function RecommendedProducts({ products, title }) {
       " "
     ] }, void 0, true, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 712,
+      lineNumber: 713,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: "Loading..." }, void 0, false, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 714,
+        lineNumber: 715,
         columnNumber: 29
       }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Await, { resolve: products, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ProductsCorousel_default, { products }, void 0, false, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 717,
+        lineNumber: 718,
         columnNumber: 14
       }, this) }, void 0, false, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 715,
+        lineNumber: 716,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 714,
+        lineNumber: 715,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
         fileName: "app/routes/($locale).products.$handle.jsx",
-        lineNumber: 720,
+        lineNumber: 721,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/($locale).products.$handle.jsx",
-      lineNumber: 713,
+      lineNumber: 714,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/($locale).products.$handle.jsx",
-    lineNumber: 711,
+    lineNumber: 712,
     columnNumber: 5
   }, this);
 }
@@ -1207,4 +1208,4 @@ export {
   Product as default,
   meta
 };
-//# sourceMappingURL=/build/routes/($locale).products.$handle-33FQPIKZ.js.map
+//# sourceMappingURL=/build/routes/($locale).products.$handle-NPRI3UTI.js.map

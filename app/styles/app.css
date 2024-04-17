@@ -831,6 +831,9 @@ footer{
   .checkout {
     width: 280px;
   }
+  .meta_info_card{
+    background-color: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 4px #CB7060;
+  }
   .key-ing ul {
     grid-template-columns: 1fr !important;
   }

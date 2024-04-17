@@ -3,9 +3,13 @@ import React, {useState} from 'react';
 //import products from './products';
 import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
 import {useMediaQuery} from 'react-responsive';
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
-const MobileProductCorousel = ({products,title}) => {
+const MobileProductCorousel = ({products,title, settings}) => {
   const [startIndex, setStartIndex] = useState(0);
+  
   //console.log(products)
   //const productsToShow = products.slice(startIndex, startIndex + 5);
   //console.log(productsToShow)
@@ -16,7 +20,22 @@ const MobileProductCorousel = ({products,title}) => {
         <h1 className="text-center mt-0 lg:text-[28px] text-[20px]">
          {title}
         </h1>
-        <div className="flex gap-2 overflow-y-auto">
+   
+        <Slider {...settings}>
+          {products.nodes.map((product) => (
+            <div className="px-2 bg-white">
+              <a href={`/blogs/${product.handle}`}>
+              <img
+                src={`${product.articles.edges[0].node.image.url}`} // Make sure to put your images in the 'public/images/' directory
+                alt={product.title}
+                className="mst-card lg:w-full lg:h-auto lg:px-5 sm:px-3 sm:mx-3 w-[320px]"
+              />
+              </a>
+            </div>
+          ))}
+        </Slider>
+        
+        {/* <div className="flex gap-2 overflow-y-auto">
           {products.nodes.map((product) => (
              <div className="bg-white shadow-lg">
             <a href={`/blogs/${product.handle}`}>
@@ -28,15 +47,15 @@ const MobileProductCorousel = ({products,title}) => {
             </a>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
 };
 
-const DesktopCorousel = ({products ,title}) => {
+const DesktopCorousel = ({products ,title ,settings}) => {
   const [startIndex, setStartIndex] = useState(0);
-
+  console.log(settings);
   const productsToShow = products.nodes.slice(startIndex, startIndex + 3);
   //console.log(productsToShow)
   const isMobile = useMediaQuery({maxWidth: 640});
@@ -44,7 +63,7 @@ const DesktopCorousel = ({products ,title}) => {
   const nextProducts = () => {
     setStartIndex((prevIndex) => (prevIndex + 3) % products.length);
   };
-
+  settings.infinite = false;
   const prevProducts = () => {
     setStartIndex((prevIndex) =>
       prevIndex === 0 ? products.length - (products.length % 3) : prevIndex - 1,
@@ -56,72 +75,76 @@ const DesktopCorousel = ({products ,title}) => {
       <div className="w-full max-w-screen-2xl mx-auto px-1">
         <div className="relative">
           <h1 className="text-center">{title}</h1>
-          <div className="flex">
-            {productsToShow.map((product) => (
-              <div key={product.id} className="w-full sm:w-1/3 md:w-1/3 px-4">
-                <div className="bg-white shadow-lg">
+          <Slider {...settings}>
+            {products.nodes.map((product) => (
+                <div className="px-2 bg-white">
                   <a href={`/blogs/${product.handle}`}>
-                    <img
-                      src={`${product.articles.edges[0].node.image.url}`} // Make sure to put your images in the 'public/images/' directory
-                      alt={product.title}
-                      className="w-full h-auto"
-                    />
+                  <img
+                    src={`${product.articles.edges[0].node.image.url}`} // Make sure to put your images in the 'public/images/' directory
+                    alt={product.title}
+                    className="mst-card lg:w-full lg:h-auto"
+                  />
                   </a>
-                  {/* Add more product information here */}
                 </div>
-              </div>
-            ))}
-          </div>
-          {products.length > 3 &&
-          <>
-          <button
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75 text-white"
-            onClick={() =>
-              setStartIndex((prevIndex) =>
-                prevIndex === 0
-                  ? products.length - (products.length % 3)
-                  : prevIndex - 1,
-              )
-            }
-          >
-            <MdChevronLeft
-              className="opacity-50 cursor-pointer hover:opacity-100 mst-arrow"
-              size={40}
-            />
-          </button>
-          <button
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 mr-4 hover:bg-opacity-75 text-white"
-            onClick={() =>
-              setStartIndex((prevIndex) => (prevIndex + 3) % products.length)
-            }
-          >
-            <MdChevronRight
-              className="opacity-50 cursor-pointer hover:opacity-100 mst-arrow"
-              size={40}
-            />
-          </button>
-          </>
-          }
+              ))}
+          </Slider>
         </div>
       </div>
     </div>
   );
 };
 
-const BlogCorousel = ({collections , title}) => {
-  //console.log(collections);
-  const isLargeScreen = useMediaQuery({minWidth: 1024});
-  const isSmall = useMediaQuery({maxWidth: 640});
+const BlogCorousel = ({collections , title, isSmall}) => {
+  let totalLen = collections.nodes.length;
+  const settings = {
+  centerMode: isSmall ? true : false,
+  dots: totalLen > 3 ? true : false,
+  infinite: false,
+  speed: 500,
+  initialSlide: isSmall ? 1 : 0,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true
+      }
+    }
+  ]
+  }
   //console.log('is Tablet: '+isLargeScreen);
 
   return (
     <div>
-      {isSmall && (
-        <MobileProductCorousel products={collections} title={title}></MobileProductCorousel>
-      )}
-      {isLargeScreen && (
-        <DesktopCorousel products={collections} title={title}></DesktopCorousel>
-      )}
+      {isSmall ? (
+        <MobileProductCorousel products={collections} settings={settings} title={title}></MobileProductCorousel>
+      )
+      :
+      (
+        <DesktopCorousel products={collections} settings={settings} title={title}></DesktopCorousel>
+      )
+      }
     </div>
   );
 };

@@ -32,7 +32,6 @@ var ProductCarousel = ({ products }) => {
   if (products != null || products != void 0) {
     productsToShow = products.edges.slice(startIndex, endIndex);
   }
-  console.log("productsToShow:", productsToShow);
   const nextProducts = () => {
     setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
     setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
@@ -298,4 +297,4 @@ var ProductCarousel_default = ProductCarousel;
 export {
   ProductCarousel_default
 };
-//# sourceMappingURL=/build/_shared/chunk-R7H3JEAR.js.map
+//# sourceMappingURL=/build/_shared/chunk-3C7N4WA2.js.map
