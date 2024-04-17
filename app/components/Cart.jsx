@@ -93,13 +93,17 @@ function CartLineItem({layout, line}) {
           {selectedOptions.map((option) => (
             <li key={option.name} className="py-2">
               <div className="flex font-semibold text-md">
-                <span className=" text-gray-900">{option.name}:</span>
-                <div className="ml-2">
+                { option.value !=="Default Title" &&
+                <>
+                {/* <span className=" text-gray-900">{option.name}:</span> */}
+                
                   <span
                     className="inline-flex items-center px-2.5 py-0.5 rounded-full leading-4 text-blue-800"
                     dangerouslySetInnerHTML={{__html: option.value}}
                   />
-                </div>
+              
+                </>
+                }
               </div>
             </li>
           ))}
@@ -149,15 +153,18 @@ export function CartSummary({cost, layout, children = null}) {
 
 function CartLineRemoveButton({lineIds}) {
   return (
+    <div className='w-full'>
     <CartForm
+      className="w-full"
       route="/cart"
       action={CartForm.ACTIONS.LinesRemove}
       inputs={{lineIds}}
     >
       <button type="submit text-[#fa4a0b] " className="flex justify-end">
-        <img src="/delete.png" alt="delete" width={20} height={30} />
+        <img src="/delete.png" alt="delete" width={22} height={22} />
       </button>
     </CartForm>
+    </div>
   );
 }
 

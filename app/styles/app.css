@@ -706,6 +706,17 @@ footer{
 	font-size: 1.31rem;
 }
 .looks_tittle{ background: #dfdfdf8c; width: 100%; padding: 5px;}
+.cart_counter{
+  border-radius: 50%;
+  border: 1px solid #d58070;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 12px;
+  background: #d58070;
+  color: white;
+  font-weight: bold;
+}
 @media only screen and (max-width: 1024px) {
   .mobile-cart-product {
     position: fixed;
@@ -830,6 +841,11 @@ footer{
   }
   .checkout {
     width: 280px;
+  }
+  .cart_counter{
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
   }
   .meta_info_card{
     background-color: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 4px #CB7060;
