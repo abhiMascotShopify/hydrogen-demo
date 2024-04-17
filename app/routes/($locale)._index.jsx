@@ -67,14 +67,14 @@ export default function Homepage() {
   var imageSrc = []
   if(!isSmall){
     imageSrc = [
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_1_opt_1.jpg?v=1713184908',
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_3.jpg?v=1713185162',
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_3.jpg?v=1713185162',
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/website_banner_5.jpg?v=1713185345'
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/desktop_banner_1.jpg?v=1713342696',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/desktop_banner_2.jpg?v=1713342905',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/desktop_banner_3.jpg?v=1713342905',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/desktop_banner_4.jpg?v=1713342905'
     ];
   }else{
     imageSrc = [
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_4_700_x_470.jpg?v=1712753471',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_1_700_x_470.jpg?v=1712753471',
       'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_4_700_x_470.jpg?v=1712753471',
       'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_3_700_x_470.jpg?v=1712753471',
       'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_5_700_x_470.jpg?v=1712753471'
@@ -307,7 +307,7 @@ export default function Homepage() {
         title="Daily Must-Haves"
       />
       <GiftingCollection collections={GiftCollections} title={'Gifting'} />
-      
+
       <YouTubeVideo></YouTubeVideo>
 
       {isLargeScreen && (
@@ -350,7 +350,7 @@ export default function Homepage() {
       <BlogCorousel  isSmall={isSmall} collections={data.blogs} title="CULT CHAPTERS" />
       </div>
       {/*console.log(data.collectionProducts)*/}
-      <Testimonials page={testimonialPage} />
+      <Testimonials page={testimonialPage} isSmall={isSmall} />
     </div>
   );
 }
