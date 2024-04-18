@@ -225,7 +225,7 @@ export default function Homepage() {
                     onClick={()=> goToCollection(`/collections/${coll.handle}`)}
                     src={`${coll.url}`} // Make sure to put your images in the 'public/images/' directory
                     alt={coll.title}
-                    className="lg:w-full lg:h-auto h-[40%] rounded-2xl w:[100%] sm:w-[375px] sm:w-[250px] cursor"
+                    className="lg:w-full lg:h-auto rounded-2xl w:[100%] sm:w-[375px] sm:w-[250px] cursor"
                   />
                 </div>
             </div>
@@ -291,7 +291,6 @@ export default function Homepage() {
         <a href="/collections/eyes">
           <div className="my-[15px]">
             <img
-              style={{height:"250px"}}
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_everyday_style.jpg?v=1712816125"
               className="w-[100%] m-auto rounded-2xl"
             ></img>
@@ -322,7 +321,6 @@ export default function Homepage() {
         <a href="/collections/eyes">
           <div className="my-[15px]">
             <img
-              style={{height:"250px"}}
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_look_book.jpg?v=1712816125"
               className="w-[100%] m-auto rounded-2xl"
             ></img>
