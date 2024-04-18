@@ -42,7 +42,7 @@ const Testimonials = ({page , isSmall})=>{
     }
     //console.log("Testimonials",context)
     return(
-        <div className="wrapper text-center mb-8">
+        <div className="wrapper w-full text-center mb-8">
         <h1> Testimonials </h1>
             <ul>
             <Slider {...settings}>

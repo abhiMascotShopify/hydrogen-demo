@@ -17,6 +17,8 @@
 * components/Aside
 * --------------------------------------------------
 */
+.slick-prev { left : 0}
+.slick-next { right : 0}
 .footer_txt{ border-top: 0;}
 .footer_link_title { font-size: 13px;font-weight: bold;}
 .oke-button { background-color: #d0715f !important; border-radius: .5rem!important; font-family: 'Philosopher' }
