@@ -4432,7 +4432,7 @@ function Homepage() {
     ]
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "home", children: [
-    isSmall ? /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("section", { className: "collectionContent lg:hidden block sm:mt-4 overflow-auto ", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "inline-flex gap-4 w-[100%]", children: collectionArrayStatic?.map((item, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
+    isSmall ? /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("section", { className: "collectionContent lg:hidden block sm:mt-4 overflow-auto ", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "inline-flex gap-4", children: collectionArrayStatic?.map((item, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
       "div",
       {
         className: " col-item sm:w-auto  rounded-lg hover:shadow-md cursor-pointer",
@@ -4449,22 +4449,22 @@ function Homepage() {
             false,
             {
               fileName: "app/routes/($locale)._index.jsx",
-              lineNumber: 184,
+              lineNumber: 182,
               columnNumber: 19
             },
             this
           ) }, void 0, false, {
             fileName: "app/routes/($locale)._index.jsx",
-            lineNumber: 183,
+            lineNumber: 181,
             columnNumber: 17
           }, this) }, void 0, false, {
             fileName: "app/routes/($locale)._index.jsx",
-            lineNumber: 182,
+            lineNumber: 180,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "collectionname  sm:text-lg text-[12px] font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]", children: item.collectionname }, void 0, false, {
             fileName: "app/routes/($locale)._index.jsx",
-            lineNumber: 193,
+            lineNumber: 191,
             columnNumber: 15
           }, this)
         ]
@@ -4473,26 +4473,26 @@ function Homepage() {
       true,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 178,
+        lineNumber: 176,
         columnNumber: 13
       },
       this
     )) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 176,
+      lineNumber: 174,
       columnNumber: 9
     }, this) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 175,
+      lineNumber: 173,
       columnNumber: 9
     }, this) : null,
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(ImageCarousel_default, { isSmall, images: imageSrc }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 205,
+      lineNumber: 203,
       columnNumber: 9
     }, this) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 204,
+      lineNumber: 202,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -4505,7 +4505,7 @@ function Homepage() {
       false,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 207,
+        lineNumber: 205,
         columnNumber: 7
       },
       this
@@ -4513,7 +4513,7 @@ function Homepage() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "mb-8 max-w-screen-xl mx-auto lg:px-16 sm:px-4 md:px-6", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h1", { className: "text-center lg:text=[28px] text-[20px] mt-[15px]", children: "CHOOSE YOUR CULT" }, void 0, false, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 219,
+        lineNumber: 217,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react_slick4.default, { ...settings, children: collectionCult.map((coll, index2) => {
@@ -4529,27 +4529,27 @@ function Homepage() {
           false,
           {
             fileName: "app/routes/($locale)._index.jsx",
-            lineNumber: 226,
+            lineNumber: 224,
             columnNumber: 19
           },
           this
         ) }, void 0, false, {
           fileName: "app/routes/($locale)._index.jsx",
-          lineNumber: 225,
+          lineNumber: 223,
           columnNumber: 17
         }, this) }, `cult_${index2}`, false, {
           fileName: "app/routes/($locale)._index.jsx",
-          lineNumber: 224,
+          lineNumber: 222,
           columnNumber: 22
         }, this);
       }) }, void 0, false, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 222,
+        lineNumber: 220,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 218,
+      lineNumber: 216,
       columnNumber: 7
     }, this),
     isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("a", { href: "/collections/eyes", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "my-[15px]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -4562,17 +4562,17 @@ function Homepage() {
       false,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 285,
+        lineNumber: 283,
         columnNumber: 13
       },
       this
     ) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 284,
+      lineNumber: 282,
       columnNumber: 11
     }, this) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 283,
+      lineNumber: 281,
       columnNumber: 10
     }, this),
     isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("a", { href: "/collections/eyes", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "my-[15px]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -4586,17 +4586,17 @@ function Homepage() {
       false,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 295,
+        lineNumber: 293,
         columnNumber: 13
       },
       this
     ) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 294,
+      lineNumber: 292,
       columnNumber: 11
     }, this) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 293,
+      lineNumber: 291,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -4609,19 +4609,19 @@ function Homepage() {
       false,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 304,
+        lineNumber: 302,
         columnNumber: 7
       },
       this
     ),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(GiftingCollection_default, { collections: GiftCollections, title: "Gifting" }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 309,
+      lineNumber: 307,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(YouTubeVideo_default, {}, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 311,
+      lineNumber: 309,
       columnNumber: 7
     }, this),
     isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("a", { href: "/collections/eyes", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "my-[15px]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -4634,17 +4634,17 @@ function Homepage() {
       false,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 316,
+        lineNumber: 314,
         columnNumber: 13
       },
       this
     ) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 315,
+      lineNumber: 313,
       columnNumber: 11
     }, this) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 314,
+      lineNumber: 312,
       columnNumber: 10
     }, this),
     isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("a", { href: "/collections/eyes", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "my-[15px]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -4658,22 +4658,22 @@ function Homepage() {
       false,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 326,
+        lineNumber: 324,
         columnNumber: 13
       },
       this
     ) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 325,
+      lineNumber: 323,
       columnNumber: 11
     }, this) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 324,
+      lineNumber: 322,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(LooksComp_default, { looks }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 335,
+      lineNumber: 333,
       columnNumber: 5
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("a", { href: "/pages/about-us", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "my-[15px]", children: !isSmall ? /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -4686,7 +4686,7 @@ function Homepage() {
       false,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 340,
+        lineNumber: 338,
         columnNumber: 11
       },
       this
@@ -4700,40 +4700,40 @@ function Homepage() {
       false,
       {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 345,
+        lineNumber: 343,
         columnNumber: 11
       },
       this
     ) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 338,
+      lineNumber: 336,
       columnNumber: 9
     }, this) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 337,
+      lineNumber: 335,
       columnNumber: 7
     }, this) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 336,
+      lineNumber: 334,
       columnNumber: 5
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "mx-8", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(BlogCorousel_default, { isSmall, collections: data.blogs, title: "CULT CHAPTERS" }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 357,
+      lineNumber: 355,
       columnNumber: 7
     }, this) }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 356,
+      lineNumber: 354,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Testimonials_default, { page: testimonialPage, isSmall }, void 0, false, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 360,
+      lineNumber: 358,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/($locale)._index.jsx",
-    lineNumber: 173,
+    lineNumber: 171,
     columnNumber: 5
   }, this);
 }
@@ -4744,40 +4744,40 @@ function RecommendedProducts({ products, title }) {
       " "
     ] }, void 0, true, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 385,
+      lineNumber: 383,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react4.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: "Loading..." }, void 0, false, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 387,
+        lineNumber: 385,
         columnNumber: 29
       }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Await, { resolve: products, children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(ProductCarousel_default, { products }, void 0, false, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 390,
+        lineNumber: 388,
         columnNumber: 14
       }, this) }, void 0, false, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 388,
+        lineNumber: 386,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 387,
+        lineNumber: 385,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("br", {}, void 0, false, {
         fileName: "app/routes/($locale)._index.jsx",
-        lineNumber: 393,
+        lineNumber: 391,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/($locale)._index.jsx",
-      lineNumber: 386,
+      lineNumber: 384,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/($locale)._index.jsx",
-    lineNumber: 384,
+    lineNumber: 382,
     columnNumber: 5
   }, this);
 }
@@ -4868,4 +4868,4 @@ export {
   Homepage as default,
   meta
 };
-//# sourceMappingURL=/build/routes/($locale)._index-5R5YAGQB.js.map
+//# sourceMappingURL=/build/routes/($locale)._index-BIWULSG4.js.map

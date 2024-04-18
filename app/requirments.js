@@ -4,23 +4,12 @@ npm create sanity@latest -- --template shopify --project qs0n38yc --dataset prod
 
 npm create sanity@latest -- --template shopify-online-storefront --project qs0n38yc --dataset production
 
-1) Page Image Placement Changes.
 
-5) Adding Testimonial List (Document is provided) 
+6) Adding Instagram Account Link up to Main page (Intagram Feed Shows up) -- In progress
 
-6) Adding Instagram Account Link up to Main page (Intagram Feed Shows up) 
+8) Adding Payed Plugins -  Heartcoding Sales & Discounts -- In progress
 
-8)  Adding Payed Plugins -  Heartcoding Sales & Discounts 
-
-10) Adding one badge to Product Page (Image is been provided)
-
-11) Adding Icons from Gifting Section to Range (Icons Will Share Icon Soon)  
-
-12) Adding Mobile Main Icons to mobile view (Icons Will Share Icon Soon)
-
-13) Adding Description on Each Collection and Sub Collection Pages (Blank Space - Sample is been provided )  
-
-16) Connecting to the Website - Sanity Connect 
+16) Connecting to the Website - Sanity Connect -- In progress
 
 17) Delivering source code to Maryjo Github repository.
 
@@ -30,6 +19,8 @@ Note I have removed step number 14
 
 
 Completed Tasks : 
+
+    10) Adding one badge to Product Page (Image is been provided)
 
     2) Adding All Image's for Mobile and desktop differely which was pending from 1st Task. --Done
 
@@ -43,6 +34,18 @@ Completed Tasks :
 
     14) "Payment Integration (Razor Pay - Payment Gateway - Default from Shopify ) - Removed
 
+    13) Adding Description on Each Collection and Sub Collection Pages (Blank Space - Sample is been provided )  
+    
+    1) Page Image Placement Changes.
+
+    5) Adding Testimonial List (Document is provided) 
+
+    11) Adding Icons from Gifting Section to Range (Icons Will Share Icon Soon)  
+
+    12) Adding Mobile Main Icons to mobile view (Icons Will Share Icon Soon)
+
+
+    
     key_ingredients meta-Color Studio-Pro Eyeshadow Palette
 
     <div style="display: flex; flex-wrap: wrap;"> <div style="flex: 1; max-width: 50%; padding: 10px;"> <div style="background-color: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 4px #CB7060;"> <div style="display: flex; justify-content: center;"> </div> <div style="text-align: center; margin-top: 10px;"> <h2 style="font-size: 18px; font-weight: bold; color:#CB7060;"> Ingredients </h2> <p style="color: #000000"> Talc, Magnesium Stearate, Dimethicone, Hydrogenated Polyisobutene, octyldodecyl Stearoyl Stearate, Bis-Diglyceryl Polyacyladipate-2, Alumina, Triethoxycaprylylsilane, Tocopherol, Ethylhexylglycerin, Phenoxyethanol. Mica, Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI 77499), Manganese Violet (CI 77742), Ultramarines (CI 77007) </p> </div> </div> </div>

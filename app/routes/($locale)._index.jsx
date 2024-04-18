@@ -33,8 +33,6 @@ export async function loader({context}) {
     },
   });
 
-  const collection = collections;
-
   const headerPromise = storefront.query(HEADER_QUERY, {
     cache: storefront.CacheNone(),
     variables: {
@@ -173,7 +171,7 @@ export default function Homepage() {
     <div className="home">
       { isSmall ?
         <section className="collectionContent lg:hidden block sm:mt-4 overflow-auto ">
-        <div className="inline-flex gap-4 w-[100%]">
+        <div className="inline-flex gap-4">
           {collectionArrayStatic?.map((item, index) => (
             <div
               className=" col-item sm:w-auto  rounded-lg hover:shadow-md cursor-pointer"

@@ -20,6 +20,12 @@ import {
   // WithOkendoReviewsSnippet,
 	// WithOkendoStarRatingSnippet
 } from "@okendo/shopify-hydrogen";
+import {
+  FacebookShareButton,
+  WhatsappShareButton,
+  WhatsappIcon,
+  FacebookIcon,
+} from 'react-share';
 //import {getWishlistSocialCount} from '../swym/store-apis';
 
 export const meta = ({data}) => {
@@ -110,23 +116,9 @@ function redirectToFirstVariant({product, request}) {
 export default function Product() {
   const {product, variants, productsreturn,recommendedProducts} = useLoaderData();
   const {selectedVariant} = product;
+  const shareUrl = `https://15f63f.myshopify.com/products/${product.handle}`;
   const [socialCount, setSocialCount] = useState();
 
-  async function setWishlistSocialCount(skipCache){
-    // try {
-    //     const productGQLId = product.product.id;
-    //     const productId = productGQLId.split("/")[4];
-    //     const res = await getWishlistSocialCount({empi: productId}, skipCache);
-    //     if(res?.data?.count){
-    //       setSocialCount(res.data.count);
-    //     }else{
-    //       setSocialCount(0);
-    //     }
-    //   } catch (error) {
-    //     console.log(error);
-    //     setSocialCount(0);
-    //   }
-  }
   //console.log("product:: ::",product);
   return (
     <>
@@ -134,9 +126,9 @@ export default function Product() {
       {/*<ProductImage image={selectedVariant?.image} />*/}
       <ProductMain
         selectedVariant={selectedVariant}
-        setWishlistSocialCount={setWishlistSocialCount}
         product={product}
         variants={variants}
+        shareUrl={shareUrl}
         recommendedProducts={recommendedProducts}
       />
       {productsreturn && <ProductsCorousel products={productsreturn} />}
@@ -183,11 +175,12 @@ function ProductImage({image, activeImg, setActiveImage, product}) {
   );
 }
 
-function ProductMain({selectedVariant, product, setWishlistSocialCount, variants,recommendedProducts}) {
+function ProductMain({selectedVariant, product, shareUrl, variants,recommendedProducts}) {
   const ImageSrc = [];
   product.images.edges.forEach((item) => {
     ImageSrc.push(item.node.url);
   });
+ 
   const [images, setImages] = useState(ImageSrc);
   const expaction = product.metafields[0]?.value;
   const key_ingredients = product.metafields[1]?.value;
@@ -201,10 +194,6 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
   };
   const [activeImg, setActiveImage] = useState(images[0]);
   const [moreText, setMoreText] = useState(true);
-  const [moreOffer, setMoreOffer] = useState(false);
-
-  const [more, setMore] = useState(false);
-  const [moreContent, setMoreContent] = useState('+View More');
 
   return (
     <>
@@ -299,15 +288,33 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
           />
           </div>
         </div>
-        <div className="absolute cursor-pointer flex flex-col items-center top-[-36px] lg:top-[15px] right-2">
+        <div className="absolute cursor-pointer group flex flex-col items-center top-[-36px] lg:top-[15px] right-2">
           <img
             className="sharelogo mst-color"
             src="/share.png"
-            width={24}
-            height={24}
+            width={22}
+            height={22}
             alt="share"
           />
           <span className="text-sm font-semibold ">Share</span>
+          <div className="hidden group-hover:block" style={{ background: '#0000', height: '100vh', width: '100%'}}>
+          <div className='flex gap-2 m-2'>
+          <FacebookShareButton
+            url={shareUrl}
+            quote={'Title'}
+            hashtag={'#product...'}
+          >
+          <FacebookIcon size={25} round={true} />
+          </FacebookShareButton>
+
+          <WhatsappShareButton
+            url={shareUrl}
+            quote={'Title'}
+            hashtag={'#product...'}
+          >
+          <WhatsappIcon size={25} round={true} /> </WhatsappShareButton>
+          </div>
+          </div>
         </div>
       </div>
       <div className="max-w-[1320px] p-[10px] m-auto">
@@ -446,9 +453,7 @@ function ProductForm({
   selectedVariant,
   variants,
   activeImg,
-  setActiveImage,
-  setWishlistSocialCount
-}) {
+  setActiveImage}) {
   const [pincode, setPinCode] = useState(""); 
   const [serviceble, setServiceble] = useState({status:null, msg:''})
   //const [estimatedDelivery,setEstimatedDelivery] = useState("")
@@ -502,6 +507,7 @@ function ProductForm({
     })
   
   }
+
  
   console.log("serviceble::",serviceble)
   const closeRef = useRef(null);
@@ -520,7 +526,6 @@ function ProductForm({
             closeRef={closeRef}
             selectedVariant={selectedVariant}
             setActiveImage={setActiveImage}
-            setWishlistSocialCount={setWishlistSocialCount}
           />
         )}
       </VariantSelector>
@@ -564,7 +569,7 @@ function ProductForm({
   );
 }
 
-function ProductOptions({option, activeImg, setWishlistSocialCount,closeRef}) {
+function ProductOptions({option, activeImg,closeRef}) {
   var opt_length = option.values.length;
   //console.log("selectedVariant ::",closeRef);
 

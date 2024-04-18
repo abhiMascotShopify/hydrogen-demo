@@ -3314,4 +3314,4 @@ export {
   Collection as default,
   meta
 };
-//# sourceMappingURL=/build/routes/($locale).collections.$handle-OJRRK5LF.js.map
+//# sourceMappingURL=/build/routes/($locale).collections.$handle-PPGW7GNL.js.map

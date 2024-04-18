@@ -36,6 +36,7 @@
     "react-icons": "^4.10.1",
     "react-responsive": "^9.0.2",
     "react-responsive-carousel": "^3.2.23",
+    "react-share": "^5.1.0",
     "react-slick": "^0.30.2",
     "tw-elements-react": "^1.0.0-alpha1",
     "uuid": "^9.0.1"

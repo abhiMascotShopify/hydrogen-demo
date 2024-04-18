@@ -1648,7 +1648,7 @@ function MobileMenuAside({ menu }) {
 }
 
 // app/styles/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-BSFRM2DO.css";
+var tailwind_default = "/build/_assets/tailwind-Y55N23EU.css";
 
 // app/root.jsx
 var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime());
@@ -1961,4 +1961,4 @@ tw-elements-react/dist/js/tw-elements-react.es.min.js:
   * 
   *)
 */
-//# sourceMappingURL=/build/root-YACY3OJ5.js.map
+//# sourceMappingURL=/build/root-6JAPBOCF.js.map

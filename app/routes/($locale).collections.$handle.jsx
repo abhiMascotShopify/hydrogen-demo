@@ -205,10 +205,10 @@ export default function Collection() {
     return path;
   }
 
-  
   const goToProduct=(url_path)=>{
     window.location.href = url_path
   }
+
   
   return (
     <>
