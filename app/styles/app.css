@@ -588,9 +588,7 @@ footer{
   background: #4f4f9c;
   color: white;
 }
-.home {
-  padding: 0 10px;
-}
+.collection_desc{ border-top: 5px solid #d87558; padding: 10px 0;}
 .product_info{
   padding: 10px;
   min-height: 140px;
@@ -716,6 +714,9 @@ footer{
   background: #d58070;
   color: white;
   font-weight: bold;
+}
+.meta_info_card{
+  background-color: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 4px #CB7060;
 }
 @media only screen and (max-width: 1024px) {
   .mobile-cart-product {
@@ -846,9 +847,6 @@ footer{
     width: 18px;
     height: 18px;
     font-size: 11px;
-  }
-  .meta_info_card{
-    background-color: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 4px #CB7060;
   }
   .key-ing ul {
     grid-template-columns: 1fr !important;

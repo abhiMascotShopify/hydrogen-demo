@@ -20,7 +20,6 @@ import {
 } from '~/components/Search';
 
 export function Header({header, isLoggedIn, cart}) {
-  console.log("cart:",cart)
   const {shop, menu} = header;
   //console.log(header.menu)
   const isLargeScreen = useMediaQuery({minWidth: 1024});
@@ -59,7 +58,7 @@ export function Header({header, isLoggedIn, cart}) {
                             type="submit"
                             id="button-addon3"
                           >
-                            Search
+                          Search
                           </button>
                         </TERipple>
                       </div>
@@ -150,7 +149,10 @@ export function HeaderMenu({menu, viewport}) {
           <div key={`header_${index}`} className="relative inline-block text-left group">
             {viewport === 'mobile' ? 
               <button className="px-4 py-2 text-gray-800 focus:outline-none">
-                <span onClick={()=> goToCollection(item.url)} > {item.title} </span>
+                
+                <span onClick={()=> goToCollection(item.url)} >
+                   {item.title} 
+                </span>
                 {viewport === 'mobile' && (
                     <>{ item.items.length > 0 && <svg style={{display:'inline'}} height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14 20l10 10 10-10z"/><path d="M0 0h48v48h-48z" fill="none"/></svg> }</>
                   )

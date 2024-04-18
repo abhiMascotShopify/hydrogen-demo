@@ -119,6 +119,7 @@ export default function Collection() {
   const [productsToShow, setProductToShow] = useState([])
   const [productsToShowDump, setProductToShowDump] = useState([])
   const isLargeScreen = useMediaQuery({minWidth: 1024});
+  const [ readMore, setMore ] = useState(false)
   const endIndex = isLargeScreen ? 4 : 2;
  
 
@@ -449,7 +450,7 @@ export default function Collection() {
               </div>
             </div>
 
-            <section aria-labelledby="products-heading" className="pb-24 pt-6">
+            <section aria-labelledby="products-heading" className="pb-12 pt-6">
               <h2 id="products-heading" className="sr-only">
                 Products
               </h2>
@@ -627,6 +628,17 @@ export default function Collection() {
                 </div>
               </div>
             </section>
+            <div className='collection_desc'>
+            {/* <div dangerouslySetInnerHTML= {{__html:collection.descriptionHtml }} ></div>
+            </div> <div> 
+            */}
+            { !readMore ?
+              <p dangerouslySetInnerHTML={{ __html: collection?.descriptionHtml.slice(0, 200) }} className="my-4"></p>
+              :
+              <p dangerouslySetInnerHTML={{ __html: collection?.descriptionHtml}} className="my-4"></p>
+            }
+            { !readMore && <button onClick={()=> setMore(true)} className="bg-black text-white font-bold py-1 px-2"> Read More </button>}
+            </div>
           </main>
         </div>
       </div>
@@ -751,7 +763,7 @@ const COLLECTION_QUERY = `#graphql
       id
       handle
       title
-      description
+      descriptionHtml
       image{
         url
       }

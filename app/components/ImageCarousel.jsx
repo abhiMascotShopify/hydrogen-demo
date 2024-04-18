@@ -44,7 +44,7 @@ const ImageCarousel = ({images , isSmall}) => {
       <img
         onClick={()=> goToCollection(currentImageIndex) }
         style={mobImgHeight} 
-        className="lg:w-full md:w-full cursor-pointer sm:w-full h-[300px] lg:h-80 object-cover rounded-2xl w-[100%]"
+        className={`lg:w-full md:w-full cursor-pointer sm:w-full h-[300px] lg:h-80 object-cover ${isSmall ? 'rounded-2xl' : '' } w-[100%]`}
         src={images[currentImageIndex]}
       />
       <button

@@ -348,12 +348,12 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
             </div>
             <div
               className={`cursor-pointer py-2 px-2 border-b-4 uppercase whitespace-nowrap ${
-                activeTab === 'Concerns' ? 'border-active' : ''
+                activeTab === 'Who Can Use' ? 'border-active' : ''
               }`}
-              onClick={() => handleTabClick('Concerns')}
+              onClick={() => handleTabClick('Who Can Use')}
               style={{border: '1px solid #e5e5e5'}}
             >
-             Concerns
+             Who Can Use
             </div>
             <div
               className={`cursor-pointer py-2 px-2 border-b-4 uppercase whitespace-nowrap ${
@@ -384,7 +384,7 @@ function ProductMain({selectedVariant, product, setWishlistSocialCount, variants
                 />
               </div>
             )}
-            {activeTab === 'Concerns' && who_can_use && (
+            {activeTab === 'Who Can Use' && who_can_use && (
               <div className="meta_info_card overflow-y-auto">
                 <div dangerouslySetInnerHTML={{__html: who_can_use}} />
               </div>

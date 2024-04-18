@@ -74,10 +74,10 @@ export default function Homepage() {
     ];
   }else{
     imageSrc = [
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_1_700_x_470.jpg?v=1712753471',
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_4_700_x_470.jpg?v=1712753471',
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_3_700_x_470.jpg?v=1712753471',
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Website_Banner_op_5_700_x_470.jpg?v=1712753471'
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Hero_Banners_1.jpg?v=1713353171',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Hero_Banners_2.jpg?v=1713353171',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Hero_Banners_4.jpg?v=1713353171',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Hero_Banners_3.jpg?v=1713353171'
     ];
   }
 
@@ -215,13 +215,13 @@ export default function Homepage() {
         products={BuildYourOwnColl}
         title="CHOOSE YOUR CULT"
       ></CustomizedProducts> */}
-      <div className='mb-8'>
+      <div className='mb-8 max-w-screen-xl mx-auto lg:px-16 sm:px-4 md:px-6'>
         <h1 className="text-center lg:text=[28px] text-[20px] mt-[15px]">
         CHOOSE YOUR CULT
         </h1> 
         <Slider {...settings}>
           { collectionCult.map((coll,index)=>{
-              return <div key={`cult_${index}`} className="mx-4 px-2" >
+              return <div key={`cult_${index}`} className="px-2" >
                 <div className="bg-white">  
                   <img
                     onClick={()=> goToCollection(`/collections/${coll.handle}`)}
@@ -284,7 +284,7 @@ export default function Homepage() {
           <div className="my-[15px]">
             <img
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Daily_Essentials_banner.jpg?v=1709971600"
-              className="w-[100%] m-auto rounded-2xl"
+              className="w-[100%] m-auto"
             ></img>
           </div>
         </a>
@@ -315,7 +315,7 @@ export default function Homepage() {
           <div className="my-[15px]">
             <img
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Lookbook_Banner.jpg?v=1709971241"
-              className="w-[100%] m-auto rounded-2xl"
+              className="w-[100%] m-auto"
             ></img>
           </div>
         </a>
@@ -336,10 +336,17 @@ export default function Homepage() {
     <div>
       <a href="/pages/about-us">
         <div className="my-[15px]">
+          {!isSmall ?
           <img
             src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/About_US.jpg?v=1712993514"
-            className="w-[100%] m-auto rounded-2xl"
+            className="w-[100%] m-auto"
           ></img>
+          :
+          <img
+          src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_about_us.jpg?v=1713353871"
+          className="w-[100%] m-auto rounded-2xl"
+        ></img>
+        } 
         </div>
       </a>
     
@@ -678,7 +685,7 @@ const collectionArrayStatic = [
     collectionimageurl: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Lips-icon-mobile.jpg?v=1713183444',
   },
   {
-    collectionname: 'Kajal',
+    collectionname: 'Eyes',
     url:"kajal-pencil",
     collectionimageurl: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Kajal-Icon-Mobile.jpg?v=1713183444',
   },
