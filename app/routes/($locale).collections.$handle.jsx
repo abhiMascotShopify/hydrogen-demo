@@ -34,8 +34,6 @@ import {
 
 import CollectionCarousel from "../components/CollectionCarousel"
 
-
-
 const sortOptions = [
   {name: 'Most Popular', href: '#', value:'', current: true},
   // {name: 'Best Rating', href: '#', value:'', current: false},
@@ -94,7 +92,7 @@ export async function loader({request, params, context}) {
   const {collection} = await storefront.query(COLLECTION_QUERY, {
     variables: {handle, ...paginationVariables},
   });
-  //console.log("Collection Handle ::",collection);
+  console.log("Collection Handle ::",collection);
   if (!collection) {
     throw new Response(`Collection ${handle} not found`, {
       status: 404,
@@ -118,14 +116,16 @@ export default function Collection() {
   const [startIndex, setStartIndex] = useState(0);
   const [productsToShow, setProductToShow] = useState([])
   const [productsToShowDump, setProductToShowDump] = useState([])
+  const [imgUrl , setImgUrl  ] = useState("");
   const isLargeScreen = useMediaQuery({minWidth: 1024});
+  const isSmall = useMediaQuery({maxWidth: 640});
   const [ readMore, setMore ] = useState(false)
   const endIndex = isLargeScreen ? 4 : 2;
  
 
   useEffect(()=>{
     if (collection.products != null || collection.products != undefined) {
-      console.log("collection::",collection);
+      //console.log("collection::",collection);
       productsToShow1 = collection.products.nodes;
       //console.log(productsToShow);
       setProductToShow(productsToShow1)
@@ -209,12 +209,22 @@ export default function Collection() {
     window.location.href = url_path
   }
 
-  
+  useEffect(()=>{
+    var img = "";
+    if(isSmall){
+      img = collection?.metafields[0].value;
+    }else{
+      img = collection?.image?.url;
+    }
+    setImgUrl(img)
+  },[collection])
+
   return (
     <>
       <div>
         <img
-          src={collection?.image?.url}
+          key={collection.handle}
+          src={imgUrl}
           style={{ objectFit: 'cover', width: '100%'}}
         ></img>
       </div>
@@ -629,15 +639,12 @@ export default function Collection() {
               </div>
             </section>
             <div className='collection_desc'>
-            {/* <div dangerouslySetInnerHTML= {{__html:collection.descriptionHtml }} ></div>
-            </div> <div> 
-            */}
             { !readMore ?
               <p dangerouslySetInnerHTML={{ __html: collection?.descriptionHtml.slice(0, 200) }} className="my-4"></p>
               :
               <p dangerouslySetInnerHTML={{ __html: collection?.descriptionHtml}} className="my-4"></p>
             }
-            { !readMore && <button onClick={()=> setMore(true)} className="bg-black text-white font-bold py-1 px-2"> Read More </button>}
+            { !readMore && collection?.descriptionHtml &&  <button onClick={()=> setMore(true)} className="bg-black text-white font-bold py-1 px-2"> Read More </button>}
             </div>
           </main>
         </div>
@@ -766,6 +773,9 @@ const COLLECTION_QUERY = `#graphql
       descriptionHtml
       image{
         url
+      }
+      metafields(identifiers: [{namespace: "custom", key: "mobile_banner"}]){
+        value
       }
       products(
         first: $first,

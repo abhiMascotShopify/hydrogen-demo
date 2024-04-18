@@ -63,7 +63,7 @@ return (
                 onClick={()=> goToCollection(`/collections/${coll.handle}`)}
                 src={coll.image.url} // Make sure to put your images in the 'public/images/' directory
                 alt={coll.title}
-                className="lg:w-full lg:h-auto rounded-lg h-[40%] w:[100%] sm:w-[375px] sm:w-[250px]   cursor"
+                className="lg:w-full lg:h-auto rounded-lg w:[100%] sm:w-[375px] sm:w-[250px] cursor"
               />
           </div>
         </div>

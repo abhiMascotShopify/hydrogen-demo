@@ -114,7 +114,6 @@ export default function Homepage() {
       GiftCollections.push(col);
     }
   });
-  console.log("Lookbooks::",looks)
   BuildYourOwnColl = BuildYourOwnColl[0].products.edges;
   ThirdHeroCollection =  ThirdHeroCollection[0].products;
   GiftCollections = GiftCollections;

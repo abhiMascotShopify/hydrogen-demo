@@ -487,7 +487,7 @@ function ProductForm({
           "delivery_pincode": parseInt(pincode),
           "pay_type": "PPD",
           "service_type": "F",
-          "courier_service_type": "sdd"
+          "courier_service_type": "AIR"
         }  
         fetch("https://appapi.shipdelight.com/serviceability_tat",{method:"POST",headers:headers, body:JSON.stringify(params) }).then((res)=> res.json()).then((result)=>{
           const { data, errors } = result;
@@ -501,7 +501,7 @@ function ProductForm({
           }
           setTimeout(()=>{
             setServiceble({status:null,msg:''});
-          },3500)
+          },5000)
         })
       }
     })
@@ -543,8 +543,7 @@ function ProductForm({
         <button onClick={()=> checkAvailibility() } className="w-[130px] sm:w-[150px] m-4 h-11 bg-black hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-lg"> Check Now </button>
         </div>
         { serviceble.status!= null &&
-        <p className={`font-bold ${serviceble.status ? 'text-green-500' : 'text-orange-500'}` }> { serviceble.msg } </p>
-        
+        <p className={`font-bold ${serviceble.status ? 'text-green-500' : 'text-orange-500'}` }> Estimated Delivery : { serviceble.msg } </p>
         }
         </div>
       <AddToCartButton

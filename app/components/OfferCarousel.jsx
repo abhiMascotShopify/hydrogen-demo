@@ -20,7 +20,7 @@ const OfferCarousel = (collections) => {
   const goToCollection=(url_path)=>{
     window.location.href = url_path
   }
-  console.log(productsToShow)
+
   return (
     <div className="w-full max-w-screen-xl mx-auto px-4">
       <div className="relative">

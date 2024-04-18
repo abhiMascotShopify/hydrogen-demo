@@ -25,7 +25,7 @@ const ImageCarousel = ({images , isSmall}) => {
       default : { window.location.href = "/collections/pro-studio-mjk" }
     }
   }
-  if(isSmall) mobImgHeight = {height:"250px"}
+  if(isSmall) mobImgHeight = {height:"inherit"}
   return (
     <div className="relative">
       <button
@@ -43,8 +43,7 @@ const ImageCarousel = ({images , isSmall}) => {
       </button>
       <img
         onClick={()=> goToCollection(currentImageIndex) }
-        style={mobImgHeight} 
-        className={`lg:w-full md:w-full cursor-pointer sm:w-full h-[300px] lg:h-80 object-cover ${isSmall ? 'rounded-2xl' : '' } w-[100%]`}
+        className={`lg:w-full md:w-full cursor-pointer sm:w-full object-cover ${isSmall ? 'rounded-2xl' : '' } w-[100%]`}
         src={images[currentImageIndex]}
       />
       <button
