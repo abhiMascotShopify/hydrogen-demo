@@ -212,7 +212,7 @@ export default function Collection() {
   useEffect(()=>{
     var img = "";
     if(isSmall){
-      img = collection?.metafields[0].value;
+      img = collection?.metafields[0] ? collection?.metafields[0].value : collection?.image?.url;
     }else{
       img = collection?.image?.url;
     }
