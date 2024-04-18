@@ -55,7 +55,6 @@ const MobileProductCorousel = ({products,title, settings}) => {
 
 const DesktopCorousel = ({products ,title ,settings}) => {
   const [startIndex, setStartIndex] = useState(0);
-  console.log(settings);
   const productsToShow = products.nodes.slice(startIndex, startIndex + 3);
   //console.log(productsToShow)
   const isMobile = useMediaQuery({maxWidth: 640});
@@ -117,9 +116,9 @@ const BlogCorousel = ({collections , title, isSmall}) => {
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        initialSlide: 1,
         dots: true
       }
     },

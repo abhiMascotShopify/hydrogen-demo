@@ -150,9 +150,9 @@ export default function Homepage() {
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        initialSlide: 1,
         dots: true
       }
     },
