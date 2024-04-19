@@ -31,7 +31,7 @@ const Testimonials = ({page , isSmall})=>{
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 520,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

@@ -123,7 +123,7 @@ const BlogCorousel = ({collections , title, isSmall}) => {
       }
     },
     {
-      breakpoint: 480,
+      breakpoint: 520,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
