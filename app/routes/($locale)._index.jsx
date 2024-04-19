@@ -157,7 +157,7 @@ export default function Homepage() {
       }
     },
     {
-      breakpoint: 480,
+      breakpoint: 520,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
