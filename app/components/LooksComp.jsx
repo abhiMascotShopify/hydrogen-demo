@@ -3,7 +3,7 @@ const LooksComp = ({looks})=>{
     return(
         <div className="looks">
             <h2 className="uppercase text-center"> L.I.T : Looks In Trend </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 px-4 sm:px-20">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 px-0 sm:px-20">
                 {
                     products.map((product)=>{
                         return(
