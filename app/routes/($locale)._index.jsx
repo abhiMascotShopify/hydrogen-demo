@@ -206,12 +206,6 @@ export default function Homepage() {
         products={data.collectionProducts.nodes[0].products}
         title="CULT FAVS"
       />
-      {/* -- Section 3 -- Collection Name : Build Your Own Kit */}
-      {/* <CustomizedProducts
-        key={data.products.nodes[0].id}
-        products={BuildYourOwnColl}
-        title="CHOOSE YOUR CULT"
-      ></CustomizedProducts> */}
       <div className='slider-container mb-8 max-w-screen-xl mx-auto lg:px-16 sm:px-4 md:px-6'>
         <h1 className="text-center lg:text=[28px] text-[20px] mt-[15px]">
         CHOOSE YOUR CULT
@@ -612,17 +606,17 @@ const collectionCult = [
   {
     title: 'Way 2 Stay',
     handle:"way-2-stay",
-    url: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/collections/Way_2_Slay-01_7ce5063c-89b2-48ed-bb55-49132c99e732.jpg?v=1712581195',
+    url: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Way_2_Slay-01.jpg?v=1713511899',
   },
   {
     title: 'Rizz & Roll MJK',
     handle:"rizz-roll-mjk",
-    url: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/collections/RIzz_and_Roll-01_f88a8485-9934-4469-9b29-89ba17fcf7cc.jpg?v=1712581214',
+    url: 'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/RIzz_and_Roll-01.jpg?v=1713511899',
   },
   {
     title: 'Pro Studio MJK',
     handle:"pro-studio-mjk",
-    url: "https://cdn.shopify.com/s/files/1/0809/4253/0882/collections/Pro-studio_1-01_b98dd6ae-5b21-4486-9e6f-55dd7b7fcf5e.jpg?v=1712581177",
+    url: "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Pro-studio_1-01.jpg?v=1713511899",
   }
 ];
 
