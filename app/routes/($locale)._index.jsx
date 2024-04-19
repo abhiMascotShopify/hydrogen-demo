@@ -218,11 +218,11 @@ export default function Homepage() {
         </h1> 
         <Slider {...settings}>
           { collectionCult.map((coll,index)=>{
-              return <div key={`cult_${index}`} className="px-2" >
+              return <div key={`cult_choose_${index}`} className="px-2" >
                 <div className="bg-white">  
                   <img
                     onClick={()=> goToCollection(`/collections/${coll.handle}`)}
-                    src={`${coll.url}`} // Make sure to put your images in the 'public/images/' directory
+                    src={`${coll.url}`} 
                     alt={coll.title}
                     className="lg:w-full lg:h-auto rounded-2xl w:[100%] sm:w-[375px] sm:w-[250px] cursor"
                   />
@@ -232,48 +232,6 @@ export default function Homepage() {
           }
         </Slider>
       </div>
-      {/* <div className="flex gap-4">
-        {
-          collectionCult.map((coll,index)=>{
-            return <div key={`cult_${index}`} className="w-full " >
-              <div className="bg-white">  
-                <img
-                  onClick={()=> goToCollection(`/collections/${coll.handle}`)}
-                  src={`${coll.url}`} // Make sure to put your images in the 'public/images/' directory
-                  alt={coll.title}
-                  className="lg:w-full lg:h-auto h-[40%] rounded-2xl w:[100%] sm:w-[375px] sm:w-[250px] cursor"
-                />
-              </div>
-          </div>
-          })
-        }
-      </div> */}
-
-      {/*---Banner Statis -section 4 -- */}
-      
-      {/* {isLargeScreen && (
-        <a href="/collections/face">
-          <img 
-            src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662"
-            className="rounded-2xl mt-[15px]"
-          ></img>
-        </a>
-      )}
-      {isSmall && (
-       <a href="/collections/face">
-          <img
-            style={{height:"250px"}}
-            src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Hero-banner.jpg?v=1703656662"
-            className="rounded-2xl w-[100%] m-auto"
-          ></img>
-        </a>
-      )}
-
-      <RecommendedProducts
-        key={data.collectionProducts.nodes[1].id}
-        products={data.collectionProducts.nodes[1].products}
-        title={data.collectionProducts.nodes[1].title}
-      /> */}
 
       {/*---Banner Statis section 8 --- */}
       {isLargeScreen && (
