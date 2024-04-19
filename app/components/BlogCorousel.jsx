@@ -22,8 +22,8 @@ const MobileProductCorousel = ({products,title, settings}) => {
         </h1>
    
         <Slider {...settings}>
-          {products.nodes.map((product) => (
-            <div className="px-2 bg-white">
+          {products.nodes.map((product,index) => (
+            <div key={`blog_${index}`} className="px-2 bg-white">
               <a href={`/blogs/${product.handle}`}>
               <img
                 src={`${product.articles.edges[0].node.image.url}`} // Make sure to put your images in the 'public/images/' directory
@@ -75,8 +75,8 @@ const DesktopCorousel = ({products ,title ,settings}) => {
         <div className="relative">
           <h1 className="text-center">{title}</h1>
           <Slider {...settings}>
-            {products.nodes.map((product) => (
-                <div className="px-2 bg-white">
+            {products.nodes.map((product,index) => (
+                <div key={`blog_${index}`} className="px-2 bg-white">
                   <a href={`/blogs/${product.handle}`}>
                   <img
                     src={`${product.articles.edges[0].node.image.url}`} // Make sure to put your images in the 'public/images/' directory
