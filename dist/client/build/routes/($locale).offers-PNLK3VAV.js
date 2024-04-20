@@ -1,6 +1,6 @@
 import {
   OfferCarousel_default
-} from "/build/_shared/chunk-ELALKRQN.js";
+} from "/build/_shared/chunk-BGS7F2B5.js";
 import "/build/_shared/chunk-AQMJZ442.js";
 import {
   require_jsx_dev_runtime,
@@ -42,4 +42,4 @@ export {
   Offers as default,
   meta
 };
-//# sourceMappingURL=/build/routes/($locale).offers-ZACROPFC.js.map
+//# sourceMappingURL=/build/routes/($locale).offers-PNLK3VAV.js.map

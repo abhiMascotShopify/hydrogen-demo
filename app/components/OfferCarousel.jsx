@@ -21,6 +21,10 @@ const OfferCarousel = (collections) => {
     window.location.href = url_path
   }
 
+  const copyCoupan = (code)=>{
+    navigator.clipboard.writeText(code);
+  }
+
   return (
     <div className="w-full max-w-screen-xl mx-auto px-4">
       <div className="relative">
@@ -39,8 +43,8 @@ const OfferCarousel = (collections) => {
                   {/* <div className="code"> { product.handle } </div> */}
                   <div className='col-span-6'></div>
                   <div className='coupan_code_wrapper cursor outline-dotted p-2 auto-cols-auto'>
-                  <b>{product.description} &nbsp; </b>
-                  <svg height="30" width="30" className='flex justify-center align-center' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect className='w-8 flex justify-center align-center' fill="none"/><polyline points="216 184 216 40 72 40" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><rect x="40" y="72" width="144" height="144" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/></svg>
+                  <b id="coupan_code">{product.description} &nbsp; </b>
+                  <svg onClick={()=> copyCoupan(product.description) } height="30" width="30" className='flex justify-center align-center' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect className='w-8 flex justify-center align-center' fill="none"/><polyline points="216 184 216 40 72 40" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><rect x="40" y="72" width="144" height="144" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/></svg>
                   </div>
                   
                 </div>

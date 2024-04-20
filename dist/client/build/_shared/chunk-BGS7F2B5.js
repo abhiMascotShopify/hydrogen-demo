@@ -23,10 +23,13 @@ var OfferCarousel = (collections) => {
   const goToCollection = (url_path) => {
     window.location.href = url_path;
   };
+  const copyCoupan = (code) => {
+    navigator.clipboard.writeText(code);
+  };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-screen-xl mx-auto px-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h1", { className: "text-center", children: " Special Offers " }, void 0, false, {
       fileName: "app/components/OfferCarousel.jsx",
-      lineNumber: 27,
+      lineNumber: 31,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-wrap", children: productsToShow.map((product) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full flex-auto sm:w-1/2 md:w-1/3 py-2 px-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "bg-white rounded-lg shadow-lg p-4", children: [
@@ -42,7 +45,7 @@ var OfferCarousel = (collections) => {
         false,
         {
           fileName: "app/components/OfferCarousel.jsx",
-          lineNumber: 32,
+          lineNumber: 36,
           columnNumber: 17
         },
         this
@@ -50,69 +53,69 @@ var OfferCarousel = (collections) => {
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-rows-1 grid-flow-col gap-4", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "col-span-6" }, void 0, false, {
           fileName: "app/components/OfferCarousel.jsx",
-          lineNumber: 40,
+          lineNumber: 44,
           columnNumber: 19
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "coupan_code_wrapper cursor outline-dotted p-2 auto-cols-auto", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("b", { children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("b", { id: "coupan_code", children: [
             product.description,
             " \xA0 "
           ] }, void 0, true, {
             fileName: "app/components/OfferCarousel.jsx",
-            lineNumber: 42,
+            lineNumber: 46,
             columnNumber: 19
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("svg", { height: "30", width: "30", className: "flex justify-center align-center", xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 256 256", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("svg", { onClick: () => copyCoupan(product.description), height: "30", width: "30", className: "flex justify-center align-center", xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 256 256", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("rect", { className: "w-8 flex justify-center align-center", fill: "none" }, void 0, false, {
               fileName: "app/components/OfferCarousel.jsx",
-              lineNumber: 43,
-              columnNumber: 149
+              lineNumber: 47,
+              columnNumber: 197
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("polyline", { points: "216 184 216 40 72 40", fill: "none", stroke: "#000", "stroke-linecap": "round", "stroke-linejoin": "round", "stroke-width": "8" }, void 0, false, {
               fileName: "app/components/OfferCarousel.jsx",
-              lineNumber: 43,
-              columnNumber: 217
+              lineNumber: 47,
+              columnNumber: 265
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("rect", { x: "40", y: "72", width: "144", height: "144", fill: "none", stroke: "#000", "stroke-linecap": "round", "stroke-linejoin": "round", "stroke-width": "8" }, void 0, false, {
               fileName: "app/components/OfferCarousel.jsx",
-              lineNumber: 43,
-              columnNumber: 348
+              lineNumber: 47,
+              columnNumber: 396
             }, this)
           ] }, void 0, true, {
             fileName: "app/components/OfferCarousel.jsx",
-            lineNumber: 43,
+            lineNumber: 47,
             columnNumber: 19
           }, this)
         ] }, void 0, true, {
           fileName: "app/components/OfferCarousel.jsx",
-          lineNumber: 41,
+          lineNumber: 45,
           columnNumber: 19
         }, this)
       ] }, void 0, true, {
         fileName: "app/components/OfferCarousel.jsx",
-        lineNumber: 38,
+        lineNumber: 42,
         columnNumber: 17
       }, this)
     ] }, void 0, true, {
       fileName: "app/components/OfferCarousel.jsx",
-      lineNumber: 31,
+      lineNumber: 35,
       columnNumber: 15
     }, this) }, product.id, false, {
       fileName: "app/components/OfferCarousel.jsx",
-      lineNumber: 30,
+      lineNumber: 34,
       columnNumber: 13
     }, this)) }, void 0, false, {
       fileName: "app/components/OfferCarousel.jsx",
-      lineNumber: 28,
+      lineNumber: 32,
       columnNumber: 9
     }, this)
   ] }, void 0, true, {
     fileName: "app/components/OfferCarousel.jsx",
-    lineNumber: 26,
+    lineNumber: 30,
     columnNumber: 7
   }, this) }, void 0, false, {
     fileName: "app/components/OfferCarousel.jsx",
-    lineNumber: 25,
+    lineNumber: 29,
     columnNumber: 5
   }, this);
 };
@@ -121,4 +124,4 @@ var OfferCarousel_default = OfferCarousel;
 export {
   OfferCarousel_default
 };
-//# sourceMappingURL=/build/_shared/chunk-ELALKRQN.js.map
+//# sourceMappingURL=/build/_shared/chunk-BGS7F2B5.js.map

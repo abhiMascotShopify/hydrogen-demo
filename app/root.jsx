@@ -118,7 +118,7 @@ export default function App() {
           
         </Layout>
         <ScrollRestoration />
-        <script src="/assets/testimonials.js"></script>
+
   <Scripts />
       {/*
       <Navbar />

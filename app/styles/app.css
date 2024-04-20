@@ -36,7 +36,7 @@
 .mst-card { border:2px solid #d0715f;border-radius: 10px;}
 .mst-card-shadow { border-radius: 8px; box-shadow: 0 2px 4px #CB7060;}
 .mst-card-md { border:2px solid #d0715f;border-radius: 5px;}
-.coupan_code_wrapper { display: inline-flex;justify-content: end; color: #645c5c;}
+.coupan_code_wrapper { display: inline-flex;justify-content: end; color: #645c5c;align-items: center;}
 .collectionContent{display: flex;justify-content: center;}
 .cursor{cursor: pointer;}
 .login_span { display: flex;

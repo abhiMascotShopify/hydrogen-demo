@@ -9,16 +9,15 @@ npm create sanity@latest -- --template shopify-online-storefront --project qs0n3
 
 8) Adding Payed Plugins -  Heartcoding Sales & Discounts -- In progress
 
-16) Connecting to the Website - Sanity Connect -- In progress
-
 17) Delivering source code to Maryjo Github repository.
 
-Note I have removed step number 14 
-( I am integration with phone pe) and 
+Note I have removed step number 14 ( I am integration with phone pe) and 
 18. updated step number 3 (need to add api to 2 more websites).
 
 
 Completed Tasks : 
+
+    16) Connecting to the Website - Sanity Connect -- Done
 
     10) Adding one badge to Product Page (Image is been provided)
 
