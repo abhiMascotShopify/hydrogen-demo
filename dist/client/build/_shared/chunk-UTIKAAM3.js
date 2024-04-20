@@ -142,72 +142,114 @@ var ImageCarousel_default = ImageCarousel;
 var import_react2 = __toESM(require_react());
 var import_react_responsive = __toESM(require_react_responsive());
 var import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime());
-var MobileVideo = ({ playVideo, src }) => {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-full h-full mx-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative rounded-lg", "cursor-pointer": true, children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { className: "relative rounded-2xl", onClick: () => playVideo(), src, alt: "Youtube Video" }, void 0, false, {
-      fileName: "app/components/YouTubeVideo.jsx",
-      lineNumber: 8,
-      columnNumber: 9
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { className: "absolute top-[50%] left-[50%]", src: "/youtube_icon.png" }, void 0, false, {
+var MobileVideo = ({ playVideo, src, isPlay, embedUrl }) => {
+  console.log("MobileVideo:", isPlay);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-full h-full mx-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative rounded-lg cursor-pointer", onClick: () => playVideo(), children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { className: "relative rounded-2xl", src, alt: "Youtube Video" }, void 0, false, {
       fileName: "app/components/YouTubeVideo.jsx",
       lineNumber: 9,
       columnNumber: 9
-    }, this)
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { className: "absolute top-[50%] left-[50%]", src: "/youtube_icon.png" }, void 0, false, {
+      fileName: "app/components/YouTubeVideo.jsx",
+      lineNumber: 10,
+      columnNumber: 9
+    }, this),
+    isPlay && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+      "iframe",
+      {
+        title: "YouTube Video",
+        className: "absolute top-0 left-0 w-full h-full rounded-2xl",
+        src: embedUrl,
+        allowFullScreen: true,
+        autoPlay: "1",
+        mute: "1",
+        allow: "autoplay"
+      },
+      void 0,
+      false,
+      {
+        fileName: "app/components/YouTubeVideo.jsx",
+        lineNumber: 12,
+        columnNumber: 9
+      },
+      this
+    )
   ] }, void 0, true, {
     fileName: "app/components/YouTubeVideo.jsx",
-    lineNumber: 7,
+    lineNumber: 8,
     columnNumber: 7
   }, this) }, void 0, false, {
     fileName: "app/components/YouTubeVideo.jsx",
-    lineNumber: 6,
+    lineNumber: 7,
     columnNumber: 5
   }, this);
 };
-var DesktopVideo = ({ playVideo, src }) => {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-4/5 mx-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative rounded-2xl p-10 cursor-pointer", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { className: "rounded-2xl relative", onClick: () => playVideo(), src, alt: "Youtube Video" }, void 0, false, {
+var DesktopVideo = ({ playVideo, src, isPlay, embedUrl }) => {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-4/5 mx-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative rounded-2xl p-10 cursor-pointer", onClick: () => playVideo(), children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { className: "rounded-2xl relative", src, alt: "Youtube Video" }, void 0, false, {
       fileName: "app/components/YouTubeVideo.jsx",
-      lineNumber: 25,
+      lineNumber: 31,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { className: "absolute top-[50%] left-[50%]", src: "/youtube_icon.png" }, void 0, false, {
       fileName: "app/components/YouTubeVideo.jsx",
-      lineNumber: 26,
+      lineNumber: 32,
       columnNumber: 9
-    }, this)
+    }, this),
+    isPlay && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+      "iframe",
+      {
+        title: "YouTube Video",
+        className: "absolute top-0 left-0 w-full h-full rounded-2xl",
+        src: embedUrl,
+        allowFullScreen: true,
+        autoPlay: "1",
+        mute: "1",
+        allow: "autoplay"
+      },
+      void 0,
+      false,
+      {
+        fileName: "app/components/YouTubeVideo.jsx",
+        lineNumber: 34,
+        columnNumber: 9
+      },
+      this
+    )
   ] }, void 0, true, {
     fileName: "app/components/YouTubeVideo.jsx",
-    lineNumber: 24,
+    lineNumber: 30,
     columnNumber: 7
   }, this) }, void 0, false, {
     fileName: "app/components/YouTubeVideo.jsx",
-    lineNumber: 23,
+    lineNumber: 29,
     columnNumber: 5
   }, this);
 };
 var YouTubeVideo = () => {
-  const embedUrl = `https://www.youtube.com/embed/WKKai8jures?si=RwowF2iZZmbeL8H3" `;
+  const embedUrl = `https://www.youtube.com/embed/WKKai8jures?si=RwowF2iZZmbeL8H3?&autoplay=1`;
   const src = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/youtube_thumbnail.jpg?v=1713503453";
   const isLargeScreen = (0, import_react_responsive.useMediaQuery)({ minWidth: 1024 });
   const isSmall = (0, import_react_responsive.useMediaQuery)({ maxWidth: 640 });
+  const [play, setPlay] = (0, import_react2.useState)(false);
   const playVideo = () => {
-    window.open(embedUrl, "_blank");
+    setPlay(!play);
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { children: [
-    isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(DesktopVideo, { playVideo, src }, void 0, false, {
+    isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(DesktopVideo, { embedUrl, playVideo, isPlay: play, src }, void 0, false, {
       fileName: "app/components/YouTubeVideo.jsx",
-      lineNumber: 51,
+      lineNumber: 64,
       columnNumber: 25
     }, this),
-    isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(MobileVideo, { playVideo, src }, void 0, false, {
+    isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(MobileVideo, { embedUrl, playVideo, isPlay: play, src }, void 0, false, {
       fileName: "app/components/YouTubeVideo.jsx",
-      lineNumber: 52,
+      lineNumber: 65,
       columnNumber: 19
     }, this)
   ] }, void 0, true, {
     fileName: "app/components/YouTubeVideo.jsx",
-    lineNumber: 50,
+    lineNumber: 63,
     columnNumber: 5
   }, this);
 };
@@ -217,4 +259,4 @@ export {
   ImageCarousel_default,
   YouTubeVideo_default
 };
-//# sourceMappingURL=/build/_shared/chunk-JAC3HV3C.js.map
+//# sourceMappingURL=/build/_shared/chunk-UTIKAAM3.js.map

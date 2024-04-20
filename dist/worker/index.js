@@ -753,7 +753,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         }
         return dispatcher.useContext(Context);
       }
-      function useState18(initialState) {
+      function useState19(initialState) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useState(initialState);
       }
@@ -761,7 +761,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         var dispatcher = resolveDispatcher();
         return dispatcher.useReducer(reducer, initialArg, init);
       }
-      function useRef9(initialValue) {
+      function useRef8(initialValue) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useRef(initialValue);
       }
@@ -1294,7 +1294,7 @@ Check the top-level render call using <` + parentName + ">.");
         toArray,
         only: onlyChild
       };
-      exports.Children = Children2, exports.Component = Component2, exports.Fragment = REACT_FRAGMENT_TYPE, exports.Profiler = REACT_PROFILER_TYPE, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE, exports.Suspense = REACT_SUSPENSE_TYPE, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext5, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef15, exports.isValidElement = isValidElement2, exports.lazy = lazy2, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback4, exports.useContext = useContext7, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect9, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo10, exports.useReducer = useReducer, exports.useRef = useRef9, exports.useState = useState18, exports.useSyncExternalStore = useSyncExternalStore, exports.useTransition = useTransition2, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+      exports.Children = Children2, exports.Component = Component2, exports.Fragment = REACT_FRAGMENT_TYPE, exports.Profiler = REACT_PROFILER_TYPE, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE, exports.Suspense = REACT_SUSPENSE_TYPE, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext5, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef15, exports.isValidElement = isValidElement2, exports.lazy = lazy2, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback4, exports.useContext = useContext7, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect9, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo10, exports.useReducer = useReducer, exports.useRef = useRef8, exports.useState = useState19, exports.useSyncExternalStore = useSyncExternalStore, exports.useTransition = useTransition2, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
     })();
   }
 });
@@ -5250,7 +5250,7 @@ var require_server = __commonJS({
   "node_modules/react-router-dom/server.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: !0 });
-    var React32 = require_react(), router = (init_router(), __toCommonJS(router_exports)), reactRouter = (init_dist(), __toCommonJS(dist_exports)), reactRouterDom = (init_dist2(), __toCommonJS(dist_exports2));
+    var React30 = require_react(), router = (init_router(), __toCommonJS(router_exports)), reactRouter = (init_dist(), __toCommonJS(dist_exports)), reactRouterDom = (init_dist2(), __toCommonJS(dist_exports2));
     function _interopNamespace(e5) {
       if (e5 && e5.__esModule)
         return e5;
@@ -5267,7 +5267,7 @@ var require_server = __commonJS({
         }
       }), n7.default = e5, Object.freeze(n7);
     }
-    var React__namespace = /* @__PURE__ */ _interopNamespace(React32);
+    var React__namespace = /* @__PURE__ */ _interopNamespace(React30);
     function StaticRouter({
       basename,
       children,
@@ -5496,7 +5496,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React32 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React32.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var React30 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React30.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function warn(format) {
         {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)
@@ -6990,7 +6990,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
       }
       function flattenOptionChildren(children) {
         var content = "";
-        return React32.Children.forEach(children, function(child) {
+        return React30.Children.forEach(children, function(child) {
           child != null && (content += child, !didWarnInvalidOptionChildren && typeof child != "string" && typeof child != "number" && (didWarnInvalidOptionChildren = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }), content;
       }
@@ -8138,7 +8138,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function basicStateReducer(state, action11) {
         return typeof action11 == "function" ? action11(state) : action11;
       }
-      function useState18(initialState) {
+      function useState19(initialState) {
         return currentHookNameInDev = "useState", useReducer(
           basicStateReducer,
           // useReducer has a special case to support lazy useState initializers
@@ -8187,7 +8187,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         var nextValue = nextCreate();
         return isInHookUserCodeInDev = !1, workInProgressHook.memoizedState = [nextValue, nextDeps], nextValue;
       }
-      function useRef9(initialValue) {
+      function useRef8(initialValue) {
         currentlyRenderingComponent = resolveCurrentlyRenderingComponent(), workInProgressHook = createWorkInProgressHook();
         var previousRef = workInProgressHook.memoizedState;
         if (previousRef === null) {
@@ -8257,8 +8257,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         useContext: useContext7,
         useMemo: useMemo10,
         useReducer,
-        useRef: useRef9,
-        useState: useState18,
+        useRef: useRef8,
+        useState: useState19,
         useInsertionEffect: noop2,
         useLayoutEffect: useLayoutEffect3,
         useCallback: useCallback4,
@@ -9077,7 +9077,7 @@ var require_react_dom_server_browser_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React32 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React32.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var React30 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React30.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function warn(format) {
         {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)
@@ -10586,7 +10586,7 @@ var require_react_dom_server_browser_development = __commonJS({
       }
       function flattenOptionChildren(children) {
         var content = "";
-        return React32.Children.forEach(children, function(child) {
+        return React30.Children.forEach(children, function(child) {
           child != null && (content += child, !didWarnInvalidOptionChildren && typeof child != "string" && typeof child != "number" && (didWarnInvalidOptionChildren = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }), content;
       }
@@ -11690,7 +11690,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function basicStateReducer(state, action11) {
         return typeof action11 == "function" ? action11(state) : action11;
       }
-      function useState18(initialState) {
+      function useState19(initialState) {
         return currentHookNameInDev = "useState", useReducer(
           basicStateReducer,
           // useReducer has a special case to support lazy useState initializers
@@ -11739,7 +11739,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         var nextValue = nextCreate();
         return isInHookUserCodeInDev = !1, workInProgressHook.memoizedState = [nextValue, nextDeps], nextValue;
       }
-      function useRef9(initialValue) {
+      function useRef8(initialValue) {
         currentlyRenderingComponent = resolveCurrentlyRenderingComponent(), workInProgressHook = createWorkInProgressHook();
         var previousRef = workInProgressHook.memoizedState;
         if (previousRef === null) {
@@ -11809,8 +11809,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         useContext: useContext7,
         useMemo: useMemo10,
         useReducer,
-        useRef: useRef9,
-        useState: useState18,
+        useRef: useRef8,
+        useState: useState19,
         useInsertionEffect: noop2,
         useLayoutEffect: useLayoutEffect3,
         useCallback: useCallback4,
@@ -12649,14 +12649,14 @@ var require_react_jsx_dev_runtime_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React32 = require_react(), REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
+      var React30 = require_react(), REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
       function getIteratorFn(maybeIterable) {
         if (maybeIterable === null || typeof maybeIterable != "object")
           return null;
         var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
         return typeof maybeIterator == "function" ? maybeIterator : null;
       }
-      var ReactSharedInternals = React32.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var ReactSharedInternals = React30.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function error(format) {
         {
           for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)
@@ -13423,14 +13423,14 @@ var require_react_jsx_runtime_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React32 = require_react(), REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
+      var React30 = require_react(), REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
       function getIteratorFn(maybeIterable) {
         if (maybeIterable === null || typeof maybeIterable != "object")
           return null;
         var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
         return typeof maybeIterator == "function" ? maybeIterator : null;
       }
-      var ReactSharedInternals = React32.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var ReactSharedInternals = React30.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function error(format) {
         {
           for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)
@@ -14308,7 +14308,7 @@ var require_react_dom_development = __commonJS({
     (function() {
       "use strict";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-      var React32 = require_react(), Scheduler = require_scheduler(), ReactSharedInternals = React32.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, suppressWarning = !1;
+      var React30 = require_react(), Scheduler = require_scheduler(), ReactSharedInternals = React30.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, suppressWarning = !1;
       function setSuppressWarning(newSuppressWarning) {
         suppressWarning = newSuppressWarning;
       }
@@ -15430,7 +15430,7 @@ Error generating stack: ` + x5.message + `
       }
       var didWarnSelectedSetOnOption = !1, didWarnInvalidChild = !1, didWarnInvalidInnerHTML = !1;
       function validateProps(element, props) {
-        props.value == null && (typeof props.children == "object" && props.children !== null ? React32.Children.forEach(props.children, function(child) {
+        props.value == null && (typeof props.children == "object" && props.children !== null ? React30.Children.forEach(props.children, function(child) {
           child != null && (typeof child == "string" || typeof child == "number" || didWarnInvalidChild || (didWarnInvalidChild = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }) : props.dangerouslySetInnerHTML != null && (didWarnInvalidInnerHTML || (didWarnInvalidInnerHTML = !0, error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected.")))), props.selected != null && !didWarnSelectedSetOnOption && (error("Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>."), didWarnSelectedSetOnOption = !0);
       }
@@ -21126,7 +21126,7 @@ Learn more about this warning here: https://reactjs.org/link/legacy-context`, so
             callback !== null && (effect.callback = null, callCallback(callback, instance));
           }
       }
-      var fakeInternalInstance = {}, emptyRefsObject = new React32.Component().refs, didWarnAboutStateAssignmentForComponent, didWarnAboutUninitializedState, didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate, didWarnAboutLegacyLifecyclesAndDerivedState, didWarnAboutUndefinedDerivedState, warnOnUndefinedDerivedState, warnOnInvalidCallback, didWarnAboutDirectlyAssigningPropsToState, didWarnAboutContextTypeAndContextTypes, didWarnAboutInvalidateContextType;
+      var fakeInternalInstance = {}, emptyRefsObject = new React30.Component().refs, didWarnAboutStateAssignmentForComponent, didWarnAboutUninitializedState, didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate, didWarnAboutLegacyLifecyclesAndDerivedState, didWarnAboutUndefinedDerivedState, warnOnUndefinedDerivedState, warnOnInvalidCallback, didWarnAboutDirectlyAssigningPropsToState, didWarnAboutContextTypeAndContextTypes, didWarnAboutInvalidateContextType;
       {
         didWarnAboutStateAssignmentForComponent = /* @__PURE__ */ new Set(), didWarnAboutUninitializedState = /* @__PURE__ */ new Set(), didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = /* @__PURE__ */ new Set(), didWarnAboutLegacyLifecyclesAndDerivedState = /* @__PURE__ */ new Set(), didWarnAboutDirectlyAssigningPropsToState = /* @__PURE__ */ new Set(), didWarnAboutUndefinedDerivedState = /* @__PURE__ */ new Set(), didWarnAboutContextTypeAndContextTypes = /* @__PURE__ */ new Set(), didWarnAboutInvalidateContextType = /* @__PURE__ */ new Set();
         var didWarnOnInvalidCallback = /* @__PURE__ */ new Set();
@@ -37705,7 +37705,7 @@ var require_cjs2 = __commonJS({
   "node_modules/framer-motion/dist/cjs/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: !0 });
-    var tslib = require_tslib(), React32 = require_react(), heyListen = (init_hey_listen_es(), __toCommonJS(hey_listen_es_exports)), styleValueTypes = require_valueTypes_cjs(), popmotion = require_popmotion_cjs(), sync = require_framesync_cjs(), dom = (init_index_es16(), __toCommonJS(index_es_exports));
+    var tslib = require_tslib(), React30 = require_react(), heyListen = (init_hey_listen_es(), __toCommonJS(hey_listen_es_exports)), styleValueTypes = require_valueTypes_cjs(), popmotion = require_popmotion_cjs(), sync = require_framesync_cjs(), dom = (init_index_es16(), __toCommonJS(index_es_exports));
     function _interopDefaultLegacy(e5) {
       return e5 && typeof e5 == "object" && "default" in e5 ? e5 : { default: e5 };
     }
@@ -37725,7 +37725,7 @@ var require_cjs2 = __commonJS({
         }
       }), n7.default = e5, Object.freeze(n7);
     }
-    var React__namespace = /* @__PURE__ */ _interopNamespace(React32), React__default2 = /* @__PURE__ */ _interopDefaultLegacy(React32), sync__default = /* @__PURE__ */ _interopDefaultLegacy(sync), defaultEnvironment = "production", env = typeof process > "u" || process.env === void 0 ? defaultEnvironment : "development", createDefinition = function(propNames) {
+    var React__namespace = /* @__PURE__ */ _interopNamespace(React30), React__default2 = /* @__PURE__ */ _interopDefaultLegacy(React30), sync__default = /* @__PURE__ */ _interopDefaultLegacy(sync), defaultEnvironment = "production", env = typeof process > "u" || process.env === void 0 ? defaultEnvironment : "development", createDefinition = function(propNames) {
       return {
         isEnabled: function(props) {
           return propNames.some(function(name) {
@@ -37766,9 +37766,9 @@ var require_cjs2 = __commonJS({
       for (var key in features)
         features[key] !== null && (key === "projectionNodeConstructor" ? featureDefinitions.projectionNodeConstructor = features[key] : featureDefinitions[key].Component = features[key]);
     }
-    var LazyContext = React32.createContext({ strict: !1 }), featureNames = Object.keys(featureDefinitions), numFeatures = featureNames.length;
+    var LazyContext = React30.createContext({ strict: !1 }), featureNames = Object.keys(featureDefinitions), numFeatures = featureNames.length;
     function useFeatures(props, visualElement2, preloadedFeatures) {
-      var features = [], lazyContext = React32.useContext(LazyContext);
+      var features = [], lazyContext = React30.useContext(LazyContext);
       if (!visualElement2)
         return null;
       env !== "production" && preloadedFeatures && lazyContext.strict && heyListen.invariant(!1, "You have rendered a `motion` component within a `LazyMotion` component. This will break tree shaking. Import and render a `m` component instead.");
@@ -37778,17 +37778,17 @@ var require_cjs2 = __commonJS({
       }
       return features;
     }
-    var MotionConfigContext = React32.createContext({
+    var MotionConfigContext = React30.createContext({
       transformPagePoint: function(p7) {
         return p7;
       },
       isStatic: !1,
       reducedMotion: "never"
-    }), MotionContext = React32.createContext({});
+    }), MotionContext = React30.createContext({});
     function useVisualElementContext() {
-      return React32.useContext(MotionContext).visualElement;
+      return React30.useContext(MotionContext).visualElement;
     }
-    var PresenceContext = React32.createContext(null), isBrowser3 = typeof document < "u", useIsomorphicLayoutEffect2 = isBrowser3 ? React32.useLayoutEffect : React32.useEffect, prefersReducedMotion = { current: null }, hasDetected = !1;
+    var PresenceContext = React30.createContext(null), isBrowser3 = typeof document < "u", useIsomorphicLayoutEffect2 = isBrowser3 ? React30.useLayoutEffect : React30.useEffect, prefersReducedMotion = { current: null }, hasDetected = !1;
     function initPrefersReducedMotion() {
       if (hasDetected = !0, !!isBrowser3)
         if (window.matchMedia) {
@@ -37801,15 +37801,15 @@ var require_cjs2 = __commonJS({
     }
     function useReducedMotion() {
       !hasDetected && initPrefersReducedMotion();
-      var _a2 = tslib.__read(React32.useState(prefersReducedMotion.current), 1), shouldReduceMotion = _a2[0];
+      var _a2 = tslib.__read(React30.useState(prefersReducedMotion.current), 1), shouldReduceMotion = _a2[0];
       return shouldReduceMotion;
     }
     function useReducedMotionConfig() {
-      var reducedMotionPreference = useReducedMotion(), reducedMotion = React32.useContext(MotionConfigContext).reducedMotion;
+      var reducedMotionPreference = useReducedMotion(), reducedMotion = React30.useContext(MotionConfigContext).reducedMotion;
       return reducedMotion === "never" ? !1 : reducedMotion === "always" ? !0 : reducedMotionPreference;
     }
     function useVisualElement(Component2, visualState, props, createVisualElement) {
-      var lazyContext = React32.useContext(LazyContext), parent = useVisualElementContext(), presenceContext = React32.useContext(PresenceContext), shouldReduceMotion = useReducedMotionConfig(), visualElementRef = React32.useRef(void 0);
+      var lazyContext = React30.useContext(LazyContext), parent = useVisualElementContext(), presenceContext = React30.useContext(PresenceContext), shouldReduceMotion = useReducedMotionConfig(), visualElementRef = React30.useRef(void 0);
       createVisualElement || (createVisualElement = lazyContext.renderer), !visualElementRef.current && createVisualElement && (visualElementRef.current = createVisualElement(Component2, {
         visualState,
         parent,
@@ -37821,7 +37821,7 @@ var require_cjs2 = __commonJS({
       var visualElement2 = visualElementRef.current;
       return useIsomorphicLayoutEffect2(function() {
         visualElement2 == null || visualElement2.syncRender();
-      }), React32.useEffect(function() {
+      }), React30.useEffect(function() {
         var _a2;
         (_a2 = visualElement2 == null ? void 0 : visualElement2.animationState) === null || _a2 === void 0 || _a2.animateChanges();
       }), useIsomorphicLayoutEffect2(function() {
@@ -37834,7 +37834,7 @@ var require_cjs2 = __commonJS({
       return typeof ref == "object" && Object.prototype.hasOwnProperty.call(ref, "current");
     }
     function useMotionRef(visualState, visualElement2, externalRef) {
-      return React32.useCallback(
+      return React30.useCallback(
         function(instance) {
           var _a2;
           instance && ((_a2 = visualState.mount) === null || _a2 === void 0 || _a2.call(visualState, instance)), visualElement2 && (instance ? visualElement2.mount(instance) : visualElement2.unmount()), externalRef && (typeof externalRef == "function" ? externalRef(instance) : isRefObject(externalRef) && (externalRef.current = instance));
@@ -37891,8 +37891,8 @@ var require_cjs2 = __commonJS({
       return props.inherit !== !1 ? context : {};
     }
     function useCreateMotionContext(props) {
-      var _a2 = getCurrentTreeVariants(props, React32.useContext(MotionContext)), initial = _a2.initial, animate3 = _a2.animate;
-      return React32.useMemo(function() {
+      var _a2 = getCurrentTreeVariants(props, React30.useContext(MotionContext)), initial = _a2.initial, animate3 = _a2.animate;
+      return React30.useMemo(function() {
         return { initial, animate: animate3 };
       }, [variantLabelsAsDependency(initial), variantLabelsAsDependency(animate3)]);
     }
@@ -37900,7 +37900,7 @@ var require_cjs2 = __commonJS({
       return Array.isArray(prop) ? prop.join(" ") : prop;
     }
     function useConstant(init) {
-      var ref = React32.useRef(null);
+      var ref = React30.useRef(null);
       return ref.current === null && (ref.current = init()), ref.current;
     }
     var globalProjectionState = {
@@ -37921,9 +37921,9 @@ var require_cjs2 = __commonJS({
           return id$1++;
       });
     }
-    var LayoutGroupContext = React32.createContext({}), SwitchLayoutGroupContext = React32.createContext({});
+    var LayoutGroupContext = React30.createContext({}), SwitchLayoutGroupContext = React30.createContext({});
     function useProjection(projectionId, _a2, visualElement2, ProjectionNodeConstructor) {
-      var _b, layoutId = _a2.layoutId, layout = _a2.layout, drag2 = _a2.drag, dragConstraints = _a2.dragConstraints, layoutScroll = _a2.layoutScroll, initialPromotionConfig = React32.useContext(SwitchLayoutGroupContext);
+      var _b, layoutId = _a2.layoutId, layout = _a2.layout, drag2 = _a2.drag, dragConstraints = _a2.dragConstraints, layoutScroll = _a2.layoutScroll, initialPromotionConfig = React30.useContext(SwitchLayoutGroupContext);
       !ProjectionNodeConstructor || !visualElement2 || visualElement2 != null && visualElement2.projection || (visualElement2.projection = new ProjectionNodeConstructor(projectionId, visualElement2.getLatestValues(), (_b = visualElement2.parent) === null || _b === void 0 ? void 0 : _b.projection), visualElement2.projection.setOptions({
         layoutId,
         layout,
@@ -37968,7 +37968,7 @@ var require_cjs2 = __commonJS({
       function MotionComponent(props, externalRef) {
         var layoutId = useLayoutId(props);
         props = tslib.__assign(tslib.__assign({}, props), { layoutId });
-        var config = React32.useContext(MotionConfigContext), features = null, context = useCreateMotionContext(props), projectionId = config.isStatic ? void 0 : useProjectionId(), visualState = useVisualState2(props, config.isStatic);
+        var config = React30.useContext(MotionConfigContext), features = null, context = useCreateMotionContext(props), projectionId = config.isStatic ? void 0 : useProjectionId(), visualState = useVisualState2(props, config.isStatic);
         return !config.isStatic && isBrowser3 && (context.visualElement = useVisualElement(Component2, visualState, tslib.__assign(tslib.__assign({}, config), props), createVisualElement), useProjection(projectionId, props, context.visualElement, projectionNodeConstructor || featureDefinitions.projectionNodeConstructor), features = useFeatures(props, context.visualElement, preloadedFeatures)), React__namespace.createElement(
           VisualElementHandler,
           { visualElement: context.visualElement, props: tslib.__assign(tslib.__assign({}, config), props) },
@@ -37976,10 +37976,10 @@ var require_cjs2 = __commonJS({
           React__namespace.createElement(MotionContext.Provider, { value: context }, useRender(Component2, props, projectionId, useMotionRef(visualState, context.visualElement, externalRef), visualState, config.isStatic, context.visualElement))
         );
       }
-      return React32.forwardRef(MotionComponent);
+      return React30.forwardRef(MotionComponent);
     }
     function useLayoutId(_a2) {
-      var _b, layoutId = _a2.layoutId, layoutGroupId = (_b = React32.useContext(LayoutGroupContext)) === null || _b === void 0 ? void 0 : _b.id;
+      var _b, layoutId = _a2.layoutId, layoutGroupId = (_b = React30.useContext(LayoutGroupContext)) === null || _b === void 0 ? void 0 : _b.id;
       return layoutGroupId && layoutId !== void 0 ? layoutGroupId + "-" + layoutId : layoutId;
     }
     function createMotionProxy(createConfig) {
@@ -38199,7 +38199,7 @@ var require_cjs2 = __commonJS({
     }
     function useInitialMotionValues(_a2, visualState, isStatic) {
       var transformTemplate = _a2.transformTemplate;
-      return React32.useMemo(function() {
+      return React30.useMemo(function() {
         var state = createHtmlRenderState();
         buildHTMLStyles(state, visualState, { enableHardwareAcceleration: !isStatic }, transformTemplate);
         var vars = state.vars, style2 = state.style;
@@ -38325,7 +38325,7 @@ var require_cjs2 = __commonJS({
       return tslib.__assign(tslib.__assign({}, createHtmlRenderState()), { attrs: {} });
     };
     function useSVGProps(props, visualState) {
-      var visualProps = React32.useMemo(function() {
+      var visualProps = React30.useMemo(function() {
         var state = createSvgRenderState();
         return buildSVGAttrs(state, visualState, { enableHardwareAcceleration: !1 }, props.transformTemplate), tslib.__assign(tslib.__assign({}, state.attrs), { style: tslib.__assign({}, state.style) });
       }, [visualState]);
@@ -38339,7 +38339,7 @@ var require_cjs2 = __commonJS({
       forwardMotionProps === void 0 && (forwardMotionProps = !1);
       var useRender = function(Component2, props, projectionId, ref, _a2, isStatic) {
         var latestValues = _a2.latestValues, useVisualProps = isSVGComponent(Component2) ? useSVGProps : useHTMLProps, visualProps = useVisualProps(props, latestValues, isStatic), filteredProps = filterProps(props, typeof Component2 == "string", forwardMotionProps), elementProps = tslib.__assign(tslib.__assign(tslib.__assign({}, filteredProps), visualProps), { ref });
-        return projectionId && (elementProps["data-projection-id"] = projectionId), React32.createElement(Component2, elementProps);
+        return projectionId && (elementProps["data-projection-id"] = projectionId), React30.createElement(Component2, elementProps);
       };
       return useRender;
     }
@@ -38419,7 +38419,7 @@ var require_cjs2 = __commonJS({
     }
     var makeUseVisualState = function(config) {
       return function(props, isStatic) {
-        var context = React32.useContext(MotionContext), presenceContext = React32.useContext(PresenceContext);
+        var context = React30.useContext(MotionContext), presenceContext = React30.useContext(PresenceContext);
         return isStatic ? makeState(config, props, context, presenceContext) : useConstant(function() {
           return makeState(config, props, context, presenceContext);
         });
@@ -38494,7 +38494,7 @@ var require_cjs2 = __commonJS({
       };
     }
     function useDomEvent(ref, eventName, handler, options) {
-      React32.useEffect(function() {
+      React30.useEffect(function() {
         var element = ref.current;
         if (handler && element)
           return addDomEvent(element, eventName, handler, options);
@@ -38621,14 +38621,14 @@ var require_cjs2 = __commonJS({
       return child ? parent === child ? !0 : isNodeOrChild(parent, child.parentElement) : !1;
     };
     function useUnmountEffect(callback) {
-      return React32.useEffect(function() {
+      return React30.useEffect(function() {
         return function() {
           return callback();
         };
       }, []);
     }
     function useTapGesture(_a2) {
-      var onTap = _a2.onTap, onTapStart = _a2.onTapStart, onTapCancel = _a2.onTapCancel, whileTap = _a2.whileTap, visualElement2 = _a2.visualElement, hasPressListeners = onTap || onTapStart || onTapCancel || whileTap, isPressing = React32.useRef(!1), cancelPointerEndListeners = React32.useRef(null), eventOptions = {
+      var onTap = _a2.onTap, onTapStart = _a2.onTapStart, onTapCancel = _a2.onTapCancel, whileTap = _a2.whileTap, visualElement2 = _a2.visualElement, hasPressListeners = onTap || onTapStart || onTapCancel || whileTap, isPressing = React30.useRef(!1), cancelPointerEndListeners = React30.useRef(null), eventOptions = {
         passive: !(onTapStart || onTap || onTapCancel || onPointerDown)
       };
       function removePointerEndListener() {
@@ -38674,7 +38674,7 @@ var require_cjs2 = __commonJS({
       };
     }
     function useViewport(_a2) {
-      var visualElement2 = _a2.visualElement, whileInView = _a2.whileInView, onViewportEnter = _a2.onViewportEnter, onViewportLeave = _a2.onViewportLeave, _b = _a2.viewport, viewport = _b === void 0 ? {} : _b, state = React32.useRef({
+      var visualElement2 = _a2.visualElement, whileInView = _a2.whileInView, onViewportEnter = _a2.onViewportEnter, onViewportLeave = _a2.onViewportLeave, _b = _a2.viewport, viewport = _b === void 0 ? {} : _b, state = React30.useRef({
         hasEnteredView: !1,
         isInView: !1
       }), shouldObserve = Boolean(whileInView || onViewportEnter || onViewportLeave);
@@ -38688,7 +38688,7 @@ var require_cjs2 = __commonJS({
     };
     function useIntersectionObserver(shouldObserve, state, visualElement2, _a2) {
       var root = _a2.root, rootMargin = _a2.margin, _b = _a2.amount, amount = _b === void 0 ? "some" : _b, once = _a2.once;
-      React32.useEffect(function() {
+      React30.useEffect(function() {
         if (shouldObserve) {
           var options = {
             root: root == null ? void 0 : root.current,
@@ -38708,7 +38708,7 @@ var require_cjs2 = __commonJS({
     }
     function useMissingIntersectionObserver(shouldObserve, state, visualElement2, _a2) {
       var _b = _a2.fallback, fallback = _b === void 0 ? !0 : _b;
-      React32.useEffect(function() {
+      React30.useEffect(function() {
         !shouldObserve || !fallback || (env !== "production" && warnOnce4(!1, "IntersectionObserver not available on this device. whileInView animations will trigger on mount."), requestAnimationFrame(function() {
           var _a3;
           state.hasEnteredView = !0;
@@ -38732,11 +38732,11 @@ var require_cjs2 = __commonJS({
       return useConstant(incrementId);
     };
     function usePresence() {
-      var context = React32.useContext(PresenceContext);
+      var context = React30.useContext(PresenceContext);
       if (context === null)
         return [!0, null];
       var isPresent2 = context.isPresent, onExitComplete = context.onExitComplete, register = context.register, id2 = useId();
-      React32.useEffect(function() {
+      React30.useEffect(function() {
         return register(id2);
       }, []);
       var safeToRemove = function() {
@@ -38745,7 +38745,7 @@ var require_cjs2 = __commonJS({
       return !isPresent2 && onExitComplete ? [!1, safeToRemove] : [!0];
     }
     function useIsPresent() {
-      return isPresent(React32.useContext(PresenceContext));
+      return isPresent(React30.useContext(PresenceContext));
     }
     function isPresent(context) {
       return context === null ? !0 : context.isPresent;
@@ -39298,13 +39298,13 @@ var require_cjs2 = __commonJS({
     var animations = {
       animation: makeRenderlessComponent(function(_a2) {
         var visualElement2 = _a2.visualElement, animate3 = _a2.animate;
-        visualElement2.animationState || (visualElement2.animationState = createAnimationState(visualElement2)), isAnimationControls(animate3) && React32.useEffect(function() {
+        visualElement2.animationState || (visualElement2.animationState = createAnimationState(visualElement2)), isAnimationControls(animate3) && React30.useEffect(function() {
           return animate3.subscribe(visualElement2);
         }, [animate3]);
       }),
       exit: makeRenderlessComponent(function(props) {
-        var custom = props.custom, visualElement2 = props.visualElement, _a2 = tslib.__read(usePresence(), 2), isPresent2 = _a2[0], safeToRemove = _a2[1], presenceContext = React32.useContext(PresenceContext);
-        React32.useEffect(function() {
+        var custom = props.custom, visualElement2 = props.visualElement, _a2 = tslib.__read(usePresence(), 2), isPresent2 = _a2[0], safeToRemove = _a2[1], presenceContext = React30.useContext(PresenceContext);
+        React30.useEffect(function() {
           var _a3, _b;
           visualElement2.isPresent = isPresent2;
           var animation = (_a3 = visualElement2.animationState) === null || _a3 === void 0 ? void 0 : _a3.setActive(exports.AnimationType.Exit, !isPresent2, { custom: (_b = presenceContext == null ? void 0 : presenceContext.custom) !== null && _b !== void 0 ? _b : custom });
@@ -39742,14 +39742,14 @@ var require_cjs2 = __commonJS({
       var groupDragControls = props.dragControls, visualElement2 = props.visualElement, dragControls = useConstant(function() {
         return new VisualElementDragControls(visualElement2);
       });
-      React32.useEffect(function() {
+      React30.useEffect(function() {
         return groupDragControls && groupDragControls.subscribe(dragControls);
-      }, [dragControls, groupDragControls]), React32.useEffect(function() {
+      }, [dragControls, groupDragControls]), React30.useEffect(function() {
         return dragControls.addListeners();
       }, [dragControls]);
     }
     function usePanGesture(_a2) {
-      var onPan = _a2.onPan, onPanStart = _a2.onPanStart, onPanEnd = _a2.onPanEnd, onPanSessionStart = _a2.onPanSessionStart, visualElement2 = _a2.visualElement, hasPanEvents = onPan || onPanStart || onPanEnd || onPanSessionStart, panSession = React32.useRef(null), transformPagePoint = React32.useContext(MotionConfigContext).transformPagePoint, handlers = {
+      var onPan = _a2.onPan, onPanStart = _a2.onPanStart, onPanEnd = _a2.onPanEnd, onPanSessionStart = _a2.onPanSessionStart, visualElement2 = _a2.visualElement, hasPanEvents = onPan || onPanStart || onPanEnd || onPanSessionStart, panSession = React30.useRef(null), transformPagePoint = React30.useContext(MotionConfigContext).transformPagePoint, handlers = {
         onSessionStart: onPanSessionStart,
         onStart: onPanStart,
         onMove: onPan,
@@ -39757,7 +39757,7 @@ var require_cjs2 = __commonJS({
           panSession.current = null, onPanEnd && onPanEnd(event, info);
         }
       };
-      React32.useEffect(function() {
+      React30.useEffect(function() {
         panSession.current !== null && panSession.current.updateHandlers(handlers);
       });
       function onPointerDown(event) {
@@ -40435,8 +40435,8 @@ var require_cjs2 = __commonJS({
       }(React__default2.default.Component)
     );
     function MeasureLayout(props) {
-      var _a2 = tslib.__read(usePresence(), 2), isPresent2 = _a2[0], safeToRemove = _a2[1], layoutGroup = React32.useContext(LayoutGroupContext);
-      return React__default2.default.createElement(MeasureLayoutWithContext, tslib.__assign({}, props, { layoutGroup, switchLayoutGroup: React32.useContext(SwitchLayoutGroupContext), isPresent: isPresent2, safeToRemove }));
+      var _a2 = tslib.__read(usePresence(), 2), isPresent2 = _a2[0], safeToRemove = _a2[1], layoutGroup = React30.useContext(LayoutGroupContext);
+      return React__default2.default.createElement(MeasureLayoutWithContext, tslib.__assign({}, props, { layoutGroup, switchLayoutGroup: React30.useContext(SwitchLayoutGroupContext), isPresent: isPresent2, safeToRemove }));
     }
     var defaultScaleCorrectors = {
       borderRadius: tslib.__assign(tslib.__assign({}, correctBorderRadius), { applyTo: [
@@ -41078,7 +41078,7 @@ var require_cjs2 = __commonJS({
     }
     var m10 = createMotionProxy(createDomMotionConfig);
     function useIsMounted2() {
-      var isMounted = React32.useRef(!1);
+      var isMounted = React30.useRef(!1);
       return useIsomorphicLayoutEffect2(function() {
         return isMounted.current = !0, function() {
           isMounted.current = !1;
@@ -41086,15 +41086,15 @@ var require_cjs2 = __commonJS({
       }, []), isMounted;
     }
     function useForceUpdate() {
-      var isMounted = useIsMounted2(), _a2 = tslib.__read(React32.useState(0), 2), forcedRenderCount = _a2[0], setForcedRenderCount = _a2[1], forceRender = React32.useCallback(function() {
+      var isMounted = useIsMounted2(), _a2 = tslib.__read(React30.useState(0), 2), forcedRenderCount = _a2[0], setForcedRenderCount = _a2[1], forceRender = React30.useCallback(function() {
         isMounted.current && setForcedRenderCount(forcedRenderCount + 1);
-      }, [forcedRenderCount]), deferredForceRender = React32.useCallback(function() {
+      }, [forcedRenderCount]), deferredForceRender = React30.useCallback(function() {
         return sync__default.default.postRender(forceRender);
       }, [forceRender]);
       return [deferredForceRender, forcedRenderCount];
     }
     var PresenceChild = function(_a2) {
-      var children = _a2.children, initial = _a2.initial, isPresent2 = _a2.isPresent, onExitComplete = _a2.onExitComplete, custom = _a2.custom, presenceAffectsLayout = _a2.presenceAffectsLayout, presenceChildren = useConstant(newChildrenMap), id2 = useId(), context = React32.useMemo(
+      var children = _a2.children, initial = _a2.initial, isPresent2 = _a2.isPresent, onExitComplete = _a2.onExitComplete, custom = _a2.custom, presenceAffectsLayout = _a2.presenceAffectsLayout, presenceChildren = useConstant(newChildrenMap), id2 = useId(), context = React30.useMemo(
         function() {
           return {
             id: id2,
@@ -41136,7 +41136,7 @@ var require_cjs2 = __commonJS({
          */
         presenceAffectsLayout ? void 0 : [isPresent2]
       );
-      return React32.useMemo(function() {
+      return React30.useMemo(function() {
         presenceChildren.forEach(function(_3, key) {
           return presenceChildren.set(key, !1);
         });
@@ -41158,14 +41158,14 @@ var require_cjs2 = __commonJS({
     }
     function onlyElements(children) {
       var filtered = [];
-      return React32.Children.forEach(children, function(child) {
-        React32.isValidElement(child) && filtered.push(child);
+      return React30.Children.forEach(children, function(child) {
+        React30.isValidElement(child) && filtered.push(child);
       }), filtered;
     }
     var AnimatePresence = function(_a2) {
-      var children = _a2.children, custom = _a2.custom, _b = _a2.initial, initial = _b === void 0 ? !0 : _b, onExitComplete = _a2.onExitComplete, exitBeforeEnter = _a2.exitBeforeEnter, _c = _a2.presenceAffectsLayout, presenceAffectsLayout = _c === void 0 ? !0 : _c, _d = tslib.__read(useForceUpdate(), 1), forceRender = _d[0], forceRenderLayoutGroup = React32.useContext(LayoutGroupContext).forceRender;
+      var children = _a2.children, custom = _a2.custom, _b = _a2.initial, initial = _b === void 0 ? !0 : _b, onExitComplete = _a2.onExitComplete, exitBeforeEnter = _a2.exitBeforeEnter, _c = _a2.presenceAffectsLayout, presenceAffectsLayout = _c === void 0 ? !0 : _c, _d = tslib.__read(useForceUpdate(), 1), forceRender = _d[0], forceRenderLayoutGroup = React30.useContext(LayoutGroupContext).forceRender;
       forceRenderLayoutGroup && (forceRender = forceRenderLayoutGroup);
-      var isMounted = useIsMounted2(), filteredChildren = onlyElements(children), childrenToRender = filteredChildren, exiting = /* @__PURE__ */ new Set(), presentChildren = React32.useRef(childrenToRender), allChildren = React32.useRef(/* @__PURE__ */ new Map()).current, isInitialRender = React32.useRef(!0);
+      var isMounted = useIsMounted2(), filteredChildren = onlyElements(children), childrenToRender = filteredChildren, exiting = /* @__PURE__ */ new Set(), presentChildren = React30.useRef(childrenToRender), allChildren = React30.useRef(/* @__PURE__ */ new Map()).current, isInitialRender = React30.useRef(!0);
       if (useIsomorphicLayoutEffect2(function() {
         isInitialRender.current = !1, updateChildLookup(filteredChildren, allChildren), presentChildren.current = childrenToRender;
       }), useUnmountEffect(function() {
@@ -41201,9 +41201,9 @@ var require_cjs2 = __commonJS({
         var key2 = child.key;
         return exiting.has(key2) ? child : React__namespace.createElement(PresenceChild, { key: getChildKey(child), isPresent: !0, presenceAffectsLayout }, child);
       }), env !== "production" && exitBeforeEnter && childrenToRender.length > 1 && console.warn("You're attempting to animate multiple children within AnimatePresence, but its exitBeforeEnter prop is set to true. This will lead to odd visual behaviour."), React__namespace.createElement(React__namespace.Fragment, null, exiting.size ? childrenToRender : childrenToRender.map(function(child) {
-        return React32.cloneElement(child);
+        return React30.cloneElement(child);
       }));
-    }, DeprecatedLayoutGroupContext = React32.createContext(null), notify = function(node) {
+    }, DeprecatedLayoutGroupContext = React30.createContext(null), notify = function(node) {
       return !node.isLayoutDirty && node.willUpdate(!1);
     };
     function nodeGroup() {
@@ -41228,12 +41228,12 @@ var require_cjs2 = __commonJS({
     }, LayoutGroup = function(_a2) {
       var _b, _c, children = _a2.children, id2 = _a2.id, inheritId = _a2.inheritId, _d = _a2.inherit, inherit = _d === void 0 ? !0 : _d;
       inheritId !== void 0 && (inherit = inheritId);
-      var layoutGroupContext = React32.useContext(LayoutGroupContext), deprecatedLayoutGroupContext = React32.useContext(DeprecatedLayoutGroupContext), _e3 = tslib.__read(useForceUpdate(), 2), forceRender = _e3[0], key = _e3[1], context = React32.useRef(null), upstreamId = (_b = layoutGroupContext.id) !== null && _b !== void 0 ? _b : deprecatedLayoutGroupContext;
+      var layoutGroupContext = React30.useContext(LayoutGroupContext), deprecatedLayoutGroupContext = React30.useContext(DeprecatedLayoutGroupContext), _e3 = tslib.__read(useForceUpdate(), 2), forceRender = _e3[0], key = _e3[1], context = React30.useRef(null), upstreamId = (_b = layoutGroupContext.id) !== null && _b !== void 0 ? _b : deprecatedLayoutGroupContext;
       context.current === null && (shouldInheritId(inherit) && upstreamId && (id2 = id2 ? upstreamId + "-" + id2 : upstreamId), context.current = {
         id: id2,
         group: shouldInheritGroup(inherit) && (_c = layoutGroupContext == null ? void 0 : layoutGroupContext.group) !== null && _c !== void 0 ? _c : nodeGroup()
       });
-      var memoizedContext = React32.useMemo(function() {
+      var memoizedContext = React30.useMemo(function() {
         return tslib.__assign(tslib.__assign({}, context.current), { forceRender });
       }, [key]);
       return React__namespace.createElement(LayoutGroupContext.Provider, { value: memoizedContext }, children);
@@ -41247,21 +41247,21 @@ var require_cjs2 = __commonJS({
     };
     function MotionConfig(_a2) {
       var children = _a2.children, isValidProp = _a2.isValidProp, config = tslib.__rest(_a2, ["children", "isValidProp"]);
-      isValidProp && loadExternalIsValidProp(isValidProp), config = tslib.__assign(tslib.__assign({}, React32.useContext(MotionConfigContext)), config), config.isStatic = useConstant(function() {
+      isValidProp && loadExternalIsValidProp(isValidProp), config = tslib.__assign(tslib.__assign({}, React30.useContext(MotionConfigContext)), config), config.isStatic = useConstant(function() {
         return config.isStatic;
       });
-      var context = React32.useMemo(function() {
+      var context = React30.useMemo(function() {
         return config;
       }, [JSON.stringify(config.transition), config.transformPagePoint, config.reducedMotion]);
       return React__namespace.createElement(MotionConfigContext.Provider, { value: context }, children);
     }
     function LazyMotion(_a2) {
-      var children = _a2.children, features = _a2.features, _b = _a2.strict, strict = _b === void 0 ? !1 : _b, _c = tslib.__read(React32.useState(!isLazyBundle(features)), 2), setIsLoaded = _c[1], loadedRenderer = React32.useRef(void 0);
+      var children = _a2.children, features = _a2.features, _b = _a2.strict, strict = _b === void 0 ? !1 : _b, _c = tslib.__read(React30.useState(!isLazyBundle(features)), 2), setIsLoaded = _c[1], loadedRenderer = React30.useRef(void 0);
       if (!isLazyBundle(features)) {
         var renderer = features.renderer, loadedFeatures = tslib.__rest(features, ["renderer"]);
         loadedRenderer.current = renderer, loadFeatures(loadedFeatures);
       }
-      return React32.useEffect(function() {
+      return React30.useEffect(function() {
         isLazyBundle(features) && features().then(function(_a3) {
           var renderer2 = _a3.renderer, loadedFeatures2 = tslib.__rest(_a3, ["renderer"]);
           loadFeatures(loadedFeatures2), loadedRenderer.current = renderer2, setIsLoaded(!0);
@@ -41271,7 +41271,7 @@ var require_cjs2 = __commonJS({
     function isLazyBundle(features) {
       return typeof features == "function";
     }
-    var ReorderContext = React32.createContext(null);
+    var ReorderContext = React30.createContext(null);
     function checkReorder(order3, value, offset, velocity) {
       if (!velocity)
         return order3;
@@ -41289,7 +41289,7 @@ var require_cjs2 = __commonJS({
     function ReorderGroup(_a2, externalRef) {
       var children = _a2.children, _b = _a2.as, as = _b === void 0 ? "ul" : _b, _c = _a2.axis, axis = _c === void 0 ? "y" : _c, onReorder = _a2.onReorder, values = _a2.values, props = tslib.__rest(_a2, ["children", "as", "axis", "onReorder", "values"]), Component2 = useConstant(function() {
         return motion(as);
-      }), order3 = [], isReordering = React32.useRef(!1);
+      }), order3 = [], isReordering = React30.useRef(!1);
       heyListen.invariant(Boolean(values), "Reorder.Group must be provided a values prop");
       var context = {
         axis,
@@ -41307,7 +41307,7 @@ var require_cjs2 = __commonJS({
           }
         }
       };
-      return React32.useEffect(function() {
+      return React30.useEffect(function() {
         isReordering.current = !1;
       }), React__namespace.createElement(
         Component2,
@@ -41315,7 +41315,7 @@ var require_cjs2 = __commonJS({
         React__namespace.createElement(ReorderContext.Provider, { value: context }, children)
       );
     }
-    var Group = React32.forwardRef(ReorderGroup);
+    var Group = React30.forwardRef(ReorderGroup);
     function getValue(item) {
       return item.value;
     }
@@ -41325,10 +41325,10 @@ var require_cjs2 = __commonJS({
     function useMotionValue(initial) {
       var value = useConstant(function() {
         return motionValue(initial);
-      }), isStatic = React32.useContext(MotionConfigContext).isStatic;
+      }), isStatic = React30.useContext(MotionConfigContext).isStatic;
       if (isStatic) {
-        var _a2 = tslib.__read(React32.useState(initial), 2), setLatest_1 = _a2[1];
-        React32.useEffect(function() {
+        var _a2 = tslib.__read(React30.useState(initial), 2), setLatest_1 = _a2[1];
+        React30.useEffect(function() {
           return value.onChange(setLatest_1);
         }, []);
       }
@@ -41395,16 +41395,16 @@ var require_cjs2 = __commonJS({
     function ReorderItem(_a2, externalRef) {
       var children = _a2.children, style2 = _a2.style, value = _a2.value, _b = _a2.as, as = _b === void 0 ? "li" : _b, onDrag = _a2.onDrag, _c = _a2.layout, layout = _c === void 0 ? !0 : _c, props = tslib.__rest(_a2, ["children", "style", "value", "as", "onDrag", "layout"]), Component2 = useConstant(function() {
         return motion(as);
-      }), context = React32.useContext(ReorderContext), point2 = {
+      }), context = React30.useContext(ReorderContext), point2 = {
         x: useDefaultMotionValue(style2 == null ? void 0 : style2.x),
         y: useDefaultMotionValue(style2 == null ? void 0 : style2.y)
       }, zIndex = useTransform([point2.x, point2.y], function(_a3) {
         var _b2 = tslib.__read(_a3, 2), latestX = _b2[0], latestY = _b2[1];
         return latestX || latestY ? 1 : "unset";
-      }), measuredLayout = React32.useRef(null);
+      }), measuredLayout = React30.useRef(null);
       heyListen.invariant(Boolean(context), "Reorder.Item must be a child of Reorder.Group");
       var _d = context, axis = _d.axis, registerItem = _d.registerItem, updateOrder = _d.updateOrder;
-      return React32.useEffect(function() {
+      return React30.useEffect(function() {
         registerItem(value, measuredLayout.current);
       }, [context]), React__namespace.createElement(Component2, tslib.__assign({ drag: axis }, props, { dragSnapToOrigin: !0, style: tslib.__assign(tslib.__assign({}, style2), { x: point2.x, y: point2.y, zIndex }), layout, onDrag: function(event, gesturePoint) {
         var velocity = gesturePoint.velocity;
@@ -41413,7 +41413,7 @@ var require_cjs2 = __commonJS({
         measuredLayout.current = measured;
       }, ref: externalRef }), children);
     }
-    var Item = React32.forwardRef(ReorderItem), Reorder = {
+    var Item = React30.forwardRef(ReorderItem), Reorder = {
       Group,
       Item
     }, domAnimation = tslib.__assign(tslib.__assign({ renderer: createDomVisualElement }, animations), gestureAnimations), domMax = tslib.__assign(tslib.__assign(tslib.__assign(tslib.__assign({}, domAnimation), drag), layoutFeatures), { projectionNodeConstructor: HTMLProjectionNode });
@@ -41433,8 +41433,8 @@ var require_cjs2 = __commonJS({
     }
     function useSpring(source, config) {
       config === void 0 && (config = {});
-      var isStatic = React32.useContext(MotionConfigContext).isStatic, activeSpringAnimation = React32.useRef(null), value = useMotionValue(isMotionValue(source) ? source.get() : source);
-      return React32.useMemo(function() {
+      var isStatic = React30.useContext(MotionConfigContext).isStatic, activeSpringAnimation = React30.useRef(null), value = useMotionValue(isMotionValue(source) ? source.get() : source);
+      return React30.useMemo(function() {
         return value.attach(function(v4, set) {
           return isStatic ? set(v4) : (activeSpringAnimation.current && activeSpringAnimation.current.stop(), activeSpringAnimation.current = popmotion.animate(tslib.__assign(tslib.__assign({ from: value.get(), to: v4, velocity: value.getVelocity() }, config), { onUpdate: set })), value.get());
         });
@@ -41444,7 +41444,7 @@ var require_cjs2 = __commonJS({
     }
     function useVelocity(value) {
       var velocity = useMotionValue(value.getVelocity());
-      return React32.useEffect(function() {
+      return React30.useEffect(function() {
         return value.velocityUpdateSubscribers.add(function(newVelocity) {
           velocity.set(newVelocity);
         });
@@ -41480,8 +41480,8 @@ var require_cjs2 = __commonJS({
       return Date.now();
     };
     function useAnimationFrame(callback) {
-      var initialTimestamp = useConstant(getCurrentTime), isStatic = React32.useContext(MotionConfigContext).isStatic;
-      React32.useEffect(function() {
+      var initialTimestamp = useConstant(getCurrentTime), isStatic = React30.useContext(MotionConfigContext).isStatic;
+      React30.useEffect(function() {
         if (!isStatic) {
           var provideTimeSinceStart = function(_a2) {
             var timestamp = _a2.timestamp;
@@ -41545,20 +41545,20 @@ var require_cjs2 = __commonJS({
     }
     function useAnimationControls() {
       var controls2 = useConstant(animationControls);
-      return React32.useEffect(controls2.mount, []), controls2;
+      return React30.useEffect(controls2.mount, []), controls2;
     }
     var useAnimation = useAnimationControls;
     function useCycle() {
       for (var items = [], _i = 0; _i < arguments.length; _i++)
         items[_i] = arguments[_i];
-      var index3 = React32.useRef(0), _a2 = tslib.__read(React32.useState(items[index3.current]), 2), item = _a2[0], setItem2 = _a2[1], runCycle = React32.useCallback(function(next) {
+      var index3 = React30.useRef(0), _a2 = tslib.__read(React30.useState(items[index3.current]), 2), item = _a2[0], setItem2 = _a2[1], runCycle = React30.useCallback(function(next) {
         index3.current = typeof next != "number" ? popmotion.wrap(0, items.length, index3.current + 1) : next, setItem2(items[index3.current]);
       }, tslib.__spreadArray([items.length], tslib.__read(items), !1));
       return [item, runCycle];
     }
     function useInView(ref, _a2) {
-      var _b = _a2 === void 0 ? {} : _a2, root = _b.root, margin = _b.margin, amount = _b.amount, _c = _b.once, once = _c === void 0 ? !1 : _c, _d = tslib.__read(React32.useState(!1), 2), isInView = _d[0], setInView = _d[1];
-      return React32.useEffect(function() {
+      var _b = _a2 === void 0 ? {} : _a2, root = _b.root, margin = _b.margin, amount = _b.amount, _c = _b.once, once = _c === void 0 ? !1 : _c, _d = tslib.__read(React30.useState(!1), 2), isInView = _d[0], setInView = _d[1];
+      return React30.useEffect(function() {
         var _a3;
         if (!(!ref.current || once && isInView)) {
           var onEnter = function() {
@@ -41605,7 +41605,7 @@ var require_cjs2 = __commonJS({
     }
     function useInstantTransition() {
       var _a2 = tslib.__read(useForceUpdate(), 2), forceUpdate = _a2[0], forcedRenderCount = _a2[1], startInstantLayoutTransition = useInstantLayoutTransition();
-      return React32.useEffect(function() {
+      return React30.useEffect(function() {
         sync__default.default.postRender(function() {
           return sync__default.default.postRender(function() {
             return instantAnimationState.current = !1;
@@ -41651,12 +41651,12 @@ var require_cjs2 = __commonJS({
       createRenderState: createObject
     });
     function useAnimatedState(initialState) {
-      var _a2 = tslib.__read(React32.useState(initialState), 2), animationState = _a2[0], setAnimationState = _a2[1], visualState = useVisualState({}, !1), element = useConstant(function() {
+      var _a2 = tslib.__read(React30.useState(initialState), 2), animationState = _a2[0], setAnimationState = _a2[1], visualState = useVisualState({}, !1), element = useConstant(function() {
         return stateVisualElement({ props: {}, visualState }, { initialState });
       });
-      React32.useEffect(function() {
+      React30.useEffect(function() {
         return element.mount({}), element.unmount;
-      }, [element]), React32.useEffect(function() {
+      }, [element]), React30.useEffect(function() {
         element.setProps({
           onUpdate: function(v4) {
             setAnimationState(tslib.__assign({}, v4));
@@ -43913,7 +43913,7 @@ var require_floating_ui_react_dom_umd = __commonJS({
   "node_modules/@floating-ui/react-dom/dist/floating-ui.react-dom.umd.js"(exports, module) {
     (function(global2, factory) {
       typeof exports == "object" && typeof module < "u" ? factory(exports, require_floating_ui_dom_umd(), require_react(), require_react_dom()) : typeof define == "function" && define.amd ? define(["exports", "@floating-ui/dom", "react", "react-dom"], factory) : (global2 = typeof globalThis < "u" ? globalThis : global2 || self, factory(global2.FloatingUIReactDOM = {}, global2.FloatingUIDOM, global2.React, global2.ReactDOM));
-    })(exports, function(exports2, dom, React32, ReactDOM) {
+    })(exports, function(exports2, dom, React30, ReactDOM) {
       "use strict";
       function _interopNamespace(e5) {
         if (e5 && e5.__esModule)
@@ -43931,7 +43931,7 @@ var require_floating_ui_react_dom_umd = __commonJS({
           }
         }), n7.default = e5, Object.freeze(n7);
       }
-      var React__namespace = /* @__PURE__ */ _interopNamespace(React32), ReactDOM__namespace = /* @__PURE__ */ _interopNamespace(ReactDOM);
+      var React__namespace = /* @__PURE__ */ _interopNamespace(React30), ReactDOM__namespace = /* @__PURE__ */ _interopNamespace(ReactDOM);
       let arrow = (options) => {
         let {
           element,
@@ -43954,7 +43954,7 @@ var require_floating_ui_react_dom_umd = __commonJS({
           }
         };
       };
-      var index3 = typeof document < "u" ? React32.useLayoutEffect : React32.useEffect;
+      var index3 = typeof document < "u" ? React30.useLayoutEffect : React30.useEffect;
       function deepEqual(a13, b6) {
         if (a13 === b6)
           return !0;
@@ -44141,7 +44141,7 @@ var require_floating_ui_react_umd = __commonJS({
   "node_modules/@floating-ui/react/dist/floating-ui.react.umd.js"(exports, module) {
     (function(global2, factory) {
       typeof exports == "object" && typeof module < "u" ? factory(exports, require_react(), require_react_dom(), require_floating_ui_react_dom_umd(), require_floating_ui_dom_umd()) : typeof define == "function" && define.amd ? define(["exports", "react", "react-dom", "@floating-ui/react-dom", "@floating-ui/dom"], factory) : (global2 = typeof globalThis < "u" ? globalThis : global2 || self, factory(global2.FloatingUIReactDOM = {}, global2.React, global2.ReactDOM, global2.FloatingUIReactDOM, global2.FloatingUIDOM));
-    })(exports, function(exports2, React32, reactDom$1, reactDom, dom) {
+    })(exports, function(exports2, React30, reactDom$1, reactDom, dom) {
       "use strict";
       function _interopNamespace(e5) {
         if (e5 && e5.__esModule)
@@ -44159,7 +44159,7 @@ var require_floating_ui_react_umd = __commonJS({
           }
         }), n7.default = e5, Object.freeze(n7);
       }
-      var React__namespace = /* @__PURE__ */ _interopNamespace(React32), index3 = typeof document < "u" ? React32.useLayoutEffect : React32.useEffect;
+      var React__namespace = /* @__PURE__ */ _interopNamespace(React30), index3 = typeof document < "u" ? React30.useLayoutEffect : React30.useEffect;
       let serverHandoffComplete = !1, count = 0, genId = () => "floating-ui-" + count++;
       function useFloatingId() {
         let [id, setId] = React__namespace.useState(() => serverHandoffComplete ? genId() : void 0);
@@ -44280,7 +44280,7 @@ var require_floating_ui_react_umd = __commonJS({
         return strict || values.push("", void 0), values.includes(pointerType);
       }
       function useLatestRef(value) {
-        let ref = React32.useRef(value);
+        let ref = React30.useRef(value);
         return index3(() => {
           ref.current = value;
         }), ref;
@@ -56694,7 +56694,7 @@ function Footer({ menu }) {
               lineNumber: 50,
               columnNumber: 23
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: cat.items.map((subMenu) => /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { className: "cursor-pointer list-none", onClick: () => navigateTo(subMenu.url), children: subMenu.title }, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: cat.items.map((subMenu, index3) => /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { className: "cursor-pointer list-none", onClick: () => navigateTo(subMenu.url), children: subMenu.title }, `sub_menu_${index3}`, !1, {
               fileName: "app/components/Footer.jsx",
               lineNumber: 53,
               columnNumber: 34
@@ -61698,62 +61698,102 @@ var import_jsx_dev_runtime10 = __toESM(require_jsx_dev_runtime()), OfferCarousel
 }, OfferCarousel_default = OfferCarousel;
 
 // app/components/YouTubeVideo.jsx
-var import_react24 = __toESM(require_react()), import_react_responsive3 = __toESM(require_react_responsive()), import_jsx_dev_runtime11 = __toESM(require_jsx_dev_runtime()), MobileVideo = ({ playVideo, src }) => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "w-full h-full mx-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "relative rounded-lg", "cursor-pointer": !0, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("img", { className: "relative rounded-2xl", onClick: () => playVideo(), src, alt: "Youtube Video" }, void 0, !1, {
-    fileName: "app/components/YouTubeVideo.jsx",
-    lineNumber: 8,
-    columnNumber: 9
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("img", { className: "absolute top-[50%] left-[50%]", src: "/youtube_icon.png" }, void 0, !1, {
+var import_react24 = __toESM(require_react()), import_react_responsive3 = __toESM(require_react_responsive()), import_jsx_dev_runtime11 = __toESM(require_jsx_dev_runtime()), MobileVideo = ({ playVideo, src, isPlay, embedUrl }) => (console.log("MobileVideo:", isPlay), /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "w-full h-full mx-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "relative rounded-lg cursor-pointer", onClick: () => playVideo(), children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("img", { className: "relative rounded-2xl", src, alt: "Youtube Video" }, void 0, !1, {
     fileName: "app/components/YouTubeVideo.jsx",
     lineNumber: 9,
     columnNumber: 9
-  }, this)
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("img", { className: "absolute top-[50%] left-[50%]", src: "/youtube_icon.png" }, void 0, !1, {
+    fileName: "app/components/YouTubeVideo.jsx",
+    lineNumber: 10,
+    columnNumber: 9
+  }, this),
+  isPlay && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
+    "iframe",
+    {
+      title: "YouTube Video",
+      className: "absolute top-0 left-0 w-full h-full rounded-2xl",
+      src: embedUrl,
+      allowFullScreen: !0,
+      autoPlay: "1",
+      mute: "1",
+      allow: "autoplay"
+    },
+    void 0,
+    !1,
+    {
+      fileName: "app/components/YouTubeVideo.jsx",
+      lineNumber: 12,
+      columnNumber: 9
+    },
+    this
+  )
 ] }, void 0, !0, {
   fileName: "app/components/YouTubeVideo.jsx",
-  lineNumber: 7,
+  lineNumber: 8,
   columnNumber: 7
 }, this) }, void 0, !1, {
   fileName: "app/components/YouTubeVideo.jsx",
-  lineNumber: 6,
+  lineNumber: 7,
   columnNumber: 5
-}, this), DesktopVideo = ({ playVideo, src }) => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "w-4/5 mx-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "relative rounded-2xl p-10 cursor-pointer", children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("img", { className: "rounded-2xl relative", onClick: () => playVideo(), src, alt: "Youtube Video" }, void 0, !1, {
+}, this)), DesktopVideo = ({ playVideo, src, isPlay, embedUrl }) => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "w-4/5 mx-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "relative rounded-2xl p-10 cursor-pointer", onClick: () => playVideo(), children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("img", { className: "rounded-2xl relative", src, alt: "Youtube Video" }, void 0, !1, {
     fileName: "app/components/YouTubeVideo.jsx",
-    lineNumber: 25,
+    lineNumber: 31,
     columnNumber: 9
   }, this),
   /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("img", { className: "absolute top-[50%] left-[50%]", src: "/youtube_icon.png" }, void 0, !1, {
     fileName: "app/components/YouTubeVideo.jsx",
-    lineNumber: 26,
+    lineNumber: 32,
     columnNumber: 9
-  }, this)
+  }, this),
+  isPlay && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
+    "iframe",
+    {
+      title: "YouTube Video",
+      className: "absolute top-0 left-0 w-full h-full rounded-2xl",
+      src: embedUrl,
+      allowFullScreen: !0,
+      autoPlay: "1",
+      mute: "1",
+      allow: "autoplay"
+    },
+    void 0,
+    !1,
+    {
+      fileName: "app/components/YouTubeVideo.jsx",
+      lineNumber: 34,
+      columnNumber: 9
+    },
+    this
+  )
 ] }, void 0, !0, {
   fileName: "app/components/YouTubeVideo.jsx",
-  lineNumber: 24,
+  lineNumber: 30,
   columnNumber: 7
 }, this) }, void 0, !1, {
   fileName: "app/components/YouTubeVideo.jsx",
-  lineNumber: 23,
+  lineNumber: 29,
   columnNumber: 5
 }, this), YouTubeVideo = () => {
-  let embedUrl = 'https://www.youtube.com/embed/WKKai8jures?si=RwowF2iZZmbeL8H3" ', src = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/youtube_thumbnail.jpg?v=1713503453", isLargeScreen = (0, import_react_responsive3.useMediaQuery)({ minWidth: 1024 }), isSmall = (0, import_react_responsive3.useMediaQuery)({ maxWidth: 640 }), playVideo = () => {
-    window.open(embedUrl, "_blank");
+  let embedUrl = "https://www.youtube.com/embed/WKKai8jures?si=RwowF2iZZmbeL8H3?&autoplay=1", src = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/youtube_thumbnail.jpg?v=1713503453", isLargeScreen = (0, import_react_responsive3.useMediaQuery)({ minWidth: 1024 }), isSmall = (0, import_react_responsive3.useMediaQuery)({ maxWidth: 640 }), [play, setPlay] = (0, import_react24.useState)(!1), playVideo = () => {
+    setPlay(!play);
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { children: [
-    isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(DesktopVideo, { playVideo, src }, void 0, !1, {
+    isLargeScreen && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(DesktopVideo, { embedUrl, playVideo, isPlay: play, src }, void 0, !1, {
       fileName: "app/components/YouTubeVideo.jsx",
-      lineNumber: 51,
+      lineNumber: 64,
       columnNumber: 25
     }, this),
-    isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(MobileVideo, { playVideo, src }, void 0, !1, {
+    isSmall && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(MobileVideo, { embedUrl, playVideo, isPlay: play, src }, void 0, !1, {
       fileName: "app/components/YouTubeVideo.jsx",
-      lineNumber: 52,
+      lineNumber: 65,
       columnNumber: 19
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/YouTubeVideo.jsx",
-    lineNumber: 50,
+    lineNumber: 63,
     columnNumber: 5
   }, this);
 }, YouTubeVideo_default = YouTubeVideo;
@@ -65563,15 +65603,16 @@ var ForwardRef9 = React25.forwardRef(Squares2X2Icon), Squares2X2Icon_default = F
 // app/components/CollectionCarousel.jsx
 var import_react68 = __toESM(require_react());
 var import_react_responsive4 = __toESM(require_react_responsive());
-var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime()), CollectionCarousel = ({ collection, handle, sortArr }) => {
+var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime()), CollectionCarousel = ({ collection, handle, sortArr, all_collections }) => {
   let noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129", collectionsToShow = [], [startIndex, setStartIndex] = (0, import_react68.useState)(0), eIndex = (0, import_react_responsive4.useMediaQuery)({ minWidth: 1024 }) ? len < 4 ? len : 4 : 2, [endIndex, setEndIndex] = (0, import_react68.useState)(eIndex);
-  var len = sortArr.length;
+  var len = sortArr == null ? void 0 : sortArr.length;
   (sortArr != null || sortArr != null) && (collectionsToShow = sortArr.slice(startIndex, endIndex));
   let nextCollections = () => {
     setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
   }, prevCollections = () => {
     setStartIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1), setEndIndex((prevIndex) => len == endIndex ? prevIndex - 1 : prevIndex + 1);
   };
+  console.log("collectionsToShow::", startIndex, endIndex);
   function getPath(url_path) {
     return new URL(url_path).pathname;
   }
@@ -65580,41 +65621,44 @@ var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime()), CollectionCar
     console.log(url), window.location.href = url;
   }
   return /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "recommended_section w-full max-w-screen-xl mx-auto lg:px-24 sm:px-4 md:px-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "relative", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex grid-row-1 grid-cols-2 gap-4", children: collectionsToShow.map((coll, index3) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "w-full cursor", onClick: () => goToCollection(coll.url), children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "bg-white mst-card rounded-lg shadow-lg p-2 w-32 h-40 sm:w-40", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
-        "img",
-        {
-          src: coll.imgurl || noImg,
-          className: "w-full h-auto coll_cor_img rounded-full"
-        },
-        void 0,
-        !1,
-        {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex grid-row-1 grid-cols-2 gap-4", children: collectionsToShow.map((coll, index3) => {
+      var _a2, _b, _c, _d, _e3;
+      return /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "w-full cursor", onClick: () => goToCollection(coll.url), children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "bg-white mst-card rounded-lg shadow-lg p-2 w-32 h-40 sm:w-40", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+          "img",
+          {
+            src: ((_c = (_b = (_a2 = coll[0]) == null ? void 0 : _a2.node) == null ? void 0 : _b.metafields[0]) == null ? void 0 : _c.value) || noImg,
+            className: "w-full h-auto coll_cor_img rounded-full"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/components/CollectionCarousel.jsx",
+            lineNumber: 54,
+            columnNumber: 21
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h2", { className: "text-sm font-semibold mt-2 text-center", children: (_e3 = (_d = coll[0]) == null ? void 0 : _d.node) == null ? void 0 : _e3.title }, void 0, !1, {
           fileName: "app/components/CollectionCarousel.jsx",
-          lineNumber: 57,
+          lineNumber: 58,
           columnNumber: 21
-        },
-        this
-      ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h2", { className: "text-sm font-semibold mt-2 text-center", children: coll.title }, void 0, !1, {
+        }, this)
+      ] }, void 0, !0, {
         fileName: "app/components/CollectionCarousel.jsx",
-        lineNumber: 61,
-        columnNumber: 21
-      }, this)
-    ] }, void 0, !0, {
+        lineNumber: 52,
+        columnNumber: 17
+      }, this) }, `coll_corousel_${index3}`, !1, {
+        fileName: "app/components/CollectionCarousel.jsx",
+        lineNumber: 51,
+        columnNumber: 13
+      }, this);
+    }) }, void 0, !1, {
       fileName: "app/components/CollectionCarousel.jsx",
-      lineNumber: 55,
-      columnNumber: 17
-    }, this) }, coll.id, !1, {
-      fileName: "app/components/CollectionCarousel.jsx",
-      lineNumber: 54,
-      columnNumber: 13
-    }, this)) }, void 0, !1, {
-      fileName: "app/components/CollectionCarousel.jsx",
-      lineNumber: 51,
+      lineNumber: 49,
       columnNumber: 9
     }, this),
-    sortArr.length > eIndex && /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_jsx_dev_runtime19.Fragment, { children: [
+    (sortArr == null ? void 0 : sortArr.length) > eIndex && /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_jsx_dev_runtime19.Fragment, { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
         "button",
         {
@@ -65630,7 +65674,7 @@ var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime()), CollectionCar
             !1,
             {
               fileName: "app/components/CollectionCarousel.jsx",
-              lineNumber: 75,
+              lineNumber: 72,
               columnNumber: 11
             },
             this
@@ -65640,7 +65684,7 @@ var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime()), CollectionCar
         !1,
         {
           fileName: "app/components/CollectionCarousel.jsx",
-          lineNumber: 71,
+          lineNumber: 68,
           columnNumber: 9
         },
         this
@@ -65660,7 +65704,7 @@ var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime()), CollectionCar
             !1,
             {
               fileName: "app/components/CollectionCarousel.jsx",
-              lineNumber: 84,
+              lineNumber: 81,
               columnNumber: 11
             },
             this
@@ -65670,23 +65714,23 @@ var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime()), CollectionCar
         !1,
         {
           fileName: "app/components/CollectionCarousel.jsx",
-          lineNumber: 80,
+          lineNumber: 77,
           columnNumber: 9
         },
         this
       )
     ] }, void 0, !0, {
       fileName: "app/components/CollectionCarousel.jsx",
-      lineNumber: 70,
+      lineNumber: 67,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/CollectionCarousel.jsx",
-    lineNumber: 50,
+    lineNumber: 48,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/CollectionCarousel.jsx",
-    lineNumber: 49,
+    lineNumber: 47,
     columnNumber: 5
   }, this);
 }, CollectionCarousel_default = CollectionCarousel;
@@ -65734,25 +65778,27 @@ async function loader6({ request, params, context }) {
       headerMenuHandle: "main-menu"
       // Adjust to your header menu handle
     }
+  }), all_collections = await storefront.query(ALL_COLLECTIONS_QUERY, {
+    cache: storefront.CacheNone()
   });
   if (!handle)
     return redirect3("/collections");
-  let { collection } = await storefront.query(COLLECTION_QUERY, {
+  let { collections } = all_collections, { collection } = await storefront.query(COLLECTION_QUERY, {
     variables: { handle, ...paginationVariables }
   });
   if (console.log("Collection Handle ::", collection), !collection)
     throw new Response(`Collection ${handle} not found`, {
       status: 404
     });
-  return json3({ collection, header: await headerPromise, handle });
+  return json3({ collection, collections, header: await headerPromise, handle });
 }
 function Collection() {
   var _a2;
   var collectionArray = [];
-  let { collection, header, handle } = useLoaderData2(), { menu } = header;
+  let { collection, header, handle, collections } = useLoaderData2(), { menu } = header;
   var sortArr = menu.items.filter((item) => item.title.toLowerCase() === handle);
-  collectionArray = (_a2 = sortArr[0]) == null ? void 0 : _a2.items;
-  let [mobileFiltersOpen, setMobileFiltersOpen] = (0, import_react69.useState)(!1);
+  console.log("sortArr::", sortArr), collectionArray = sortArr.length ? (_a2 = sortArr[0]) == null ? void 0 : _a2.items : [];
+  let sortColl = collectionArray.map((coll) => collections.edges.filter((item) => item.node.title === coll.title)), [mobileFiltersOpen, setMobileFiltersOpen] = (0, import_react69.useState)(!1);
   var productsToShow1 = [];
   let lines = [], [startIndex, setStartIndex] = (0, import_react69.useState)(0), [productsToShow, setProductToShow] = (0, import_react69.useState)([]), [productsToShowDump, setProductToShowDump] = (0, import_react69.useState)([]), [imgUrl, setImgUrl] = (0, import_react69.useState)(""), isLargeScreen = (0, import_react_responsive5.useMediaQuery)({ minWidth: 1024 }), isSmall = (0, import_react_responsive5.useMediaQuery)({ maxWidth: 640 }), [readMore, setMore] = (0, import_react69.useState)(!1), endIndex = isLargeScreen ? 4 : 2;
   (0, import_react69.useEffect)(() => {
@@ -65828,13 +65874,13 @@ function Collection() {
       !1,
       {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 225,
+        lineNumber: 224,
         columnNumber: 9
       },
       this
     ) }, void 0, !1, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 224,
+      lineNumber: 223,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "bg-white mx-2.5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { children: [
@@ -65857,7 +65903,7 @@ function Collection() {
                 leaveTo: "opacity-0",
                 children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "fixed inset-0 bg-black bg-opacity-25" }, void 0, !1, {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 249,
+                  lineNumber: 248,
                   columnNumber: 17
                 }, this)
               },
@@ -65865,7 +65911,7 @@ function Collection() {
               !1,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 240,
+                lineNumber: 239,
                 columnNumber: 15
               },
               this
@@ -65884,7 +65930,7 @@ function Collection() {
                   /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "flex items-center justify-between px-4", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("h2", { className: "text-lg font-medium text-gray-900", children: "Filters" }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 264,
+                      lineNumber: 263,
                       columnNumber: 23
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
@@ -65896,12 +65942,12 @@ function Collection() {
                         children: [
                           /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("span", { className: "sr-only", children: "Close menu" }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 272,
+                            lineNumber: 271,
                             columnNumber: 25
                           }, this),
                           /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(XMarkIcon_default, { className: "h-6 w-6", "aria-hidden": "true" }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 273,
+                            lineNumber: 272,
                             columnNumber: 25
                           }, this)
                         ]
@@ -65910,20 +65956,20 @@ function Collection() {
                       !0,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 267,
+                        lineNumber: 266,
                         columnNumber: 23
                       },
                       this
                     )
                   ] }, void 0, !0, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 263,
+                    lineNumber: 262,
                     columnNumber: 21
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("form", { className: "mt-4 border-t border-gray-200", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("h3", { className: "sr-only", children: "Categories" }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 279,
+                      lineNumber: 278,
                       columnNumber: 23
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
@@ -65933,11 +65979,11 @@ function Collection() {
                         className: "px-2 py-3 font-medium text-gray-900",
                         children: subCategories.map((category) => /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("a", { href: category.href, className: "block px-2 py-3", children: category.name }, void 0, !1, {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 286,
+                          lineNumber: 285,
                           columnNumber: 29
                         }, this) }, category.name, !1, {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 285,
+                          lineNumber: 284,
                           columnNumber: 27
                         }, this))
                       },
@@ -65945,7 +65991,7 @@ function Collection() {
                       !1,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 280,
+                        lineNumber: 279,
                         columnNumber: 23
                       },
                       this
@@ -65959,7 +66005,7 @@ function Collection() {
                           /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("h3", { className: "-mx-2 -my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400", children: [
                             /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("span", { className: "font-medium text-gray-900", children: section.name }, void 0, !1, {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 304,
+                              lineNumber: 303,
                               columnNumber: 35
                             }, this),
                             /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("span", { className: "ml-6 flex items-center", children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
@@ -65972,7 +66018,7 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 309,
+                                lineNumber: 308,
                                 columnNumber: 39
                               },
                               this
@@ -65986,22 +66032,22 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 314,
+                                lineNumber: 313,
                                 columnNumber: 39
                               },
                               this
                             ) }, void 0, !1, {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 307,
+                              lineNumber: 306,
                               columnNumber: 35
                             }, this)
                           ] }, void 0, !0, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 303,
+                            lineNumber: 302,
                             columnNumber: 33
                           }, this) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 302,
+                            lineNumber: 301,
                             columnNumber: 31
                           }, this),
                           /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "space-y-6", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
@@ -66024,7 +66070,7 @@ function Collection() {
                                   !1,
                                   {
                                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                                    lineNumber: 329,
+                                    lineNumber: 328,
                                     columnNumber: 39
                                   },
                                   this
@@ -66040,7 +66086,7 @@ function Collection() {
                                   !1,
                                   {
                                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                                    lineNumber: 338,
+                                    lineNumber: 337,
                                     columnNumber: 39
                                   },
                                   this
@@ -66051,22 +66097,22 @@ function Collection() {
                             !0,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 325,
+                              lineNumber: 324,
                               columnNumber: 37
                             },
                             this
                           )) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 323,
+                            lineNumber: 322,
                             columnNumber: 33
                           }, this) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 322,
+                            lineNumber: 321,
                             columnNumber: 31
                           }, this)
                         ] }, void 0, !0, {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 300,
+                          lineNumber: 299,
                           columnNumber: 29
                         }, this)
                       },
@@ -66074,19 +66120,19 @@ function Collection() {
                       !1,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 294,
+                        lineNumber: 293,
                         columnNumber: 25
                       },
                       this
                     ))
                   ] }, void 0, !0, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 278,
+                    lineNumber: 277,
                     columnNumber: 21
                   }, this)
                 ] }, void 0, !0, {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 262,
+                  lineNumber: 261,
                   columnNumber: 19
                 }, this)
               },
@@ -66094,13 +66140,13 @@ function Collection() {
               !1,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 253,
+                lineNumber: 252,
                 columnNumber: 17
               },
               this
             ) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 252,
+              lineNumber: 251,
               columnNumber: 15
             }, this)
           ]
@@ -66109,54 +66155,54 @@ function Collection() {
         !0,
         {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 235,
+          lineNumber: 234,
           columnNumber: 13
         },
         this
       ) }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 234,
+        lineNumber: 233,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("section", { className: "collectionContent sm:mt-4 overflow-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "inline-flex gap-4", children: sortArr.length ? /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(CollectionCarousel_default, { collections: collection, handle, sortArr: collectionArray }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("section", { className: "collectionContent sm:mt-4 overflow-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "inline-flex gap-4", children: sortArr.length ? /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(CollectionCarousel_default, { collections: collection, handle, sortArr: sortColl }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 380,
+        lineNumber: 361,
         columnNumber: 14
       }, this) : null }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 360,
+        lineNumber: 359,
         columnNumber: 13
       }, this) }, void 0, !1, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 359,
+        lineNumber: 358,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("main", { className: "mx-auto max-w-8xl px-0 sm:px-4 sm:px-6 lg:px-8", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "flex gap-1 items-center", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(Link2, { className: "mst-color", to: "/", children: "Home" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 390,
+            lineNumber: 370,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("img", { src: "/next.png", alt: "next", width: 20, height: 20 }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 391,
+            lineNumber: 371,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(Link2, { to: "/collections", className: "font-semibold mst-color", children: "Collection" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 392,
+            lineNumber: 372,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 389,
+          lineNumber: 369,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "flex items-baseline justify-between border-b mst-border pb-6 m-0 relative", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("h1", { className: "text-4xl font-bold tracking-tight text-gray-900 sm:block hidden my-[15px] mst-color", children: collection.title }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 395,
+            lineNumber: 375,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "flex items-center sm:mr-10", children: [
@@ -66173,18 +66219,18 @@ function Collection() {
                   !1,
                   {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 404,
+                    lineNumber: 384,
                     columnNumber: 23
                   },
                   this
                 )
               ] }, void 0, !0, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 402,
+                lineNumber: 382,
                 columnNumber: 21
               }, this) }, void 0, !1, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 401,
+                lineNumber: 381,
                 columnNumber: 19
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
@@ -66212,21 +66258,21 @@ function Collection() {
                     !1,
                     {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 425,
+                      lineNumber: 405,
                       columnNumber: 31
                     },
                     this
                   ) }, option.name, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 423,
+                    lineNumber: 403,
                     columnNumber: 27
                   }, this)) }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 421,
+                    lineNumber: 401,
                     columnNumber: 23
                   }, this) }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 420,
+                    lineNumber: 400,
                     columnNumber: 21
                   }, this)
                 },
@@ -66234,14 +66280,14 @@ function Collection() {
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 411,
+                  lineNumber: 391,
                   columnNumber: 19
                 },
                 this
               )
             ] }, void 0, !0, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 400,
+              lineNumber: 380,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
@@ -66252,12 +66298,12 @@ function Collection() {
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("span", { className: "sr-only", children: "View grid" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 449,
+                    lineNumber: 429,
                     columnNumber: 19
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(Squares2X2Icon_default, { className: "h-5 w-5 mst-color", "aria-hidden": "true" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 450,
+                    lineNumber: 430,
                     columnNumber: 19
                   }, this)
                 ]
@@ -66266,7 +66312,7 @@ function Collection() {
               !0,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 445,
+                lineNumber: 425,
                 columnNumber: 17
               },
               this
@@ -66280,12 +66326,12 @@ function Collection() {
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("span", { className: "sr-only", children: "Filters" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 457,
+                    lineNumber: 437,
                     columnNumber: 19
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(FunnelIcon_default, { className: "h-5 w-5", "aria-hidden": "true" }, void 0, !1, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 458,
+                    lineNumber: 438,
                     columnNumber: 19
                   }, this)
                 ]
@@ -66294,32 +66340,32 @@ function Collection() {
               !0,
               {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 452,
+                lineNumber: 432,
                 columnNumber: 17
               },
               this
             )
           ] }, void 0, !0, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 399,
+            lineNumber: 379,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 394,
+          lineNumber: 374,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("section", { "aria-labelledby": "products-heading", className: "pb-12 pt-6", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("h2", { id: "products-heading", className: "sr-only", children: "Products" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 464,
+            lineNumber: 444,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "shadow-md px-4 py-2 sm:mst-card", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("form", { className: "hidden lg:block lg:sticky lg:top-[120px]", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("h3", { className: "sr-only", children: "Categories" }, void 0, !1, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 473,
+                lineNumber: 453,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
@@ -66342,7 +66388,7 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 483,
+                          lineNumber: 463,
                           columnNumber: 27
                         },
                         this
@@ -66352,7 +66398,7 @@ function Collection() {
                     !1,
                     {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 479,
+                      lineNumber: 459,
                       columnNumber: 25
                     },
                     this
@@ -66362,7 +66408,7 @@ function Collection() {
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 474,
+                  lineNumber: 454,
                   columnNumber: 21
                 },
                 this
@@ -66376,7 +66422,7 @@ function Collection() {
                     /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("h3", { className: "-my-3 flow-root", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(ve2.Button, { className: "flex w-full items-center justify-between bg-white py-3 text-[18px] text-black font-bold", children: [
                       /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("span", { className: "", children: section.name }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 503,
+                        lineNumber: 483,
                         columnNumber: 33
                       }, this),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("span", { className: "ml-6 flex items-center", children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
@@ -66389,7 +66435,7 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 506,
+                          lineNumber: 486,
                           columnNumber: 37
                         },
                         this
@@ -66403,22 +66449,22 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 511,
+                          lineNumber: 491,
                           columnNumber: 37
                         },
                         this
                       ) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 504,
+                        lineNumber: 484,
                         columnNumber: 33
                       }, this)
                     ] }, void 0, !0, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 502,
+                      lineNumber: 482,
                       columnNumber: 31
                     }, this) }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 501,
+                      lineNumber: 481,
                       columnNumber: 29
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(ve2.Panel, { className: "pt-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "space-y-4", children: section.options.map((option, optionIdx) => /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
@@ -66441,7 +66487,7 @@ function Collection() {
                             !1,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 526,
+                              lineNumber: 506,
                               columnNumber: 37
                             },
                             this
@@ -66457,7 +66503,7 @@ function Collection() {
                             !1,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 535,
+                              lineNumber: 515,
                               columnNumber: 37
                             },
                             this
@@ -66468,22 +66514,22 @@ function Collection() {
                       !0,
                       {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 522,
+                        lineNumber: 502,
                         columnNumber: 35
                       },
                       this
                     )) }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 520,
+                      lineNumber: 500,
                       columnNumber: 31
                     }, this) }, void 0, !1, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 519,
+                      lineNumber: 499,
                       columnNumber: 29
                     }, this)
                   ] }, void 0, !0, {
                     fileName: "app/routes/($locale).collections.$handle.jsx",
-                    lineNumber: 500,
+                    lineNumber: 480,
                     columnNumber: 27
                   }, this)
                 },
@@ -66491,18 +66537,18 @@ function Collection() {
                 !1,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 494,
+                  lineNumber: 474,
                   columnNumber: 23
                 },
                 this
               ))
             ] }, void 0, !0, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 472,
+              lineNumber: 452,
               columnNumber: 19
             }, this) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 471,
+              lineNumber: 451,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "lg:col-span-3", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "w-full max-w-screen-xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "cursor grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4", children: productsToShow.map((product, index3) => {
@@ -66527,14 +66573,14 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 567,
+                          lineNumber: 547,
                           columnNumber: 29
                         },
                         this
                       ),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("h2", { className: "sm:text-lg text-[17px] font-semibold mt-2 text-center", children: product.title }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 572,
+                        lineNumber: 552,
                         columnNumber: 29
                       }, this),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "h-8", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("h1", { className: "text-center sm:text-[26px] text-[21px] font-bold m-auto w-full", children: [
@@ -66542,11 +66588,11 @@ function Collection() {
                         " \xA0 Rs"
                       ] }, void 0, !0, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 576,
+                        lineNumber: 556,
                         columnNumber: 31
                       }, this) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 575,
+                        lineNumber: 555,
                         columnNumber: 29
                       }, this),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "flex justify-center py-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
@@ -66559,18 +66605,18 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 581,
+                          lineNumber: 561,
                           columnNumber: 29
                         },
                         this
                       ) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 580,
+                        lineNumber: 560,
                         columnNumber: 29
                       }, this)
                     ] }, void 0, !0, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 566,
+                      lineNumber: 546,
                       columnNumber: 27
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "px-1 py-1 flex items-center sm:flex-row gap-3 justify-center w-[100%]", children: [
@@ -66593,7 +66639,7 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 597,
+                                lineNumber: 577,
                                 columnNumber: 35
                               },
                               this
@@ -66609,7 +66655,7 @@ function Collection() {
                               !1,
                               {
                                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                                lineNumber: 602,
+                                lineNumber: 582,
                                 columnNumber: 35
                               },
                               this
@@ -66620,13 +66666,13 @@ function Collection() {
                         !0,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 589,
+                          lineNumber: 569,
                           columnNumber: 33
                         },
                         this
                       ) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 588,
+                        lineNumber: 568,
                         columnNumber: 31
                       }, this),
                       /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "w-[75%]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
@@ -66650,13 +66696,13 @@ function Collection() {
                             !1,
                             {
                               fileName: "app/routes/($locale).collections.$handle.jsx",
-                              lineNumber: 618,
+                              lineNumber: 598,
                               columnNumber: 37
                             },
                             this
                           ) }, void 0, !1, {
                             fileName: "app/routes/($locale).collections.$handle.jsx",
-                            lineNumber: 617,
+                            lineNumber: 597,
                             columnNumber: 35
                           }, this)
                         },
@@ -66664,18 +66710,18 @@ function Collection() {
                         !1,
                         {
                           fileName: "app/routes/($locale).collections.$handle.jsx",
-                          lineNumber: 610,
+                          lineNumber: 590,
                           columnNumber: 31
                         },
                         this
                       ) }, void 0, !1, {
                         fileName: "app/routes/($locale).collections.$handle.jsx",
-                        lineNumber: 609,
+                        lineNumber: 589,
                         columnNumber: 31
                       }, this)
                     ] }, void 0, !0, {
                       fileName: "app/routes/($locale).collections.$handle.jsx",
-                      lineNumber: 587,
+                      lineNumber: 567,
                       columnNumber: 29
                     }, this)
                   ]
@@ -66684,75 +66730,75 @@ function Collection() {
                 !0,
                 {
                   fileName: "app/routes/($locale).collections.$handle.jsx",
-                  lineNumber: 559,
+                  lineNumber: 539,
                   columnNumber: 27
                 },
                 this
               ) }, product.id, !1, {
                 fileName: "app/routes/($locale).collections.$handle.jsx",
-                lineNumber: 558,
+                lineNumber: 538,
                 columnNumber: 25
               }, this);
             }) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 556,
+              lineNumber: 536,
               columnNumber: 21
             }, this) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 555,
+              lineNumber: 535,
               columnNumber: 19
             }, this) }, void 0, !1, {
               fileName: "app/routes/($locale).collections.$handle.jsx",
-              lineNumber: 554,
+              lineNumber: 534,
               columnNumber: 17
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 468,
+            lineNumber: 448,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 463,
+          lineNumber: 443,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "collection_desc", children: [
           readMore ? /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("p", { dangerouslySetInnerHTML: { __html: collection == null ? void 0 : collection.descriptionHtml }, className: "my-4" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 645,
+            lineNumber: 625,
             columnNumber: 15
           }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("p", { dangerouslySetInnerHTML: { __html: collection == null ? void 0 : collection.descriptionHtml.slice(0, 200) }, className: "my-4" }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 643,
+            lineNumber: 623,
             columnNumber: 15
           }, this),
           !readMore && (collection == null ? void 0 : collection.descriptionHtml) && /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("button", { onClick: () => setMore(!0), className: "bg-black text-white font-bold py-1 px-2", children: " Read More " }, void 0, !1, {
             fileName: "app/routes/($locale).collections.$handle.jsx",
-            lineNumber: 647,
+            lineNumber: 627,
             columnNumber: 60
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/($locale).collections.$handle.jsx",
-          lineNumber: 641,
+          lineNumber: 621,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/($locale).collections.$handle.jsx",
-        lineNumber: 388,
+        lineNumber: 368,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 232,
+      lineNumber: 231,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/($locale).collections.$handle.jsx",
-      lineNumber: 231,
+      lineNumber: 230,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($locale).collections.$handle.jsx",
-    lineNumber: 223,
+    lineNumber: 222,
     columnNumber: 5
   }, this);
 }
@@ -66811,6 +66857,21 @@ var PRODUCT_ITEM_FRAGMENT = `#graphql
     }
     ...OkendoStarRatingSnippet
   }
+`, ALL_COLLECTIONS_QUERY = `#graphql
+  query {
+    collections(first: 100) {
+      edges {
+        node {
+          id
+          title
+          handle
+          metafields(identifiers: [{namespace: "custom", key: "mobile_banner"}]){
+            value
+          }
+        }
+      }
+    }
+}
 `, COLLECTION_QUERY = `#graphql
   ${PRODUCT_ITEM_FRAGMENT}
   query Collection(
@@ -72706,52 +72767,49 @@ var GiftingCollection_default = GiftingCollection;
 var import_react_responsive9 = __toESM(require_react_responsive());
 
 // app/components/BlogCorousel.jsx
-var import_react95 = __toESM(require_react());
-var import_react_responsive8 = __toESM(require_react_responsive()), import_react_slick2 = __toESM(require_lib()), import_jsx_dev_runtime37 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel = ({ products: products2, title, settings }) => {
+var import_react95 = __toESM(require_react()), import_react_responsive8 = __toESM(require_react_responsive()), import_react_slick2 = __toESM(require_lib()), import_jsx_dev_runtime37 = __toESM(require_jsx_dev_runtime()), MobileProductCorousel = ({ products: products2, title, settings }) => {
   let [startIndex, setStartIndex] = (0, import_react95.useState)(0);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("h1", { className: "text-center mt-0 lg:text-[28px] text-[20px]", children: title }, void 0, !1, {
       fileName: "app/components/BlogCorousel.jsx",
-      lineNumber: 20,
+      lineNumber: 12,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(import_react_slick2.default, { ...settings, children: products2.nodes.map(
-      (product, index3) => /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "px-2 bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("a", { href: `/blogs/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
-        "img",
-        {
-          src: `${product.articles.edges[0].node.image.url}`,
-          alt: product.title,
-          className: "mst-card lg:w-full lg:h-auto lg:px-5 sm:mx-3 w-[320px]"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/BlogCorousel.jsx",
-          lineNumber: 28,
-          columnNumber: 15
-        },
-        this
-      ) }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(import_react_slick2.default, { ...settings, children: products2.nodes.map((product, index3) => /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "px-2 bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("a", { href: `/blogs/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
+      "img",
+      {
+        src: `${product.articles.edges[0].node.image.url}`,
+        alt: product.title,
+        className: "mst-card lg:w-full lg:h-auto lg:px-5 sm:mx-3 w-[320px]"
+      },
+      void 0,
+      !1,
+      {
         fileName: "app/components/BlogCorousel.jsx",
-        lineNumber: 27,
+        lineNumber: 20,
         columnNumber: 15
-      }, this) }, `blog_${index3}`, !1, {
-        fileName: "app/components/BlogCorousel.jsx",
-        lineNumber: 26,
-        columnNumber: 11
-      }, this)
+      },
+      this
     ) }, void 0, !1, {
       fileName: "app/components/BlogCorousel.jsx",
-      lineNumber: 24,
+      lineNumber: 19,
+      columnNumber: 15
+    }, this) }, `blog_${index3}`, !1, {
+      fileName: "app/components/BlogCorousel.jsx",
+      lineNumber: 18,
+      columnNumber: 13
+    }, this)) }, void 0, !1, {
+      fileName: "app/components/BlogCorousel.jsx",
+      lineNumber: 16,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 19,
+    lineNumber: 11,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 18,
+    lineNumber: 10,
     columnNumber: 5
   }, this);
 }, DesktopCorousel2 = ({ products: products2, title, settings }) => {
@@ -72767,50 +72825,48 @@ var import_react_responsive8 = __toESM(require_react_responsive()), import_react
   return /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("h1", { className: "text-center", children: title }, void 0, !1, {
       fileName: "app/components/BlogCorousel.jsx",
-      lineNumber: 76,
+      lineNumber: 68,
       columnNumber: 11
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(import_react_slick2.default, { ...settings, children: products2.nodes.map(
-      (product, index3) => /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "px-2 bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("a", { href: `/blogs/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
-        "img",
-        {
-          src: `${product.articles.edges[0].node.image.url}`,
-          alt: product.title,
-          className: "mst-card lg:w-full lg:h-auto"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/BlogCorousel.jsx",
-          lineNumber: 81,
-          columnNumber: 19
-        },
-        this
-      ) }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(import_react_slick2.default, { ...settings, children: products2.nodes.map((product, index3) => /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "px-2 bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("a", { href: `/blogs/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
+      "img",
+      {
+        src: `${product.articles.edges[0].node.image.url}`,
+        alt: product.title,
+        className: "mst-card lg:w-full lg:h-auto"
+      },
+      void 0,
+      !1,
+      {
         fileName: "app/components/BlogCorousel.jsx",
-        lineNumber: 80,
+        lineNumber: 73,
         columnNumber: 19
-      }, this) }, `blog_${index3}`, !1, {
-        fileName: "app/components/BlogCorousel.jsx",
-        lineNumber: 79,
-        columnNumber: 13
-      }, this)
+      },
+      this
     ) }, void 0, !1, {
       fileName: "app/components/BlogCorousel.jsx",
-      lineNumber: 77,
+      lineNumber: 72,
+      columnNumber: 19
+    }, this) }, `blog_${index3}`, !1, {
+      fileName: "app/components/BlogCorousel.jsx",
+      lineNumber: 71,
+      columnNumber: 17
+    }, this)) }, void 0, !1, {
+      fileName: "app/components/BlogCorousel.jsx",
+      lineNumber: 69,
       columnNumber: 11
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 75,
+    lineNumber: 67,
     columnNumber: 9
   }, this) }, void 0, !1, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 74,
+    lineNumber: 66,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 73,
+    lineNumber: 65,
     columnNumber: 5
   }, this);
 }, BlogCorousel = ({ collections, title, isSmall }) => {
@@ -72853,15 +72909,15 @@ var import_react_responsive8 = __toESM(require_react_responsive()), import_react
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { children: isSmall ? /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(MobileProductCorousel, { products: collections, settings, title }, void 0, !1, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 140,
-    columnNumber: 7
+    lineNumber: 132,
+    columnNumber: 9
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(DesktopCorousel2, { products: collections, settings, title }, void 0, !1, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 144,
-    columnNumber: 7
+    lineNumber: 136,
+    columnNumber: 9
   }, this) }, void 0, !1, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 138,
+    lineNumber: 130,
     columnNumber: 5
   }, this);
 }, BlogCorousel_default = BlogCorousel;
@@ -75255,7 +75311,7 @@ var LAYOUT_QUERY = `#graphql
 `;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-HWXT6HWF.js", imports: ["/build/_shared/chunk-FM7TTYIF.js", "/build/_shared/chunk-CFXHHO4K.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-BIA2JFRB.js", imports: ["/build/_shared/chunk-JAC3HV3C.js", "/build/_shared/chunk-BGS7F2B5.js", "/build/_shared/chunk-OOZLT3E7.js", "/build/_shared/chunk-CUAAD2LU.js", "/build/_shared/chunk-3C7N4WA2.js", "/build/_shared/chunk-DGST5VAI.js", "/build/_shared/chunk-AQMJZ442.js", "/build/_shared/chunk-NNH77UO3.js", "/build/_shared/chunk-D3AIAV2V.js", "/build/_shared/chunk-3G62A2VJ.js", "/build/_shared/chunk-BSZVYZCA.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-FNNRZLKA.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-EYMOUO72.js", imports: ["/build/_shared/chunk-7M6P6K7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-UW56T35F.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-P4I3QDMF.js", imports: ["/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-PFIMTTXO.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js", "/build/_shared/chunk-3G62A2VJ.js", "/build/_shared/chunk-BSZVYZCA.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-NXUTGPGB.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-TWBKTJHT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-BCCBUGMG.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-WPHFFVHS.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-FCZOOCU5.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-QJ3G3N7V.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-IIRQXA7S.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-U4FIVITR.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-6FNJVY6E.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-NV6TFYUI.js", imports: ["/build/_shared/chunk-UZWC6K72.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-7GZAEYDK.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-3INPTDT3.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).offers": { id: "routes/($locale).offers", parentId: "root", path: ":locale?/offers", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).offers-PNLK3VAV.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-QTZOP6F6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-XO72JGCK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-C4O43EB5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-IWHRVVVH.js", imports: ["/build/_shared/chunk-UZWC6K72.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-F7FNEDA7.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-OU6DB2IP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-53PT7KYB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-OBQMRAOA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "e5d8ac71", hmr: void 0, url: "/build/manifest-E5D8AC71.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-HWXT6HWF.js", imports: ["/build/_shared/chunk-FM7TTYIF.js", "/build/_shared/chunk-CFXHHO4K.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-SCKQBJ6V.js", imports: ["/build/_shared/chunk-UTIKAAM3.js", "/build/_shared/chunk-BGS7F2B5.js", "/build/_shared/chunk-OOZLT3E7.js", "/build/_shared/chunk-CUAAD2LU.js", "/build/_shared/chunk-3C7N4WA2.js", "/build/_shared/chunk-DGST5VAI.js", "/build/_shared/chunk-AQMJZ442.js", "/build/_shared/chunk-NNH77UO3.js", "/build/_shared/chunk-D3AIAV2V.js", "/build/_shared/chunk-3G62A2VJ.js", "/build/_shared/chunk-BSZVYZCA.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($locale).$": { id: "routes/($locale).$", parentId: "root", path: ":locale?/*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).$-DDDRNU3P.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).[sitemap.xml]": { id: "routes/($locale).[sitemap.xml]", parentId: "root", path: ":locale?/sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).[sitemap.xml]-H6EIDNVM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale)._index": { id: "routes/($locale)._index", parentId: "root", path: ":locale?", index: !0, caseSensitive: void 0, module: "/build/routes/($locale)._index-QYAIUESD.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account": { id: "routes/($locale).account", parentId: "root", path: ":locale?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account-EYMOUO72.js", imports: ["/build/_shared/chunk-7M6P6K7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.$": { id: "routes/($locale).account.$", parentId: "routes/($locale).account", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.$-IDA7PP7J.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.addresses": { id: "routes/($locale).account.addresses", parentId: "routes/($locale).account", path: "addresses", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.addresses-UW56T35F.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders.$id": { id: "routes/($locale).account.orders.$id", parentId: "routes/($locale).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders.$id-P4I3QDMF.js", imports: ["/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.orders._index": { id: "routes/($locale).account.orders._index", parentId: "routes/($locale).account", path: "orders", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).account.orders._index-PFIMTTXO.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js", "/build/_shared/chunk-3G62A2VJ.js", "/build/_shared/chunk-BSZVYZCA.js", "/build/_shared/chunk-VY5OJHMS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account.profile": { id: "routes/($locale).account.profile", parentId: "routes/($locale).account", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account.profile-NXUTGPGB.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.activate.$id.$activationToken": { id: "routes/($locale).account_.activate.$id.$activationToken", parentId: "root", path: ":locale?/account/activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.activate.$id.$activationToken-TWBKTJHT.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.login": { id: "routes/($locale).account_.login", parentId: "root", path: ":locale?/account/login", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.login-BCCBUGMG.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.logout": { id: "routes/($locale).account_.logout", parentId: "root", path: ":locale?/account/logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.logout-H6PFS4O4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.recover": { id: "routes/($locale).account_.recover", parentId: "root", path: ":locale?/account/recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.recover-WPHFFVHS.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.register": { id: "routes/($locale).account_.register", parentId: "root", path: ":locale?/account/register", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.register-FCZOOCU5.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).account_.reset.$id.$resetToken": { id: "routes/($locale).account_.reset.$id.$resetToken", parentId: "root", path: ":locale?/account/reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).account_.reset.$id.$resetToken-QJ3G3N7V.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).api.predictive-search": { id: "routes/($locale).api.predictive-search", parentId: "root", path: ":locale?/api/predictive-search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).api.predictive-search-6SBFKV26.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle.$articleHandle": { id: "routes/($locale).blogs.$blogHandle.$articleHandle", parentId: "root", path: ":locale?/blogs/:blogHandle/:articleHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle.$articleHandle-IIRQXA7S.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs.$blogHandle._index": { id: "routes/($locale).blogs.$blogHandle._index", parentId: "root", path: ":locale?/blogs/:blogHandle", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs.$blogHandle._index-U4FIVITR.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).blogs._index": { id: "routes/($locale).blogs._index", parentId: "root", path: ":locale?/blogs", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).blogs._index-6FNJVY6E.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).cart": { id: "routes/($locale).cart", parentId: "root", path: ":locale?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).cart-NV6TFYUI.js", imports: ["/build/_shared/chunk-UZWC6K72.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections.$handle": { id: "routes/($locale).collections.$handle", parentId: "root", path: ":locale?/collections/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).collections.$handle-7XFMNYW7.js", imports: ["/build/_shared/chunk-ZPBXTGWZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).collections._index": { id: "routes/($locale).collections._index", parentId: "root", path: ":locale?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).collections._index-3INPTDT3.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).offers": { id: "routes/($locale).offers", parentId: "root", path: ":locale?/offers", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).offers-PNLK3VAV.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).pages.$handle": { id: "routes/($locale).pages.$handle", parentId: "root", path: ":locale?/pages/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).pages.$handle-QTZOP6F6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies.$handle": { id: "routes/($locale).policies.$handle", parentId: "root", path: ":locale?/policies/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).policies.$handle-XO72JGCK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).policies._index": { id: "routes/($locale).policies._index", parentId: "root", path: ":locale?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($locale).policies._index-C4O43EB5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).products.$handle": { id: "routes/($locale).products.$handle", parentId: "root", path: ":locale?/products/:handle", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).products.$handle-IWHRVVVH.js", imports: ["/build/_shared/chunk-UZWC6K72.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($locale).search": { id: "routes/($locale).search", parentId: "root", path: ":locale?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($locale).search-F7FNEDA7.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-OU6DB2IP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-IUV5DDHT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-53PT7KYB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-OBQMRAOA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "1bda27d3", hmr: void 0, url: "/build/manifest-1BDA27D3.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "dist/client/build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

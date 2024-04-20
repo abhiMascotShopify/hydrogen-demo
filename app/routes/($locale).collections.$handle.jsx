@@ -1,21 +1,14 @@
 import {json, redirect} from '@shopify/remix-oxygen';
-import React, {useRef, useState,useEffect} from 'react';
-import {Await, useLoaderData, Link} from '@remix-run/react';
+import {useState,useEffect} from 'react';
+import {useLoaderData, Link} from '@remix-run/react';
 import {
-  Pagination,
   getPaginationVariables,
   Image,
   Money,
 } from '@shopify/hydrogen';
-import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
 import {useMediaQuery} from 'react-responsive';
-import {
-  VariantSelector,
-  getSelectedProductOptions,
-  CartForm,
-} from '@shopify/hydrogen';
+import { CartForm } from '@shopify/hydrogen';
 import {useVariantUrl} from '~/utils';
-//import Filters from '~/components/Filters';
 import {Fragment} from 'react';
 import {Dialog, Disclosure, Menu, Transition} from '@headlessui/react';
 import {XMarkIcon} from '@heroicons/react/24/outline';
@@ -85,10 +78,15 @@ export async function loader({request, params, context}) {
     },
   });
 
+  const all_collections = await storefront.query(ALL_COLLECTIONS_QUERY, {
+    cache: storefront.CacheNone(),
+  });
+  
   if (!handle) {
     return redirect('/collections');
   }
 
+  const { collections } = all_collections;
   const {collection} = await storefront.query(COLLECTION_QUERY, {
     variables: {handle, ...paginationVariables},
   });
@@ -98,18 +96,19 @@ export async function loader({request, params, context}) {
       status: 404,
     });
   }
-  return json({collection,  header: await headerPromise,handle});
+  return json({collection, collections,  header: await headerPromise,handle});
 }
 
 export default function Collection() {
   var collectionArray = [];
-  const {collection , header, handle} = useLoaderData();
+  const {collection , header, handle, collections} = useLoaderData();
   const { menu } = header;
   let subMenu = menu.items;
-  //console.log("Handle:",handle,subMenu);
   var sortArr = subMenu.filter((item)=> item.title.toLowerCase() === handle );
-  collectionArray = sortArr[0]?.items;
-  //console.log("sortArr .. ::",collectionArray)
+  console.log("sortArr::",sortArr)
+  collectionArray = sortArr.length ? sortArr[0]?.items : [];
+  //console.log("all_collections:",collectionArray);
+  const sortColl = collectionArray.map((coll)=> collections.edges.filter((item)=> item.node.title === coll.title))
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   var productsToShow1 = [];
   const lines = [];
@@ -358,30 +357,11 @@ export default function Collection() {
 
           <section className="collectionContent sm:mt-4 overflow-auto">
             <div className="inline-flex gap-4">
-              {/* {collectionArray?.map((item, index) => (
-                <div onClick={()=> goToCollection (item.url) }
-                  className="collection-items sm:w-auto w-[30%] bg-[#f5f5f5] rounded-lg hover:shadow-md cursor-pointer mst-card"
-                  key={index}
-                >
-                  <div className="image" >
-                    <img
-                      width={300}
-                      height={300}
-                      alt={item.title}
-                      src={item?.collectionimageurl}
-                    />
-                  </div>
-                  <div className="collectionname  sm:text-lg text-md font-semibold  text-center px-[15px] pb-[12px]  pt-[5px]">
-                    {item.title}
-                  </div>
-                </div>
-              ))} */}
             { sortArr.length ?
-             <CollectionCarousel collections={collection} handle={handle} sortArr={collectionArray} />
+             <CollectionCarousel collections={collection} handle={handle} sortArr={sortColl} />
              :
              null
             } 
-              
             </div>
           </section>
 
@@ -754,6 +734,22 @@ const PRODUCT_ITEM_FRAGMENT = `#graphql
   }
 `;
 
+const ALL_COLLECTIONS_QUERY = `#graphql
+  query {
+    collections(first: 100) {
+      edges {
+        node {
+          id
+          title
+          handle
+          metafields(identifiers: [{namespace: "custom", key: "mobile_banner"}]){
+            value
+          }
+        }
+      }
+    }
+}
+`
 // NOTE: https://shopify.dev/docs/api/storefront/2022-04/objects/collection
 const COLLECTION_QUERY = `#graphql
   ${PRODUCT_ITEM_FRAGMENT}

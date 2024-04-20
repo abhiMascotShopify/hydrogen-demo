@@ -1,18 +1,10 @@
-// src/ProductCarousel.js
-import React, {useState} from 'react';
-//import products from './products';
-import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
+
+import {useState} from 'react';
 import {useMediaQuery} from 'react-responsive';
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 const MobileProductCorousel = ({products,title, settings}) => {
   const [startIndex, setStartIndex] = useState(0);
-  
-  //console.log(products)
-  //const productsToShow = products.slice(startIndex, startIndex + 5);
-  //console.log(productsToShow)
 
   return (
     <div className="w-full max-w-screen-2xl mx-auto px-1">

@@ -1,7 +1,7 @@
 import {
   ImageCarousel_default,
   YouTubeVideo_default
-} from "/build/_shared/chunk-JAC3HV3C.js";
+} from "/build/_shared/chunk-UTIKAAM3.js";
 import {
   ProductCarousel_default
 } from "/build/_shared/chunk-3C7N4WA2.js";
@@ -4035,46 +4035,44 @@ var MobileProductCorousel = ({ products, title, settings }) => {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h1", { className: "text-center mt-0 lg:text-[28px] text-[20px]", children: title }, void 0, false, {
       fileName: "app/components/BlogCorousel.jsx",
-      lineNumber: 20,
+      lineNumber: 12,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react_slick2.default, { ...settings, children: products.nodes.map(
-      (product, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "px-2 bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { href: `/blogs/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-        "img",
-        {
-          src: `${product.articles.edges[0].node.image.url}`,
-          alt: product.title,
-          className: "mst-card lg:w-full lg:h-auto lg:px-5 sm:mx-3 w-[320px]"
-        },
-        void 0,
-        false,
-        {
-          fileName: "app/components/BlogCorousel.jsx",
-          lineNumber: 28,
-          columnNumber: 15
-        },
-        this
-      ) }, void 0, false, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react_slick2.default, { ...settings, children: products.nodes.map((product, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "px-2 bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { href: `/blogs/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+      "img",
+      {
+        src: `${product.articles.edges[0].node.image.url}`,
+        alt: product.title,
+        className: "mst-card lg:w-full lg:h-auto lg:px-5 sm:mx-3 w-[320px]"
+      },
+      void 0,
+      false,
+      {
         fileName: "app/components/BlogCorousel.jsx",
-        lineNumber: 27,
+        lineNumber: 20,
         columnNumber: 15
-      }, this) }, `blog_${index2}`, false, {
-        fileName: "app/components/BlogCorousel.jsx",
-        lineNumber: 26,
-        columnNumber: 11
-      }, this)
+      },
+      this
     ) }, void 0, false, {
       fileName: "app/components/BlogCorousel.jsx",
-      lineNumber: 24,
+      lineNumber: 19,
+      columnNumber: 15
+    }, this) }, `blog_${index2}`, false, {
+      fileName: "app/components/BlogCorousel.jsx",
+      lineNumber: 18,
+      columnNumber: 13
+    }, this)) }, void 0, false, {
+      fileName: "app/components/BlogCorousel.jsx",
+      lineNumber: 16,
       columnNumber: 9
     }, this)
   ] }, void 0, true, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 19,
+    lineNumber: 11,
     columnNumber: 7
   }, this) }, void 0, false, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 18,
+    lineNumber: 10,
     columnNumber: 5
   }, this);
 };
@@ -4094,50 +4092,48 @@ var DesktopCorousel2 = ({ products, title, settings }) => {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-full max-w-screen-2xl mx-auto px-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h1", { className: "text-center", children: title }, void 0, false, {
       fileName: "app/components/BlogCorousel.jsx",
-      lineNumber: 76,
+      lineNumber: 68,
       columnNumber: 11
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react_slick2.default, { ...settings, children: products.nodes.map(
-      (product, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "px-2 bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { href: `/blogs/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-        "img",
-        {
-          src: `${product.articles.edges[0].node.image.url}`,
-          alt: product.title,
-          className: "mst-card lg:w-full lg:h-auto"
-        },
-        void 0,
-        false,
-        {
-          fileName: "app/components/BlogCorousel.jsx",
-          lineNumber: 81,
-          columnNumber: 19
-        },
-        this
-      ) }, void 0, false, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react_slick2.default, { ...settings, children: products.nodes.map((product, index2) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "px-2 bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { href: `/blogs/${product.handle}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+      "img",
+      {
+        src: `${product.articles.edges[0].node.image.url}`,
+        alt: product.title,
+        className: "mst-card lg:w-full lg:h-auto"
+      },
+      void 0,
+      false,
+      {
         fileName: "app/components/BlogCorousel.jsx",
-        lineNumber: 80,
+        lineNumber: 73,
         columnNumber: 19
-      }, this) }, `blog_${index2}`, false, {
-        fileName: "app/components/BlogCorousel.jsx",
-        lineNumber: 79,
-        columnNumber: 13
-      }, this)
+      },
+      this
     ) }, void 0, false, {
       fileName: "app/components/BlogCorousel.jsx",
-      lineNumber: 77,
+      lineNumber: 72,
+      columnNumber: 19
+    }, this) }, `blog_${index2}`, false, {
+      fileName: "app/components/BlogCorousel.jsx",
+      lineNumber: 71,
+      columnNumber: 17
+    }, this)) }, void 0, false, {
+      fileName: "app/components/BlogCorousel.jsx",
+      lineNumber: 69,
       columnNumber: 11
     }, this)
   ] }, void 0, true, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 75,
+    lineNumber: 67,
     columnNumber: 9
   }, this) }, void 0, false, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 74,
+    lineNumber: 66,
     columnNumber: 7
   }, this) }, void 0, false, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 73,
+    lineNumber: 65,
     columnNumber: 5
   }, this);
 };
@@ -4182,15 +4178,15 @@ var BlogCorousel = ({ collections, title, isSmall }) => {
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { children: isSmall ? /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(MobileProductCorousel, { products: collections, settings, title }, void 0, false, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 140,
-    columnNumber: 7
+    lineNumber: 132,
+    columnNumber: 9
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(DesktopCorousel2, { products: collections, settings, title }, void 0, false, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 144,
-    columnNumber: 7
+    lineNumber: 136,
+    columnNumber: 9
   }, this) }, void 0, false, {
     fileName: "app/components/BlogCorousel.jsx",
-    lineNumber: 138,
+    lineNumber: 130,
     columnNumber: 5
   }, this);
 };
@@ -4864,4 +4860,4 @@ export {
   Homepage as default,
   meta
 };
-//# sourceMappingURL=/build/routes/($locale)._index-FNNRZLKA.js.map
+//# sourceMappingURL=/build/routes/($locale)._index-QYAIUESD.js.map

@@ -1,4 +1,4 @@
-import "/build/_shared/chunk-JAC3HV3C.js";
+import "/build/_shared/chunk-UTIKAAM3.js";
 import "/build/_shared/chunk-BGS7F2B5.js";
 import {
   PredictiveSearchForm,
@@ -199,8 +199,8 @@ function Footer({ menu }) {
                 lineNumber: 50,
                 columnNumber: 23
               }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { children: cat.items.map((subMenu) => {
-                return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "cursor-pointer list-none", onClick: () => navigateTo(subMenu.url), children: subMenu.title }, void 0, false, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { children: cat.items.map((subMenu, index) => {
+                return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "cursor-pointer list-none", onClick: () => navigateTo(subMenu.url), children: subMenu.title }, `sub_menu_${index}`, false, {
                   fileName: "app/components/Footer.jsx",
                   lineNumber: 53,
                   columnNumber: 34
@@ -1956,4 +1956,4 @@ tw-elements-react/dist/js/tw-elements-react.es.min.js:
   * 
   *)
 */
-//# sourceMappingURL=/build/root-BIA2JFRB.js.map
+//# sourceMappingURL=/build/root-SCKQBJ6V.js.map

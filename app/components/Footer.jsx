@@ -49,8 +49,8 @@ export function Footer({menu}) {
                     <div>
                       <div className='footer_link_title'>{ cat.title }</div>
                       <div>
-                        { cat.items.map((subMenu)=>{ 
-                          return <li className='cursor-pointer list-none' onClick={()=> navigateTo(subMenu.url) }>
+                        { cat.items.map((subMenu,index)=>{ 
+                          return <li key={`sub_menu_${index}`} className='cursor-pointer list-none' onClick={()=> navigateTo(subMenu.url) }>
                             {subMenu.title} 
                           </li>
                         })
