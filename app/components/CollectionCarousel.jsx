@@ -10,9 +10,11 @@ import {
 } from '@shopify/hydrogen';
 //import collections from './collections';
 
+
 const CollectionCarousel = ({collection , handle , sortArr,all_collections}) => {
   const noImg = "https://cdn.shopify.com/s/files/1/0809/4253/0882/files/No-image-found.jpg?v=1708942129"
   let collectionsToShow = [];
+
   const [startIndex, setStartIndex] = useState(0);
   const isLargeScreen = useMediaQuery({minWidth: 1024});
   const eIndex = isLargeScreen ? len < 4 ? len : 4 : 2;
@@ -21,6 +23,8 @@ const CollectionCarousel = ({collection , handle , sortArr,all_collections}) => 
   if (sortArr != null || sortArr != undefined) {
     collectionsToShow = sortArr.slice(startIndex, endIndex);
   }
+
+  console.log("Meta :;",collectionsToShow[0]?.node?.metafields)
   const nextCollections= () => {
     setStartIndex((prevIndex) => len == endIndex ? prevIndex -1 : prevIndex + 1 );
     setEndIndex((prevIndex) => len == endIndex ? prevIndex-1 : prevIndex + 1);
@@ -38,7 +42,7 @@ const CollectionCarousel = ({collection , handle , sortArr,all_collections}) => 
   }
 
   function goToCollection(url_path){
-    let url = getPath(url_path);
+    let url = `/collections/${url_path}` //getPath(url_path);
     console.log(url)
     window.location.href = url
   }
@@ -48,11 +52,11 @@ const CollectionCarousel = ({collection , handle , sortArr,all_collections}) => 
       <div className="relative">
         <div className="flex grid-row-1 grid-cols-2 gap-4">
           {collectionsToShow.map((coll, index) => (
-            <div key={`coll_corousel_${index}`} className="w-full cursor" onClick={()=> goToCollection(coll.url)}>
+            <div key={`coll_corousel_${index}`} className="w-full cursor" onClick={()=> goToCollection(coll[0]?.node?.handle)}>
                 <div className="bg-white mst-card rounded-lg shadow-lg p-2 w-32 h-40 sm:w-40">
                  
                     <img
-                      src={coll[0]?.node?.metafields[0]?.value || noImg }// Make sure to put your images in the 'public/images/' directory
+                      src={coll[0]?.node?.metafields[1]?.value || noImg }// Make sure to put your images in the 'public/images/' directory
                       className="w-full h-auto coll_cor_img rounded-full"
                     />
                     <h2 className="text-sm font-semibold mt-2 text-center">

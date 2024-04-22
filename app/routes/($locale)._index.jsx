@@ -66,16 +66,16 @@ export default function Homepage() {
   if(!isSmall){
     imageSrc = [
       'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/desktop_banner_1.jpg?v=1713342696',
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/desktop_banner_2.jpg?v=1713342905',
       'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/desktop_banner_3.jpg?v=1713342905',
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/desktop_banner_4.jpg?v=1713342905'
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/desktop_banner_2.jpg?v=1713342905',
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/desktop_banner_4.jpg?v=1713342905',
     ];
   }else{
     imageSrc = [
       'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Hero_Banners_1.jpg?v=1713353171',
       'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Hero_Banners_2.jpg?v=1713353171',
       'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Hero_Banners_4.jpg?v=1713353171',
-      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Hero_Banners_3.jpg?v=1713353171'
+      'https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_Hero_Banners_3.jpg?v=1713353171',
     ];
   }
 
@@ -114,7 +114,7 @@ export default function Homepage() {
       GiftCollections.push(col);
     }
   });
-  BuildYourOwnColl = BuildYourOwnColl[0].products.edges;
+  BuildYourOwnColl = BuildYourOwnColl[0]?.products.edges;
   ThirdHeroCollection =  ThirdHeroCollection[0].products;
   GiftCollections = GiftCollections;
   //console.log(data.collectionProducts.nodes[7].metafields[1].value)
@@ -204,7 +204,7 @@ export default function Homepage() {
       <RecommendedProducts
         key={data.collectionProducts.nodes[0].id}
         products={data.collectionProducts.nodes[0].products}
-        title="CULT FAVS"
+        title="CULT FAVES"
       />
       <div className='slider-container mb-8 max-w-screen-xl mx-auto lg:px-16 sm:px-4 md:px-6'>
         <h1 className="text-center lg:text=[28px] text-[20px] mt-[15px]">

@@ -90,7 +90,6 @@ export async function loader({request, params, context}) {
   const {collection} = await storefront.query(COLLECTION_QUERY, {
     variables: {handle, ...paginationVariables},
   });
-  console.log("Collection Handle ::",collection);
   if (!collection) {
     throw new Response(`Collection ${handle} not found`, {
       status: 404,
@@ -105,10 +104,10 @@ export default function Collection() {
   const { menu } = header;
   let subMenu = menu.items;
   var sortArr = subMenu.filter((item)=> item.title.toLowerCase() === handle );
-  console.log("sortArr::",sortArr)
   collectionArray = sortArr.length ? sortArr[0]?.items : [];
   //console.log("all_collections:",collectionArray);
   const sortColl = collectionArray.map((coll)=> collections.edges.filter((item)=> item.node.title === coll.title))
+  console.log("sortColl::",sortColl)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   var productsToShow1 = [];
   const lines = [];
@@ -364,7 +363,6 @@ export default function Collection() {
             } 
             </div>
           </section>
-
           <main className="mx-auto max-w-8xl px-0 sm:px-4 sm:px-6 lg:px-8">
             <div className="flex gap-1 items-center">
               <Link className='mst-color' to="/">Home</Link>
@@ -742,7 +740,7 @@ const ALL_COLLECTIONS_QUERY = `#graphql
           id
           title
           handle
-          metafields(identifiers: [{namespace: "custom", key: "mobile_banner"}]){
+          metafields(identifiers: [{namespace: "custom", key: "mobile_banner"},{namespace: "custom", key: "sub_category_icon"}]){
             value
           }
         }
