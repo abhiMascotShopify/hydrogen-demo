@@ -374,7 +374,7 @@ function ProductMain({selectedVariant, product, shareUrl, variants,recommendedPr
           </div>
           <div className="mt-4">
             {activeTab === 'Key Ingredients' && key_ingredients && (
-              <div className="meta_info_card overflow-y-auto overflow-x-auto">
+              <div className="overflow-y-auto overflow-x-auto">
                 {key_ingredients && (
                   <div
                     className="expect"
@@ -397,7 +397,7 @@ function ProductMain({selectedVariant, product, shareUrl, variants,recommendedPr
               </div>
             )}
             {activeTab === 'Ingredient' && ingredient && (
-              <div className="meta_info_card overflow-y-auto">
+              <div className="overflow-y-auto">
                 <div style={{maxWidth:"100%"}} dangerouslySetInnerHTML={{__html: ingredient}} />
               </div>
             )}
@@ -470,7 +470,6 @@ function ProductForm({
       day: 'numeric',
     }).format(new Date(date));
     return estimatedDateDelivery;
-    //setEstimatedDelivery(estimatedDateDelivery)
   }
   
   const checkAvailibility = ()=>{
@@ -505,7 +504,6 @@ function ProductForm({
         })
       }
     })
-  
   }
 
  
@@ -589,7 +587,7 @@ function ProductOptions({option, activeImg,closeRef}) {
                 to={to}
                 style={{
                   border: isActive
-                    ? '1px solid black'
+                    ? '1px solid #d0715f'
                     : '1px solid transparent',
                   opacity: isAvailable ? 1 : 0.3,
                   borderRadius: '5px',

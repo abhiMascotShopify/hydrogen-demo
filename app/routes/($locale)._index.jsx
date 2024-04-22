@@ -229,7 +229,7 @@ export default function Homepage() {
 
       {/*---Banner Statis section 8 --- */}
       {isLargeScreen && (
-         <a href="/collections/eyes">
+         <a href="/collections/daily-essentials">
           <div className="my-[15px]">
             <img
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/Daily_Essentials_banner.jpg?v=1709971600"
@@ -239,7 +239,7 @@ export default function Homepage() {
         </a>
       )}
       {isSmall && (
-        <a href="/collections/eyes">
+        <a href="/collections/daily-essentials">
           <div className="my-[15px]">
             <img
               src="https://cdn.shopify.com/s/files/1/0809/4253/0882/files/mobile_everyday_style.jpg?v=1712816125"
