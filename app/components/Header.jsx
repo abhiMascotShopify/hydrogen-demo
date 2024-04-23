@@ -266,11 +266,11 @@ function CartBadge({count}) {
           d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
         />
       </svg>
-      <span className='absolute cart_counter top-[-5px] right-[-10px]'>{count}</span>
+      { count > 0 && <span className='absolute cart_counter top-[-5px] right-[-10px]'>{count}</span> }
     </a>
-     <a href="/offers">
+     {/* <a href="/offers">
      <svg width="22.81px"  fill="none" stroke="#d0715f" height="22px" viewBox="0 0 20 21" xmlns="http://www.w3.org/2000/svg" alt="discount_icon"><path fillRule="evenodd" clipRule="evenodd" d="m8.744 3.662.832-.803.832.803a3 3 0 0 0 2.504.813l1.146-.162.2 1.134a3 3 0 0 0 1.55 2.132l1.018.54-.505 1.03a3 3 0 0 0 0 2.639l.505 1.031-1.018.54a3 3 0 0 0-1.55 2.131l-.2 1.134-1.146-.162a3 3 0 0 0-2.504.813l-.832.804-.832-.804a3 3 0 0 0-2.504-.813l-1.146.162-.2-1.134a3 3 0 0 0-1.55-2.132l-1.018-.539.505-1.031a3 3 0 0 0 0-2.638l-.505-1.032 1.018-.539a3 3 0 0 0 1.55-2.132l.2-1.134 1.146.162a3 3 0 0 0 2.504-.813ZM8.88.75a1 1 0 0 1 1.39 0l1.527 1.475a1 1 0 0 0 .834.27l2.104-.296a1 1 0 0 1 1.125.817l.366 2.086a1 1 0 0 0 .517.71l1.874.993a1 1 0 0 1 .43 1.324l-.93 1.901a1 1 0 0 0 0 .88l.93 1.9a1 1 0 0 1-.43 1.324l-1.874.993a1 1 0 0 0-.517.71l-.366 2.087a1 1 0 0 1-1.125.817l-2.104-.297a1 1 0 0 0-.834.27l-1.527 1.475a1 1 0 0 1-1.39 0l-1.527-1.474a1 1 0 0 0-.834-.271l-2.104.297a1 1 0 0 1-1.125-.817l-.366-2.087a1 1 0 0 0-.517-.71l-1.874-.993a1 1 0 0 1-.43-1.323l.93-1.902a1 1 0 0 0 0-.879l-.93-1.901a1 1 0 0 1 .43-1.324l1.874-.992a1 1 0 0 0 .517-.711l.366-2.086a1 1 0 0 1 1.125-.817l2.104.297a1 1 0 0 0 .834-.271L8.881.749Zm4.524 7.31a1 1 0 0 0-1.413-1.415l-6.245 6.234a1 1 0 1 0 1.413 1.416l6.245-6.235Zm-4.87-.188A1.56 1.56 0 0 1 6.974 9.43 1.56 1.56 0 1 1 8.535 7.87Zm3.642 6.754a1.56 1.56 0 0 0 1.561-1.559 1.56 1.56 0 0 0-1.56-1.558 1.56 1.56 0 1 0 0 3.117Z"></path></svg>
-      </a>
+      </a> */}
     </>
   );
 }
@@ -288,47 +288,6 @@ function CartToggle({cart}) {
   );
 }
 
-const FALLBACK_HEADER_MENU = {
-  id: 'gid://shopify/Menu/199655587896',
-  items: [
-    {
-      id: 'gid://shopify/MenuItem/461609500728',
-      resourceId: null,
-      tags: [],
-      title: 'Collections',
-      type: 'HTTP',
-      url: '/collections',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609533496',
-      resourceId: null,
-      tags: [],
-      title: 'Blog',
-      type: 'HTTP',
-      url: '/blogs/journal',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609566264',
-      resourceId: null,
-      tags: [],
-      title: 'Policies',
-      type: 'HTTP',
-      url: '/policies',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609599032',
-      resourceId: 'gid://shopify/Page/92591030328',
-      tags: [],
-      title: 'About',
-      type: 'PAGE',
-      url: '/pages/about',
-      items: [],
-    },
-  ],
-};
 
 function activeLinkStyle({isActive, isPending}) {
   return {
@@ -337,70 +296,4 @@ function activeLinkStyle({isActive, isPending}) {
   };
 }
 
-const DropdownMenu = (item) => {
-  //console.log('Drop'+item)
-  return (
-    <div className="relative inline-block text-left group">
-      <button className="px-4 py-2 text-gray-800 hover:bg-gray-200 focus:outline-none">
-        Hover
-      </button>
-      <div className="absolute hidden mt-2 w-48 bg-white border border-gray-300 divide-y divide-gray-200 rounded-lg shadow-lg group-hover:block">
-        <div className="py-1">
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-          >
-            Item 1
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-          >
-            Item 2
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-          >
-            Item 3
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-};
 
-{
-  /*<header className="header">
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
-      </NavLink>
-      <HeaderMenu menu={menu} viewport="desktop" />
-      <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
-  </header>*/
-}
-{
-  /*<NavLink
-            className="header-menu-item"
-            end
-            key={item.id}
-            onClick={closeAside}
-            prefetch="intent"
-            style={activeLinkStyle}
-            to={url}
-          > {item.title} 
-          <DropdownMenu item={item} />
-        </NavLink>*/
-}
-
-{
-  /*<div className="absolute hidden mt-2 w-48 bg-white border border-gray-300 divide-y divide-gray-200 rounded-lg shadow-lg group-hover:block">
-            <div className="py-1">
-              {item.items.map((it)=>(
-                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                Item 1
-              </a>
-              ))}              
-            </div>
-              </div>*/
-}
